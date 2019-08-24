@@ -9,6 +9,7 @@ import { LatestNewsCardComponent } from './components/cards/latest-news-card/lat
 import { MaterialListCardComponent } from './components/cards/material-list-card/material-list-card.component';
 import { CardLayoutComponent } from './components/card-layout/card-layout.component';
 import { CardCarouselComponent } from './components/card-carousel/card-carousel.component';
+import { ToplineAdvertisingComponent } from './components/topline-advertising/topline-advertising.component';
 
 
 
@@ -23,6 +24,7 @@ import { CardCarouselComponent } from './components/card-carousel/card-carousel.
     MaterialListCardComponent,
     CardLayoutComponent,
     CardCarouselComponent,
+    ToplineAdvertisingComponent,
   ],
   imports: [
     CommonModule
@@ -37,7 +39,8 @@ import { CardCarouselComponent } from './components/card-carousel/card-carousel.
     LatestNewsCardComponent,
     MaterialListCardComponent,
     CardLayoutComponent,
-    CardCarouselComponent
+    CardCarouselComponent,
+    ToplineAdvertisingComponent
   ]
 })
 export class SharedModule { }
