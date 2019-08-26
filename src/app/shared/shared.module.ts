@@ -10,6 +10,7 @@ import { MaterialListCardComponent } from './components/cards/material-list-card
 import { CardLayoutComponent } from './components/card-layout/card-layout.component';
 import { CardCarouselComponent } from './components/card-carousel/card-carousel.component';
 import { ToplineAdvertisingComponent } from './components/topline-advertising/topline-advertising.component';
+import { FrontCardComponent } from './components/cards/front-card/front-card.component';
 
 
 
@@ -25,6 +26,7 @@ import { ToplineAdvertisingComponent } from './components/topline-advertising/to
     CardLayoutComponent,
     CardCarouselComponent,
     ToplineAdvertisingComponent,
+    FrontCardComponent,
   ],
   imports: [
     CommonModule
@@ -40,7 +42,8 @@ import { ToplineAdvertisingComponent } from './components/topline-advertising/to
     MaterialListCardComponent,
     CardLayoutComponent,
     CardCarouselComponent,
-    ToplineAdvertisingComponent
+    ToplineAdvertisingComponent,
+    FrontCardComponent
   ]
 })
 export class SharedModule { }
