@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "svg-sprite": "svg-sprite --config src/icons/sprite-config.json src/icons/*.svg"
+    "svg-sprite": "svg-sprite --config src/icons/sprite-config.json src/assets/images/icons/*.svg"
   },
   "private": true,
   "dependencies": {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ResizableCardComponent } from '../resizable-card.component';
 
 @Component({
@@ -7,6 +7,7 @@ import { ResizableCardComponent } from '../resizable-card.component';
   styleUrls: ['./material-card.component.scss']
 })
 export class MaterialCardComponent extends ResizableCardComponent implements OnInit {
+  @Input() cardType: 'default' | 'backgroundImage';
 
   constructor() {
     super();

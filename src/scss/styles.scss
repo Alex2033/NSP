@@ -4,3 +4,67 @@
 @import "theme";
 @import "fonts";
 @import "components";
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+    font-size: 15px;
+    font-family: 'OpenSans', sans-serif;
+    line-height: 1.533333;   
+    color: $text-color;
+    background-color: $light-color;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+
+    &.light {
+        color: $light-color;
+    }
+}
+
+h1 {
+    font-size: 30px;
+    line-height: 1.3333;
+}
+
+h2 {
+    font-size: 26px;
+    line-height: 1.3846;
+}
+
+h3 {
+    font-size: 22px;
+    line-height: 1.4545;
+}
+
+h4 {
+    font-size: 17px;
+    line-height: 1.5882;
+}
+
+h5 {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+p {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+

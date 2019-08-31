@@ -1,7 +1,74 @@
-<p>material-card works!</p>
-<ng-container [ngSwitch]="size">
-  <ng-container *ngSwitchCase="'small'"></ng-container>
-  <ng-container *ngSwitchCase="'medium-horizontal'"></ng-container>
-  <ng-container *ngSwitchCase="'medium-vertical'"></ng-container>
-  <ng-container *ngSwitchCase="'large'"></ng-container>
+<ng-container [ngSwitch]="cardType">
+  <ng-container *ngSwitchCase="'default'">
+    <ng-container [ngSwitch]="size">
+      <ng-container *ngSwitchCase="'small'">
+        <a href="#" class="card-wrapper default">
+          <div class="card-top">
+            <div class="date">Сегодня в 16:45</div>
+            <div class="tag">
+              <div class="emoji">&#128540;</div>
+              <span>Первая полоса</span>
+            </div>
+          </div>
+          <div class="card-img">
+            <div class="image-overlay"></div>
+            <img src="https://picsum.photos/304/152" alt="card image">
+          </div>
+          <div class="card-content">
+            <h5>Долги под апартами</h5>
+            <div class="card-text">
+              <p>«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия</p>
+            </div>
+            <footer class="card-footer">
+              <div class="views">
+                <svg class="views-icon">
+                  <use xlink:href="assets/sprites/icons.svg#eye"></use>
+                </svg>
+                <span class="views-number">1 234</span>
+              </div>
+              <div class="category">
+                Коммерческая недвижимость
+              </div>
+            </footer>
+          </div>
+        </a>
+      </ng-container>
+      <ng-container *ngSwitchCase="'medium-horizontal'"></ng-container>
+      <ng-container *ngSwitchCase="'medium-vertical'"></ng-container>
+      <ng-container *ngSwitchCase="'large'"></ng-container>
+    </ng-container>
+  </ng-container>
+  <ng-container *ngSwitchCase="'backgroundImage'">
+    <a href="#" class="card-wrapper backgroundImage">
+      <div class="card-top">
+        <div class="date">Сегодня в 16:45</div>
+        <div class="tag">
+          <div class="emoji">&#128540;</div>
+          <span>Первая полоса</span>
+        </div>
+      </div>
+      <div class="card-content">
+        <h5>Какие советские постройки значимы и важны для Петербурга?</h5>
+        <div class="card-text">
+          <p>Ольга Витальевна Трошева. Руководитель КЦ «Петербургская Недвижимость»</p>
+        </div>
+        <footer class="card-footer light">
+          <div class="views">
+            <svg class="views-icon">
+              <use xlink:href="assets/sprites/icons.svg#eye"></use>
+            </svg>
+            <span class="views-number">1 234</span>
+          </div>
+          <div class="category">
+            Спич
+          </div>
+        </footer>
+      </div>
+      <div class="card-overlay"></div>
+      <div class="image-overlay"></div>
+      <div class="background-img">
+        <img src="https://picsum.photos/304/304" alt="card image">
+      </div>
+    </a>
+  </ng-container>
 </ng-container>

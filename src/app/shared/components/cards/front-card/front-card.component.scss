@@ -1,0 +1,64 @@
+@import "../card-common.scss";
+
+.card-wrapper {
+    padding: 16px;
+
+    &:hover {
+        .card-overlay {
+            background-color: rgba($text-color, 0.8);
+        }
+    }
+}
+
+.card-top {
+    position: static;
+    padding: 0;
+}
+
+.card-overlay {
+    background-color: rgba($text-color, 0.7);
+    
+}
+
+.card-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+    height: 100%;
+}
+
+.card-text {
+    color: $light-color;
+    padding-left: 8px;
+    max-width: 460px;
+    font-weight: 300;
+}
+
+.card-title {
+    position: relative;
+    margin-bottom: 9px;
+
+    h3 {
+        position: relative;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 48px;
+        height: 48px;
+        background-color: $important-color;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 0;
+    }
+}
+
+.views-icon {
+    width: 18px;
+    height: 12px;
+}

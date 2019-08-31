@@ -1,1 +1,194 @@
 // Здесь находятся стили для повторно используемых компонент из макета UI KIT. Hovers
+
+.button {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    background-color: $primary-color;
+    border-radius: 4px;
+    color: $light-color;
+    padding: 12px 23px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.button, .arrow-control, .search-button {
+    cursor: pointer;
+    border: 0;
+    transition: background-color .1s ease;
+    &:hover {
+        background-color: lighten($primary-color, 5%);
+    }
+
+    &:active {
+        background-color: darken($primary-color, 10%);
+    }
+
+    &:focus {
+        outline: 0;
+    }
+
+    &:disabled {
+        opacity: 0.2;
+        cursor: default;
+    }
+}
+
+.arrow-control, .search-button {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    padding: 0;
+
+}
+
+.arrow-controls {
+    display: flex;
+    align-items: center;
+
+    > * {
+        &:not(:last-child) {
+            margin-right: 8px;
+        }
+    }
+}
+
+.arrow-control {
+    background-color: $primary-color;
+    .icon {
+        width: 8px;
+        height: 12px;
+        fill: $light-color;
+    }
+
+    &.light {
+        background-color: transparent;
+        border: 1px solid $border-color;
+
+        .icon {
+            fill: $light-color;        
+        }
+
+        &:hover {
+            background-color: $light-color;
+            
+            .icon {
+                fill: $primary-color;
+            }
+        }
+
+        &:disabled {
+            &:hover {
+                background-color: transparent;
+
+                .icon {
+                    fill: $light-color;
+                }
+            }
+        }
+
+        &:active {
+            background-color: darken($light-color, 10%);
+
+            .icon {
+                fill: $primary-color;
+            }
+        }
+    }
+}
+
+.search-button {
+    background-color: transparent;
+    .icon {
+        width: 16px;
+        height: 16px;
+        fill: $primary-color;
+    }
+
+    &:hover {
+        .icon {
+            fill: $light-color;
+        }
+    }
+}
+
+.views {
+    display: flex;
+    align-items: center;
+}
+
+.views-icon {
+    width: 16px;
+    height: 10px;
+    fill: $gray;
+    margin-right: 8px;
+
+    &.light {
+        fill: $light-color;
+    }
+}
+
+.image-overlay {
+    background: linear-gradient(180deg, rgba(0,0,0,0.7) 0.08%, rgba(0,0,0,0) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.date, .tag {
+    font-size: 13px;
+    line-height: 1.54;
+    color: $light-color;
+}
+
+.date {
+    &.dark {
+        color: $dark-gray;
+    }
+}
+
+.tag {
+    border: 1px solid $border-color;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px 14px;
+}
+
+.emoji {
+    margin-right: 8px;
+}
+
+.close {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5;
+    background-color: $text-color;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    padding: 0;
+
+    svg {
+        width: 8px;
+        height: 8px;
+        fill: $light-color;
+    }
+
+    &:focus {
+        outline: 0;
+        background-color: #000;
+    }
+}
+

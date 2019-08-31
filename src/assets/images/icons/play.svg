@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 53.1 (72631) - https://sketchapp.com -->
+    <title>CFB2443F-A3CE-447E-B671-72446AB38488</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="UI-KIT.-Icons" transform="translate(-320.000000, -834.000000)">
+            <g id="graphic" transform="translate(112.000000, 580.000000)">
+                <path d="M240,254 C222.349474,254 208,268.349474 208,286 C208,303.650526 222.349474,318 240,318 C257.650526,318 272,303.650526 272,286 C272,268.349474 257.650526,254 240,254 Z M250.307368,287.616842 L235.216842,297.654737 C233.936842,298.530526 232.185263,297.587368 232.185263,296.037895 L232.185263,275.962105 C232.185263,274.412632 233.936842,273.469474 235.216842,274.345263 L250.307368,284.383158 C251.452632,285.124211 251.452632,286.875789 250.307368,287.616842 Z" id="play"></path>
+            </g>
+        </g>
+    </g>
+</svg>

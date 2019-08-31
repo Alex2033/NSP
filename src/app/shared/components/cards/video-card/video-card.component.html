@@ -1,7 +1,34 @@
-<p>video-card works!</p>
-<ng-container [ngSwitch]="size">
-  <ng-container *ngSwitchCase="'small'"></ng-container>
-  <ng-container *ngSwitchCase="'medium-horizontal'"></ng-container>
-  <ng-container *ngSwitchCase="'medium-vertical'"></ng-container>
-  <ng-container *ngSwitchCase="'large'"></ng-container>
-</ng-container>
+<div class="card-wrapper">
+    <div class="card-content">
+        <div class="card-top">
+            <div class="date">Сегодня в 16:45</div>
+            <div class="tag">
+            <div class="emoji">&#128540;</div>
+            <span>Первая полоса</span>
+            </div>
+        </div>
+        <div class="card-text">
+            <h5 class="light">Аренда вне закона</h5>
+        </div>
+        <footer class="card-footer light">
+            <div class="views">
+                <svg class="views-icon">
+                    <use xlink:href="assets/sprites/icons.svg#eye"></use>
+                </svg>
+                <span class="views-number">234</span>
+            </div>
+            <div class="category">
+                Коммерческая недвижимость
+            </div>
+        </footer>
+    </div>
+    <button class="play">
+        <svg>
+            <use xlink:href="assets/sprites/icons.svg#play"></use>
+        </svg>
+    </button>
+    <div class="image-overlay"></div>
+    <div class="background-img">
+        <img src="https://picsum.photos/616/304" alt="video overlay">
+    </div>
+</div>

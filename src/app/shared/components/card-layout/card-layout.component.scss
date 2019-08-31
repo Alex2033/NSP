@@ -1,0 +1,30 @@
+@import "theme";
+@import "variables/bootstrap";
+
+.card-layout {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: calc(#{$grid-gutter-width} / 4); 
+    grid-auto-rows: 304px;
+
+    app-front-card, app-video-card {
+        grid-column: span 2;
+    }
+
+    app-latest-news-card {
+        grid-row: span 3;
+    }
+}
+
+.medium-horizontal {
+    grid-column: span 2;
+}
+
+.medium-vertical {
+    grid-row: span 2;
+}
+
+.large {
+    grid-column: span 2;
+    grid-row: span 2;
+}

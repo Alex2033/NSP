@@ -1,0 +1,48 @@
+@import "theme";
+
+.news-wrapper {
+    padding: 24px 8px 24px 0;
+}
+
+.date {
+    margin-bottom: 8px;
+}
+
+.news-feed {
+    > * {
+        &:not(:last-child) {
+            margin-bottom: 24px;
+        }
+    }
+}
+
+.news-item {
+
+    a {
+        display: block;
+
+        &:hover {
+            text-decoration: none;
+    
+            .news-text {
+                color: $primary-color;
+            }
+        }
+    }
+
+    
+
+    &.important {
+        font-weight: 600;
+
+        .date {
+            color: $important-color;
+        }
+    }
+    
+}
+
+.news-text {
+    color: $text-color;
+    transition: color .1s ease;
+}

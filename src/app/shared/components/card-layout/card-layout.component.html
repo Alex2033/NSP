@@ -1,3 +1,14 @@
-<p>card-layout works!</p>
-<app-material-card [size]="'medium-horizontal'"></app-material-card>
+<div class="card-layout">
+    <app-front-card></app-front-card>
+    <app-material-card [size]="'small'" [cardType]="'default'"></app-material-card>
+    <app-material-list-card [size]="'small'"></app-material-list-card>
+    <app-latest-news-card></app-latest-news-card>
+    <app-material-card [size]="'small'" [cardType]="'default'"></app-material-card>
+    <app-material-card [size]="'small'" [cardType]="'default'"></app-material-card>
+    <app-advertising-card [size]="'small'"></app-advertising-card>
+    <app-video-card></app-video-card>
+    <app-material-list-card class="medium-vertical" [size]="'medium-vertical'"></app-material-list-card>
+    <app-material-card [size]="'small'" [cardType]="'default'"></app-material-card>
+    <app-material-card [size]="'small'" [cardType]="'backgroundImage'"></app-material-card>
+</div>
 <!--Просто пример вызова карточки с заданным размером-->
