@@ -30,6 +30,7 @@
             flex-direction: column;
         }
     }
+
 }
 
 .swiper-container {
@@ -98,4 +99,8 @@ h6 {
         height: 254px;
         fill: $light-gray;
     }
+}
+
+.columns {
+    column-count: 2;
 }
