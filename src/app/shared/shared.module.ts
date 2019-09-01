@@ -11,8 +11,8 @@ import { CardLayoutComponent } from './components/card-layout/card-layout.compon
 import { CardCarouselComponent } from './components/card-carousel/card-carousel.component';
 import { ToplineAdvertisingComponent } from './components/topline-advertising/topline-advertising.component';
 import { FrontCardComponent } from './components/cards/front-card/front-card.component';
-
-
+import { SwiperModule } from 'ngx-swiper-wrapper';
+import { ClickOutsideDirective } from './directives/click-outside.directive';
 
 @NgModule({
   declarations: [
@@ -27,9 +27,11 @@ import { FrontCardComponent } from './components/cards/front-card/front-card.com
     CardCarouselComponent,
     ToplineAdvertisingComponent,
     FrontCardComponent,
+    ClickOutsideDirective,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SwiperModule
   ],
   exports: [
     CommonModule,
@@ -43,7 +45,8 @@ import { FrontCardComponent } from './components/cards/front-card/front-card.com
     CardLayoutComponent,
     CardCarouselComponent,
     ToplineAdvertisingComponent,
+    ClickOutsideDirective,
     FrontCardComponent
-  ]
+  ],
 })
 export class SharedModule { }

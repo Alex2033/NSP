@@ -1,0 +1,111 @@
+@import "theme";
+
+.footer {
+    background-color: $light-gray;
+}
+
+// Верхняя панель
+.footer-top {
+    padding: 48px 0 58px;
+    border-bottom: 1px solid $border-color;
+    position: relative;
+}
+
+.footer-logo-bg {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    svg {
+        width: 359px;
+        height: 90px;
+    }
+}
+
+.logo {
+    margin-bottom: 54px;
+}
+
+.certificate {
+    font-size: 14px;
+    line-height: 1.57;
+}
+
+.footer-title {
+    color: $dark-gray;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+.footer-links {
+    column-count: 2;
+    a {
+        display: inline-block;
+        color: $text-color;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        margin-bottom: 32px;
+        transition: color .1s ease;
+
+        &:hover {
+            color: $primary-color;
+            text-decoration: none;
+        }
+    }
+}
+
+.footer-item {
+    display: flex;
+    flex-direction: column;
+
+    &.content-center {
+        align-items: center;
+    }
+
+    &.content-end {
+        align-items: flex-end;
+        text-align: right;
+    }
+}
+
+.footer-content {
+    max-width: 310px;
+    width: 100%;
+}
+
+.logo-text {
+    font-weight: 400;
+    font-size: 14px;
+    color: $dark-gray;
+}
+
+.socials {
+    > * {
+        :not(:last-child) {
+            margin-right: 8px;
+        }
+    }
+}
+
+// Нижняя панель
+.footer-bottom {
+    padding: 32px 0 40px;
+
+    .footer-item {
+        font-size: 13px;
+        line-height: 1.69;
+    }
+
+    .content-center {
+        .footer-bottom-text {
+            max-width: 350px;
+        }
+    }
+
+}
+
+.copyright-text {
+    margin-bottom: 16px;
+    font-weight: 600;
+}

@@ -192,3 +192,94 @@
     }
 }
 
+.swiper-button-next, .swiper-button-prev {
+    background-image: none;
+    position: static;
+    margin-top: 0;
+}
+
+.socials {
+    display: flex;
+    flex-wrap: wrap;
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 48px;
+        height: 48px;
+        width: 48px;
+        transition: background-color .1s ease;
+
+        &:hover {
+            svg {
+                fill: $light-color;
+            }
+        }
+    }
+
+    svg {
+        width: 18px;
+        height: 18px;
+        fill: $gray;
+    }
+
+    &.light {
+        a {
+            background-color: $light-color;
+        }
+    }
+}
+
+.vk {
+    &:hover {
+        background-color: #4A76A8 !important;
+    }
+}
+
+.facebook {
+    &:hover {
+        background-color: #3A5998 !important;
+    }
+}
+
+.telegram {
+    &:hover {
+        background-color: #1F9BDB !important;
+    }
+}
+
+.twitter {
+    &:hover {
+        background-color: #42ABE1 !important;
+    }
+}
+
+.instagram {
+    &:hover {
+        background-color: #B9189E !important;
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    > * {
+        &:not(:last-child) {
+            margin-right: 25px;
+        }
+    }
+
+    img {
+        width: 67px;
+        height: 39px;
+    }
+}
+
+.logo-text {
+    font-size: 13px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    line-height: 1.54;
+}

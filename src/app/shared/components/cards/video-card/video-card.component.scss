@@ -1,5 +1,9 @@
 @import "../card-common.scss";
 
+:host {
+    display: block;
+}
+
 .card-wrapper {
     padding: 16px;
 }

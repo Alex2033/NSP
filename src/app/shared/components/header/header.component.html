@@ -1,1 +1,148 @@
-<p>header works!</p>
+<header class="header">
+    <div class="header-top">
+        <div class="logo">
+            <img src="assets/images/header/logo.svg" alt="logotype">
+            <div class="logo-text">Недвижимость <br> и строительство Петербурга</div>
+        </div>
+        <div class="quote">
+            <blockquote class="quote-text">
+                <p>
+                    «Мы исключили схему, при которой девелоперы могут выкупать сами у себя нужное количество квартир, чтобы достраивать объекты по старым правилам…»
+                </p>
+                <cite class="author">Николай Николаев</cite>
+            </blockquote>
+            <div class="avatar">
+                <img src="https://images.unsplash.com/photo-1543080853-556086153871?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=56&q=80" alt="avatar">
+            </div>
+        </div>
+    </div>
+    <div class="header-menu" [class.fixed]="fixedMenu" #menu>
+        <div class="menu">
+            <nav class="navigation">
+                <ul class="navigation-list">
+                    <li>
+                        <a href="">Новости</a>
+                    </li>
+                    <li>
+                        <a href="">Дороги</a>
+                    </li>
+                    <li>
+                        <a href="">Власть</a>
+                    </li>
+                    <li>
+                        <a href="">Социалка</a>
+                    </li>
+                    <li>
+                        <a href="">Жилые комплексы</a>
+                    </li>
+                    <li>
+                        <a href="">Коммерческая Недвижимость</a>
+                    </li>
+                    <li>
+                        <a href="">Апартаменты</a>
+                    </li>
+                    <li (clickOutside)="dropdownVisible = false">
+                        <button class="dropdown-btn" (click)="dropdownVisible = true">
+                            <span>Еще</span>
+                            <svg [class.rotated]="dropdownVisible">
+                                <use xlink:href="assets/sprites/icons.svg#chevron_down"></use>
+                            </svg>
+                        </button>
+                        <div class="dropdown" [class.visible]="dropdownVisible">
+                            <ul class="dropdown-list">
+                                <li>
+                                    <a href="">Ссыль 1</a>
+                                </li>
+                                <li>
+                                    <a href="">Ссылька 2</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <form class="search" [class.visible]="showSearch">
+                <div class="search-icon">
+                    <svg class="icon">
+                        <use xlink:href="assets/sprites/icons.svg#icon_search"></use>
+                    </svg>
+                </div>
+                <input type="text" placeholder="Что будем искать?">
+                <button class="button">Искать</button>
+                <button class="search-close" type="button" (click)="showSearch = false">
+                    <svg>
+                        <use xlink:href="assets/sprites/icons.svg#close"></use>
+                    </svg>
+                </button>
+            </form>
+            <button class="search-button" (click)="showSearch = true">
+                <svg class="icon">
+                    <use xlink:href="assets/sprites/icons.svg#icon_search"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="header-actions">
+            <div class="header-action">
+                <svg>
+                    <use xlink:href="assets/sprites/icons.svg#calendar"></use>
+                </svg>
+                <time datetime="2019-05-11" class="header-action-text">
+                    11 мая, 20:40, 2019
+                </time>
+            </div>
+            <div class="header-action">
+                <svg>
+                    <use xlink:href="assets/sprites/icons.svg#notification"></use>
+                </svg>
+                <a href="" class="header-action-text">Подписаться</a>
+            </div>
+            <div class="header-action">
+                <svg>
+                    <use xlink:href="assets/sprites/icons.svg#mail"></use>
+                </svg>
+                <a href="" class="header-action-text">Прислать новость</a>
+            </div>
+        </div>
+        <div class="header-socials">
+            <ul class="socials">
+                <li>
+                    <a href="" class="vk" target="_blank">
+                        <svg>
+                            <use xlink:href="assets/sprites/icons.svg#vk"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="facebook" target="_blank">
+                        <svg>
+                            <use xlink:href="assets/sprites/icons.svg#facebook"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="telegram" target="_blank">
+                        <svg>
+                            <use xlink:href="assets/sprites/icons.svg#telegram"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="twitter" target="_blank">
+                        <svg>
+                            <use xlink:href="assets/sprites/icons.svg#twitter"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="instagram" target="_blank">
+                        <svg>
+                            <use xlink:href="assets/sprites/icons.svg#instagram"></use>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>

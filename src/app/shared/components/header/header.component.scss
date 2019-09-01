@@ -1,0 +1,293 @@
+@import "theme";
+
+.header {
+    margin-bottom: 32px;
+}
+
+// Верхняя панель
+.header-top {
+    padding: 7px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $border-color;
+}
+
+.quote {
+    display: flex;
+    align-items: center;
+    > * {
+        &:not(:last-child) {
+            margin-right: 24px;
+        }
+    }
+}
+
+.quote-text {
+    margin: 0;
+    max-width: 654px;
+    text-align: right;
+    font-size: 13px;
+    line-height: 1.54;
+    color: $dark-gray;
+
+    p {
+        display: inline;
+    }
+}
+
+.author {
+    display: inline;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.avatar {
+    width: 56px;
+    height: 56px;
+    flex: 0 0 56px;
+    filter: grayscale(100%);
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+}
+
+// Меню
+.header-menu {
+    padding: 24px 16px 24px 32px;
+    background-color: $light-color;
+
+    &.fixed {
+        position: fixed;
+        z-index: 50;
+        top: 0;
+        left: 0;
+        right: 0;
+        box-shadow: 0 8px 20px 0 rgba(0,0,0,0.12);
+    }
+}
+
+.menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navigation {
+    flex: 1;
+    margin-right: 24px;
+}
+.navigation-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    li {
+        font-family: 'Montserrat';
+        font-weight: 500;
+        position: relative;
+    }
+
+    a {
+        display: inline-block;
+    }
+
+    .dropdown-btn, a {
+        color: $text-color;
+        transition: color .1s ease;
+
+        &:hover {
+            color: $primary-color;
+            text-decoration: none;
+        }
+
+        &:active, &:focus {
+            color: $important-color;
+        }
+    }
+}
+
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    font-weight: 500;
+
+    &:hover {
+        svg {
+            fill: $primary-color;
+        }
+    }
+
+    &:active, &:focus {
+        svg {
+            fill: $important-color;
+        }
+    }
+
+    svg {
+        width: 10px;
+        height: 6px;
+        fill: $text-color;
+        transform-origin: 50% 50%;
+        transition: fill .1s ease;
+
+        &.rotated {
+            transform: rotate(180deg);
+        }
+    }
+    
+    span {
+        margin-right: 6px;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.dropdown {
+    position: absolute;
+    left: 50%;
+    top: calc(100% + 10px);
+    width: 130px;
+    transform: translateX(-50%);
+    padding: 5px;
+    background-color: $border-color;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .15s ease, visibility .15s ease;
+
+    &.visible {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.dropdown-list {
+    a {
+        padding: 5px;
+    }
+}
+
+.search {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $light-color;
+    display: flex;
+    align-items: center;
+    padding-right: 16px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .1s ease, visibility .1s ease;
+
+    &.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    input {
+        flex: 1;
+        padding: 5px;
+        border: 0;
+
+        &:focus {
+            outline: 0;
+        }
+    }
+
+    .button {
+        padding: 8px 16px;
+    }
+
+    > * {
+        &:not(:last-child) {
+            margin-right: 16px;
+        }
+    }
+
+}
+
+.search-icon, .search-close {
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+    line-height: 0;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+.search-icon {
+    svg {
+        width: 16px;
+        height: 16px;
+        fill: $text-color;
+    }
+}
+
+.search-close {
+    width: 16px;
+    height: 16px;
+    svg {
+        fill: $dark-gray;
+        width: 10px;
+        height: 10px;
+    }
+}
+
+// Нижняя панель
+.header-bottom {
+    padding-left: 32px;
+    background-color: $light-gray;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+
+    > * {
+        &:not(:last-child) {
+            margin-right: 60px;
+        }
+    }
+}
+
+.header-action {
+    display: flex;
+    align-items: center;
+    color: $dark-gray;
+
+    > * {
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+
+    svg {
+        width: 18px;
+        height: 18px;
+        fill: $gray;
+    }
+
+    a {
+        color: darken($primary-color, 5%);
+    }
+}
+
+.header-action-text {
+    color: $dark-gray;
+    font-size: 13px;
+}

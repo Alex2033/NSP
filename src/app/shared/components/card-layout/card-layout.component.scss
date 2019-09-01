@@ -6,6 +6,13 @@
     grid-template-columns: repeat(4, 1fr);
     grid-gap: calc(#{$grid-gutter-width} / 4); 
     grid-auto-rows: 304px;
+    min-height: 0;
+    min-width: 0;
+    margin-bottom: 48px;
+
+    > * {
+        min-width: 0;
+    }
 
     app-front-card, app-video-card {
         grid-column: span 2;

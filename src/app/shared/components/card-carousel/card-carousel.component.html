@@ -1,4 +1,47 @@
-<!--Тут должен быть и заголовок (this.header) и ссылка на все материалы по теме и стрелки-->
-<!--Сама карусель будет состоять из material-card размера small-->
-<p>material-carousel works!</p>
-<h2>{{ header }}</h2>
+<div class="carousel-wrapper">
+    <header class="carousel-header">
+        <div class="carousel-header-text">
+            <h2>{{ header }}</h2>
+            <a href="" class="carousel-link">
+                <span>Все материалы темы</span> 
+                <svg>
+                    <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
+                </svg>
+            </a>
+        </div>
+        <div class="arrow-controls">
+            <div class="swiper-button-prev arrow-control">
+                <svg class="icon">
+                    <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
+                </svg>
+            </div>
+            <div class="swiper-button-next arrow-control">
+                <svg class="icon">
+                    <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
+                </svg>
+            </div>
+        </div>
+    </header>
+    <div class="swiper-container" [swiper]="carouselConfig">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <app-material-card [size]="'small'" [cardType]="'default'"></app-material-card>
+            </div>
+            <div class="swiper-slide">
+                <app-material-card [size]="'small'" [cardType]="'backgroundImage'"></app-material-card>
+            </div>
+            <div class="swiper-slide">
+                <app-advertising-card [size]="'small'"></app-advertising-card>
+            </div>
+            <div class="swiper-slide">
+                <app-material-card [size]="'small'" [cardType]="'backgroundImage'"></app-material-card>
+            </div>
+            <div class="swiper-slide">
+                <app-material-card [size]="'small'" [cardType]="'default'"></app-material-card>
+            </div>
+            <div class="swiper-slide">
+                <app-material-card [size]="'small'" [cardType]="'default'"></app-material-card>
+            </div>
+        </div>
+    </div>
+</div>
