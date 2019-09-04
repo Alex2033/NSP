@@ -11,19 +11,19 @@
           <header class="card-header">
             <h5>Знак вопроса</h5>
             <div class="arrow-controls">
-              <div class="swiper-button-prev arrow-control">
+              <div class="arrow-control" (click)="smallMaterial.swiper.slidePrev()">
                 <svg class="icon">
                   <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
                 </svg>
               </div>
-              <div class="swiper-button-next arrow-control">
+              <div class="arrow-control" (click)="smallMaterial.swiper.slideNext()">
                 <svg class="icon">
                   <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
                 </svg>
               </div>
             </div>
           </header>
-          <div class="swiper-container" [swiper]="materialListConfig" [(index)]="index">
+          <div class="swiper-container" [swiper]="materialListConfig" #smallMaterial>
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <a href="" class="card-link">
@@ -51,9 +51,202 @@
           </div>
         </div>
       </ng-container>
-      <ng-container *ngSwitchCase="'medium-horizontal'"></ng-container>
-      <ng-container *ngSwitchCase="'medium-vertical'"></ng-container>
-      <ng-container *ngSwitchCase="'large'"></ng-container>
+      <ng-container *ngSwitchCase="'medium-horizontal'">
+        <div class="card-wrapper">
+          <div class="background-element">
+            <svg>
+              <use xlink:href="assets/sprites/icons.svg#element"></use>
+            </svg>
+          </div>
+          <header class="card-header">
+            <h5>Знак вопроса</h5>
+            <div class="arrow-controls">
+              <div class="arrow-control" (click)="horizontalMaterial.swiper.slidePrev()">
+                <svg class="icon">
+                  <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
+                </svg>
+              </div>
+              <div class="arrow-control" (click)="horizontalMaterial.swiper.slideNext()">
+                <svg class="icon">
+                  <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
+                </svg>
+              </div>
+            </div>
+          </header>
+          <div class="swiper-container" [swiper]="materialListConfig" #horizontalMaterial>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="columns">
+                  <a href="" class="card-link">
+                    <h5>Верховный суд уточнил правила раздела недвижимости при разводе. Панацея ли брачный контракт?</h5>
+                    <div class="card-text">
+                      <p>Надежда Зотова, Александр Рубан, Наталья Юрчис, Дарья Филина, Юлия Комбарова и другие</p>
+                    </div>
+                  </a>
+                  <a href="" class="card-link">
+                    <h5>Как вы себе представляете «школу будущего»? Насколько важен «образовательный фактор» для покупателей жилья?</h5>
+                    <div class="card-text">
+                      <p>Беслан Берсиров, Эдуард Тиктинский, Елена Коваленко и другие</p>
+                    </div>
+                  </a>
+                </div>
+                <footer class="card-footer">
+                  1 - 3
+                </footer>
+              </div>
+              <div class="swiper-slide">
+                <div class="columns">
+                  <a href="" class="card-link">
+                    <h5>Верховный суд уточнил правила раздела недвижимости при разводе. Панацея ли брачный контракт?</h5>
+                    <div class="card-text">
+                      <p>Надежда Зотова, Александр Рубан, Наталья Юрчис, Дарья Филина, Юлия Комбарова и другие</p>
+                    </div>
+                  </a>
+                  <a href="" class="card-link">
+                    <h5>Как вы себе представляете «школу будущего»? Насколько важен «образовательный фактор» для покупателей жилья?</h5>
+                    <div class="card-text">
+                      <p>Беслан Берсиров, Эдуард Тиктинский, Елена Коваленко и другие</p>
+                    </div>
+                  </a>
+                </div>
+                <footer class="card-footer">
+                  1 - 3
+                </footer>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngSwitchCase="'medium-vertical'">
+        <div class="card-wrapper vertical">
+          <div class="background-element">
+            <svg>
+              <use xlink:href="assets/sprites/icons.svg#element"></use>
+            </svg>
+          </div>
+          <header class="card-header">
+            <h5>Знак вопроса</h5>
+            <div class="arrow-controls">
+              <div class="arrow-control" (click)="verticalMaterial.swiper.slidePrev()">
+                <svg class="icon">
+                  <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
+                </svg>
+              </div>
+              <div class="arrow-control" (click)="verticalMaterial.swiper.slideNext()">
+                <svg class="icon">
+                  <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
+                </svg>
+              </div>
+            </div>
+          </header>
+          <div class="swiper-container" [swiper]="materialListConfig" #verticalMaterial>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <a href="" class="card-link">
+                  <h5>Верховный суд уточнил правила раздела недвижимости при разводе. Панацея ли брачный контракт?</h5>
+                  <div class="card-text">
+                    <p>Надежда Зотова, Александр Рубан, Наталья Юрчис, Дарья Филина, Юлия Комбарова и другие</p>
+                  </div>
+                </a>
+                <a href="" class="card-link">
+                  <h5>Верховный суд уточнил правила раздела недвижимости при разводе. Панацея ли брачный контракт?</h5>
+                  <div class="card-text">
+                    <p>Надежда Зотова, Александр Рубан, Наталья Юрчис, Дарья Филина, Юлия Комбарова и другие</p>
+                  </div>
+                </a>
+                <footer class="card-footer">
+                  1 - 3
+                </footer>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngSwitchCase="'large'">
+        <div class="card-wrapper large">
+          <header class="card-header">
+            <h5>А это вы читали?</h5>
+            <div class="arrow-controls">
+              <div class="arrow-control" (click)="largeMaterial.swiper.slidePrev()">
+                <svg class="icon">
+                  <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
+                </svg>
+              </div>
+              <div class="arrow-control" (click)="largeMaterial.swiper.slideNext()">
+                <svg class="icon">
+                  <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
+                </svg>
+              </div>
+            </div>
+          </header>
+          <div class="swiper-container" [swiper]="materialListConfig" #largeMaterial>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="columns">
+                  <a href="" class="card-link">
+                    <h5>Верховный суд уточнил правила раздела недвижимости при разводе. Панацея ли брачный контракт?</h5>
+                    <div class="card-text">
+                      <p>Надежда Зотова, Александр Рубан, Наталья Юрчис, Дарья Филина, Юлия Комбарова и другие</p>
+                    </div>
+                  </a>
+                  <a href="" class="card-link">
+                    <h5>Как вы себе представляете «школу будущего»? Насколько важен «образовательный фактор» для покупателей жилья?</h5>
+                    <div class="card-text">
+                      <p>Беслан Берсиров, Эдуард Тиктинский, Елена Коваленко, Алексей Князев, Владимир Трекин и другие</p>
+                    </div>
+                  </a>
+                  <a href="" class="card-link">
+                    <h5>Верховный суд уточнил правила раздела недвижимости при разводе. Панацея ли брачный контракт?</h5>
+                    <div class="card-text">
+                      <p>Надежда Зотова, Александр Рубан, Наталья Юрчис, Дарья Филина, Юлия Комбарова и другие</p>
+                    </div>
+                  </a>
+                  <a href="" class="card-link">
+                    <h5>Как вы себе представляете «школу будущего»? Насколько важен «образовательный фактор» для покупателей жилья?</h5>
+                    <div class="card-text">
+                      <p>Беслан Берсиров, Эдуард Тиктинский, Елена Коваленко, Алексей Князев, Владимир Трекин и другие</p>
+                    </div>
+                  </a>
+                </div>
+                <footer class="card-footer">
+                  1 - 3
+                </footer>
+              </div>
+              <div class="swiper-slide">
+                <div class="columns">
+                  <a href="" class="card-link">
+                    <h5>Верховный суд уточнил правила раздела недвижимости при разводе. Панацея ли брачный контракт?</h5>
+                    <div class="card-text">
+                      <p>Надежда Зотова, Александр Рубан, Наталья Юрчис, Дарья Филина, Юлия Комбарова и другие</p>
+                    </div>
+                  </a>
+                  <a href="" class="card-link">
+                    <h5>Как вы себе представляете «школу будущего»? Насколько важен «образовательный фактор» для покупателей жилья?</h5>
+                    <div class="card-text">
+                      <p>Беслан Берсиров, Эдуард Тиктинский, Елена Коваленко, Алексей Князев, Владимир Трекин и другие</p>
+                    </div>
+                  </a>
+                  <a href="" class="card-link">
+                    <h5>Верховный суд уточнил правила раздела недвижимости при разводе. Панацея ли брачный контракт?</h5>
+                    <div class="card-text">
+                      <p>Надежда Зотова, Александр Рубан, Наталья Юрчис, Дарья Филина, Юлия Комбарова и другие</p>
+                    </div>
+                  </a>
+                  <a href="" class="card-link">
+                    <h5>Как вы себе представляете «школу будущего»? Насколько важен «образовательный фактор» для покупателей жилья?</h5>
+                    <div class="card-text">
+                      <p>Беслан Берсиров, Эдуард Тиктинский, Елена Коваленко, Алексей Князев, Владимир Трекин и другие</p>
+                    </div>
+                  </a>
+                </div>
+                <footer class="card-footer">
+                  1 - 3
+                </footer>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
     </ng-container>
   </ng-container>
   <ng-container *ngSwitchCase="'readBlock'">
@@ -63,19 +256,19 @@
           <header class="card-header">
             <h5>А это вы читали?</h5>
             <div class="arrow-controls">
-              <div class="swiper-button-prev arrow-control">
+              <div class="arrow-control" (click)="smallReadBlock.swiper.slidePrev()">
                 <svg class="icon">
                   <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
                 </svg>
               </div>
-              <div class="swiper-button-next arrow-control">
+              <div class="arrow-control" (click)="smallReadBlock.swiper.slideNext()">
                 <svg class="icon">
                   <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
                 </svg>
               </div>
             </div>
           </header>
-          <div class="swiper-container" [swiper]="materialListConfig" [(index)]="index">
+          <div class="swiper-container" [swiper]="materialListConfig" #smallReadBlock>
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <a href="" class="card-link">
@@ -97,19 +290,19 @@
           <header class="card-header">
             <h5>А это вы читали?</h5>
             <div class="arrow-controls">
-              <div class="swiper-button-prev arrow-control">
+              <div class="arrow-control" (click)="horizontalReadBlock.swiper.slidePrev()">
                 <svg class="icon">
                   <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
                 </svg>
               </div>
-              <div class="swiper-button-next arrow-control">
+              <div class="arrow-control" (click)="horizontalReadBlock.swiper.slideNext()">
                 <svg class="icon">
                   <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
                 </svg>
               </div>
             </div>
           </header>
-          <div class="swiper-container" [swiper]="materialListConfig" [(index)]="index">
+          <div class="swiper-container" [swiper]="materialListConfig" #horizontalReadBlock>
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <div class="columns">
@@ -158,19 +351,19 @@
           <header class="card-header">
             <h5>А это вы читали?</h5>
             <div class="arrow-controls">
-              <div class="swiper-button-prev arrow-control">
+              <div class="arrow-control" (click)="verticalReadBlock.swiper.slidePrev()">
                 <svg class="icon">
                   <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
                 </svg>
               </div>
-              <div class="swiper-button-next arrow-control">
+              <div class="arrow-control" (click)="verticalReadBlock.swiper.slideNext()">
                 <svg class="icon">
                   <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
                 </svg>
               </div>
             </div>
           </header>
-          <div class="swiper-container" [swiper]="materialListConfig" [(index)]="index">
+          <div class="swiper-container" [swiper]="materialListConfig" #verticalReadBlock>
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <a href="" class="card-link">
@@ -221,19 +414,19 @@
           <header class="card-header">
             <h5>А это вы читали?</h5>
             <div class="arrow-controls">
-              <div class="swiper-button-prev arrow-control">
+              <div class="arrow-control" (click)="largeReadBlock.swiper.slidePrev()">
                 <svg class="icon">
                   <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
                 </svg>
               </div>
-              <div class="swiper-button-next arrow-control">
+              <div class="arrow-control" (click)="largeReadBlock.swiper.slideNext()">
                 <svg class="icon">
                   <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
                 </svg>
               </div>
             </div>
           </header>
-          <div class="swiper-container" [swiper]="materialListConfig" [(index)]="index">
+          <div class="swiper-container" [swiper]="materialListConfig" #largeReadBlock>
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <div class="columns">

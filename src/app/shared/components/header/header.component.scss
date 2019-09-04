@@ -99,7 +99,7 @@
 
     .dropdown-btn, a {
         color: $text-color;
-        transition: color .1s ease;
+        transition: color .2s ease;
 
         &:hover {
             color: $primary-color;
@@ -137,7 +137,7 @@
         height: 6px;
         fill: $text-color;
         transform-origin: 50% 50%;
-        transition: fill .1s ease;
+        transition: fill .2s ease;
 
         &.rotated {
             transform: rotate(180deg);
@@ -163,7 +163,7 @@
     background-color: $border-color;
     opacity: 0;
     visibility: hidden;
-    transition: opacity .15s ease, visibility .15s ease;
+    transition: opacity .2s ease, visibility .2s ease;
 
     &.visible {
         visibility: visible;
@@ -188,7 +188,7 @@
     padding-right: 16px;
     opacity: 0;
     visibility: hidden;
-    transition: opacity .1s ease, visibility .1s ease;
+    transition: opacity .2s ease, visibility .2s ease;
 
     &.visible {
         opacity: 1;

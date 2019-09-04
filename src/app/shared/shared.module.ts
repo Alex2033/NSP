@@ -11,8 +11,15 @@ import { CardLayoutComponent } from './components/card-layout/card-layout.compon
 import { CardCarouselComponent } from './components/card-carousel/card-carousel.component';
 import { ToplineAdvertisingComponent } from './components/topline-advertising/topline-advertising.component';
 import { FrontCardComponent } from './components/cards/front-card/front-card.component';
-import { SwiperModule } from 'ngx-swiper-wrapper';
 import { ClickOutsideDirective } from './directives/click-outside.directive';
+import { SwiperModule } from 'ngx-swiper-wrapper';
+import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
+import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+ 
+const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
+  direction: 'horizontal',
+  loop: true,
+};
 
 @NgModule({
   declarations: [
@@ -48,5 +55,11 @@ import { ClickOutsideDirective } from './directives/click-outside.directive';
     ClickOutsideDirective,
     FrontCardComponent
   ],
+  providers: [
+    {
+      provide: SWIPER_CONFIG,
+      useValue: DEFAULT_SWIPER_CONFIG
+    }
+  ]
 })
 export class SharedModule { }

@@ -14,7 +14,7 @@
 .button, .arrow-control, .search-button {
     cursor: pointer;
     border: 0;
-    transition: background-color .1s ease;
+    transition: background-color .2s ease;
     &:hover {
         background-color: lighten($primary-color, 5%);
     }
@@ -192,12 +192,6 @@
     }
 }
 
-.swiper-button-next, .swiper-button-prev {
-    background-image: none;
-    position: static;
-    margin-top: 0;
-}
-
 .socials {
     display: flex;
     flex-wrap: wrap;
@@ -209,7 +203,7 @@
         flex: 0 0 48px;
         height: 48px;
         width: 48px;
-        transition: background-color .1s ease;
+        transition: background-color .2s ease;
 
         &:hover {
             svg {

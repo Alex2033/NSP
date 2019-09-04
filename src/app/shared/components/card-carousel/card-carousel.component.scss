@@ -29,7 +29,7 @@
     font-weight: 700;
     color: darken($primary-color, 5%);
     line-height: 2;
-    transition: opacity .1s ease;
+    transition: opacity .2s ease;
 
     > * {
         &:not(:last-child) {

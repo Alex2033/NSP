@@ -9,10 +9,7 @@ import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 export class CardCarouselComponent implements OnInit {
   @Input() header: string;
   carouselConfig: SwiperConfigInterface = {
-    direction: 'horizontal',
     slidesPerView: 4,
-    navigation: true,
-    loop: true,
     spaceBetween: 8
   };
   constructor() { }
