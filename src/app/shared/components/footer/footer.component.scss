@@ -82,7 +82,7 @@
 
 .socials {
     > * {
-        :not(:last-child) {
+        &:not(:last-child) {
             margin-right: 8px;
         }
     }
