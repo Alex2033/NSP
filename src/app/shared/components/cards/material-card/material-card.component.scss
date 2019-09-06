@@ -56,6 +56,44 @@ h5 {
         }
     }
 
+    &.extended {
+        .date {
+            color: $dark-gray;
+        }
+        .card-footer {
+            margin-top: 22px;
+        }
+    }
+
+    &.horizontal {
+        flex-direction: row;
+
+        .card-content {
+            padding: 16px 24px 12px;
+        }
+
+        .card-img {
+            flex: 0 0 50%;
+            height: 100%;
+        }
+    }
+
+    &.vertical {
+        .card-content {
+            padding-top: 16px;
+        }
+
+        .card-img {
+            height: 304px;
+        }
+    }
+
+    &.large {
+        .card-img {
+            height: 304px;
+        }
+    }
+
     
 }
 
@@ -92,4 +130,8 @@ h5 {
 
 .card-footer {
     margin-top: auto;
+}
+
+.card-top.static {
+    margin-bottom: auto;
 }
