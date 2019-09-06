@@ -1,13 +1,13 @@
 <div class="card-layout">
     <app-front-card></app-front-card>
     <app-material-card [size]="'small'" [cardType]="'default'"></app-material-card>
-    <app-material-list-card [size]="'small'" [cardType]="'default'" ></app-material-list-card>
-    <app-latest-news-card></app-latest-news-card>
+    <app-material-list-card style="grid-column: 4;" [size]="'small'" [cardType]="'default'" ></app-material-list-card>
+    <app-latest-news-card style="grid-row: 2 / span 3;"></app-latest-news-card>
     <app-material-card [size]="'small'" [cardType]="'default'"></app-material-card>
     <app-material-card [size]="'small'" [cardType]="'default'"></app-material-card>
     <app-advertising-card [size]="'small'"></app-advertising-card>
-    <app-video-card></app-video-card>
-    <app-material-list-card class="medium-vertical" [size]="'medium-vertical'" [cardType]="'readBlock'" ></app-material-list-card>
+    <app-video-card [size]="'medium-horizontal'"></app-video-card>
+    <app-material-list-card style="grid-column: 4; grid-row-start: 3;" [size]="'medium-vertical'" [cardType]="'readBlock'" ></app-material-list-card>
     <app-material-card [size]="'small'" [cardType]="'default'"></app-material-card>
     <app-material-card [size]="'small'" [cardType]="'backgroundImage'"></app-material-card>
 </div>

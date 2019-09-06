@@ -16,24 +16,20 @@
         height: initial;
     }
 
-    app-front-card, app-video-card {
+    app-front-card {
         grid-column: span 2;
     }
-
-    app-latest-news-card {
-        grid-row: span 3;
-    }
 }
 
-.medium-horizontal {
-    grid-column: span 2;
+[ng-reflect-size="medium-horizontal"] {
+    grid-column-end: span 2;
 }
 
-.medium-vertical {
-    grid-row: span 2;
+[ng-reflect-size="medium-vertical"] {
+    grid-row-end: span 2;
 }
 
-.large {
-    grid-column: span 2;
-    grid-row: span 2;
+[ng-reflect-size="large"] {
+    grid-column-end: span 2;
+    grid-row-end: span 2;
 }
