@@ -10,18 +10,19 @@ export class ToplineAdvertisingComponent implements OnInit {
   @ViewChild('advertising', {static: true}) advertising: ElementRef;
   advertisingHeight;
   name: any;
-  showBanner: boolean;
   displayAdvertising: boolean = false;
+
+  get showBanner(): boolean {
+    return this.bannerService.showBanner;
+  }
 
   constructor(private bannerService: BannerService) { }
 
   ngOnInit() {
     this.advertisingHeight = this.advertising.nativeElement.offsetHeight;
-    this.showBanner = this.bannerService.showBanner;
   }
 
   changeBanner() {
-    this.showBanner = false;
     this.bannerService.showBanner = false;
   }
 
