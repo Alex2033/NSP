@@ -1,9 +1,10 @@
 import { Component, OnInit, HostListener, ViewChild, ElementRef } from '@angular/core';
+import { BannerService } from '../banner-data.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
   @ViewChild('menu', {static: true}) menu : ElementRef;
@@ -11,12 +12,16 @@ export class HeaderComponent implements OnInit {
   showSearch: boolean = false;
   fixedMenu: boolean = false;
   menuPosition;
-  constructor() {}
+
+  get showBanner(): boolean {
+    return this.bannerService.showBanner;
+  }
+
+  constructor(private bannerService: BannerService) {}
 
   ngOnInit() {
     this.menuPosition = this.menu.nativeElement.offsetTop;
   }
-  
 
   @HostListener('window:scroll', ['$event'])
   checkScroll() {

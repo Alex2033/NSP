@@ -69,6 +69,10 @@
         right: 0;
         box-shadow: 0 8px 20px 0 rgba(0,0,0,0.12);
     }
+
+    &.under-banner {
+        top: 74px;
+    }
 }
 
 .menu {

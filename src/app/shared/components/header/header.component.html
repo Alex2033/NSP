@@ -16,7 +16,7 @@
             </div>
         </div>
     </div>
-    <div class="header-menu" [class.fixed]="fixedMenu" #menu (clickOutside)="showSearch = false">
+    <div class="header-menu" [ngClass]="{'fixed': fixedMenu, 'under-banner': showBanner}" #menu (clickOutside)="showSearch = false">
         <div class="menu">
             <nav class="navigation">
                 <ul class="navigation-list">
