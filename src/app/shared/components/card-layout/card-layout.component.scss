@@ -10,6 +10,9 @@
     min-width: 0;
     margin-bottom: 48px;
     grid-auto-flow: dense;
+    max-width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
 
     > * {
         min-width: 0;
