@@ -6,8 +6,8 @@
     <app-material-card [size]="'small'" [cardType]="'default'"></app-material-card>
     <app-material-card [size]="'small'" [cardType]="'default'"></app-material-card>
     <app-advertising-card [size]="'small'"></app-advertising-card>
-    <app-video-card [size]="'medium-horizontal'"></app-video-card>
-    <app-material-list-card style="grid-column: 4; grid-row-start: 3;" [size]="'medium-vertical'" [cardType]="'readBlock'" ></app-material-list-card>
+    <app-video-card [size]="'medium-horizontal'" [ngClass]="{'medium-horizontal': true}"></app-video-card>
+    <app-material-list-card style="grid-column: 4; grid-row-start: 3;" [size]="'medium-vertical'" [cardType]="'readBlock'" [ngClass]="{'medium-vertical': true}"></app-material-list-card>
     <app-material-card [size]="'small'" [cardType]="'default'"></app-material-card>
     <app-material-card [size]="'small'" [cardType]="'backgroundImage'"></app-material-card>
 </div>

@@ -4,7 +4,7 @@
 .card-layout {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: calc(#{$grid-gutter-width} / 4); 
+    grid-gap: calc(#{$grid-gutter-width} / 4);
     grid-auto-rows: 304px;
     min-height: 0;
     min-width: 0;
@@ -21,15 +21,15 @@
     }
 }
 
-[ng-reflect-size="medium-horizontal"] {
+.medium-horizontal {
     grid-column-end: span 2;
 }
 
-[ng-reflect-size="medium-vertical"] {
+.medium-vertical {
     grid-row-end: span 2;
 }
 
-[ng-reflect-size="large"] {
+.large {
     grid-column-end: span 2;
     grid-row-end: span 2;
 }
