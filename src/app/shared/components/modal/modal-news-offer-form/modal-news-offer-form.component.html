@@ -1,0 +1,8 @@
+<p>modal-news-offer-form works!</p>
+<form [formGroup]="formGroup">
+  <app-text [placeholder]="'Тут текст'" [formControlName]="'name'"></app-text>
+  <app-text [placeholder]="'Тут текст'" [formControlName]="'email'"></app-text>
+  <app-textarea [placeholder]="'Тут текст'" [formControlName]="'text'"></app-textarea>
+  <app-checkbox [label]="'Согласен на обработку данных'" [ngModel]="agree"></app-checkbox>
+  <button type="submit">Отправить</button>
+</form>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ResizableCardComponent } from '../resizable-card.component';
+import { ModalService } from '../../../services/modal.service';
 
 @Component({
   selector: 'app-video-card',
@@ -8,7 +9,7 @@ import { ResizableCardComponent } from '../resizable-card.component';
 })
 export class VideoCardComponent extends ResizableCardComponent implements OnInit {
 
-  constructor() {
+  constructor(public modal: ModalService) {
     super();
   }
 

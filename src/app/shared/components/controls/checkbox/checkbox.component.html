@@ -1,0 +1,10 @@
+<label [ngClass]="{'invalid': errorState}">
+  <input type="checkbox" [ngModel]="value" (ngModelChange)="writeValue($event)" [attr.aria-label]="label">
+  <span class="mark">
+    <svg>
+        <use xlink:href="assets/sprites/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="label-text text-14" [innerHtml]="label">
+  </span>
+</label>

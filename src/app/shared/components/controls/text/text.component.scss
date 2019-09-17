@@ -1,0 +1,132 @@
+//@import "theme";
+//@import "mixins/mouse";
+//:host {
+//  display: block;
+//  position: relative;
+//}
+//.title {
+//  margin-bottom: 8px;
+//  color: $black;
+//  font-size: 15px;
+//  line-height: 24px;
+//}
+//.title + .hint {
+//  position: absolute;
+//  top: 0;
+//  right: 0;
+//}
+////.hint {
+////  position: absolute;
+////  top: -31px;
+////  right: 0;
+////  //transform: translate(25%, -25%);
+////
+////  .icon {
+////    background-color: $grey;
+////    width: 18px;
+////    height: 18px;
+////    border-radius: 50%;
+////    position: relative;
+////    transition: background-color 100ms linear;
+////    cursor: pointer;
+////    @include mouse {
+////      &:hover {
+////        background-color: $purple;
+////      }
+////    }
+////    &.focus {
+////      background-color: $purple;
+////    }
+////    svg {
+////      position: absolute;
+////      top: 50%;
+////      left: 50%;
+////      transform: translate(-50%, -50%);
+////      width: 6px;
+////      height: 12px;
+////      fill: #fff;
+////    }
+////  }
+////  .text {
+////    position: absolute;
+////    box-shadow: 0 16px 32px 0 rgba(0,0,0,0.18);
+////    top: 18px;
+////    right: 18px;
+////    width: 380px;
+////    padding: 16px;
+////  }
+////}
+//.wrapper {
+//  &.hide-placeholder {
+//    height: 48px;
+//    padding: 10px 16px;
+//    .placeholder {
+//      &.floating {
+//        display: none;
+//      }
+//    }
+//  }
+//  height: 56px;
+//  border-radius: 4px;
+//  padding: 16px;
+//  transition: background-color 100ms linear, border 100ms linear;
+//  background-color: $light-grey;
+//  border: 1px solid transparent;
+//  @include mouse {
+//    &:not(.active) {
+//      &:hover {
+//        background-color: darken($light-grey, 5%);
+//      }
+//    }
+//  }
+//  &.active {
+//    background-color: #fff;
+//    border: 1px solid #D7DDEA;
+//    &.invalid {
+//      border-color: $red !important;
+//    }
+//    &:focus-within {
+//      border-color: $primary-color;
+//    }
+//  }
+//  .placeholder {
+//    color: $dark-grey;
+//    transition: margin-top 50ms linear, margin-bottom 50ms linear, font-size 50ms linear, line-height 50ms linear;
+//    &:not(.floating) {
+//      font-size: 15px;
+//      line-height: 24px;
+//    }
+//    &.floating {
+//      margin-top: -10px;
+//      font-size: 13px;
+//      line-height: 13px;
+//    }
+//  }
+//  input {
+//    background-color: transparent;
+//    border: 0;
+//    font-size: 15px;
+//    line-height: 24px;
+//    width: 100%;
+//    outline: none;
+//  }
+//  .content {
+//    height: 0;
+//    overflow: hidden;
+//    display: flex;
+//    //align-items: center;
+//    &.visible {
+//      height: auto;
+//    }
+//    .length {
+//      margin-left: 16px;
+//    }
+//  }
+//}
+//app-error-message {
+//  position: absolute;
+//  top: calc(100% + 4px);
+//  color: $red;
+//  font-size: 13px;
+//  line-height: 16px;
+//}

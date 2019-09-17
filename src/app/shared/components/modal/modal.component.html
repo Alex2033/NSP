@@ -1,0 +1,8 @@
+<div class="overlay" [@fadeInOut] *ngIf="current && (!current.parameters || current.parameters['mode'] !== 'standalone')" (click)="current.id !== 'confirm' ? close() : null">
+</div>
+<ng-container *ngIf="current">
+  <app-modal-subscription-form *ngIf="current.id === 'subscription-form'"></app-modal-subscription-form>
+  <app-modal-news-offer-form *ngIf="current.id === 'news-offer-form'"></app-modal-news-offer-form>
+  <app-modal-video *ngIf="current.id === 'video'"></app-modal-video>
+</ng-container>
+

@@ -15,7 +15,12 @@ import { ClickOutsideDirective } from './directives/click-outside.directive';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
- 
+import { TextComponent } from './components/controls/text/text.component';
+import { TextareaComponent } from './components/controls/textarea/textarea.component';
+import { CheckboxComponent } from './components/controls/checkbox/checkbox.component';
+import { ErrorMessageComponent } from './components/controls/shared/error-message/error-message.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
   loop: true,
@@ -35,10 +40,16 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ToplineAdvertisingComponent,
     FrontCardComponent,
     ClickOutsideDirective,
+    TextComponent,
+    TextareaComponent,
+    CheckboxComponent,
+    ErrorMessageComponent
   ],
   imports: [
     CommonModule,
-    SwiperModule
+    SwiperModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
     CommonModule,
@@ -53,7 +64,13 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     CardCarouselComponent,
     ToplineAdvertisingComponent,
     ClickOutsideDirective,
-    FrontCardComponent
+    FrontCardComponent,
+    TextComponent,
+    TextareaComponent,
+    CheckboxComponent,
+    ErrorMessageComponent,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     {

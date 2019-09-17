@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { BannerService } from '../banner-data.service';
+import { ModalService } from '../../services/modal.service';
 
 @Component({
   selector: 'app-header',
@@ -17,7 +18,7 @@ export class HeaderComponent implements OnInit {
     return this.bannerService.showBanner;
   }
 
-  constructor(private bannerService: BannerService) {}
+  constructor(private bannerService: BannerService, public modal: ModalService) {}
 
   ngOnInit() {
     this.menuPosition = this.menu.nativeElement.offsetTop;

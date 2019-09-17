@@ -1,0 +1,6 @@
+<p>modal-subscription-form works!</p>
+<form [formGroup]="formGroup">
+  <app-text [placeholder]="'Тут текст'" [formControlName]="'email'"></app-text>
+  <app-checkbox [label]="'Согласен на обработку данных'" [ngModel]="agree"></app-checkbox>
+  <button type="submit">Отправить</button>
+</form>

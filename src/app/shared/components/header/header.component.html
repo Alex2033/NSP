@@ -96,13 +96,13 @@
                 <svg>
                     <use xlink:href="assets/sprites/icons.svg#notification"></use>
                 </svg>
-                <a href="" class="header-action-text">Подписаться</a>
+                <button (click)="modal.open('subscription-form')" class="header-action-text">Подписаться</button>
             </div>
             <div class="header-action">
                 <svg>
                     <use xlink:href="assets/sprites/icons.svg#mail"></use>
                 </svg>
-                <a href="" class="header-action-text">Прислать новость</a>
+                <button (click)="modal.open('news-offer-form')" class="header-action-text">Прислать новость</button>
             </div>
         </div>
         <div class="header-socials">

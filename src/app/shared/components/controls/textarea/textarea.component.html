@@ -1,0 +1,16 @@
+<div class="title" *ngIf="title">{{ title }}</div>
+<div class="hint" (clickOutside)="showHint = false" *ngIf="hint">
+  <div class="icon" (click)="showHint = true" [ngClass]="{'focus': showHint}">
+    <svg><use xlink:href="assets/sprites/shared.svg#info"></use></svg>
+  </div>
+  <div class="text card text-13" *ngIf="showHint">
+    {{ hint }}
+  </div>
+</div>
+<div class="wrapper" [ngClass]="{'active': shouldLabelFloat, 'invalid': errorState, 'hide-placeholder': !placeholder || hidePlaceholder}" (click)="focus()">
+  <div class="placeholder text-14" [ngClass]="{'floating': shouldLabelFloat}">{{ placeholder }}</div>
+  <div class="content" [ngClass]="{'visible': shouldLabelFloat}">
+    <textarea #input (blur)="focused = false;" [ngModel]="value" [attr.aria-label]="title ? title : placeholder" (ngModelChange)="writeValue($event)" (focus)="focused = true;"></textarea>
+  </div>
+</div>
+<app-error-message *ngIf="errorState" [errors]="this.ngControl.errors" [errorMessages]="errorMessages"></app-error-message>
