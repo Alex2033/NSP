@@ -42,7 +42,7 @@
                         <a href="">Апартаменты</a>
                     </li>
                     <li (clickOutside)="dropdownVisible = false">
-                        <button class="dropdown-btn" (click)="dropdownVisible = true">
+                        <button class="dropdown-btn" (click)="dropdownVisible = !dropdownVisible">
                             <span>Еще</span>
                             <svg [class.rotated]="dropdownVisible">
                                 <use xlink:href="assets/sprites/icons.svg#chevron_down"></use>
@@ -51,10 +51,19 @@
                         <div class="dropdown" [class.visible]="dropdownVisible">
                             <ul class="dropdown-list">
                                 <li>
-                                    <a href="">Ссыль 1</a>
+                                    <a href="">Мероприятия</a>
                                 </li>
                                 <li>
-                                    <a href="">Ссылька 2</a>
+                                    <a href="">Квадратный Петербург</a>
+                                </li>
+                                <li>
+                                    <a href="">Наша газета</a>
+                                  </li>
+                                <li>
+                                    <a href="">Персоны</a>
+                                </li>
+                                <li>
+                                    <a href="">Компании</a>
                                 </li>
                             </ul>
                         </div>

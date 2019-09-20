@@ -1,68 +1,71 @@
-//@import "theme";
-//:host {
-//  display: block;
-//}
-//label {
-//  margin: 0;
-//  position: relative;
-//  cursor: pointer;
-//  user-select: none;
-//  display: flex;
-//  align-items: flex-start;
-//  &.invalid {
-//    .label-text {
-//      color: $red;
-//    }
-//  }
-//}
-//input {
-//  position: absolute;
-//  opacity: 0;
-//  cursor: pointer;
-//  height: 0;
-//  width: 0;
-//}
-//.mark {
-//  position: relative;
-//  display: inline-block;
-//  height: 20px;
-//  width: 20px;
-//  min-width: 20px;
-//  border-radius: 4px;
-//  background-color: $light-grey;
-//  margin-right: 16px;
-//  transition: background-color 100ms linear;
-//}
-//.label-text {
-//  display: inline-block;
-//  transition: color 100ms linear;
-//}
-///* On mouse-over, add a grey background color */
-//label:hover input ~ .mark {
-//  //border-color: $light-grey;
-//  //background-color: $light-grey;
-//}
-//
-///* When the checkbox is checked, add a blue background */
-//label input:checked ~ .mark {
-//  background-color: $green;
-//  //border-color: $grey-border;
-//}
-//label input:checked ~ .label-text {
-//  color: $black;
-//}
-//.mark svg {
-//  position: absolute;
-//  display: none;
-//  fill: #fff;
-//  top: 50%;
-//  left: 50%;
-//  transform: translate(-50%, -50%);
-//  width: 10px;
-//  height: 8px;
-//}
-//
-///* Show the mark when checked */
-//label input:checked ~ .mark svg {
-//  display: block;
-//}
+@import "theme";
+:host {
+  display: block;
+}
+label {
+  margin: 0;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: flex-start;
+  &.invalid {
+    .label-text {
+      color: $important-color;
+    }
+  }
+}
+input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.mark {
+  position: relative;
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  min-width: 24px;
+  border-radius: 4px;
+  background-color: $light-gray;
+  margin-right: 16px;
+}
+.label-text {
+  display: inline-block;
+  transition: color 100ms linear;
+  color: $dark-gray;
+  font-size: 14px;
+  line-height: 22px;
+}
+/* On mouse-over, add a gray background color */
+label:hover input ~ .mark {
+  border-color: $light-gray;
+  background-color: $light-gray;
+}
+
+/* When the checkbox is checked, add a blue background */
+label input:checked ~ .mark {
+  background-color: $secondary-color;
+  border-color: $secondary-color;
+}
+.mark svg {
+  position: absolute;
+  display: none;
+  fill: #373633;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 12px;
+}
+
+/* Show the mark when checked */
+label input:checked ~ .mark svg {
+  display: block;
+}
+
+.underline {
+  border-bottom: 1px solid $border-color;
+}

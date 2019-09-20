@@ -10,7 +10,7 @@
 <div class="wrapper" [ngClass]="{'active': shouldLabelFloat, 'invalid': errorState, 'hide-placeholder': !placeholder || hidePlaceholder}" (click)="focus()">
   <div class="placeholder text-14" [ngClass]="{'floating': shouldLabelFloat}">{{ placeholder }}</div>
   <div class="content" [ngClass]="{'visible': shouldLabelFloat}">
-    <input type="text" #input (blur)="focused = false;" [ngModel]="value" (ngModelChange)="writeValue($event)" (focus)="focused = true;" [maxlength]="maxlength ? maxlength : null" [attr.aria-label]="title ? title : placeholder">
+    <input type="text" class="modal-control" #input (blur)="focused = false;" [ngModel]="value" (ngModelChange)="writeValue($event)" (focus)="focused = true;" [maxlength]="maxlength ? maxlength : null" [attr.aria-label]="title ? title : placeholder">
     <ng-container *ngIf="maxlength">
       <div class="spacer"></div>
       <div class="length text-14">{{ value ? value.length : 0 }}/{{ maxlength }}</div>

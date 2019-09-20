@@ -1,0 +1,18 @@
+:host {
+  max-width: 648px;
+}
+
+.modal-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  app-text {
+    width: calc(50% - 12px);
+  }
+
+  app-textarea {
+    width: 100%;
+  }
+}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-modal-news-offer-form',
@@ -13,9 +13,9 @@ export class ModalNewsOfferFormComponent implements OnInit {
 
   ngOnInit() {
     this.formGroup = this.formBuilder.group({
-      name: [''],
-      email: [''],
-      text: [''],
+      name: ['', [Validators.required]],
+      email: ['', [Validators.required]],
+      text: ['', [Validators.required]],
     });
   }
 

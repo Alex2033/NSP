@@ -8,7 +8,7 @@ import { ModalService } from '../../services/modal.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  @ViewChild('menu', {static: true}) menu : ElementRef;
+  @ViewChild('menu', {static: true}) menu: ElementRef;
   dropdownVisible: boolean = false;
   showSearch: boolean = false;
   fixedMenu: boolean = false;
@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event'])
   checkScroll() {
-    let windowScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    const windowScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     if (windowScroll >= this.menuPosition) {
       this.fixedMenu = true;
     } else if (windowScroll < this.menuPosition) {

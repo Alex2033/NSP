@@ -5,6 +5,8 @@
         <use xlink:href="assets/sprites/icons.svg#checkbox"></use>
     </svg>
   </span>
-  <span class="label-text text-14" [innerHtml]="label">
+  <span class="label-text text-14">
+    {{ label }}
+    <span class="underline">{{ dataProcessingText }}</span>
   </span>
 </label>

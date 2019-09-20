@@ -8,6 +8,7 @@ import { ControlValueAccessor, NgControl } from '@angular/forms';
 })
 export class CheckboxComponent implements OnInit, ControlValueAccessor {
   @Input() label: string;
+  @Input() dataProcessingText: string;
   constructor(
     @Optional() @Self() public ngControl: NgControl
   ) {

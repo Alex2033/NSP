@@ -11,6 +11,7 @@ export class ToplineAdvertisingComponent implements OnInit {
   advertisingHeight;
   name: any;
   displayAdvertising: boolean = false;
+  showActions: boolean = false;
 
   get showBanner(): boolean {
     return this.bannerService.showBanner;
