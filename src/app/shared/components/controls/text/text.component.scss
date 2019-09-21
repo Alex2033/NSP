@@ -82,7 +82,7 @@
   &.active {
     background-color: #fff;
     border: 1px solid #D7DDEA;
-    &.invalid {
+    &.ng-invalid.ng-touched {
       border-color: $important-color !important;
     }
     &:focus-within {
@@ -128,5 +128,5 @@ app-error-message {
   top: calc(100% + 4px);
   color: $important-color;
   font-size: 13px;
-  line-height: 16px;
+  line-height: 20px;
 }

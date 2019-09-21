@@ -1,6 +1,23 @@
-<p>modal-subscription-form works!</p>
-<form [formGroup]="formGroup">
-  <app-text [placeholder]="'Тут текст'" [formControlName]="'email'"></app-text>
-  <app-checkbox [label]="'Согласен на обработку данных'" [ngModel]="agree"></app-checkbox>
-  <button type="submit">Отправить</button>
-</form>
+<div class="modal-content">
+  <button class="close" (click)="close()">
+    <svg>
+      <use xlink:href="assets/sprites/icons.svg#close"></use>
+    </svg>
+  </button>
+  <h3 class="modal-title">Подписка на рассылку NSP</h3>
+  <ul class="modal-list">
+    <li>
+      <span class="modal-list-dot"></span>
+      Присылаем только важное
+    </li>
+    <li>
+      <span class="modal-list-dot"></span>
+      В любой момент можно отписаться
+    </li>
+  </ul>
+  <form [formGroup]="formGroup" class="modal-form">
+    <app-text [placeholder]="'E-mail'" [formControlName]="'email'"></app-text>
+    <app-checkbox [label]="'Согласен на'" [dataProcessingText]="'обработку данных'" [ngModel]="agree"></app-checkbox>
+    <button type="submit" class="button secondary">Отправить</button>
+  </form>
+</div>

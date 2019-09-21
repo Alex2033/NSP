@@ -1,1 +1,18 @@
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4EoUz39nPMM" frameborder="0"  allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div class="video-wrapper">
+  <iframe src="https://www.youtube.com/embed/4EoUz39nPMM" frameborder="0"  allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+  <div class="video-controls">
+    <button class="control-button" (click)="close()">
+      <svg class="icon">
+        <use xlink:href="assets/sprites/icons.svg#close"></use>
+      </svg>
+    </button>
+    <button class="control-button">
+      <svg class="icon">
+        <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
+      </svg>
+    </button>
+  </div>
+</div>
+
+

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import {ModalService} from '../../../services/modal.service';
 
 @Component({
   selector: 'app-modal-video',
@@ -7,9 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ModalVideoComponent implements OnInit {
   @Input() url: string;
-  constructor() { }
+  constructor(private modalService: ModalService) { }
 
   ngOnInit() {
+  }
+
+  close() {
+    this.modalService.close();
   }
 
 }

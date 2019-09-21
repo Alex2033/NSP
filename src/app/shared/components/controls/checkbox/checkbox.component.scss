@@ -29,7 +29,7 @@ input {
   width: 24px;
   min-width: 24px;
   border-radius: 4px;
-  background-color: $light-gray;
+  background-color: $secondary-color;
   margin-right: 16px;
 }
 .label-text {
@@ -42,12 +42,10 @@ input {
 /* On mouse-over, add a gray background color */
 label:hover input ~ .mark {
   border-color: $light-gray;
-  background-color: $light-gray;
 }
 
 /* When the checkbox is checked, add a blue background */
 label input:checked ~ .mark {
-  background-color: $secondary-color;
   border-color: $secondary-color;
 }
 .mark svg {

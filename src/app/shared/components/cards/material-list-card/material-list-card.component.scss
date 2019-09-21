@@ -71,12 +71,7 @@ h5 {
 h6 {
     margin-bottom: 16px;
     color: $text-color;
-    
-}
 
-.arrow-control {
-    width: 24px;
-    height: 24px;
 }
 
 .card-link {
@@ -90,7 +85,7 @@ h6 {
 
     &:hover {
         text-decoration: none;
-        
+
         h5, h6, .card-text {
             color: $primary-color;
         }

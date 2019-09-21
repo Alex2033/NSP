@@ -3,19 +3,19 @@
         <div class="carousel-header-text">
             <h2>{{ header }}</h2>
             <a href="" class="carousel-link">
-                <span>Все материалы темы</span> 
+                <span>Все материалы темы</span>
                 <svg>
                     <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
                 </svg>
             </a>
         </div>
-        <div class="arrow-controls" (click)="cardCarousel.swiper.slidePrev()">
-            <div class="arrow-control">
+        <div class="control-buttons" (click)="cardCarousel.swiper.slidePrev()">
+            <div class="control-button">
                 <svg class="icon">
                     <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
                 </svg>
             </div>
-            <div class="arrow-control" (click)="cardCarousel.swiper.slideNext()">
+            <div class="control-button" (click)="cardCarousel.swiper.slideNext()">
                 <svg class="icon">
                     <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
                 </svg>

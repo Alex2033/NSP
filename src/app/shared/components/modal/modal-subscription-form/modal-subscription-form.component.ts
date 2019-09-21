@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import {ModalService} from '../../../services/modal.service';
 
 @Component({
   selector: 'app-modal-subscription-form',
@@ -9,7 +10,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class ModalSubscriptionFormComponent implements OnInit {
   formGroup: FormGroup;
   agree: false;
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private modalService: ModalService) { }
 
   ngOnInit() {
     this.formGroup = this.formBuilder.group({
@@ -17,4 +18,7 @@ export class ModalSubscriptionFormComponent implements OnInit {
     });
   }
 
+  close() {
+    this.modalService.close();
+  }
 }

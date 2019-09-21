@@ -1,0 +1,45 @@
+@import "theme";
+
+:host {
+  max-width: 392px;
+  width: 100%;
+}
+
+.modal-list {
+  margin-bottom: 40px;
+  li {
+    color: $dark-gray;
+    font-size: 14px;
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.modal-list-dot {
+  border-radius: 50%;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: $primary-color;
+  margin-right: 12px;
+}
+
+.modal-title {
+  margin-bottom: 24px;
+}
+
+.modal-form {
+  app-text {
+    margin-bottom: 32px;
+  }
+
+  app-checkbox {
+    margin-bottom: 16px;
+  }
+
+  .button {
+    width: 100%;
+  }
+}

@@ -9,9 +9,11 @@ import { ModalService } from '../../services/modal.service';
 })
 export class HeaderComponent implements OnInit {
   @ViewChild('menu', {static: true}) menu: ElementRef;
+  @ViewChild('navigationList', {static: true}) navigationList: ElementRef;
   dropdownVisible: boolean = false;
   showSearch: boolean = false;
   fixedMenu: boolean = false;
+  navigationListWidth: number;
   menuPosition;
 
   get showBanner(): boolean {
@@ -22,6 +24,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.menuPosition = this.menu.nativeElement.offsetTop;
+    this.navigationListWidth = this.navigationList.nativeElement.offsetWidth;
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -32,6 +35,10 @@ export class HeaderComponent implements OnInit {
     } else if (windowScroll < this.menuPosition) {
       this.fixedMenu = false;
     }
+  }
+
+  showWidth() {
+    console.log(this.navigationListWidth);
   }
 
 }

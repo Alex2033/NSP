@@ -19,7 +19,7 @@
     <div class="header-menu" [ngClass]="{'fixed': fixedMenu, 'under-banner': showBanner}" #menu (clickOutside)="showSearch = false">
         <div class="menu">
             <nav class="navigation">
-                <ul class="navigation-list">
+                <ul class="navigation-list" #navigationList (click)="showWidth()">
                     <li>
                         <a href="">Новости</a>
                     </li>

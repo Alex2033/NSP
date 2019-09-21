@@ -6,17 +6,22 @@
 
 .card-wrapper {
     padding: 16px;
+    overflow: hidden;
 
     &:hover {
         .card-overlay {
             background-color: rgba($text-color, 0.8);
+        }
+
+        .background-img {
+            transform: scale(1.1);
         }
     }
 }
 
 .card-overlay {
     background-color: rgba($text-color, 0.7);
-    
+
 }
 
 .card-content {
@@ -60,4 +65,8 @@
 .views-icon {
     width: 18px;
     height: 12px;
+}
+
+.background-img {
+  transition: transform .2s ease;
 }
