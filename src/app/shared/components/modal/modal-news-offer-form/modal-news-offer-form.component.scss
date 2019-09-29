@@ -1,5 +1,6 @@
 :host {
-  max-width: 648px;
+  max-width: 656px;
+  width: 100%;
 }
 
 .modal-form {
@@ -15,4 +16,8 @@
   app-textarea {
     width: 100%;
   }
+}
+
+.confirm-content {
+  min-height: 416px;
 }

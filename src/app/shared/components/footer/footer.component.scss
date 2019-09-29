@@ -16,10 +16,12 @@
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
+    opacity: 0.07;
 
     svg {
         width: 359px;
         height: 90px;
+        fill: lighten($primary-color, 5%);
     }
 }
 

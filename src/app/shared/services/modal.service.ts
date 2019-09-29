@@ -7,6 +7,7 @@ import { ModalConfiguration } from '../models/modal-configuration';
 })
 export class ModalService {
   current: Subject<ModalConfiguration | null> = new Subject();
+  showConfirm: boolean = false;
   confirmSubject: Subject<boolean>;
   constructor() { }
   open(id: string, parameters?: Object) {

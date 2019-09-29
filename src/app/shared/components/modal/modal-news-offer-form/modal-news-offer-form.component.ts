@@ -10,14 +10,17 @@ import {ModalService} from '../../../services/modal.service';
 export class ModalNewsOfferFormComponent implements OnInit {
   formGroup: FormGroup;
   agree: false;
+  showConfirm: boolean;
   constructor(private formBuilder: FormBuilder, private modalService: ModalService) { }
 
   ngOnInit() {
+    this.showConfirm = this.modalService.showConfirm;
     this.formGroup = this.formBuilder.group({
       name: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       text: ['', [Validators.required]],
     });
+
   }
 
   close() {

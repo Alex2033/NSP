@@ -229,6 +229,12 @@
         outline: 0;
         background-color: #000;
     }
+
+  &.dark {
+    svg {
+      fill: $dark-gray;
+    }
+  }
 }
 
 .socials {
@@ -324,18 +330,22 @@
   padding: 24px 40px 40px;
   border-left: 8px solid $primary-color;
 
-  .close {
-    top: 14px;
-    right: 14px;
-    width: 20px;
-    height: 20px;
-    background-color: transparent;
+}
 
-    svg {
-      width: 10px;
-      height: 10px;
-      fill: $dark-gray;
-    }
+.modal-close {
+  top: 14px;
+  right: 14px;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+
+  svg {
+    width: 10px;
+    height: 10px;
+  }
+
+  &:focus {
+    background-color: transparent;
   }
 }
 
@@ -347,4 +357,54 @@
 
 .modal-control {
   margin-bottom: 32px;
+}
+
+.confirm-content {
+  background-color: $primary-color;
+  padding: 48px;
+  color: $light-color;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+
+  p {
+    font-size: 17px;
+    line-height: 1.705;
+  }
+
+  .button {
+    flex-grow: 0;
+  }
+
+  .modal-close {
+    svg {
+      fill: $light-color;
+    }
+  }
+}
+
+.confirm-text {
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.confirm-title {
+  margin-bottom: 8px;
+}
+
+.confirm-content-bg {
+  position: absolute;
+  top: 50%;
+  right: 7%;
+  opacity: .05;
+  width: 100%;
+  max-width: 315px;
+  z-index: 0;
+  transform: translateY(-50%);
+
+  svg {
+    fill: $light-color;
+  }
 }

@@ -41,7 +41,28 @@
                     <li>
                         <a href="">Апартаменты</a>
                     </li>
-                    <li (clickOutside)="dropdownVisible = false">
+                    <li>
+                        <a href="">Апартаменты2</a>
+                    </li>
+                    <li>
+                        <a href="">Апартаменты3</a>
+                    </li>
+                    <li>
+                        <a href="">Апартаменты4</a>
+                    </li>
+                    <li>
+                        <a href="">Апартаменты5</a>
+                    </li>
+                    <li>
+                        <a href="">Апартаменты6</a>
+                    </li>
+                    <li>
+                        <a href="">Апартаменты7</a>
+                    </li>
+                    <li>
+                        <a href="">Апартаменты8</a>
+                    </li>
+                    <li (clickOutside)="dropdownVisible = false" [hidden]="!showDropdown">
                         <button class="dropdown-btn" (click)="dropdownVisible = !dropdownVisible">
                             <span>Еще</span>
                             <svg [class.rotated]="dropdownVisible">
@@ -49,7 +70,7 @@
                             </svg>
                         </button>
                         <div class="dropdown" [class.visible]="dropdownVisible">
-                            <ul class="dropdown-list">
+                            <ul class="dropdown-list" #dropdownList>
                                 <li>
                                     <a href="">Мероприятия</a>
                                 </li>

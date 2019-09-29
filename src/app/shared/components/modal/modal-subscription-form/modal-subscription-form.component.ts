@@ -10,9 +10,11 @@ import {ModalService} from '../../../services/modal.service';
 export class ModalSubscriptionFormComponent implements OnInit {
   formGroup: FormGroup;
   agree: false;
+  showConfirm: boolean;
   constructor(private formBuilder: FormBuilder, private modalService: ModalService) { }
 
   ngOnInit() {
+    this.showConfirm = this.modalService.showConfirm;
     this.formGroup = this.formBuilder.group({
       email: [''],
     });

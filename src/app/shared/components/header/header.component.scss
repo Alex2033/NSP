@@ -86,13 +86,16 @@
 .navigation {
     flex: 1;
     margin-right: 24px;
+    max-width: 100%;
 }
 .navigation-list {
     display: flex;
+    max-width: 100%;
     align-items: center;
     justify-content: space-between;
 
     > li {
+        flex-shrink: 0;
         padding: 24px;
         font-family: 'Montserrat';
         font-weight: 500;
