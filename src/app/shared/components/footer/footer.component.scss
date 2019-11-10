@@ -6,27 +6,13 @@
 
 // Верхняя панель
 .footer-top {
-    padding: 48px 0 58px;
+    padding: 40px 0 41px;
     border-bottom: 1px solid $border-color;
     position: relative;
 }
 
-.footer-logo-bg {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0.07;
-
-    svg {
-        width: 359px;
-        height: 90px;
-        fill: lighten($primary-color, 5%);
-    }
-}
-
 .logo {
-    margin-bottom: 54px;
+    margin-bottom: 40px;
 }
 
 .certificate {
@@ -76,13 +62,9 @@
     width: 100%;
 }
 
-.logo-text {
-    font-weight: 400;
-    font-size: 14px;
-    color: $dark-gray;
-}
-
 .socials {
+    margin-bottom: auto;
+    margin-top: auto;
     > * {
         &:not(:last-child) {
             margin-right: 8px;
@@ -92,7 +74,7 @@
 
 // Нижняя панель
 .footer-bottom {
-    padding: 32px 0 40px;
+    padding: 24px 0 32px;
 
     .footer-item {
         font-size: 13px;
@@ -110,4 +92,10 @@
 .copyright-text {
     margin-bottom: 16px;
     font-weight: 600;
+}
+
+.footer-age {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.385;
+    font-size: 26px;
 }

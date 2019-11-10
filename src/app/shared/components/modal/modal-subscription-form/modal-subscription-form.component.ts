@@ -20,6 +20,14 @@ export class ModalSubscriptionFormComponent implements OnInit {
     });
   }
 
+  submit() {
+    if(!this.formGroup.valid) {
+      return;
+    } else {
+      this.showConfirm = true;
+    }
+  }
+
   close() {
     this.modalService.close();
   }

@@ -1,13 +1,13 @@
-<div class="advertising" #advertising [hidden]="!displayAdvertising || !showBanner">
+<div class="top-line-advertising" #advertising [hidden]="!displayAdvertising || !showBanner">
   <a href="" *ngIf="showActions === false">
-      <img src="https://picsum.photos/1600/74" alt="advertising image">
+      <img src="https://picsum.photos/id/1047/1600/74" alt="advertising image">
   </a>
   <button class="close" (click)="showActions = true" *ngIf="showActions === false">
       <svg>
           <use xlink:href="assets/sprites/icons.svg#close"></use>
       </svg>
   </button>
-  <div class="advertising-actions" [hidden]="showActions === false">
+  <div class="top-line-advertising-actions" [hidden]="showActions === false">
     <button class="button light" (click)="changeBanner()">Уже купил</button>
     <button class="button light" (click)="changeBanner()">Не интересна реклама по этой теме</button>
     <button class="button light" (click)="changeBanner()">Реклама раздражает</button>
