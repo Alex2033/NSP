@@ -5,6 +5,28 @@
       <app-text [placeholder]="'Имя'" [formControlName]="'name'" class="modal-control"></app-text>
       <app-text [placeholder]="'E-mail'" [formControlName]="'email'" class="modal-control"></app-text>
       <app-textarea [placeholder]="'Текст новости'" [formControlName]="'text'" class="modal-control"></app-textarea>
+      <div class="choose-file">
+        <input type="file" hidden #fileInput (change)="onFileSelected($event)">
+        <button class="pick-file" type="button" (click)="fileInput.click()">
+          <svg>
+              <use xlink:href="assets/sprites/icons.svg#ico-file"></use>
+          </svg>
+          <span>Прикрепить файл</span>
+        </button>
+        <div class="file-result">
+          <div class="file-name" *ngIf="currentFileName">
+            {{ currentFileName }}
+          </div>
+          <div class="file-size" *ngIf="currentFileName">
+            (458 Кб)
+          </div>
+          <button class="clear-value" type="button" (click)="fileInput.value = currentFileName = ''">
+            <svg>
+              <use xlink:href="assets/sprites/icons.svg#close"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
       <app-checkbox [label]="'Согласен на'" [dataProcessingText]="'обработку данных'" [ngModel]="agree"></app-checkbox>
       <button type="submit" class="button secondary" (click)="submit()">Отправить</button>
     </form>

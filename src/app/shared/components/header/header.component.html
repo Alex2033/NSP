@@ -22,29 +22,30 @@
             </svg>
             <nav class="navigation">
                 <ul class="navigation-list" #navigationList>
-                    <li>
+                    <li [class.active]="false">
                         <a href="">Новости</a>
                     </li>
-                    <li>
+                    <li [class.active]="false">
                         <a href="">Дороги</a>
                     </li>
-                    <li>
+                    <li [class.active]="false">
                         <a href="">Власть</a>
                     </li>
-                    <li>
+                    <li [class.active]="false">
                         <a href="">Социалка</a>
                     </li>
-                    <li>
+                    <li [class.active]="false">
                         <a href="">Жилые комплексы</a>
                     </li>
-                    <li>
+                    <li [class.active]="false">
                         <a href="">Коммерческая Недвижимость</a>
                     </li>
-                    <li>
+                    <li [class.active]="false">
                         <a href="">Апартаменты</a>
                     </li>
-                    <li (clickOutside)="dropdownVisible = false">
-                        <button class="dropdown-btn" [class.active]="dropdownVisible" (click)="dropdownVisible = !dropdownVisible">
+                    <li (clickOutside)="dropdownVisible = false"
+                        [class.active]="dropdownVisible">
+                        <button class="dropdown-btn" (click)="dropdownVisible = !dropdownVisible">
                             <span>Еще</span>
                             <svg [class.rotated]="dropdownVisible">
                                 <use xlink:href="assets/sprites/icons.svg#chevron_down"></use>
@@ -52,19 +53,19 @@
                         </button>
                         <div class="dropdown" [class.visible]="dropdownVisible">
                             <ul class="dropdown-list" #dropdownList>
-                                <li>
+                                <li [class.active]="false">
                                     <a href="">Мероприятия</a>
                                 </li>
-                                <li>
+                                <li [class.active]="false">
                                     <a href="">Квадратный Петербург</a>
                                 </li>
-                                <li>
+                                <li [class.active]="false">
                                     <a href="">Наша газета</a>
                                   </li>
-                                <li>
+                                <li [class.active]="false">
                                     <a href="">Персоны</a>
                                 </li>
-                                <li>
+                                <li [class.active]="false">
                                     <a href="">Компании</a>
                                 </li>
                             </ul>

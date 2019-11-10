@@ -11,6 +11,7 @@ export class ModalNewsOfferFormComponent implements OnInit {
   formGroup: FormGroup;
   agree: false;
   showConfirm: boolean;
+  currentFileName: string;
   constructor(private formBuilder: FormBuilder, private modalService: ModalService) { }
 
   ngOnInit() {
@@ -33,5 +34,11 @@ export class ModalNewsOfferFormComponent implements OnInit {
 
   close() {
     this.modalService.close();
+  }
+
+  onFileSelected(event) {
+    if (event.target.files.length > 0) {
+      this.currentFileName = event.target.files[0].name;
+    }
   }
 }
