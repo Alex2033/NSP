@@ -46,11 +46,11 @@
     border: 0;
     transition: background-color .2s ease;
     &:hover {
-        background-color: lighten($primary-color, 5%);
+        background-color: lighten($primary-color, 15%);
     }
 
     &:active {
-        background-color: darken($primary-color, 10%);
+        background-color: lighten($primary-color, 7%);
     }
 
     &:focus {
@@ -75,6 +75,20 @@
 
 .search-button {
   padding: 8px;
+
+  &.no-bg {
+        background-color: transparent;
+
+        .icon {
+            fill: $primary-color;
+        }
+  }
+
+    .icon {
+        width: 16px;
+        height: 16px;
+        fill: $light-color;
+    }
 }
 
 .control-buttons {
@@ -134,21 +148,6 @@
             .icon {
                 fill: $primary-color;
             }
-        }
-    }
-}
-
-.search-button {
-    background-color: transparent;
-    .icon {
-        width: 16px;
-        height: 16px;
-        fill: $primary-color;
-    }
-
-    &:hover {
-        .icon {
-            fill: $light-color;
         }
     }
 }
@@ -301,26 +300,16 @@
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-
-    > * {
-        &:not(:last-child) {
-            margin-right: 25px;
-        }
-    }
-
-    img {
-        width: 67px;
-        height: 39px;
-    }
+    width: 210px;
+    height: 42px;
+    fill: $primary-color;
 }
 
-.logo-text {
-    font-size: 13px;
-    font-family: 'Montserrat';
-    font-weight: 500;
-    line-height: 1.54;
+.logo-mini {
+    width: 76px;
+    height: 36px;
+    fill: $primary-color;
+    margin-right: 32px;
 }
 
 // Модальные окна
@@ -392,19 +381,4 @@
 
 .confirm-title {
   margin-bottom: 8px;
-}
-
-.confirm-content-bg {
-  position: absolute;
-  top: 50%;
-  right: 7%;
-  opacity: .05;
-  width: 100%;
-  max-width: 315px;
-  z-index: 0;
-  transform: translateY(-50%);
-
-  svg {
-    fill: $light-color;
-  }
 }

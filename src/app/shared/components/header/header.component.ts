@@ -12,7 +12,6 @@ export class HeaderComponent implements OnInit {
   @ViewChild('navigationList', {static: true}) navigationList: ElementRef;
   @ViewChild('dropdownList', {static: true}) dropdownList: ElementRef;
   dropdownVisible: boolean = false;
-  showSearch: boolean = false;
   fixedMenu: boolean = false;
   navigationListWidth: number;
   menuPosition;
@@ -29,25 +28,25 @@ export class HeaderComponent implements OnInit {
     this.menuPosition = this.menu.nativeElement.offsetTop;
     this.navigationListWidth = this.navigationList.nativeElement.offsetWidth;
 
-    let counter = 1;
+    // let counter = 1;
 
-    for (let i = 0; i < this.navigationList.nativeElement.children.length; i++) {
-      this.sum += this.navigationList.nativeElement.children[i].offsetWidth;
+    // for (let i = 0; i < this.navigationList.nativeElement.children.length; i++) {
+    //   this.sum += this.navigationList.nativeElement.children[i].offsetWidth;
 
-      if (this.sum >= this.navigationListWidth) counter++;
-    }
+    //   if (this.sum >= this.navigationListWidth) counter++;
+    // }
 
-    for (let i = 0; i < counter; i++) {
-      // this.dropdownList.nativeElement.appendChild(this.navigationList.nativeElement.children[this.navigationList.nativeElement.children.length - 2]);
-      this.navigationList.nativeElement.children[this.navigationList.nativeElement.children.length - 2].remove(); // т.к. кнопка Еще не удаляется
-      console.log('Cycle');
-    }
+    // for (let i = 0; i < counter; i++) {
+    //   // this.dropdownList.nativeElement.appendChild(this.navigationList.nativeElement.children[this.navigationList.nativeElement.children.length - 2]);
+    //   this.navigationList.nativeElement.children[this.navigationList.nativeElement.children.length - 2].remove(); // т.к. кнопка Еще не удаляется
+    //   console.log('Cycle');
+    // }
 
-    if (this.sum >= this.navigationListWidth) { // Для отображения кнопки Еще
-      this.showDropdown = true;
-    } else {
-      this.showDropdown = false;
-    }
+    // if (this.sum >= this.navigationListWidth) { // Для отображения кнопки Еще
+    //   this.showDropdown = true;
+    // } else {
+    //   this.showDropdown = false;
+    // }
   }
 
   @HostListener('window:scroll', ['$event']) checkScroll() {
@@ -79,10 +78,5 @@ export class HeaderComponent implements OnInit {
   //     this.showDropdown = false;
   //   }
   // }
-
-  showWidth() {
-    console.log(this.sum);
-    console.log(this.showDropdown);
-  }
 
 }

@@ -1,9 +1,8 @@
 <header class="header">
     <div class="header-top">
-        <div class="logo">
-            <img src="assets/images/header/logo.svg" alt="logotype">
-            <div class="logo-text">Недвижимость <br> и строительство Петербурга</div>
-        </div>
+        <svg class="logo">
+            <use xlink:href="assets/sprites/icons.svg#logo"></use>
+        </svg>
         <div class="quote">
             <blockquote class="quote-text">
                 <p>
@@ -16,10 +15,13 @@
             </div>
         </div>
     </div>
-    <div class="header-menu" [ngClass]="{'fixed': fixedMenu, 'under-banner': showBanner}" #menu (clickOutside)="showSearch = false">
+    <div class="header-menu" [ngClass]="{'fixed': fixedMenu, 'under-banner': showBanner}" #menu>
         <div class="menu">
+            <svg class="logo-mini" *ngIf="fixedMenu">
+                <use xlink:href="assets/sprites/icons.svg#logo_mini"></use>
+            </svg>
             <nav class="navigation">
-                <ul class="navigation-list" #navigationList (click)="showWidth()">
+                <ul class="navigation-list" #navigationList>
                     <li>
                         <a href="">Новости</a>
                     </li>
@@ -41,29 +43,8 @@
                     <li>
                         <a href="">Апартаменты</a>
                     </li>
-                    <li>
-                        <a href="">Апартаменты2</a>
-                    </li>
-                    <li>
-                        <a href="">Апартаменты3</a>
-                    </li>
-                    <li>
-                        <a href="">Апартаменты4</a>
-                    </li>
-                    <li>
-                        <a href="">Апартаменты5</a>
-                    </li>
-                    <li>
-                        <a href="">Апартаменты6</a>
-                    </li>
-                    <li>
-                        <a href="">Апартаменты7</a>
-                    </li>
-                    <li>
-                        <a href="">Апартаменты8</a>
-                    </li>
-                    <li (clickOutside)="dropdownVisible = false" [hidden]="!showDropdown">
-                        <button class="dropdown-btn" (click)="dropdownVisible = !dropdownVisible">
+                    <li (clickOutside)="dropdownVisible = false">
+                        <button class="dropdown-btn" [class.active]="dropdownVisible" (click)="dropdownVisible = !dropdownVisible">
                             <span>Еще</span>
                             <svg [class.rotated]="dropdownVisible">
                                 <use xlink:href="assets/sprites/icons.svg#chevron_down"></use>
@@ -91,21 +72,7 @@
                     </li>
                 </ul>
             </nav>
-            <form class="search" [class.visible]="showSearch">
-                <div class="search-icon">
-                    <svg class="icon">
-                        <use xlink:href="assets/sprites/icons.svg#icon_search"></use>
-                    </svg>
-                </div>
-                <input type="text" placeholder="Что будем искать?">
-                <button class="button">Искать</button>
-                <button class="search-close" type="button" (click)="showSearch = false">
-                    <svg>
-                        <use xlink:href="assets/sprites/icons.svg#close"></use>
-                    </svg>
-                </button>
-            </form>
-            <button class="search-button" (click)="showSearch = true">
+            <button type="button" class="search-button button scrolled-search-btn" *ngIf="fixedMenu">
                 <svg class="icon">
                     <use xlink:href="assets/sprites/icons.svg#icon_search"></use>
                 </svg>
@@ -135,44 +102,13 @@
                 <button (click)="modal.open('news-offer-form')" class="header-action-text">Прислать новость</button>
             </div>
         </div>
-        <div class="header-socials">
-            <ul class="socials">
-                <li>
-                    <a href="" class="vk" target="_blank">
-                        <svg>
-                            <use xlink:href="assets/sprites/icons.svg#vk"></use>
-                        </svg>
-                    </a>
-                </li>
-                <li>
-                    <a href="" class="facebook" target="_blank">
-                        <svg>
-                            <use xlink:href="assets/sprites/icons.svg#facebook"></use>
-                        </svg>
-                    </a>
-                </li>
-                <li>
-                    <a href="" class="telegram" target="_blank">
-                        <svg>
-                            <use xlink:href="assets/sprites/icons.svg#telegram"></use>
-                        </svg>
-                    </a>
-                </li>
-                <li>
-                    <a href="" class="twitter" target="_blank">
-                        <svg>
-                            <use xlink:href="assets/sprites/icons.svg#twitter"></use>
-                        </svg>
-                    </a>
-                </li>
-                <li>
-                    <a href="" class="instagram" target="_blank">
-                        <svg>
-                            <use xlink:href="assets/sprites/icons.svg#instagram"></use>
-                        </svg>
-                    </a>
-                </li>
-            </ul>
-        </div>
+        <form class="search">
+            <input type="text" placeholder="Поиск по сайту" required>
+            <button type="submit" class="search-button short-button no-bg">
+                <svg class="icon">
+                    <use xlink:href="assets/sprites/icons.svg#icon_search"></use>
+                </svg>
+            </button>
+        </form>
     </div>
 </header>

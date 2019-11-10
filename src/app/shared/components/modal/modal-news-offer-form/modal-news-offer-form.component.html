@@ -6,18 +6,12 @@
       <app-text [placeholder]="'E-mail'" [formControlName]="'email'" class="modal-control"></app-text>
       <app-textarea [placeholder]="'Текст новости'" [formControlName]="'text'" class="modal-control"></app-textarea>
       <app-checkbox [label]="'Согласен на'" [dataProcessingText]="'обработку данных'" [ngModel]="agree"></app-checkbox>
-      <button type="submit" class="button secondary" (click)="showConfirm = true">Отправить</button>
+      <button type="submit" class="button secondary" (click)="submit()">Отправить</button>
     </form>
   </div>
 </div>
 
 <div class="confirm-content" *ngIf="showConfirm">
-
-  <div class="confirm-content-bg">
-    <svg>
-      <use xlink:href="assets/sprites/icons.svg#logo_group"></use>
-    </svg>
-  </div>
 
   <div class="confirm-text">
     <h3 class="confirm-title">Новость отправлена. Спасибо</h3>
