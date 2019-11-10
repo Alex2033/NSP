@@ -20,6 +20,10 @@ import { TextareaComponent } from './components/controls/textarea/textarea.compo
 import { CheckboxComponent } from './components/controls/checkbox/checkbox.component';
 import { ErrorMessageComponent } from './components/controls/shared/error-message/error-message.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PersonCardComponent } from './components/cards/person-card/person-card.component';
+import { CompanyCardComponent } from './components/cards/company-card/company-card.component';
+import { ObjectCardComponent } from './components/cards/object-card/object-card.component';
+import { ExtendedPersonCardComponent } from './components/extended-cards/extended-person-card/extended-person-card.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -43,7 +47,11 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     TextComponent,
     TextareaComponent,
     CheckboxComponent,
-    ErrorMessageComponent
+    ErrorMessageComponent,
+    PersonCardComponent,
+    CompanyCardComponent,
+    ObjectCardComponent,
+    ExtendedPersonCardComponent
   ],
   imports: [
     CommonModule,
@@ -71,6 +79,10 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ErrorMessageComponent,
     FormsModule,
     ReactiveFormsModule,
+    PersonCardComponent,
+    CompanyCardComponent,
+    ObjectCardComponent,
+    ExtendedPersonCardComponent
   ],
   providers: [
     {
