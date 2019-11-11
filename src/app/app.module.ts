@@ -11,6 +11,7 @@ import { ModalSubscriptionFormComponent } from './shared/components/modal/modal-
 import { ModalNewsOfferFormComponent } from './shared/components/modal/modal-news-offer-form/modal-news-offer-form.component';
 import { ModalVideoComponent } from './shared/components/modal/modal-video/modal-video.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalLoginComponent } from './shared/components/modal/modal-login/modal-login.component';
 registerLocaleData(localeRu);
 
 @NgModule({
@@ -19,7 +20,8 @@ registerLocaleData(localeRu);
     ModalComponent,
     ModalSubscriptionFormComponent,
     ModalNewsOfferFormComponent,
-    ModalVideoComponent
+    ModalVideoComponent,
+    ModalLoginComponent
   ],
   imports: [
     BrowserAnimationsModule,

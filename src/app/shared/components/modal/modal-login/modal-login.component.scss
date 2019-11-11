@@ -1,0 +1,66 @@
+@import "theme";
+
+:host {
+  max-width: 656px;
+  width: 100%;
+}
+
+.login-content {
+  background-color: $light-color;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
+  > * {
+    box-sizing: border-box;
+  }
+}
+
+.login-img {
+  flex: 1 0 50%;
+  width: 50%;
+  padding: 40px 0 0 40px;
+  position: relative;
+}
+
+.login-img-background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.12;
+}
+
+.login-actions {
+  flex: 1 0 50%;
+  width: 50%;
+  padding: 40px;
+}
+
+.login-socials {
+  margin-bottom: 38px;
+}
+
+.login-social {
+  background-color: transparent;
+  border: 0;
+  margin-bottom: 25px;
+
+  svg {
+    width: 248px;
+    height: 49px;
+  }
+}
+
+.modal-close {
+  opacity: 0.5;
+}
+
+.footnote {
+  font-size: 13px;
+  line-height: 1.538;
+  color: $dark-gray;
+}

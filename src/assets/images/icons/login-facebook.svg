@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="248px" height="48px" viewBox="0 0 248 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 57.1 (101010) - https://sketch.com -->
+    <title>0F52FEEA-CCB0-405E-ADF9-28F990CF1F14</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="(D)-Login" transform="translate(-760.000000, -306.000000)">
+            <g id="login" transform="translate(392.000000, 193.000000)">
+                <g id="facebook" transform="translate(368.000000, 113.000000)">
+                    <rect id="Rectangle" stroke="#D7DDEA" x="0.5" y="0.5" width="247" height="47" rx="4"></rect>
+                    <path d="M25.2682927,15 C24.7262873,15 24.2059621,15.0655548 23.598916,15.3059224 C22.3631436,15.8085093 21.7344174,16.9884958 21.7344174,18.8240303 L21.7344174,20.6158617 L20,20.6158617 L20,23.6095312 L21.7344174,23.6095312 L21.7344174,32.2409139 L25.2682927,32.2409139 L25.2682927,23.6095312 L27.6747968,23.6095312 L28,20.6158617 L25.2682927,20.6158617 L25.2682927,19.2610624 C25.2682927,18.845882 25.3116531,18.5399595 25.4200542,18.3651467 C25.5718157,18.1029275 25.8753387,17.9718179 26.3523035,17.9718179 L27.9566395,17.9718179 L27.9566395,15 L25.2682927,15 Z" fill="#3A5998"></path>
+                    <text id="войти-через-Facebook" font-family="Montserrat-Medium, Montserrat" font-size="14" font-weight="400" line-spacing="22">
+                        <tspan x="56" y="27" fill="#5E6470">войти через</tspan>
+                        <tspan x="147.028" y="27" fill="#1A233A"> </tspan>
+                        <tspan x="150.794" y="27" font-family="Montserrat-Bold, Montserrat" font-weight="bold" fill="#1A233A">Facebook</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
