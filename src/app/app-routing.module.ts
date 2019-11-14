@@ -18,6 +18,18 @@ const routes: Routes = [
     path: 'objects',
     loadChildren: () => import('./modules/objects/objects.module').then(mod => mod.ObjectsModule)
   },
+  {
+    path: 'projects',
+    loadChildren: () => import('./modules/projects/projects.module').then(mod => mod.ProjectsModule)
+  },
+  {
+    path: 'sections',
+    loadChildren: () => import('./modules/sections/sections.module').then(mod => mod.SectionsModule)
+  },
+  {
+    path: 'quotes',
+    loadChildren: () => import('./modules/quotes/quotes.module').then(mod => mod.QuotesModule)
+  },
 ];
 
 @NgModule({

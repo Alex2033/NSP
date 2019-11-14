@@ -1,0 +1,4 @@
+<ng-container *ngFor="let quote of quotes">
+  <app-quote-block [quote]="quote"></app-quote-block>
+</ng-container>
+<app-pagination [size]="4" [count]="15"></app-pagination>

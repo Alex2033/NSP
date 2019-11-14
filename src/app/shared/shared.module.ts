@@ -26,6 +26,9 @@ import { ObjectCardComponent } from './components/cards/object-card/object-card.
 import { ExtendedPersonCardComponent } from './components/extended-cards/extended-person-card/extended-person-card.component';
 import { PhoneFormatPipe } from './pipes/phone-format.pipe';
 import { SearchComponent } from './components/search/search.component';
+import { QuoteBlockComponent } from './components/blocks/quote-block/quote-block.component';
+import {PaginationComponent} from './components/pagination/pagination.component';
+import {RouterModule} from '@angular/router';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -55,13 +58,16 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ObjectCardComponent,
     ExtendedPersonCardComponent,
     PhoneFormatPipe,
-    SearchComponent
+    SearchComponent,
+    QuoteBlockComponent,
+    PaginationComponent
   ],
   imports: [
     CommonModule,
     SwiperModule,
     FormsModule,
     ReactiveFormsModule,
+    RouterModule
   ],
   exports: [
     CommonModule,
@@ -88,7 +94,10 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ObjectCardComponent,
     ExtendedPersonCardComponent,
     PhoneFormatPipe,
-    SearchComponent
+    SearchComponent,
+    QuoteBlockComponent,
+    PaginationComponent,
+    RouterModule
   ],
   providers: [
     {

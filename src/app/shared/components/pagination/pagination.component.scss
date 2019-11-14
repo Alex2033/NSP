@@ -1,0 +1,38 @@
+@import "theme";
+//.pagination {
+//  margin-top: 40px;
+//  display: flex;
+//  align-items: center;
+//  .pages {
+//    display: flex;
+//    a {
+//      color: $dark-grey;
+//      width: 32px;
+//      height: 32px;
+//      border-radius: 50%;
+//      line-height: 32px;
+//      text-align: center;
+//      transition: background-color 200ms linear, color 200ms linear;
+//      display: block;
+//      &:nth-child(n+2) {
+//        margin-left: 16px;
+//      }
+//      &:active {
+//        color: $black;
+//      }
+//      &.active {
+//        color: $black;
+//        font-weight: bold;
+//        background-color: #fff;
+//      }
+//    }
+//  }
+//  .nav {
+//    margin-left: auto;
+//    a {
+//      &:nth-child(n+2) {
+//        margin-left: 32px;
+//      }
+//    }
+//  }
+//}
