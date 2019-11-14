@@ -1,2 +1,12 @@
-<p>company-card works!</p>
-<!--Эта карточка НЕ наследует ResizableCard, у неё будет только размер 1х1-->
+<div class="company-card">
+    <div class="company-img">
+        <img src="{{ company.image }}" alt="company">
+    </div>
+    <h5 class="company-title">{{ company.title }}</h5>
+    <div class="company-contacts">
+        <a href="tel:{{ company.phone | phoneFormat }}" class="company-phone link">{{ company.phone }}</a>
+        <br>
+        <a class="link" href="{{ company.site }}">{{ company.site }}</a>
+    </div>
+    <div class="company-tag">{{ company.tag }}</div>
+</div>

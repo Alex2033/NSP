@@ -1,14 +1,13 @@
 <div class="carousel-wrapper">
     <header class="carousel-header">
-        <div class="carousel-header-text">
-            <h2>{{ header }}</h2>
-            <a href="" class="carousel-link">
-                <span>Все материалы темы</span>
+        <h2>
+            <a href="/" class="carousel-link">
+                <span>{{ header }}</span>
                 <svg>
                     <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
                 </svg>
             </a>
-        </div>
+        </h2>
         <div class="control-buttons" (click)="cardCarousel.swiper.slidePrev()">
             <div class="control-button">
                 <svg class="icon">

@@ -1,0 +1,39 @@
+@import "theme";
+
+.search-form {
+    position: relative;
+
+    .button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 8px;
+        padding: 11px 17px;
+        font-size: 13px;
+        line-height: 1.538;
+    }
+}
+
+.search-icon {
+    width: 16px;
+    height: 16px;
+    fill: $gray;
+    position: absolute;
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.search-control {
+    padding: 17px 90px 17px 56px;
+    width: 100%;
+    box-shadow: 0 4px 16px 0 rgba(8,26,63,0.14);
+    font-family: 'Montserrat';
+    font-weight: 500;
+    border: 0;
+    color: $dark-gray;
+
+    &:focus {
+        outline: 0;
+    }
+}

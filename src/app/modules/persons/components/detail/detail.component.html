@@ -1,12 +1,16 @@
 <div class="container">
-    <div class="inner-page-top">
+    <div class="page-topline">
         <h5>Персоны</h5>
-        <div class="inner-page-top-element">
+        <div class="page-topline-element">
             Есть неточность?
         </div>
     </div>
     <div class="persons-row">
-        <app-extended-person-card></app-extended-person-card>
-        <app-company-card></app-company-card>
+        <app-extended-person-card [person]="personConfig"></app-extended-person-card>
+        <app-company-card [company]="companyConfig"></app-company-card>
+    </div>
+    <div class="materials">
+        <h2 class="materials-title">Материалы с персоной</h2>
+        <app-card-layout></app-card-layout>
     </div>
 </div>

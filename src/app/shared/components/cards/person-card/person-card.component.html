@@ -1,2 +1,14 @@
-<p>person-card works!</p>
-<!--Эта карточка НЕ наследует ResizableCard, у неё будет только размер 1х1-->
+<div class="person-card">
+    <div class="person-img">
+        <img src="{{ person.image }}" alt="person">
+    </div>
+    <h5 class="person-name">
+        <span class="person-surname">
+            {{ person.firstName }}
+        </span>
+        {{ person.middleName }} {{ person.lastName }}
+    </h5>
+    <div class="person-text">
+        <p>{{ person.text }}</p>
+    </div>
+</div>

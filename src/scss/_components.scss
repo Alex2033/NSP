@@ -386,7 +386,11 @@
 // end Модальные окна
 
 // start Внутренние страницы
-.inner-page-top {
+.page-top {
+    padding-bottom: 48px;
+}
+
+.page-topline {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -397,10 +401,42 @@
     }
 }
 
-.inner-page-top-element {
+.page-topline-element {
     color: $dark-gray;
     font-size: 13px;
     line-height: 1.538;
 }
 
+.inner-page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
 // end Внутренние страницы
+
+// start Карточки внутренних страниц
+.page-cards {
+    background-color: $light-gray;
+    padding: 48px 0;
+    margin-bottom: 40px;
+}
+
+// end Карточки внутренних страниц
+
+.page-cards-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -calc(#{$grid-gutter-width} / 4);
+
+    > * {
+        margin-right: calc(#{$grid-gutter-width} / 4);
+        flex: 1 0 calc(25% - calc(#{$grid-gutter-width} / 4));
+        width: calc(25% - calc(#{$grid-gutter-width} / 4));                           
+    }
+}
+
+.materials-title {
+    margin-bottom: 32px;
+}

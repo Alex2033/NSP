@@ -1,0 +1,72 @@
+@import "theme";
+
+.extended-person-card {
+    display: flex;
+    padding: 32px 40px 40px;
+    align-items: center;
+    border: 1px solid $border-color;
+}
+
+.card-img {
+    flex-shrink: 0;
+    margin-right: 40px;
+
+    img {
+        width: 226px;
+        height: 226px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}
+
+.person-name {
+    margin-bottom: 8px;
+}
+
+.person-position {
+    font-size: 16px;
+    line-height: 1.625;
+    margin-bottom: 25px;
+}
+
+.card-text {
+    color: $dark-gray;
+    margin-bottom: 45px;
+}
+
+.card-contacts {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 16px;
+    line-height: 1.625;
+
+    > * {
+        &:not(:last-child) {
+            margin-right: 48px;
+        }
+    }
+}
+
+.card-icon {
+    fill: $gray;
+    margin-right: 20px;
+}
+
+.card-phone {
+
+    a {
+        color: $text-color;
+    }
+
+    .card-icon {
+        width: 14px;
+        height: 16px;
+    }
+}
+
+.card-email {
+    .card-icon {
+        width: 16px;
+        height: 12px;
+    }
+}

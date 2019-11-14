@@ -81,7 +81,7 @@
   }
   &.active {
     background-color: #fff;
-    border: 1px solid #D7DDEA;
+    border: 1px solid $border-color;
     &.ng-invalid.ng-touched {
       border-color: $important-color !important;
     }

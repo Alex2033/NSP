@@ -1,4 +1,17 @@
+@import "theme";
+@import "variables/bootstrap";
+
 .persons-row {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: calc(#{$grid-gutter-width} / 4);
+    margin-bottom: 48px;
+}
+
+app-extended-person-card {
+    grid-column-end: span 3;
+}
+
+app-company-card {
+    border: 1px solid $border-color;
 }

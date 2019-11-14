@@ -1,7 +1,20 @@
 <div class="container">
-<!--    Поиск не выделяем в отдельный компонент, т.к. в зависимости от страницы там разная логика, но стилистически они выглядят везде одинаково, так что стили лучше вынести за рамки этого компонента-->
-    <app-person-card></app-person-card>
-    <app-person-card></app-person-card>
-    <app-person-card></app-person-card>
-    <app-person-card></app-person-card>
+    <div class="page-top">
+        <header class="inner-page-header">
+            <h1>Персоны</h1>
+        </header>
+        <app-search [placeholder]="'Поиск персоны по имени или фирме'"></app-search>
+    </div>
 </div>
+<div class="page-cards">
+    <div class="container">
+        <div class="page-cards-row">
+            <app-person-card *ngFor="let person of persons" [person]="person"></app-person-card>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <h2 class="materials-title">Интервью с представителями бизнеса и власти</h2>
+    <app-card-layout></app-card-layout>
+</div>
+

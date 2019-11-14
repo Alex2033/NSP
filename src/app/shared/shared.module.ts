@@ -24,6 +24,8 @@ import { PersonCardComponent } from './components/cards/person-card/person-card.
 import { CompanyCardComponent } from './components/cards/company-card/company-card.component';
 import { ObjectCardComponent } from './components/cards/object-card/object-card.component';
 import { ExtendedPersonCardComponent } from './components/extended-cards/extended-person-card/extended-person-card.component';
+import { PhoneFormatPipe } from './pipes/phone-format.pipe';
+import { SearchComponent } from './components/search/search.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -51,7 +53,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     PersonCardComponent,
     CompanyCardComponent,
     ObjectCardComponent,
-    ExtendedPersonCardComponent
+    ExtendedPersonCardComponent,
+    PhoneFormatPipe,
+    SearchComponent
   ],
   imports: [
     CommonModule,
@@ -82,7 +86,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     PersonCardComponent,
     CompanyCardComponent,
     ObjectCardComponent,
-    ExtendedPersonCardComponent
+    ExtendedPersonCardComponent,
+    PhoneFormatPipe,
+    SearchComponent
   ],
   providers: [
     {
