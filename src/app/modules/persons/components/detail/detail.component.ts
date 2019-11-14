@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-detail',
@@ -6,7 +6,41 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
-
+  cards = [
+    {
+      type: 'material',
+      size: 'small',
+      view: 'default'
+    },
+    {
+      type: 'material',
+      size: 'small',
+      view: 'default'
+    },
+    {
+      type: 'material',
+      size: 'small',
+      view: 'default'
+    },
+    {
+      type: 'video',
+      size: 'medium-vertical',
+    },
+    {
+      type: 'advertising',
+      size: 'small'
+    },
+    {
+      type: 'material',
+      size: 'small',
+      view: 'default'
+    },
+    {
+      type: 'material',
+      size: 'small',
+      view: 'backgroundImage'
+    }
+  ];
   personConfig = {
     image: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80',
     name: 'Трошева Ольга Витальевна',
@@ -24,7 +58,8 @@ export class DetailComponent implements OnInit {
     tag: 'Агентство недвижимости'
   };
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

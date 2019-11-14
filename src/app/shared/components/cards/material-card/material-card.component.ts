@@ -7,7 +7,7 @@ import { ResizableCardComponent } from '../resizable-card.component';
   styleUrls: ['./material-card.component.scss']
 })
 export class MaterialCardComponent extends ResizableCardComponent implements OnInit {
-  @Input() cardType: 'default' | 'backgroundImage';
+  @Input() view: 'default' | 'backgroundImage';
 
   constructor() {
     super();
