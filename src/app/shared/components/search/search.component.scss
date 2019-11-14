@@ -1,7 +1,40 @@
 @import "theme";
 
+.search-content {
+    border-radius: 4px 4px 0 4px;
+    box-shadow: 0 4px 16px 0 rgba(8,26,63,0.14);
+    background: $light-color;
+    display: flex;
+}
+
+.search-select {
+    flex: 0 0 285px;
+    width: 285px;
+    border-right: 1px solid $border-color;
+    padding: 16px 26px 16px 16px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    color: $dark-gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+    .arrow-icon {
+        transform-origin: 50% 50%;
+        transform: rotate(90deg);
+        fill: $primary-color;
+    }
+}
+
+.select-active {
+    user-select: none;
+}
+
+
 .search-form {
     position: relative;
+    flex: 1;
 
     .button {
         position: absolute;
@@ -27,9 +60,9 @@
 .search-control {
     padding: 17px 90px 17px 56px;
     width: 100%;
-    box-shadow: 0 4px 16px 0 rgba(8,26,63,0.14);
     font-family: 'Montserrat';
     font-weight: 500;
+    background-color: transparent;
     border: 0;
     color: $dark-gray;
 

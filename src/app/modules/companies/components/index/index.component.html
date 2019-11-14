@@ -1,5 +1,25 @@
-<p>index works!</p>
-<app-company-card></app-company-card>
-<app-company-card></app-company-card>
-<app-company-card></app-company-card>
-<app-company-card></app-company-card>
+<div class="container">
+    <div class="page-top">
+        <header class="inner-page-header">
+            <h1>Компании</h1>
+        </header>
+        <app-search [select]="selectConfig" [placeholder]="'Поиск по названию'"></app-search>
+    </div>
+</div>
+<div class="page-cards">
+    <div class="container">
+        <div class="page-cards-row">
+            <app-company-card *ngFor="let company of companies" [company]="company"></app-company-card>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <app-card-carousel [header]="'Технология строительства'"></app-card-carousel>
+    <div class="companies-text">
+        <h5>Заголовок SEO</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus metus leo, finibus eget commodo ac, suscipit gravida risus. Vestibulum feugiat risus et lacus malesuada mattis. Nulla vehicula sit amet odio eu tristique. Interdum et malesuada fames ac ante ipsum primis in faucibus. In vestibulum mollis tortor vel tempus. Integer elementum lorem non posuere tincidunt. Aenean imperdiet vestibulum magna id molestie.</p>
+    </div>
+</div>
+    
+    

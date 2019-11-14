@@ -1,0 +1,15 @@
+@import "theme";
+
+.companies-text {
+    margin-bottom: 40px;
+
+    h5 {
+        margin-bottom: 16px;
+    }
+
+    p {
+        color: $dark-gray;
+        font-size: 14px;
+        line-height: 1.571;
+    }
+}

@@ -1,6 +1,9 @@
 <div class="search-content">
     <div class="search-select" *ngIf="select">
-
+        <span class="select-active">{{ select.name }}</span>
+        <svg class="arrow-icon">
+            <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
+        </svg>
     </div>
     <form class="search-form">
         <svg class="search-icon">

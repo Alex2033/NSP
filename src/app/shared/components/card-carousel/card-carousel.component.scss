@@ -28,9 +28,7 @@
         opacity: 0.75;
     }
 
-    svg {
-        width: 8px;
-        height: 13px;
+    .arrow-icon {
         fill: darken($primary-color, 5%);
     }
 }

@@ -6,6 +6,8 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    background-color: $light-color;
+    height: 100%;
 }
 
 .company-img {
@@ -27,6 +29,7 @@
     margin-bottom: 18px;
     font-size: 14px;
     line-height: 1.571;
+    margin-top: auto;
 }
 
 .company-phone {
