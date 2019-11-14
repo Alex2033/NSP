@@ -1,14 +1,34 @@
 <div class="card-layout">
-    <app-front-card></app-front-card>
-    <app-material-card [size]="'small'" [cardType]="'default'"></app-material-card>
-    <app-material-list-card style="grid-column: 4; grid-row-start: 1;" [size]="'small'" [cardType]="'default'" ></app-material-list-card>
-    <app-latest-news-card style="grid-row: 2 / span 3;"></app-latest-news-card>
-    <app-material-card [size]="'small'" [cardType]="'default'"></app-material-card>
-    <app-material-card [size]="'small'" [cardType]="'default'"></app-material-card>
-    <app-advertising-card [size]="'small'"></app-advertising-card>
-    <app-video-card [size]="'medium-horizontal'" [ngClass]="{'medium-horizontal': true}"></app-video-card>
-    <app-material-list-card style="grid-column: 4; grid-row-start: 3;" [size]="'medium-vertical'" [cardType]="'readBlock'" [ngClass]="{'medium-vertical': true}"></app-material-list-card>
-    <app-material-card [size]="'small'" [cardType]="'default'"></app-material-card>
-    <app-material-card [size]="'small'" [cardType]="'backgroundImage'"></app-material-card>
+  <ng-container *ngFor="let card of cards">
+    <ng-container [ngSwitch]="card.type">
+      <ng-container *ngSwitchCase="'front'">
+        <app-front-card></app-front-card>
+      </ng-container>
+      <ng-container *ngSwitchCase="'material'">
+        <app-material-card [size]="card.size"
+                           [class]="card.size !== 'small' ? card.size : null"
+                           [view]="card.view"></app-material-card>
+      </ng-container>
+      <ng-container *ngSwitchCase="'material-list'">
+        <app-material-list-card [size]="card.size" [view]="card.view"
+                                [class]="card.size !== 'small' ? card.size : null"
+                                [style.grid-column]="card.position.x ? card.position.x : null"
+                                [style.grid-row-start]="card.position.y ? card.position.y : null"
+        ></app-material-list-card>
+      </ng-container>
+      <ng-container *ngSwitchCase="'latest-news'">
+        <app-latest-news-card
+          [style.grid-column]="card.position.x ? card.position.x : null"
+          [style.grid-row-start]="card.position.y ? card.position.y : null"
+          style="grid-row-end: span 3"></app-latest-news-card>
+      </ng-container>
+      <ng-container *ngSwitchCase="'advertising'">
+        <app-advertising-card [size]="card.size"
+                              [class]="card.size !== 'small' ? card.size : null"></app-advertising-card>
+      </ng-container>
+      <ng-container *ngSwitchCase="'video'">
+        <app-video-card [size]="card.size" [class]="card.size !== 'small' ? card.size : null"></app-video-card>
+      </ng-container>
+    </ng-container>
+  </ng-container>
 </div>
-<!--Просто пример вызова карточки с заданным размером-->
