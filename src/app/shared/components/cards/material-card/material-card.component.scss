@@ -74,8 +74,8 @@ h5 {
         }
 
         .card-img {
-            flex: 0 0 calc(50% - #{$grid-gutter-width} / 8);
-            width: calc(50% - #{$grid-gutter-width} / 8);
+            flex: 0 0 calc(50% - #{$grid-gutter-width});
+            width: calc(50% - #{$grid-gutter-width});
             height: 100%;
         }
     }

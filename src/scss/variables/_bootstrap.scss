@@ -1,4 +1,4 @@
-$grid-gutter-width: 32px;
+$grid-gutter-width: 8px;
 $grid-breakpoints: (
         //xs: 0, // handset portrait (small, medium, large) | handset landscape (small)
         sm: 0, // handset landscape (medium, large) | tablet portrait(small, large)
@@ -10,5 +10,5 @@ $container-max-widths: (
         //sm: 540px,
         md: 720px,
         lg: 940px,
-        xl: 1278px // Реальная ширина сетки + $grid-gutter-width
+        xl: 1280px // Реальная ширина сетки + $grid-gutter-width
 );

@@ -248,6 +248,7 @@
         height: 48px;
         width: 48px;
         transition: background-color .2s ease;
+        background-color: $light-gray;
 
         &:hover {
             svg {
@@ -428,12 +429,12 @@
 .page-cards-row {
     display: flex;
     flex-wrap: wrap;
-    margin-right: -calc(#{$grid-gutter-width} / 4);
+    margin-right: -$grid-gutter-width;
 
     > * {
-        margin-right: calc(#{$grid-gutter-width} / 4);
-        flex: 1 0 calc(25% - calc(#{$grid-gutter-width} / 4));
-        width: calc(25% - calc(#{$grid-gutter-width} / 4));                           
+        margin-right: $grid-gutter-width;
+        flex: 1 0 calc(25% - #{$grid-gutter-width});
+        width: calc(25% - #{$grid-gutter-width});                           
     }
 }
 

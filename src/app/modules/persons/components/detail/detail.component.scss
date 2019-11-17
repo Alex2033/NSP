@@ -4,7 +4,7 @@
 .persons-row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: calc(#{$grid-gutter-width} / 4);
+    grid-gap: $grid-gutter-width;
     margin-bottom: 48px;
 }
 

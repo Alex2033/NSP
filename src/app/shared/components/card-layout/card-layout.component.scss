@@ -4,7 +4,7 @@
 .card-layout {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: calc(#{$grid-gutter-width} / 4);
+    grid-gap: $grid-gutter-width;
     grid-auto-rows: 304px;
     min-height: 0;
     min-width: 0;
