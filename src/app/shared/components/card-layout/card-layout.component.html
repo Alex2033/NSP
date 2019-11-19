@@ -29,6 +29,9 @@
       <ng-container *ngSwitchCase="'video'">
         <app-video-card [size]="card.size" [class]="card.size !== 'small' ? card.size : null"></app-video-card>
       </ng-container>
+      <ng-container *ngSwitchCase="'object'">
+        <app-object-card [size]="card.size" [class]="card.size !== 'small' ? card.size : null"></app-object-card>
+      </ng-container>
     </ng-container>
   </ng-container>
 </div>

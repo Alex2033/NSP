@@ -1,0 +1,66 @@
+@import "theme";
+
+.object-card {
+    position: relative;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    padding: 32px 16px;
+    display: block;
+
+    &:hover {
+        text-decoration: none;
+
+        .object-card-bg {
+            background-color: rgba($text-color, .2);
+        }
+    }
+}
+
+.object-card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    transform: scaleY(-1);
+    background-image: linear-gradient(180deg, rgba(0,0,0,0.7) 0.08%, rgba(0,0,0,0) 100%);
+    transition: background-color .2s ease;
+}
+
+.object-card-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+
+    h4 {
+        margin-top: auto;
+        margin-bottom: 16px;
+    }
+}
+
+.object-card-location {
+    display: flex;
+    align-items: center;
+    border-radius: 13.5px;
+    border: 1px solid rgba($border-color, 0.4);
+    padding: 0 16px;
+
+    svg {
+        width: 10px;
+        height: 14px;
+        fill: $light-color;
+        margin-right: 9px;
+    }
+
+    span {
+        font-size: 13px;
+        line-height: 1.5384;
+        color: $light-color;
+    }
+    
+}

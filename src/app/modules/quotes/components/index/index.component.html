@@ -1,4 +1,31 @@
-<ng-container *ngFor="let quote of quotes">
-  <app-quote-block [quote]="quote"></app-quote-block>
-</ng-container>
-<app-pagination [size]="4" [count]="15"></app-pagination>
+<div class="container">
+    <div class="row">
+      <div class="col-xl-8">
+        <main class="quotes-main">
+          <div class="page-top">
+              <header class="inner-page-header">
+                <h1>Архив цитат</h1>
+              </header>
+              <app-search [placeholder]="'Поиск персоны по имени или фирме'"></app-search>
+          </div>
+          <div class="quotes">
+            <ng-container *ngFor="let quote of quotes">
+              <app-quote-block [quote]="quote"></app-quote-block>
+            </ng-container>
+          </div>
+          <app-pagination [size]="4" [count]="15"></app-pagination>
+        </main>
+      </div>
+      <div class="col-xl-3 offset-xl-1">
+        <aside class="quotes-sidebar">
+          <app-material-list-card [size]="'small'" [view]="'default'"
+                                  [class]="'small'"
+        ></app-material-list-card>
+          <app-advertising-card [size]="'small'" [class]="'small'"></app-advertising-card>
+          <app-material-list-card [size]="'medium-vertical'" [view]="'readBlock'"
+                                  [class]="'medium-vertical'"
+        ></app-material-list-card>
+        </aside>
+      </div>
+    </div>  
+</div>

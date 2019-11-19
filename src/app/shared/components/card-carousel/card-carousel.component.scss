@@ -11,6 +11,11 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 32px;
+
+    h2.is-small {
+        font-size: 22px;
+        line-height: 1.454545;
+    }
 }
 
 .carousel-link {

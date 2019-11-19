@@ -1,0 +1,89 @@
+@import "theme";
+
+.quote {
+    background-color: rgba($secondary-color, 0.2);
+    padding: 40px 40px 32px 40px;
+
+}
+
+.quote-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 29px;
+}
+
+.quote-icon {
+    opacity: 0.2;
+    width: 42px;
+    height: 28px;
+    margin-right: 40px;
+    flex-shrink: 0;
+}
+
+.quote-text {
+    font-size: 17px;
+    line-height: 1.7;
+    fill: $text-color;
+    margin-bottom: 0;
+}
+
+.quote-bot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    line-height: 1.538;
+}
+
+.quote-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.quote-source {
+    display: block;
+    font-style: normal;
+    margin-bottom: 4px;
+    color: $primary-color;
+}
+
+.quote-time {
+    color: $dark-gray;
+    margin-top: auto;
+}
+
+.quote-author {
+    display: flex;
+    align-items: center;
+
+    > * {
+        &:not(:last-child) {
+            margin-right: 24px;
+        }
+    }
+}
+
+.quote-author-info {
+    text-align: right;
+}
+
+.quote-author-name {
+    font-weight: 700;
+    color: $primary-color;
+    margin-bottom: 4px;
+}
+
+.quote-author-position {
+    color: $dark-gray;
+}
+
+.quote-author-avatar {
+    flex-shrink: 0;
+    filter: grayscale(100%);
+
+    img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}

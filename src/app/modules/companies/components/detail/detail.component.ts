@@ -7,6 +7,44 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailComponent implements OnInit {
 
+  objectCards = [
+    {
+      type: 'object'
+    },
+    {
+      type: 'object'
+    },
+    {
+      type: 'object'
+    },
+    {
+      type: 'object'
+    }
+  ];
+
+  materialCards = [
+    {
+      type: 'material',
+      size: 'small',
+      view: 'default'
+    },
+    {
+      type: 'material',
+      size: 'small',
+      view: 'default'
+    },
+    {
+      type: 'material',
+      size: 'small',
+      view: 'default'
+    },
+    {
+      type: 'material',
+      size: 'small',
+      view: 'default'
+    }
+  ];
+
   constructor() { }
 
   ngOnInit() {

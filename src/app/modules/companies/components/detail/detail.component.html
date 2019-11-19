@@ -84,20 +84,17 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3"></div>
+            <div class="col-xl-3">
+            </div>
         </div>
     </div>
+    <app-card-carousel [header]="'Персоны'" [smallHeader]="true"></app-card-carousel>
     <div class="materials">
-        <h2 class="materials-title">Объекты</h2>
-        <!-- <app-card-layout [cards]="cards"></app-card-layout> -->
+        <h3 class="materials-title">Объекты</h3>
+        <app-card-layout [cards]="objectCards"></app-card-layout>
     </div>
     <div class="materials">
-        <h2 class="materials-title">Материалы о компании</h2>
-        <!-- <app-card-layout [cards]="cards"></app-card-layout> -->
+        <h3 class="materials-title">Материалы о компании</h3>
+        <app-card-layout [cards]="materialCards"></app-card-layout>
     </div>
 </div>
-<!--Информация о компании (слева карточкой) будет пока что просто версткой, не думаю, что она будет использоваться где-то еще -->
-<app-object-card></app-object-card>
-<app-object-card></app-object-card>
-<app-object-card></app-object-card>
-<app-object-card></app-object-card>

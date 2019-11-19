@@ -8,6 +8,7 @@ import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 })
 export class CardCarouselComponent implements OnInit {
   @Input() header: string;
+  @Input() smallHeader: boolean;
   carouselConfig: SwiperConfigInterface = {
     slidesPerView: 4,
     spaceBetween: 8

@@ -29,6 +29,7 @@ import { SearchComponent } from './components/search/search.component';
 import { QuoteBlockComponent } from './components/blocks/quote-block/quote-block.component';
 import {PaginationComponent} from './components/pagination/pagination.component';
 import {RouterModule} from '@angular/router';
+import { MapComponent } from './components/map/map.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -60,7 +61,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     PhoneFormatPipe,
     SearchComponent,
     QuoteBlockComponent,
-    PaginationComponent
+    PaginationComponent,
+    MapComponent
   ],
   imports: [
     CommonModule,
@@ -97,7 +99,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     SearchComponent,
     QuoteBlockComponent,
     PaginationComponent,
-    RouterModule
+    RouterModule,
+    MapComponent
   ],
   providers: [
     {
