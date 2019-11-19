@@ -178,31 +178,6 @@
     z-index: 1;
 }
 
-.date, .tag {
-    font-size: 13px;
-    line-height: 1.54;
-    color: $light-color;
-}
-
-.date {
-    &.dark {
-        color: $dark-gray;
-    }
-}
-
-.tag {
-    border: 1px solid $border-color;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 3px 14px;
-}
-
-.emoji {
-    margin-right: 8px;
-}
-
 .close {
     width: 16px;
     height: 16px;
@@ -406,6 +381,13 @@
     color: $dark-gray;
     font-size: 13px;
     line-height: 1.538;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+
+    &:focus {
+        outline: none;
+    }
 }
 
 .inner-page-header {

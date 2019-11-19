@@ -72,3 +72,28 @@ img {
     z-index: 1;
     transition: background-color .2s ease;
 }
+
+.date, .tag {
+    font-size: 13px;
+    line-height: 1.54;
+    color: $light-color;
+}
+
+.date {
+    &.dark {
+        color: $dark-gray;
+    }
+}
+
+.tag {
+    border: 1px solid $border-color;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px 14px;
+}
+
+.emoji {
+    margin-right: 8px;
+}
