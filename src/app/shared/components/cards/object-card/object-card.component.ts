@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ResizableCardComponent } from '../resizable-card.component';
 
 @Component({
@@ -7,6 +7,8 @@ import { ResizableCardComponent } from '../resizable-card.component';
   styleUrls: ['./object-card.component.scss']
 })
 export class ObjectCardComponent extends ResizableCardComponent implements OnInit {
+
+  @Input() object;
 
   constructor() {
     super();

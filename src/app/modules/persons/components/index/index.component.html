@@ -8,8 +8,10 @@
 </div>
 <div class="page-cards">
     <div class="container">
-        <div class="page-cards-row">
-            <app-person-card *ngFor="let person of persons" [person]="person"></app-person-card>
+        <div class="row">
+            <div class="col-xl-3" *ngFor="let person of persons">
+                <app-person-card [person]="person"></app-person-card>
+            </div>
         </div>
     </div>
 </div>

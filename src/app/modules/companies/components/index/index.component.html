@@ -3,13 +3,15 @@
         <header class="inner-page-header">
             <h1>Компании</h1>
         </header>
-        <app-search [select]="selectConfig" [placeholder]="'Поиск по названию'"></app-search>
+        <app-search [selectFirst]="selectConfig" [placeholder]="'Поиск по названию'"></app-search>
     </div>
 </div>
 <div class="page-cards">
     <div class="container">
-        <div class="page-cards-row">
-            <app-company-card *ngFor="let company of companies" [company]="company"></app-company-card>
+        <div class="row">
+            <div class="col-xl-3" *ngFor="let company of companies">
+                <app-company-card [company]="company"></app-company-card>
+            </div>
         </div>
     </div>
 </div>

@@ -5,9 +5,13 @@
             Есть неточность?
         </div>
     </div>
-    <div class="persons-row">
-        <app-extended-person-card [person]="personConfig"></app-extended-person-card>
-        <app-company-card [company]="companyConfig"></app-company-card>
+    <div class="persons-row row">
+        <div class="col-xl-9">
+            <app-extended-person-card [person]="personConfig"></app-extended-person-card>
+        </div>
+        <div class="col-xl-3">
+            <app-company-card [company]="companyConfig"></app-company-card>
+        </div>
     </div>
     <div class="materials">
         <h2 class="materials-title">Материалы с персоной</h2>

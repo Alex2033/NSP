@@ -1,5 +1,14 @@
 @import "theme";
 
+:host {
+    ::ng-deep {
+        .page-top .search-select {
+            flex: 0 0 285px;
+            width: 285px;
+        }
+    }
+}
+
 .companies-text {
     margin-bottom: 40px;
 
@@ -13,3 +22,4 @@
         line-height: 1.571;
     }
 }
+

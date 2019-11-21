@@ -7,7 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  @Input() select;
+  @Input() selectFirst;
+  @Input() selectSecond;
   @Input() placeholder;
 
   constructor() { }

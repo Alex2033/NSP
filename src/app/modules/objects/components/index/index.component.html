@@ -1,5 +1,24 @@
-<p>index works!</p>
-<app-object-card></app-object-card>
-<app-object-card></app-object-card>
-<app-object-card></app-object-card>
-<app-object-card></app-object-card>
+<div class="container">
+    <div class="page-top">
+        <header class="inner-page-header">
+            <h1>Объекты недвижимости</h1>
+        </header>
+        <app-search [selectFirst]="selectConfig1" [selectSecond]="selectConfig2" [placeholder]="'Поиск объекта по названию или фирме'"></app-search>
+    </div>
+</div>
+<div class="page-cards">
+    <div class="container">
+        <div class="row">
+            <div *ngFor="let object of objects" class="col-xl-3">
+                <app-object-card [object]="object"></app-object-card>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="materials">
+        <h2 class="materials-title">Популярные материалы</h2>
+        <app-card-layout [cards]="cards"></app-card-layout>
+    </div>
+</div>

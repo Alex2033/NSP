@@ -3,10 +3,8 @@
 .object-card {
     position: relative;
     height: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
     padding: 32px 16px;
+    height: 304px;
     display: block;
 
     &:hover {
@@ -16,6 +14,16 @@
             background-color: rgba($text-color, .2);
         }
     }
+}
+
+.object-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    object-fit: cover;
 }
 
 .object-card-bg {
@@ -48,7 +56,7 @@
     align-items: center;
     border-radius: 13.5px;
     border: 1px solid rgba($border-color, 0.4);
-    padding: 0 16px;
+    padding: 3.5px 16px;
 
     svg {
         width: 10px;

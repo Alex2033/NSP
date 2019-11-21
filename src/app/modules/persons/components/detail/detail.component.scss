@@ -2,9 +2,6 @@
 @import "variables/bootstrap";
 
 .persons-row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: $grid-gutter-width;
     margin-bottom: 48px;
 }
 
@@ -14,4 +11,5 @@ app-extended-person-card {
 
 app-company-card {
     border: 1px solid $border-color;
+    display: block;
 }

@@ -1,12 +1,13 @@
-<a href="/" class="object-card" style="background-image: url(https://images.unsplash.com/photo-1573976440328-85cd7a28bd0c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80)">
+<a href="{{ object.url }}" class="object-card">
+    <img src="{{ object.image }}" alt="изображение объекта" class="object-image">
     <div class="object-card-bg"></div>
     <div class="object-card-content">
-        <h4 class="light">ЖК «Новый Лесснер»</h4>
+        <h4 class="light">{{ object.title }}</h4>
         <div class="object-card-location">
             <svg>
                 <use xlink:href="assets/sprites/icons.svg#map_pin"></use>
             </svg>
-            <span>Московский район</span>
+            <span>{{ object.geolocation }}</span>
         </div>
     </div>
 </a>

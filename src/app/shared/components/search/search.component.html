@@ -1,4 +1,24 @@
-<div class="search-content">
+<form class="search-form">
+    <div class="search-select" *ngIf="selectFirst">
+        <span class="select-active">{{ selectFirst.name }}</span>
+        <svg class="arrow-icon">
+            <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
+        </svg>
+    </div>
+    <svg class="search-icon">
+        <use xlink:href="assets/sprites/icons.svg#icon_search"></use>
+    </svg>
+    <input type="text" required class="search-control" placeholder="{{ placeholder }}">
+    <div class="search-select" *ngIf="selectSecond">
+        <span class="select-active">{{ selectSecond.name }}</span>
+        <svg class="arrow-icon">
+            <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
+        </svg>
+    </div>
+    <button type="submit" class="button">Найти</button>
+</form>
+
+<!-- <div class="search-content">
     <div class="search-select" *ngIf="select">
         <span class="select-active">{{ select.name }}</span>
         <svg class="arrow-icon">
@@ -12,4 +32,4 @@
         <input type="text" required class="search-control" placeholder="{{ placeholder }}">
         <button type="submit" class="button">Найти</button>
     </form>
-</div>
+</div> -->

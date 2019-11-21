@@ -408,18 +408,6 @@
 
 // end Карточки внутренних страниц
 
-.page-cards-row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -$grid-gutter-width;
-
-    > * {
-        margin-right: $grid-gutter-width;
-        flex: 1 0 calc(25% - #{$grid-gutter-width});
-        width: calc(25% - #{$grid-gutter-width});                           
-    }
-}
-
 .materials-title {
     margin-bottom: 32px;
 }
