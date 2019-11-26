@@ -32,6 +32,8 @@ import {RouterModule} from '@angular/router';
 import { MapComponent } from './components/map/map.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { NewsSliderComponent } from './components/news-slider/news-slider.component';
+import { ArticleComponent } from './components/article/article.component';
+import { CategoryCardCarouselComponent } from './components/category-card-carousel/category-card-carousel.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -66,7 +68,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     PaginationComponent,
     MapComponent,
     SliderComponent,
-    NewsSliderComponent
+    NewsSliderComponent,
+    ArticleComponent,
+    CategoryCardCarouselComponent
   ],
   imports: [
     CommonModule,
@@ -106,7 +110,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     RouterModule,
     MapComponent,
     SliderComponent,
-    NewsSliderComponent
+    NewsSliderComponent,
+    ArticleComponent
   ],
   providers: [
     {

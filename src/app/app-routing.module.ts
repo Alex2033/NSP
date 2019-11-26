@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {DetailComponent} from './modules/sections/components/detail/detail.component';
+import {ArticleComponent} from './shared/components/article/article.component';
 
 const routes: Routes = [
   {
@@ -30,6 +32,10 @@ const routes: Routes = [
     path: 'quotes',
     loadChildren: () => import('./modules/quotes/quotes.module').then(mod => mod.QuotesModule)
   },
+  {
+    path: 'article',
+    component: ArticleComponent
+  }
 ];
 
 @NgModule({
