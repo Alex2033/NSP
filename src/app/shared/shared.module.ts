@@ -32,6 +32,14 @@ import {RouterModule} from '@angular/router';
 import { MapComponent } from './components/map/map.component';
 import { ArticleComponent } from './components/article/article.component';
 import { CategoryCardCarouselComponent } from './components/category-card-carousel/category-card-carousel.component';
+import { ShareComponent } from './components/share/share.component';
+import { TextBlockComponent } from './components/blocks/text-block/text-block.component';
+import { ImageBlockComponent } from './components/blocks/image-block/image-block.component';
+import { VideoBlockComponent } from './components/blocks/video-block/video-block.component';
+import { CompanyBlockComponent } from './components/blocks/company-block/company-block.component';
+import { ImageCarouselBlockComponent } from './components/blocks/image-carousel-block/image-carousel-block.component';
+import { LocationBlockComponent } from './components/blocks/location-block/location-block.component';
+import { CommentsComponent } from './components/comments/comments.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -66,7 +74,15 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     PaginationComponent,
     MapComponent,
     ArticleComponent,
-    CategoryCardCarouselComponent
+    CategoryCardCarouselComponent,
+    ShareComponent,
+    TextBlockComponent,
+    ImageBlockComponent,
+    VideoBlockComponent,
+    CompanyBlockComponent,
+    ImageCarouselBlockComponent,
+    LocationBlockComponent,
+    CommentsComponent
   ],
   imports: [
     CommonModule,
@@ -105,7 +121,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     PaginationComponent,
     RouterModule,
     MapComponent,
-    ArticleComponent
+    ArticleComponent,
+    ShareComponent
   ],
   providers: [
     {
