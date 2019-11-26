@@ -32,6 +32,9 @@
       <ng-container *ngSwitchCase="'object'">
         <app-object-card [size]="card.size" [class]="card.size !== 'small' ? card.size : null"></app-object-card>
       </ng-container>
+      <ng-container *ngSwitchCase="'slider'">
+        <app-slider></app-slider>
+      </ng-container>
     </ng-container>
   </ng-container>
 </div>
