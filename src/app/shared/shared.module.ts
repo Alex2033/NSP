@@ -30,6 +30,8 @@ import { QuoteBlockComponent } from './components/blocks/quote-block/quote-block
 import {PaginationComponent} from './components/pagination/pagination.component';
 import {RouterModule} from '@angular/router';
 import { MapComponent } from './components/map/map.component';
+import { ArticleComponent } from './components/article/article.component';
+import { CategoryCardCarouselComponent } from './components/category-card-carousel/category-card-carousel.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -62,7 +64,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     SearchComponent,
     QuoteBlockComponent,
     PaginationComponent,
-    MapComponent
+    MapComponent,
+    ArticleComponent,
+    CategoryCardCarouselComponent
   ],
   imports: [
     CommonModule,
@@ -100,7 +104,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     QuoteBlockComponent,
     PaginationComponent,
     RouterModule,
-    MapComponent
+    MapComponent,
+    ArticleComponent
   ],
   providers: [
     {
