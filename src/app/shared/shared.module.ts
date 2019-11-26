@@ -30,6 +30,8 @@ import { QuoteBlockComponent } from './components/blocks/quote-block/quote-block
 import {PaginationComponent} from './components/pagination/pagination.component';
 import {RouterModule} from '@angular/router';
 import { MapComponent } from './components/map/map.component';
+import { SliderComponent } from './components/slider/slider.component';
+import { NewsSliderComponent } from './components/news-slider/news-slider.component';
 import { ArticleComponent } from './components/article/article.component';
 import { CategoryCardCarouselComponent } from './components/category-card-carousel/category-card-carousel.component';
 import { ShareComponent } from './components/share/share.component';
@@ -73,6 +75,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     QuoteBlockComponent,
     PaginationComponent,
     MapComponent,
+    SliderComponent,
+    NewsSliderComponent,
     ArticleComponent,
     CategoryCardCarouselComponent,
     ShareComponent,
@@ -121,8 +125,10 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     PaginationComponent,
     RouterModule,
     MapComponent,
-    ArticleComponent,
-    ShareComponent
+    ShareComponent,
+    SliderComponent,
+    NewsSliderComponent,
+    ArticleComponent
   ],
   providers: [
     {

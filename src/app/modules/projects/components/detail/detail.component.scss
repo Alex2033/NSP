@@ -1,0 +1,28 @@
+@import "theme";
+
+.categories {
+    display: flex;
+    box-shadow: 0 4px 16px 0 rgba(8,26,63,0.14);
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.categories-item {
+    &:not(:last-child) {
+        margin-right: 8px;
+    }
+}
+
+.categories-link {
+    display: inline-block;
+    padding: 10px 16px;
+    color: $dark-gray;
+    border-radius: 4px;
+    transition: background-color .2s ease, color .2s ease;
+
+    &:hover {
+        background-color: $primary-color;
+        color: $light-color;
+        text-decoration: none;
+    }
+}

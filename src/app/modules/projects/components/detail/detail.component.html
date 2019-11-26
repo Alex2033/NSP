@@ -1,1 +1,15 @@
-Project page
+<div class="container">
+    <div class="page-top">
+        <header class="inner-page-header">
+            <h1>Жилые комплексы</h1>
+        </header>
+        <ul class="categories">
+            <li class="categories-item" *ngFor="let category of categories">
+                <a href="/" class="categories-link">{{ category }}</a>
+            </li>
+        </ul>
+    </div>
+    <div class="materials">
+        <app-card-layout [cards]="cards"></app-card-layout>
+    </div>
+</div>
