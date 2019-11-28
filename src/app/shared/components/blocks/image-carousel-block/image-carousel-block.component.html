@@ -1,1 +1,23 @@
-<p>image-carousel-block works!</p>
+<h3 *ngIf="title">{{ title }}</h3>
+<div class="carousel-wrapper">
+    <div class="control-buttons">
+        <div class="control-button" (click)="cardCarousel.swiper.slidePrev()">
+            <svg class="icon">
+                <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
+            </svg>
+        </div>
+        <div class="control-button" (click)="cardCarousel.swiper.slideNext()">
+            <svg class="icon">
+                <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
+            </svg>
+        </div>
+    </div>
+    <div class="swiper-container" [swiper]="carouselConfig" #cardCarousel>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" *ngFor="let slide of slides">
+                <img class="carousel-img" [src]="slide.image" alt="slide image">
+            </div>
+        </div>
+    </div>
+</div>
+    

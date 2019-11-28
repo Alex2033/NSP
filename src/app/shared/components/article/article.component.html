@@ -1,13 +1,41 @@
-<p>article works!</p>
-<app-share></app-share>
-<!--Иконки для шар в соц. сетях-->
-<div class="blocks">
-  <app-text-block></app-text-block>
-  <app-image-block></app-image-block>
-  <app-video-block></app-video-block>
-  <app-quote-block></app-quote-block>
-  <app-company-block></app-company-block>
-  <app-image-carousel-block></app-image-carousel-block>
-  <app-location-block></app-location-block>
-  <app-comments></app-comments>
+<div class="container">
+  <div class="row">
+    <div class="col-xl-9 offset-right">
+        <div class="page-topline">
+            <h5>Аналитика</h5>
+            <div class="page-topline-info">
+              <div class="topline-info-item topline-author">
+                Дмитрий Синочкин
+              </div>
+              <div class="topline-info-item">
+                <time datetime="2019-05-08 11:25">8 мая, 11:25</time>
+              </div>
+              <div class="topline-info-item">
+                <svg class="topline-icon">
+                    <use xlink:href="assets/sprites/icons.svg#eye"></use>
+                </svg>
+                <span>1 234</span>  
+              </div>
+            </div>
+        </div>
+      <h1 class="page-title">Апартаменты на паузе</h1>
+      <app-share></app-share>
+      <!--Иконки для шар в соц. сетях-->
+      <div class="blocks">
+        <app-block-layout [blocks]="blocks"></app-block-layout>
+      </div>
+      
+    </div>
+    <div class="col-xl-3">
+      <aside class="content-sidebar">
+        <app-material-list-card [size]="'small'" 
+                                [view]="'default'"
+                                [class]="'small'"></app-material-list-card>
+        <app-advertising-card [size]="'small'" [class]="'small'"></app-advertising-card>
+        <app-material-list-card [size]="'medium-vertical'" 
+                                [view]="'readBlock'"
+                                [class]="'medium-vertical'"></app-material-list-card>
+      </aside>
+    </div>
+  </div>
 </div>

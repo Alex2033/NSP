@@ -38,10 +38,11 @@ import { ShareComponent } from './components/share/share.component';
 import { TextBlockComponent } from './components/blocks/text-block/text-block.component';
 import { ImageBlockComponent } from './components/blocks/image-block/image-block.component';
 import { VideoBlockComponent } from './components/blocks/video-block/video-block.component';
-import { CompanyBlockComponent } from './components/blocks/company-block/company-block.component';
 import { ImageCarouselBlockComponent } from './components/blocks/image-carousel-block/image-carousel-block.component';
 import { LocationBlockComponent } from './components/blocks/location-block/location-block.component';
 import { CommentsComponent } from './components/comments/comments.component';
+import { BlockLayoutComponent } from './components/block-layout/block-layout.component';
+import { ExtendedCompanyCardComponent } from './components/extended-cards/extended-company-card/extended-company-card.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -83,10 +84,11 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     TextBlockComponent,
     ImageBlockComponent,
     VideoBlockComponent,
-    CompanyBlockComponent,
     ImageCarouselBlockComponent,
     LocationBlockComponent,
-    CommentsComponent
+    CommentsComponent,
+    BlockLayoutComponent,
+    ExtendedCompanyCardComponent
   ],
   imports: [
     CommonModule,
@@ -128,7 +130,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ShareComponent,
     SliderComponent,
     NewsSliderComponent,
-    ArticleComponent
+    ArticleComponent,
+    BlockLayoutComponent,
+    ExtendedCompanyCardComponent
   ],
   providers: [
     {
