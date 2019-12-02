@@ -42,6 +42,7 @@ import { CompanyBlockComponent } from './components/blocks/company-block/company
 import { ImageCarouselBlockComponent } from './components/blocks/image-carousel-block/image-carousel-block.component';
 import { LocationBlockComponent } from './components/blocks/location-block/location-block.component';
 import { CommentsComponent } from './components/comments/comments.component';
+import { EventComponent } from './components/event/event.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -86,7 +87,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     CompanyBlockComponent,
     ImageCarouselBlockComponent,
     LocationBlockComponent,
-    CommentsComponent
+    CommentsComponent,
+    EventComponent
   ],
   imports: [
     CommonModule,
