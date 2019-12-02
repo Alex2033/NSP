@@ -46,6 +46,8 @@ import { BlockLayoutComponent } from './components/block-layout/block-layout.com
 import { ExtendedCompanyCardComponent } from './components/extended-cards/extended-company-card/extended-company-card.component';
 import { CompanyCarouselBlockComponent } from './components/blocks/company-carousel-block/company-carousel-block.component';
 import { EventRegistrationBlockComponent } from './components/blocks/event-registration-block/event-registration-block.component';
+import { FullWidthImageCarouselBlockComponent } from './components/blocks/full-width-image-carousel-block/full-width-image-carousel-block.component';
+import { ApartmentInfoBlockComponent } from './components/blocks/apartment-info-block/apartment-info-block.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -94,7 +96,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     BlockLayoutComponent,
     ExtendedCompanyCardComponent,
     CompanyCarouselBlockComponent,
-    EventRegistrationBlockComponent
+    EventRegistrationBlockComponent,
+    FullWidthImageCarouselBlockComponent,
+    ApartmentInfoBlockComponent
   ],
   imports: [
     CommonModule,
@@ -138,7 +142,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     NewsSliderComponent,
     ArticleComponent,
     BlockLayoutComponent,
-    ExtendedCompanyCardComponent
+    ExtendedCompanyCardComponent,
+    FullWidthImageCarouselBlockComponent,
+    ApartmentInfoBlockComponent
   ],
   providers: [
     {
