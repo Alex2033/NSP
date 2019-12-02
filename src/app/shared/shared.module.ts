@@ -44,6 +44,8 @@ import { CommentsComponent } from './components/comments/comments.component';
 import { EventComponent } from './components/event/event.component';
 import { BlockLayoutComponent } from './components/block-layout/block-layout.component';
 import { ExtendedCompanyCardComponent } from './components/extended-cards/extended-company-card/extended-company-card.component';
+import { CompanyCarouselBlockComponent } from './components/blocks/company-carousel-block/company-carousel-block.component';
+import { EventRegistrationBlockComponent } from './components/blocks/event-registration-block/event-registration-block.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -90,7 +92,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     CommentsComponent,
     EventComponent,
     BlockLayoutComponent,
-    ExtendedCompanyCardComponent
+    ExtendedCompanyCardComponent,
+    CompanyCarouselBlockComponent,
+    EventRegistrationBlockComponent
   ],
   imports: [
     CommonModule,

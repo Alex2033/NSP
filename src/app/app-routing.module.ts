@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {DetailComponent} from './modules/sections/components/detail/detail.component';
 import {ArticleComponent} from './shared/components/article/article.component';
+import {EventComponent} from './shared/components/event/event.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path: 'article',
     component: ArticleComponent
+  },
+  {
+    path: 'event',
+    component: EventComponent
   }
 ];
 
