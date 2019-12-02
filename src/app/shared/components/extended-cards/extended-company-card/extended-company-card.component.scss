@@ -1,0 +1,95 @@
+@import "theme";
+
+.company-card {
+    padding: 24px;
+    background-color: $light-gray;
+    display: flex;
+    align-items: center;
+
+    > * {
+        &:not(:last-child) {
+            margin-right: 24px;
+        }
+    }
+}
+
+.company-img {
+    flex: 0 0 208px;
+    width: 208px;
+    height: 208px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $light-color;
+    
+    img {
+        width: 160px;
+        height: 160px;
+        object-fit: cover;
+    }
+}
+
+.company-title {
+    margin-bottom: 16px;
+}
+
+.company-text {
+    color: $dark-gray;
+    margin-bottom: 24px;
+}
+
+.company-contacts {
+    width: 100%;
+    max-width: 435px;
+    margin-bottom: -16px;
+    column-count: 2;
+    column-gap: 90px;
+}
+
+.company-contact {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 1.571;
+
+    > * {
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+}
+
+.company-contact-icon {
+    width: 16px;
+    display: flex;
+    justify-content: center;
+
+    svg {
+        fill: $gray;
+    }
+}
+
+.company-phone {
+    color: $text-color;
+}
+
+.phone {
+    width: 14px;
+    height: 16px;
+}
+
+.mail {
+    width: 16px;
+    height: 12px;
+}
+
+.web {
+    width: 16px;
+    height: 16px;
+}
+
+.person {
+    width: 12px;
+    height: 16px;
+}

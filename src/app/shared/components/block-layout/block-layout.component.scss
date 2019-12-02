@@ -1,0 +1,41 @@
+:host {
+    > * {
+        display: block;
+    }
+}
+
+app-image-block, app-video-block {
+    float: left;
+    position: relative;
+    top: 7px;
+    width: 400px;
+    margin: 0 32px 18px 0;
+
+    &.full-width {
+        top: 0;
+        margin: 0 0 32px;
+        width: 100%;
+        float: none;
+    }
+}
+
+app-extended-company-card {
+    margin-bottom: 40px;
+}
+
+app-video-block {
+    height: 225px;
+
+    &.full-width {
+        height: 464px;
+    }
+}
+
+app-quote-block, app-image-carousel-block {
+    margin-bottom: 32px;
+}
+
+app-location-block {
+    margin-bottom: 40px;
+}
+

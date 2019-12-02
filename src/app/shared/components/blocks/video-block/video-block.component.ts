@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-video-block',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VideoBlockComponent implements OnInit {
 
-  constructor() { }
+  @Input() video;
+  url;
+
+  constructor(public sanitizer: DomSanitizer) { }
 
   ngOnInit() {
+    this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.video.videoUrl);
   }
 
 }

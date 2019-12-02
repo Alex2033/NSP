@@ -1,0 +1,45 @@
+<div class="company-card">
+    <div class="company-img">
+        <img [src]="company.image" alt="company image">
+    </div>
+    <div class="company-content">
+        <h4 class="company-title">{{ company.title }}</h4>
+        <div class="company-text">
+            <p>{{ company.text }}</p>
+        </div>
+        <div class="company-contacts">
+            <div class="company-contact">
+                <div class="company-contact-icon">
+                    <svg class="phone">
+                        <use xlink:href="assets/sprites/icons.svg#phone"></use>
+                    </svg>
+                </div>
+                <a href="tel:{{ company.phone | phoneFormat }}" class="company-phone link">{{ company.phone }}</a>
+            </div>
+            <div class="company-contact">
+                    <div class="company-contact-icon">
+                        <svg class="web">
+                            <use xlink:href="assets/sprites/icons.svg#web"></use>
+                        </svg>
+                    </div>
+                    <a class="link" href="{{ company.site }}">{{ company.site }}</a>
+                </div>
+            <div class="company-contact">
+                <div class="company-contact-icon">
+                    <svg class="mail">
+                        <use xlink:href="assets/sprites/icons.svg#mail"></use>
+                    </svg>
+                </div>
+                <a class="link" href="mailto:{{ company.email }}">{{ company.email }}</a>
+            </div>
+            <div class="company-contact">
+                <div class="company-contact-icon">
+                    <svg class="person">
+                        <use xlink:href="assets/sprites/icons.svg#web"></use>
+                    </svg>
+                </div>
+                <a class="link" href="{{ company.category }}">{{ company.category }}</a>
+            </div>
+        </div>
+    </div>
+</div>

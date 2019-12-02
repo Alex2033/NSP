@@ -1,1 +1,4 @@
-<p>image-block works!</p>
+<figure class="image-figure">
+    <img [src]="image.imageUrl" [alt]="image.caption">
+    <figcaption class="image-caption" *ngIf="image.caption">{{ image.caption }}</figcaption>
+</figure>

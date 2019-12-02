@@ -1,0 +1,44 @@
+@import "theme";
+
+:host {
+    margin-bottom: 40px;
+    display: block;
+}
+
+.share-title {
+    margin-bottom: 24px;
+}
+
+.share-text {
+    margin-bottom: 32px;
+    font-size: 17px;
+    line-height: 1.705;
+    color: $dark-gray;
+}
+
+.share-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.comments {
+
+    span {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        color: $primary-color;
+    }
+
+    > * {
+        &:not(:last-child) {
+            margin-right: 8px;
+        }
+    }
+}
+
+.comment-icon {
+    width: 14px;
+    height: 14px;
+    fill: $gray;
+}

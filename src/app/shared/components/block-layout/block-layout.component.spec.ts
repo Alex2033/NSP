@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CompanyBlockComponent } from './company-block.component';
+import { BlockLayoutComponent } from './block-layout.component';
 
-describe('CompanyBlockComponent', () => {
-  let component: CompanyBlockComponent;
-  let fixture: ComponentFixture<CompanyBlockComponent>;
+describe('BlockLayoutComponent', () => {
+  let component: BlockLayoutComponent;
+  let fixture: ComponentFixture<BlockLayoutComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CompanyBlockComponent ]
+      declarations: [ BlockLayoutComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CompanyBlockComponent);
+    fixture = TestBed.createComponent(BlockLayoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

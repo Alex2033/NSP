@@ -1,0 +1,48 @@
+<!-- <app-text-block></app-text-block>
+<app-image-block></app-image-block>
+<app-video-block></app-video-block>
+<app-quote-block></app-quote-block>
+<app-extended-company-card></app-extended-company-card>
+<app-image-carousel-block></app-image-carousel-block>
+<app-location-block></app-location-block>
+<app-comments></app-comments> -->
+
+
+<ng-container *ngFor="let block of blocks">
+    <ng-container [ngSwitch]="block.type">
+
+        <ng-container *ngSwitchCase="'text'">
+            <app-text-block [paragraphs]="block.paragraphs"></app-text-block>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'image'">
+            <app-image-block [class.full-width]="block.size === 'big'" [image]="block.config"></app-image-block>
+        </ng-container>
+        
+        <ng-container *ngSwitchCase="'company'">
+            <app-extended-company-card [company]="block.companyConfig"></app-extended-company-card>
+        </ng-container>
+
+         <ng-container *ngSwitchCase="'video'">
+            <app-video-block [class.full-width]="block.configVideo.size === 'big'" [video]="block.configVideo"></app-video-block>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'quote'">
+            <app-quote-block [quote]="block.quoteConfig"></app-quote-block>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'carousel'">
+            <app-image-carousel-block [title]="block.title" [slides]="block.carouselContent"></app-image-carousel-block>
+        </ng-container>
+
+        <!-- временно -->
+        <ng-container *ngSwitchCase="'map'">
+            <app-location-block [source]="block.source"></app-location-block>
+        </ng-container>
+
+        <!-- <ng-container *ngSwitchCase="'comments'">
+            <app-comments [comments]="block.comments"></app-comments>
+        </ng-container> -->
+       
+    </ng-container>
+</ng-container>
