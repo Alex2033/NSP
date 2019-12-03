@@ -1,0 +1,42 @@
+@import "theme";
+
+.card-wrapper {
+
+    &.large {
+
+        .swiper-slide {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .news-item {
+            margin-right: 40px;
+        }
+
+    }
+
+}
+
+.card-header {
+    margin-bottom: 32px;
+}
+
+.slides-amount {
+    font-size: 13px;
+    line-height: 1.538;
+    color: $raven-color;
+    margin-left: -40px;
+}
+
+.news-text {
+    font-size: 14px;
+    line-height: 1.571;
+}
+
+.control-buttons {
+    justify-content: flex-end;
+}
+
+.control-button.small {
+    padding: 5px;
+}

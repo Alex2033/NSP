@@ -1,0 +1,43 @@
+<div class="carousel-wrapper">
+    <header class="carousel-header">
+        <div class="carousel-header-left">
+            <h2 [class.is-small]="smallHeader">
+                {{ header }}
+            </h2>
+            <ul class="carousel-tabs">
+                <li 
+                    class="carousel-tab" 
+                    *ngFor="let tab of tabs; let index = index"
+                    [class.active]="cardsView === index"
+                >
+                    <button type="button" (click)="cardsView = index">{{ tab.subtopic }}</button>
+                </li>
+            </ul>
+        </div>
+        <div class="control-buttons" (click)="cardCarousel.swiper.slidePrev()">
+            <div class="control-button">
+                <svg class="icon">
+                    <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
+                </svg>
+            </div>
+            <div class="control-button" (click)="cardCarousel.swiper.slideNext()">
+                <svg class="icon">
+                    <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
+                </svg>
+            </div>
+        </div>
+    </header>
+    <div 
+        class="swiper-container" 
+        [swiper]="carouselConfig" 
+        #cardCarousel 
+    >
+        <ng-container *ngFor="let tab of tabs; let index = index">
+            <div class="swiper-wrapper" [hidden]="!(cardsView === index)">
+                <div class="swiper-slide" *ngFor="let slide of tab.cards">
+                    <app-material-card [size]="'small'" [view]="'default'"></app-material-card>
+                </div>
+            </div>
+    </ng-container>
+    </div>
+</div>

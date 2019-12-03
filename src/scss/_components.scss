@@ -121,7 +121,7 @@
         border: 1px solid $border-color;
 
         .icon {
-            fill: $light-color;
+            fill: $gray;
         }
 
         &:hover {
@@ -499,3 +499,11 @@
     height: 32px;
 }
 // end Share Socials
+
+.date {
+    margin-bottom: 8px;
+    color: $dark-gray;
+    font-size: 13px;
+    line-height: 1.538;
+    display: block;
+}

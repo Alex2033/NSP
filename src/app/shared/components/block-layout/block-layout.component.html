@@ -1,13 +1,3 @@
-<!-- <app-text-block></app-text-block>
-<app-image-block></app-image-block>
-<app-video-block></app-video-block>
-<app-quote-block></app-quote-block>
-<app-extended-company-card></app-extended-company-card>
-<app-image-carousel-block></app-image-carousel-block>
-<app-location-block></app-location-block>
-<app-comments></app-comments> -->
-
-
 <ng-container *ngFor="let block of blocks">
     <ng-container [ngSwitch]="block.type">
 
@@ -39,10 +29,6 @@
         <ng-container *ngSwitchCase="'map'">
             <app-location-block [source]="block.source"></app-location-block>
         </ng-container>
-
-        <!-- <ng-container *ngSwitchCase="'comments'">
-            <app-comments [comments]="block.comments"></app-comments>
-        </ng-container> -->
        
     </ng-container>
 </ng-container>

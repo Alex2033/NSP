@@ -9,6 +9,21 @@ export class DetailComponent implements OnInit {
 
   categories = ['Подобрать ЖК', 'Технология строительства', 'Новости', 'Интервью', 'Аналитика', 'Выборгский район', 'Московский район'];
 
+  config = [
+    {
+      subtopic: 'Все',
+      cards: [1, 2, 3, 4, 5, 6]
+    },
+    {
+      subtopic: 'Подтема 1',
+      cards: [1, 2, 3]
+    },
+    {
+      subtopic: 'Подтема 2',
+      cards: [1, 2]
+    },
+  ];
+
   cards = [
     {
       type: 'front'

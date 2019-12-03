@@ -43,6 +43,7 @@ import { LocationBlockComponent } from './components/blocks/location-block/locat
 import { CommentsComponent } from './components/comments/comments.component';
 import { BlockLayoutComponent } from './components/block-layout/block-layout.component';
 import { ExtendedCompanyCardComponent } from './components/extended-cards/extended-company-card/extended-company-card.component';
+import { TabsCardCarouselComponent } from './components/tabs-card-carousel/tabs-card-carousel.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -88,7 +89,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     LocationBlockComponent,
     CommentsComponent,
     BlockLayoutComponent,
-    ExtendedCompanyCardComponent
+    ExtendedCompanyCardComponent,
+    TabsCardCarouselComponent
   ],
   imports: [
     CommonModule,
@@ -132,7 +134,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     NewsSliderComponent,
     ArticleComponent,
     BlockLayoutComponent,
-    ExtendedCompanyCardComponent
+    ExtendedCompanyCardComponent,
+    TabsCardCarouselComponent
   ],
   providers: [
     {

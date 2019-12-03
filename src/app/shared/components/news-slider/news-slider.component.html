@@ -1,1 +1,62 @@
-<p>news-slider works!</p>
+<ng-container [ngSwitch]="size">
+	<ng-container *ngSwitchCase="'large'">
+		<div class="card-wrapper large">
+			<header class="card-header">
+				<div class="row">
+					<div class="col-lg-9">
+						<h4>Новости долевки</h4>
+					</div>
+					<div class="col-lg-2">
+						<div class="slides-amount">
+							1 — 3
+						</div>
+					</div>
+					<div class="col-lg-1">
+						<div class="control-buttons">
+							<div class="control-button small light" (click)="largeNews.swiper.slidePrev()">
+								<svg class="icon">
+									<use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
+								</svg>
+							</div>
+							<div class="control-button small light" (click)="largeNews.swiper.slideNext()">
+								<svg class="icon">
+									<use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
+								</svg>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div class="swiper-container" [swiper]="newsSliderConfig" #largeNews>
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="news-item">
+							<time class="date" datetime="2019-05-09">9 мая, 14:32</time>
+							<div class="news-text">
+								<p>«ФНС подала иск о банкротстве застройщика малоэтажного ЖК «Черничная поляна»</p>
+							</div>
+						</div>
+						<div class="news-item">
+							<time class="date" datetime="2019-05-09">9 мая, 14:32</time>
+							<div class="news-text">
+								<p>Объём просроченной ипотечной задолженности вырос по итогам полугодия</p>
+							</div>
+						</div>
+						<div class="news-item">
+							<time class="date" datetime="2019-05-09">9 мая, 14:32</time>
+							<div class="news-text">
+								<p>Сбербанк поможет частным инвесторам вкладывать средства в строительство</p>
+							</div>
+						</div>
+						<div class="news-item">
+							<time class="date" datetime="2019-05-09">9 мая, 14:32</time>
+							<div class="news-text">
+								<p>В Думе рассматривают возможность платить за будущую квартиру в новостройке в рассрочку</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ng-container>
+</ng-container>

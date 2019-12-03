@@ -1,0 +1,80 @@
+@import "theme";
+@import "../cards/card-common.scss";
+@import "variables/bootstrap";
+
+.carousel-wrapper {
+    margin-bottom: 48px;
+}
+
+.carousel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+
+    h2.is-small {
+        font-size: 22px;
+        line-height: 1.454545;
+    }
+}
+
+.carousel-header-left {
+    display: flex;
+    align-items: center;
+
+    h2 {
+        margin-right: 48px;
+    }
+}
+
+.carousel-link {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: darken($primary-color, 5%);
+    transition: opacity .2s ease;
+
+    span {
+        margin-right: 16px;
+    }
+
+    &:hover {
+        text-decoration: none;
+        opacity: 0.75;
+    }
+
+    .arrow-icon {
+        fill: darken($primary-color, 5%);
+    }
+}
+
+.carousel-tabs {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    > * {
+        &:not(:last-child) {
+            margin-right: 40px;
+        }
+    }
+}
+
+.carousel-tab {
+
+    &.active {
+        button {
+            color: $text-color;
+        }
+    }
+
+    button {
+        font-size: 14px;
+        background-color: transparent;
+        padding: 0;
+        color: $primary-color;
+        font-family: 'Montserrat', sans-serif;
+        line-height: 1.571;
+        font-weight: 700;
+        border: 0;
+    }
+}
