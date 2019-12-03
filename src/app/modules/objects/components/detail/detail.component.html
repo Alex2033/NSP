@@ -1,3 +1,103 @@
-<p>detail works!</p>
+<div class="object-container">
+    <header class="object-header">
+        <div class="object-headings">
+            <h5>Жилые комплексы</h5>
+            <h1>ЖК «LIFE-Лесная» </h1>
+        </div>
+        <div class="object-header-image">
+            <img src="https://i.ibb.co/QnFV5Ww/image.png" alt="object logo">
+        </div>
+    </header>
+    <nav class="object-navigation">
+        <ul class="object-navigation-list">
+            <li class="object-navigation-item">
+                <button class="object-navigation-btn" (click)="scrollToElement(target)">Описание</button>
+            </li>
+            <li class="object-navigation-item">
+                <button class="object-navigation-btn" (click)="scrollToElement(target)">Расположение</button>
+            </li>
+            <li class="object-navigation-item">
+                <button class="object-navigation-btn" (click)="scrollToElement(target)">Планировки</button>
+            </li>
+            <li class="object-navigation-item">
+                <button class="object-navigation-btn" (click)="scrollToElement(target)">Фотографии</button>
+            </li>
+            <li class="object-navigation-item">
+                <button class="object-navigation-btn" (click)="scrollToElement(target)">Застройщик</button>
+            </li>
+        </ul>
+    </nav>
+    <div class="object-top-info">
+        <div class="object-top-text">
+            <p>Зелёный квартал в тихом районе. Место, рядом с парками и садами, где для спокойной семейной жизни продумана каждая деталь. Квартал располагается в непосредственной близости от исторического центра и Петроградской стороны, в пяти минутах ходьбы от станции метро «Лесная».</p>
+        </div>
+        <div class="object-top-contacts">
+            <div class="object-top-contact">
+                <svg class="geolocation">
+                    <use xlink:href="assets/sprites/icons.svg#map_pin"></use>
+                </svg>
+                <span>Санкт–Петербург, Выборгский район</span>
+            </div>
+            <div class="object-top-contact">
+                <div class="company-contact-icon">
+                    <svg class="web">
+                        <use xlink:href="assets/sprites/icons.svg#web"></use>
+                    </svg>
+                </div>
+                <a class="link" href="https://lesnaya.life/" target="_blank">lesnaya.life</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="full-image">
+    <img src="https://images.unsplash.com/photo-1462774603919-1d8087e62cad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=80" alt="building image">
+</div>
+
+<div class="object-container">
+    <h3 style="margin-bottom: 24px;">Описание объекта</h3>
+    <p>ЖК «LIFE-Лесная» представляет собой шесть жилых домов высотой от 10 до 13 этажей.  В них запроектировано в общей сложности 1791 квартира (195 тыс. кв.м), почти половина из которых – двухкомнатные. Квартирография включает как традиционные квартиры с изолированными комнатами и кухней, так и востребованные варианты европланировок. В квартирах верхних этажей предусмотрена возможность организации камина. Подземный паркинг рассчитан на 1290 машино-мест. Технология строительства – монолитная. Первая очередь, состоящая из двух корпусов на 480 квартир, была сдана в конце прошлого года. Жильё передадут либо с предчистовой отдел-кой, либо «под ключ» – на выбор покупателя. У него также есть возможность заказать дополнительные опции в зависимости от выбранного пакета: замена ламината на паркет, установка тёплого пола, премиальная сантехника и электрическое оборудование. </p>
+
+    <h4 style="margin-bottom: 16px;">Условия покупки</h4>
+    <ul>
+        <li>
+            100%-я оплата по договору долевого участия
+        </li>
+        <li>
+            Заключение договора купли-продажи (для готовых корпусов)
+        </li>
+        <li>
+            Ипотека (16 банков-партнёров)
+        </li>
+        <li>
+            Рассрочка (несколько программ)
+        </li>
+    </ul>
+
+    <h4 style="margin-bottom: 24px;">Срок сдачи</h4>
+    <div class="deadline-buttons">
+        <button class="deadline-button">I очередь — сдана</button>
+        <button class="deadline-button">II очередь — IV кв. 2019 г.</button>
+        <button class="deadline-button">III очередь — III кв. 2020 г.</button>
+    </div>
+
+    <div class="divider" style="margin-bottom: 40px;"></div>
+
+    <h3 style="margin-bottom: 24px;">Расположение</h3>
+    <p>Жилой квартал LIFE-Лесная расположен на северо-востоке Санкт-Петербурга, в Выборгском районе, по адресу: улица Новолитовская.</p>
+    <p><strong>В шаговой доступности от квартала</strong> — станция метро «Лесная» (500 метров) и остановки наземного общественного транспорта.</p>
+    <p><strong>На автомобиле</strong> время в пути до исторического центра города составит 10 минут, до Петроградской стороны – 5 минут.</p>
+    <p>Здесь легко планировать и дальние поездки: в 10-15 минутах выезды на Западный скоростной диаметр и кольцевую автодорогу. Дорога до аэропорта, железнодорожных и морских вокзалов не займет много времени.</p>
+
+    <div class="map-image">
+        <img src="assets/images/map.jpg" alt="map image" style="width: 100%;">
+    </div>
+
+    <h3 style="margin-bottom: 8px;">Расположение</h3>
+    
+</div>
+
 <app-full-width-image-carousel-block></app-full-width-image-carousel-block>
 <app-apartment-info-block></app-apartment-info-block>
+
+

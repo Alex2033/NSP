@@ -1,0 +1,187 @@
+@import "theme";
+
+:host {
+    font-size: 16px;
+    line-height: 1.625;
+
+
+}
+
+li {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+        margin-bottom: 8px;
+    }
+    
+
+    &::before {
+        content: '';
+        width: 8px;
+        height: 8px;
+        margin-right: 12px;
+        background-color: $primary-color;
+        border-radius: 50%;
+    }
+}
+
+p {
+    margin-bottom: 32px;
+    
+}
+
+.object-container {
+    max-width: 855px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    > * {
+        margin-bottom: 32px;
+    }
+}
+
+.object-header {
+    display: flex;
+    justify-content: space-between;
+
+    h5 {
+        color: $primary-color;
+        margin-bottom: 24px;
+    }
+}
+
+.object-header-image {
+    flex: 0 0 200px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.object-navigation {
+    border-radius: 4px;	
+    background-color: #FFFFFF;	
+    box-shadow: 0 4px 16px 0 rgba(8,26,63,0.14);
+    padding: 16px 32px;
+}
+
+.object-navigation-list {
+    margin-right: -8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.object-navigation-item {
+    margin-right: 8px;
+    font-family: 'Montserrat', sans-serif;
+
+    &:not(:last-child) {
+        margin-bottom: 0;
+    }
+
+    &::before {
+        display: none;
+    }
+
+    &:hover {
+        .object-navigation-btn {
+            text-shadow: none;
+        }
+        
+    }
+}
+
+.object-navigation-btn {
+    background-color: transparent;
+    padding: 0;
+    border: 0;
+    color: $dark-gray;
+    font-size: 15px;
+    line-height: 1.6;
+    text-shadow: 0.5px 0 0 $dark-gray;
+    transition: text-shadow .2s ease;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+.object-top-text {
+    p {
+        margin-bottom: 24px;
+        font-size: 17px;
+        line-height: 1.705;
+    }
+}
+
+.object-top-contacts {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 5px;
+
+    svg {
+        fill: $gray;
+    }
+}
+
+.geolocation {
+    width: 13px;
+    height: 18px;
+}
+
+.web {
+    width: 16px;
+    height: 16px;
+}
+
+.object-top-contact {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 1.625;
+
+    > * {
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+
+    span {
+        color: $dark-gray;
+    }
+}
+
+.full-image {
+    margin-bottom: 32px;
+    height: 0;
+    padding-bottom: 31.94%;
+    position: relative;
+
+    img {
+        width: 100%;
+        position: absolute;
+        object-fit: cover;
+    }
+}
+
+.deadline-buttons {
+    display: flex;
+    margin: 0 -16px 40px 0 !important;
+}
+
+.deadline-button {
+    margin-right: 16px;
+    padding: 16px;
+    flex: 1;
+    cursor: pointer;
+    background-color: $light-gray;
+    border: 0;
+}
+
+.divider {
+    border-bottom: 1px solid $border-color;
+}
