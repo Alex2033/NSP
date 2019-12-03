@@ -41,9 +41,14 @@ import { VideoBlockComponent } from './components/blocks/video-block/video-block
 import { ImageCarouselBlockComponent } from './components/blocks/image-carousel-block/image-carousel-block.component';
 import { LocationBlockComponent } from './components/blocks/location-block/location-block.component';
 import { CommentsComponent } from './components/comments/comments.component';
+import { EventComponent } from './components/event/event.component';
 import { BlockLayoutComponent } from './components/block-layout/block-layout.component';
 import { ExtendedCompanyCardComponent } from './components/extended-cards/extended-company-card/extended-company-card.component';
 import { TabsCardCarouselComponent } from './components/tabs-card-carousel/tabs-card-carousel.component';
+import { CompanyCarouselBlockComponent } from './components/blocks/company-carousel-block/company-carousel-block.component';
+import { EventRegistrationBlockComponent } from './components/blocks/event-registration-block/event-registration-block.component';
+import { FullWidthImageCarouselBlockComponent } from './components/blocks/full-width-image-carousel-block/full-width-image-carousel-block.component';
+import { ApartmentInfoBlockComponent } from './components/blocks/apartment-info-block/apartment-info-block.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -88,9 +93,14 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ImageCarouselBlockComponent,
     LocationBlockComponent,
     CommentsComponent,
+    EventComponent,
     BlockLayoutComponent,
     ExtendedCompanyCardComponent,
-    TabsCardCarouselComponent
+    TabsCardCarouselComponent,
+    CompanyCarouselBlockComponent,
+    EventRegistrationBlockComponent,
+    FullWidthImageCarouselBlockComponent,
+    ApartmentInfoBlockComponent
   ],
   imports: [
     CommonModule,
@@ -135,7 +145,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ArticleComponent,
     BlockLayoutComponent,
     ExtendedCompanyCardComponent,
-    TabsCardCarouselComponent
+    TabsCardCarouselComponent,
+    FullWidthImageCarouselBlockComponent,
+    ApartmentInfoBlockComponent
   ],
   providers: [
     {
