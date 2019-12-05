@@ -1,2 +1,24 @@
-<p>full-width-image-carousel-block works!</p>
-
+<div class="swiper-container" [swiper]="carouselConfig" [(index)]="index" #carousel>
+    <div class="swiper-wrapper" #carouselWrapper>
+        <div class="swiper-slide" *ngFor="let image of images">
+            <div class="carousel-image">
+                <img [src]="image" alt="photo">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="control-panel">
+    <div class="slides-number">{{ index + 1 }} из {{ images.length }}</div>
+    <div class="control-buttons" (click)="carousel.swiper.slidePrev()">
+        <div class="control-button">
+            <svg class="icon">
+                <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
+            </svg>
+        </div>
+        <div class="control-button" (click)="carousel.swiper.slideNext()">
+            <svg class="icon">
+                <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
+            </svg>
+        </div>
+    </div>
+</div>

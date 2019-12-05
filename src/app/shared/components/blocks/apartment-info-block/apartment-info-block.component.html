@@ -1,1 +1,24 @@
-<p>apartment-info-block works!</p>
+<div class="apartment">
+    <div class="apartment-image">
+        <img [src]="apartment.image" alt="apartment image">
+    </div>
+    <div class="apartment-content">
+        <div class="aparment-info">
+            <div class="apartment-info-item">
+                <div class="apartment-number">{{ apartment.rooms }}</div>
+                <div class="aparmtent-info-text">Комнаты</div>
+            </div>
+            <div class="apartment-info-item">
+                <div class="apartment-number">{{ apartment.square | number:'.2-2' }}</div>
+                <div class="aparmtent-info-text">Площадь, м<sup>2</sup></div>
+            </div>
+            <div class="apartment-info-item">
+                <div class="apartment-number">{{ apartment.price }} ₽</div>
+                <div class="aparmtent-info-text">Стоимость</div>
+            </div>
+        </div>
+        <div class="apartment-text">
+            <p>{{ apartment.text }}</p>
+        </div>
+    </div>
+</div>

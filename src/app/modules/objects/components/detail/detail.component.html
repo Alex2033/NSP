@@ -11,19 +11,19 @@
     <nav class="object-navigation">
         <ul class="object-navigation-list">
             <li class="object-navigation-item">
-                <button class="object-navigation-btn" (click)="scrollToElement(target)">Описание</button>
+                <button class="object-navigation-btn">Описание</button> <!-- (click)="scrollToElement(target)" -->
             </li>
             <li class="object-navigation-item">
-                <button class="object-navigation-btn" (click)="scrollToElement(target)">Расположение</button>
+                <button class="object-navigation-btn">Расположение</button> <!-- (click)="scrollToElement(target)" -->
             </li>
             <li class="object-navigation-item">
-                <button class="object-navigation-btn" (click)="scrollToElement(target)">Планировки</button>
+                <button class="object-navigation-btn">Планировки</button> <!-- (click)="scrollToElement(target)" -->
             </li>
             <li class="object-navigation-item">
-                <button class="object-navigation-btn" (click)="scrollToElement(target)">Фотографии</button>
+                <button class="object-navigation-btn">Фотографии</button> <!-- (click)="scrollToElement(target)" -->
             </li>
             <li class="object-navigation-item">
-                <button class="object-navigation-btn" (click)="scrollToElement(target)">Застройщик</button>
+                <button class="object-navigation-btn">Застройщик</button> <!-- (click)="scrollToElement(target)" -->
             </li>
         </ul>
     </nav>
@@ -75,7 +75,7 @@
     </ul>
 
     <h4 style="margin-bottom: 24px;">Срок сдачи</h4>
-    <div class="deadline-buttons">
+    <div class="deadline-buttons" style="display: none;">
         <button class="deadline-button">I очередь — сдана</button>
         <button class="deadline-button">II очередь — IV кв. 2019 г.</button>
         <button class="deadline-button">III очередь — III кв. 2020 г.</button>
@@ -93,11 +93,33 @@
         <img src="assets/images/map.jpg" alt="map image" style="width: 100%;">
     </div>
 
-    <h3 style="margin-bottom: 8px;">Расположение</h3>
+    <div class="apartment-info-top">
+        <h3 style="margin-bottom: 8px;">Планировки</h3>
+        <p>Предложение актуально на дату публикации (01.04.2019 г.)</p>
+    </div>
+
+    <app-apartment-info-block *ngFor="let apartment of apartments" [apartment]="apartment"></app-apartment-info-block>
+
+    <h3>Фотографии проекта</h3>
+
+    <app-full-width-image-carousel-block [images]="images"></app-full-width-image-carousel-block>
+
+    <h3>Информация о застройщике</h3>
+
+    <app-extended-company-card [company]="companyCard" style="margin-bottom: 48px;"></app-extended-company-card>
     
 </div>
 
-<app-full-width-image-carousel-block></app-full-width-image-carousel-block>
-<app-apartment-info-block></app-apartment-info-block>
+<div class="divider" style="margin-bottom: 49px;"></div>
 
-
+<div class="container">
+    <div class="materials">
+        <h2 class="materials-title">Материалы о проекте</h2>
+        <app-card-layout [cards]="objectCards"></app-card-layout>
+    </div>
+    
+    <div class="materials">
+        <h2 class="materials-title">Аналитические материалы о рынке недвижимости</h2>
+        <app-card-layout [cards]="objectCards"></app-card-layout>
+    </div>    
+</div>

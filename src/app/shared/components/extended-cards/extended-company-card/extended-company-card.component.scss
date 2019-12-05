@@ -1,5 +1,9 @@
 @import "theme";
 
+:host {
+    display: block;
+}
+
 .company-card {
     padding: 24px;
     background-color: $light-gray;
@@ -23,8 +27,6 @@
     background-color: $light-color;
     
     img {
-        width: 160px;
-        height: 160px;
         object-fit: cover;
     }
 }

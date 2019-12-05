@@ -3,8 +3,6 @@
 :host {
     font-size: 16px;
     line-height: 1.625;
-
-
 }
 
 li {
@@ -29,7 +27,6 @@ li {
 
 p {
     margin-bottom: 32px;
-    
 }
 
 .object-container {
@@ -184,4 +181,14 @@ p {
 
 .divider {
     border-bottom: 1px solid $border-color;
+}
+
+.apartment-info-top {
+    p {
+        color: $dark-gray;
+    }
+}
+
+app-full-width-image-carousel-block {
+    margin-bottom: 40px !important;
 }
