@@ -91,6 +91,13 @@ export class DetailComponent implements OnInit {
     },
   ];
 
+  news = [
+    {
+      header: 'Новости долевки',
+      
+    },
+  ];
+
   constructor() { }
 
   ngOnInit() {

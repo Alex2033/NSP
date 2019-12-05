@@ -1,3 +1,27 @@
+@import "theme";
+
 .offset-right {
     padding-right: 104px;
+}
+
+.hashtags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    > * {
+        &:not(:last-child) {
+            margin-right: 24px;
+        }
+    }
+}
+
+.hashtag {
+    display: block;
+    color: $primary-color;
+    margin-bottom: 24px;
+}
+
+.bot {
+    margin-bottom: 48px;
 }

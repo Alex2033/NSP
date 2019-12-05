@@ -1,29 +1,83 @@
 <div class="container">
   <div class="row">
     <div class="col-xl-9 offset-right">
-        <div class="page-topline">
-            <h5>Аналитика</h5>
-            <div class="page-topline-info">
-              <div class="topline-info-item topline-author">
-                Дмитрий Синочкин
-              </div>
-              <div class="topline-info-item">
-                <time datetime="2019-05-08 11:25">8 мая, 11:25</time>
-              </div>
-              <div class="topline-info-item">
-                <svg class="topline-icon">
-                    <use xlink:href="assets/sprites/icons.svg#eye"></use>
-                </svg>
-                <span>1 234</span>  
-              </div>
+      <div class="page-topline">
+          <h5>Аналитика</h5>
+          <div class="page-topline-info">
+            <div class="topline-info-item topline-author">
+              Дмитрий Синочкин
             </div>
-        </div>
+            <div class="topline-info-item">
+              <time datetime="2019-05-08 11:25">8 мая, 11:25</time>
+            </div>
+            <div class="topline-info-item">
+              <svg class="topline-icon">
+                <use xlink:href="assets/sprites/icons.svg#eye"></use>
+              </svg>
+              <span>1 234</span>  
+            </div>
+          </div>
+      </div>
       <h1 class="page-title">Апартаменты на паузе</h1>
       <app-share></app-share>
-      <!--Иконки для шар в соц. сетях-->
+
       <div class="blocks">
         <app-block-layout [blocks]="blocks"></app-block-layout>
       </div>
+
+      <div class="bot">
+        <div class="hashtags">
+          <strong class="hashtag">Аналитика</strong>
+          <div class="hashtag">#Апартаменты</div>
+          <div class="hashtag">#Инвестиции в недвижимость</div>
+        </div>
+        <ul class="share-socials">
+          <li class="share-social">
+              <a href="#">
+                  <svg class="share-social-icon">
+                      <use xlink:href="assets/sprites/icons.svg#copy-link-outline"></use>
+                  </svg>
+              </a>
+          </li>
+          <li class="share-social">
+              <a href="#">
+                  <svg class="share-social-icon">
+                      <use xlink:href="assets/sprites/icons.svg#vk-outline"></use>
+                  </svg>
+              </a>
+          </li>
+          <li class="share-social">
+              <a href="#">
+                  <svg class="share-social-icon">
+                      <use xlink:href="assets/sprites/icons.svg#facebook-outline"></use>
+                  </svg>
+              </a>
+          </li>
+          <li class="share-social">
+              <a href="#">
+                  <svg class="share-social-icon">
+                      <use xlink:href="assets/sprites/icons.svg#telegram-outline"></use>
+                  </svg>
+              </a>
+          </li>
+          <li class="share-social">
+              <a href="#">
+                  <svg class="share-social-icon">
+                      <use xlink:href="assets/sprites/icons.svg#twitter-outline"></use>
+                  </svg>
+              </a>
+          </li>
+          <li class="share-social">
+              <a href="#">
+                  <svg class="share-social-icon">
+                      <use xlink:href="assets/sprites/icons.svg#more-outline"></use>
+                  </svg>
+              </a>
+          </li>
+        </ul>
+      </div>
+
+      <app-comments></app-comments>
       
     </div>
     <div class="col-xl-3">

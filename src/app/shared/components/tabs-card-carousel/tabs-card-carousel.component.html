@@ -10,17 +10,17 @@
                     *ngFor="let tab of tabs; let index = index"
                     [class.active]="cardsView === index"
                 >
-                    <button type="button" (click)="cardsView = index">{{ tab.subtopic }}</button>
+                    <button type="button" (click)="cardsView = index; carousel.swiper.init()">{{ tab.subtopic }}</button>
                 </li>
             </ul>
         </div>
-        <div class="control-buttons" (click)="cardCarousel.swiper.slidePrev()">
+        <div class="control-buttons" (click)="carousel.swiper.slidePrev()">
             <div class="control-button">
                 <svg class="icon">
                     <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
                 </svg>
             </div>
-            <div class="control-button" (click)="cardCarousel.swiper.slideNext()">
+            <div class="control-button" (click)="carousel.swiper.slideNext()">
                 <svg class="icon">
                     <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
                 </svg>
@@ -30,14 +30,17 @@
     <div 
         class="swiper-container" 
         [swiper]="carouselConfig" 
-        #cardCarousel 
+        #carousel 
     >
-        <ng-container *ngFor="let tab of tabs; let index = index">
-            <div class="swiper-wrapper" [hidden]="!(cardsView === index)">
-                <div class="swiper-slide" *ngFor="let slide of tab.cards">
-                    <app-material-card [size]="'small'" [view]="'default'"></app-material-card>
-                </div>
-            </div>
-    </ng-container>
+        <div class="swiper-wrapper" >
+            <ng-container *ngFor="let tab of tabs; let index = index">
+                <ng-container *ngIf="cardsView === index">
+                        <div class="swiper-slide" *ngFor="let slide of tab.cards">
+                            <app-material-card [size]="'small'" [view]="'default'"></app-material-card>
+                        </div>
+                </ng-container>
+            </ng-container>
+            
+        </div>
     </div>
 </div>
