@@ -1,0 +1,153 @@
+@import "theme";
+
+:host {
+    display: block;
+    margin-bottom: 24px;
+}
+
+.comment {
+    display: flex;
+    align-items: flex-start;
+
+    > * {
+        &:not(:last-child) {
+            margin-right: 24px;
+        }
+    }
+
+    &.replied {
+        margin-left: 64px;
+
+        .comment-text {
+            padding: 0;
+            background-color: transparent;
+        }
+    }
+}
+
+.comment-image {
+    flex-shrink: 0;
+
+    img {
+        border-radius: 50px;
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+    }
+}
+
+.comment-content {
+    flex: 1;
+    
+    > * {
+        &:not(:last-child) {
+            margin-bottom: 12px;
+        }
+    }
+}
+
+
+.comment-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    line-height: 1.538;
+
+    > * {
+        &:not(:last-child) {
+            margin-right: 24px;
+        }
+    }
+}
+
+.author-name {
+    font-weight: 700;
+}
+
+.author-time {
+    color: $dark-gray;
+}
+
+.reply {
+    color: $dark-gray;
+    display: flex;
+    align-items: center;
+
+    > * {
+        &:not(:last-child) {
+            margin-right: 8px;
+        }
+    }
+
+    svg {
+        width: 16px;
+        height: 16px;
+        fill: $gray;
+    }
+}
+
+.review {
+    display: flex;
+
+    > * {
+        &:not(:last-child) {
+            margin-right: 8px;
+        }
+    }
+}
+
+.review-button, .review-reputation {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.review-button {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    
+    svg {
+        width: 9px;
+        height: 10.5px;
+        fill: $gray;
+    }
+}
+
+.review-reputation {
+    color: #2CAD62;
+    font-size: 14px;
+    line-height: 1.571;
+
+    &.zero {
+        color: $text-color;
+    }
+
+    &.negative {
+        color: $important-color;
+    }
+}
+
+.comment-text {
+    background-color: $light-gray;
+    padding: 16px;
+    font-size: 14px;
+    line-height: 1.571;
+}
+
+.reply-button {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    color: $primary-color;
+    font-size: 13px;
+    line-height: 1.538;
+}

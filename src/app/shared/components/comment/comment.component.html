@@ -1,0 +1,38 @@
+<div class="comment" [class.replied]="comment.replied">
+    <div class="comment-image">
+        <img [src]="comment.image" alt="comment image">
+    </div>
+    <div class="comment-content">
+        <div class="comment-top">
+            <div class="author-info">
+                <div class="author-name">{{ comment.firstName }} {{ comment.surname }}</div>
+                <div class="reply" *ngIf="comment.replied">
+                    <svg>
+                        <use xlink:href="assets/sprites/icons.svg#reply"></use>
+                    </svg>
+                    <span>{{ comment.repliedName }}</span>
+                </div>
+                <time class="author-time">сегодня в {{ comment.time * 1000 | date: 'hh:mm' }}</time>
+            </div>
+            <div class="review">
+                <button type="button" class="review-button" (click)="decreaseCounter()">
+                    <svg>
+                        <use xlink:href="assets/sprites/icons.svg#arrow_down"></use>
+                    </svg>
+                </button>
+                <div class="review-reputation" [ngClass]="{zero: counter === 0, negative: counter < 0}">{{ counter }}</div>
+                <button type="button" class="review-button" (click)="increaseCounter()">
+                    <svg>
+                        <use xlink:href="assets/sprites/icons.svg#arrow_up"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="comment-text">
+            <p>{{ comment.text }}</p>
+        </div>
+        <div class="comment-actions">
+            <button type="button" class="reply-button">Ответить</button>
+        </div>
+    </div>
+</div>

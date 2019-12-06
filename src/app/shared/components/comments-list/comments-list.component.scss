@@ -1,0 +1,33 @@
+@import "theme";
+
+:host {
+    display: block;
+    margin-bottom: 32px;
+}
+
+.comments-list-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    background-color: transparent;
+    padding: 0;
+    border: 0;
+}
+
+.show-more {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.571;
+    color: $primary-color;
+}
+
+.logout {
+    color: $primary-color;
+    font-size: 13px;
+    line-height: 1.538;
+    margin-left: auto;
+}

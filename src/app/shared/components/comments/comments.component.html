@@ -1,6 +1,12 @@
 <div class="comments-filters">
-    <button>Популярные</button>
-    <button>По порядку</button>
+    <button 
+            *ngFor="let filter of filters; let i = index" 
+            (click)="activeFilter = i; viewComments = filter.viewComments"
+            [class.active]="activeFilter === i"
+    >
+        {{ filter.text }}
+    </button>
 </div>
 
-
+<app-comments-list [viewComments]="viewComments"></app-comments-list>
+<app-comment-form (onAdd)="updateComments($event)"></app-comment-form>

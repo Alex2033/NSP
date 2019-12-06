@@ -1,0 +1,17 @@
+<form class="comment-form">
+    <div class="comment-image">
+        <img src="https://memepedia.ru/wp-content/uploads/2018/06/unnamed-768x768.jpg" alt="comment image">
+    </div>
+    <input 
+        type="text" 
+        placeholder="Введите свой комментарий" 
+        class="comment-form-control"
+        [(ngModel)]="text"
+        name="text"
+    >
+    <button type="submit" class="comment-form-button" (click)="addComment()">
+        <svg>
+            <use xlink:href="assets/sprites/icons.svg#arrow_up"></use>
+        </svg>
+    </button>
+</form>

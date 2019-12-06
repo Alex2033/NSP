@@ -49,6 +49,9 @@ import { CompanyCarouselBlockComponent } from './components/blocks/company-carou
 import { EventRegistrationBlockComponent } from './components/blocks/event-registration-block/event-registration-block.component';
 import { FullWidthImageCarouselBlockComponent } from './components/blocks/full-width-image-carousel-block/full-width-image-carousel-block.component';
 import { ApartmentInfoBlockComponent } from './components/blocks/apartment-info-block/apartment-info-block.component';
+import { CommentsListComponent } from './components/comments-list/comments-list.component';
+import { CommentComponent } from './components/comment/comment.component';
+import { CommentFormComponent } from './components/comment-form/comment-form.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -100,7 +103,10 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     CompanyCarouselBlockComponent,
     EventRegistrationBlockComponent,
     FullWidthImageCarouselBlockComponent,
-    ApartmentInfoBlockComponent
+    ApartmentInfoBlockComponent,
+    CommentsListComponent,
+    CommentComponent,
+    CommentFormComponent
   ],
   imports: [
     CommonModule,
@@ -147,7 +153,10 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ExtendedCompanyCardComponent,
     TabsCardCarouselComponent,
     FullWidthImageCarouselBlockComponent,
-    ApartmentInfoBlockComponent
+    ApartmentInfoBlockComponent,
+    CommentsListComponent,
+    CommentComponent,
+    CommentFormComponent
   ],
   providers: [
     {

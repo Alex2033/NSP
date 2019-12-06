@@ -1,0 +1,53 @@
+@import "theme";
+
+.comment-form {
+    display: flex;
+    align-items: center;
+
+    > * {
+        &:not(:last-child) {
+            margin-right: 24px;
+        }
+    }
+}
+
+.comment-form-control {
+    padding: 17px 16px;
+    color: $dark-gray;
+    border: 0;
+    flex: 1;
+    background-color: $light-gray;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+.comment-image {
+    flex-shrink: 0;
+
+    img {
+        border-radius: 50px;
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+    }
+}
+
+.comment-form-button {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: $primary-color;
+    border: 0;
+
+    svg {
+        width: 12px;
+        height: 14px;
+        fill: $light-color;
+    }
+}
