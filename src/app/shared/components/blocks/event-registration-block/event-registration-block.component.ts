@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-event-registration-block',
@@ -6,10 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./event-registration-block.component.scss']
 })
 export class EventRegistrationBlockComponent implements OnInit {
+  formGroup: FormGroup;
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder,) { }
 
   ngOnInit() {
+    this.formGroup = this.formBuilder.group({
+      name: ['', [Validators.required]],
+      position: ['', [Validators.required]],
+      company: ['', [Validators.required]],
+      phone: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+    });
+  }
+
+  submit() {
+    if(!this.formGroup.valid) {
+      return;
+    }
   }
 
 }

@@ -322,6 +322,10 @@
 
 .modal-control {
   margin-bottom: 32px;
+
+  &.full-width {
+    width: 100% !important;
+  }
 }
 
 .confirm-content {
@@ -427,6 +431,10 @@
 
     &:focus {
         outline: none;
+    }
+
+    svg {
+        margin-right: 8px;
     }
 }
 

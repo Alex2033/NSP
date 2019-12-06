@@ -1,1 +1,28 @@
-<p>company-carousel-block works!</p>
+<div class="carousel-wrapper">
+    <header class="carousel-header">
+        <h3>
+            {{ carousel.header }}
+        </h3>
+        <div class="control-buttons" (click)="companyCarousel.swiper.slidePrev()">
+            <div class="control-button">
+                <svg class="icon">
+                    <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
+                </svg>
+            </div>
+            <div class="control-button" (click)="companyCarousel.swiper.slideNext()">
+                <svg class="icon">
+                    <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
+                </svg>
+            </div>
+        </div>
+    </header>
+    <div class="carousel-container">
+        <div class="swiper-container" [swiper]="config" #companyCarousel>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" *ngFor="let slide of carousel.slides">
+                    <img [src]="slide" alt="slide image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

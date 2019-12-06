@@ -1,0 +1,141 @@
+@import "theme";
+
+:host {
+    display: block;
+    margin-bottom: 32px;
+}
+
+.registration-block {
+    padding: 32px 40px 40px;
+    border: 1px solid $border-color;
+}
+
+.registrations-headings {
+    margin-bottom: 32px;
+    max-width: 619px;
+
+    h3 {
+        &.primary {
+            color: lighten($primary-color, 20%);
+            font-weight: 400;
+        }
+    }
+}
+
+.registration-info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+
+.caption {
+    color: $dark-gray;
+    font-size: 13px;
+    line-height: 1.538;
+    margin-bottom: 4px;
+}
+
+.registration-info-item {
+    max-width: 389px;
+    &.right {
+        text-align: right;
+    }
+}
+
+.modal-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  
+    app-text {
+        width: calc(50% - 12px);
+    }
+  
+    app-textarea {
+        width: 100%;
+    }
+}
+
+.confirm-content {
+    min-height: 416px;
+}
+
+.choose-file {
+    margin-bottom: 24px;
+    width: 100%;
+
+    button {
+
+        &:focus {
+        outline: 0;
+        }
+    }
+}
+
+.file-result {
+    display: flex;
+    align-items: center;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    font-size: 15px;
+    line-height: 1.533333;
+    position: relative;
+    padding: 12px 16px;
+    min-height: 48px;
+}
+
+.file-name {
+    margin-right: 16px;
+}
+
+.file-size {
+    color: $dark-gray;
+}
+
+.clear-value {
+    border: 0;
+    border-radius: 2px;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    background-color: $light-gray;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        width: 10px;
+        height: 10px;
+        fill: $dark-gray;
+    }
+}
+
+.pick-file {
+    border: 1px dashed $border-color;	
+    border-radius: 4px;
+    padding: 11px 15px;
+    width: 100%;
+    margin-bottom: 16px;
+    font-family: 'Open Sans', sans-serif;
+    background-color: transparent;
+    min-height: 48px;
+
+    svg {
+        width: 20px;
+        height: 22px;
+        color: $gray;
+        margin-right: 16px;
+    }
+
+    span {
+        font-size: 15px;
+        line-height: 1.53333;
+        color: $dark-gray;
+    }
+}
