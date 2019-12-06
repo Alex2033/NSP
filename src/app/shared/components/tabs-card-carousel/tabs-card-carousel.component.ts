@@ -21,9 +21,6 @@ export class TabsCardCarouselComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    setInterval(() => {
-      console.log(this.cardsView);
-    }, 1000)
   }
 
 }

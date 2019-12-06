@@ -27,7 +27,32 @@
             </div>
         </div>
     </header>
-    <div 
+
+    <div class="swiper-container" [swiper]="carouselConfig" #cardCarousel>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <app-material-card [size]="'small'" [view]="'default'"></app-material-card>
+            </div>
+            <div class="swiper-slide">
+                <app-material-card [size]="'small'" [view]="'backgroundImage'"></app-material-card>
+            </div>
+            <div class="swiper-slide">
+                <app-advertising-card [size]="'small'"></app-advertising-card>
+            </div>
+            <div class="swiper-slide">
+                <app-material-card [size]="'small'" [view]="'backgroundImage'"></app-material-card>
+            </div>
+            <div class="swiper-slide">
+                <app-material-card [size]="'small'" [view]="'default'"></app-material-card>
+            </div>
+            <div class="swiper-slide">
+                <app-material-card [size]="'small'" [view]="'default'"></app-material-card>
+            </div>
+        </div>
+    </div>
+
+    <!-- Эта часть на разработке -->
+    <!-- <div 
         class="swiper-container" 
         [swiper]="carouselConfig" 
         #carousel 
@@ -42,5 +67,5 @@
             </ng-container>
             
         </div>
-    </div>
+    </div> -->
 </div>

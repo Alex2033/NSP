@@ -12,6 +12,8 @@
     <div class="materials">
         <app-card-layout [cards]="cards"></app-card-layout>
     </div>
-    <app-news-slider [size]="'large'"></app-news-slider>
+
+    <app-news-slider [size]="news.length"></app-news-slider> <!-- Большой слайдер есть, по остальным додумаю как лучше сделать -->
+    
     <app-tabs-card-carousel [header]="'Технология строительства'" [tabs]="config"></app-tabs-card-carousel>
 </div>
