@@ -9,16 +9,40 @@ export class DetailComponent implements OnInit {
 
   objectCards = [
     {
-      type: 'object'
+      type: 'object',
+      objectConfig: { 
+        image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
+        title: 'ЖК «Новое купчино»', 
+        geolocation: 'Василеостровский район', 
+        url: '/' 
+      }
     },
     {
-      type: 'object'
+      type: 'object',
+      objectConfig: { 
+        image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
+        title: 'ЖК «Новое купчино»', 
+        geolocation: 'Василеостровский район', 
+        url: '/' 
+      }
     },
     {
-      type: 'object'
+      type: 'object',
+      objectConfig: { 
+        image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
+        title: 'ЖК «Новое купчино»', 
+        geolocation: 'Василеостровский район', 
+        url: '/' 
+      }
     },
     {
-      type: 'object'
+      type: 'object',
+      objectConfig: { 
+        image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
+        title: 'ЖК «Новое купчино»', 
+        geolocation: 'Василеостровский район', 
+        url: '/' 
+      }
     }
   ];
 
