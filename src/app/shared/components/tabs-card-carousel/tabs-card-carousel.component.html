@@ -10,17 +10,17 @@
                     *ngFor="let tab of tabs; let index = index"
                     [class.active]="cardsView === index"
                 >
-                    <button type="button" (click)="cardsView = index; carousel.swiper.init()">{{ tab.subtopic }}</button>
+                    <button type="button" (click)="cardsView = index; cardCarousel.swiper.init()">{{ tab.subtopic }}</button>
                 </li>
             </ul>
         </div>
-        <div class="control-buttons" (click)="carousel.swiper.slidePrev()">
+        <div class="control-buttons" (click)="cardCarousel.swiper.slidePrev()">
             <div class="control-button">
                 <svg class="icon">
                     <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
                 </svg>
             </div>
-            <div class="control-button" (click)="carousel.swiper.slideNext()">
+            <div class="control-button" (click)="cardCarousel.swiper.slideNext()">
                 <svg class="icon">
                     <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
                 </svg>
