@@ -77,7 +77,7 @@ export class DetailComponent implements OnInit {
   }
 
   scrollToElement($element): void {
-    $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    $element.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
   }
 
 }
