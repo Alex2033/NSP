@@ -28,25 +28,19 @@ export class HeaderComponent implements OnInit {
     this.menuPosition = this.menu.nativeElement.offsetTop;
     this.navigationListWidth = this.navigationList.nativeElement.offsetWidth;
 
-    // let counter = 1;
+    let counter = 1;
 
-    // for (let i = 0; i < this.navigationList.nativeElement.children.length; i++) {
-    //   this.sum += this.navigationList.nativeElement.children[i].offsetWidth;
+    for (let i = 0; i < this.navigationList.nativeElement.children.length; i++) {
+      this.sum += this.navigationList.nativeElement.children[i].offsetWidth;
 
-    //   if (this.sum >= this.navigationListWidth) counter++;
-    // }
+      if (this.sum >= this.navigationListWidth) {
+        counter++;
+      };
+    }
 
-    // for (let i = 0; i < counter; i++) {
-    //   // this.dropdownList.nativeElement.appendChild(this.navigationList.nativeElement.children[this.navigationList.nativeElement.children.length - 2]);
-    //   this.navigationList.nativeElement.children[this.navigationList.nativeElement.children.length - 2].remove(); // т.к. кнопка Еще не удаляется
-    //   console.log('Cycle');
-    // }
-
-    // if (this.sum >= this.navigationListWidth) { // Для отображения кнопки Еще
-    //   this.showDropdown = true;
-    // } else {
-    //   this.showDropdown = false;
-    // }
+    for (let i = 0; i < counter; i++) {
+      this.dropdownList.nativeElement.prepend(this.navigationList.nativeElement.children[this.navigationList.nativeElement.children.length - 1]);
+    }
   }
 
   @HostListener('window:scroll', ['$event']) checkScroll() {
@@ -58,25 +52,29 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  // @HostListener('window:resize', ['$event']) changeNav() {
-  //   let counter = 1;
-  //
-  //   for (let i = 0; i < this.navigationList.nativeElement.children.length; i++) {
-  //     this.sum += this.navigationList.nativeElement.children[i].offsetWidth;
-  //
-  //     if (this.sum >= this.navigationListWidth) counter++;
-  //   }
-  //
-  //   for (let i = 0; i < counter; i++) {
-  //     this.navigationList.nativeElement.children[this.navigationList.nativeElement.children.length - 2].remove(); // т.к. кнопка Еще не удаляется
-  //     console.log('Cycle');
-  //   }
-  //
-  //   if (this.sum >= this.navigationListWidth) { // Для отображения кнопки Еще
-  //     this.showDropdown = true;
-  //   } else {
-  //     this.showDropdown = false;
-  //   }
-  // }
+  @HostListener('window:resize', ['$event']) changeNav() {
+
+    this.navigationListWidth = this.navigationList.nativeElement.offsetWidth;
+
+    let counter = 0;
+    this.sum = 0;
+
+    for (let i = 0; i < this.navigationList.nativeElement.children.length; i++) {
+      this.sum += this.navigationList.nativeElement.children[i].offsetWidth;
+
+      if (this.sum >= this.navigationListWidth) {
+        counter++;
+      };
+    }
+
+    for (let i = 0; i < counter; i++) {
+      this.dropdownList.nativeElement.prepend(this.navigationList.nativeElement.children[this.navigationList.nativeElement.children.length - 1]);
+    }
+
+    console.log(this.navigationListWidth);
+    console.log(this.sum);
+
+    
+  }
 
 }

@@ -21,28 +21,74 @@
                 <use xlink:href="assets/sprites/icons.svg#logo_mini"></use>
             </svg>
             <nav class="navigation">
-                <ul class="navigation-list" #navigationList>
+                <ul class="navigation-list" #navigationList style="flex-grow: 1;">
                     <li [class.active]="false">
-                        <a href="">Новости</a>
+                        <a href="">Айтем 1</a>
                     </li>
                     <li [class.active]="false">
-                        <a href="">Дороги</a>
+                        <a href="">Айтем 2</a>
                     </li>
                     <li [class.active]="false">
-                        <a href="">Власть</a>
+                        <a href="">Айтем 3</a>
                     </li>
                     <li [class.active]="false">
-                        <a href="">Социалка</a>
+                        <a href="">Айтем 4</a>
                     </li>
                     <li [class.active]="false">
-                        <a href="">Жилые комплексы</a>
+                        <a href="">Айтем 5</a>
                     </li>
                     <li [class.active]="false">
-                        <a href="">Коммерческая Недвижимость</a>
+                        <a href="">Айтем 6</a>
                     </li>
                     <li [class.active]="false">
-                        <a href="">Апартаменты</a>
+                        <a href="">Айтем 7</a>
                     </li>
+                    <li [class.active]="false">
+                        <a href="">Айтем 8</a>
+                    </li>
+                    <li [class.active]="false">
+                        <a href="">Айтем 9</a>
+                    </li>
+                    <li [class.active]="false">
+                        <a href="">Айтем 10</a>
+                    </li>
+                    <li [class.active]="false">
+                        <a href="">Айтем 11</a>
+                    <li [class.active]="false">
+                        <a href="">Айтем 1</a>
+                    </li>
+                    <li [class.active]="false">
+                        <a href="">Айтем 2</a>
+                    </li>
+                    <li [class.active]="false">
+                        <a href="">Айтем 3</a>
+                    </li>
+                    <li [class.active]="false">
+                        <a href="">Айтем 4</a>
+                    </li>
+                    <li [class.active]="false">
+                        <a href="">Айтем 5</a>
+                    </li>
+                    <li [class.active]="false">
+                        <a href="">Айтем 6</a>
+                    </li>
+                    <li [class.active]="false">
+                        <a href="">Айтем 7</a>
+                    </li>
+                    <li [class.active]="false">
+                        <a href="">Айтем 8</a>
+                    </li>
+                    <li [class.active]="false">
+                        <a href="">Айтем 9</a>
+                    </li>
+                    <li [class.active]="false">
+                        <a href="">Айтем 10</a>
+                    </li>
+                    <li [class.active]="false">
+                        <a href="">Айтем 11</a>
+                    </li>
+                </ul>
+                <ul class="navigation-list">
                     <li (clickOutside)="dropdownVisible = false"
                         [class.active]="dropdownVisible">
                         <button class="dropdown-btn" (click)="dropdownVisible = !dropdownVisible">
@@ -53,7 +99,7 @@
                         </button>
                         <div class="dropdown" [class.visible]="dropdownVisible">
                             <ul class="dropdown-list" #dropdownList>
-                                <li [class.active]="false">
+                                <!-- <li [class.active]="false">
                                     <a href="">Мероприятия</a>
                                 </li>
                                 <li [class.active]="false">
@@ -67,7 +113,7 @@
                                 </li>
                                 <li [class.active]="false">
                                     <a href="">Компании</a>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                     </li>
