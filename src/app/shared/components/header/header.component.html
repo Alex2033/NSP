@@ -1,8 +1,10 @@
 <header class="header">
     <div class="header-top">
-        <svg class="logo">
-            <use xlink:href="assets/sprites/icons.svg#logo"></use>
-        </svg>
+        <a href="#" aria-label="logotype link">
+            <svg class="logo">
+                <use xlink:href="assets/sprites/icons.svg#logo"></use>
+            </svg>
+        </a>
         <div class="quote">
             <blockquote class="quote-text">
                 <p>
@@ -17,9 +19,11 @@
     </div>
     <div class="header-menu" [ngClass]="{'fixed': fixedMenu, 'under-banner': showBanner}" #menu>
         <div class="menu">
-            <svg class="logo-mini" *ngIf="fixedMenu">
-                <use xlink:href="assets/sprites/icons.svg#logo_mini"></use>
-            </svg>
+            <a href="#" aria-label="mini-logotype link">
+                <svg class="logo-mini" *ngIf="fixedMenu">
+                    <use xlink:href="assets/sprites/icons.svg#logo_mini"></use>
+                </svg>
+            </a>
             <nav class="navigation">
                 <ul class="navigation-list" #navigationList style="flex-grow: 1;">
                     <li [class.active]="false">
