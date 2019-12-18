@@ -13,3 +13,14 @@ app-company-card {
     border: 1px solid $border-color;
     display: block;
 }
+
+.row {
+    align-items: stretch;
+}
+
+[class^="col"] {
+    > * {
+        height: 100%;
+        display: block;
+    }
+}

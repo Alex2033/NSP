@@ -14,7 +14,9 @@ export class ArticleComponent implements OnInit {
         imageUrl: 'https://images.unsplash.com/photo-1461409971633-aa0e46732112?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=80',
         caption: '3D визуализация апарт–комплекса «Valo»'
       },
+      // size: 'big'
     },
+
     {
       type: 'text',
       paragraphs: [
@@ -26,6 +28,7 @@ export class ArticleComponent implements OnInit {
         },
       ]
     },
+
     {
       type: 'company',
       companyConfig: {
@@ -38,6 +41,7 @@ export class ArticleComponent implements OnInit {
         category: 'Персоны',
       }
     },
+
     {
       type: 'text',
       paragraphs: [
@@ -46,12 +50,15 @@ export class ArticleComponent implements OnInit {
         }
       ]
     },
+
     {
       type: 'video',
       configVideo: {
         videoUrl: 'https://www.youtube.com/embed/nXzTaf4gHeQ',
-      }
+      },
+      // size: 'big'
     },
+
     {
       type: 'text',
       paragraphs: [
@@ -60,6 +67,7 @@ export class ArticleComponent implements OnInit {
         },
       ]
     },
+
     {
       type: 'quote',
       quoteConfig: {
@@ -77,6 +85,7 @@ export class ArticleComponent implements OnInit {
       }
       }
     },
+
     {
       type: 'text',
       paragraphs: [
@@ -85,6 +94,7 @@ export class ArticleComponent implements OnInit {
         }
       ]
     },
+
     {
       type: 'carousel',
       carouselContent: [
@@ -107,6 +117,11 @@ export class ArticleComponent implements OnInit {
       type: 'map',
       source: 'assets/images/map.jpg'
     },
+
+    {
+      type: 'card'
+    },
+
     {
       type: 'text',
       paragraphs: [
@@ -117,7 +132,24 @@ export class ArticleComponent implements OnInit {
           text: 'В первом полугодии темпы прироста ипотечного кредитования стали падать: минус 19% по России, минус 9,7% - по СЗФО, минус 3,8% - в Петербурге. При этом жилищное кредитование остается главным драйвером в новостройках: почти половина сделок по ДДУ проходит с участием банков. В ответ на сокращение спроса на кредиты банки снизили ставки.'
         }
       ]
-    }
+    },
+
+    {
+      type: 'card',
+      cardSize: 'short'
+    },
+
+    {
+      type: 'text',
+      paragraphs: [
+        { 
+          text: 'Редакция газеты «Недвижимость и строительство Петербурга» и сайта NSP.RU приглашает участников рынка недвижимости принять участие в «круглом столе», который состоится в рамках серии тематических встреч в «Дискуссионном клубе НП».'
+        },
+        { 
+          text: 'В первом полугодии темпы прироста ипотечного кредитования стали падать: минус 19% по России, минус 9,7% - по СЗФО, минус 3,8% - в Петербурге. При этом жилищное кредитование остается главным драйвером в новостройках: почти половина сделок по ДДУ проходит с участием банков. В ответ на сокращение спроса на кредиты банки снизили ставки.'
+        }
+      ]
+    },
   ];
 
   constructor() { }

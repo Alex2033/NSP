@@ -8,6 +8,7 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 })
 export class EventRegistrationBlockComponent implements OnInit {
   formGroup: FormGroup;
+  agree: false;
 
   constructor(private formBuilder: FormBuilder,) { }
 

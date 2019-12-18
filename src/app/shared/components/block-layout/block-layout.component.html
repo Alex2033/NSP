@@ -29,6 +29,10 @@
         <ng-container *ngSwitchCase="'map'">
             <app-location-block [source]="block.source"></app-location-block>
         </ng-container>
+
+        <ng-container *ngSwitchCase="'card'">
+            <app-material-card [class.short]="block.cardSize === 'short'" class="block-card" [size]="'small'" [view]="'default'"></app-material-card>
+        </ng-container>
        
     </ng-container>
 </ng-container>

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+import { ResponsiveService } from '../../services/responsive.service';
 
 @Component({
   selector: 'app-tabs-card-carousel',
@@ -18,9 +19,20 @@ export class TabsCardCarouselComponent implements OnInit {
     loop: false
   };
 
-  constructor() { }
+  constructor(private responsive: ResponsiveService) { }
 
   ngOnInit() {
+    this.responsive.screen.subscribe((screen) => {
+      if (screen === 'xl') {
+        this.carouselConfig = {
+          slidesPerView: 4,
+        }
+      } else if (screen === 'lg') {
+        this.carouselConfig = {
+          slidesPerView: 3,
+        }
+      }
+    });
   }
 
 }

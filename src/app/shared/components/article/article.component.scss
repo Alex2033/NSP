@@ -1,4 +1,5 @@
 @import "theme";
+@import "responsive";
 
 .hashtags {
     display: flex;
@@ -20,4 +21,10 @@
 
 .bot {
     margin-bottom: 48px;
+}
+
+.page-content {
+    @include media-breakpoint-only(lg) {
+        padding-right: 7px;
+    }
 }

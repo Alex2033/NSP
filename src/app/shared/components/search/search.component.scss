@@ -1,4 +1,5 @@
 @import "theme";
+@import "responsive";
 
 .search-form {
     border-radius: 4px 4px 0 4px;
@@ -20,6 +21,11 @@
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+
+    @include media-breakpoint-only(lg) {
+        flex: 0 0 195px;
+        width: 195px;
+    }
 
     .arrow-icon {
         transform-origin: 50% 50%;

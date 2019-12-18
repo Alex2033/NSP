@@ -452,6 +452,16 @@
     background-color: $light-gray;
     padding: 48px 0;
     margin-bottom: 40px;
+
+    @include media-breakpoint-only(lg) {
+        .row {
+            margin-bottom: -$grid-gutter-width; 
+        }
+        
+        [class^="col"] {
+            margin-bottom: $grid-gutter-width;
+        }
+    }
 }
 
 // end Карточки внутренних страниц

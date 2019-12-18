@@ -7,6 +7,13 @@
     border: 1px solid $border-color;
 }
 
+:host-context(.short) {
+    height: initial;
+    .card-top, .card-img, .card-footer {
+        display: none;
+    }
+}
+
 h5 {
     margin-bottom: 8px;
     color: $text-color;

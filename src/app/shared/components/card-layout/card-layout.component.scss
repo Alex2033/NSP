@@ -1,5 +1,6 @@
 @import "theme";
 @import "variables/bootstrap";
+@import "responsive";
 
 .card-layout {
     display: grid;
@@ -25,6 +26,10 @@
 
     app-slider {
         grid-column: span 3;
+    }
+
+    @include media-breakpoint-between(md, lg) {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
