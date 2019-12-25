@@ -1,4 +1,5 @@
 @import "theme";
+@import "responsive";
 
 :host {
     display: block;
@@ -42,10 +43,18 @@
     font-size: 26px;
     line-height: 1.384;
     margin-bottom: 8px;
+
+    @include media-breakpoint-only(md) {
+        font-size: 20px;
+    }
 }
 
 .aparment-info {
     margin-bottom: 53px;
+
+    @include media-breakpoint-only(md) {
+        margin-bottom: 30px;
+    }
 }
 
 .aparmtent-info-text {

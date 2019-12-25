@@ -56,6 +56,7 @@ import { CommentFormComponent } from './components/comment-form/comment-form.com
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
   loop: true,
+  spaceBetween: 8
 };
 
 @NgModule({

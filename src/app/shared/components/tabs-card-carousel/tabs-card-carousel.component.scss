@@ -1,4 +1,5 @@
 @import "theme";
+@import "responsive";
 @import "../cards/card-common.scss";
 @import "variables/bootstrap";
 
@@ -12,6 +13,10 @@
     justify-content: space-between;
     margin-bottom: 32px;
 
+    @include media-breakpoint-only(md) {
+        margin-bottom: 20px;
+    }
+
     h2.is-small {
         font-size: 22px;
         line-height: 1.454545;
@@ -22,8 +27,16 @@
     display: flex;
     align-items: center;
 
+    @include media-breakpoint-only(md) {
+        flex-wrap: wrap;
+    }
+
     h2 {
         margin-right: 48px;
+
+        @include media-breakpoint-only(md) {
+            margin-right: 20px;
+        }
     }
 }
 
@@ -58,6 +71,14 @@
             margin-right: 40px;
         }
     }
+
+    @include media-breakpoint-only(md) {
+        > * {
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+        }
+    }
 }
 
 .carousel-tab {
@@ -77,5 +98,20 @@
         line-height: 1.571;
         font-weight: 700;
         border: 0;
+    }
+}
+
+.swiper-slide {
+    &.animated {
+        animation: fadeIn 1s;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }

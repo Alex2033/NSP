@@ -9,6 +9,10 @@
     padding: 40px 24px 32px;
     border: 1px solid $border-color;
     width: 100%;
+
+    @include media-breakpoint-down(md) {
+        margin-bottom: 30px;
+    }
 }
 
 .contact-card-img {

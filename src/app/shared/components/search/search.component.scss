@@ -22,9 +22,14 @@
     align-items: center;
     cursor: pointer;
 
-    @include media-breakpoint-only(lg) {
+    @include media-breakpoint-down(lg) {
         flex: 0 0 195px;
         width: 195px;
+    }
+
+    @include media-breakpoint-down(md) {
+        flex: 0 0 165px;
+        width: 165px;
     }
 
     .arrow-icon {
@@ -40,6 +45,10 @@
 
 .select-active {
     user-select: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-right: 5px;
 }
 
 .search-icon {

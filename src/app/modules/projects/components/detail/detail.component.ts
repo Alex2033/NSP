@@ -13,15 +13,29 @@ export class DetailComponent implements OnInit {
   config = [
     {
       subtopic: 'Все',
-      cards: [1, 2, 3, 4, 5, 6]
+      cards: [
+        {text: 'Все 1!'},
+        {text: 'Все 2!'},
+        {text: 'Все 3!'},
+        {text: 'Все 4!'},
+        {text: 'Все 5!'},
+        {text: 'Все 6!'},
+      ]
     },
     {
       subtopic: 'Подтема 1',
-      cards: [1, 2, 3]
+      cards: [
+        {text: 'Подтема 1!'},
+        {text: 'Подтема 2!'},
+        {text: 'Подтема 3!'},
+      ]
     },
     {
       subtopic: 'Подтема 2',
-      cards: [1, 2]
+      cards: [
+        {text: 'Подтема 2 1!'},
+        {text: 'Подтема 2 2!'},
+      ]
     },
   ];
 
@@ -233,6 +247,73 @@ export class DetailComponent implements OnInit {
             position: {
               x: 3,
               y: 2
+            }
+          },
+          {
+            type: 'material',
+            size: 'small',
+            view: 'default'
+          },
+          {
+            type: 'material',
+            size: 'small',
+            view: 'backgroundImage'
+          },
+        ];
+      } else if (screen === 'md') {
+        this.cards = [
+          {
+            type: 'front'
+          },
+          {
+            type: 'slider'
+          },
+          {
+            type: 'material',
+            size: 'small',
+            view: 'default'
+          },
+          {
+            type: 'material-list',
+            size: 'small',
+            view: 'default',
+            position: {
+              x: 1,
+              y: 2
+            }
+          },
+          {
+            type: 'latest-news',
+            position: {
+              x: 1,
+              y: 4
+            }
+          },
+          {
+            type: 'material',
+            size: 'small',
+            view: 'default'
+          },
+          {
+            type: 'material',
+            size: 'small',
+            view: 'default'
+          },
+          {
+            type: 'advertising',
+            size: 'small'
+          },
+          {
+            type: 'video',
+            size: 'medium-horizontal'
+          },
+          {
+            type: 'material-list',
+            size: 'medium-vertical',
+            view: 'readBlock',
+            position: {
+              x: 2,
+              y: 6
             }
           },
           {

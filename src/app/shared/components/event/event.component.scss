@@ -3,6 +3,10 @@
 
 .content-sidebar {
     grid-auto-rows: auto;
+
+    @include media-breakpoint-only(md) {
+        margin-bottom: 48px;
+    }
 }
 
 .info {

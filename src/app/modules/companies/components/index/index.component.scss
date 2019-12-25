@@ -7,6 +7,11 @@
         .page-top .search-select {
             flex: 0 0 285px;
             width: 285px;
+
+            @include media-breakpoint-down(md) {
+                flex: 0 0 215px;
+                width: 215px;
+            }
         }
     }
 }

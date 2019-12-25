@@ -10,9 +10,7 @@ import { ResponsiveService } from '../../services/responsive.service';
 export class CardCarouselComponent implements OnInit {
   @Input() header: string;
   @Input() smallHeader: boolean;
-  carouselConfig: SwiperConfigInterface = {
-    spaceBetween: 8
-  };
+  carouselConfig: SwiperConfigInterface;
   constructor(private responsive: ResponsiveService) { }
 
   ngOnInit() {
@@ -24,6 +22,10 @@ export class CardCarouselComponent implements OnInit {
       } else if (screen === 'lg') {
         this.carouselConfig = {
           slidesPerView: 3,
+        }
+      } else if (screen === 'md') {
+        this.carouselConfig = {
+          slidesPerView: 2,
         }
       }
     });

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+import { ResponsiveService } from '../../services/responsive.service';
 
 @Component({
   selector: 'app-news-slider',
@@ -10,13 +11,29 @@ export class NewsSliderComponent implements OnInit {
 
   @Input() size;
 
-  newsSliderConfig: SwiperConfigInterface = {
-    slidesPerView: 1,
-  };
+  newsSliderConfig: SwiperConfigInterface;
 
-  constructor() { }
+  constructor(private responsive: ResponsiveService) { }
 
   ngOnInit() {
+    this.responsive.screen.subscribe((screen) => {
+      if (screen === 'xl') {
+        this.newsSliderConfig = {
+          slidesPerView: 4,
+          spaceBetween: 40
+        };
+      } else if (screen === 'lg') {
+        this.newsSliderConfig = {
+          slidesPerView: 4,
+          spaceBetween: 20
+        };
+      } else if (screen === 'md') {
+        this.newsSliderConfig = {
+          slidesPerView: 3,
+          spaceBetween: 25
+        };
+      }
+    });
   }
 
 }

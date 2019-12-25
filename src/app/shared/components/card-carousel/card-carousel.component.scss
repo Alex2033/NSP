@@ -1,6 +1,7 @@
 @import "theme";
 @import "../cards/card-common.scss";
 @import "variables/bootstrap";
+@import "responsive";
 
 .carousel-wrapper {
     margin-bottom: 48px;
@@ -16,6 +17,10 @@
         font-size: 22px;
         line-height: 1.454545;
     }
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: 20px;
+    }
 }
 
 .carousel-link {
@@ -23,6 +28,11 @@
     font-weight: 700;
     color: darken($primary-color, 5%);
     transition: opacity .2s ease;
+
+    @include media-breakpoint-up(md) {
+        display: flex;
+        align-items: center;
+    }
 
     span {
         margin-right: 16px;

@@ -1,4 +1,5 @@
 @import "variables/bootstrap";
+@import "responsive";
 
 :host {
     display: block;
@@ -11,5 +12,11 @@
         &:not(:last-child) {
             margin-right: 32px;
         }
+    }
+}
+
+.quotes-main {
+    @include media-breakpoint-only(md) {
+        margin-bottom: 40px;
     }
 }

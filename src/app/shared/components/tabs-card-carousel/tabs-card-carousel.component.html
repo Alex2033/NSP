@@ -10,12 +10,12 @@
                     *ngFor="let tab of tabs; let index = index"
                     [class.active]="cardsView === index"
                 >
-                    <button type="button" (click)="cardsView = index; cardCarousel.swiper.init()">{{ tab.subtopic }}</button>
+                    <button type="button" (click)="showSlides(index, cardCarousel)">{{ tab.subtopic }}</button>
                 </li>
             </ul>
         </div>
-        <div class="control-buttons" (click)="cardCarousel.swiper.slidePrev()">
-            <div class="control-button">
+        <div class="control-buttons">
+            <div class="control-button" (click)="cardCarousel.swiper.slidePrev()">
                 <svg class="icon">
                     <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
                 </svg>
@@ -30,24 +30,14 @@
 
     <div class="swiper-container" [swiper]="carouselConfig" #cardCarousel>
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <app-material-card [size]="'small'" [view]="'default'"></app-material-card>
-            </div>
-            <div class="swiper-slide">
-                <app-material-card [size]="'small'" [view]="'backgroundImage'"></app-material-card>
-            </div>
-            <div class="swiper-slide">
-                <app-advertising-card [size]="'small'"></app-advertising-card>
-            </div>
-            <div class="swiper-slide">
-                <app-material-card [size]="'small'" [view]="'backgroundImage'"></app-material-card>
-            </div>
-            <div class="swiper-slide">
-                <app-material-card [size]="'small'" [view]="'default'"></app-material-card>
-            </div>
-            <div class="swiper-slide">
-                <app-material-card [size]="'small'" [view]="'default'"></app-material-card>
-            </div>
+            <ng-container *ngFor="let tab of tabs; let index = index">
+                <ng-container *ngFor="let tabCard of tab.cards">
+                    <div class="swiper-slide" [class.animated]="cardsView === index" *ngIf="cardsView === index">
+                        {{ tabCard.text }}
+                        <app-material-card [size]="'small'" [view]="'default'"></app-material-card>
+                    </div>
+                </ng-container>
+            </ng-container>
         </div>
     </div>
 

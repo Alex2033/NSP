@@ -26,10 +26,18 @@
 
     app-slider {
         grid-column: span 3;
+
+        @include media-breakpoint-only(md) {
+            grid-column: span 2;
+        }
     }
 
     @include media-breakpoint-between(md, lg) {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include media-breakpoint-only(md) {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 

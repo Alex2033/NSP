@@ -1,4 +1,5 @@
 // Здесь находятся стили для повторно используемых компонент из макета UI KIT. Hovers
+@import "responsive";
 
 .button {
     font-family: 'Montserrat';
@@ -275,10 +276,18 @@
     }
 }
 
+.logo-link {
+    margin-right: 10px;
+}
+
 .logo {
     width: 210px;
     height: 42px;
     fill: $primary-color;
+
+    @include media-breakpoint-only(md) {
+        width: 180px;
+    }
 }
 
 .logo-mini {
@@ -380,6 +389,10 @@
     align-items: center;
     margin-bottom: 32px;
 
+    @include media-breakpoint-down(md) {
+        margin-bottom: 20px;
+    }
+
     h5 {
         color: $primary-color;
     }
@@ -453,7 +466,7 @@
     padding: 48px 0;
     margin-bottom: 40px;
 
-    @include media-breakpoint-only(lg) {
+    @include media-breakpoint-down(lg) {
         .row {
             margin-bottom: -$grid-gutter-width; 
         }
@@ -468,6 +481,10 @@
 
 .materials-title {
     margin-bottom: 32px;
+
+    @include media-breakpoint-down(md) {
+        margin-bottom: 20px;
+    }
 }
 
 .arrow-icon {
