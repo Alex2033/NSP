@@ -52,6 +52,7 @@ import { ApartmentInfoBlockComponent } from './components/blocks/apartment-info-
 import { CommentsListComponent } from './components/comments-list/comments-list.component';
 import { CommentComponent } from './components/comment/comment.component';
 import { CommentFormComponent } from './components/comment-form/comment-form.component';
+import { AngularYandexMapsModule } from 'angular8-yandex-maps';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -114,7 +115,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     SwiperModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    AngularYandexMapsModule
   ],
   exports: [
     CommonModule,
@@ -157,7 +159,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ApartmentInfoBlockComponent,
     CommentsListComponent,
     CommentComponent,
-    CommentFormComponent
+    CommentFormComponent,
+    AngularYandexMapsModule
   ],
   providers: [
     {

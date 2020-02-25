@@ -90,7 +90,12 @@
     <p>Здесь легко планировать и дальние поездки: в 10-15 минутах выезды на Западный скоростной диаметр и кольцевую автодорогу. Дорога до аэропорта, железнодорожных и морских вокзалов не займет много времени.</p>
 
     <div class="map-image">
-        <img src="assets/images/map.jpg" alt="map image" style="width: 100%;">
+        <angular-yandex-map [center]="[59.983134, 30.356085]" [zoom]="16">
+            <angular-yandex-placemark 
+                [geometry]="[59.983194, 30.356085]"
+                [properties]="placemarkProperties"
+            ></angular-yandex-placemark>
+        </angular-yandex-map>
     </div>
 
     <div class="apartment-info-top">

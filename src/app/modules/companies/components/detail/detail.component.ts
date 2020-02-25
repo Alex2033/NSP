@@ -69,6 +69,12 @@ export class DetailComponent implements OnInit {
     }
   ];
 
+  public placemarkOptions = {
+    iconLayout: 'default#image',
+    iconImageHref: 'assets/images/icons/map_pin-red.svg',
+    iconImageSize: [32, 40]
+  };
+
   constructor() { }
 
   ngOnInit() {

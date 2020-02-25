@@ -1,4 +1,5 @@
 @import "theme";
+@import "responsive";
 @import "mixins/mouse";
 :host {
   display: block;
@@ -72,6 +73,12 @@
   transition: background-color 100ms linear, border 100ms linear;
   background-color: $light-gray;
   border: 1px solid transparent;
+
+  @include media-breakpoint-only(sm) {
+    height: 48px;
+    padding: 10px 16px;
+  }  
+
   @include mouse {
     &:not(.active) {
       &:hover {
