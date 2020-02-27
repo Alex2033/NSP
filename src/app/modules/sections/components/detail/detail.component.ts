@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ResponsiveService } from 'src/app/shared/services/responsive.service';
+import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-detail',
@@ -8,10 +9,11 @@ import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 })
 export class DetailComponent implements OnInit {
   screen: string;
+  entryDateValue: Date = new Date();
 
   tags = ['Апартаменты', 'Инвестиции', 'Ипотека', 'Законодательство', 'Частныйсектор'];
 
-  cards: object = {
+  cards = {
     resolutions: {
       desktop: [
         {
@@ -205,12 +207,16 @@ export class DetailComponent implements OnInit {
     }
   };
 
-  constructor(private responsive: ResponsiveService) { }
+  constructor(public responsive: ResponsiveService) { }
 
   ngOnInit() {
     this.responsive.screen.subscribe((screen) => {
       this.screen = screen;
     });
+  }
+
+  entryDate(event: MatDatepickerInputEvent<Date>) {
+    this.entryDateValue = event.value;
   }
 
 }

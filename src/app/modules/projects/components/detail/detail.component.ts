@@ -65,7 +65,7 @@ export class DetailComponent implements OnInit {
     },
   ];
 
-  cards: object = {
+  cards = {
     resolutions: {
       desktop: [
         {
@@ -268,7 +268,7 @@ export class DetailComponent implements OnInit {
     }
   };
 
-  constructor(private responsive: ResponsiveService) { }
+  constructor(public responsive: ResponsiveService) { }
 
   ngOnInit() {
     this.responsive.screen.subscribe((screen) => { 

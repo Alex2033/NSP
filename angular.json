@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/scss/styles.scss",
               "./node_modules/swiper/dist/css/swiper.css"
             ],
@@ -94,6 +95,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/scss/styles.scss"
             ],
             "stylePreprocessorOptions": {
@@ -130,6 +132,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "nsp"
 }

@@ -9,7 +9,7 @@ import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 export class IndexComponent implements OnInit {
   screen: string;
 
-  cards: object = {
+  cards = {
     resolutions: {
       desktop: [
         {
@@ -248,7 +248,7 @@ export class IndexComponent implements OnInit {
     }
   };
 
-  constructor(private responsive: ResponsiveService) { }
+  constructor(public responsive: ResponsiveService) { }
 
   ngOnInit() {
     this.responsive.screen.subscribe((screen) => {

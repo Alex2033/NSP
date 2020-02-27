@@ -27,8 +27,8 @@ import { ExtendedPersonCardComponent } from './components/extended-cards/extende
 import { PhoneFormatPipe } from './pipes/phone-format.pipe';
 import { SearchComponent } from './components/search/search.component';
 import { QuoteBlockComponent } from './components/blocks/quote-block/quote-block.component';
-import {PaginationComponent} from './components/pagination/pagination.component';
-import {RouterModule} from '@angular/router';
+import { PaginationComponent } from './components/pagination/pagination.component';
+import { RouterModule } from '@angular/router';
 import { MapComponent } from './components/map/map.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { NewsSliderComponent } from './components/news-slider/news-slider.component';
@@ -53,6 +53,8 @@ import { CommentsListComponent } from './components/comments-list/comments-list.
 import { CommentComponent } from './components/comment/comment.component';
 import { CommentFormComponent } from './components/comment-form/comment-form.component';
 import { AngularYandexMapsModule } from 'angular8-yandex-maps';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -116,7 +118,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    AngularYandexMapsModule
+    AngularYandexMapsModule,
+    MatNativeDateModule,
+    MatDatepickerModule
   ],
   exports: [
     CommonModule,
@@ -160,7 +164,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     CommentsListComponent,
     CommentComponent,
     CommentFormComponent,
-    AngularYandexMapsModule
+    AngularYandexMapsModule,
+    MatNativeDateModule,
+    MatDatepickerModule
   ],
   providers: [
     {

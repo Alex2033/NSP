@@ -13,7 +13,7 @@ export class NewsSliderComponent implements OnInit {
 
   newsSliderConfig: SwiperConfigInterface;
 
-  constructor(private responsive: ResponsiveService) { }
+  constructor(public responsive: ResponsiveService) { }
 
   ngOnInit() {
     this.responsive.screen.subscribe((screen) => {

@@ -13,11 +13,18 @@
                 </li>
             </ul>
             <div class="date-filter">
-                <div class="datepicker">
+                <input 
+                    class="data-hidden-input"
+                    (dateInput)="entryDate($event)" 
+                    [matDatepicker]="picker1" 
+                    placeholder="Choose a date"
+                >
+                <div class="datepicker" (click)="picker1.open()">
+                    <mat-datepicker #picker1></mat-datepicker>
                     <svg class="datepicker-icon">
                         <use xlink:href="assets/sprites/icons.svg#calendar"></use>
                     </svg>
-                    <span class="datepicker-range">05.10.19 – 08.10.19</span>
+                    <span class="datepicker-range">{{ entryDateValue | date: 'M/d/yy' }}</span>
                 </div>
                 <button class="clear-date">
                     <svg>

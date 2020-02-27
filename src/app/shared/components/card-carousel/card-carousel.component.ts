@@ -11,7 +11,7 @@ export class CardCarouselComponent implements OnInit {
   @Input() header: string;
   @Input() smallHeader: boolean;
   carouselConfig: SwiperConfigInterface;
-  constructor(private responsive: ResponsiveService) { }
+  constructor(public responsive: ResponsiveService) { }
 
   ngOnInit() {
     this.responsive.screen.subscribe((screen) => {
