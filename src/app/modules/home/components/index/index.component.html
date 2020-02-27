@@ -1,5 +1,10 @@
 <div class="container">
-  <app-card-layout [cards]="cards"></app-card-layout>
+  <app-card-layout 
+    [cards]="screen === 'xl' ? cards.resolutions.desktop : 
+            screen === 'lg' ? cards.resolutions.smallDesktop : 
+            screen === 'md' ? cards.resolutions.tablet : 
+            null"
+  ></app-card-layout>
   <app-card-carousel [header]="'Технология строительства'"></app-card-carousel>
   <app-card-carousel [header]="'Архитектура'"></app-card-carousel>
   <app-card-carousel [header]="'Досье ЖК'"></app-card-carousel>

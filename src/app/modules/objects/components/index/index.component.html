@@ -19,6 +19,11 @@
 <div class="container">
     <div class="materials">
         <h2 class="materials-title">Популярные материалы</h2>
-        <app-card-layout [cards]="cards"></app-card-layout>
+        <app-card-layout 
+            [cards]="screen === 'xl' ? cards.resolutions.desktop : 
+                    screen === 'lg' ? cards.resolutions.smallDesktop : 
+                    screen === 'md' ? cards.resolutions.tablet : 
+                    null"
+        ></app-card-layout>
     </div>
 </div>

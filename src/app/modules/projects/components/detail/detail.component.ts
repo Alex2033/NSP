@@ -8,7 +8,17 @@ import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 })
 export class DetailComponent implements OnInit {
 
-  categories = ['Подобрать ЖК', 'Технология строительства', 'Новости', 'Интервью', 'Аналитика', 'Выборгский район', 'Московский район'];
+  screen: string;
+
+  categories = [
+    'Подобрать ЖК', 
+    'Технология строительства', 
+    'Новости', 
+    'Интервью', 
+    'Аналитика', 
+    'Выборгский район', 
+    'Московский район'
+  ];
 
   config = [
     {
@@ -39,73 +49,6 @@ export class DetailComponent implements OnInit {
     },
   ];
 
-  cards = [
-    {
-      type: 'front'
-    },
-    {
-      type: 'slider'
-    },
-    {
-      type: 'material',
-      size: 'small',
-      view: 'default'
-    },
-    {
-      type: 'material-list',
-      size: 'small',
-      view: 'default',
-      position: {
-        x: 4,
-        y: 1
-      }
-    },
-    {
-      type: 'latest-news',
-      position: {
-        x: 1,
-        y: 2
-      }
-    },
-    {
-      type: 'material',
-      size: 'small',
-      view: 'default'
-    },
-    {
-      type: 'material',
-      size: 'small',
-      view: 'default'
-    },
-    {
-      type: 'advertising',
-      size: 'small'
-    },
-    {
-      type: 'video',
-      size: 'medium-horizontal'
-    },
-    {
-      type: 'material-list',
-      size: 'medium-vertical',
-      view: 'readBlock',
-      position: {
-        x: 4,
-        y: 3
-      }
-    },
-    {
-      type: 'material',
-      size: 'small',
-      view: 'default'
-    },
-    {
-      type: 'material',
-      size: 'small',
-      view: 'backgroundImage'
-    },
-  ];
-
   news = [
     {
       header: 'Новости долевки',
@@ -122,212 +65,214 @@ export class DetailComponent implements OnInit {
     },
   ];
 
+  cards: object = {
+    resolutions: {
+      desktop: [
+        {
+          type: 'front'
+        },
+        {
+          type: 'slider'
+        },
+        {
+          type: 'material',
+          size: 'small',
+          view: 'default'
+        },
+        {
+          type: 'material-list',
+          size: 'small',
+          view: 'default',
+          position: {
+            x: 4,
+            y: 1
+          }
+        },
+        {
+          type: 'latest-news',
+          position: {
+            x: 1,
+            y: 2
+          }
+        },
+        {
+          type: 'material',
+          size: 'small',
+          view: 'default'
+        },
+        {
+          type: 'material',
+          size: 'small',
+          view: 'default'
+        },
+        {
+          type: 'advertising',
+          size: 'small'
+        },
+        {
+          type: 'video',
+          size: 'medium-horizontal'
+        },
+        {
+          type: 'material-list',
+          size: 'medium-vertical',
+          view: 'readBlock',
+          position: {
+            x: 4,
+            y: 3
+          }
+        },
+        {
+          type: 'material',
+          size: 'small',
+          view: 'default'
+        },
+        {
+          type: 'material',
+          size: 'small',
+          view: 'backgroundImage'
+        },
+      ],
+      smallDesktop: [
+        {
+          type: 'front'
+        },
+        {
+          type: 'slider'
+        },
+        {
+          type: 'material',
+          size: 'small',
+          view: 'default'
+        },
+        {
+          type: 'material-list',
+          size: 'small',
+          view: 'default',
+          position: {
+            x: 3,
+            y: 1
+          }
+        },
+        {
+          type: 'latest-news',
+          position: {
+            x: 1,
+            y: 2
+          }
+        },
+        {
+          type: 'material',
+          size: 'small',
+          view: 'default'
+        },
+        {
+          type: 'material',
+          size: 'small',
+          view: 'default'
+        },
+        {
+          type: 'advertising',
+          size: 'small'
+        },
+        {
+          type: 'video',
+          size: 'medium-horizontal'
+        },
+        {
+          type: 'material-list',
+          size: 'medium-vertical',
+          view: 'readBlock',
+          position: {
+            x: 3,
+            y: 2
+          }
+        },
+        {
+          type: 'material',
+          size: 'small',
+          view: 'default'
+        },
+        {
+          type: 'material',
+          size: 'small',
+          view: 'backgroundImage'
+        },
+      ],
+      tablet: [
+        {
+          type: 'front'
+        },
+        {
+          type: 'slider'
+        },
+        {
+          type: 'material',
+          size: 'small',
+          view: 'default'
+        },
+        {
+          type: 'material-list',
+          size: 'small',
+          view: 'default',
+          position: {
+            x: 1,
+            y: 2
+          }
+        },
+        {
+          type: 'latest-news',
+          position: {
+            x: 1,
+            y: 4
+          }
+        },
+        {
+          type: 'material',
+          size: 'small',
+          view: 'default'
+        },
+        {
+          type: 'material',
+          size: 'small',
+          view: 'default'
+        },
+        {
+          type: 'advertising',
+          size: 'small'
+        },
+        {
+          type: 'video',
+          size: 'medium-horizontal'
+        },
+        {
+          type: 'material-list',
+          size: 'medium-vertical',
+          view: 'readBlock',
+          position: {
+            x: 2,
+            y: 6
+          }
+        },
+        {
+          type: 'material',
+          size: 'small',
+          view: 'default'
+        },
+        {
+          type: 'material',
+          size: 'small',
+          view: 'backgroundImage'
+        },
+      ],
+    }
+  };
+
   constructor(private responsive: ResponsiveService) { }
 
   ngOnInit() {
-    this.responsive.screen.subscribe((screen) => {
-      if (screen === 'xl') {
-        this.cards = [
-          {
-            type: 'front'
-          },
-          {
-            type: 'slider'
-          },
-          {
-            type: 'material',
-            size: 'small',
-            view: 'default'
-          },
-          {
-            type: 'material-list',
-            size: 'small',
-            view: 'default',
-            position: {
-              x: 4,
-              y: 1
-            }
-          },
-          {
-            type: 'latest-news',
-            position: {
-              x: 1,
-              y: 2
-            }
-          },
-          {
-            type: 'material',
-            size: 'small',
-            view: 'default'
-          },
-          {
-            type: 'material',
-            size: 'small',
-            view: 'default'
-          },
-          {
-            type: 'advertising',
-            size: 'small'
-          },
-          {
-            type: 'video',
-            size: 'medium-horizontal'
-          },
-          {
-            type: 'material-list',
-            size: 'medium-vertical',
-            view: 'readBlock',
-            position: {
-              x: 4,
-              y: 3
-            }
-          },
-          {
-            type: 'material',
-            size: 'small',
-            view: 'default'
-          },
-          {
-            type: 'material',
-            size: 'small',
-            view: 'backgroundImage'
-          },
-        ];
-      } else if (screen === 'lg') {
-        this.cards = [
-          {
-            type: 'front'
-          },
-          {
-            type: 'slider'
-          },
-          {
-            type: 'material',
-            size: 'small',
-            view: 'default'
-          },
-          {
-            type: 'material-list',
-            size: 'small',
-            view: 'default',
-            position: {
-              x: 3,
-              y: 1
-            }
-          },
-          {
-            type: 'latest-news',
-            position: {
-              x: 1,
-              y: 2
-            }
-          },
-          {
-            type: 'material',
-            size: 'small',
-            view: 'default'
-          },
-          {
-            type: 'material',
-            size: 'small',
-            view: 'default'
-          },
-          {
-            type: 'advertising',
-            size: 'small'
-          },
-          {
-            type: 'video',
-            size: 'medium-horizontal'
-          },
-          {
-            type: 'material-list',
-            size: 'medium-vertical',
-            view: 'readBlock',
-            position: {
-              x: 3,
-              y: 2
-            }
-          },
-          {
-            type: 'material',
-            size: 'small',
-            view: 'default'
-          },
-          {
-            type: 'material',
-            size: 'small',
-            view: 'backgroundImage'
-          },
-        ];
-      } else if (screen === 'md') {
-        this.cards = [
-          {
-            type: 'front'
-          },
-          {
-            type: 'slider'
-          },
-          {
-            type: 'material',
-            size: 'small',
-            view: 'default'
-          },
-          {
-            type: 'material-list',
-            size: 'small',
-            view: 'default',
-            position: {
-              x: 1,
-              y: 2
-            }
-          },
-          {
-            type: 'latest-news',
-            position: {
-              x: 1,
-              y: 4
-            }
-          },
-          {
-            type: 'material',
-            size: 'small',
-            view: 'default'
-          },
-          {
-            type: 'material',
-            size: 'small',
-            view: 'default'
-          },
-          {
-            type: 'advertising',
-            size: 'small'
-          },
-          {
-            type: 'video',
-            size: 'medium-horizontal'
-          },
-          {
-            type: 'material-list',
-            size: 'medium-vertical',
-            view: 'readBlock',
-            position: {
-              x: 2,
-              y: 6
-            }
-          },
-          {
-            type: 'material',
-            size: 'small',
-            view: 'default'
-          },
-          {
-            type: 'material',
-            size: 'small',
-            view: 'backgroundImage'
-          },
-        ];
-      }
+    this.responsive.screen.subscribe((screen) => { 
+      this.screen = screen;
     });
   }
 
