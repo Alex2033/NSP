@@ -1,4 +1,4 @@
-<div class="card-wrapper" (click)="modal.open('video')">
+<div class="card-wrapper">
     <div class="card-content">
         <div class="card-top static">
             <div class="date">Сегодня в 16:45</div>
@@ -22,7 +22,7 @@
             </div>
         </footer>
     </div>
-    <button class="play">
+    <button class="play" (click)="modal.open('video')">
         <svg>
             <use xlink:href="assets/sprites/icons.svg#play"></use>
         </svg>

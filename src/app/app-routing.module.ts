@@ -34,6 +34,10 @@ const routes: Routes = [
     loadChildren: () => import('./modules/quotes/quotes.module').then(mod => mod.QuotesModule)
   },
   {
+    path: 'search',
+    loadChildren: () => import('./modules/search/search.module').then(mod => mod.SearchModule)
+  },
+  {
     path: 'article',
     component: ArticleComponent
   },

@@ -1,0 +1,45 @@
+@import "theme";
+
+:host {
+    display: block;
+    border-bottom: 1px solid $light-color;
+}
+
+.page-cards {
+    margin-bottom: 0;
+    padding-bottom: 64px;
+    
+    .row {
+        margin-bottom: 32px;
+
+        &:last-of-type {
+            margin-bottom: 41px;
+        }
+    }
+    
+}
+
+.materials-title {
+    display: flex;
+    align-items: center;
+    
+    > * {
+        &:not(:last-child) {
+            margin-right: 16px;
+        }
+    }
+}
+
+.items-number {
+    background-color: $secondary-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 29px;
+    height: 22px;
+    padding: 0 6px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 1.54;
+}
