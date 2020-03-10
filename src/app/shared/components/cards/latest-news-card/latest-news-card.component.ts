@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ResizableCardComponent } from '../resizable-card.component';
 
 @Component({
   selector: 'app-latest-news-card',
