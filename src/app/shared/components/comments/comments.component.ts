@@ -8,7 +8,7 @@ import { CommentsListComponent } from '../comments-list/comments-list.component'
 })
 export class CommentsComponent implements OnInit {
 
-  @ViewChild(CommentsListComponent, {static: false}) commentsList: CommentsListComponent;
+  @ViewChild(CommentsListComponent) commentsList: CommentsListComponent;
 
   filters = [
     {
