@@ -1,8 +1,13 @@
 @import "theme";
+@import "responsive";
 
 :host {
   max-width: 656px;
   width: 100%;
+
+  @include media-breakpoint-only(sm) {
+    max-width: 480px;
+  }  
 }
 
 .modal-form {
@@ -13,11 +18,28 @@
 
   app-text {
     width: calc(50% - 12px);
+
+    @include media-breakpoint-only(sm) {
+      width: 100%;
+    }  
   }
 
   app-textarea {
     width: 100%;
   }
+}
+
+app-checkbox {
+  @include media-breakpoint-only(sm) {
+    margin-bottom: 24px;
+    width: 100%;
+  } 
+}
+
+.modal-close {
+  @include media-breakpoint-only(sm) {
+    top: 21px;
+  }  
 }
 
 .confirm-content {
@@ -100,4 +122,12 @@
     line-height: 1.53333;
     color: $dark-gray;
   }
+}
+
+.button {
+  @include media-breakpoint-only(sm) {
+    width: 100%;
+    padding-top: 13px;
+    padding-bottom: 13px;
+  } 
 }

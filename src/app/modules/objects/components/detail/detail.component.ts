@@ -71,6 +71,10 @@ export class DetailComponent implements OnInit {
     },
   ];
 
+  public placemarkProperties = {
+    iconCaption: 'ЖК Life-Лесная'
+  }
+
   constructor() { }
 
   ngOnInit() {

@@ -1,4 +1,6 @@
 @import "../text/text.component";
+@import "responsive";
+
 :host {
   display: flex;
   flex-direction: column;
@@ -12,6 +14,11 @@
   height: auto;
   display: flex;
   flex-direction: column;
+
+  @include media-breakpoint-only(sm) {
+    min-height: 96px;
+  }  
+
   &:not(.active) {
     textarea {
       height: 0;

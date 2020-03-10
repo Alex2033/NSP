@@ -16,7 +16,7 @@ export class TabsCardCarouselComponent implements OnInit {
   cardsView: number = 0;
   carouselConfig: SwiperConfigInterface;
 
-  constructor(private responsive: ResponsiveService) { }
+  constructor(public responsive: ResponsiveService) { }
 
   ngOnInit() {
     this.responsive.screen.subscribe((screen) => {

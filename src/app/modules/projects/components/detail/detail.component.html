@@ -10,7 +10,12 @@
         </ul>
     </div>
     <div class="materials">
-        <app-card-layout [cards]="cards"></app-card-layout>
+        <app-card-layout 
+            [cards]="screen === 'xl' ? cards.resolutions.desktop : 
+                    screen === 'lg' ? cards.resolutions.smallDesktop : 
+                    screen === 'md' ? cards.resolutions.tablet : 
+                    null"
+        ></app-card-layout>
     </div>
 
     <app-news-slider [size]="news.length"></app-news-slider> <!-- Большой слайдер есть, по остальным додумаю как лучше сделать -->
