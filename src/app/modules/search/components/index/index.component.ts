@@ -49,6 +49,76 @@ export class IndexComponent implements OnInit {
     },
   ];
 
+  materials = [
+    {
+      type: 'material',
+      size: 'small',
+      view: 'default'
+    },
+    {
+      type: 'material',
+      size: 'small',
+      view: 'backgroundImage'
+    },
+    {
+      type: 'material',
+      size: 'small',
+      view: 'default'
+    },
+  ];
+
+  interviews = [
+    {
+      type: 'material',
+      size: 'small',
+      view: 'backgroundImage'
+    },
+    {
+      type: 'material',
+      size: 'small',
+      view: 'backgroundImage'
+    }
+  ];
+
+  objectCards = [
+    {
+      type: 'object',
+      objectConfig: { 
+        image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
+        title: 'ЖК «Новое купчино»', 
+        geolocation: 'Василеостровский район', 
+        url: '/' 
+      }
+    },
+    {
+      type: 'object',
+      objectConfig: { 
+        image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
+        title: 'ЖК «Новое купчино»', 
+        geolocation: 'Василеостровский район', 
+        url: '/' 
+      }
+    },
+    {
+      type: 'object',
+      objectConfig: { 
+        image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
+        title: 'ЖК «Новое купчино»', 
+        geolocation: 'Василеостровский район', 
+        url: '/' 
+      }
+    },
+    {
+      type: 'object',
+      objectConfig: { 
+        image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
+        title: 'ЖК «Новое купчино»', 
+        geolocation: 'Василеостровский район', 
+        url: '/' 
+      }
+    }
+  ];
+
   constructor(public responsive: ResponsiveService) { }
 
   ngOnInit() {

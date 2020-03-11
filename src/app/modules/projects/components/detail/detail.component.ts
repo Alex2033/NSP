@@ -23,29 +23,15 @@ export class DetailComponent implements OnInit {
   config = [
     {
       subtopic: 'Все',
-      cards: [
-        {text: 'Все 1!'},
-        {text: 'Все 2!'},
-        {text: 'Все 3!'},
-        {text: 'Все 4!'},
-        {text: 'Все 5!'},
-        {text: 'Все 6!'},
-      ]
+      cards: [0, 1, 2, 3, 4, 5]
     },
     {
       subtopic: 'Подтема 1',
-      cards: [
-        {text: 'Подтема 1!'},
-        {text: 'Подтема 2!'},
-        {text: 'Подтема 3!'},
-      ]
+      cards: [0, 1, 2]
     },
     {
       subtopic: 'Подтема 2',
-      cards: [
-        {text: 'Подтема 2 1!'},
-        {text: 'Подтема 2 2!'},
-      ]
+      cards: [0, 1]
     },
   ];
 

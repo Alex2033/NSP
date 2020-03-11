@@ -43,3 +43,16 @@
     font-size: 13px;
     line-height: 1.54;
 }
+
+.all-results {
+    margin-left: auto;
+
+    a {
+        color: $primary-color;
+    
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    
+}

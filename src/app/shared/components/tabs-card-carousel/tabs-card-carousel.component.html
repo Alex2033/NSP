@@ -33,7 +33,6 @@
             <ng-container *ngFor="let tab of tabs; let index = index">
                 <ng-container *ngFor="let tabCard of tab.cards">
                     <div class="swiper-slide" [class.animated]="cardsView === index" *ngIf="cardsView === index">
-                        {{ tabCard.text }}
                         <app-material-card [size]="'small'" [view]="'default'"></app-material-card>
                     </div>
                 </ng-container>
