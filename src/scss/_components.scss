@@ -555,3 +555,33 @@
     line-height: 1.538;
     display: block;
 }
+
+// start Ngx Scrollbar
+.custom-scrollbar {
+    width: 100%;
+
+    .ng-scrollbar-wrapper[deactivated=false]>scrollbar-y.scrollbar-control {
+        width: 6px;
+    }
+
+
+    .ng-scrollbar-wrapper>scrollbar-y.scrollbar-control>.ng-scrollbar-track {
+        height: 100%;
+    }
+
+    .ng-scrollbar-wrapper>scrollbar-y.scrollbar-control>.ng-scrollbar-track {
+        border-radius: 0;
+        width: 100%;
+    }
+
+    .ng-scrollbar-thumb {
+        border-radius: 0;
+        background-color: $gray;
+    }
+
+    .ng-scrollbar-wrapper[verticalDragging=true]>scrollbar-y.scrollbar-control .ng-scrollbar-thumb, .ng-scrollbar-wrapper[verticalHovered=true]>scrollbar-y.scrollbar-control .ng-scrollbar-thumb {
+        background-color: $gray;
+    }
+    
+
+}

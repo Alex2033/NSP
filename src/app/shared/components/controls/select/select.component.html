@@ -1,0 +1,23 @@
+<div 
+    class="search-select" 
+    [class.active]="showDropdown"
+    (clickOutside)="showDropdown = false"
+>
+    <div class="search-select-wrapper" (click)="toggleDropdown()">
+        <span class="select-label">{{ content.name }}</span>
+        <svg class="arrow-icon" [class.active]="showDropdown">
+            <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
+        </svg>
+    </div>
+    
+    
+    <div class="select-dropdown" [class.active]="showDropdown">
+        <ng-scrollbar class="custom-scrollbar">
+            <ul class="dropdown-list">
+                <li class="dropdown-item" *ngFor="let option of content.options" (click)="setLabel(option)">
+                    <div>{{ option }}</div>
+                </li>
+            </ul>
+        </ng-scrollbar>
+    </div>
+</div>

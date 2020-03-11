@@ -232,20 +232,20 @@ export class IndexComponent implements OnInit {
 
   selectConfig1 = {
     name: 'Тип объекта',
-    options: {
-      0: 'Вариант 1',
-      1: 'Вариант 2',
-      2: 'Вариант 3'
-    }
+    options: [
+      'Вариант 1',
+      'Вариант 2',
+      'Вариант 3'
+    ]
   };
 
   selectConfig2 = {
     name: 'Выбрать район',
-    options: {
-      0: 'Вариант 1',
-      1: 'Вариант 2',
-      2: 'Вариант 3'
-    }
+    options: [
+      'Вариант 1',
+      'Вариант 2',
+      'Вариант 3'
+    ]
   };
 
   constructor(public responsive: ResponsiveService) { }

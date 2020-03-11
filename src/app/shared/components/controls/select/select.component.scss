@@ -1,0 +1,110 @@
+@import "theme";
+@import "responsive";
+
+:host-context(.second-select) {
+	.search-select {
+        border-left-color: $border-color;
+
+        &.active {
+            border-color: $secondary-color;
+        }
+    }
+}
+
+.search-select {
+    flex: 0 0 216px;
+    width: 216px;
+    border: 1px solid transparent;
+    border-right-color: $border-color;
+    position: relative;
+
+    &.active {
+        border-color: $secondary-color;
+    }
+
+    @include media-breakpoint-down(lg) {
+        flex: 0 0 195px;
+        width: 195px;
+    }
+
+    @include media-breakpoint-down(md) {
+        flex: 0 0 165px;
+        width: 165px;
+    }
+}
+
+.search-select-wrapper {
+    width: 100%;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    color: $dark-gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 16px 26px 16px 16px;
+}
+
+.arrow-icon {
+    transform-origin: 50% 50%;
+    transform: rotate(90deg);
+    fill: $primary-color;
+    flex-shrink: 0;
+
+    &.active {
+        transform: rotate(-90deg);
+    }
+}
+
+.select-label {
+    user-select: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-right: 5px;
+}
+
+.select-dropdown {
+    position: absolute;
+    overflow: hidden;
+    top: calc(100% + 1px);
+    left: 0;
+    width: calc(100% + 2px);
+    z-index: 2;
+    display: none;
+    box-shadow: 0 4px 16px 0 rgba(8,26,63,0.14);
+
+    &.active {
+        display: block;
+    }
+}
+
+.custom-scrollbar {
+    max-height: 190px;
+
+    ::ng-deep {
+        .ng-scroll-content, .ng-scroll-viewport {
+            max-width: 100%;
+        }
+    }
+    
+}
+
+.dropdown-item {
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1.571;
+    background-color: $light-color;
+    transition: background-color .25s ease; 
+    padding: 8px 24px;
+    
+    &:hover {
+        background-color: $secondary-color;
+    }
+    
+    div {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}

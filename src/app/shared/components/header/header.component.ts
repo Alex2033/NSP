@@ -70,10 +70,6 @@ export class HeaderComponent implements OnInit {
     for (let i = 0; i < counter; i++) {
       this.dropdownList.nativeElement.prepend(this.navigationList.nativeElement.children[this.navigationList.nativeElement.children.length - 1]);
     }
-
-    console.log(this.navigationListWidth);
-    console.log(this.sum);
-
     
   }
 

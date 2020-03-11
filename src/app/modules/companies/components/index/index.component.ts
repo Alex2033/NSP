@@ -16,11 +16,11 @@ export class IndexComponent implements OnInit {
 
   selectConfig = {
     name: 'Вид деятельности',
-    options: {
-      0: 'Вариант 1',
-      1: 'Вариант 2',
-      2: 'Вариант 3'
-    }
+    options: [
+      'Вариант 1',
+      'Вариант 2',
+      'Вариант 3'
+    ]
   };
 
   constructor() { }

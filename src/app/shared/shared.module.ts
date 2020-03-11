@@ -55,6 +55,8 @@ import { CommentFormComponent } from './components/comment-form/comment-form.com
 import { AngularYandexMapsModule } from 'angular8-yandex-maps';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { NgScrollbarModule } from 'ngx-scrollbar';
+import { SelectComponent } from './components/controls/select/select.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -110,7 +112,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ApartmentInfoBlockComponent,
     CommentsListComponent,
     CommentComponent,
-    CommentFormComponent
+    CommentFormComponent,
+    SelectComponent
   ],
   imports: [
     CommonModule,
@@ -120,7 +123,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     RouterModule,
     AngularYandexMapsModule,
     MatNativeDateModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    NgScrollbarModule
   ],
   exports: [
     CommonModule,
@@ -166,7 +170,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     CommentFormComponent,
     AngularYandexMapsModule,
     MatNativeDateModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    NgScrollbarModule,
+    SelectComponent
   ],
   providers: [
     {

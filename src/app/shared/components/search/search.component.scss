@@ -9,48 +9,6 @@
     align-items: center;
 }
 
-.search-select {
-    flex: 0 0 216px;
-    width: 216px;
-    border-right: 1px solid $border-color;
-    padding: 16px 26px 16px 16px;
-    font-family: 'Montserrat';
-    font-weight: 500;
-    color: $dark-gray;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-
-    @include media-breakpoint-down(lg) {
-        flex: 0 0 195px;
-        width: 195px;
-    }
-
-    @include media-breakpoint-down(md) {
-        flex: 0 0 165px;
-        width: 165px;
-    }
-
-    .arrow-icon {
-        transform-origin: 50% 50%;
-        transform: rotate(90deg);
-        fill: $primary-color;
-    }
-
-    &:not(:first-child) {
-        border-left: 1px solid $border-color;
-    }
-}
-
-.select-active {
-    user-select: none;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    margin-right: 5px;
-}
-
 .search-icon {
     width: 16px;
     height: 16px;
