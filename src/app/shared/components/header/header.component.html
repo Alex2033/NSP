@@ -1,6 +1,6 @@
 <header class="header">
     <div class="header-top">
-        <a href="#" class="logo-link" aria-label="logotype link">
+        <a [routerLink]="['']" class="logo-link" aria-label="logotype link">
             <svg class="logo">
                 <use xlink:href="assets/sprites/icons.svg#logo"></use>
             </svg>
@@ -27,69 +27,40 @@
             <nav class="navigation">
                 <ul class="navigation-list" #navigationList style="flex-grow: 1;">
                     <li [class.active]="false">
-                        <a [routerLink]="['']">Айтем 1</a>
+                        <a [routerLink]="['search']">Search</a>
                     </li>
                     <li [class.active]="false">
-                        <a [routerLink]="['']">Айтем 2</a>
+                        <a [routerLink]="['companies']">Companies index</a>
                     </li>
                     <li [class.active]="false">
-                        <a [routerLink]="['']">Айтем 3</a>
+                        <a [routerLink]="['companies/detail']">Companies detail</a>
                     </li>
                     <li [class.active]="false">
-                        <a [routerLink]="['']">Айтем 4</a>
+                        <a [routerLink]="['article']">Артикл</a>
                     </li>
                     <li [class.active]="false">
-                        <a [routerLink]="['']">Айтем 5</a>
+                        <a [routerLink]="['quotes']">Quotes</a>
                     </li>
                     <li [class.active]="false">
-                        <a [routerLink]="['']">Айтем 6</a>
+                        <a [routerLink]="['persons']">Persons index</a>
                     </li>
                     <li [class.active]="false">
-                        <a [routerLink]="['']">Айтем 7</a>
+                        <a [routerLink]="['persons/detail']">Persons detail</a>
                     </li>
                     <li [class.active]="false">
-                        <a [routerLink]="['']">Айтем 8</a>
+                        <a [routerLink]="['event']">Event</a>
                     </li>
                     <li [class.active]="false">
-                        <a [routerLink]="['']">Айтем 9</a>
+                        <a [routerLink]="['objects']">Objects index</a>
                     </li>
                     <li [class.active]="false">
-                        <a [routerLink]="['']">Айтем 10</a>
+                        <a [routerLink]="['objects/detail']">Objects detail</a>
                     </li>
                     <li [class.active]="false">
-                        <a [routerLink]="['']">Айтем 11</a>
-                    <li [class.active]="false">
-                        <a [routerLink]="['']">Айтем 1</a>
+                        <a [routerLink]="['sections/detail']">Sections detail</a>
                     </li>
                     <li [class.active]="false">
-                        <a [routerLink]="['']">Айтем 2</a>
-                    </li>
-                    <li [class.active]="false">
-                        <a [routerLink]="['']">Айтем 3</a>
-                    </li>
-                    <li [class.active]="false">
-                        <a [routerLink]="['']">Айтем 4</a>
-                    </li>
-                    <li [class.active]="false">
-                        <a [routerLink]="['']">Айтем 5</a>
-                    </li>
-                    <li [class.active]="false">
-                        <a [routerLink]="['']">Айтем 6</a>
-                    </li>
-                    <li [class.active]="false">
-                        <a [routerLink]="['']">Айтем 7</a>
-                    </li>
-                    <li [class.active]="false">
-                        <a [routerLink]="['']">Айтем 8</a>
-                    </li>
-                    <li [class.active]="false">
-                        <a [routerLink]="['']">Айтем 9</a>
-                    </li>
-                    <li [class.active]="false">
-                        <a [routerLink]="['']">Айтем 10</a>
-                    </li>
-                    <li [class.active]="false">
-                        <a [routerLink]="['']">Айтем 11</a>
+                        <a [routerLink]="['projects/detail']">Projects detail</a>
                     </li>
                 </ul>
                 <ul class="navigation-list">
@@ -102,23 +73,7 @@
                             </svg>
                         </button>
                         <div class="dropdown" [class.visible]="dropdownVisible">
-                            <ul class="dropdown-list" #dropdownList>
-                                <!-- <li [class.active]="false">
-                                    <a [routerLink]="['']">Мероприятия</a>
-                                </li>
-                                <li [class.active]="false">
-                                    <a [routerLink]="['']">Квадратный Петербург</a>
-                                </li>
-                                <li [class.active]="false">
-                                    <a [routerLink]="['']">Наша газета</a>
-                                  </li>
-                                <li [class.active]="false">
-                                    <a [routerLink]="['']">Персоны</a>
-                                </li>
-                                <li [class.active]="false">
-                                    <a [routerLink]="['']">Компании</a>
-                                </li> -->
-                            </ul>
+                            <ul class="dropdown-list" #dropdownList (click)="dropdownVisible = !dropdownVisible"></ul>
                         </div>
                     </li>
                 </ul>
