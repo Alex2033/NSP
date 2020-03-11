@@ -57,6 +57,9 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { NgScrollbarModule } from 'ngx-scrollbar';
 import { SelectComponent } from './components/controls/select/select.component';
+import {ResponsiveImageComponent} from './components/responsive-image/responsive-image.component';
+import {ParagraphsPipe} from './pipes/paragraphs.pipe';
+import { DomainPipe } from './pipes/domain.pipe';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -113,7 +116,10 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     CommentsListComponent,
     CommentComponent,
     CommentFormComponent,
-    SelectComponent
+    SelectComponent,
+    ResponsiveImageComponent,
+    ParagraphsPipe,
+    DomainPipe
   ],
   imports: [
     CommonModule,
@@ -172,7 +178,10 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MatNativeDateModule,
     MatDatepickerModule,
     NgScrollbarModule,
-    SelectComponent
+    SelectComponent,
+    ResponsiveImageComponent,
+    ParagraphsPipe,
+    DomainPipe
   ],
   providers: [
     {

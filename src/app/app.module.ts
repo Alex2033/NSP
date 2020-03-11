@@ -10,7 +10,11 @@ import { ModalSubscriptionFormComponent } from './shared/components/modal/modal-
 import { ModalNewsOfferFormComponent } from './shared/components/modal/modal-news-offer-form/modal-news-offer-form.component';
 import { ModalVideoComponent } from './shared/components/modal/modal-video/modal-video.component';
 import { ModalLoginComponent } from './shared/components/modal/modal-login/modal-login.component';
-import {BrowserModule} from '@angular/platform-browser';
+import {BrowserModule, BrowserTransferStateModule} from '@angular/platform-browser';
+import {environment} from '../environments/environment';
+import {ApiService} from './shared/services/api.service';
+import {MockApiService} from './shared/services/mock-api.service';
+import {HttpClientModule} from '@angular/common/http';
 registerLocaleData(localeRu);
 
 @NgModule({
@@ -23,12 +27,15 @@ registerLocaleData(localeRu);
     ModalLoginComponent,
   ],
   imports: [
+    HttpClientModule,
+    BrowserTransferStateModule,
     AppRoutingModule,
     SharedModule,
     BrowserModule.withServerTransition({ appId: 'nsp' }),
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'ru' },
+    { provide: ApiService, useClass: environment.useApi ? ApiService : MockApiService }
   ],
   bootstrap: [AppComponent]
 })
