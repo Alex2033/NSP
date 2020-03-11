@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {ApartmentComplex} from '../../../../shared/contracts/apartment-complex';
 
 @Component({
   selector: 'app-detail',
@@ -75,9 +77,16 @@ export class DetailComponent implements OnInit {
     iconCaption: 'ЖК Life-Лесная'
   }
 
-  constructor() { }
+
+  apartmentComplex: ApartmentComplex;
+
+  constructor(private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.apartmentComplex = this.route.snapshot.data.content.apartmentComplex;
+    });
   }
 
   scrollToElement($element): void {

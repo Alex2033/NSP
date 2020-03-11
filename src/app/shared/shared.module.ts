@@ -55,6 +55,9 @@ import { CommentFormComponent } from './components/comment-form/comment-form.com
 import { AngularYandexMapsModule } from 'angular8-yandex-maps';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import {ResponsiveImageComponent} from './components/responsive-image/responsive-image.component';
+import {ParagraphsPipe} from './pipes/paragraphs.pipe';
+import { DomainPipe } from './pipes/domain.pipe';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -110,7 +113,10 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ApartmentInfoBlockComponent,
     CommentsListComponent,
     CommentComponent,
-    CommentFormComponent
+    CommentFormComponent,
+    ResponsiveImageComponent,
+    ParagraphsPipe,
+    DomainPipe
   ],
   imports: [
     CommonModule,
@@ -166,7 +172,10 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     CommentFormComponent,
     AngularYandexMapsModule,
     MatNativeDateModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    ResponsiveImageComponent,
+    ParagraphsPipe,
+    DomainPipe
   ],
   providers: [
     {
