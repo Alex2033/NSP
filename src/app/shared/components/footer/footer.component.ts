@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ResponsiveService } from '../../services/responsive.service';
 
 @Component({
   selector: 'app-footer',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+  screen: string;
 
-  constructor() { }
+  constructor(private responsive: ResponsiveService) { }
 
   ngOnInit() {
+    this.responsive.screen.subscribe((screen) => {
+      this.screen = screen;
+    });
   }
 
 }

@@ -2,7 +2,7 @@
     <div class="footer-top">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6 footer-item">
+                <div class="col-lg-4 col-md-6 col-9 footer-item">
                     <svg class="logo">
                         <use xlink:href="assets/sprites/icons.svg#logo"></use>
                     </svg>
@@ -10,9 +10,10 @@
                         <p>Св-во регистрации СМИ: <br> ЭЛ №ФС77-67922 от 06.12.2016</p>
                     </div>
                 </div>
+                <div class="col-3 footer-age" *ngIf="screen === 'sm'"><p>16+</p></div>
                 <div class="col-lg-4 col-md-6 footer-item padding-left">
                     <div class="footer-content">
-                        <h6 class="footer-title">Редакция</h6>
+                        <h6 class="footer-title" *ngIf="screen !== 'sm'">Редакция</h6>
                         <ul class="footer-links">
                             <li><a [routerLink]="['']">Написать нам</a></li>
                             <li><a [routerLink]="['']">Контакты</a></li>
@@ -77,13 +78,13 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 footer-item padding-left">
-                    <div class="footer-bottom-text">
+                    <div class="footer-bottom-text" *ngIf="screen !== 'sm'">
                         <p>
                             Нашли ошибку в тексте? Выделите нужный фрагмент и нажмите ctrl+enter. 
                         </p>
                     </div>
                 </div>
-                <div class="col-lg-3 footer-item content-center footer-age">
+                <div class="col-lg-3 footer-item content-center footer-age" *ngIf="screen !== 'sm'">
                     <div class="footer-bottom-text">
                         <p>16+</p>
                     </div>

@@ -3,6 +3,10 @@
 
 .footer {
     background-color: $light-gray;
+
+    @include media-breakpoint-only(sm) {
+        padding: 0 12px;
+    }
 }
 
 // Верхняя панель
@@ -10,15 +14,33 @@
     padding: 40px 0 41px;
     border-bottom: 1px solid $border-color;
     position: relative;
+
+    @include media-breakpoint-only(sm) {
+        border-bottom: 0;
+        padding: 24px 0;
+    }
 }
 
 .logo {
     margin-bottom: 40px;
+
+    @include media-breakpoint-only(sm) {
+        width: 187px;
+        height: 38px;
+        margin-bottom: 24px;
+    }
 }
 
-.certificate {
+.certificate-text {
     font-size: 14px;
     line-height: 1.57;
+    font-family: 'Montserrat', sans-serif;
+
+    @include media-breakpoint-only(sm) {
+        font-size: 13px;
+        line-height: 1.54;
+        margin-bottom: 24px;
+    }
 }
 
 .footer-title {
@@ -35,8 +57,19 @@
         margin-bottom: 40px;
     }
 
+    @include media-breakpoint-only(sm) {
+        margin-bottom: 8px;
+        padding-right: 27px;
+        page-break-inside: avoid;
+    }
+
     li {
         margin-bottom: 24px;
+
+        @include media-breakpoint-only(sm) {
+            margin-bottom: 16px;
+            display: inline-block;
+        }
     } 
     
     a {
@@ -50,6 +83,11 @@
         &:hover {
             color: $primary-color;
             text-decoration: none;
+        }
+
+        @include media-breakpoint-only(sm) {
+            font-size: 13px;
+            line-height: 1.54;
         }
     }
 }
@@ -70,6 +108,11 @@
             align-items: center;
             text-align: center;
         }
+
+        @include media-breakpoint-only(sm) {
+            align-items: flex-start;
+            text-align: left;
+        }
     }
 }
 
@@ -86,6 +129,11 @@
             margin-right: 8px;
         }
     }
+
+    @include media-breakpoint-only(sm) {
+        width: 100%;
+        justify-content: space-between;
+    }
 }
 
 // Нижняя панель
@@ -94,6 +142,10 @@
 
     @include media-breakpoint-only(md) {
         padding: 24px 0 16px;
+    }
+
+    @include media-breakpoint-only(sm) {
+        padding: 0 0 24px;
     }
 
     .footer-item {
@@ -117,9 +169,21 @@
 
 }
 
+.copyright {
+    @include media-breakpoint-only(sm) {
+        margin-bottom: 16px;
+    }
+}
+
 .copyright-text {
     margin-bottom: 16px;
     font-weight: 600;
+
+    @include media-breakpoint-only(sm) {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.5;
+    }
 }
 
 .footer-age {
@@ -128,8 +192,23 @@
         line-height: 1.385;
         font-size: 26px; 
     }
+
+    @include media-breakpoint-only(sm) {
+        text-align: right;
+    }
 }
 
 .padding-left {
     padding-left: 58px;
+
+    @include media-breakpoint-only(sm) {
+        padding-left: 0;
+    }
+}
+
+.footer-bottom-text {
+    @include media-breakpoint-only(sm) {
+        font-size: 12px;
+        line-height: 1.5;
+    }
 }
