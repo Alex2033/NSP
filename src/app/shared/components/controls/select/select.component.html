@@ -15,7 +15,7 @@
         <ng-scrollbar class="custom-scrollbar">
             <ul class="dropdown-list">
                 <li class="dropdown-item" *ngFor="let option of content.options" (click)="setLabel(option)">
-                    <div>{{ option }}</div>
+                    {{ option }}
                 </li>
             </ul>
         </ng-scrollbar>

@@ -70,7 +70,7 @@
     top: calc(100% + 1px);
     left: 0;
     width: calc(100% + 2px);
-    z-index: 2;
+    z-index: 20;
     display: none;
     box-shadow: 0 4px 16px 0 rgba(8,26,63,0.14);
 
@@ -93,18 +93,12 @@
 .dropdown-item {
     cursor: pointer;
     font-size: 14px;
-    line-height: 1.571;
+    line-height: 1.2;
     background-color: $light-color;
     transition: background-color .25s ease; 
-    padding: 8px 24px;
+    padding: 12px 24px;
     
     &:hover {
         background-color: $secondary-color;
-    }
-    
-    div {
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
     }
 }
