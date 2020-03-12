@@ -60,6 +60,7 @@ import { SelectComponent } from './components/controls/select/select.component';
 import {ResponsiveImageComponent} from './components/responsive-image/responsive-image.component';
 import {ParagraphsPipe} from './pipes/paragraphs.pipe';
 import { DomainPipe } from './pipes/domain.pipe';
+import { MenuComponent } from './components/menu/menu.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -119,7 +120,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     SelectComponent,
     ResponsiveImageComponent,
     ParagraphsPipe,
-    DomainPipe
+    DomainPipe,
+    MenuComponent
   ],
   imports: [
     CommonModule,
@@ -181,7 +183,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     SelectComponent,
     ResponsiveImageComponent,
     ParagraphsPipe,
-    DomainPipe
+    DomainPipe,
+    MenuComponent
   ],
   providers: [
     {

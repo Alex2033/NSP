@@ -7,4 +7,12 @@ export class MenuService {
   showMenu: boolean = false;
 
   constructor() { }
+
+  openMenu() {
+    this.showMenu = true;
+  }
+
+  closeMenu() {
+    this.showMenu = false;
+  }
 }

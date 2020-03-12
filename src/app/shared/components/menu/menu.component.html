@@ -1,0 +1,28 @@
+<div class="menu">
+    <button class="close dark" (click)="menu.closeMenu()">
+        <svg>
+            <use xlink:href="assets/sprites/icons.svg#close"></use>
+        </svg>
+    </button>
+    <ng-scrollbar class="custom-scrollbar">
+        <ul class="menu-list">
+            <li class="menu-list-item" *ngFor="let link of links" (click)="menu.closeMenu()">
+                <a [routerLink]="[link.url]">{{ link.text }}</a>
+            </li>
+        </ul>
+    </ng-scrollbar>
+    <div class="menu-actions">
+        <div class="menu-action" >
+            <svg>
+                <use xlink:href="assets/sprites/icons.svg#notification"></use>
+            </svg>
+            <button class="menu-action-text" (click)="showPopup('subscription-form')">Подписаться</button>
+        </div>
+        <div class="menu-action" >
+            <svg>
+                <use xlink:href="assets/sprites/icons.svg#mail"></use>
+            </svg>
+            <button class="menu-action-text" (click)="showPopup('news-offer-form')">Прислать новость</button>
+        </div>
+    </div>
+</div>

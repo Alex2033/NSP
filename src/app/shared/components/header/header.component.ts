@@ -86,6 +86,6 @@ export class HeaderComponent implements OnInit {
   }
 
   showMenu() {
-    
+    this.menuService.openMenu();
   }
 }
