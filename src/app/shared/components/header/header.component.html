@@ -1,11 +1,18 @@
 <header class="header">
     <div class="header-top">
+
+        <!-- logo -->
         <a [routerLink]="['']" class="logo-link" aria-label="logotype link">
-            <svg class="logo">
+            <svg class="logo" *ngIf="screen !== 'sm'">
                 <use xlink:href="assets/sprites/icons.svg#logo"></use>
             </svg>
+            <svg class="logo-mini"*ngIf="screen === 'sm'">
+                <use xlink:href="assets/sprites/icons.svg#logo_mini"></use>
+            </svg>
         </a>
-        <div class="quote">
+        
+        <!-- quote -->
+        <div class="quote" *ngIf="screen !== 'sm'">
             <blockquote class="quote-text">
                 <p>
                     «Мы исключили схему, при которой девелоперы могут выкупать сами у себя нужное количество квартир, чтобы достраивать объекты по старым правилам…»
@@ -16,7 +23,17 @@
                 <img src="https://images.unsplash.com/photo-1543080853-556086153871?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=56&q=80" alt="avatar">
             </div>
         </div>
+
+        <!-- mobile actions -->
+        <button class="menu-trigger" *ngIf="screen === 'sm'" (click)="showMenu()">
+            <svg>
+                <use xlink:href="assets/sprites/icons.svg#icon-menu"></use>
+            </svg>
+        </button>
+
     </div>
+
+    <!-- header menu -->
     <div class="header-menu" [ngClass]="{'fixed': fixedMenu, 'under-banner': showBanner}" #menu>
         <div class="menu">
             <a href="#" aria-label="mini-logotype link">
@@ -85,7 +102,9 @@
             </button>
         </div>
     </div>
-    <div class="header-bottom">
+
+    <!-- header bottom -->
+    <div class="header-bottom" *ngIf="screen !== 'sm'">
         <div class="header-actions">
             <div class="header-action">
                 <svg>

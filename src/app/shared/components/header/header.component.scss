@@ -8,6 +8,10 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid $border-color;
+
+    @include media-breakpoint-only(sm) {
+        padding: 8px 12px;
+    }
 }
 
 .quote {
@@ -355,4 +359,28 @@ time.header-action-text {
 
 .scrolled-search-btn {
     margin-left: 16px;
+}
+
+.logo-mini {
+    @include media-breakpoint-only(sm) {
+        width: 66px;
+        height: 31px;
+    }
+}
+
+.menu-trigger {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    justify-content: center;
+
+    svg {
+        width: 20px;
+        height: 19px;
+        fill: $primary-color;
+    }
 }
