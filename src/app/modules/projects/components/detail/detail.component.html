@@ -4,7 +4,11 @@
             <h1>Жилые комплексы</h1>
         </header>
         <ul class="categories">
-            <li class="categories-item" *ngFor="let category of categories">
+            <li 
+                class="categories-item" 
+                *ngFor="let category of categories; index as i" 
+                [class.active]="i === 0"
+            >
                 <a href="/" class="categories-link">{{ category }}</a>
             </li>
         </ul>

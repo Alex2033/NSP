@@ -99,7 +99,7 @@
 
     > li {
         flex-shrink: 0;
-        padding: 24px;
+        padding: 14px 8px;
         font-family: 'Montserrat';
         font-weight: 700;
         position: relative;
@@ -114,7 +114,18 @@
     }
 
     li {
-        &.active > {
+        &.active {
+            > a {
+                background-color: $primary-color;
+                color: $light-color;
+                text-decoration: none;
+            }
+
+            .dropdown-btn {
+                color: $text-color;
+            }
+        }
+        &:active > {
             a, .dropdown-btn {
                 color: $text-color !important;
             }
@@ -128,6 +139,8 @@
     }
 
     a, .dropdown-btn {
+        border-radius: 4px;
+        padding: 10px 16px;
         display: inline-block;
         color: $primary-color;
         transition: opacity .2s ease;
@@ -182,7 +195,7 @@
     width: 100vw;
     max-width: 240px;
     box-shadow: 0 6px 16px 0 rgba(0,0,0,0.16);
-    padding: 24px 0;
+    padding: 16px 0;
     background-color: $light-color;
     opacity: 0;
     visibility: hidden;
@@ -197,13 +210,11 @@
 .dropdown-list {
     li {
         line-height: 1.6;
-
-        &:not(:last-child) {
-            margin-bottom: 16px;
-        }
+        padding: 0 8px;
     }
+
     a {
-        padding: 0 24px;
+        padding: 8px 16px;
         font-weight: 500;
     }
 }

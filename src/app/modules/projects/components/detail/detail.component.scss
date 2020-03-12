@@ -17,6 +17,14 @@
     &:not(:last-child) {
         margin-right: 8px;
     }
+
+    &.active {
+        .categories-link {
+            background-color: $primary-color;
+            color: $light-color;
+            text-decoration: none;
+        }
+    }
 }
 
 .categories-link {

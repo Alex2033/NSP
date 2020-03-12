@@ -42,7 +42,7 @@ export class MenuComponent implements OnInit {
       url: ''
     },
     {
-      text: 'Квадратный Петерубрг',
+      text: 'Квадратный Петербург',
       url: ''
     },
     {
