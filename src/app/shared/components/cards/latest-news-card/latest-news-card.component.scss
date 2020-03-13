@@ -1,7 +1,12 @@
 @import "theme";
+@import "responsive";
 
 .news-wrapper {
     padding: 24px 8px 24px 0;
+
+    @include media-breakpoint-down(sm) {
+        padding: 24px 12px 0;
+    }
 }
 
 

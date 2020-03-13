@@ -1,18 +1,20 @@
-import { Component, OnInit, HostListener, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, HostListener, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { BannerService } from '../banner-data.service';
 import { ModalService } from '../../services/modal.service';
 import { ResponsiveService } from '../../services/responsive.service';
 import { MenuService } from '../../services/menu.service';
+import { NgScrollbar } from 'ngx-scrollbar';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, AfterViewInit {
   @ViewChild('menu', {static: true}) menu: ElementRef;
   @ViewChild('navigationList', {static: true}) navigationList: ElementRef;
   @ViewChild('dropdownList', {static: true}) dropdownList: ElementRef;
+  @ViewChild(NgScrollbar, { static: false }) scrollbarRef: NgScrollbar;
   dropdownVisible: boolean = false;
   fixedMenu: boolean = false;
   navigationListWidth: number;
@@ -20,6 +22,8 @@ export class HeaderComponent implements OnInit {
   sum: number = 0;
   showDropdown: boolean = false;
   screen: string;
+  scrollPosition: number = 0;
+  showLeftControl: boolean = false;
 
   get showBanner(): boolean {
     return this.bannerService.showBanner;
@@ -55,6 +59,21 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  ngAfterViewInit() {
+    if (this.screen === 'sm') {
+      this.scrollbarRef.scrolled.subscribe(e => {
+        this.scrollPosition = e.target.scrollLeft;
+
+        if (this.scrollPosition > 0) {
+          this.showLeftControl = true;
+        } else {
+          this.showLeftControl = false;
+        }
+      });
+    }
+    
+  }
+
   @HostListener('window:scroll', ['$event']) checkScroll() {
     const windowScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     if (windowScroll >= this.menuPosition) {
@@ -87,5 +106,9 @@ export class HeaderComponent implements OnInit {
 
   showMenu() {
     this.menuService.openMenu();
+  }
+
+  rofl() {
+    console.log('object');
   }
 }

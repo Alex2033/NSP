@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container top-container">
   <app-card-layout 
     [cards]="screen === 'xl' ? cards.resolutions.desktop : 
             screen === 'lg' ? cards.resolutions.smallDesktop : 
             screen === 'md' ? cards.resolutions.tablet : 
-            null"
+            cards.resolutions.mobile"
   ></app-card-layout>
   <app-card-carousel [header]="'Технология строительства'"></app-card-carousel>
   <app-card-carousel [header]="'Архитектура'"></app-card-carousel>

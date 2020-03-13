@@ -1,22 +1,24 @@
 <div class="modal-content" *ngIf="!showConfirm">
-  <div class="main-content">
-    <h3 class="modal-title">Подписка на рассылку NSP</h3>
-    <ul class="modal-list">
-      <li>
-        <span class="modal-list-dot"></span>
-        Присылаем только важное
-      </li>
-      <li>
-        <span class="modal-list-dot"></span>
-        В любой момент можно отписаться
-      </li>
-    </ul>
-    <form [formGroup]="formGroup" class="modal-form">
-      <app-text [placeholder]="'E-mail'" [formControlName]="'email'"></app-text>
-      <app-checkbox [label]="'Согласен на'" [dataProcessingText]="'обработку данных'" [ngModel]="agree"></app-checkbox>
-      <button type="submit" class="button secondary" (click)="submit()">Отправить</button>
-    </form>
-  </div>
+  <ng-scrollbar class="custom-scrollbar" #scrollref>
+    <div class="main-content">
+      <h3 class="modal-title">Подписка на рассылку NSP</h3>
+      <ul class="modal-list">
+        <li>
+          <span class="modal-list-dot"></span>
+          Присылаем только важное
+        </li>
+        <li>
+          <span class="modal-list-dot"></span>
+          В любой момент можно отписаться
+        </li>
+      </ul>
+      <form [formGroup]="formGroup" class="modal-form">
+        <app-text [placeholder]="'E-mail'" [formControlName]="'email'"></app-text>
+        <app-checkbox [label]="'Согласен на'" [dataProcessingText]="'обработку данных'" [ngModel]="agree"></app-checkbox>
+        <button type="submit" class="button secondary" (click)="submit()">Отправить</button>
+      </form>
+    </div>
+  </ng-scrollbar>
 </div>
 
 <div class="confirm-content" *ngIf="showConfirm">

@@ -5,9 +5,22 @@
   max-width: 656px;
   width: 100%;
 
-  @include media-breakpoint-only(sm) {
+  @include media-breakpoint-down(sm) {
     max-width: 480px;
+    height: 100%;
   }  
+}
+
+.modal-content {
+  @include media-breakpoint-only(sm) {
+    height: 100%;
+  } 
+}
+
+.main-content {
+  @include media-breakpoint-only(sm) {
+    padding: 16px 24px 24px;
+  }
 }
 
 .modal-form {
@@ -37,13 +50,24 @@ app-checkbox {
 }
 
 .modal-close {
-  @include media-breakpoint-only(sm) {
+  @include media-breakpoint-down(sm) {
     top: 21px;
   }  
 }
 
+.confirm-content-close {
+  @include media-breakpoint-down(sm) {
+    margin-top: 50px;
+  } 
+}
+
 .confirm-content {
   min-height: 416px;
+
+  @include media-breakpoint-down(sm) {
+    margin-top: 50px;
+    min-height: 304px;
+  } 
 }
 
 .choose-file {
@@ -110,6 +134,10 @@ app-checkbox {
   background-color: transparent;
   min-height: 48px;
 
+  @include media-breakpoint-only(sm) {
+    margin-bottom: 0;
+  } 
+
   svg {
     width: 20px;
     height: 22px;
@@ -124,10 +152,26 @@ app-checkbox {
   }
 }
 
+.custom-scrollbar {
+  ::ng-deep {
+    .ng-scroll-content {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}
+
 .button {
   @include media-breakpoint-only(sm) {
     width: 100%;
     padding-top: 13px;
     padding-bottom: 13px;
   } 
+}
+
+.mobile-result-file {
+  margin-top: 16px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }

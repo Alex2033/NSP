@@ -1,9 +1,20 @@
 @import "theme";
 @import "responsive";
 
+:host {
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+        background-color: $light-gray;
+    }
+}
+
 :host-context(.second-select) {
 	.search-select {
         border-left-color: $border-color;
+
+        @include media-breakpoint-down(sm) {
+            border-left-color: transparent;
+        }
 
         &.active {
             border-color: $secondary-color;
@@ -30,6 +41,12 @@
     @include media-breakpoint-down(md) {
         flex: 0 0 165px;
         width: 165px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        border-color: transparent;
+        width: 100% !important;
+        flex: 0 0 100% !important;
     }
 }
 
@@ -62,6 +79,11 @@
     text-overflow: ellipsis;
     overflow: hidden;
     margin-right: 5px;
+
+    @include media-breakpoint-down(sm) {
+        font-size: 13px;
+        line-height: 1.54;
+    }
 }
 
 .select-dropdown {
@@ -100,5 +122,10 @@
     
     &:hover {
         background-color: $secondary-color;
+    }
+
+    @include media-breakpoint-down(sm) {
+        font-size: 13px;
+        padding: 10px 17px;
     }
 }

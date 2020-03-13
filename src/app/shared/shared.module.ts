@@ -56,6 +56,7 @@ import { AngularYandexMapsModule } from 'angular8-yandex-maps';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { NgScrollbarModule } from 'ngx-scrollbar';
+import { NgScrollbarReachedModule } from 'ngx-scrollbar/reached-event';
 import { SelectComponent } from './components/controls/select/select.component';
 import {ResponsiveImageComponent} from './components/responsive-image/responsive-image.component';
 import {ParagraphsPipe} from './pipes/paragraphs.pipe';
@@ -132,7 +133,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     AngularYandexMapsModule,
     MatNativeDateModule,
     MatDatepickerModule,
-    NgScrollbarModule
+    NgScrollbarModule,
+    NgScrollbarReachedModule
   ],
   exports: [
     CommonModule,
@@ -180,6 +182,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MatNativeDateModule,
     MatDatepickerModule,
     NgScrollbarModule,
+    NgScrollbarReachedModule,
     SelectComponent,
     ResponsiveImageComponent,
     ParagraphsPipe,

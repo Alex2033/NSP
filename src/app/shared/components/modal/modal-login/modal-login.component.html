@@ -1,11 +1,22 @@
 <div class="login-content">
-  <div class="login-img">
+
+  <!-- mobile image background -->
+  <img 
+    class="mobile-image"
+    *ngIf="screen === 'sm'"
+    src="https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=550&q=80" 
+    alt="mobile image">
+
+  <div class="login-img" *ngIf="screen !== 'sm'">
     <div class="login-img-background" style="background-image: url(https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=550&q=80)"></div>
     <svg class="logo-mini">
       <use xlink:href="assets/sprites/icons.svg#logo_mini"></use>
     </svg>
   </div>
   <div class="login-actions">
+    <svg class="logo-mini mobile-logo" *ngIf="screen === 'sm'">
+      <use xlink:href="assets/sprites/icons.svg#logo_mini"></use>
+    </svg>
     <div class="login-socials">
       <button class="login-social">
         <svg>

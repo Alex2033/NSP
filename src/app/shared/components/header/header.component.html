@@ -25,6 +25,11 @@
         </div>
 
         <!-- mobile actions -->
+        <button class="mobile-search-trigger" *ngIf="screen === 'sm'">
+            <svg>
+                <use xlink:href="assets/sprites/icons.svg#icon_search"></use>
+            </svg>
+        </button>
         <button class="menu-trigger" *ngIf="screen === 'sm'" (click)="showMenu()">
             <svg>
                 <use xlink:href="assets/sprites/icons.svg#icon-menu"></use>
@@ -41,7 +46,9 @@
                     <use xlink:href="assets/sprites/icons.svg#logo_mini"></use>
                 </svg>
             </a>
-            <nav class="navigation">
+
+            <!-- desktop navigation -->
+            <nav class="navigation" [style.display]="screen === 'sm' ? 'none' : null">
                 <ul class="navigation-list" #navigationList style="flex-grow: 1;">
                     <li [class.active]="false">
                         <a [routerLink]="['search']">Search</a>
@@ -95,6 +102,72 @@
                     </li>
                 </ul>
             </nav>
+
+            <!-- mobile navigation -->
+            <div class="mobile-navigation" *ngIf="screen === 'sm'">
+                <ng-scrollbar 
+                    class="horizontal-scrollbar" 
+                    track="horizontal"
+                    #scrollbarRef
+                >
+                    <nav class="navigation">
+                        <ul class="navigation-list" style="flex-grow: 1;" #widgetsContent>
+                            <li [class.active]="false">
+                                <a [routerLink]="['search']">Search</a>
+                            </li>
+                            <li [class.active]="false">
+                                <a [routerLink]="['companies']">Companies index</a>
+                            </li>
+                            <li [class.active]="false">
+                                <a [routerLink]="['companies/detail']">Companies detail</a>
+                            </li>
+                            <li [class.active]="false">
+                                <a [routerLink]="['article']">Артикл</a>
+                            </li>
+                            <li [class.active]="false">
+                                <a [routerLink]="['quotes']">Quotes</a>
+                            </li>
+                            <li [class.active]="false">
+                                <a [routerLink]="['persons']">Persons index</a>
+                            </li>
+                            <li [class.active]="false">
+                                <a [routerLink]="['persons/detail']">Persons detail</a>
+                            </li>
+                            <li [class.active]="false">
+                                <a [routerLink]="['event']">Event</a>
+                            </li>
+                            <li [class.active]="false">
+                                <a [routerLink]="['objects']">Objects index</a>
+                            </li>
+                            <li [class.active]="false">
+                                <a [routerLink]="['objects/detail']">Objects detail</a>
+                            </li>
+                            <li [class.active]="false">
+                                <a [routerLink]="['sections/detail']">Sections detail</a>
+                            </li>
+                            <li [class.active]="false">
+                                <a [routerLink]="['projects/detail']">Projects detail</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    
+                </ng-scrollbar>
+                <div class="gradient-control control-left" *ngIf="showLeftControl">
+                    <div class="control-button small light" (click)="scrollbarRef.scrollTo({ left: (scrollPosition - 150) })">
+                        <svg class="icon">
+                            <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="gradient-control control-right">
+                    <div class="control-button small light" (click)="scrollbarRef.scrollTo({ left: (scrollPosition + 150) })">
+                        <svg class="icon">
+                            <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
             <button type="button" class="search-button button scrolled-search-btn" *ngIf="fixedMenu">
                 <svg class="icon">
                     <use xlink:href="assets/sprites/icons.svg#icon_search"></use>

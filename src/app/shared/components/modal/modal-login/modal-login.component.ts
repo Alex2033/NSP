@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {ModalService} from '../../../services/modal.service';
+import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 
 @Component({
   selector: 'app-modal-login',
@@ -8,9 +9,14 @@ import {ModalService} from '../../../services/modal.service';
 })
 export class ModalLoginComponent implements OnInit {
   @Input() url: string;
-  constructor(private modalService: ModalService) { }
+
+  screen: string;
+  constructor(private modalService: ModalService, private responsive: ResponsiveService) { }
 
   ngOnInit() {
+    this.responsive.screen.subscribe((screen) => {
+      this.screen = screen;
+    });
   }
 
   close() {
