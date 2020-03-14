@@ -10,7 +10,7 @@
                 <use xlink:href="assets/sprites/icons.svg#logo_mini"></use>
             </svg>
         </a>
-        
+
         <!-- quote -->
         <div class="quote" *ngIf="screen !== 'sm'">
             <blockquote class="quote-text">
@@ -48,46 +48,18 @@
             </a>
 
             <!-- desktop navigation -->
-            <nav class="navigation" [style.display]="screen === 'sm' ? 'none' : null">
+            <nav class="navigation" [style.display]="screen === 'sm' ? 'none' : null" #navigationContainer>
+              <ul class="navigation-list for-calculate" #tmpNavigationList style="flex-grow: 1;">
+                <li [class.highlight]="menuElement.highlight" *ngFor="let menuElement of menuElements">
+                  <a [routerLink]="[menuElement.slug]">{{ menuElement.name }}</a>
+                </li>
+              </ul>
                 <ul class="navigation-list" #navigationList style="flex-grow: 1;">
-                    <li [class.active]="false">
-                        <a [routerLink]="['search']">Search</a>
-                    </li>
-                    <li [class.active]="false">
-                        <a [routerLink]="['companies']">Companies index</a>
-                    </li>
-                    <li [class.active]="false">
-                        <a [routerLink]="['companies/detail']">Companies detail</a>
-                    </li>
-                    <li [class.active]="false">
-                        <a [routerLink]="['article']">Артикл</a>
-                    </li>
-                    <li [class.active]="false">
-                        <a [routerLink]="['quotes']">Quotes</a>
-                    </li>
-                    <li [class.active]="false">
-                        <a [routerLink]="['persons']">Persons index</a>
-                    </li>
-                    <li [class.active]="false">
-                        <a [routerLink]="['persons/detail']">Persons detail</a>
-                    </li>
-                    <li [class.active]="false">
-                        <a [routerLink]="['event']">Event</a>
-                    </li>
-                    <li [class.active]="false">
-                        <a [routerLink]="['objects']">Objects index</a>
-                    </li>
-                    <li [class.active]="false">
-                        <a [routerLink]="['objects/detail']">Objects detail</a>
-                    </li>
-                    <li [class.active]="false">
-                        <a [routerLink]="['sections/detail']">Sections detail</a>
-                    </li>
-                    <li [class.active]="false">
-                        <a [routerLink]="['projects/detail']">Projects detail</a>
+                    <li [class.highlight]="menuElement.highlight" *ngFor="let menuElement of visibleMenuElements">
+                        <a [routerLink]="[menuElement.slug]">{{ menuElement.name }}</a>
                     </li>
                 </ul>
-                <ul class="navigation-list">
+                <ul class="navigation-list" #moreButton [class.hidden]="hiddenMenuElements.length === 0 && visibleMenuElements.length > 0">
                     <li (clickOutside)="dropdownVisible = false"
                         [class.active]="dropdownVisible">
                         <button class="dropdown-btn" (click)="dropdownVisible = !dropdownVisible">
@@ -97,7 +69,11 @@
                             </svg>
                         </button>
                         <div class="dropdown" [class.visible]="dropdownVisible">
-                            <ul class="dropdown-list" #dropdownList (click)="dropdownVisible = !dropdownVisible"></ul>
+                            <ul class="dropdown-list" #dropdownList (click)="dropdownVisible = !dropdownVisible">
+                              <li [class.highlight]="menuElement.highlight" *ngFor="let menuElement of hiddenMenuElements">
+                                <a [routerLink]="[menuElement.slug]">{{ menuElement.name }}</a>
+                              </li>
+                            </ul>
                         </div>
                     </li>
                 </ul>
@@ -105,52 +81,19 @@
 
             <!-- mobile navigation -->
             <div class="mobile-navigation" *ngIf="screen === 'sm'">
-                <ng-scrollbar 
-                    class="horizontal-scrollbar" 
+                <ng-scrollbar
+                    class="horizontal-scrollbar"
                     track="horizontal"
                     #scrollbarRef
                 >
                     <nav class="navigation">
                         <ul class="navigation-list" style="flex-grow: 1;" #widgetsContent>
-                            <li [class.active]="false">
-                                <a [routerLink]="['search']">Search</a>
-                            </li>
-                            <li [class.active]="false">
-                                <a [routerLink]="['companies']">Companies index</a>
-                            </li>
-                            <li [class.active]="false">
-                                <a [routerLink]="['companies/detail']">Companies detail</a>
-                            </li>
-                            <li [class.active]="false">
-                                <a [routerLink]="['article']">Артикл</a>
-                            </li>
-                            <li [class.active]="false">
-                                <a [routerLink]="['quotes']">Quotes</a>
-                            </li>
-                            <li [class.active]="false">
-                                <a [routerLink]="['persons']">Persons index</a>
-                            </li>
-                            <li [class.active]="false">
-                                <a [routerLink]="['persons/detail']">Persons detail</a>
-                            </li>
-                            <li [class.active]="false">
-                                <a [routerLink]="['event']">Event</a>
-                            </li>
-                            <li [class.active]="false">
-                                <a [routerLink]="['objects']">Objects index</a>
-                            </li>
-                            <li [class.active]="false">
-                                <a [routerLink]="['objects/detail']">Objects detail</a>
-                            </li>
-                            <li [class.active]="false">
-                                <a [routerLink]="['sections/detail']">Sections detail</a>
-                            </li>
-                            <li [class.active]="false">
-                                <a [routerLink]="['projects/detail']">Projects detail</a>
-                            </li>
+                          <li [class.highlight]="menuElement.highlight" *ngFor="let menuElement of menuElements">
+                            <a [routerLink]="[menuElement.slug]">{{ menuElement.name }}</a>
+                          </li>
                         </ul>
                     </nav>
-                    
+
                 </ng-scrollbar>
                 <div class="gradient-control control-left" *ngIf="showLeftControl">
                     <div class="control-button small light" (click)="scrollbarRef.scrollTo({ left: (scrollPosition - 150) })">
@@ -183,9 +126,9 @@
                 <svg>
                     <use xlink:href="assets/sprites/icons.svg#calendar"></use>
                 </svg>
-                <time datetime="2019-05-11" class="header-action-text">
-                    11 мая, 20:40, 2019
-                </time>
+                <span class="header-action-text">
+                  {{ now | date: 'd MMMM' }}, {{ now | date: 'shortTime' }}
+                </span>
             </div>
             <div class="header-action">
                 <svg>

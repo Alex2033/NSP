@@ -100,7 +100,12 @@
     max-width: 100%;
     align-items: center;
     justify-content: space-between;
-
+    &.for-calculate {
+      position: fixed;
+      opacity: 0;
+      bottom: 0;
+      left: 0;
+    }
     > li {
         flex-shrink: 0;
         padding: 14px 8px;
@@ -118,7 +123,7 @@
     }
 
     li {
-        &.active {
+        &.highlight {
             > a {
                 background-color: $primary-color;
                 color: $light-color;
@@ -390,7 +395,7 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-time.header-action-text {
+.header-action-text {
     color: $dark-gray;
 }
 
@@ -452,5 +457,5 @@ time.header-action-text {
 .horizontal-scrollbar {
     border-bottom: 1px solid $border-color;
     position: relative;
-    
+
 }
