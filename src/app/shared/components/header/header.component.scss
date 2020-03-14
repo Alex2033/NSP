@@ -103,8 +103,9 @@
     &.for-calculate {
       position: fixed;
       opacity: 0;
-      bottom: 0;
+      top: 100%;
       left: 0;
+      z-index: -5;
     }
     > li {
         flex-shrink: 0;
