@@ -8,60 +8,13 @@ import { MenuService } from '../../services/menu.service';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  links: Array<object> = [
-    {
-      text: 'Новости',
-      url: ''
-    },
-    {
-      text: 'Дороги',
-      url: ''
-    },
-    {
-      text: 'Власть',
-      url: ''
-    },
-    {
-      text: 'Социалка',
-      url: ''
-    },
-    {
-      text: 'Жилые комплексы',
-      url: ''
-    },
-    {
-      text: 'Коммерческая недвижимость',
-      url: ''
-    },
-    {
-      text: 'Апартаменты',
-      url: ''
-    },
-    {
-      text: 'Мероприятия',
-      url: ''
-    },
-    {
-      text: 'Квадратный Петербург',
-      url: ''
-    },
-    {
-      text: 'Наша газета',
-      url: ''
-    },
-    {
-      text: 'Персоны',
-      url: ''
-    },
-    {
-      text: 'Компании',
-      url: ''
-    },
-  ];
-
+  menuElements = [];
   constructor(public modal: ModalService, public menu: MenuService) { }
 
   ngOnInit(): void {
+    this.menu.get().subscribe((elements) => {
+      this.menuElements = elements;
+    });
   }
 
   showPopup(id: string) {

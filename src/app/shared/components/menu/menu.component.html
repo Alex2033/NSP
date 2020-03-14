@@ -6,8 +6,8 @@
     </button>
     <ng-scrollbar class="custom-scrollbar">
         <ul class="menu-list">
-            <li class="menu-list-item" *ngFor="let link of links" (click)="menu.closeMenu()">
-                <a [routerLink]="[link.url]">{{ link.text }}</a>
+            <li class="menu-list-item" *ngFor="let menuElement of menuElements" (click)="menu.closeMenu()">
+                <a [routerLink]="[menuElement.slug]">{{ menuElement.name }}</a>
             </li>
         </ul>
     </ng-scrollbar>

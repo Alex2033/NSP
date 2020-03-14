@@ -1,12 +1,17 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
+import {of} from 'rxjs';
+import {ApiService} from './api.service';
+import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MenuService {
-  showMenu: boolean = false;
+  showMenu = false;
+  menuElements;
 
-  constructor() { }
+  constructor(private api: ApiService) {
+  }
 
   openMenu() {
     this.showMenu = true;
@@ -14,5 +19,16 @@ export class MenuService {
 
   closeMenu() {
     this.showMenu = false;
+  }
+
+  get() {
+    if (this.menuElements) {
+      return of(this.menuElements);
+    } else {
+      return this.api.getMenuElements().pipe(map((data) => {
+        this.menuElements = data;
+        return data;
+      }));
+    }
   }
 }

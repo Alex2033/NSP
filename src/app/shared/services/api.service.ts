@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {ApartmentComplex} from '../contracts/apartment-complex';
 import {ApiClientService} from './api-client.service';
@@ -10,11 +10,18 @@ import {deserialize} from '../functions/deseriale';
 })
 export class ApiService {
 
-  constructor(private apiClient: ApiClientService) { }
+  constructor(private apiClient: ApiClientService) {
+  }
 
-  getApartmentComplexDetails(apartmentComplexId): Observable<{apartmentComplex: ApartmentComplex}> {
+  getMenuElements(): Observable<any> {
+    return this.apiClient.get(`/api/site/menu`).pipe(map((response) => {
+      return deserialize(response);
+    }));
+  }
+
+  getApartmentComplexDetails(apartmentComplexId): Observable<{ apartmentComplex: ApartmentComplex }> {
     return this.apiClient.get(`/api/site/apartment_complexes/${apartmentComplexId}`).pipe(map((response) => {
-      return deserialize(response) as {apartmentComplex: ApartmentComplex};
+      return deserialize(response) as { apartmentComplex: ApartmentComplex };
     }));
   }
 }

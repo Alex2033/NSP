@@ -30,68 +30,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   showLeftControl: boolean = false;
   visibleMenuElements = [];
   hiddenMenuElements = [];
-  menuElements = [
-    {
-      name: 'Search',
-      slug: 'search',
-      highlight: false
-    },
-    {
-      name: 'Companies index',
-      slug: 'companies',
-      highlight: false
-    },
-    {
-      name: 'Companies detail',
-      slug: 'companies/detail',
-      highlight: false
-    },
-    {
-      name: 'Article',
-      slug: 'article',
-      highlight: false
-    },
-    {
-      name: 'Quotes',
-      slug: 'quotes',
-      highlight: false
-    },
-    {
-      name: 'Persons index',
-      slug: 'persons',
-      highlight: false
-    },
-    {
-      name: 'Persons detail',
-      slug: 'persons/detail',
-      highlight: false
-    },
-    {
-      name: 'Event',
-      slug: 'event',
-      highlight: false
-    },
-    {
-      name: 'Objects index',
-      slug: 'objects',
-      highlight: false
-    },
-    {
-      name: 'Objects detail',
-      slug: 'objects/detail',
-      highlight: false
-    },
-    {
-      name: 'Sections detail',
-      slug: 'sections/detail',
-      highlight: false
-    },
-    {
-      name: 'Projects detail',
-      slug: 'projects/detail',
-      highlight: false
-    },
-  ];
+  menuElements = [];
 
   get showBanner(): boolean {
     return this.bannerService.showBanner;
@@ -109,6 +48,10 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+    this.menuService.get().subscribe((elements) => {
+      this.menuElements = elements;
+      this.rebuildMenu();
+    });
     this.responsive.screen.subscribe((screen) => {
       this.screen = screen;
     });
@@ -117,7 +60,6 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.rebuildMenu();
     if (this.screen === 'sm') {
       this.scrollbarRef.scrolled.subscribe(e => {
         this.scrollPosition = e.target.scrollLeft;
