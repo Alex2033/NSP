@@ -24,4 +24,14 @@ export class ApiService {
       return deserialize(response) as { apartmentComplex: ApartmentComplex };
     }));
   }
+
+  getServerData(route) {
+    return this.apiClient.get(`/api/site/server_data`, {
+      params: {
+        route
+      }
+    }).pipe(map((response) => {
+      return deserialize(response);
+    }));
+  }
 }

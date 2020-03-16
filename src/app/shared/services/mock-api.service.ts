@@ -11,70 +11,76 @@ export class MockApiService {
   constructor(private apiClient: ApiClientService) {
   }
 
+  getServerData(route) {
+    return of();
+  }
+
   getMenuElements() {
     return of(
-      [
-        {
-          name: 'Search',
-          slug: 'search',
-          highlight: false
-        },
-        {
-          name: 'Companies index',
-          slug: 'companies',
-          highlight: false
-        },
-        {
-          name: 'Companies detail',
-          slug: 'companies/detail',
-          highlight: false
-        },
-        {
-          name: 'Article',
-          slug: 'article',
-          highlight: false
-        },
-        {
-          name: 'Quotes',
-          slug: 'quotes',
-          highlight: false
-        },
-        {
-          name: 'Persons index',
-          slug: 'persons',
-          highlight: false
-        },
-        {
-          name: 'Persons detail',
-          slug: 'persons/detail',
-          highlight: false
-        },
-        {
-          name: 'Event',
-          slug: 'event',
-          highlight: false
-        },
-        {
-          name: 'Objects index',
-          slug: 'objects',
-          highlight: false
-        },
-        {
-          name: 'Objects detail',
-          slug: 'objects/detail',
-          highlight: false
-        },
-        {
-          name: 'Sections detail',
-          slug: 'sections/detail',
-          highlight: false
-        },
-        {
-          name: 'Projects detail',
-          slug: 'projects/detail',
-          highlight: false
-        },
-      ]
+      {
+        elements: [
+          {
+            name: 'Search',
+            slug: 'search',
+            highlight: false
+          },
+          {
+            name: 'Companies index',
+            slug: 'companies',
+            highlight: false
+          },
+          {
+            name: 'Companies detail',
+            slug: 'companies/detail',
+            highlight: false
+          },
+          {
+            name: 'Article',
+            slug: 'article',
+            highlight: false
+          },
+          {
+            name: 'Quotes',
+            slug: 'quotes',
+            highlight: false
+          },
+          {
+            name: 'Persons index',
+            slug: 'persons',
+            highlight: false
+          },
+          {
+            name: 'Persons detail',
+            slug: 'persons/detail',
+            highlight: false
+          },
+          {
+            name: 'Event',
+            slug: 'event',
+            highlight: false
+          },
+          {
+            name: 'Objects index',
+            slug: 'objects',
+            highlight: false
+          },
+          {
+            name: 'Objects detail',
+            slug: 'objects/detail',
+            highlight: false
+          },
+          {
+            name: 'Sections detail',
+            slug: 'sections/detail',
+            highlight: false
+          },
+          {
+            name: 'Projects detail',
+            slug: 'projects/detail',
+            highlight: false
+          },
+        ]
+      }
     );
   }
 
