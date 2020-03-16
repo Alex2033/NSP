@@ -1,10 +1,11 @@
-import {Component, OnInit, HostListener, ViewChild, ElementRef, AfterViewInit} from '@angular/core';
+import {Component, OnInit, HostListener, ViewChild, ElementRef, AfterViewInit, Inject, PLATFORM_ID} from '@angular/core';
 import {BannerService} from '../banner-data.service';
 import {ModalService} from '../../services/modal.service';
 import {ResponsiveService} from '../../services/responsive.service';
 import {MenuService} from '../../services/menu.service';
 import {NgScrollbar} from 'ngx-scrollbar';
 import {count} from 'rxjs/operators';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -40,11 +41,14 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     private bannerService: BannerService,
     public modal: ModalService,
     private responsive: ResponsiveService,
-    private menuService: MenuService
+    private menuService: MenuService,
+    @Inject(PLATFORM_ID) private platformId: any
   ) {
-    setInterval(() => {
-      this.now = new Date();
-    }, 1000);
+    if (isPlatformBrowser(this.platformId)) {
+      setInterval(() => {
+        this.now = new Date();
+      }, 1000);
+    }
   }
 
   ngOnInit() {

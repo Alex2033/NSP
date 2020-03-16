@@ -15,6 +15,7 @@ export class SearchComponent implements OnInit {
   @Input() selectSecond;
   @Input() placeholder;
   @Input() datepicker;
+  @Input() shortVersion;
 
   constructor(private responsive: ResponsiveService) { }
 

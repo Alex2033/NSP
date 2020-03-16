@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Quote} from '../../../../shared/contracts/quote';
+import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 
 @Component({
   selector: 'app-index',
@@ -7,6 +8,8 @@ import {Quote} from '../../../../shared/contracts/quote';
   styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit {
+  screen: string;
+
   quotes: Quote[] = [
     {
       quote: 'По статистике, к псевдожилью в Петербурге можно отнести около шестидесяти процентов строящихся комплексов. Нужно быть внимательным при выборе объекта для вложений',
@@ -65,9 +68,12 @@ export class IndexComponent implements OnInit {
       }
     }
   ];
-  constructor() { }
+  constructor(private responsive: ResponsiveService) { }
 
   ngOnInit() {
+    this.responsive.screen.subscribe((screen) => { 
+      this.screen = screen;
+    });
   }
 
 }
