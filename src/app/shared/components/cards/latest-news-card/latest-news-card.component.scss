@@ -5,7 +5,7 @@
     padding: 24px 8px 24px 0;
 
     @include media-breakpoint-down(sm) {
-        padding: 24px 12px 0;
+        padding: 12px;
     }
 }
 
@@ -15,6 +15,10 @@
         &:not(:last-child) {
             margin-bottom: 24px;
         }
+    }
+
+    @include media-breakpoint-down(sm) {
+        margin-bottom: 24px;
     }
 }
 
@@ -47,4 +51,9 @@
 .news-text {
     color: $text-color;
     transition: color .2s ease;
+
+    @include media-breakpoint-down(sm) {
+        font-size: 14px;
+        line-height: 1.571;
+    }
 }

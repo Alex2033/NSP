@@ -303,6 +303,27 @@
     margin-right: 32px;
 }
 
+.show-more {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 1.571;
+    display: flex;
+    align-items: center;
+    color: $primary-color;
+
+    svg {
+        fill: $primary-color;
+        width: 10px;
+        height: 8px;
+    }
+
+    > * {
+        &:not(:last-child) {
+            margin-right: 8px;
+        }
+    }
+}
+
 // start Модальные окна
 .modal-content {
   box-shadow: 0 6px 16px 0 rgba(0,0,0,0.16);
@@ -583,6 +604,11 @@
     font-size: 13px;
     line-height: 1.538;
     display: block;
+
+    @include media-breakpoint-down(sm) {
+        font-size: 12px;
+        line-height: 1.5;
+    }
 }
 
 // start Ngx Scrollbar
@@ -629,7 +655,7 @@
     }
 }
 
-// стили для горизонтального скроллабара
+// стили для горизонтального скроллбара
 .gradient-control {
     position: absolute;
     top: 0;

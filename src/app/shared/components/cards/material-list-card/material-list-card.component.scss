@@ -1,4 +1,5 @@
 @import "../card-common.scss";
+@import "responsive";
 
 :host {
     display: block;
@@ -62,15 +63,36 @@
 
 .card-text {
     color: $dark-gray;
+
+    @include media-breakpoint-down(sm) {
+        font-size: 13px;
+        line-height: 1.54;
+        margin-bottom: 10px;
+        overflow: hidden;
+        text-overflow: -o-ellipsis-lastline;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;  
+        -webkit-line-clamp: 5;
+    }
 }
 
 h5 {
     color: $text-color;
+
+    @include media-breakpoint-down(sm) {
+        font-size: 14px;
+        line-height: 1.571;
+    }
 }
 
 h6 {
     margin-bottom: 16px;
     color: $text-color;
+
+    @include media-breakpoint-down(sm) {
+        font-size: 14px;
+        line-height: 1.571;
+    }
 
 }
 
