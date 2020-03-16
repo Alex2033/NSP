@@ -4,7 +4,7 @@
         <svg class="search-icon">
             <use xlink:href="assets/sprites/icons.svg#icon_search"></use>
         </svg>
-        <input type="text" required class="search-control" placeholder="{{ placeholder }}">
+        <input type="text" required class="search-control" [placeholder]="placeholder">
     </div>
     <app-select class="second-select" [content]="selectSecond" *ngIf="selectSecond"></app-select>
     <div class="date-filter" *ngIf="datepicker">
