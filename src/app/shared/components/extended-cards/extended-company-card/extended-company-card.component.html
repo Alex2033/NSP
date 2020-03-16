@@ -14,7 +14,7 @@
                         <use xlink:href="assets/sprites/icons.svg#phone"></use>
                     </svg>
                 </div>
-                <a href="tel:{{ company.phone | phoneFormat }}" class="company-phone link">{{ company.phone }}</a>
+                <a [href]="'tel:' + ( company.phone | phoneFormat )" class="company-phone link">{{ company.phone }}</a>
             </div>
             <div class="company-contact">
                     <div class="company-contact-icon">

@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ApiService} from '../../../../shared/services/api.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Company} from '../../../../shared/contracts/company';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-index',
@@ -6,26 +10,42 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit {
-
-  companies = [ 
-    { image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80', title: 'БестЪ. Коммерческая недвижимость', phone: '+7 (812) 380–03–55', site: 'bestgroup.ru', tag: 'Агентство недвижимости' }, 
-    { image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80', title: 'Комплекс апарт-отелей VALO', phone: '+7 (812) 411–00–00', site: 'valoapart.ru', tag: 'Агентство недвижимости' }, 
-    { image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80', title: 'ООО ИСК Отделстрой', phone: '+7 (812) 596-59-70', site: 'otdelstroy.spb.ru', tag: 'Экспертиза' }, 
-    { image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80', title: 'Группа ЦДС', phone: '+7 (812) 320–12–00', site: 'cds.spb.ru', tag: 'Строительные материалы/технологии' }, 
-  ];
-
-  selectConfig = {
-    name: 'Вид деятельности',
-    options: [
-      'Вариант 1',
-      'Вариант 2',
-      'Вариант 3'
-    ]
-  };
-
-  constructor() { }
-
-  ngOnInit() {
+  static activities = [];
+  companies: Company[];
+  activities = [];
+  constructor(private api: ApiService, private route: ActivatedRoute, private router: Router, protected title: Title) {
   }
 
+  ngOnInit() {
+    this.title.setTitle('Компании' + ' - NSP.ru');
+    this.route.data.subscribe(data => {
+      this.companies = data.companies.items;
+    });
+    if (IndexComponent.activities.length === 0) {
+      this.api.getCompanyActivities().subscribe(activities => {
+        IndexComponent.activities = activities.items.map(x => {
+          return {
+            id: x.id,
+            value: x.name
+          };
+        });
+
+        IndexComponent.activities.unshift({
+          id: null,
+          value: 'Все виды деятельности'
+        });
+        this.activities = IndexComponent.activities;
+      });
+    } else {
+      this.activities = IndexComponent.activities;
+    }
+  }
+
+  applySearch(filter) {
+    if (filter.activity_id) {
+      this.router.navigate(['/companies', 'activity', filter.activity_id], {queryParams: {search: filter.search}});
+    } else {
+      this.router.navigate(['/companies'], {queryParams: {search: filter.search}});
+    }
+  }
 }

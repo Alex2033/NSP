@@ -63,6 +63,7 @@ import {ParagraphsPipe} from './pipes/paragraphs.pipe';
 import { DomainPipe } from './pipes/domain.pipe';
 import { MenuComponent } from './components/menu/menu.component';
 import { EditorContentComponent } from './components/editor-content/editor-content.component';
+import {LazyLoadImageModule} from 'ng-lazyload-image';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -136,7 +137,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MatNativeDateModule,
     MatDatepickerModule,
     NgScrollbarModule,
-    NgScrollbarReachedModule
+    NgScrollbarReachedModule,
+    LazyLoadImageModule
   ],
   exports: [
     CommonModule,
@@ -190,7 +192,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ParagraphsPipe,
     DomainPipe,
     MenuComponent,
-    EditorContentComponent
+    EditorContentComponent,
+    LazyLoadImageModule
   ],
   providers: [
     {

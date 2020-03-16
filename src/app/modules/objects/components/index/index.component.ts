@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ResponsiveService } from 'src/app/shared/services/responsive.service';
+import {Component, OnInit} from '@angular/core';
+import {ResponsiveService} from 'src/app/shared/services/responsive.service';
 
 @Component({
   selector: 'app-index',
@@ -203,52 +203,65 @@ export class IndexComponent implements OnInit {
     }
   };
 
-  objects = [ 
-    { 
-      image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80', 
-      title: 'ЖК «Новое купчино»', 
-      geolocation: 'Василеостровский район', 
-      url: '/' 
-    }, 
-    { 
-      image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80', 
-      title: 'ЖК «Новый Лесснер»', 
-      geolocation: 'Московский район', 
-      url: '/' 
-    }, 
-    { 
-      image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80', 
-      title: 'ЖК «ЖК «LIFE-Лесная»', 
-      geolocation: 'Выборгский район', 
-      url: '/' 
-    }, 
-    { 
-      image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80', 
-      title: 'ЖК «Новый Лесснер»', 
-      geolocation: 'Московский район', 
-      url: '/' 
+  objects = [
+    {
+      image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
+      title: 'ЖК «Новое купчино»',
+      geolocation: 'Василеостровский район',
+      url: '/'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
+      title: 'ЖК «Новый Лесснер»',
+      geolocation: 'Московский район',
+      url: '/'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
+      title: 'ЖК «ЖК «LIFE-Лесная»',
+      geolocation: 'Выборгский район',
+      url: '/'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
+      title: 'ЖК «Новый Лесснер»',
+      geolocation: 'Московский район',
+      url: '/'
     }
   ];
 
-  selectConfig1 = {
-    name: 'Тип объекта',
-    options: [
-      'Вариант 1',
-      'Вариант 2',
-      'Вариант 3'
-    ]
-  };
+  options1: [
+    {
+      id: 1,
+      value: 'Вариант 1'
+    },
+    {
+      id: 2,
+      value: 'Вариант 2'
+    },
+    {
+      id: 3,
+      value: 'Вариант 3'
+    }
+  ];
 
-  selectConfig2 = {
-    name: 'Выбрать район',
-    options: [
-      'Вариант 1',
-      'Вариант 2',
-      'Вариант 3'
-    ]
-  };
+  options2: [
+    {
+      id: 1,
+      value: 'Вариант 1'
+    },
+    {
+      id: 2,
+      value: 'Вариант 2'
+    },
+    {
+      id: 3,
+      value: 'Вариант 3'
+    }
+  ];
 
-  constructor(public responsive: ResponsiveService) { }
+  constructor(public responsive: ResponsiveService) {
+  }
 
   ngOnInit() {
     this.responsive.screen.subscribe((screen) => {

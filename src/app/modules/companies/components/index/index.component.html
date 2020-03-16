@@ -3,7 +3,7 @@
         <header class="inner-page-header">
             <h1>Компании</h1>
         </header>
-        <app-search [selectFirst]="selectConfig" [placeholder]="'Поиск по названию'"></app-search>
+        <app-search *ngIf="activities.length > 0" [selectFirst]="{placeholder: 'Вид деятельности', attribute: 'activity_id', options: activities}" [placeholder]="'Поиск по названию'" (apply)="applySearch($event)"></app-search>
     </div>
 </div>
 <div class="page-cards">
@@ -23,5 +23,4 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus metus leo, finibus eget commodo ac, suscipit gravida risus. Vestibulum feugiat risus et lacus malesuada mattis. Nulla vehicula sit amet odio eu tristique. Interdum et malesuada fames ac ante ipsum primis in faucibus. In vestibulum mollis tortor vel tempus. Integer elementum lorem non posuere tincidunt. Aenean imperdiet vestibulum magna id molestie.</p>
     </div>
 </div>
-    
-    
+

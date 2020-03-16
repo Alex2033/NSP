@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Company} from '../../../../shared/contracts/company';
 
 @Component({
   selector: 'app-detail',
@@ -50,12 +51,17 @@ export class DetailComponent implements OnInit {
     email: 'trosheva@spbrealty.ru'
   };
 
-  companyConfig = {
-    image: 'assets/images/cards/company/company.jpg',
-    title: 'БестЪ. Коммерческая недвижимость',
+  companyConfig: Company = {
+    id: 1,
+    slug: 'best',
+    logoXl: 'assets/images/cards/company/company.jpg',
+    logoLg: 'assets/images/cards/company/company.jpg',
+    logoMd: 'assets/images/cards/company/company.jpg',
+    logoSm: 'assets/images/cards/company/company.jpg',
+    name: 'БестЪ. Коммерческая недвижимость',
     phone: '+7 (812) 380–03–55',
     site: 'bestgroup.ru',
-    tag: 'Агентство недвижимости'
+    activityName: 'Агентство недвижимости'
   };
 
   constructor() {

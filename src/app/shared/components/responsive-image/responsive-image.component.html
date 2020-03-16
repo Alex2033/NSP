@@ -1,11 +1,10 @@
-<ng-container *ngIf="webpChecked">
+<ng-container>
   <ng-container *ngIf="(responsive.screen | async) as screen">
     <picture>
-      <source type="image/webp" [attr.lazyLoad]="url(screen, true)" *ngIf="webpSupported">
-      <source type="image/jpeg" [attr.lazyLoad]="url(screen)" *ngIf="!webpSupported">
-      <img *ngIf="lazyLoad" [offset]="300" [customObservable]="scrollObservable ? scrollObservable : null" [lazyLoad]="url(screen, webpSupported)" [attr.aria-label]="alt ? alt : ''">
-      <img *ngIf="!lazyLoad" [src]="url(screen, webpSupported)" [attr.aria-label]="alt ? alt : ''">
+      <source type="image/jpeg" [attr.lazyLoad]="url(screen)">
+      <img *ngIf="lazyLoad" [offset]="300" [customObservable]="scrollObservable ? scrollObservable : null" [lazyLoad]="url(screen)" [attr.aria-label]="alt ? alt : ''">
+      <img *ngIf="!lazyLoad" [src]="url(screen)" [attr.aria-label]="alt ? alt : ''">
     </picture>
-    <meta *ngIf="itemprop" [attr.itemprop]="itemprop" [content]="url(screen, webpSupported)" />
+    <meta *ngIf="itemprop" [attr.itemprop]="itemprop" [content]="url(screen)" />
   </ng-container>
 </ng-container>

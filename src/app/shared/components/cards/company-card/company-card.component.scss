@@ -9,13 +9,15 @@
     background-color: $light-color;
     height: 100%;
 }
-
+a {
+  color: $text-color;
+}
 .company-img {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
 
-    img {
+    ::ng-deep img {
         max-height: 96px;
         object-fit: cover;
     }

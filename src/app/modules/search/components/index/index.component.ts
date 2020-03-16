@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ResponsiveService } from 'src/app/shared/services/responsive.service';
+import {Component, OnInit} from '@angular/core';
+import {ResponsiveService} from 'src/app/shared/services/responsive.service';
 
 @Component({
   selector: 'app-index',
@@ -9,14 +9,24 @@ import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 export class IndexComponent implements OnInit {
   screen: string;
 
-  selectConfig1 = {
-    name: 'Персоны',
-    options: [
-      'Вариант 1',
-      'Вариант 2',
-      'Вариант 3'
-    ]
-  };
+  options: [
+    {
+      id: 1,
+      value: 'Компании'
+    },
+    {
+      id: 2,
+      value: 'Персоны'
+    },
+    {
+      id: 3,
+      value: 'Объекты'
+    },
+    {
+      id: 4,
+      value: 'Материалы'
+    },
+  ];
 
   persons = [
     {
@@ -83,43 +93,44 @@ export class IndexComponent implements OnInit {
   objectCards = [
     {
       type: 'object',
-      objectConfig: { 
+      objectConfig: {
         image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-        title: 'ЖК «Новое купчино»', 
-        geolocation: 'Василеостровский район', 
-        url: '/' 
+        title: 'ЖК «Новое купчино»',
+        geolocation: 'Василеостровский район',
+        url: '/'
       }
     },
     {
       type: 'object',
-      objectConfig: { 
+      objectConfig: {
         image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-        title: 'ЖК «Новое купчино»', 
-        geolocation: 'Василеостровский район', 
-        url: '/' 
+        title: 'ЖК «Новое купчино»',
+        geolocation: 'Василеостровский район',
+        url: '/'
       }
     },
     {
       type: 'object',
-      objectConfig: { 
+      objectConfig: {
         image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-        title: 'ЖК «Новое купчино»', 
-        geolocation: 'Василеостровский район', 
-        url: '/' 
+        title: 'ЖК «Новое купчино»',
+        geolocation: 'Василеостровский район',
+        url: '/'
       }
     },
     {
       type: 'object',
-      objectConfig: { 
+      objectConfig: {
         image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-        title: 'ЖК «Новое купчино»', 
-        geolocation: 'Василеостровский район', 
-        url: '/' 
+        title: 'ЖК «Новое купчино»',
+        geolocation: 'Василеостровский район',
+        url: '/'
       }
     }
   ];
 
-  constructor(public responsive: ResponsiveService) { }
+  constructor(public responsive: ResponsiveService) {
+  }
 
   ngOnInit() {
     this.responsive.screen.subscribe((screen) => {
