@@ -328,7 +328,7 @@
     display: flex;
     justify-content: space-between;
 
-    @include media-breakpoint-only(md) {
+    @include media-breakpoint-down(md) {
         flex-wrap: wrap;
     }
 }
@@ -352,6 +352,14 @@
         > * {
             &:not(:last-child) {
                 margin-right: 30px;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        > * {
+            &:not(:last-child) {
+                margin-right: 0;
             }
         }
     }

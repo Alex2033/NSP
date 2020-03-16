@@ -8,15 +8,19 @@
 </div>
 <div class="page-cards">
     <div class="container top-container">
-        <div class="row">
-            <div class="col-xl-3 col-lg-4 col-md-6" *ngFor="let company of companies">
+        <div class="row" *ngIf="screen !== 'sm'">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-12" *ngFor="let company of companies">
                 <app-company-card [company]="company"></app-company-card>
             </div>
         </div>
+
+        <!-- mobile cards slider -->
+        <app-mobile-cards-slider *ngIf="screen === 'sm'" [cards]="companies" [type]="'company'"></app-mobile-cards-slider>
     </div>
+
 </div>
 
-<div class="container">
+<div class="container top-container">
     <app-card-carousel [header]="'Технология строительства'"></app-card-carousel>
     <div class="companies-text">
         <h5>Заголовок SEO</h5>

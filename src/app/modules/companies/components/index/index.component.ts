@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 
 @Component({
   selector: 'app-index',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit {
+  screen: string;
 
   companies = [ 
     { image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80', title: 'БестЪ. Коммерческая недвижимость', phone: '+7 (812) 380–03–55', site: 'bestgroup.ru', tag: 'Агентство недвижимости' }, 
@@ -23,9 +25,12 @@ export class IndexComponent implements OnInit {
     ]
   };
 
-  constructor() { }
+  constructor(private responsive: ResponsiveService) { }
 
   ngOnInit() {
+    this.responsive.screen.subscribe((screen) => {
+      this.screen = screen;
+    });
   }
 
 }
