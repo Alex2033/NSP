@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="page-topline">
+    <div class="page-topline" *ngIf="screen !== 'sm'">
         <h5>Компании</h5>
         <div class="page-topline-element">
             Есть неточность?
@@ -7,7 +7,9 @@
     </div>
     <div class="company-info">
         <div class="row">
+
             <div class="col-xl-3 col-lg-5 col-md-8 offset-md-2 offset-lg-0 order-xl-0 order-lg-1">
+                <h1 class="title" *ngIf="screen === 'sm'">БестЪ. Коммерческая <br> недвижимость</h1>
                 <div class="contact-card">
                     <div class="contact-card-img">
                         <img src="https://images.unsplash.com/photo-1562887189-7c2ae6ace6dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80" alt="image">
@@ -62,9 +64,10 @@
                     </ul>
                 </div>
             </div>
+
             <div class="col-xl-6 col-lg-12 order-xl-1 order-lg-0">
                 <div class="company-info-text">
-                    <h2>Бестъ. Коммерческая недвижимость</h2>
+                    <h2 *ngIf="screen !== 'sm'">Бестъ. Коммерческая недвижимость</h2>
                     <div class="company-info-text-content">
                         <div class="company-info-text-top">
                             <div class="company-infoblock">
@@ -81,9 +84,16 @@
                             <p>Группа компаний «БестЪ» основана в 1997 году и является одной из ведущих инвестиционно-девелоперских компаний на Северо-Западе России.</p>
                             <p>Основной вид деятельности: брокер сделок коммерческой недвижимости. Предоставляет полный спектр услуг на рынке коммерческой недвижимости от первичного формирования объекта до его последующей продажи, сдачи в аренду. В функции компании входит консалтинг на рынке коммерческой недвижимости, оценка, маркетинговые исследования, выработка концепций строящихся объектов и реконцепция существующих.</p>
                         </div>
+                        <a [routerLink]="['']" class="link show-more" *ngIf="screen === 'sm'">
+                            <span>Еще</span>
+                            <svg class="icon">
+                                <use xlink:href="assets/sprites/icons.svg#chevron_down"></use>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
+
             <div class="col-xl-3 col-lg-7 order-xl-2 order-lg-2">
                 <div class="company-map">
                     <angular-yandex-map [center]="[59.978246, 30.31480]" [zoom]="17">
@@ -97,10 +107,11 @@
         </div>
     </div>
     <app-card-carousel [header]="'Персоны'" [smallHeader]="true"></app-card-carousel>
-    <div class="materials">
+    <div class="materials" *ngIf="screen !== 'sm'">
         <h3 class="materials-title">Объекты</h3>
         <app-card-layout [cards]="objectCards"></app-card-layout>
     </div>
+    <app-card-carousel *ngIf="screen === 'sm'" [header]="'Объекты'" [smallHeader]="true"></app-card-carousel>
     <div class="materials">
         <h3 class="materials-title">Материалы о компании</h3>
         <app-card-layout [cards]="materialCards"></app-card-layout>

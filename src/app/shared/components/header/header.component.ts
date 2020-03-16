@@ -58,7 +58,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
       if (isPlatformBrowser(this.platformId)) {
         setTimeout(() => {
           this.rebuildMenu();
-        }, 100); // Чтобы меню успело привязаться к DOM дереву
+        }, 230); // Чтобы меню успело привязаться к DOM дереву
       }
       
     });
