@@ -536,6 +536,14 @@
 
 // end Карточки внутренних страниц
 
+.materials {
+    .card-layout app-material-card {
+        @include media-breakpoint-down(sm) {
+            margin: 0;
+        }
+    }
+}
+
 .materials-title {
     margin-bottom: 32px;
 
