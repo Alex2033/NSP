@@ -1,6 +1,6 @@
-<div class="person-card">
+<a [routerLink]="['/persons', person.id]" class="person-card">
     <div class="person-img">
-        <img [src]="person.image" alt="person">
+      <app-responsive-image [xl]="person.photoXl" [lg]="person.photoLg" [md]="person.photoMd" [xs]="person.photoSm" [sm]="person.photoSm"></app-responsive-image>
     </div>
     <h5 class="person-name">
         <span class="person-surname">
@@ -9,6 +9,8 @@
         {{ person.middleName }} {{ person.lastName }}
     </h5>
     <div class="person-text">
-        <p>{{ person.text }}</p>
+      {{ person.companyName }}
+      <br>
+      {{ person.position }}
     </div>
-</div>
+</a>

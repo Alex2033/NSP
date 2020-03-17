@@ -7,6 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class CardLayoutComponent implements OnInit {
   @Input() cards;
+  @Input() type: string; // Можно указать тип если карточки одного типа, пока что работает с объектами
   constructor() { }
 
   ngOnInit() {

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { ResponsiveService } from 'src/app/shared/services/responsive.service';
+import {Component, OnInit} from '@angular/core';
+import {ResponsiveService} from 'src/app/shared/services/responsive.service';
 import {ActivatedRoute} from '@angular/router';
 import {Company} from '../../../../shared/contracts/company';
+import {Meta, Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-detail',
@@ -9,46 +10,10 @@ import {Company} from '../../../../shared/contracts/company';
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
-  screen: string;
 
-  objectCards = [
-    {
-      type: 'object',
-      objectConfig: {
-        image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-        title: 'ЖК «Новое купчино»',
-        geolocation: 'Василеостровский район',
-        url: '/'
-      }
-    },
-    {
-      type: 'object',
-      objectConfig: {
-        image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-        title: 'ЖК «Новое купчино»',
-        geolocation: 'Василеостровский район',
-        url: '/'
-      }
-    },
-    {
-      type: 'object',
-      objectConfig: {
-        image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-        title: 'ЖК «Новое купчино»',
-        geolocation: 'Василеостровский район',
-        url: '/'
-      }
-    },
-    {
-      type: 'object',
-      objectConfig: {
-        image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-        title: 'ЖК «Новое купчино»',
-        geolocation: 'Василеостровский район',
-        url: '/'
-      }
-    }
-  ];
+  objects = [];
+  persons = [];
+  screen: string;
 
   materialCards = [
     {
@@ -81,14 +46,27 @@ export class DetailComponent implements OnInit {
 
   company: Company;
 
-  constructor(private responsive: ResponsiveService, private route: ActivatedRoute) { }
+  constructor(
+    private responsive: ResponsiveService,
+    private route: ActivatedRoute,
+    protected title: Title,
+    protected meta: Meta) {
+  }
 
   ngOnInit() {
     this.responsive.screen.subscribe((screen) => {
       this.screen = screen;
     });
-
     this.route.data.subscribe(data => {
+      this.company = data.company.data;
+      this.objects = data.company.apartmentComplexes;
+      this.persons = data.company.people;
+      this.title.setTitle(this.company.name + ' - Информация о компании ' + ' - NSP.ru');
+      this.meta.updateTag({
+          name: 'description',
+          content: this.company.description
+        }
+      );
       this.company = data.company;
       console.log(this.company);
     });

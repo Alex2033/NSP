@@ -5,6 +5,7 @@ import {ApiClientService} from './api-client.service';
 import {map} from 'rxjs/operators';
 import {deserialize} from '../functions/deseriale';
 import {Company} from '../contracts/company';
+import {Person} from '../contracts/person';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,14 @@ import {Company} from '../contracts/company';
 export class ApiService {
 
   constructor(private apiClient: ApiClientService) {
+  }
+
+  getPersons(filter = {}): Observable<any> {
+    return this.apiClient.get(`/api/site/people`, {
+      params: filter
+    }).pipe(map((response) => {
+      return deserialize(response);
+    }));
   }
 
   getCompany(companyId): Observable<Company> {
@@ -24,7 +33,7 @@ export class ApiService {
     return this.apiClient.get(`/api/site/companies`, {
       params: filter
     }).pipe(map((response) => {
-      return deserialize(response) as Company;
+      return deserialize(response);
     }));
   }
 

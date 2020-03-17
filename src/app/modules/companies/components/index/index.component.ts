@@ -1,10 +1,9 @@
-
 import {Component, OnInit} from '@angular/core';
+import {ResponsiveService} from 'src/app/shared/services/responsive.service';
 import {ApiService} from '../../../../shared/services/api.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Company} from '../../../../shared/contracts/company';
 import {Title} from '@angular/platform-browser';
-import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 
 @Component({
   selector: 'app-index',
@@ -14,7 +13,7 @@ import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 export class IndexComponent implements OnInit {
   screen: string;
 
-  static activities = [];
+  static activities = []
   companies: Company[];
   companiesCount: number;
   activities = [];
@@ -31,7 +30,6 @@ export class IndexComponent implements OnInit {
     this.responsive.screen.subscribe((screen) => {
       this.screen = screen;
     });
-
     this.title.setTitle('Компании' + ' - NSP.ru');
     this.route.data.subscribe(data => {
       this.companiesCount = data.companies.count;

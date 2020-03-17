@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ResizableCardComponent } from '../resizable-card.component';
+import {ApartmentComplex} from '../../../contracts/apartment-complex';
 
 @Component({
   selector: 'app-object-card',
@@ -8,7 +9,7 @@ import { ResizableCardComponent } from '../resizable-card.component';
 })
 export class ObjectCardComponent extends ResizableCardComponent implements OnInit {
 
-  @Input() object;
+  @Input() object: ApartmentComplex;
 
   constructor() {
     super();
