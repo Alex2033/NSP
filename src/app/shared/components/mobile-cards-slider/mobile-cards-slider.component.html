@@ -7,6 +7,11 @@
                     <app-company-card [company]="card"></app-company-card>
                 </div>
             </ng-container>
+            <ng-container *ngSwitchCase="'person'">
+                <div class="swiper-slide" *ngFor="let card of cards">
+                    <app-person-card [person]="card"></app-person-card>
+                </div>
+            </ng-container>
         </ng-container>
         
     </div>
