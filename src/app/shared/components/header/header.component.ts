@@ -61,12 +61,15 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit() {
     this.menuService.get().subscribe((elements) => {
       this.menuElements = elements;
       if (isPlatformBrowser(this.platformId)) {
         setTimeout(() => {
           this.rebuildMenu();
-        }, 230); // Чтобы меню успело привязаться к DOM дереву
+        }, 1); // Чтобы меню успело привязаться к DOM дереву
       }
 
     });
@@ -75,9 +78,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     });
 
     this.menuPosition = this.menu.nativeElement.offsetTop;
-  }
-
-  ngAfterViewInit() {
+    
     if (this.screen === 'sm') {
       this.scrollbarRef.scrolled.subscribe(e => {
         this.scrollPosition = e.target.scrollLeft;
