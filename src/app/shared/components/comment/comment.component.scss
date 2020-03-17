@@ -1,4 +1,5 @@
 @import "theme";
+@import "responsive";
 
 :host {
     display: block;
@@ -21,6 +22,10 @@
         .comment-text {
             padding: 0;
             background-color: transparent;
+        }
+
+        @include media-breakpoint-down(sm) {
+            margin-left: 0;
         }
     }
 }
@@ -62,7 +67,16 @@
     > * {
         &:not(:last-child) {
             margin-right: 24px;
+
+            @include media-breakpoint-down(sm) {
+                margin-right: 16px;
+            }
         }
+    }
+
+    @include media-breakpoint-down(sm) {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 

@@ -1,4 +1,5 @@
 @import "theme";
+@import "responsive";
 
 :host {
     margin-bottom: 48px;
@@ -30,5 +31,9 @@
             font-weight: 700;
             color: $text-color;
         }
+    }
+
+    @include media-breakpoint-down(sm) {
+        margin-bottom: 24px;
     }
 }

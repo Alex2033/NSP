@@ -9,8 +9,12 @@
         height: 400px;
         object-fit: cover;
 
-        @include media-breakpoint-only(lg) {
+        @include media-breakpoint-down(lg) {
             height: 300px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            height: 220px;
         }
     }
 }
@@ -20,4 +24,10 @@
     color: $dark-gray;
     font-size: 14px;
     line-height: 1.571;
+
+    @include media-breakpoint-down(sm) {
+        font-size: 13px;
+        line-height: 1.54;
+        margin-top: 8px;
+    }
 }

@@ -1,9 +1,11 @@
 <div class="container">
   <div class="row">
+
     <div class="col-xl-8 col-lg-8">
       <div class="page-content">
         <div class="page-topline">
-            <h5>Аналитика</h5>
+            <h1 class="mobile-title" *ngIf="screen === 'sm'">Апартаменты на паузе</h1>
+            <h5 *ngIf="screen !== 'sm'">Аналитика</h5>
             <div class="page-topline-info">
               <div class="topline-info-item topline-author">
                 Дмитрий Синочкин
@@ -11,7 +13,7 @@
               <div class="topline-info-item">
                 <time datetime="2019-05-08 11:25">8 мая, 11:25</time>
               </div>
-              <div class="topline-info-item">
+              <div class="topline-info-item info-views">
                 <svg class="topline-icon">
                   <use xlink:href="assets/sprites/icons.svg#eye"></use>
                 </svg>
@@ -19,7 +21,7 @@
               </div>
             </div>
         </div>
-        <h1 class="page-title">Апартаменты на паузе</h1>
+        <h1 class="page-title" *ngIf="screen !== 'sm'">Апартаменты на паузе</h1>
         <app-share></app-share>
 
         <div class="blocks">
@@ -81,7 +83,8 @@
         <app-comments></app-comments>
       </div> 
     </div>
-    <div class="col-xl-3 col-lg-4 col-md-8 offset-xl-1 offset-lg-0 offset-md-2">
+
+    <div class="col-xl-3 col-lg-4 col-md-8 offset-xl-1 offset-lg-0 offset-md-2" *ngIf="screen !== 'sm'">
       <aside class="content-sidebar">
         <app-material-list-card [size]="'small'" 
                                 [view]="'default'"

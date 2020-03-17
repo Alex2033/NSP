@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ResponsiveService } from '../../services/responsive.service';
 
 @Component({
   selector: 'app-article',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./article.component.scss']
 })
 export class ArticleComponent implements OnInit {
+  screen: string;
 
   blocks = [
     {
@@ -152,9 +154,12 @@ export class ArticleComponent implements OnInit {
     },
   ];
 
-  constructor() { }
+  constructor(private responsive: ResponsiveService) { }
 
   ngOnInit() {
+    this.responsive.screen.subscribe((screen) => {
+      this.screen = screen;
+    });
   }
 
 }
