@@ -17,7 +17,12 @@ export class IndexComponent implements OnInit {
   companiesCount: number;
   activities = [];
 
-  constructor(private responsive: ResponsiveService, private api: ApiService, private route: ActivatedRoute, private router: Router, protected title: Title) {
+  constructor(
+    private responsive: ResponsiveService,
+    private api: ApiService,
+    private route: ActivatedRoute,
+    private router: Router,
+    protected title: Title) {
   }
 
   ngOnInit() {

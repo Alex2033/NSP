@@ -26,8 +26,8 @@ export class MenuService {
       return of(this.menuElements);
     } else {
       return this.api.getMenuElements().pipe(map((data) => {
-        this.menuElements = data;
-        return data;
+        this.menuElements = data.elements;
+        return data.elements;
       }));
     }
   }

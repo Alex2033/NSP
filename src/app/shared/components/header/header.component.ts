@@ -63,13 +63,12 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.menuService.get().subscribe((elements) => {
       this.menuElements = elements;
-
       if (isPlatformBrowser(this.platformId)) {
         setTimeout(() => {
           this.rebuildMenu();
         }, 230); // Чтобы меню успело привязаться к DOM дереву
       }
-      
+
     });
     this.responsive.screen.subscribe((screen) => {
       this.screen = screen;
