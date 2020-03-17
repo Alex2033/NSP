@@ -30,7 +30,10 @@
         <app-video-card [size]="card.size" [class]="card.size !== 'small' ? card.size : null"></app-video-card>
       </ng-container>
       <ng-container *ngSwitchCase="'object'">
-        <app-object-card [object]="card.objectConfig" [size]="card.size" [class]="card.size !== 'small' ? card.size : null"></app-object-card>
+        <app-object-card [object]="card.data" [size]="card.size" [class]="card.size !== 'small' ? card.size : null"></app-object-card>
+      </ng-container>
+      <ng-container *ngSwitchCase="'person'">
+        <app-person-card [person]="card.data" [class]="card.size !== 'small' ? card.size : null"></app-person-card>
       </ng-container>
       <ng-container *ngSwitchCase="'slider'">
         <app-slider></app-slider>

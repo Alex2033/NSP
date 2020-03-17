@@ -134,3 +134,9 @@
     height: 304px;
     width: 100%;
 }
+.materials {
+  margin-bottom: 48px;
+}
+.materials:last-child {
+  margin-bottom: 0;
+}

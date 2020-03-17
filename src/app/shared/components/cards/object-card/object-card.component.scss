@@ -16,7 +16,7 @@
     }
 }
 
-.object-image {
+.object-card ::ng-deep img {
     position: absolute;
     top: 0;
     left: 0;
@@ -70,5 +70,5 @@
         line-height: 1.5384;
         color: $light-color;
     }
-    
+
 }
