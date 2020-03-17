@@ -16,9 +16,9 @@
                         <h6 class="footer-title" *ngIf="screen !== 'sm'">Редакция</h6>
                         <ul class="footer-links">
                             <li><a [routerLink]="['']">Написать нам</a></li>
-                            <li><a [routerLink]="['']">Контакты</a></li>
-                            <li><a [routerLink]="['']">О проекте</a></li>
-                            <li><a [routerLink]="['']">Реклама на сайте</a></li>
+                            <li><a [routerLink]="['/contacts']">Контакты</a></li>
+                            <li><a [routerLink]="['/about']">О проекте</a></li>
+                            <li><a [routerLink]="['/advertising']">Реклама на сайте</a></li>
                         </ul>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                         <div class="copyright-text">© Сетевое издание NSP.RU</div>
                         <div class="footer-bottom-text">
                             <p>
-                                Все права защищены. Любое использование <br> материалов допускается только с согласия редакции. 
+                                Все права защищены. Любое использование <br> материалов допускается только с согласия редакции.
                             </p>
                         </div>
                     </div>
@@ -80,7 +80,7 @@
                 <div class="col-lg-4 col-md-6 footer-item padding-left">
                     <div class="footer-bottom-text" *ngIf="screen !== 'sm'">
                         <p>
-                            Нашли ошибку в тексте? Выделите нужный фрагмент и нажмите ctrl+enter. 
+                            Нашли ошибку в тексте? Выделите нужный фрагмент и нажмите ctrl+enter.
                         </p>
                     </div>
                 </div>

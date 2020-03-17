@@ -1,11 +1,20 @@
-import {Component, OnInit, HostListener, ViewChild, ElementRef, AfterViewInit, Inject, PLATFORM_ID} from '@angular/core';
+import {
+  Component,
+  OnInit,
+  HostListener,
+  ViewChild,
+  ElementRef,
+  AfterViewInit,
+  Inject,
+  PLATFORM_ID
+} from '@angular/core';
 import {BannerService} from '../banner-data.service';
 import {ModalService} from '../../services/modal.service';
 import {ResponsiveService} from '../../services/responsive.service';
 import {MenuService} from '../../services/menu.service';
 import {NgScrollbar} from 'ngx-scrollbar';
 import {count} from 'rxjs/operators';
-import { isPlatformBrowser } from '@angular/common';
+import {isPlatformBrowser, isPlatformServer} from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -101,21 +110,23 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     const navigationListWidth = this.navigationContainer.nativeElement.clientWidth;
     let indexFrom = -1;
     let sum = 0;
-    setTimeout(() => { // Чтобы меню успело привязаться к DOM дереву
-      for (let i = 0; i < this.tmpNavigationList.nativeElement.children.length; i++) {
-        sum += this.tmpNavigationList.nativeElement.children[i].offsetWidth;
-        if (sum >= navigationListWidth && indexFrom === -1) {
-          indexFrom = i;
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => { // Чтобы меню успело привязаться к DOM дереву
+        for (let i = 0; i < this.tmpNavigationList.nativeElement.children.length; i++) {
+          sum += this.tmpNavigationList.nativeElement.children[i].offsetWidth;
+          if (sum >= navigationListWidth && indexFrom === -1) {
+            indexFrom = i;
+          }
         }
-      }
-      if (indexFrom !== -1) {
-        this.visibleMenuElements = this.menuElements.slice(0, indexFrom - 1);
-        this.hiddenMenuElements = this.menuElements.slice(indexFrom - 1);
-      } else {
-        this.visibleMenuElements = this.menuElements;
-        this.hiddenMenuElements = [];
-      }
-    });
+        if (indexFrom !== -1) {
+          this.visibleMenuElements = this.menuElements.slice(0, indexFrom - 1);
+          this.hiddenMenuElements = this.menuElements.slice(indexFrom - 1);
+        } else {
+          this.visibleMenuElements = this.menuElements;
+          this.hiddenMenuElements = [];
+        }
+      });
+    }
   }
 
   showMenu() {

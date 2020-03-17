@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {Company} from '../../../contracts/company';
 
 @Component({
   selector: 'app-company-card',
@@ -7,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CompanyCardComponent implements OnInit {
 
-  @Input() company;
+  @Input() company: Company;
 
   constructor() { }
 

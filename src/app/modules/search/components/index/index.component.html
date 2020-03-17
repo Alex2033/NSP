@@ -6,8 +6,8 @@
                 Сбросить фильтр
             </button>
         </header>
-        <app-search 
-            [selectFirst]="selectConfig1" 
+        <app-search
+            [selectFirst]="{placeholder: 'Тип', attribute: 'type_id', options: options}"
             [placeholder]="'Поиск объекта по названию или фирме'"
             [datepicker]="true"
         ></app-search>
@@ -18,27 +18,27 @@
     <div class="container">
         <div class="materials">
             <h2 class="materials-title">
-                <span>Материалы</span> 
+                <span>Материалы</span>
                 <div class="items-number">3</div>
             </h2>
             <app-card-layout [cards]="materials"></app-card-layout>
         </div>
         <div class="materials">
             <h2 class="materials-title">
-                <span>Интервью</span> 
+                <span>Интервью</span>
                 <div class="items-number">2</div>
             </h2>
             <app-card-layout [cards]="interviews"></app-card-layout>
         </div>
         <div class="materials">
             <h2 class="materials-title">
-                <span>Объекты</span> 
+                <span>Объекты</span>
                 <div class="items-number">4</div>
             </h2>
             <app-card-layout [cards]="objectCards"></app-card-layout>
         </div>
         <h2 class="materials-title">
-            <span>Персоны</span> 
+            <span>Персоны</span>
             <div class="items-number">28</div>
             <h5 class="all-results">
                 <a [routerLink]="['']">Все результаты</a>
@@ -71,10 +71,10 @@
 <!-- <div class="container">
     <div class="materials">
         <h2 class="materials-title">Популярные материалы</h2>
-        <app-card-layout 
-            [cards]="screen === 'xl' ? cards.resolutions.desktop : 
-                    screen === 'lg' ? cards.resolutions.smallDesktop : 
-                    screen === 'md' ? cards.resolutions.tablet : 
+        <app-card-layout
+            [cards]="screen === 'xl' ? cards.resolutions.desktop :
+                    screen === 'lg' ? cards.resolutions.smallDesktop :
+                    screen === 'md' ? cards.resolutions.tablet :
                     null"
         ></app-card-layout>
     </div>

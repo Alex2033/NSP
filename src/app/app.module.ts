@@ -15,6 +15,10 @@ import {environment} from '../environments/environment';
 import {ApiService} from './shared/services/api.service';
 import {MockApiService} from './shared/services/mock-api.service';
 import {HttpClientModule} from '@angular/common/http';
+import {ServerDataComponent} from './shared/components/server-data/server-data.component';
+import {ServerDataResolver} from './shared/resolvers/server-data.resolver';
+import {RouteDataResolver} from './shared/resolvers/route-data.resolver';
+import {NotFoundComponent} from './shared/components/not-found/not-found.component';
 registerLocaleData(localeRu);
 
 @NgModule({
@@ -25,6 +29,8 @@ registerLocaleData(localeRu);
     ModalNewsOfferFormComponent,
     ModalVideoComponent,
     ModalLoginComponent,
+    ServerDataComponent,
+    NotFoundComponent
   ],
   imports: [
     HttpClientModule,
@@ -34,6 +40,8 @@ registerLocaleData(localeRu);
     BrowserModule.withServerTransition({ appId: 'nsp' }),
   ],
   providers: [
+    ServerDataResolver,
+    RouteDataResolver,
     { provide: LOCALE_ID, useValue: 'ru' },
     { provide: ApiService, useClass: environment.useApi ? ApiService : MockApiService }
   ],

@@ -17,7 +17,7 @@
                 <svg class="card-icon">
                     <use xlink:href="assets/sprites/icons.svg#phone"></use>
                 </svg>
-                <a href="tel:{{ person.phone | phoneFormat }}">{{ person.phone }}</a>
+                <a [href]="'tel:' + ( person.phone | phoneFormat )">{{ person.phone }}</a>
             </div>
             <div class="card-email">
                 <svg class="card-icon">

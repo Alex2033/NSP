@@ -3,7 +3,7 @@
         <header class="inner-page-header">
             <h1>Объекты недвижимости</h1>
         </header>
-        <app-search [selectFirst]="selectConfig1" [selectSecond]="selectConfig2" [placeholder]="'Поиск объекта по названию или фирме'"></app-search>
+        <app-search [selectFirst]="{placeholder: 'Тип объекта', attribute: 'type_id', options: options1}" [selectSecond]="{placeholder: 'Выбрать район', attribute: 'area_id', options: options2}" [placeholder]="'Поиск объекта по названию или фирме'"></app-search>
     </div>
 </div>
 <div class="page-cards">
@@ -19,10 +19,10 @@
 <div class="container">
     <div class="materials">
         <h2 class="materials-title">Популярные материалы</h2>
-        <app-card-layout 
-            [cards]="screen === 'xl' ? cards.resolutions.desktop : 
-                    screen === 'lg' ? cards.resolutions.smallDesktop : 
-                    screen === 'md' ? cards.resolutions.tablet : 
+        <app-card-layout
+            [cards]="screen === 'xl' ? cards.resolutions.desktop :
+                    screen === 'lg' ? cards.resolutions.smallDesktop :
+                    screen === 'md' ? cards.resolutions.tablet :
                     null"
         ></app-card-layout>
     </div>

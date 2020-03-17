@@ -7,7 +7,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class PhoneFormatPipe implements PipeTransform {
 
   transform(value: string, args?: any): string {
-    return value.replace(/[^+0-9]/gim, '');
+    return value ? value.replace(/[^+0-9]/gim, '') : null;
   }
-
 }
