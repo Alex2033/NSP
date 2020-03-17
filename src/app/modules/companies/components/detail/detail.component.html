@@ -1,7 +1,6 @@
 <div class="container">
-<<<<<<< HEAD
     <div class="page-topline" *ngIf="screen !== 'sm'">
-        <h5>Компании</h5>
+        <a [routerLink]="['/companies']" class="h5">Компании</a>
         <div class="page-topline-element">
             Есть неточность?
         </div>
@@ -13,14 +12,14 @@
                 <h1 class="title" *ngIf="screen === 'sm'">БестЪ. Коммерческая <br> недвижимость</h1>
                 <div class="contact-card">
                     <div class="contact-card-img">
-                        <img src="https://images.unsplash.com/photo-1562887189-7c2ae6ace6dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80" alt="image">
+                      <app-responsive-image [xl]="company.logoXl" [lg]="company.logoLg" [md]="company.logoMd" [xs]="company.logoSm" [sm]="company.logoSm"></app-responsive-image>
                     </div>
                     <div class="contact-card-items">
                         <div class="contact-card-item">
                             <svg class="contact-card-icon geolocation">
                                 <use xlink:href="assets/sprites/icons.svg#map_pin"></use>
                             </svg>
-                            <span>197022, Россия, Санкт-Петербург, <br> Аптекарская наб., д. 20, Бизнес-центр «Авеню»</span>
+                            <span>{{ company.address }}</span>
                         </div>
                     </div>
                     <div class="contact-card-items">
@@ -28,24 +27,23 @@
                             <svg class="contact-card-icon phone">
                                 <use xlink:href="assets/sprites/icons.svg#phone"></use>
                             </svg>
-                            <a href="tel:+78123800355" class="link contact-card-phone">+7 (812) 380–03–55</a>
+                            <a [href]="'tel:' + (company.phone | phoneFormat)" class="link contact-card-phone">{{ company.phone }}</a>
                         </div>
                     </div>
-                    <div class="contact-card-items">
-                        <div class="contact-card-item">
-                            <svg class="contact-card-icon mail">
-                                <use xlink:href="assets/sprites/icons.svg#mail"></use>
-                            </svg>
-                            <a href="mailto:best@bestgroup.ru" class="link">best@bestgroup.ru</a>
-                        </div>
+                    <div class="contact-card-items" *ngIf="company.email">
+                      <div class="contact-card-item">
+                        <svg class="contact-card-icon mail">
+                          <use xlink:href="assets/sprites/icons.svg#mail"></use>
+                        </svg>
+                        <a [href]="'mailto:' + company.email" class="link">{{ company.email }}</a>
+                      </div>
                     </div>
-                    <div class="contact-card-items">
-                        <div class="contact-card-item">
-                            <svg class="contact-card-icon web">
-                                <use xlink:href="assets/sprites/icons.svg#web"></use>
-                            </svg>
-                            <a href="bestgroup.ru" target="_blank" class="link">bestgroup.ru</a>
-                        </div>
+                    <div class="contact-card-items" *ngIf="company.site">
+                      <div class="contact-card-item">
+                        <svg class="contact-card-icon web">
+                          <use xlink:href="assets/sprites/icons.svg#web"></use>
+                        </svg>
+                        <a [href]="company.site" target="_blank" class="link">{{ company.site | domain}}</a>
                     </div>
                     <ul class="socials">
                         <li>
@@ -104,51 +102,6 @@
                         ></angular-yandex-placemark>
                     </angular-yandex-map>
                 </div>
-=======
-  <div class="page-topline">
-    <a [routerLink]="['/companies']" class="h5">Компании</a>
-    <div class="page-topline-element">
-      Есть неточность?
-    </div>
-  </div>
-  <div class="company-info">
-    <div class="row">
-      <div class="col-xl-3 col-lg-5 col-md-8 offset-md-2 offset-lg-0 order-xl-0 order-lg-1">
-        <div class="contact-card">
-          <div class="contact-card-img">
-            <app-responsive-image [xl]="company.logoXl" [lg]="company.logoLg" [md]="company.logoMd" [xs]="company.logoSm" [sm]="company.logoSm"></app-responsive-image>
-          </div>
-          <div class="contact-card-items">
-            <div class="contact-card-item">
-              <svg class="contact-card-icon geolocation">
-                <use xlink:href="assets/sprites/icons.svg#map_pin"></use>
-              </svg>
-              <span>{{ company.address }}</span>
-            </div>
-          </div>
-          <div class="contact-card-items" *ngIf="company.phone">
-            <div class="contact-card-item">
-              <svg class="contact-card-icon phone">
-                <use xlink:href="assets/sprites/icons.svg#phone"></use>
-              </svg>
-              <a [href]="'tel:' + (company.phone | phoneFormat)" class="link contact-card-phone">{{ company.phone }}</a>
-            </div>
-          </div>
-          <div class="contact-card-items" *ngIf="company.email">
-            <div class="contact-card-item">
-              <svg class="contact-card-icon mail">
-                <use xlink:href="assets/sprites/icons.svg#mail"></use>
-              </svg>
-              <a [href]="'mailto:' + company.email" class="link">{{ company.email }}</a>
-            </div>
-          </div>
-          <div class="contact-card-items" *ngIf="company.site">
-            <div class="contact-card-item">
-              <svg class="contact-card-icon web">
-                <use xlink:href="assets/sprites/icons.svg#web"></use>
-              </svg>
-              <a [href]="company.site" target="_blank" class="link">{{ company.site | domain}}</a>
->>>>>>> 7a1c8fd7b85c1853fe67bde0fa827b0c7bc85648
             </div>
           </div>
           <ul class="socials">
@@ -214,28 +167,14 @@
           </angular-yandex-map>
         </div>
       </div>
-    </div>
-<<<<<<< HEAD
     <app-card-carousel [header]="'Персоны'" [smallHeader]="true"></app-card-carousel>
     <div class="materials" *ngIf="screen !== 'sm'">
-        <h3 class="materials-title">Объекты</h3>
-        <app-card-layout [cards]="objectCards"></app-card-layout>
+      <h3 class="materials-title">Объекты</h3>
+      <app-card-layout [cards]="objectCards"></app-card-layout>
     </div>
     <app-card-carousel *ngIf="screen === 'sm'" [header]="'Объекты'" [smallHeader]="true"></app-card-carousel>
     <div class="materials">
-        <h3 class="materials-title">Материалы о компании</h3>
-        <app-card-layout [cards]="materialCards"></app-card-layout>
+      <h3 class="materials-title">Материалы о компании</h3>
+      <app-card-layout [cards]="materialCards"></app-card-layout>
     </div>
-=======
-  </div>
-  <app-card-carousel [header]="'Персоны'" [smallHeader]="true"></app-card-carousel>
-  <div class="materials">
-    <h3 class="materials-title">Объекты</h3>
-    <app-card-layout [cards]="objectCards"></app-card-layout>
-  </div>
-  <div class="materials">
-    <h3 class="materials-title">Материалы о компании</h3>
-    <app-card-layout [cards]="materialCards"></app-card-layout>
-  </div>
->>>>>>> 7a1c8fd7b85c1853fe67bde0fa827b0c7bc85648
 </div>

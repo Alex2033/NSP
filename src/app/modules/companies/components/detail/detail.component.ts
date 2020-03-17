@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
 import { ResponsiveService } from 'src/app/shared/services/responsive.service';
-=======
 import {ActivatedRoute} from '@angular/router';
 import {Company} from '../../../../shared/contracts/company';
->>>>>>> 7a1c8fd7b85c1853fe67bde0fa827b0c7bc85648
 
 @Component({
   selector: 'app-detail',
@@ -82,22 +79,18 @@ export class DetailComponent implements OnInit {
     iconImageSize: [32, 40]
   };
 
-<<<<<<< HEAD
-  constructor(private responsive: ResponsiveService) { }
+  company: Company;
+
+  constructor(private responsive: ResponsiveService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.responsive.screen.subscribe((screen) => {
       this.screen = screen;
-=======
-  company: Company;
+    });
 
-  constructor(private route: ActivatedRoute) { }
-
-  ngOnInit() {
     this.route.data.subscribe(data => {
       this.company = data.company;
       console.log(this.company);
->>>>>>> 7a1c8fd7b85c1853fe67bde0fa827b0c7bc85648
     });
   }
 

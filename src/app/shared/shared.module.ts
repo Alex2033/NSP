@@ -126,7 +126,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ParagraphsPipe,
     DomainPipe,
     MenuComponent,
-    MobileCardsSliderComponent
+    MobileCardsSliderComponent,
     EditorContentComponent
   ],
   imports: [
@@ -194,7 +194,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ParagraphsPipe,
     DomainPipe,
     MenuComponent,
-    MobileCardsSliderComponent
+    MobileCardsSliderComponent,
     EditorContentComponent,
     LazyLoadImageModule
   ],
