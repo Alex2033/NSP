@@ -313,7 +313,7 @@
     @include media-breakpoint-only(sm) {
         padding: 0;
         border-left: none;
-    }   
+    }
 }
 
 .modal-close {
@@ -341,7 +341,7 @@
     @include media-breakpoint-down(sm) {
         font-size: 15px;
         margin-bottom: 16px;
-    }  
+    }
 }
 
 .modal-control {
@@ -349,7 +349,7 @@
 
   @include media-breakpoint-down(md) {
     margin-bottom: 24px;
-  }   
+  }
 
   &.full-width {
     width: 100% !important;
@@ -422,6 +422,10 @@
 
     h5 {
         color: $primary-color;
+    }
+
+    a {
+      color: $primary-color;
     }
 }
 
@@ -499,9 +503,9 @@
 
     @include media-breakpoint-down(lg) {
         .row {
-            margin-bottom: -$grid-gutter-width; 
+            margin-bottom: -$grid-gutter-width;
         }
-        
+
         [class^="col"] {
             margin-bottom: $grid-gutter-width;
         }
@@ -611,7 +615,7 @@
     .ng-scrollbar-wrapper[verticalDragging=true]>scrollbar-y.scrollbar-control .ng-scrollbar-thumb, .ng-scrollbar-wrapper[verticalHovered=true]>scrollbar-y.scrollbar-control .ng-scrollbar-thumb {
         background-color: $gray;
     }
-    
+
 
 }
 
@@ -649,7 +653,7 @@
         background: linear-gradient(-90deg, rgba(255,255,255,0) 0%, #FFFFFF 58%);
         padding-left: 12px;
     }
-    
+
     &.control-right {
         right: 0;
         background: linear-gradient(90deg, rgba(255,255,255,0) 0%, #FFFFFF 58%);

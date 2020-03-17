@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {Company} from '../../../../shared/contracts/company';
 
 @Component({
   selector: 'app-detail',
@@ -10,38 +12,38 @@ export class DetailComponent implements OnInit {
   objectCards = [
     {
       type: 'object',
-      objectConfig: { 
+      objectConfig: {
         image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-        title: 'ЖК «Новое купчино»', 
-        geolocation: 'Василеостровский район', 
-        url: '/' 
+        title: 'ЖК «Новое купчино»',
+        geolocation: 'Василеостровский район',
+        url: '/'
       }
     },
     {
       type: 'object',
-      objectConfig: { 
+      objectConfig: {
         image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-        title: 'ЖК «Новое купчино»', 
-        geolocation: 'Василеостровский район', 
-        url: '/' 
+        title: 'ЖК «Новое купчино»',
+        geolocation: 'Василеостровский район',
+        url: '/'
       }
     },
     {
       type: 'object',
-      objectConfig: { 
+      objectConfig: {
         image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-        title: 'ЖК «Новое купчино»', 
-        geolocation: 'Василеостровский район', 
-        url: '/' 
+        title: 'ЖК «Новое купчино»',
+        geolocation: 'Василеостровский район',
+        url: '/'
       }
     },
     {
       type: 'object',
-      objectConfig: { 
+      objectConfig: {
         image: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-        title: 'ЖК «Новое купчино»', 
-        geolocation: 'Василеостровский район', 
-        url: '/' 
+        title: 'ЖК «Новое купчино»',
+        geolocation: 'Василеостровский район',
+        url: '/'
       }
     }
   ];
@@ -75,9 +77,15 @@ export class DetailComponent implements OnInit {
     iconImageSize: [32, 40]
   };
 
-  constructor() { }
+  company: Company;
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.data.subscribe(data => {
+      this.company = data.company;
+      console.log(this.company);
+    });
   }
 
 }

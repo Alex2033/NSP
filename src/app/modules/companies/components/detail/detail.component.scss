@@ -20,7 +20,7 @@
     justify-content: center;
     margin-bottom: 40px;
 
-    img {
+    ::ng-deep img {
         max-height: 106px;
     }
 }
@@ -82,7 +82,7 @@
 .company-info-text {
     padding: 0 24px;
 
-    h2 {
+    h1 {
         margin-bottom: 40px;
     }
 }
