@@ -1,4 +1,5 @@
 <div class="container">
+<<<<<<< HEAD
     <div class="page-topline" *ngIf="screen !== 'sm'">
         <h5>Компании</h5>
         <div class="page-topline-element">
@@ -103,9 +104,118 @@
                         ></angular-yandex-placemark>
                     </angular-yandex-map>
                 </div>
-            </div>
-        </div>
+=======
+  <div class="page-topline">
+    <a [routerLink]="['/companies']" class="h5">Компании</a>
+    <div class="page-topline-element">
+      Есть неточность?
     </div>
+  </div>
+  <div class="company-info">
+    <div class="row">
+      <div class="col-xl-3 col-lg-5 col-md-8 offset-md-2 offset-lg-0 order-xl-0 order-lg-1">
+        <div class="contact-card">
+          <div class="contact-card-img">
+            <app-responsive-image [xl]="company.logoXl" [lg]="company.logoLg" [md]="company.logoMd" [xs]="company.logoSm" [sm]="company.logoSm"></app-responsive-image>
+          </div>
+          <div class="contact-card-items">
+            <div class="contact-card-item">
+              <svg class="contact-card-icon geolocation">
+                <use xlink:href="assets/sprites/icons.svg#map_pin"></use>
+              </svg>
+              <span>{{ company.address }}</span>
+            </div>
+          </div>
+          <div class="contact-card-items" *ngIf="company.phone">
+            <div class="contact-card-item">
+              <svg class="contact-card-icon phone">
+                <use xlink:href="assets/sprites/icons.svg#phone"></use>
+              </svg>
+              <a [href]="'tel:' + (company.phone | phoneFormat)" class="link contact-card-phone">{{ company.phone }}</a>
+            </div>
+          </div>
+          <div class="contact-card-items" *ngIf="company.email">
+            <div class="contact-card-item">
+              <svg class="contact-card-icon mail">
+                <use xlink:href="assets/sprites/icons.svg#mail"></use>
+              </svg>
+              <a [href]="'mailto:' + company.email" class="link">{{ company.email }}</a>
+            </div>
+          </div>
+          <div class="contact-card-items" *ngIf="company.site">
+            <div class="contact-card-item">
+              <svg class="contact-card-icon web">
+                <use xlink:href="assets/sprites/icons.svg#web"></use>
+              </svg>
+              <a [href]="company.site" target="_blank" class="link">{{ company.site | domain}}</a>
+>>>>>>> 7a1c8fd7b85c1853fe67bde0fa827b0c7bc85648
+            </div>
+          </div>
+          <ul class="socials">
+            <li *ngIf="company.vkontakteLink">
+              <a [href]="company.vkontakteLink" class="vk" target="_blank">
+                <svg>
+                  <use xlink:href="assets/sprites/icons.svg#vk"></use>
+                </svg>
+              </a>
+            </li>
+            <li *ngIf="company.facebookLink">
+              <a [href]="company.facebookLink" class="facebook" target="_blank">
+                <svg>
+                  <use xlink:href="assets/sprites/icons.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li *ngIf="company.telegramLink">
+              <a [href]="company.telegramLink" class="telegram" target="_blank">
+                <svg>
+                  <use xlink:href="assets/sprites/icons.svg#telegram"></use>
+                </svg>
+              </a>
+            </li>
+            <li *ngIf="company.twitterLink">
+              <a [href]="company.twitterLink" class="twitter" target="_blank">
+                <svg>
+                  <use xlink:href="assets/sprites/icons.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xl-6 col-lg-12 order-xl-1 order-lg-0">
+        <div class="company-info-text">
+          <h1 class="h2">{{ company.name }}</h1>
+          <div class="company-info-text-content">
+            <div class="company-info-text-top">
+              <div class="company-infoblock">
+                <div class="caption">Вид деятельности</div>
+                <h5 class="company-infoblock-title">{{ company.activityName }}</h5>
+              </div>
+              <div class="company-infoblock">
+                <div class="caption">Организационная форма</div>
+                <h5 class="company-infoblock-title">{{ company.organizationForm }}</h5>
+              </div>
+            </div>
+            <div class="company-infoblock company-infoblock-text">
+              <div class="caption">Информация о компании</div>
+              <div [innerHTML]="company.description | paragraphs"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-7 order-xl-2 order-lg-2">
+        <div class="company-map">
+          <angular-yandex-map [center]="[company.latitude, company.longitude]" [zoom]="17">
+            <angular-yandex-placemark
+              [geometry]="[company.latitude, company.longitude]"
+              [options]="placemarkOptions"
+            ></angular-yandex-placemark>
+          </angular-yandex-map>
+        </div>
+      </div>
+    </div>
+<<<<<<< HEAD
     <app-card-carousel [header]="'Персоны'" [smallHeader]="true"></app-card-carousel>
     <div class="materials" *ngIf="screen !== 'sm'">
         <h3 class="materials-title">Объекты</h3>
@@ -116,4 +226,16 @@
         <h3 class="materials-title">Материалы о компании</h3>
         <app-card-layout [cards]="materialCards"></app-card-layout>
     </div>
+=======
+  </div>
+  <app-card-carousel [header]="'Персоны'" [smallHeader]="true"></app-card-carousel>
+  <div class="materials">
+    <h3 class="materials-title">Объекты</h3>
+    <app-card-layout [cards]="objectCards"></app-card-layout>
+  </div>
+  <div class="materials">
+    <h3 class="materials-title">Материалы о компании</h3>
+    <app-card-layout [cards]="materialCards"></app-card-layout>
+  </div>
+>>>>>>> 7a1c8fd7b85c1853fe67bde0fa827b0c7bc85648
 </div>

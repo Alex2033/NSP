@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container top-container">
     <div class="page-top">
         <header class="inner-page-header">
@@ -27,4 +28,37 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus metus leo, finibus eget commodo ac, suscipit gravida risus. Vestibulum feugiat risus et lacus malesuada mattis. Nulla vehicula sit amet odio eu tristique. Interdum et malesuada fames ac ante ipsum primis in faucibus. In vestibulum mollis tortor vel tempus. Integer elementum lorem non posuere tincidunt. Aenean imperdiet vestibulum magna id molestie.</p>
     </div>
 </div>
+=======
+<div class="container">
+  <div class="page-top">
+    <header class="inner-page-header">
+      <h1>Компании</h1>
+    </header>
+    <app-search *ngIf="activities.length > 0"
+                [selectFirst]="{placeholder: 'Вид деятельности', attribute: 'activity_id', options: activities}"
+                [placeholder]="'Поиск по названию'" (apply)="applySearch($event)"></app-search>
+  </div>
+</div>
+<div class="page-cards">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-3 col-lg-4 col-md-6" *ngFor="let company of companies">
+        <app-company-card [company]="company"></app-company-card>
+      </div>
+    </div>
+    <app-pagination [size]="12" [count]="companiesCount"></app-pagination>
+  </div>
+</div>
+
+<!--<div class="container">-->
+<!--  <app-card-carousel [header]="'Технология строительства'"></app-card-carousel>-->
+<!--  <div class="companies-text">-->
+<!--    <h5>Заголовок SEO</h5>-->
+<!--    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus metus leo, finibus eget commodo ac, suscipit-->
+<!--      gravida risus. Vestibulum feugiat risus et lacus malesuada mattis. Nulla vehicula sit amet odio eu tristique.-->
+<!--      Interdum et malesuada fames ac ante ipsum primis in faucibus. In vestibulum mollis tortor vel tempus. Integer-->
+<!--      elementum lorem non posuere tincidunt. Aenean imperdiet vestibulum magna id molestie.</p>-->
+<!--  </div>-->
+<!--</div>-->
+>>>>>>> 7a1c8fd7b85c1853fe67bde0fa827b0c7bc85648
 

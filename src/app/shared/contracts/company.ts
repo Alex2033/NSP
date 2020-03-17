@@ -9,4 +9,15 @@ export interface Company {
   logoLg: string;
   logoMd: string;
   logoSm: string;
+
+  address?: string;
+  description?: string;
+  organizationForm?: string;
+  latitude?: number;
+  longitude?: number;
+  vkontakteLink?: string;
+  facebookLink?: string;
+  telegramLink?: string;
+  twitterLink?: string;
+  email?: string;
 }

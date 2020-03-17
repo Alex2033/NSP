@@ -5,6 +5,7 @@ import { IndexComponent } from './components/index/index.component';
 import {SharedModule} from '../../shared/shared.module';
 import { DetailComponent } from './components/detail/detail.component';
 import {CompaniesResolver} from './resolvers/companies.resolver';
+import {CompanyResolver} from './resolvers/company.resolver';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import {CompaniesResolver} from './resolvers/companies.resolver';
     CompaniesRoutingModule
   ],
   providers: [
-    CompaniesResolver
+    CompaniesResolver,
+    CompanyResolver
   ]
 })
 export class CompaniesModule { }

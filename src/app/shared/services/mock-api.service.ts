@@ -15,6 +15,33 @@ export class MockApiService {
     return of();
   }
 
+  getCompany(companyId) {
+    return of(
+      {
+        id: 1,
+        name: 'БестЪ. Коммерческая недвижимость',
+        slug: 'best',
+        activityName: 'Агентство недвижимости',
+        phone: '+7 (812) 380–03–55',
+        site: 'http://bestgroup.ru',
+        logoXl: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
+        logoLg: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
+        logoMd: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
+        logoSm: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
+
+        description: 'Основной вид деятельности: брокер сделок коммерческой недвижимости. Предоставляет полный спектр услуг на рынке коммерческой недвижимости от первичного формирования объекта до его последующей продажи, сдачи в аренду. В функции компании входит консалтинг на рынке коммерческой недвижимости, оценка, маркетинговые исследования, выработка концепций строящихся объектов и реконцепция существующих.',
+        organizationForm: 'Общество с ограниченной ответственностью',
+        latitude: 59.978246,
+        longitude: 30.31480,
+        vkontakteLink: 'http://vk.com',
+        facebookLink: 'http://vk.com',
+        telegramLink: 'http://vk.com',
+        twitterLink: 'http://vk.com',
+        email: 'best@bestgroup.ru'
+      }
+    );
+  }
+
   getCompanies(filter = {}) {
     return of(
       {
@@ -113,7 +140,7 @@ export class MockApiService {
           },
           {
             name: 'Companies detail',
-            slug: 'companies/detail',
+            slug: 'companies/1-slug',
             highlight: false
           },
           {

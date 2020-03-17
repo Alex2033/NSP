@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {IndexComponent} from './components/index/index.component';
 import {DetailComponent} from './components/detail/detail.component';
 import {CompaniesResolver} from './resolvers/companies.resolver';
+import {CompanyResolver} from './resolvers/company.resolver';
 
 
 const routes: Routes = [
@@ -23,8 +24,11 @@ const routes: Routes = [
     runGuardsAndResolvers: 'paramsOrQueryParamsChange',
   },
   {
-    path: 'detail',
-    component: DetailComponent
+    path: ':company_slug',
+    component: DetailComponent,
+    resolve: {
+      company: CompanyResolver
+    },
   }
 ];
 

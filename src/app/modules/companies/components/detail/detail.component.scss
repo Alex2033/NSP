@@ -29,7 +29,7 @@
     justify-content: center;
     margin-bottom: 40px;
 
-    img {
+    ::ng-deep img {
         max-height: 106px;
     }
 
@@ -101,7 +101,7 @@
 .company-info-text {
     padding: 0 24px;
 
-    h2 {
+    h1 {
         margin-bottom: 40px;
     }
 
@@ -176,6 +176,7 @@
 .company-map {
     height: 304px;
     width: 100%;
+<<<<<<< HEAD
 
     ::ng-deep {
         .container {
@@ -207,3 +208,6 @@ app-card-carousel {
         margin: 0 -12px;
     }
 }
+=======
+}
+>>>>>>> 7a1c8fd7b85c1853fe67bde0fa827b0c7bc85648
