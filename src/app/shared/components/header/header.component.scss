@@ -466,6 +466,14 @@
         width: 100%;
         margin-right: 0;
     }
+
+    .navigation-list {
+        li {
+            &:last-child {
+                margin-right: 50px;
+            }
+        }
+    }
 }
 
 .horizontal-scrollbar {
