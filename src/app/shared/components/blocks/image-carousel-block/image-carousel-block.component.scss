@@ -32,6 +32,10 @@ h3 {
         bottom: 0;
         background-color: rgba($light-color, .8);
         z-index: 0;
+
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
     }
 
     @include media-breakpoint-down(lg) {

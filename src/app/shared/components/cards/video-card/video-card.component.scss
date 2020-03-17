@@ -1,7 +1,12 @@
 @import "../card-common.scss";
+@import "responsive";
 
 :host {
     display: block;
+
+    @include media-breakpoint-down(sm) {
+        height: 304px !important;
+    }
 }
 
 .card-wrapper {

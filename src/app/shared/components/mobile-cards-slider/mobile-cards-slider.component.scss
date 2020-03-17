@@ -1,0 +1,20 @@
+@import "theme";
+
+.swiper-slide {
+    width: 280px;
+    height: auto;
+}
+
+.background-block {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    right: 0;
+    width: calc(100% - 288px); // ширина слайда + отступ
+    height: 100%;
+    background-color: $primary-color;
+
+    @media (min-width: 610px) {
+        width: calc(100% - 576px);
+    }
+}

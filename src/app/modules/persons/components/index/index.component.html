@@ -3,16 +3,19 @@
         <header class="inner-page-header">
             <h1>Персоны</h1>
         </header>
-        <app-search [placeholder]="'Поиск персоны по имени или фирме'"></app-search>
+        <app-search [shortVersion]="true" [placeholder]="'Поиск персоны по имени или фирме'"></app-search>
     </div>
 </div>
 <div class="page-cards">
     <div class="container">
-        <div class="row">
+        <div class="row" *ngIf="screen !== 'sm'">
             <div class="col-lg-3 col-md-6" *ngFor="let person of persons">
                 <app-person-card [person]="person"></app-person-card>
             </div>
         </div>
+
+        <!-- mobile cards slider -->
+        <app-mobile-cards-slider *ngIf="screen === 'sm'" [cards]="persons" [type]="'person'"></app-mobile-cards-slider>
     </div>
 </div>
 <div class="container">

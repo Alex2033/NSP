@@ -1,4 +1,5 @@
 @import "theme";
+@import "responsive";
 
 :host {
     display: block;
@@ -14,6 +15,14 @@
 
         &:last-of-type {
             margin-bottom: 41px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 0;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
         }
     }
     

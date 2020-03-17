@@ -1,4 +1,5 @@
 @import "theme";
+@import "responsive";
 
 .card-wrapper {
     display: block;
@@ -40,6 +41,11 @@
         .views-icon {
             fill: $light-color;
         }
+    }
+
+    @include media-breakpoint-down(sm) {
+        font-size: 12px;
+        line-height: 1.5;
     }
 }
 

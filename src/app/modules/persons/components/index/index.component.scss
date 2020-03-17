@@ -1,0 +1,24 @@
+@import "responsive";
+
+:host {
+    @include media-breakpoint-down(sm) {
+        ::ng-deep {
+            .card-layout app-material-card {
+                margin: 0;
+            }
+        }
+    }
+}
+
+.page-top {
+    @include media-breakpoint-down(sm) {
+        padding-bottom: 0;
+    }
+}
+
+app-search {
+    @include media-breakpoint-down(sm) {
+        margin: 0 -12px;
+        width: 100vw;
+    }
+}

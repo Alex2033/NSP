@@ -9,8 +9,10 @@
             <app-image-block [class.full-width]="block.size === 'big'" [image]="block.config"></app-image-block>
         </ng-container>
         
-        <ng-container *ngSwitchCase="'company'">
-            <app-extended-company-card [company]="block.companyConfig"></app-extended-company-card>
+        <ng-container *ngIf="screen !== 'sm'"> <!-- Временно -->
+            <ng-container *ngSwitchCase="'company'">
+                <app-extended-company-card [company]="block.companyConfig"></app-extended-company-card>
+            </ng-container>
         </ng-container>
 
          <ng-container *ngSwitchCase="'video'">
@@ -25,7 +27,6 @@
             <app-image-carousel-block [title]="block.title" [slides]="block.carouselContent"></app-image-carousel-block>
         </ng-container>
 
-        <!-- временно -->
         <ng-container *ngSwitchCase="'map'">
             <app-location-block [source]="block.source"></app-location-block>
         </ng-container>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ResponsiveService} from 'src/app/shared/services/responsive.service';
 import {ActivatedRoute} from '@angular/router';
 import {Company} from '../../../../shared/contracts/company';
 import {Meta, Title} from '@angular/platform-browser';
@@ -9,8 +10,11 @@ import {Meta, Title} from '@angular/platform-browser';
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
+
   objects = [];
   persons = [];
+  screen: string;
+
   materialCards = [
     {
       type: 'material',
@@ -42,11 +46,17 @@ export class DetailComponent implements OnInit {
 
   company: Company;
 
-  constructor(private route: ActivatedRoute,
-              protected title: Title,
-              protected meta: Meta) { }
+  constructor(
+    private responsive: ResponsiveService,
+    private route: ActivatedRoute,
+    protected title: Title,
+    protected meta: Meta) {
+  }
 
   ngOnInit() {
+    this.responsive.screen.subscribe((screen) => {
+      this.screen = screen;
+    });
     this.route.data.subscribe(data => {
       this.company = data.company.data;
       this.objects = data.company.apartmentComplexes;
@@ -57,6 +67,8 @@ export class DetailComponent implements OnInit {
           content: this.company.description
         }
       );
+      this.company = data.company;
+      console.log(this.company);
     });
   }
 

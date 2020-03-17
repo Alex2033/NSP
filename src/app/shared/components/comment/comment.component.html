@@ -14,7 +14,7 @@
                 </div>
                 <time class="author-time">сегодня в {{ comment.time * 1000 | date: 'hh:mm' }}</time>
             </div>
-            <div class="review">
+            <div class="review" *ngIf="screen !== 'sm'">
                 <button type="button" class="review-button" (click)="decreaseCounter()">
                     <svg>
                         <use xlink:href="assets/sprites/icons.svg#arrow_down"></use>

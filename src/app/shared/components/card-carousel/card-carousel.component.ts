@@ -11,10 +11,14 @@ export class CardCarouselComponent implements OnInit {
   @Input() header: string;
   @Input() smallHeader: boolean;
   carouselConfig: SwiperConfigInterface;
+  screen: string;
+
   constructor(public responsive: ResponsiveService) { }
 
   ngOnInit() {
     this.responsive.screen.subscribe((screen) => {
+      this.screen = screen;
+
       if (screen === 'xl') {
         this.carouselConfig = {
           slidesPerView: 4,
@@ -26,6 +30,10 @@ export class CardCarouselComponent implements OnInit {
       } else if (screen === 'md') {
         this.carouselConfig = {
           slidesPerView: 2,
+        }
+      } else if (screen === 'sm') {
+        this.carouselConfig = {
+          slidesPerView: 'auto',
         }
       }
     });

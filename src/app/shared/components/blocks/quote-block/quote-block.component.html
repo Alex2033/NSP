@@ -18,7 +18,7 @@
                 <div class="quote-author-position">{{ quote.author.position }}</div>
             </div>
             <div class="quote-author-avatar" *ngIf="quote.author.avatar">
-                <img src="{{ quote.author.avatar }}" alt="avatar">
+                <img [src]="quote.author.avatar" alt="avatar">
             </div>
         </div>
     </div>

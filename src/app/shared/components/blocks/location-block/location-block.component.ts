@@ -9,6 +9,10 @@ export class LocationBlockComponent implements OnInit {
 
   @Input() source;
 
+  public placemarkProperties = {
+    iconCaption: 'Апарт-комплекс Valo'
+  }
+
   constructor() { }
 
   ngOnInit() {

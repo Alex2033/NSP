@@ -17,9 +17,13 @@ export class SearchComponent implements OnInit {
     @Input() selectSecond: { placeholder: string, attribute: string, options: any[] };
     @Input() placeholder;
     @Input() datepicker;
+    @Input() shortVersion;
     @Output() apply: EventEmitter<any> = new EventEmitter();
 
-    constructor(private formBuilder: FormBuilder, private responsive: ResponsiveService, private route: ActivatedRoute) {
+    constructor(private formBuilder: FormBuilder,
+        private responsive: ResponsiveService,
+        private route: ActivatedRoute
+    ) {
     }
 
     ngOnInit() {

@@ -1,8 +1,13 @@
 @import "theme";
+@import "responsive";
 
 :host {
     margin-bottom: 40px;
     display: block;
+
+    @include media-breakpoint-down(sm) {
+        margin-bottom: 24px;
+    }
 }
 
 .share-title {
@@ -14,6 +19,12 @@
     font-size: 17px;
     line-height: 1.705;
     color: $dark-gray;
+
+    @include media-breakpoint-down(sm) {
+        font-size: 14px;
+        line-height: 1.571;
+        margin-bottom: 24px;
+    }
 }
 
 .share-footer {
@@ -28,12 +39,27 @@
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
         color: $primary-color;
+
+        @include media-breakpoint-down(sm) {
+            order: -1;
+            font-weight: 400;
+            margin-right: 8px;
+        }
     }
 
     > * {
         &:not(:last-child) {
             margin-right: 8px;
+
+            @include media-breakpoint-down(sm) {
+                margin-right: 0;
+            }
         }
+    }
+
+    @include media-breakpoint-down(sm) {
+        display: flex;
+        align-items: center;
     }
 }
 

@@ -1,0 +1,18 @@
+<div class="swiper-container" [swiper]="carouselConfig">
+    <div class="background-block"></div>
+    <div class="swiper-wrapper">
+        <ng-container [ngSwitch]="type">
+            <ng-container *ngSwitchCase="'company'">
+                <div class="swiper-slide" *ngFor="let card of cards">
+                    <app-company-card [company]="card"></app-company-card>
+                </div>
+            </ng-container>
+            <ng-container *ngSwitchCase="'person'">
+                <div class="swiper-slide" *ngFor="let card of cards">
+                    <app-person-card [person]="card"></app-person-card>
+                </div>
+            </ng-container>
+        </ng-container>
+        
+    </div>
+</div>

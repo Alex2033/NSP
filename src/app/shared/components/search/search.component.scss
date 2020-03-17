@@ -1,6 +1,14 @@
 @import "theme";
 @import "responsive";
 
+:host {
+    display: block;
+
+    @include media-breakpoint-down(sm) {
+        position: relative;    
+    } 
+}
+
 .search-form {
     border-radius: 4px 4px 0 4px;
     box-shadow: 0 4px 16px 0 rgba(8,26,63,0.14);
@@ -11,6 +19,25 @@
     @include media-breakpoint-down(sm) {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    &.short-version {
+        flex-direction: row;
+        align-items: center;
+        padding-right: 12px;
+
+        .search-field {
+            flex-grow: 1;
+        }
+
+        .submit-button {
+            padding: 0;
+            width: initial;
+
+            .button {
+                padding: 6px 18px;
+            }
+        }
     }
 }
 

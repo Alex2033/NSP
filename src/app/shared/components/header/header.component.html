@@ -49,11 +49,11 @@
 
             <!-- desktop navigation -->
             <nav class="navigation" [style.display]="screen === 'sm' ? 'none' : null" #navigationContainer>
-              <ul class="navigation-list for-calculate" #tmpNavigationList style="flex-grow: 1;">
-                <li [class.highlight]="menuElement.highlight" *ngFor="let menuElement of menuElements">
-                  <a [routerLink]="[menuElement.slug]">{{ menuElement.name }}</a>
-                </li>
-              </ul>
+                <ul class="navigation-list for-calculate" #tmpNavigationList style="flex-grow: 1;">
+                    <li [class.highlight]="menuElement.highlight" *ngFor="let menuElement of menuElements">
+                        <a [routerLink]="[menuElement.slug]">{{ menuElement.name }}</a>
+                    </li>
+                </ul>
                 <ul class="navigation-list" #navigationList style="flex-grow: 1;">
                     <li [class.highlight]="menuElement.highlight" *ngFor="let menuElement of visibleMenuElements">
                         <a [routerLink]="[menuElement.slug]">{{ menuElement.name }}</a>

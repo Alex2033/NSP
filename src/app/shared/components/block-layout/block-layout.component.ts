@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ResponsiveService } from '../../services/responsive.service';
 
 @Component({
   selector: 'app-block-layout',
@@ -9,9 +10,14 @@ export class BlockLayoutComponent implements OnInit {
 
   @Input() blocks;
 
-  constructor() { }
+  screen: string;
+
+  constructor(private responsive: ResponsiveService) { }
 
   ngOnInit() {
+    this.responsive.screen.subscribe((screen) => {
+      this.screen = screen;
+    });
   }
 
 }

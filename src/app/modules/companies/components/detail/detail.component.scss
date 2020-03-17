@@ -3,6 +3,11 @@
 
 .company-info {
     margin-bottom: 48px;
+
+    @include media-breakpoint-down(sm) {
+        padding-top: 16px;
+        margin-bottom: 24px;
+    }
 }
 
 .contact-card {
@@ -12,6 +17,10 @@
 
     @include media-breakpoint-down(md) {
         margin-bottom: 30px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        padding: 16px 9px 24px 20px;
     }
 }
 
@@ -23,6 +32,10 @@
     ::ng-deep img {
         max-height: 106px;
     }
+
+    @include media-breakpoint-down(sm) {
+        margin-bottom: 16px;
+    }
 }
 
 .contact-card-item {
@@ -30,6 +43,12 @@
     align-items: center;
     margin-bottom: 32px;
     padding-left: 4px;
+
+    @include media-breakpoint-down(sm) {
+        font-size: 14px;
+        line-height: 1.571;
+        margin-bottom: 24px;
+    }
 }
 
 .contact-card-icon {
@@ -85,6 +104,11 @@
     h1 {
         margin-bottom: 40px;
     }
+
+    @include media-breakpoint-down(sm) {
+        padding: 0;
+        margin-bottom: 16px;
+    }
 }
 
 .company-info-text-top {
@@ -103,6 +127,10 @@
         max-width: 100%;
     }
 
+    @include media-breakpoint-down(sm) {
+        margin-bottom: 16px;
+    }
+
     &.company-infoblock-text {
         max-width: 100%;
     }
@@ -114,6 +142,11 @@
         &:not(:last-child) {
             margin-bottom: 20px;
         }
+
+        @include media-breakpoint-down(sm) {
+            font-size: 14px;
+            line-height: 1.571;
+        }
     }
 }
 
@@ -122,18 +155,59 @@
     line-height: 1.571;
     color: $dark-gray;
     margin-bottom: 8px;
+
+    @include media-breakpoint-down(sm) {
+        font-size: 13px;
+        line-height: 1.54;
+    }
 }
 
 .company-infoblock-title {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     line-height: 1.625;
+
+    @include media-breakpoint-down(sm) {
+        font-size: 14px;
+        line-height: 1.571;
+    }
 }
 
 .company-map {
     height: 304px;
     width: 100%;
+
+    ::ng-deep {
+        .container {
+            padding: 0;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        width: 100vw;
+        margin: 0 -12px;
+    }
 }
+
+.title {
+    margin-bottom: 24px;
+}
+
+.company-info-text-content {
+    @include media-breakpoint-down(sm) {
+        font-size: 14px;
+        line-height: 1.571;
+    }
+}
+
+app-card-carousel {
+    @include media-breakpoint-down(sm) {
+        width: 100vw;
+        display: block;
+        margin: 0 -12px;
+    }
+}
+
 .materials {
   margin-bottom: 48px;
 }

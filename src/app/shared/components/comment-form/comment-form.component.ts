@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { ResponsiveService } from '../../services/responsive.service';
 
 @Component({
   selector: 'app-comment-form',
@@ -8,12 +9,16 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class CommentFormComponent implements OnInit {
 
   text: string = '';
+  screen: string;
 
   @Output() onAdd: EventEmitter<any> = new EventEmitter();
 
-  constructor() { }
+  constructor(private responsive: ResponsiveService) { }
 
   ngOnInit() {
+    this.responsive.screen.subscribe((screen) => {
+      this.screen = screen;
+    });
   }
 
   addComment() {

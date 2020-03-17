@@ -1,6 +1,6 @@
 <a [routerLink]="['']" class="card-wrapper">
     <div class="card-content">
-        <div class="card-top static">
+        <div class="card-top static" *ngIf="screen !== 'sm'">
             <div class="date">Сегодня в 16:45</div>
             <div class="tag">
                 <div class="emoji">🔥</div>
@@ -8,14 +8,14 @@
             </div>
         </div>
         <div class="card-text">
-            <div class="card-title">
+            <div class="card-title"*ngIf="screen !== 'sm'">
                 <h3 class="light">Акулы отменяются</h3>
             </div>
             <p>
                 Смольный официально отменил строительство океанариума в парке Интернационалистов
             </p>
         </div>
-        <footer class="card-footer light">
+        <footer class="card-footer light" *ngIf="screen !== 'sm'">
             <div class="views">
                 <svg class="views-icon">
                     <use xlink:href="assets/sprites/icons.svg#eye"></use>

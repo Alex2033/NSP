@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ResponsiveService} from 'src/app/shared/services/responsive.service';
 import {ApiService} from '../../../../shared/services/api.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Company} from '../../../../shared/contracts/company';
@@ -11,13 +12,18 @@ import {Title} from '@angular/platform-browser';
 })
 export class IndexComponent implements OnInit {
   static activities = [];
+  screen: string;
   companies: Company[];
   companiesCount: number;
   activities = [];
-  constructor(private api: ApiService, private route: ActivatedRoute, private router: Router, protected title: Title) {
+
+  constructor(private responsive: ResponsiveService, private api: ApiService, private route: ActivatedRoute, private router: Router, protected title: Title) {
   }
 
   ngOnInit() {
+    this.responsive.screen.subscribe((screen) => {
+      this.screen = screen;
+    });
     this.title.setTitle('Компании' + ' - NSP.ru');
     this.route.data.subscribe(data => {
       this.companiesCount = data.companies.count;

@@ -1,12 +1,12 @@
 <h3 *ngIf="title">{{ title }}</h3>
 <div class="carousel-wrapper">
     <div class="control-buttons">
-        <div class="control-button" (click)="cardCarousel.swiper.slidePrev()">
+        <div class="control-button" (click)="cardCarousel.swiper.slidePrev()" *ngIf="screen !== 'sm'">
             <svg class="icon">
                 <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
             </svg>
         </div>
-        <div class="control-button" (click)="cardCarousel.swiper.slideNext()">
+        <div class="control-button" (click)="cardCarousel.swiper.slideNext()" *ngIf="screen !== 'sm'">
             <svg class="icon">
                 <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
             </svg>

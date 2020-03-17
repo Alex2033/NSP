@@ -1,1 +1,8 @@
-<img [src]="source" alt="image">
+<div class="map-container">
+    <angular-yandex-map [center]="[59.884792, 30.367620]" [zoom]="17">
+        <angular-yandex-placemark
+            [geometry]="[59.884792, 30.367620]"
+            [properties]="placemarkProperties"
+        ></angular-yandex-placemark>
+    </angular-yandex-map>
+</div>

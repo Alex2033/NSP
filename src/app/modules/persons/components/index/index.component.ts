@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 
 @Component({
   selector: 'app-index',
@@ -6,6 +7,8 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit {
+  screen: string;
+
   cards = [
     {
       type: 'material',
@@ -75,10 +78,13 @@ export class IndexComponent implements OnInit {
     },
   ];
 
-  constructor() {
+  constructor(private responsive: ResponsiveService) {
   }
 
   ngOnInit() {
+    this.responsive.screen.subscribe((screen) => {
+      this.screen = screen;
+    });
   }
 
 }

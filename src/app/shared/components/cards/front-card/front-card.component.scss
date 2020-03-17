@@ -1,4 +1,5 @@
 @import "../card-common.scss";
+@import "responsive";
 
 :host {
     display: block;
@@ -16,6 +17,10 @@
         .background-img {
             transform: scale(1.1);
         }
+    }
+
+    @include media-breakpoint-down(sm) {
+        padding: 41px 12px;
     }
 }
 
@@ -37,6 +42,11 @@
     padding-left: 8px;
     max-width: 460px;
     font-weight: 300;
+
+    @include media-breakpoint-down(sm) {
+        font-size: 14px;
+        line-height: 1.571;
+    }
 }
 
 .card-title {

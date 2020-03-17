@@ -303,6 +303,27 @@
     margin-right: 32px;
 }
 
+.show-more {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 1.571;
+    display: flex;
+    align-items: center;
+    color: $primary-color;
+
+    svg {
+        fill: $primary-color;
+        width: 10px;
+        height: 8px;
+    }
+
+    > * {
+        &:not(:last-child) {
+            margin-right: 8px;
+        }
+    }
+}
+
 // start Модальные окна
 .modal-content {
   box-shadow: 0 6px 16px 0 rgba(0,0,0,0.16);
@@ -436,6 +457,18 @@
     > * {
         &:not(:last-child) {
             margin-right: 40px;
+
+            @include media-breakpoint-down(sm) {
+                margin-right: 16px;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+
+        .topline-author {
+            margin-right: auto;
         }
     }
 }
@@ -443,14 +476,22 @@
 .topline-info-item {
     font-size: 14px;
     line-height: 1.571;
-    color: $dark-gray;
     display: flex;
     align-items: center;
+
+    &.info-views {
+        color: $dark-gray;
+    }
 
     > * {
         &:not(:last-child) {
             margin-right: 8px;
         }
+    }
+
+    @include media-breakpoint-down(sm) {
+        font-size: 12px;
+        line-height: 1.5;
     }
 }
 
@@ -463,6 +504,11 @@
 .topline-author {
     font-size: 15px;
     color: $text-color;
+
+    @include media-breakpoint-down(sm) {
+        font-size: 12px;
+        line-height: 1.5;
+    }
 }
 
 .page-topline-element {
@@ -519,6 +565,14 @@
 
 // end Карточки внутренних страниц
 
+.materials {
+    .card-layout app-material-card {
+        @include media-breakpoint-down(sm) {
+            margin: 0;
+        }
+    }
+}
+
 .materials-title {
     margin-bottom: 32px;
 
@@ -561,6 +615,7 @@
 .share-socials {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: -12px;
 
     > * {
         &:not(:last-child) {
@@ -570,6 +625,8 @@
 }
 
 .share-social {
+    margin-bottom: 12px;
+
     a {
         display: block;
     }
@@ -587,6 +644,11 @@
     font-size: 13px;
     line-height: 1.538;
     display: block;
+
+    @include media-breakpoint-down(sm) {
+        font-size: 12px;
+        line-height: 1.5;
+    }
 }
 
 // start Ngx Scrollbar
@@ -633,7 +695,7 @@
     }
 }
 
-// стили для горизонтального скроллабара
+// стили для горизонтального скроллбара
 .gradient-control {
     position: absolute;
     top: 0;
@@ -661,3 +723,15 @@
         justify-content: flex-end;
     }
 }
+
+// .row {
+//     @include media-breakpoint-down(sm) {
+//         margin: 0;
+//     }
+// }
+
+// div[class*="col-"] {
+//     @include media-breakpoint-down(sm) {
+//         padding: 0;
+//     }
+// }

@@ -51,7 +51,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     public modal: ModalService,
     private responsive: ResponsiveService,
     private menuService: MenuService,
-    @Inject(PLATFORM_ID) private platformId: any,
+    @Inject(PLATFORM_ID) private platformId: any
   ) {
     if (isPlatformBrowser(this.platformId)) {
       setInterval(() => {
@@ -61,9 +61,15 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this.menuService.get().subscribe((response) => {
-      this.menuElements = response.elements;
-      this.rebuildMenu();
+    this.menuService.get().subscribe((elements) => {
+      this.menuElements = elements;
+
+      if (isPlatformBrowser(this.platformId)) {
+        setTimeout(() => {
+          this.rebuildMenu();
+        }, 230); // Чтобы меню успело привязаться к DOM дереву
+      }
+      
     });
     this.responsive.screen.subscribe((screen) => {
       this.screen = screen;
