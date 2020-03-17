@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="page-topline">
+  <div class="page-topline" *ngIf="screen !== 'sm'">
     <a [routerLink]="['/companies']" class="h5">Компании</a>
     <div class="page-topline-element">
       Есть неточность?
@@ -8,6 +8,7 @@
   <div class="company-info">
     <div class="row">
       <div class="col-xl-3 col-lg-5 col-md-8 offset-md-2 offset-lg-0 order-xl-0 order-lg-1">
+        <h1 class="title" *ngIf="screen === 'sm'">БестЪ. Коммерческая <br> недвижимость</h1>
         <div class="contact-card">
           <div class="contact-card-img">
             <app-responsive-image [xl]="company.logoXl" [lg]="company.logoLg" [md]="company.logoMd" [xs]="company.logoSm" [sm]="company.logoSm"></app-responsive-image>
@@ -107,18 +108,6 @@
           </angular-yandex-map>
         </div>
       </div>
-<<<<<<< HEAD
-    <app-card-carousel [header]="'Персоны'" [smallHeader]="true"></app-card-carousel>
-    <div class="materials" *ngIf="screen !== 'sm'">
-      <h3 class="materials-title">Объекты</h3>
-      <app-card-layout [cards]="objectCards"></app-card-layout>
-    </div>
-    <app-card-carousel *ngIf="screen === 'sm'" [header]="'Объекты'" [smallHeader]="true"></app-card-carousel>
-    <div class="materials">
-      <h3 class="materials-title">Материалы о компании</h3>
-      <app-card-layout [cards]="materialCards"></app-card-layout>
-    </div>
-=======
     </div>
   </div>
   <div class="materials">
@@ -141,5 +130,4 @@
     <h3 class="materials-title">Материалы о компании</h3>
     <app-card-layout [cards]="materialCards"></app-card-layout>
   </div>
->>>>>>> 54b71f0586022f00e1d766f505839c5bbda1c467
 </div>

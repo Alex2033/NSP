@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Company} from '../../../../shared/contracts/company';
+import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 
 @Component({
   selector: 'app-detail',
@@ -7,6 +8,8 @@ import {Company} from '../../../../shared/contracts/company';
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
+  screen: string;
+
   cards = [
     {
       type: 'material',
@@ -64,10 +67,13 @@ export class DetailComponent implements OnInit {
     activityName: 'Агентство недвижимости'
   };
 
-  constructor() {
+  constructor(private responsive: ResponsiveService) {
   }
 
   ngOnInit() {
+    this.responsive.screen.subscribe((screen) => {
+      this.screen = screen;
+    });
   }
 
 }
