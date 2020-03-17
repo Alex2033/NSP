@@ -23,7 +23,7 @@ const routes: Routes = [
     runGuardsAndResolvers: 'paramsOrQueryParamsChange',
   },
   {
-    path: 'detail',
+    path: ':company_id-:company_slug',
     component: DetailComponent
   }
 ];

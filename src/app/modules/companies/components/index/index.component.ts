@@ -12,6 +12,7 @@ import {Title} from '@angular/platform-browser';
 export class IndexComponent implements OnInit {
   static activities = [];
   companies: Company[];
+  companiesCount: number;
   activities = [];
   constructor(private api: ApiService, private route: ActivatedRoute, private router: Router, protected title: Title) {
   }
@@ -19,6 +20,7 @@ export class IndexComponent implements OnInit {
   ngOnInit() {
     this.title.setTitle('Компании' + ' - NSP.ru');
     this.route.data.subscribe(data => {
+      this.companiesCount = data.companies.count;
       this.companies = data.companies.items;
     });
     if (IndexComponent.activities.length === 0) {

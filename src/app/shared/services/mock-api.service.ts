@@ -113,7 +113,7 @@ export class MockApiService {
           },
           {
             name: 'Companies detail',
-            slug: 'companies/detail',
+            slug: 'companies/1-slug',
             highlight: false
           },
           {

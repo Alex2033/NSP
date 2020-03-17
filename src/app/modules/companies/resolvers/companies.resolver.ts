@@ -19,6 +19,11 @@ export class CompaniesResolver implements Resolve<ListResponse<Company>> {
       filter.search = route.queryParams.search;
     }
 
+    if (route.queryParams.page) {
+      filter.offset = (route.queryParams.page - 1) * 12;
+    }
+    filter.limit = 12;
+
     return this.api.getCompanies(filter);
   }
 }
