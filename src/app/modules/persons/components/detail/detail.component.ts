@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Company} from '../../../../shared/contracts/company';
 import { ResponsiveService } from 'src/app/shared/services/responsive.service';
+import {Meta, Title} from '@angular/platform-browser';
+import {ActivatedRoute} from '@angular/router';
+import {Person} from '../../../../shared/contracts/person';
 
 @Component({
   selector: 'app-detail',
@@ -45,34 +48,30 @@ export class DetailComponent implements OnInit {
       view: 'backgroundImage'
     }
   ];
-  personConfig = {
-    image: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80',
-    name: 'Трошева Ольга Витальевна',
-    position: 'Руководитель КЦ «Петербургская Недвижимость»',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel lacinia neque. Sed at felis nec mauris fringilla pharetra eget a odio. In tincidunt maximus ipsum, sed vulputate eros accumsan vitae. Donec sagittis dictum odio, id vehicula ex cond.',
-    phone: '+7 (812) 335-55-55',
-    email: 'trosheva@spbrealty.ru'
-  };
 
-  companyConfig: Company = {
-    id: 1,
-    slug: 'best',
-    logoXl: 'assets/images/cards/company/company.jpg',
-    logoLg: 'assets/images/cards/company/company.jpg',
-    logoMd: 'assets/images/cards/company/company.jpg',
-    logoSm: 'assets/images/cards/company/company.jpg',
-    name: 'БестЪ. Коммерческая недвижимость',
-    phone: '+7 (812) 380–03–55',
-    site: 'bestgroup.ru',
-    activityName: 'Агентство недвижимости'
-  };
+  person: Person;
+  company: Company;
 
-  constructor(private responsive: ResponsiveService) {
+  constructor(
+    private responsive: ResponsiveService,
+    private route: ActivatedRoute,
+    protected title: Title,
+    protected meta: Meta) {
   }
 
   ngOnInit() {
     this.responsive.screen.subscribe((screen) => {
       this.screen = screen;
+    });
+    this.route.data.subscribe(data => {
+      this.person = data.person.data;
+      this.company = data.person.company;
+      this.title.setTitle(this.person.name + ' - Информация о персоне ' + ' - NSP.ru');
+      this.meta.updateTag({
+          name: 'description',
+          content: this.person.description
+        }
+      );
     });
   }
 

@@ -15,6 +15,20 @@ export class ApiService {
   constructor(private apiClient: ApiClientService) {
   }
 
+  getQuotes(filter = {}): Observable<any> {
+    return this.apiClient.get(`/api/site/quotes`, {
+      params: filter
+    }).pipe(map((response) => {
+      return deserialize(response);
+    }));
+  }
+
+  getPerson(personId): Observable<Person> {
+    return this.apiClient.get(`/api/site/people/${personId}`).pipe(map((response) => {
+      return deserialize(response) as Person;
+    }));
+  }
+
   getPersons(filter = {}): Observable<any> {
     return this.apiClient.get(`/api/site/people`, {
       params: filter

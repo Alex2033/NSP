@@ -1,12 +1,15 @@
 export interface Quote {
-  quote: string;
+  text: string;
   published_at: number;
-  source: {
+  source?: {
     name: string;
     url?: string;
   };
-  author: {
-    avatar: string;
+  author?: {
+    photoXl: string;
+    photoLg: string;
+    photoMd: string;
+    photoSm: string;
     firstName: string;
     lastName: string;
     position: string;

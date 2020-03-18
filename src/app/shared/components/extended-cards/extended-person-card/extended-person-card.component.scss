@@ -18,44 +18,46 @@
         text-align: center;
         justify-content: center;
     }
+
+  ::ng-deep {
+    img {
+      width: 226px;
+      height: 226px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    @include media-breakpoint-down(lg) {
+      margin-right: 20px;
+
+      img {
+        width: 160px;
+        height: 160px;
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      margin-right: 0;
+      margin-bottom: 15px;
+
+      img {
+        width: 182px;
+        height: 182px;
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      img {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  }
 }
 
 .card-img {
     flex-shrink: 0;
     margin-right: 40px;
-
-    img {
-        width: 226px;
-        height: 226px;
-        border-radius: 50%;
-        object-fit: cover;
-    }
-
-    @include media-breakpoint-down(lg) {
-        margin-right: 20px;
-
-        img {
-            width: 160px;
-            height: 160px;
-        }
-    }
-
-    @include media-breakpoint-down(md) {
-        margin-right: 0;
-        margin-bottom: 15px;
-
-        img {
-            width: 182px;
-            height: 182px;
-        }
-    }
-
-    @include media-breakpoint-down(sm) {
-        img {
-            width: 120px;
-            height: 120px;
-        }
-    }
 }
 
 .person-name {

@@ -4,21 +4,21 @@
             <use xlink:href="assets/sprites/icons.svg#quotes"></use>
         </svg>
         <blockquote class="quote-text">
-            <p>«{{ quote.quote }}»</p>
+            <p>«{{ quote.text }}»</p>
         </blockquote>
     </div>
     <div class="quote-bot">
         <div class="quote-info">
-            <cite class="quote-source" *ngIf="quote.source.name">«{{ quote.source.name }}»</cite>
+            <cite class="quote-source" *ngIf="quote.source?.name">«{{ quote.source.name }}»</cite>
             <time class="quote-time">{{ quote.published_at * 1000 | date }}</time>
         </div>
         <div class="quote-author">
             <div class="quote-author-info">
-                <div class="quote-author-name">{{ quote.author.firstName }} {{ quote.author.lastName }}</div> 
+                <div class="quote-author-name">{{ quote.author.firstName }} {{ quote.author.lastName }}</div>
                 <div class="quote-author-position">{{ quote.author.position }}</div>
             </div>
-            <div class="quote-author-avatar" *ngIf="quote.author.avatar">
-                <img [src]="quote.author.avatar" alt="avatar">
+            <div class="quote-author-avatar" *ngIf="quote.author.photoXl">
+              <app-responsive-image [xl]="quote.author.photoXl" [lg]="quote.author.photoLg" [md]="quote.author.photoMd" [xs]="quote.author.photoSm" [sm]="quote.author.photoSm"></app-responsive-image>
             </div>
         </div>
     </div>

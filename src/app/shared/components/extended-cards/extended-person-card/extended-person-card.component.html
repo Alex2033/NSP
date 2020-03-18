@@ -1,29 +1,25 @@
 <div class="extended-person-card">
     <div class="card-img">
-        <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80" alt="person">
+      <app-responsive-image [xl]="person.photoXl" [lg]="person.photoLg" [md]="person.photoMd" [xs]="person.photoSm" [sm]="person.photoSm"></app-responsive-image>
     </div>
     <div class="card-info">
         <h2 class="person-name">{{ person.name }}</h2>
         <div class="person-position">
             <p>{{ person.position }}</p>
         </div>
-        <div class="card-text">
-            <p>
-                {{ person.text }}
-            </p>
-        </div>
+        <div class="card-text" [innerHTML]="person.description | paragraphs"></div>
         <div class="card-contacts">
-            <div class="card-phone">
+            <div class="card-phone" *ngIf="person.phone">
                 <svg class="card-icon">
                     <use xlink:href="assets/sprites/icons.svg#phone"></use>
                 </svg>
                 <a [href]="'tel:' + ( person.phone | phoneFormat )">{{ person.phone }}</a>
             </div>
-            <div class="card-email">
+            <div class="card-email" *ngIf="person.email">
                 <svg class="card-icon">
                     <use xlink:href="assets/sprites/icons.svg#mail"></use>
                 </svg>
-                <a class="link" href="mailto:{{ person.email }}">{{ person.email }}</a>
+                <a class="link" [href]="'mailto:' + person.email">{{ person.email }}</a>
             </div>
         </div>
     </div>

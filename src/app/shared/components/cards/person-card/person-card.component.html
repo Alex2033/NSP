@@ -1,4 +1,4 @@
-<a [routerLink]="['/persons', person.id]" class="person-card">
+<a [routerLink]="['/persons', person.id + '-' + person.slug]" class="person-card">
     <div class="person-img">
       <app-responsive-image [xl]="person.photoXl" [lg]="person.photoLg" [md]="person.photoMd" [xs]="person.photoSm" [sm]="person.photoSm"></app-responsive-image>
     </div>

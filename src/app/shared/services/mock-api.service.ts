@@ -15,6 +15,112 @@ export class MockApiService {
     return of();
   }
 
+  getQuotes(filter = {}) {
+    return of({
+      count: 4,
+      items: [
+        {
+          text: 'По статистике, к псевдожилью в Петербурге можно отнести около шестидесяти процентов строящихся комплексов. Нужно быть внимательным при выборе объекта для вложений',
+          published_at: 1573746483, // При подстановке в шаблон нужно будет перевести в МС -> {{ quote.published_at * 1000 | date }}
+          source: {
+            name: 'Название источника статьи',
+            url: 'Ссылка на источник', // Ссылки может не быть, тогда вместо <a> должен быть <span>
+          },
+          author: {
+            photoXl: 'https://images.unsplash.com/photo-1566680473674-0bbbbeab1c31?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80',
+            photoLg: 'https://images.unsplash.com/photo-1566680473674-0bbbbeab1c31?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80',
+            photoMd: 'https://images.unsplash.com/photo-1566680473674-0bbbbeab1c31?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80',
+            photoSm: 'https://images.unsplash.com/photo-1566680473674-0bbbbeab1c31?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80',
+            firstName: 'Марина',
+            lastName: 'Сторожевая',
+            position: 'Директор по развитию, партнер М2Маркет '
+          }
+        },
+        {
+          text: 'Наш личный бюджет становится всё более тощим вовсе не из-за закредитованности. Дорожает жизнь вокруг нас. Поэтому спад на рынке жилья неизбежен...',
+          published_at: 1573746483, // При подстановке в шаблон нужно будет перевести в МС -> {{ quote.published_at * 1000 | date }}
+          source: {
+            name: '',
+            url: 'Ссылка на источник', // Ссылки может не быть, тогда вместо <a> должен быть <span>
+          },
+          author: {
+            photoXl: null,
+            photoLg: null,
+            photoMd: null,
+            photoSm: null,
+            firstName: 'Иван',
+            lastName: 'Иванов',
+            position: 'Директор по развитию'
+          }
+        },
+        {
+          text: 'По статистике, к псевдожилью в Петербурге можно отнести около шестидесяти процентов строящихся комплексов. Нужно быть внимательным при выборе объекта для вложений',
+          published_at: 1573746483, // При подстановке в шаблон нужно будет перевести в МС -> {{ quote.published_at * 1000 | date }}
+          source: {
+            name: 'Название источника статьи',
+            url: 'Ссылка на источник', // Ссылки может не быть, тогда вместо <a> должен быть <span>
+          },
+          author: {
+            photoXl: 'https://images.unsplash.com/photo-1566680473674-0bbbbeab1c31?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80',
+            photoLg: 'https://images.unsplash.com/photo-1566680473674-0bbbbeab1c31?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80',
+            photoMd: 'https://images.unsplash.com/photo-1566680473674-0bbbbeab1c31?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80',
+            photoSm: 'https://images.unsplash.com/photo-1566680473674-0bbbbeab1c31?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80',
+            firstName: 'Марина',
+            lastName: 'Сторожевая',
+            position: 'Директор по развитию, партнер М2Маркет '
+          }
+        },
+        {
+          text: 'Наш личный бюджет становится всё более тощим вовсе не из-за закредитованности. Дорожает жизнь вокруг нас. Поэтому спад на рынке жилья неизбежен...',
+          published_at: 1573746483, // При подстановке в шаблон нужно будет перевести в МС -> {{ quote.published_at * 1000 | date }}
+          source: {
+            name: '',
+            url: 'Ссылка на источник', // Ссылки может не быть, тогда вместо <a> должен быть <span>
+          },
+          author: {
+            photoXl: null,
+            photoLg: null,
+            photoMd: null,
+            photoSm: null,
+            firstName: 'Иван',
+            lastName: 'Иванов',
+            position: 'Директор по развитию'
+          }
+        }
+      ]
+    });
+  }
+
+  getPerson(personId) {
+    return of({
+      data: {
+        id: 1,
+        slug: 'slug',
+        photoXl: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
+        photoLg: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
+        photoMd: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
+        photoSm: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
+        firstName: 'Глебова',
+        middleName: 'Елена',
+        lastName: 'Александровна',
+        companyName: 'БестЪ. Коммерческая недвижимость»',
+        position: 'Руководитель отдела продаж'
+      },
+      company: {
+        id: 1,
+        slug: 'best',
+        logoXl: 'assets/images/cards/company/company.jpg',
+        logoLg: 'assets/images/cards/company/company.jpg',
+        logoMd: 'assets/images/cards/company/company.jpg',
+        logoSm: 'assets/images/cards/company/company.jpg',
+        name: 'БестЪ. Коммерческая недвижимость',
+        phone: '+7 (812) 380–03–55',
+        site: 'bestgroup.ru',
+        activityName: 'Агентство недвижимости'
+      }
+    });
+  }
+
   getCompany(companyId) {
     return of(
       {
@@ -80,6 +186,8 @@ export class MockApiService {
         ],
         people: [
           {
+            id: 1,
+            slug: 'slug',
             photoXl: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
             photoLg: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
             photoMd: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
@@ -91,6 +199,8 @@ export class MockApiService {
             position: 'Руководитель отдела продаж'
           },
           {
+            id: 2,
+            slug: 'slug',
             photoXl: 'https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
             photoLg: 'https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
             photoMd: 'https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
@@ -102,6 +212,8 @@ export class MockApiService {
             position: 'Руководитель отдела офисной недвижимости'
           },
           {
+            id: 3,
+            slug: 'slug',
             photoXl: 'https://images.unsplash.com/photo-1553267751-1c148a7280a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
             photoLg: 'https://images.unsplash.com/photo-1553267751-1c148a7280a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
             photoMd: 'https://images.unsplash.com/photo-1553267751-1c148a7280a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
@@ -113,6 +225,8 @@ export class MockApiService {
             position: 'председатель Совета директоров'
           },
           {
+            id: 4,
+            slug: 'slug',
             photoXl: 'https://images.unsplash.com/photo-1453396450673-3fe83d2db2c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
             photoLg: 'https://images.unsplash.com/photo-1453396450673-3fe83d2db2c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
             photoMd: 'https://images.unsplash.com/photo-1453396450673-3fe83d2db2c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
@@ -133,6 +247,8 @@ export class MockApiService {
       count: 4,
       items: [
         {
+          id: 1,
+          slug: 'slug',
           photoXl: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
           photoLg: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
           photoMd: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
@@ -144,6 +260,8 @@ export class MockApiService {
           position: 'Руководитель отдела продаж'
         },
         {
+          id: 2,
+          slug: 'slug',
           photoXl: 'https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
           photoLg: 'https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
           photoMd: 'https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
@@ -155,6 +273,8 @@ export class MockApiService {
           position: 'Руководитель отдела офисной недвижимости'
         },
         {
+          id: 3,
+          slug: 'slug',
           photoXl: 'https://images.unsplash.com/photo-1553267751-1c148a7280a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
           photoLg: 'https://images.unsplash.com/photo-1553267751-1c148a7280a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
           photoMd: 'https://images.unsplash.com/photo-1553267751-1c148a7280a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
@@ -166,6 +286,8 @@ export class MockApiService {
           position: 'председатель Совета директоров'
         },
         {
+          id: 4,
+          slug: 'slug',
           photoXl: 'https://images.unsplash.com/photo-1453396450673-3fe83d2db2c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
           photoLg: 'https://images.unsplash.com/photo-1453396450673-3fe83d2db2c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
           photoMd: 'https://images.unsplash.com/photo-1453396450673-3fe83d2db2c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',

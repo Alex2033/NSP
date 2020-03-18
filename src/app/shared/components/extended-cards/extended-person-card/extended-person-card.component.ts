@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {Person} from '../../../contracts/person';
 
 @Component({
   selector: 'app-extended-person-card',
@@ -7,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ExtendedPersonCardComponent implements OnInit {
 
-  @Input() person;
+  @Input() person: Person;
 
   constructor() { }
 

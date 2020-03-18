@@ -16,7 +16,7 @@
 
 .quote-content {
     display: flex;
-    justify-content: space-between;
+    //justify-content: space-between;
     margin-bottom: 29px;
 
     @include media-breakpoint-down(sm) {
@@ -127,7 +127,7 @@
     flex-shrink: 0;
     filter: grayscale(100%);
 
-    img {
+    ::ng-deep img {
         width: 48px;
         height: 48px;
         border-radius: 50%;

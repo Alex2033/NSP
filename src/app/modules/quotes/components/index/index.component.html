@@ -6,14 +6,14 @@
               <header class="inner-page-header">
                 <h1>Архив цитат</h1>
               </header>
-              <app-search [shortVersion]="true" [placeholder]="'Поиск цитаты'"></app-search>
+              <app-search [shortVersion]="true" [placeholder]="'Поиск цитаты'" (apply)="applySearch($event)"></app-search>
           </div>
           <div class="quotes">
             <ng-container *ngFor="let quote of quotes">
               <app-quote-block [quote]="quote"></app-quote-block>
             </ng-container>
           </div>
-          <app-pagination *ngIf="screen !== 'sm'" [size]="4" [count]="15"></app-pagination>
+          <app-pagination [size]="12" [count]="quotesCount"></app-pagination>
         </main>
       </div>
       <div class="col-xl-3 col-lg-4 col-md-8 offset-xl-1 offset-lg-0 offset-md-2" *ngIf="screen !== 'sm'">
@@ -27,5 +27,5 @@
         ></app-material-list-card>
         </aside>
       </div>
-    </div>  
+    </div>
 </div>

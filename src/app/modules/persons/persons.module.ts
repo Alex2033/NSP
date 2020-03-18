@@ -4,6 +4,7 @@ import { IndexComponent } from './components/index/index.component';
 import {SharedModule} from '../../shared/shared.module';
 import { DetailComponent } from './components/detail/detail.component';
 import {PersonsResolver} from './resolvers/persons.resolver';
+import {PersonResolver} from './resolvers/person.resolver';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import {PersonsResolver} from './resolvers/persons.resolver';
     PersonsRoutingModule
   ],
   providers: [
-    PersonsResolver
+    PersonsResolver,
+    PersonResolver
   ]
 })
 export class PersonsModule { }
