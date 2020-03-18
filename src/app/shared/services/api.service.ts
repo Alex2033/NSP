@@ -49,6 +49,14 @@ export class ApiService {
     }));
   }
 
+  getSearchResults(filter = {}): Observable<any> {
+    return this.apiClient.get(`/api/site/search`, {
+      params: filter
+    }).pipe(map((response) => {
+      return deserialize(response);
+    }));
+  }
+
   getCompanies(filter = {}): Observable<any> {
     return this.apiClient.get(`/api/site/companies`, {
       params: filter

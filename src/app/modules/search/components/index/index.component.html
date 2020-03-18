@@ -1,71 +1,82 @@
 <div class="container top-container">
-    <div class="page-top">
-        <header class="inner-page-header">
-            <h1>Результаты поиска</h1>
-            <button type="button" class="page-topline-element">
-                Сбросить фильтр
-            </button>
-        </header>
-        <app-search
-            [selectFirst]="{placeholder: 'Тип', attribute: 'type_id', options: options}"
-            [placeholder]="'Поиск объекта по названию или фирме'"
-            [datepicker]="true"
-        ></app-search>
-    </div>
+  <div class="page-top">
+    <header class="inner-page-header">
+      <h1>Результаты поиска</h1>
+      <button type="button" class="page-topline-element" (click)="search.clear()">
+        Сбросить фильтр
+      </button>
+    </header>
+    <app-search
+      #search
+      [selectFirst]="{placeholder: 'Тип', attribute: 'type', options: options}"
+      [placeholder]="'Поиск объекта по названию или фирме'"
+      [datepicker]="false"
+      (apply)="applySearch($event)"
+    ></app-search>
+  </div>
 </div>
 
 <div class="page-cards">
-    <div class="container">
-        <div class="materials">
-            <h2 class="materials-title">
-                <span>Материалы</span>
-                <div class="items-number">3</div>
-            </h2>
-            <app-card-layout [cards]="materials"></app-card-layout>
+  <div class="container">
+    <div class="materials" *ngIf="results.companies && results.companies.count > 0 && (!type || type === 'companies')">
+      <h2 class="materials-title">
+        <span>Компании</span>
+        <div class="items-number">{{ results.companies.count }}</div>
+        <h5 class="all-results" *ngIf="!type && results.companies.count > 4">
+          <a [routerLink]="['/search']" [queryParams]="{type: 'companies'}" queryParamsHandling="merge">Все результаты</a>
+        </h5>
+      </h2>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 result-card" *ngFor="let company of results.companies.items">
+          <app-company-card [company]="company"></app-company-card>
         </div>
-        <div class="materials">
-            <h2 class="materials-title">
-                <span>Интервью</span>
-                <div class="items-number">2</div>
-            </h2>
-            <app-card-layout [cards]="interviews"></app-card-layout>
-        </div>
-        <div class="materials">
-            <h2 class="materials-title">
-                <span>Объекты</span>
-                <div class="items-number">4</div>
-            </h2>
-            <app-card-layout [cards]="objectCards"></app-card-layout>
-        </div>
-        <h2 class="materials-title">
-            <span>Персоны</span>
-            <div class="items-number">28</div>
-            <h5 class="all-results">
-                <a [routerLink]="['']">Все результаты</a>
-            </h5>
-        </h2>
-        <div class="row">
-            <div class="col-lg-3 col-md-6 persons-card" *ngFor="let person of persons">
-                <app-person-card [person]="person"></app-person-card>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3 col-md-6 persons-card" *ngFor="let person of persons">
-                <app-person-card [person]="person"></app-person-card>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3 col-md-6 persons-card" *ngFor="let person of persons">
-                <app-person-card [person]="person"></app-person-card>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3 col-md-6 persons-card" *ngFor="let person of persons">
-                <app-person-card [person]="person"></app-person-card>
-            </div>
-        </div>
-        <app-pagination [size]="4" [count]="15"></app-pagination>
+      </div>
     </div>
+    <div class="materials" *ngIf="results.articles && results.articles.count > 0 && (!type || type === 'articles')">
+      <h2 class="materials-title">
+        <span>Материалы</span>
+        <div class="items-number">{{ results.articles.count }}</div>
+        <h5 class="all-results" *ngIf="!type && results.articles.count > 4">
+          <a [routerLink]="['/search']" [queryParams]="{type: 'articles'}" queryParamsHandling="merge">Все результаты</a>
+        </h5>
+      </h2>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 result-card" *ngFor="let article of results.articles.items">
+          <app-material-card [size]="'small'" [view]="'default'"></app-material-card>
+        </div>
+      </div>
+    </div>
+
+    <div class="materials" *ngIf="results.objects && results.objects.count > 0 && (!type || type === 'objects')">
+      <h2 class="materials-title">
+        <span>Объекты</span>
+        <div class="items-number">{{ results.objects.count }}</div>
+        <h5 class="all-results" *ngIf="!type && results.objects.count > 4">
+          <a [routerLink]="['/search']" [queryParams]="{type: 'objects'}" queryParamsHandling="merge">Все результаты</a>
+        </h5>
+      </h2>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 result-card" *ngFor="let object of results.objects.items">
+          <app-object-card [object]="object"></app-object-card>
+        </div>
+      </div>
+    </div>
+    <div class="materials" *ngIf="results.persons && results.persons.count > 0 && (!type || type === 'persons')">
+      <h2 class="materials-title">
+        <span>Персоны</span>
+        <div class="items-number">{{ results.persons.count }}</div>
+        <h5 class="all-results" *ngIf="!type && results.persons.count > 4">
+          <a [routerLink]="['/search']" [queryParams]="{type: 'persons'}" queryParamsHandling="merge">Все результаты</a>
+        </h5>
+      </h2>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 result-card" *ngFor="let person of results.persons.items">
+          <app-person-card [person]="person"></app-person-card>
+        </div>
+      </div>
+    </div>
+    <app-pagination *ngIf="type && results[type] && results[type].count > 4" [size]="12" [count]="results[type].count"></app-pagination>
+  </div>
 </div>
 
 <!-- <div class="container">

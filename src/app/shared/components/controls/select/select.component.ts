@@ -8,9 +8,9 @@ import {ControlValueAccessor, NgControl} from '@angular/forms';
   styleUrls: ['./select.component.scss']
 })
 export class SelectComponent implements OnInit, ControlValueAccessor {
-  public value: number;
-  activeOption: { id: number, value: string } | null;
-  @Input() options: { id: number, value: string }[] = [];
+  public value: number | string;
+  activeOption: { id: number | string, value: string } | null;
+  @Input() options: { id: number | string, value: string }[] = [];
   @Input() errorMessages: any;
   @ViewChild(NgScrollbar) scrollRef: NgScrollbar;
   showDropdown = false;
@@ -47,12 +47,9 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
   }
 
   writeValue(value: number | string): void {
-    if (typeof value === 'string') {
-      value = parseInt(value, 10);
-    }
     this.showDropdown = false;
     this.value = value;
-    this.activeOption = this.options.find(x => x.id === value);
+    this.activeOption = this.options.find(x => x.id == value);
     this.onChange(this.value);
   }
 

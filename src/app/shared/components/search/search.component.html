@@ -42,7 +42,7 @@
     <button type="submit" class="button">Найти</button>
   </div>
   <div class="reset-settings" *ngIf="screen === 'sm' && !shortVersion">
-    <button type="button" (click)="formGroup.reset(); submit()">Сбросить настройки</button>
+    <button type="button" (click)="clear()">Сбросить настройки</button>
   </div>
 </form>
 

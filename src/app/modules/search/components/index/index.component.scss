@@ -9,7 +9,7 @@
 .page-cards {
     margin-bottom: 0;
     padding-bottom: 64px;
-    
+
     .row {
         margin-bottom: 32px;
 
@@ -25,13 +25,13 @@
             }
         }
     }
-    
+
 }
 
 .materials-title {
     display: flex;
     align-items: center;
-    
+
     > * {
         &:not(:last-child) {
             margin-right: 16px;
@@ -58,10 +58,13 @@
 
     a {
         color: $primary-color;
-    
+
         &:hover {
             text-decoration: none;
         }
     }
-    
+
+}
+.result-card {
+  margin-top: 8px;
 }

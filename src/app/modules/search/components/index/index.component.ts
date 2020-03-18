@@ -1,5 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {ResponsiveService} from 'src/app/shared/services/responsive.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Person} from '../../../../shared/contracts/person';
+import {ApartmentComplex} from '../../../../shared/contracts/apartment-complex';
+import {Company} from '../../../../shared/contracts/company';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-index',
@@ -9,156 +14,78 @@ import {ResponsiveService} from 'src/app/shared/services/responsive.service';
 export class IndexComponent implements OnInit {
   screen: string;
 
-  options: [
+  options = [
     {
-      id: 1,
+      id: null,
+      value: 'Все'
+    },
+    {
+      id: 'companies',
       value: 'Компании'
     },
     {
-      id: 2,
+      id: 'persons',
       value: 'Персоны'
     },
     {
-      id: 3,
+      id: 'objects',
       value: 'Объекты'
     },
     {
-      id: 4,
+      id: 'articles',
       value: 'Материалы'
     },
   ];
 
-  persons = [
-    {
-      photoXl: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      photoLg: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      photoMd: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      photoSm: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      firstName: 'Глебова',
-      middleName: 'Елена',
-      lastName: 'Александровна',
-      companyName: 'БестЪ. Коммерческая недвижимость»',
-      position: 'Руководитель отдела продаж'
-    },
-    {
-      photoXl: 'https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      photoLg: 'https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      photoMd: 'https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      photoSm: 'https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      firstName: 'Демешенков',
-      middleName: 'Вадим',
-      lastName: 'Николаевич',
-      companyName: 'БестЪ. Коммерческая недвижимость»',
-      position: 'Руководитель отдела офисной недвижимости'
-    },
-    {
-      photoXl: 'https://images.unsplash.com/photo-1553267751-1c148a7280a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      photoLg: 'https://images.unsplash.com/photo-1553267751-1c148a7280a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      photoMd: 'https://images.unsplash.com/photo-1553267751-1c148a7280a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      photoSm: 'https://images.unsplash.com/photo-1553267751-1c148a7280a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      firstName: 'Лушников',
-      middleName: 'Андрей',
-      lastName: 'Владимирович',
-      companyName: 'БестЪ. Коммерческая недвижимость»',
-      position: 'председатель Совета директоров'
-    },
-    {
-      photoXl: 'https://images.unsplash.com/photo-1453396450673-3fe83d2db2c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      photoLg: 'https://images.unsplash.com/photo-1453396450673-3fe83d2db2c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      photoMd: 'https://images.unsplash.com/photo-1453396450673-3fe83d2db2c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      photoSm: 'https://images.unsplash.com/photo-1453396450673-3fe83d2db2c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      firstName: 'Свояволя',
-      middleName: 'Ян',
-      lastName: '',
-      companyName: 'ООО «Главстрой-СПб»',
-      position: 'Директор по маркетингу'
-    },
-  ];
-
-  materials = [
-    {
-      type: 'material',
-      size: 'small',
-      view: 'default'
-    },
-    {
-      type: 'material',
-      size: 'small',
-      view: 'backgroundImage'
-    },
-    {
-      type: 'material',
-      size: 'small',
-      view: 'default'
-    },
-  ];
-
-  interviews = [
-    {
-      type: 'material',
-      size: 'small',
-      view: 'backgroundImage'
-    },
-    {
-      type: 'material',
-      size: 'small',
-      view: 'backgroundImage'
-    }
-  ];
-
-  objectCards: any[] = [
-    {
-      id: 1,
-      name: 'ЖК «Новое купчино»',
-      areaName: 'Василеостровский район',
-      imageXl: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      imageLg: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      imageMd: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      imageSm: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-    },
-    {
-      id: 2,
-      name: 'ЖК «Новый Лесснер»',
-      areaName: 'Московский район',
-      imageXl: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      imageLg: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      imageMd: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      imageSm: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-    },
-    {
-      id: 3,
-      name: 'ЖК «LIFE-Лесная»',
-      areaName: 'Выборгский район',
-      imageXl: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      imageLg: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      imageMd: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      imageSm: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-    },
-    {
-      id: 4,
-      name: 'ЖК «Новый Лесснер»',
-      areaName: 'Московский район',
-      imageXl: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      imageLg: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      imageMd: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      imageSm: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-    }
-  ];
-
-  constructor(public responsive: ResponsiveService) {
+  constructor(
+    public responsive: ResponsiveService,
+    private router: Router,
+    protected title: Title,
+    private route: ActivatedRoute) {
   }
 
+  results: {
+    companies: {
+      count: number;
+      items: Company[];
+    },
+
+    articles: {
+      count: number;
+      items: any[];
+    }
+
+    persons: {
+      count: number;
+      items: Person[];
+    }
+
+    objects: {
+      count: number;
+      items: ApartmentComplex[];
+    }
+  };
+
+  type: string;
+
   ngOnInit() {
-    this.objectCards = this.objectCards.map(x => {
-      return {
-        type: 'object',
-        data: x
-      };
+    this.route.queryParams.subscribe(params => {
+      this.type = params.type;
+    });
+    this.route.data.subscribe(data => {
+      this.results = data.results;
     });
 
     this.responsive.screen.subscribe((screen) => {
       this.screen = screen;
     });
+    this.title.setTitle('Результаты поиска' + ' - NSP.ru');
   }
-
+  applySearch(filter) {
+    if (filter.type) {
+      this.router.navigate(['/search'], {queryParams: {search: filter.search, type: filter.type}});
+    } else {
+      this.router.navigate(['/search'], {queryParams: {search: filter.search}});
+    }
+  }
 }
