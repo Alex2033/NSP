@@ -1,4 +1,5 @@
 @import "theme";
+@import "responsive";
 
 :host {
     display: block;
@@ -8,6 +9,12 @@
 .registration-block {
     padding: 32px 40px 40px;
     border: 1px solid $border-color;
+    background-color: $light-color;
+
+    @include media-breakpoint-down(sm) {
+        border: 0;
+        padding: 0;
+    }
 }
 
 .registrations-headings {
@@ -20,6 +27,15 @@
             font-weight: 400;
         }
     }
+
+    @include media-breakpoint-down(sm) {
+        margin-bottom: 24px;
+
+        h3 {
+            font-size: 15px;
+            line-height: 1.6;
+        }
+    }
 }
 
 .registration-info {
@@ -27,6 +43,18 @@
     align-items: flex-start;
     justify-content: space-between;
     margin-bottom: 32px;
+
+    @include media-breakpoint-down(sm) {
+        margin-bottom: 24px;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        > * {
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
+        }
+    }
 }
 
 .caption {
@@ -34,6 +62,10 @@
     font-size: 13px;
     line-height: 1.538;
     margin-bottom: 4px;
+
+    @include media-breakpoint-down(sm) {
+        margin-bottom: 8px;
+    }
 }
 
 .registration-info-item {
@@ -42,6 +74,17 @@
     
     &.right {
         text-align: right;
+
+        @include media-breakpoint-down(sm) {
+            text-align: left;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        max-width: 100%;
+        width: 100%;
+        font-size: 14px;
+        line-height: 1.571;
     }
 }
 
@@ -53,10 +96,28 @@
   
     app-text {
         width: calc(50% - 12px);
+
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+        }
     }
   
     app-textarea {
         width: 100%;
+    }
+
+    @include media-breakpoint-down(sm) {
+        flex-direction: column;
+        justify-content: flex-start;
+        
+        ::ng-deep app-error-message {
+            top: calc(100% - 2px);
+            font-size: 12px;
+        }
+
+        > * {
+            width: 100%;
+        }
     }
 }
 
@@ -139,5 +200,33 @@
         font-size: 15px;
         line-height: 1.53333;
         color: $dark-gray;
+    }
+}
+
+.top-heading {
+    @include media-breakpoint-down(sm) {
+        margin-bottom: 8px;
+    }
+}
+
+.modal-control {
+    @include media-breakpoint-down(sm) {
+        margin-bottom: 16px;
+
+        &:last-of-type {
+            margin-bottom: 24px;
+        }
+    }
+}
+
+app-checkbox {
+    @include media-breakpoint-down(sm) {
+        margin-bottom: 24px;
+    }
+}
+
+.submit-button {
+    @include media-breakpoint-down(sm) {
+        padding: 13px 24px;
     }
 }

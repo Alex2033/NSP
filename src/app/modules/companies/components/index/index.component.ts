@@ -11,19 +11,20 @@ import {Title} from '@angular/platform-browser';
   styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit {
-  static activities = [];
   screen: string;
+
+  static activities = []
   companies: Company[];
   companiesCount: number;
   activities = [];
 
   constructor(
-    private responsive: ResponsiveService,
-    private api: ApiService,
-    private route: ActivatedRoute,
-    private router: Router,
-    protected title: Title) {
-  }
+    private api: ApiService, 
+    private route: ActivatedRoute, 
+    private router: Router, 
+    protected title: Title,
+    private responsive: ResponsiveService
+  ) {}
 
   ngOnInit() {
     this.responsive.screen.subscribe((screen) => {

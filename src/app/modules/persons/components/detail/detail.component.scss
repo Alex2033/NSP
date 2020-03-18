@@ -2,12 +2,21 @@
 @import "responsive";
 @import "variables/bootstrap";
 
+:host {
+    @include media-breakpoint-down(sm) {
+        padding-top: 16px;
+        display: block;
+    }
+}
+
 .persons-row {
     margin-bottom: 48px;
 }
 
 app-extended-person-card {
-    grid-column-end: span 3;
+    @include media-breakpoint-down(sm) {
+        margin-bottom: 12px;
+    }
 }
 
 app-company-card {
@@ -28,4 +37,8 @@ app-company-card {
         height: 100%;
         display: block;
     }
+}
+
+.title {
+    margin-bottom: 24px;
 }

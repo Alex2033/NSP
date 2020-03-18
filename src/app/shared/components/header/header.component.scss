@@ -104,6 +104,7 @@
     max-width: 100%;
     align-items: center;
     justify-content: space-between;
+    
     &.for-calculate {
       position: fixed;
       opacity: 0;
@@ -464,6 +465,14 @@
     .navigation {
         width: 100%;
         margin-right: 0;
+    }
+
+    .navigation-list {
+        li {
+            &:last-child {
+                margin-right: 50px;
+            }
+        }
     }
 }
 

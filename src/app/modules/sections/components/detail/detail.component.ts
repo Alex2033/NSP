@@ -1,13 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
+import { NgScrollbar } from 'ngx-scrollbar';
 
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.scss']
 })
-export class DetailComponent implements OnInit {
+export class DetailComponent implements OnInit, AfterViewInit {
+  @ViewChild(NgScrollbar, {static: false}) scrollbarRef: NgScrollbar;
+
+  scrollPosition: number = 0;
+  showLeftControl: boolean = false;
   screen: string;
   entryDateValue: Date = new Date();
 
@@ -204,6 +209,23 @@ export class DetailComponent implements OnInit {
           view: 'backgroundImage'
         },
       ],
+      mobile: [
+        {
+          type: 'material',
+          size: 'small',
+          view: 'default'
+        },
+        {
+          type: 'material',
+          size: 'small',
+          view: 'default'
+        },
+        {
+          type: 'material',
+          size: 'small',
+          view: 'default'
+        },
+      ],
     }
   };
 
@@ -219,4 +241,19 @@ export class DetailComponent implements OnInit {
     this.entryDateValue = event.value;
   }
 
+  ngAfterViewInit() {
+    
+    if (this.screen === 'sm') {
+      this.scrollbarRef.scrolled.subscribe(e => {
+        this.scrollPosition = e.target.scrollLeft;
+
+        if (this.scrollPosition > 0) {
+          this.showLeftControl = true;
+        } else {
+          this.showLeftControl = false;
+        }
+      });
+    }
+
+  }
 }

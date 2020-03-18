@@ -12,7 +12,7 @@
         padding: 15px;
     }
 
-    @include media-breakpoint-only(md) {
+    @include media-breakpoint-down(md) {
         align-items: flex-start;
         flex-wrap: wrap;
         text-align: center;
@@ -31,7 +31,7 @@
         object-fit: cover;
     }
 
-    @include media-breakpoint-only(lg) {
+    @include media-breakpoint-down(lg) {
         margin-right: 20px;
 
         img {
@@ -40,13 +40,20 @@
         }
     }
 
-    @include media-breakpoint-only(md) {
+    @include media-breakpoint-down(md) {
         margin-right: 0;
         margin-bottom: 15px;
 
         img {
             width: 182px;
             height: 182px;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        img {
+            width: 120px;
+            height: 120px;
         }
     }
 }
@@ -56,6 +63,10 @@
 
     @include media-breakpoint-down(md) {
         font-size: 22px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        font-size: 15px;
     }
 }
 
@@ -67,14 +78,24 @@
     @include media-breakpoint-down(md) {
         margin-bottom: 15px;
     }
+
+    @include media-breakpoint-down(sm) {
+        font-size: 14px;
+        line-height: 1.571;
+    }
 }
 
 .card-text {
     color: $dark-gray;
     margin-bottom: 45px;
 
-    @include media-breakpoint-only(lg) {
+    @include media-breakpoint-down(lg) {
         margin-bottom: 30px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        font-size: 14px;
+        line-height: 1.571;
     }
 }
 
@@ -90,7 +111,7 @@
         }
     }
 
-    @include media-breakpoint-only(lg) {
+    @include media-breakpoint-down(lg) {
         > * {
             &:not(:last-child) {
                 margin-right: 20px;
@@ -100,6 +121,12 @@
 
     @include media-breakpoint-down(md) {
         font-size: 15px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        justify-content: space-between;
+        font-size: 14px;
+        line-height: 1.571;
     }
 }
 

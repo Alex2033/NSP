@@ -1,17 +1,49 @@
 <div class="container">
     <div class="page-top">
-        <header class="inner-page-header">
+        <header class="inner-page-header" *ngIf="screen !== 'sm'">
             <h1>Власть</h1>
             <button type="button" class="page-topline-element">
                 Сбросить настройки
             </button>
         </header>
         <div class="filters">
-            <ul class="tags">
+            <ul class="tags" *ngIf="screen !== 'sm'">
                 <li class="tag" *ngFor="let tag of tags">
-                    <a href="/">#{{ tag }}</a>
+                    <a [routerLink]="['']">#{{ tag }}</a>
                 </li>
             </ul>
+
+            <!-- mobile horizontal -->
+            <div class="mobile-tags" *ngIf="screen === 'sm'">
+                <ng-scrollbar
+                    class="horizontal-scrollbar"
+                    track="horizontal"
+                    #scrollbarRef
+                >
+                    <ul class="tags">
+                        <li class="tag" *ngFor="let tag of tags">
+                            <a [routerLink]="['']">#{{ tag }}</a>
+                        </li>
+                    </ul>
+
+                </ng-scrollbar>
+                <div class="gradient-control control-left" *ngIf="showLeftControl">
+                    <div class="control-button small light" (click)="scrollbarRef.scrollTo({ left: (scrollPosition - 150) })">
+                        <svg class="icon">
+                            <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="gradient-control control-right">
+                    <div class="control-button small light" (click)="scrollbarRef.scrollTo({ left: (scrollPosition + 150) })">
+                        <svg class="icon">
+                            <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            
+
             <div class="date-filter">
                 <input 
                     class="data-hidden-input"
@@ -27,9 +59,10 @@
                     <span class="datepicker-range">{{ entryDateValue | date: 'M/d/yy' }}</span>
                 </div>
                 <button class="clear-date">
-                    <svg>
+                    <svg *ngIf="screen !== 'sm'">
                         <use xlink:href="assets/sprites/icons.svg#close"></use>
                     </svg>
+                    <span class="reset-text" *ngIf="screen === 'sm'">Сбросить</span>
                 </button>
             </div>
         </div>
@@ -39,7 +72,7 @@
             [cards]="screen === 'xl' ? cards.resolutions.desktop : 
                     screen === 'lg' ? cards.resolutions.smallDesktop : 
                     screen === 'md' ? cards.resolutions.tablet : 
-                    null"
+                    cards.resolutions.mobile"
         ></app-card-layout>
     </div>
 </div>

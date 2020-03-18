@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="page-topline">
+    <div class="page-topline" *ngIf="screen !== 'sm'">
         <h5>Мероприятия</h5>
         <div class="page-topline-element">
             <svg class="topline-icon">
@@ -35,10 +35,10 @@
 
                 <app-event-registration-block></app-event-registration-block>
 
-                <img class="image" src="http://avangard.rosbalt.ru/wp-content/uploads/2019/10/Afisha-glavnaya.jpeg" alt="poster image">
+                <img *ngIf="screen !== 'sm'" class="image" src="http://avangard.rosbalt.ru/wp-content/uploads/2019/10/Afisha-glavnaya.jpeg" alt="poster image">
             </div>
         </div>
-        <div class="col-xl-3 col-lg-4 col-md-8 offset-xl-1 offset-lg-0 offset-md-2">
+        <div class="col-xl-3 col-lg-4 col-md-8 offset-xl-1 offset-lg-0 offset-md-2" *ngIf="screen !== 'sm'">
             <aside class="content-sidebar">
                 <div class="contact-card">
                     <div class="contact-card-items">
