@@ -2,7 +2,7 @@
   <ng-container *ngSwitchCase="'default'">
     <ng-container [ngSwitch]="size">
       <ng-container *ngSwitchCase="'small'">
-        <a href="#" class="card-wrapper default">
+        <a [routerLink]="['']" class="card-wrapper default">
           <div class="card-top">
             <div class="date">Сегодня в 16:45</div>
             <div class="tag">
@@ -34,7 +34,7 @@
         </a>
       </ng-container>
       <ng-container *ngSwitchCase="'medium-horizontal'">
-        <a href="#" class="card-wrapper default horizontal extended">
+        <a [routerLink]="['']" class="card-wrapper default horizontal extended">
           <div class="card-img">
             <div class="image-overlay"></div>
             <img src="https://picsum.photos/304/152" alt="card image">
@@ -62,7 +62,7 @@
         </a>
       </ng-container>
       <ng-container *ngSwitchCase="'medium-vertical'">
-        <a href="#" class="card-wrapper default vertical extended">
+        <a [routerLink]="['']" class="card-wrapper default vertical extended">
           <div class="card-img">
             <div class="image-overlay"></div>
             <img src="https://picsum.photos/304/152" alt="card image">
@@ -90,7 +90,7 @@
         </a>
       </ng-container>
       <ng-container *ngSwitchCase="'large'">
-        <a href="#" class="card-wrapper default large extended">
+        <a [routerLink]="['']" class="card-wrapper default large extended">
           <div class="card-img">
             <div class="image-overlay"></div>
             <img src="https://picsum.photos/304/152" alt="card image">
@@ -120,7 +120,7 @@
     </ng-container>
   </ng-container>
   <ng-container *ngSwitchCase="'backgroundImage'">
-    <a href="#" class="card-wrapper backgroundImage">
+    <a [routerLink]="['']" class="card-wrapper backgroundImage">
       <div class="card-top">
         <div class="date">Сегодня в 16:45</div>
         <div class="tag">

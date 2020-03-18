@@ -9,7 +9,7 @@
                 *ngFor="let category of categories; index as i" 
                 [class.active]="i === 0"
             >
-                <a href="/" class="categories-link">{{ category }}</a>
+                <a [routerLink]="['']" class="categories-link">{{ category }}</a>
             </li>
         </ul>
     </div>
