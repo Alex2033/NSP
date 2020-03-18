@@ -61,24 +61,26 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-  }
-
-  ngAfterViewInit() {
     this.menuService.get().subscribe((elements) => {
       this.menuElements = elements;
       if (isPlatformBrowser(this.platformId)) {
+        this.rebuildMenu(); // Меню появляется раньше, но уходит за экран, т.к. браузер еще возвращает некорректные значения ширины
         setTimeout(() => {
           this.rebuildMenu();
-        }, 1); // Чтобы меню успело привязаться к DOM дереву
+        }, 500); // Повторное построние меню
+      } else {
+        this.rebuildMenu();
       }
-
     });
+  }
+
+  ngAfterViewInit() {
     this.responsive.screen.subscribe((screen) => {
       this.screen = screen;
     });
 
     this.menuPosition = this.menu.nativeElement.offsetTop;
-    
+
     if (this.screen === 'sm') {
       this.scrollbarRef.scrolled.subscribe(e => {
         this.scrollPosition = e.target.scrollLeft;
@@ -111,21 +113,19 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     let indexFrom = -1;
     let sum = 0;
     if (isPlatformBrowser(this.platformId)) {
-      setTimeout(() => { // Чтобы меню успело привязаться к DOM дереву
-        for (let i = 0; i < this.tmpNavigationList.nativeElement.children.length; i++) {
-          sum += this.tmpNavigationList.nativeElement.children[i].offsetWidth;
-          if (sum >= navigationListWidth && indexFrom === -1) {
-            indexFrom = i;
-          }
+      for (let i = 0; i < this.tmpNavigationList.nativeElement.children.length; i++) {
+        sum += this.tmpNavigationList.nativeElement.children[i].offsetWidth;
+        if (sum >= navigationListWidth && indexFrom === -1) {
+          indexFrom = i;
         }
-        if (indexFrom !== -1) {
-          this.visibleMenuElements = this.menuElements.slice(0, indexFrom - 1);
-          this.hiddenMenuElements = this.menuElements.slice(indexFrom - 1);
-        } else {
-          this.visibleMenuElements = this.menuElements;
-          this.hiddenMenuElements = [];
-        }
-      });
+      }
+      if (indexFrom !== -1) {
+        this.visibleMenuElements = this.menuElements.slice(0, indexFrom - 1);
+        this.hiddenMenuElements = this.menuElements.slice(indexFrom - 1);
+      } else {
+        this.visibleMenuElements = this.menuElements;
+        this.hiddenMenuElements = [];
+      }
     }
   }
 
