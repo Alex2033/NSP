@@ -1,7 +1,19 @@
 @import "theme";
+@import "responsive";
+
+:host {
+    @include media-breakpoint-down(sm) {
+        display: block;
+        margin: 0 -12px;
+    }
+}
 
 .carousel-wrapper {
     margin-bottom: 40px;
+
+    @include media-breakpoint-down(sm) {
+        margin-bottom: 24px;
+    }
 }
 
 .carousel-header {
@@ -9,6 +21,15 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 32px;
+
+    @include media-breakpoint-down(sm) {
+        margin-bottom: 16px;
+        padding: 0 12px;
+
+        h3 {
+            font-size: 15px;
+        }
+    }
 }
 
 .carousel-link {
@@ -42,4 +63,8 @@
     align-items: center;
     justify-content: center;
     height: 102px;
+
+    @include media-breakpoint-down(sm) {
+        width: 192px;
+    }
 }

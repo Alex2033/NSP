@@ -1,6 +1,6 @@
 <div class="registration-block">
     <div class="registrations-headings">
-        <h3>Регистрация на мероприятие:</h3>
+        <h3 class="top-heading">Регистрация на мероприятие:</h3>
         <h3 class="primary">Международная научно-практическая конференция «Световой дизайн»</h3>
     </div>
     <div class="registration-info">
@@ -20,6 +20,6 @@
         <app-text [placeholder]="'Номера телефона*'" [formControlName]="'phone'" class="modal-control"></app-text>
         <app-text [placeholder]="'E-mail*'" [formControlName]="'email'" class="modal-control"></app-text>
         <app-checkbox [label]="'Согласен на'" [dataProcessingText]="'обработку данных'" [ngModel]="agree"></app-checkbox>
-        <button type="submit" class="button secondary" (click)="submit()">Зарегистрироваться</button>
+        <button type="submit" class="button secondary submit-button" (click)="submit()">Зарегистрироваться</button>
     </form>
 </div>
