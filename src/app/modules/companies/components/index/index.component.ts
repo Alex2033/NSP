@@ -11,17 +11,16 @@ import {Title} from '@angular/platform-browser';
   styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit {
+  static activities = [];
+  activities = [];
   screen: string;
-
-  static activities = []
   companies: Company[];
   companiesCount: number;
-  activities = [];
 
   constructor(
-    private api: ApiService, 
-    private route: ActivatedRoute, 
-    private router: Router, 
+    private api: ApiService,
+    private route: ActivatedRoute,
+    private router: Router,
     protected title: Title,
     private responsive: ResponsiveService
   ) {}

@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ResponsiveService} from 'src/app/shared/services/responsive.service';
+import {ApiService} from '../../../../shared/services/api.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Title} from '@angular/platform-browser';
 import {ApartmentComplex} from '../../../../shared/contracts/apartment-complex';
 
 @Component({
@@ -8,6 +11,8 @@ import {ApartmentComplex} from '../../../../shared/contracts/apartment-complex';
   styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit {
+  static areas = [];
+  areas = [];
   screen: string;
 
   cards = {
@@ -203,88 +208,71 @@ export class IndexComponent implements OnInit {
       ],
     }
   };
-  objects: any[] = [
+  objectsCount: number;
+  objects: ApartmentComplex[] = [];
+
+  types = [
+    {
+      id: null,
+      value: 'Все типы'
+    },
     {
       id: 1,
-      name: 'ЖК «Новое купчино»',
-      areaName: 'Василеостровский район',
-      imageXl: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      imageLg: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      imageMd: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      imageSm: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
+      value: 'Коммерческая'
     },
     {
       id: 2,
-      name: 'ЖК «Новый Лесснер»',
-      areaName: 'Московский район',
-      imageXl: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      imageLg: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      imageMd: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      imageSm: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
+      value: 'Жилая'
     },
     {
       id: 3,
-      name: 'ЖК «LIFE-Лесная»',
-      areaName: 'Выборгский район',
-      imageXl: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      imageLg: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      imageMd: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      imageSm: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
+      value: 'Апартаменты'
     },
     {
       id: 4,
-      name: 'ЖК «Новый Лесснер»',
-      areaName: 'Московский район',
-      imageXl: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      imageLg: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      imageMd: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-      imageSm: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
+      value: 'ИЖС'
     }
   ];
 
-  options1: [
-    {
-      id: 1,
-      value: 'Вариант 1'
-    },
-    {
-      id: 2,
-      value: 'Вариант 2'
-    },
-    {
-      id: 3,
-      value: 'Вариант 3'
-    }
-  ];
-
-  options2: [
-    {
-      id: 1,
-      value: 'Вариант 1'
-    },
-    {
-      id: 2,
-      value: 'Вариант 2'
-    },
-    {
-      id: 3,
-      value: 'Вариант 3'
-    }
-  ];
-
-  constructor(public responsive: ResponsiveService) {
+  constructor(
+    private api: ApiService,
+    private route: ActivatedRoute,
+    private router: Router,
+    protected title: Title,
+    private responsive: ResponsiveService
+  ) {
   }
 
   ngOnInit() {
-    this.objects = this.objects.map(x => {
-      return {
-        type: 'object',
-        data: x
-      };
-    });
     this.responsive.screen.subscribe((screen) => {
       this.screen = screen;
     });
-  }
 
+    this.title.setTitle('Объекты недвижимости' + ' - NSP.ru');
+    this.route.data.subscribe(data => {
+      this.objectsCount = data.objects.count;
+      this.objects = data.objects.items;
+    });
+    if (IndexComponent.areas.length === 0) {
+      this.api.getAreas().subscribe(activities => {
+        IndexComponent.areas = activities.items.map(x => {
+          return {
+            id: x.id,
+            value: x.name
+          };
+        });
+
+        IndexComponent.areas.unshift({
+          id: null,
+          value: 'Все районы'
+        });
+        this.areas = IndexComponent.areas;
+      });
+    } else {
+      this.areas = IndexComponent.areas;
+    }
+  }
+  applySearch(filter) {
+    this.router.navigate(['/objects'], {queryParams: {search: filter.search, area_id: filter.area_id, type_id: filter.type_id}});
+  }
 }

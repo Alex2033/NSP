@@ -15,6 +15,12 @@ export class ApiService {
   constructor(private apiClient: ApiClientService) {
   }
 
+  getAreas(): Observable<any> {
+    return this.apiClient.get(`/api/site/areas`).pipe(map((response) => {
+      return deserialize(response);
+    }));
+  }
+
   getQuotes(filter = {}): Observable<any> {
     return this.apiClient.get(`/api/site/quotes`, {
       params: filter
@@ -59,6 +65,14 @@ export class ApiService {
 
   getMenuElements(): Observable<any> {
     return this.apiClient.get(`/api/site/menu`).pipe(map((response) => {
+      return deserialize(response);
+    }));
+  }
+
+  getApartmentComplexes(filter = {}): Observable<any> {
+    return this.apiClient.get(`/api/site/apartment_complexes`, {
+      params: filter
+    }).pipe(map((response) => {
       return deserialize(response);
     }));
   }

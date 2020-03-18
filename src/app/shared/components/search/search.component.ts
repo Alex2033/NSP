@@ -59,7 +59,6 @@ export class SearchComponent implements OnInit {
     }
 
     submit() {
-        console.log(this.formGroup.value);
         this.apply.emit(this.formGroup.value);
     }
 }
