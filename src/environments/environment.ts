@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   apiHost: 'http://admin.nsp.localhost',
-  useApi: true
+  useApi: false
 };
 
 /*

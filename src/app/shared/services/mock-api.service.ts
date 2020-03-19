@@ -2,13 +2,14 @@ import {Injectable} from '@angular/core';
 import {ApiClientService} from './api-client.service';
 import {Observable, of} from 'rxjs';
 import {ApartmentComplex} from '../contracts/apartment-complex';
+import {ResponseService} from './response.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MockApiService {
 
-  constructor(private apiClient: ApiClientService) {
+  constructor(private apiClient: ApiClientService, private response: ResponseService) {
   }
 
   getSearchResults(filter = {}) {
@@ -182,6 +183,7 @@ export class MockApiService {
   }
 
   getServerData(route) {
+    this.response.notFound();
     return of();
   }
 
