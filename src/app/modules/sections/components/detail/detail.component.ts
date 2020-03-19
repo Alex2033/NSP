@@ -27,12 +27,12 @@ export class DetailComponent implements OnInit, AfterViewInit {
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'material-list',
           size: 'small',
-          view: 'default',
+          view: 'half',
           position: {
             x: 4,
             y: 1
@@ -48,12 +48,12 @@ export class DetailComponent implements OnInit, AfterViewInit {
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'advertising',
@@ -75,12 +75,12 @@ export class DetailComponent implements OnInit, AfterViewInit {
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'material',
           size: 'small',
-          view: 'backgroundImage'
+          view: 'full'
         },
       ],
       smallDesktop: [
@@ -90,12 +90,12 @@ export class DetailComponent implements OnInit, AfterViewInit {
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'material-list',
           size: 'small',
-          view: 'default',
+          view: 'half',
           position: {
             x: 3,
             y: 1
@@ -111,12 +111,12 @@ export class DetailComponent implements OnInit, AfterViewInit {
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'advertising',
@@ -138,12 +138,12 @@ export class DetailComponent implements OnInit, AfterViewInit {
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'material',
           size: 'small',
-          view: 'backgroundImage'
+          view: 'full'
         },
       ],
       tablet: [
@@ -153,12 +153,12 @@ export class DetailComponent implements OnInit, AfterViewInit {
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'material-list',
           size: 'small',
-          view: 'default',
+          view: 'half',
           position: {
             x: 1,
             y: 2
@@ -174,12 +174,12 @@ export class DetailComponent implements OnInit, AfterViewInit {
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'advertising',
@@ -201,29 +201,29 @@ export class DetailComponent implements OnInit, AfterViewInit {
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'material',
           size: 'small',
-          view: 'backgroundImage'
+          view: 'full'
         },
       ],
       mobile: [
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
       ],
     }
@@ -242,7 +242,7 @@ export class DetailComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    
+
     if (this.screen === 'sm') {
       this.scrollbarRef.scrolled.subscribe(e => {
         this.scrollPosition = e.target.scrollLeft;

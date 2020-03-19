@@ -65,6 +65,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { MobileCardsSliderComponent } from './components/mobile-cards-slider/mobile-cards-slider.component';
 import { EditorContentComponent } from './components/editor-content/editor-content.component';
 import {LazyLoadImageModule} from 'ng-lazyload-image';
+import { NiceDatePipe } from './pipes/nice-date.pipe';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -127,7 +128,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     DomainPipe,
     MenuComponent,
     MobileCardsSliderComponent,
-    EditorContentComponent
+    EditorContentComponent,
+    NiceDatePipe
   ],
   imports: [
     CommonModule,
@@ -196,7 +198,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MenuComponent,
     MobileCardsSliderComponent,
     EditorContentComponent,
-    LazyLoadImageModule
+    LazyLoadImageModule,
+    NiceDatePipe
   ],
   providers: [
     {

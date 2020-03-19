@@ -15,6 +15,7 @@ import {MenuService} from '../../services/menu.service';
 import {NgScrollbar} from 'ngx-scrollbar';
 import {count} from 'rxjs/operators';
 import {isPlatformBrowser, isPlatformServer} from '@angular/common';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -41,7 +42,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   visibleMenuElements = [];
   hiddenMenuElements = [];
   menuElements = [];
-
+  searchQuery: string;
   get showBanner(): boolean {
     return this.bannerService.showBanner;
   }
@@ -51,6 +52,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     public modal: ModalService,
     private responsive: ResponsiveService,
     private menuService: MenuService,
+    private router: Router,
     @Inject(PLATFORM_ID) private platformId: any
   ) {
     if (isPlatformBrowser(this.platformId)) {
@@ -131,5 +133,10 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   showMenu() {
     this.menuService.openMenu();
+  }
+
+  search() {
+    this.router.navigate(['/search'], {queryParams: {search: this.searchQuery}});
+    this.searchQuery = '';
   }
 }

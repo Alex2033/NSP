@@ -24,12 +24,12 @@ export class IndexComponent implements OnInit {
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'material-list',
           size: 'small',
-          view: 'default',
+          view: 'half',
           position: {
             x: 4,
             y: 1
@@ -45,12 +45,12 @@ export class IndexComponent implements OnInit {
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'advertising',
@@ -72,12 +72,12 @@ export class IndexComponent implements OnInit {
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'material',
           size: 'small',
-          view: 'backgroundImage'
+          view: 'full'
         },
       ],
       smallDesktop: [
@@ -87,12 +87,12 @@ export class IndexComponent implements OnInit {
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'material-list',
           size: 'small',
-          view: 'default',
+          view: 'half',
           position: {
             x: 3,
             y: 1
@@ -108,12 +108,12 @@ export class IndexComponent implements OnInit {
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'advertising',
@@ -135,12 +135,12 @@ export class IndexComponent implements OnInit {
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'material',
           size: 'small',
-          view: 'backgroundImage'
+          view: 'full'
         },
       ],
       tablet: [
@@ -150,12 +150,12 @@ export class IndexComponent implements OnInit {
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'material-list',
           size: 'small',
-          view: 'default',
+          view: 'half',
           position: {
             x: 2,
             y: 1
@@ -171,12 +171,12 @@ export class IndexComponent implements OnInit {
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'advertising',
@@ -198,12 +198,12 @@ export class IndexComponent implements OnInit {
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'material',
           size: 'small',
-          view: 'backgroundImage'
+          view: 'full'
         },
       ],
     }

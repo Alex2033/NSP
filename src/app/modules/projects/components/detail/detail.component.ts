@@ -11,12 +11,12 @@ export class DetailComponent implements OnInit {
   screen: string;
 
   categories = [
-    'Подобрать ЖК', 
-    'Технология строительства', 
-    'Новости', 
-    'Интервью', 
-    'Аналитика', 
-    'Выборгский район', 
+    'Подобрать ЖК',
+    'Технология строительства',
+    'Новости',
+    'Интервью',
+    'Аналитика',
+    'Выборгский район',
     'Московский район'
   ];
 
@@ -63,12 +63,12 @@ export class DetailComponent implements OnInit {
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'material-list',
           size: 'small',
-          view: 'default',
+          view: 'half',
           position: {
             x: 4,
             y: 1
@@ -83,13 +83,13 @@ export class DetailComponent implements OnInit {
         },
         {
           type: 'material',
-          size: 'small',
-          view: 'default'
+          size: 'medium-horizontal',
+          view: 'half'
         },
         {
           type: 'material',
-          size: 'small',
-          view: 'default'
+          size: 'medium-vertical',
+          view: 'half'
         },
         {
           type: 'advertising',
@@ -110,13 +110,13 @@ export class DetailComponent implements OnInit {
         },
         {
           type: 'material',
-          size: 'small',
-          view: 'default'
+          size: 'large',
+          view: 'full'
         },
         {
           type: 'material',
           size: 'small',
-          view: 'backgroundImage'
+          view: 'full'
         },
       ],
       smallDesktop: [
@@ -129,12 +129,12 @@ export class DetailComponent implements OnInit {
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'material-list',
           size: 'small',
-          view: 'default',
+          view: 'half',
           position: {
             x: 3,
             y: 1
@@ -150,12 +150,12 @@ export class DetailComponent implements OnInit {
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'advertising',
@@ -177,12 +177,12 @@ export class DetailComponent implements OnInit {
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'material',
           size: 'small',
-          view: 'backgroundImage'
+          view: 'full'
         },
       ],
       tablet: [
@@ -195,12 +195,12 @@ export class DetailComponent implements OnInit {
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'material-list',
           size: 'small',
-          view: 'default',
+          view: 'half',
           position: {
             x: 1,
             y: 2
@@ -216,12 +216,12 @@ export class DetailComponent implements OnInit {
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'advertising',
@@ -243,12 +243,12 @@ export class DetailComponent implements OnInit {
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'material',
           size: 'small',
-          view: 'backgroundImage'
+          view: 'full'
         },
       ],
       mobile: [
@@ -258,7 +258,7 @@ export class DetailComponent implements OnInit {
         {
           type: 'material-list',
           size: 'small',
-          view: 'default',
+          view: 'half',
           position: {
             x: 1,
             y: 5
@@ -274,7 +274,7 @@ export class DetailComponent implements OnInit {
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'video',
@@ -292,12 +292,12 @@ export class DetailComponent implements OnInit {
         {
           type: 'material',
           size: 'small',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'material',
           size: 'small',
-          view: 'backgroundImage'
+          view: 'full'
         },
       ],
     }
@@ -306,7 +306,7 @@ export class DetailComponent implements OnInit {
   constructor(public responsive: ResponsiveService) { }
 
   ngOnInit() {
-    this.responsive.screen.subscribe((screen) => { 
+    this.responsive.screen.subscribe((screen) => {
       this.screen = screen;
     });
   }

@@ -17,22 +17,22 @@ export class IndexComponent implements OnInit {
     {
       type: 'material',
       size: 'small',
-      view: 'backgroundImage'
+      view: 'full'
     },
     {
       type: 'material',
       size: 'small',
-      view: 'backgroundImage'
+      view: 'full'
     },
     {
       type: 'material',
       size: 'small',
-      view: 'backgroundImage'
+      view: 'full'
     },
     {
       type: 'material',
       size: 'small',
-      view: 'backgroundImage'
+      view: 'full'
     }
   ];
 

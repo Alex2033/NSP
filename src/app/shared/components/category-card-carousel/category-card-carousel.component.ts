@@ -13,15 +13,15 @@ export class CategoryCardCarouselComponent implements OnInit {
       cards: [
         {
           type: 'material',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'material',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'material',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'advertising'
@@ -36,7 +36,7 @@ export class CategoryCardCarouselComponent implements OnInit {
       cards: [
         {
           type: 'material',
-          view: 'default'
+          view: 'half'
         },
         {
           type: 'advertising'

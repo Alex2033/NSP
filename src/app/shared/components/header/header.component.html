@@ -143,8 +143,8 @@
                 <button (click)="modal.open('news-offer-form')" class="header-action-text">Прислать новость</button>
             </div>
         </div>
-        <form class="search">
-            <input type="text" placeholder="Поиск по сайту" required>
+        <form class="search" (submit)="search()">
+            <input [ngModelOptions]="{standalone: true}" type="text" placeholder="Поиск по сайту" [(ngModel)]="searchQuery" required>
             <button type="submit" class="search-button short-button no-bg">
                 <svg class="icon">
                     <use xlink:href="assets/sprites/icons.svg#icon_search"></use>

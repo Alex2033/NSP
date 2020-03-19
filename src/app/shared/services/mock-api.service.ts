@@ -15,6 +15,83 @@ export class MockApiService {
   getSearchResults(filter = {}) {
     return of(
       {
+        articles: {
+          count: 15,
+          items: [
+            {
+              type: 'article',
+              size: 'small',
+              publishedAt: 1584608518,
+              markerName: '💥 Свежее',
+              title: 'Долги под апартами',
+              previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
+              view: 'half',
+              articleViewsCount: 12453,
+              directorySlug: 'commerce',
+              directoryName: 'Коммерческая недвижимость',
+              articleId: 123,
+              articleSlug: 'article-slug',
+              imageXl: 'https://picsum.photos/304/152',
+              imageLg: 'https://picsum.photos/304/152',
+              imageMd: 'https://picsum.photos/304/152',
+              imageSm: 'https://picsum.photos/304/152',
+            },
+            {
+              type: 'article',
+              size: 'small',
+              publishedAt: 1584608518,
+              markerName: '💥 Свежее',
+              title: 'Долги под апартами',
+              previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
+              view: 'half',
+              articleViewsCount: 12453,
+              directorySlug: 'commerce',
+              directoryName: 'Коммерческая недвижимость',
+              articleId: 123,
+              articleSlug: 'article-slug',
+              imageXl: 'https://picsum.photos/304/152',
+              imageLg: 'https://picsum.photos/304/152',
+              imageMd: 'https://picsum.photos/304/152',
+              imageSm: 'https://picsum.photos/304/152',
+            },
+            {
+              type: 'article',
+              size: 'small',
+              publishedAt: 1584608518,
+              markerName: '💥 Свежее',
+              title: 'Долги под апартами',
+              previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
+              view: 'half',
+              articleViewsCount: 12453,
+              directorySlug: 'commerce',
+              directoryName: 'Коммерческая недвижимость',
+              articleId: 123,
+              articleSlug: 'article-slug',
+              imageXl: 'https://picsum.photos/304/152',
+              imageLg: 'https://picsum.photos/304/152',
+              imageMd: 'https://picsum.photos/304/152',
+              imageSm: 'https://picsum.photos/304/152',
+            },
+            {
+              type: 'article',
+              size: 'small',
+              publishedAt: 1584608518,
+              markerName: '💥 Свежее',
+              title: 'Долги под апартами',
+              previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
+              view: 'half',
+              articleViewsCount: 12453,
+              directorySlug: 'commerce',
+              directoryName: 'Коммерческая недвижимость',
+              articleId: 123,
+              articleSlug: 'article-slug',
+              imageXl: 'https://picsum.photos/304/152',
+              imageLg: 'https://picsum.photos/304/152',
+              imageMd: 'https://picsum.photos/304/152',
+              imageSm: 'https://picsum.photos/304/152',
+            }
+          ]
+        },
         companies: {
           count: 4,
           items: [
@@ -65,26 +142,6 @@ export class MockApiService {
               logoLg: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
               logoMd: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
               logoSm: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80'
-            }
-          ]
-        },
-        articles: {
-          count: 3,
-          items: [
-            {
-              type: 'material',
-              size: 'small',
-              view: 'default'
-            },
-            {
-              type: 'material',
-              size: 'small',
-              view: 'backgroundImage'
-            },
-            {
-              type: 'material',
-              size: 'small',
-              view: 'default'
             }
           ]
         },

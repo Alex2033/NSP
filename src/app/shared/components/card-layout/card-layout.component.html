@@ -10,7 +10,7 @@
                            [view]="card.view"></app-material-card>
       </ng-container>
       <ng-container *ngSwitchCase="'material-list'">
-        <app-material-list-card [size]="card.size" [view]="card.view"
+        <app-material-list-card [size]="card.size" [view]="'default'"
                                 [class]="card.size !== 'small' ? card.size : null"
                                 [style.grid-column]="card.position.x ? card.position.x : null"
                                 [style.grid-row-start]="card.position.y ? card.position.y : null"

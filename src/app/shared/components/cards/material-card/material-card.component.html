@@ -1,155 +1,73 @@
-<ng-container [ngSwitch]="view">
-  <ng-container *ngSwitchCase="'default'">
-    <ng-container [ngSwitch]="size">
-      <ng-container *ngSwitchCase="'small'">
-        <a [routerLink]="['']" class="card-wrapper default">
-          <div class="card-top">
-            <div class="date">Сегодня в 16:45</div>
-            <div class="tag">
-              <div class="emoji">👩‍👩‍👦‍👦</div>
-              <span>Обсуждаемое</span>
-            </div>
-          </div>
-          <div class="card-img">
-            <div class="image-overlay"></div>
-            <img src="https://picsum.photos/304/152" alt="card image">
-          </div>
-          <div class="card-content">
-            <h5>Долги под апартами</h5>
-            <div class="card-text">
-              <p>«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия</p>
-            </div>
-            <footer class="card-footer">
-              <div class="views">
-                <svg class="views-icon">
-                  <use xlink:href="assets/sprites/icons.svg#eye"></use>
-                </svg>
-                <span class="views-number">1 234</span>
-              </div>
-              <div class="category">
-                Коммерческая недвижимость
-              </div>
-            </footer>
-          </div>
-        </a>
-      </ng-container>
-      <ng-container *ngSwitchCase="'medium-horizontal'">
-        <a [routerLink]="['']" class="card-wrapper default horizontal extended">
-          <div class="card-img">
-            <div class="image-overlay"></div>
-            <img src="https://picsum.photos/304/152" alt="card image">
-          </div>
-          <div class="card-content">
-            <div class="card-top static">
-              <div class="date">Сегодня в 16:45</div>
-            </div>
-            <h5>Долги под апартами</h5>
-            <div class="card-text">
-              <p>«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия</p>
-            </div>
-            <footer class="card-footer">
-              <div class="views">
-                <svg class="views-icon">
-                  <use xlink:href="assets/sprites/icons.svg#eye"></use>
-                </svg>
-                <span class="views-number">1 234</span>
-              </div>
-              <div class="category">
-                Коммерческая недвижимость
-              </div>
-            </footer>
-          </div>
-        </a>
-      </ng-container>
-      <ng-container *ngSwitchCase="'medium-vertical'">
-        <a [routerLink]="['']" class="card-wrapper default vertical extended">
-          <div class="card-img">
-            <div class="image-overlay"></div>
-            <img src="https://picsum.photos/304/152" alt="card image">
-          </div>
-          <div class="card-content">
-            <div class="card-top static">
-              <div class="date dark">Сегодня в 16:45</div>
-            </div>
-            <h5>Долги под апартами</h5>
-            <div class="card-text">
-              <p>«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия</p>
-            </div>
-            <footer class="card-footer">
-              <div class="views">
-                <svg class="views-icon">
-                  <use xlink:href="assets/sprites/icons.svg#eye"></use>
-                </svg>
-                <span class="views-number">1 234</span>
-              </div>
-              <div class="category">
-                Коммерческая недвижимость
-              </div>
-            </footer>
-          </div>
-        </a>
-      </ng-container>
-      <ng-container *ngSwitchCase="'large'">
-        <a [routerLink]="['']" class="card-wrapper default large extended">
-          <div class="card-img">
-            <div class="image-overlay"></div>
-            <img src="https://picsum.photos/304/152" alt="card image">
-          </div>
-          <div class="card-content">
-            <div class="card-top static">
-              <div class="date dark">Сегодня в 16:45</div>
-            </div>
-            <h5>Долги под апартами</h5>
-            <div class="card-text">
-              <p>«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия</p>
-            </div>
-            <footer class="card-footer">
-              <div class="views">
-                <svg class="views-icon">
-                  <use xlink:href="assets/sprites/icons.svg#eye"></use>
-                </svg>
-                <span class="views-number">1 234</span>
-              </div>
-              <div class="category">
-                Коммерческая недвижимость
-              </div>
-            </footer>
-          </div>
-        </a>
-      </ng-container>
-    </ng-container>
-  </ng-container>
-  <ng-container *ngSwitchCase="'backgroundImage'">
-    <a [routerLink]="['']" class="card-wrapper backgroundImage">
-      <div class="card-top">
-        <div class="date">Сегодня в 16:45</div>
-        <div class="tag">
-          <div class="emoji">💥</div>
-          <span>Свежее</span>
-        </div>
+<ng-container *ngIf="view === 'half' || !data.imageXl">
+  <a
+    [routerLink]="['']"
+    class="card-wrapper default"
+    [class.extended]="size !== 'small'"
+    [class.horizontal]="size === 'medium-horizontal'"
+    [class.vertical]="size === 'medium-vertical'"
+    [class.large]="size === 'large'"
+  >
+    <div class="card-top" *ngIf="size === 'small'">
+      <div class="date">{{ data.publishedAt * 1000 | niceDate }} в {{ data.publishedAt | date: 'shortTime' }}</div>
+      <div class="tag">
+        {{ data.markerName }}
       </div>
-      <div class="card-content">
-        <h5>Какие советские постройки значимы и важны для Петербурга?</h5>
-        <div class="card-text">
-          <p>Ольга Витальевна Трошева. Руководитель КЦ «Петербургская Недвижимость»</p>
-        </div>
-        <footer class="card-footer light">
-          <div class="views">
-            <svg class="views-icon">
-              <use xlink:href="assets/sprites/icons.svg#eye"></use>
-            </svg>
-            <span class="views-number">1 234</span>
-          </div>
-          <div class="category">
-            Спич
-          </div>
-        </footer>
-      </div>
-      <div class="card-overlay"></div>
+    </div>
+    <div class="card-img" *ngIf="data.imageXl">
       <div class="image-overlay"></div>
-      <div class="background-img">
-        <img src="https://picsum.photos/304/304" alt="card image">
+      <app-responsive-image [xl]="data.imageXl" [lg]="data.imageLg" [md]="data.imageMd" [xs]="data.imageSm" [sm]="data.imageSm"></app-responsive-image>
+    </div>
+    <div class="card-content">
+      <div class="card-top static" *ngIf="size !== 'small'">
+        <div class="date">{{ data.publishedAt * 1000 | niceDate }} в {{ data.publishedAt | date: 'shortTime' }}</div>
       </div>
-    </a>
-  </ng-container>
+      <h5>{{ data.title }}</h5>
+      <div class="card-text">
+        <p>{{ data.previewText }}</p>
+      </div>
+      <footer class="card-footer">
+        <div class="views">
+          <svg class="views-icon">
+            <use xlink:href="assets/sprites/icons.svg#eye"></use>
+          </svg>
+          <span class="views-number">{{ data.articleViewsCount | number }}</span>
+        </div>
+        <div class="category">
+          {{ data.directoryName }}
+        </div>
+      </footer>
+    </div>
+  </a>
+</ng-container>
+<ng-container *ngIf="view === 'full' && data.imageXl">
+  <a [routerLink]="['']" class="card-wrapper backgroundImage">
+    <div class="card-top">
+      <div class="date">{{ data.publishedAt * 1000 | niceDate }} в {{ data.publishedAt | date: 'shortTime' }}</div>
+      <div class="tag">
+        {{ data.markerName }}
+      </div>
+    </div>
+    <div class="card-content">
+      <h5>{{ data.title }}</h5>
+      <div class="card-text">
+        <p>{{ data.previewText }}</p>
+      </div>
+      <footer class="card-footer light">
+        <div class="views">
+          <svg class="views-icon">
+            <use xlink:href="assets/sprites/icons.svg#eye"></use>
+          </svg>
+          <span class="views-number">{{ data.articleViewsCount | number }}</span>
+        </div>
+        <div class="category">
+          {{ data.directoryName }}
+        </div>
+      </footer>
+    </div>
+    <div class="card-overlay"></div>
+    <div class="image-overlay"></div>
+    <div class="background-img">
+      <app-responsive-image [xl]="data.imageXl" [lg]="data.imageLg" [md]="data.imageMd" [xs]="data.imageSm" [sm]="data.imageSm"></app-responsive-image>
+    </div>
+  </a>
 </ng-container>

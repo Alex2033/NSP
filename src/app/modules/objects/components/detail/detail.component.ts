@@ -54,22 +54,22 @@ export class DetailComponent implements OnInit {
     {
       type: 'material',
       size: 'small',
-      view: 'default'
+      view: 'half'
     },
     {
       type: 'material',
       size: 'small',
-      view: 'default'
+      view: 'half'
     },
     {
       type: 'material',
       size: 'small',
-      view: 'default'
+      view: 'half'
     },
     {
       type: 'material',
       size: 'small',
-      view: 'backgroundImage'
+      view: 'full'
     },
   ];
 

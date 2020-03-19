@@ -19,22 +19,22 @@ export class DetailComponent implements OnInit {
     {
       type: 'material',
       size: 'small',
-      view: 'default'
+      view: 'half'
     },
     {
       type: 'material',
       size: 'small',
-      view: 'default'
+      view: 'half'
     },
     {
       type: 'material',
       size: 'small',
-      view: 'default'
+      view: 'half'
     },
     {
       type: 'material',
       size: 'small',
-      view: 'default'
+      view: 'half'
     }
   ];
 
@@ -67,8 +67,6 @@ export class DetailComponent implements OnInit {
           content: this.company.description
         }
       );
-      this.company = data.company;
-      console.log(this.company);
     });
   }
 

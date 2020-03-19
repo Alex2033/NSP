@@ -5,8 +5,8 @@
                 {{ header }}
             </h2>
             <ul class="carousel-tabs">
-                <li 
-                    class="carousel-tab" 
+                <li
+                    class="carousel-tab"
                     *ngFor="let tab of tabs; let index = index"
                     [class.active]="cardsView === index"
                 >
@@ -33,7 +33,7 @@
             <ng-container *ngFor="let tab of tabs; let index = index">
                 <ng-container *ngFor="let tabCard of tab.cards">
                     <div class="swiper-slide" [class.animated]="cardsView === index" *ngIf="cardsView === index">
-                        <app-material-card [size]="'small'" [view]="'default'"></app-material-card>
+                        <app-material-card [size]="'small'" [view]="'half'"></app-material-card>
                     </div>
                 </ng-container>
             </ng-container>
@@ -41,10 +41,10 @@
     </div>
 
     <!-- Эта часть на разработке -->
-    <!-- <div 
-        class="swiper-container" 
-        [swiper]="carouselConfig" 
-        #carousel 
+    <!-- <div
+        class="swiper-container"
+        [swiper]="carouselConfig"
+        #carousel
     >
         <div class="swiper-wrapper" >
             <ng-container *ngFor="let tab of tabs; let index = index">
@@ -54,7 +54,7 @@
                         </div>
                 </ng-container>
             </ng-container>
-            
+
         </div>
     </div> -->
 </div>
