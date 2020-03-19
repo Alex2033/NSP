@@ -45,3 +45,13 @@ app-news-slider {
     display: block;
     margin-bottom: 48px;
 }
+
+.materials {
+    @include media-breakpoint-down(sm) {
+        ::ng-deep {
+            app-material-card {
+                margin: 0 12px;
+            }
+        }
+    }  
+}

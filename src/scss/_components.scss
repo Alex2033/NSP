@@ -1,5 +1,6 @@
 // Здесь находятся стили для повторно используемых компонент из макета UI KIT. Hovers
 @import "responsive";
+@import "mixins/mouse";
 
 .button {
     font-family: 'Montserrat';
@@ -17,8 +18,10 @@
       padding: 10px 16px;
       font-size: 13px;
 
-      &:hover {
-        background-color: darken($light-color, 5%);
+      @include mouse {
+        &:hover {
+            background-color: darken($light-color, 5%);
+          }
       }
 
       &:active {
@@ -32,8 +35,10 @@
       padding: 17px 24px;
       font-size: 14px;
 
-      &:hover {
-        background-color: darken($secondary-color, 5%);
+      @include mouse {
+        &:hover {
+            background-color: darken($secondary-color, 5%);
+        }
       }
 
       &:active {
@@ -46,8 +51,11 @@
     cursor: pointer;
     border: 0;
     transition: background-color .2s ease;
-    &:hover {
-        background-color: lighten($primary-color, 15%);
+
+    @include mouse {
+        &:hover {
+            background-color: lighten($primary-color, 15%);
+        }
     }
 
     &:active {
@@ -117,6 +125,45 @@
       padding: 6px;
     }
 
+    &.white {
+        background-color: transparent;
+        border: 1px solid $light-color;
+
+        .icon {
+            fill: $light-color;
+        }
+
+        @include mouse {
+            &:hover {
+                background-color: $light-color;
+    
+                .icon {
+                    fill: $primary-color;
+                }
+            }
+        }
+
+        &:disabled {
+            @include mouse {
+                &:hover {
+                    background-color: transparent;
+    
+                    .icon {
+                        fill: $light-color;
+                    }
+                }
+            }
+        }
+
+        &:active {
+            background-color: darken($light-color, 10%);
+
+            .icon {
+                fill: $primary-color;
+            }
+        }
+    }
+
     &.light {
         background-color: transparent;
         border: 1px solid $border-color;
@@ -125,20 +172,24 @@
             fill: $gray;
         }
 
-        &:hover {
-            background-color: $light-color;
-
-            .icon {
-                fill: $primary-color;
+        @include mouse {
+            &:hover {
+                background-color: $light-color;
+    
+                .icon {
+                    fill: $primary-color;
+                }
             }
         }
 
         &:disabled {
-            &:hover {
-                background-color: transparent;
-
-                .icon {
-                    fill: $light-color;
+            @include mouse {
+                &:hover {
+                    background-color: transparent;
+    
+                    .icon {
+                        fill: $light-color;
+                    }
                 }
             }
         }
@@ -226,9 +277,11 @@
         transition: background-color .2s ease;
         background-color: $light-gray;
 
-        &:hover {
-            svg {
-                fill: $light-color;
+        @include mouse {
+            &:hover {
+                svg {
+                    fill: $light-color;
+                }
             }
         }
 
@@ -253,32 +306,43 @@
 }
 
 .vk {
-    &:hover {
-        background-color: #4A76A8 !important;
-    }
+    @include mouse {
+        &:hover {
+            background-color: #4A76A8 !important;
+        }
+    }  
 }
 
 .facebook {
-    &:hover {
-        background-color: #3A5998 !important;
+    @include mouse {
+        &:hover {
+            background-color: #3A5998 !important;
+        }
     }
 }
 
 .telegram {
-    &:hover {
-        background-color: #1F9BDB !important;
+    @include mouse {
+        &:hover {
+            background-color: #1F9BDB !important;
+        }
     }
+    
 }
 
 .twitter {
-    &:hover {
-        background-color: #42ABE1 !important;
+    @include mouse {
+        &:hover {
+            background-color: #42ABE1 !important;
+        }   
     }
 }
 
 .instagram {
-    &:hover {
-        background-color: #B9189E !important;
+    @include mouse {
+        &:hover {
+            background-color: #B9189E !important;
+        }  
     }
 }
 

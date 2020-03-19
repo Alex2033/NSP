@@ -251,6 +251,55 @@ export class DetailComponent implements OnInit {
           view: 'backgroundImage'
         },
       ],
+      mobile: [
+        {
+          type: 'slider'
+        },
+        {
+          type: 'material-list',
+          size: 'small',
+          view: 'default',
+          position: {
+            x: 1,
+            y: 5
+          }
+        },
+        {
+          type: 'latest-news',
+          position: {
+            x: 1,
+            y: 2
+          }
+        },
+        {
+          type: 'material',
+          size: 'small',
+          view: 'default'
+        },
+        {
+          type: 'video',
+          size: 'small'
+        },
+        {
+          type: 'material-list',
+          size: 'small',
+          view: 'readBlock',
+          position: {
+            x: 1,
+            y: 6
+          }
+        },
+        {
+          type: 'material',
+          size: 'small',
+          view: 'default'
+        },
+        {
+          type: 'material',
+          size: 'small',
+          view: 'backgroundImage'
+        },
+      ],
     }
   };
 
