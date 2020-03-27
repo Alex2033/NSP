@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ApartmentComplex} from '../../../../shared/contracts/apartment-complex';
+import {ArticleCard} from '../../../../shared/contracts/article-card';
 
 @Component({
   selector: 'app-detail',
@@ -8,6 +9,8 @@ import {ApartmentComplex} from '../../../../shared/contracts/apartment-complex';
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
+
+  articles: ArticleCard[] = [];
 
   apartments = [
     {
@@ -75,7 +78,7 @@ export class DetailComponent implements OnInit {
 
   public placemarkProperties = {
     iconCaption: 'ЖК Life-Лесная'
-  }
+  };
 
 
   apartmentComplex: ApartmentComplex;
@@ -86,11 +89,12 @@ export class DetailComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.apartmentComplex = this.route.snapshot.data.content.apartmentComplex;
+      this.articles = this.route.snapshot.data.articles.items;
     });
   }
 
   scrollToElement($element): void {
-    $element.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+    $element.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'});
   }
 
 }

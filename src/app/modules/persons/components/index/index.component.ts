@@ -14,29 +14,6 @@ import {ArticleCard} from '../../../../shared/contracts/article-card';
 export class IndexComponent implements OnInit {
   screen: string;
 
-  cards = [
-    {
-      type: 'material',
-      size: 'small',
-      view: 'full'
-    },
-    {
-      type: 'material',
-      size: 'small',
-      view: 'full'
-    },
-    {
-      type: 'material',
-      size: 'small',
-      view: 'full'
-    },
-    {
-      type: 'material',
-      size: 'small',
-      view: 'full'
-    }
-  ];
-
   personsCount: number;
   persons: Person[] = [];
   articles: ArticleCard[] = [];

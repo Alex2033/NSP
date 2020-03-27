@@ -17,9 +17,9 @@ export class ArticlesResolver implements Resolve<ListResponse<ArticleCard>> {
       filter.person_id = parseInt(route.params.person_slug, 10);
     }
 
-    if (route.queryParams.page) {
-      filter.offset = (route.queryParams.page - 1) * 12;
-    }
+    // if (route.queryParams.page) {
+    //   filter.offset = (route.queryParams.page - 1) * 12;
+    // }
     filter.limit = 12;
 
     return this.api.getPersonArticles(filter);

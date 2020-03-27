@@ -4,6 +4,7 @@ import {ApiService} from '../../../../shared/services/api.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Title} from '@angular/platform-browser';
 import {ApartmentComplex} from '../../../../shared/contracts/apartment-complex';
+import {ArticleCard} from '../../../../shared/contracts/article-card';
 
 @Component({
   selector: 'app-index',
@@ -14,200 +15,7 @@ export class IndexComponent implements OnInit {
   static areas = [];
   areas = [];
   screen: string;
-
-  cards = {
-    resolutions: {
-      desktop: [
-        {
-          type: 'front'
-        },
-        {
-          type: 'material',
-          size: 'small',
-          view: 'half'
-        },
-        {
-          type: 'material-list',
-          size: 'small',
-          view: 'half',
-          position: {
-            x: 4,
-            y: 1
-          }
-        },
-        {
-          type: 'latest-news',
-          position: {
-            x: 1,
-            y: 2
-          }
-        },
-        {
-          type: 'material',
-          size: 'small',
-          view: 'half'
-        },
-        {
-          type: 'material',
-          size: 'small',
-          view: 'half'
-        },
-        {
-          type: 'advertising',
-          size: 'small'
-        },
-        {
-          type: 'video',
-          size: 'medium-horizontal'
-        },
-        {
-          type: 'material-list',
-          size: 'medium-vertical',
-          view: 'readBlock',
-          position: {
-            x: 4,
-            y: 3
-          }
-        },
-        {
-          type: 'material',
-          size: 'small',
-          view: 'half'
-        },
-        {
-          type: 'material',
-          size: 'small',
-          view: 'full'
-        },
-      ],
-      smallDesktop: [
-        {
-          type: 'front'
-        },
-        {
-          type: 'material',
-          size: 'small',
-          view: 'half'
-        },
-        {
-          type: 'material-list',
-          size: 'small',
-          view: 'half',
-          position: {
-            x: 3,
-            y: 1
-          }
-        },
-        {
-          type: 'latest-news',
-          position: {
-            x: 1,
-            y: 2
-          }
-        },
-        {
-          type: 'material',
-          size: 'small',
-          view: 'half'
-        },
-        {
-          type: 'material',
-          size: 'small',
-          view: 'half'
-        },
-        {
-          type: 'advertising',
-          size: 'small'
-        },
-        {
-          type: 'video',
-          size: 'medium-horizontal'
-        },
-        {
-          type: 'material-list',
-          size: 'medium-vertical',
-          view: 'readBlock',
-          position: {
-            x: 3,
-            y: 2
-          }
-        },
-        {
-          type: 'material',
-          size: 'small',
-          view: 'half'
-        },
-        {
-          type: 'material',
-          size: 'small',
-          view: 'full'
-        },
-      ],
-      tablet: [
-        {
-          type: 'front'
-        },
-        {
-          type: 'material',
-          size: 'small',
-          view: 'half'
-        },
-        {
-          type: 'material-list',
-          size: 'small',
-          view: 'half',
-          position: {
-            x: 2,
-            y: 1
-          }
-        },
-        {
-          type: 'latest-news',
-          position: {
-            x: 1,
-            y: 2
-          }
-        },
-        {
-          type: 'material',
-          size: 'small',
-          view: 'half'
-        },
-        {
-          type: 'material',
-          size: 'small',
-          view: 'half'
-        },
-        {
-          type: 'advertising',
-          size: 'small'
-        },
-        {
-          type: 'video',
-          size: 'medium-horizontal'
-        },
-        {
-          type: 'material-list',
-          size: 'medium-vertical',
-          view: 'readBlock',
-          position: {
-            x: 2,
-            y: 3
-          }
-        },
-        {
-          type: 'material',
-          size: 'small',
-          view: 'half'
-        },
-        {
-          type: 'material',
-          size: 'small',
-          view: 'full'
-        },
-      ],
-    }
-  };
+  articles: ArticleCard[] = [];
   objectsCount: number;
   objects: ApartmentComplex[] = [];
 
@@ -252,6 +60,7 @@ export class IndexComponent implements OnInit {
     this.route.data.subscribe(data => {
       this.objectsCount = data.objects.count;
       this.objects = data.objects.items;
+      this.articles = data.articles.items;
     });
     if (IndexComponent.areas.length === 0) {
       this.api.getAreas().subscribe(activities => {
