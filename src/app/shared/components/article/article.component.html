@@ -17,7 +17,7 @@
                 <svg class="topline-icon">
                   <use xlink:href="assets/sprites/icons.svg#eye"></use>
                 </svg>
-                <span>1 234</span>  
+                <span>1 234</span>
               </div>
             </div>
         </div>
@@ -81,17 +81,16 @@
         </div>
 
         <app-comments></app-comments>
-      </div> 
+      </div>
     </div>
 
     <div class="col-xl-3 col-lg-4 col-md-8 offset-xl-1 offset-lg-0 offset-md-2" *ngIf="screen !== 'sm'">
       <aside class="content-sidebar">
-        <app-material-list-card [size]="'small'" 
-                                [view]="'default'"
+        <app-material-list-card [size]="'small'"
                                 [class]="'small'"></app-material-list-card>
         <app-advertising-card [size]="'small'" [class]="'small'"></app-advertising-card>
-        <app-material-list-card [size]="'medium-vertical'" 
-                                [view]="'readBlock'"
+        <app-material-list-card [size]="'medium-vertical'"
+                                [highlight]="true"
                                 [class]="'medium-vertical'"></app-material-list-card>
       </aside>
     </div>

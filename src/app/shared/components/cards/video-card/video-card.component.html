@@ -1,4 +1,8 @@
-<div class="card-wrapper">
+<div class="card-wrapper"
+     [class.small]="size === 'small'"
+     [class.horizontal]="size === 'medium-horizontal'"
+     [class.vertical]="size === 'medium-vertical'"
+     [class.large]="size === 'large'">
     <div class="card-content">
         <div class="card-top static">
             <div class="date">Сегодня в 16:45</div>
@@ -29,6 +33,7 @@
     </button>
     <div class="image-overlay"></div>
     <div class="background-img">
+<!--      <img src="https://img.youtube.com/vi/4EoUz39nPMM/hqdefault.jpg" alt="video overlay" class="youtube-image">-->
         <img src="https://picsum.photos/616/304" alt="video overlay">
     </div>
 </div>

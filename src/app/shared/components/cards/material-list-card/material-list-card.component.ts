@@ -8,7 +8,7 @@ import { SwiperComponent, SwiperConfigInterface} from 'ngx-swiper-wrapper';
   styleUrls: ['./material-list-card.component.scss']
 })
 export class MaterialListCardComponent extends ResizableCardComponent implements OnInit {
-  @Input() view: 'default' | 'readBlock';
+  @Input() highlight = false;
   materialListConfig: SwiperConfigInterface = {
     slidesPerView: 1,
   };

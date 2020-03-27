@@ -10,7 +10,13 @@
 }
 
 .card-wrapper {
-    padding: 16px;
+  padding: 16px;
+  overflow: hidden;
+  &.small, &.large, &.vertical {
+    ::ng-deep img.youtube-image {
+      transform: scale(1.35); // Чтобы не было черных полос
+    }
+  }
 }
 
 .card-content {

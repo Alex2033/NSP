@@ -1,5 +1,5 @@
-<ng-container [ngSwitch]="view">
-  <ng-container *ngSwitchCase="'default'">
+<ng-container [ngSwitch]="highlight">
+  <ng-container *ngSwitchCase="false">
     <ng-container [ngSwitch]="size">
       <ng-container *ngSwitchCase="'small'">
         <div class="card-wrapper">
@@ -234,7 +234,7 @@
       </ng-container>
     </ng-container>
   </ng-container>
-  <ng-container *ngSwitchCase="'readBlock'">
+  <ng-container *ngSwitchCase="true">
     <ng-container [ngSwitch]="size">
       <ng-container *ngSwitchCase="'small'">
         <div class="card-wrapper readBlock">

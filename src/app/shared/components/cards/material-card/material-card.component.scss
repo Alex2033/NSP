@@ -5,7 +5,6 @@
 :host {
     height: 306px;
     display: block;
-    border: 1px solid $border-color;
 
     @include media-breakpoint-down(sm) {
         display: flex;
@@ -74,6 +73,19 @@ h5 {
             }
 
         }
+      .card-content {
+        border: 1px solid $border-color;
+      }
+      &.small, &.vertical, &.large {
+        .card-content {
+          border-top: 0;
+        }
+      }
+      &.horizontal {
+        .card-content {
+          border-left: 0;
+        }
+      }
     }
 
     &.extended {
@@ -131,6 +143,8 @@ h5 {
 
     ::ng-deep img {
         transition: opacity .2s ease;
+        min-width: 100%; // Растягиваем изображение
+        min-height: 100%;
     }
 
     @include media-breakpoint-down(sm) {

@@ -10,10 +10,10 @@
                            [view]="card.view"></app-material-card>
       </ng-container>
       <ng-container *ngSwitchCase="'material-list'">
-        <app-material-list-card [size]="card.size" [view]="'default'"
+        <app-material-list-card [size]="card.size" [highlight]="card.highlight ? card.highlight : false"
                                 [class]="card.size !== 'small' ? card.size : null"
-                                [style.grid-column]="card.position.x ? card.position.x : null"
-                                [style.grid-row-start]="card.position.y ? card.position.y : null"
+                                [style.grid-column]="card.position?.x ? card.position.x : null"
+                                [style.grid-row-start]="card.position?.y ? card.position.y : null"
         ></app-material-list-card>
       </ng-container>
       <ng-container *ngSwitchCase="'latest-news'">

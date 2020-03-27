@@ -541,11 +541,11 @@ export class MockApiService {
                 {
                   type: 'material-list',
                   size: 'small',
-                  view: 'half',
-                  position: {
-                    x: 4,
-                    y: 1
-                  }
+                  highlight: true,
+                  // position: {
+                  //   x: 4,
+                  //   y: 1
+                  // }
                 },
                 {
                   type: 'latest-news',
@@ -561,7 +561,7 @@ export class MockApiService {
                 },
                 {
                   type: 'material',
-                  size: 'medium-vertical',
+                  size: 'small',
                   view: 'half'
                 },
                 {
@@ -583,7 +583,7 @@ export class MockApiService {
                 },
                 {
                   type: 'material',
-                  size: 'large',
+                  size: 'small',
                   view: 'full'
                 },
                 {
@@ -607,7 +607,7 @@ export class MockApiService {
                 {
                   type: 'material-list',
                   size: 'small',
-                  view: 'half',
+                  highlight: true,
                   position: {
                     x: 3,
                     y: 1
@@ -641,7 +641,7 @@ export class MockApiService {
                 {
                   type: 'material-list',
                   size: 'medium-vertical',
-                  view: 'readBlock',
+                  highlight: true,
                   position: {
                     x: 3,
                     y: 2
@@ -673,7 +673,6 @@ export class MockApiService {
                 {
                   type: 'material-list',
                   size: 'small',
-                  view: 'half',
                   position: {
                     x: 1,
                     y: 2
@@ -707,7 +706,7 @@ export class MockApiService {
                 {
                   type: 'material-list',
                   size: 'medium-vertical',
-                  view: 'readBlock',
+                  highlight: true,
                   position: {
                     x: 2,
                     y: 6
@@ -731,7 +730,6 @@ export class MockApiService {
                 {
                   type: 'material-list',
                   size: 'small',
-                  view: 'half',
                   position: {
                     x: 1,
                     y: 5
@@ -756,7 +754,7 @@ export class MockApiService {
                 {
                   type: 'material-list',
                   size: 'small',
-                  view: 'readBlock',
+                  highlight: true,
                   position: {
                     x: 1,
                     y: 6

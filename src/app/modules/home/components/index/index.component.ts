@@ -23,7 +23,6 @@ export class IndexComponent implements OnInit {
         {
           type: 'material-list',
           size: 'small',
-          view: 'half',
           position: {
             x: 4,
             y: 1
@@ -57,7 +56,7 @@ export class IndexComponent implements OnInit {
         {
           type: 'material-list',
           size: 'medium-vertical',
-          view: 'readBlock',
+          highlight: true,
           position: {
             x: 4,
             y: 3
@@ -86,7 +85,6 @@ export class IndexComponent implements OnInit {
         {
           type: 'material-list',
           size: 'small',
-          view: 'half',
           position: {
             x: 3,
             y: 1
@@ -120,7 +118,7 @@ export class IndexComponent implements OnInit {
         {
           type: 'material-list',
           size: 'medium-vertical',
-          view: 'readBlock',
+          highlight: true,
           position: {
             x: 3,
             y: 2
@@ -149,7 +147,6 @@ export class IndexComponent implements OnInit {
         {
           type: 'material-list',
           size: 'small',
-          view: 'half',
           position: {
             x: 1,
             y: 2
@@ -183,7 +180,7 @@ export class IndexComponent implements OnInit {
         {
           type: 'material-list',
           size: 'medium-vertical',
-          view: 'readBlock',
+          highlight: true,
           position: {
             x: 1,
             y: 3
@@ -207,7 +204,6 @@ export class IndexComponent implements OnInit {
         {
           type: 'material-list',
           size: 'small',
-          view: 'half',
           position: {
             x: 1,
             y: 5
@@ -232,7 +228,7 @@ export class IndexComponent implements OnInit {
         {
           type: 'material-list',
           size: 'small',
-          view: 'readBlock',
+          highlight: true,
           position: {
             x: 1,
             y: 6
