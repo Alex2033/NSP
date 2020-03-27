@@ -91,14 +91,14 @@
                 <h5 class="company-infoblock-title">{{ company.organizationForm }}</h5>
               </div>
             </div>
-            <div class="company-infoblock company-infoblock-text">
+            <div class="company-infoblock company-infoblock-text" *ngIf="company.description">
               <div class="caption">Информация о компании</div>
               <div [innerHTML]="company.description | paragraphs"></div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-xl-3 col-lg-7 order-xl-2 order-lg-2">
+      <div class="col-xl-3 col-lg-7 order-xl-2 order-lg-2" *ngIf="company.latitude && company.longitude">
         <div class="company-map">
           <angular-yandex-map [center]="[company.latitude, company.longitude]" [zoom]="17">
             <angular-yandex-placemark

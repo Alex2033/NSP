@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { ResponsiveService } from '../../services/responsive.service';
+import {NewsFeed} from '../../contracts/news-feed';
 
 @Component({
   selector: 'app-news-slider',
@@ -8,7 +9,7 @@ import { ResponsiveService } from '../../services/responsive.service';
   styleUrls: ['./news-slider.component.scss']
 })
 export class NewsSliderComponent implements OnInit {
-
+  @Input() feed: NewsFeed;
   @Input() size;
 
   newsSliderConfig: SwiperConfigInterface;

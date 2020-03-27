@@ -22,6 +22,14 @@ export class ServerDataComponent implements OnInit {
               },
               skipLocationChange: true
             });
+            break;
+          case 'project':
+            this.router.navigate(['/projects/detail'], {
+              state: {
+                data: data.data
+              },
+              skipLocationChange: true
+            });
         }
       }
     );

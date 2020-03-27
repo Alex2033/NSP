@@ -2,12 +2,12 @@
 	<ng-container *ngSwitchCase="1">
 		<div class="card-wrapper large">
 			<header class="card-header">
-				<h4>Новости долевки</h4>
-					
+				<h4>{{ feed.title }}</h4>
+
 				<div class="card-header-right">
-					<div class="slides-amount">
-						1 — 3
-					</div>
+<!--					<div class="slides-amount">-->
+<!--						1 — 3-->
+<!--					</div>-->
 					<div class="control-buttons">
 						<div class="control-button small light" (click)="largeNews.swiper.slidePrev()">
 							<svg class="icon">
@@ -24,35 +24,11 @@
 			</header>
 			<div class="swiper-container" [swiper]="newsSliderConfig" #largeNews>
 				<div class="swiper-wrapper">
-					<div class="swiper-slide">
+					<div class="swiper-slide" *ngFor="let article of feed.articles">
 						<div class="news-item">
-							<time class="date" datetime="2019-05-09">9 мая, 14:32</time>
+							<time class="date">{{ article.publishedAt * 1000 | niceDate }} в {{ article.publishedAt * 1000 | date: 'shortTime' }}</time>
 							<div class="news-text">
-								<p>«ФНС подала иск о банкротстве застройщика малоэтажного ЖК «Черничная поляна»</p>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="news-item">
-							<time class="date" datetime="2019-05-09">9 мая, 14:32</time>
-							<div class="news-text">
-								<p>Объём просроченной ипотечной задолженности вырос по итогам полугодия</p>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="news-item">
-							<time class="date" datetime="2019-05-09">9 мая, 14:32</time>
-							<div class="news-text">
-								<p>Сбербанк поможет частным инвесторам вкладывать средства в строительство</p>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="news-item">
-							<time class="date" datetime="2019-05-09">9 мая, 14:32</time>
-							<div class="news-text">
-								<p>В Думе рассматривают возможность платить за будущую квартиру в новостройке в рассрочку</p>
+								<p>{{ article.title }}</p>
 							</div>
 						</div>
 					</div>
@@ -65,12 +41,12 @@
 			<header class="card-header">
 				<div class="row">
 					<div class="col-lg-10">
-						<h4>Новости долевки</h4>
+						<h4>{{ feed.title }}</h4>
 					</div>
 					<div class="col-lg-1">
-						<div class="slides-amount">
-							1 — 3
-						</div>
+<!--						<div class="slides-amount">-->
+<!--							1 — 3-->
+<!--						</div>-->
 					</div>
 					<div class="col-lg-1">
 						<div class="control-buttons">
@@ -90,11 +66,11 @@
 			</header>
 			<div class="swiper-container" [swiper]="newsSliderConfig" #largeNews>
 				<div class="swiper-wrapper">
-					<div class="swiper-slide">
+					<div class="swiper-slide" *ngFor="let article of feed.articles">
 						<div class="news-item">
-							<time class="date" datetime="2019-05-09">9 мая, 14:32</time>
+							<time class="date">{{ article.publishedAt * 1000 | niceDate }} в {{ article.publishedAt * 1000 | date: 'shortTime' }}</time>
 							<div class="news-text">
-								<p>«ФНС подала иск о банкротстве застройщика малоэтажного ЖК «Черничная поляна»</p>
+								<p>{{ article.title }}</p>
 							</div>
 						</div>
 						<div class="news-item">
@@ -120,5 +96,5 @@
 			</div>
 		</div>
 	</ng-container>
-	
+
 </ng-container>

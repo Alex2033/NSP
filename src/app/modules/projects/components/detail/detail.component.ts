@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ResponsiveService } from 'src/app/shared/services/responsive.service';
+import {ActivatedRoute} from '@angular/router';
+import {Page} from '../../../../shared/contracts/page';
+import {Project} from '../../../../shared/contracts/project';
+import {Meta, Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-detail',
@@ -9,16 +13,6 @@ import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 export class DetailComponent implements OnInit {
 
   screen: string;
-
-  categories = [
-    'Подобрать ЖК',
-    'Технология строительства',
-    'Новости',
-    'Интервью',
-    'Аналитика',
-    'Выборгский район',
-    'Московский район'
-  ];
 
   config = [
     {
@@ -51,261 +45,29 @@ export class DetailComponent implements OnInit {
     },
   ];
 
-  cards = {
-    resolutions: {
-      desktop: [
-        {
-          type: 'front'
-        },
-        {
-          type: 'slider'
-        },
-        {
-          type: 'material',
-          size: 'small',
-          view: 'half'
-        },
-        {
-          type: 'material-list',
-          size: 'small',
-          view: 'half',
-          position: {
-            x: 4,
-            y: 1
-          }
-        },
-        {
-          type: 'latest-news',
-          position: {
-            x: 1,
-            y: 2
-          }
-        },
-        {
-          type: 'material',
-          size: 'medium-horizontal',
-          view: 'half'
-        },
-        {
-          type: 'material',
-          size: 'medium-vertical',
-          view: 'half'
-        },
-        {
-          type: 'advertising',
-          size: 'small'
-        },
-        {
-          type: 'video',
-          size: 'medium-horizontal'
-        },
-        {
-          type: 'material-list',
-          size: 'medium-vertical',
-          view: 'readBlock',
-          position: {
-            x: 4,
-            y: 3
-          }
-        },
-        {
-          type: 'material',
-          size: 'large',
-          view: 'full'
-        },
-        {
-          type: 'material',
-          size: 'small',
-          view: 'full'
-        },
-      ],
-      smallDesktop: [
-        {
-          type: 'front'
-        },
-        {
-          type: 'slider'
-        },
-        {
-          type: 'material',
-          size: 'small',
-          view: 'half'
-        },
-        {
-          type: 'material-list',
-          size: 'small',
-          view: 'half',
-          position: {
-            x: 3,
-            y: 1
-          }
-        },
-        {
-          type: 'latest-news',
-          position: {
-            x: 1,
-            y: 2
-          }
-        },
-        {
-          type: 'material',
-          size: 'small',
-          view: 'half'
-        },
-        {
-          type: 'material',
-          size: 'small',
-          view: 'half'
-        },
-        {
-          type: 'advertising',
-          size: 'small'
-        },
-        {
-          type: 'video',
-          size: 'medium-horizontal'
-        },
-        {
-          type: 'material-list',
-          size: 'medium-vertical',
-          view: 'readBlock',
-          position: {
-            x: 3,
-            y: 2
-          }
-        },
-        {
-          type: 'material',
-          size: 'small',
-          view: 'half'
-        },
-        {
-          type: 'material',
-          size: 'small',
-          view: 'full'
-        },
-      ],
-      tablet: [
-        {
-          type: 'front'
-        },
-        {
-          type: 'slider'
-        },
-        {
-          type: 'material',
-          size: 'small',
-          view: 'half'
-        },
-        {
-          type: 'material-list',
-          size: 'small',
-          view: 'half',
-          position: {
-            x: 1,
-            y: 2
-          }
-        },
-        {
-          type: 'latest-news',
-          position: {
-            x: 1,
-            y: 4
-          }
-        },
-        {
-          type: 'material',
-          size: 'small',
-          view: 'half'
-        },
-        {
-          type: 'material',
-          size: 'small',
-          view: 'half'
-        },
-        {
-          type: 'advertising',
-          size: 'small'
-        },
-        {
-          type: 'video',
-          size: 'medium-horizontal'
-        },
-        {
-          type: 'material-list',
-          size: 'medium-vertical',
-          view: 'readBlock',
-          position: {
-            x: 2,
-            y: 6
-          }
-        },
-        {
-          type: 'material',
-          size: 'small',
-          view: 'half'
-        },
-        {
-          type: 'material',
-          size: 'small',
-          view: 'full'
-        },
-      ],
-      mobile: [
-        {
-          type: 'slider'
-        },
-        {
-          type: 'material-list',
-          size: 'small',
-          view: 'half',
-          position: {
-            x: 1,
-            y: 5
-          }
-        },
-        {
-          type: 'latest-news',
-          position: {
-            x: 1,
-            y: 2
-          }
-        },
-        {
-          type: 'material',
-          size: 'small',
-          view: 'half'
-        },
-        {
-          type: 'video',
-          size: 'small'
-        },
-        {
-          type: 'material-list',
-          size: 'small',
-          view: 'readBlock',
-          position: {
-            x: 1,
-            y: 6
-          }
-        },
-        {
-          type: 'material',
-          size: 'small',
-          view: 'half'
-        },
-        {
-          type: 'material',
-          size: 'small',
-          view: 'full'
-        },
-      ],
-    }
-  };
+  project: Project;
 
-  constructor(public responsive: ResponsiveService) { }
+  constructor(
+    public responsive: ResponsiveService,
+    private route: ActivatedRoute,
+    protected title: Title,
+    protected meta: Meta) { }
 
   ngOnInit() {
+    this.route.data.subscribe((data) => {
+      this.project = data.data as Project;
+      this.title.setTitle(this.project.metaTitle ? this.project.metaTitle : this.project.title + ' - NSP.ru');
+      this.meta.updateTag({
+          name: 'description',
+          content: this.project.metaDescription
+        }
+      );
+      this.meta.updateTag({
+          name: 'keywords',
+          content: this.project.metaKeywords
+        }
+      );
+    });
     this.responsive.screen.subscribe((screen) => {
       this.screen = screen;
     });

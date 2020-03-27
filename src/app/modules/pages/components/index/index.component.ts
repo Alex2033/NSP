@@ -15,7 +15,7 @@ export class IndexComponent implements OnInit {
   data: Page;
   ngOnInit(): void {
     this.data = this.route.snapshot.data.data as Page;
-    this.title.setTitle(this.data.metaTitle + ' - NSP.ru');
+    this.title.setTitle(this.data.metaTitle ? this.data.metaTitle : this.data.title + ' - NSP.ru');
     this.meta.updateTag({
         name: 'description',
         content: this.data.metaDescription

@@ -16,6 +16,7 @@ import {NgScrollbar} from 'ngx-scrollbar';
 import {count} from 'rxjs/operators';
 import {isPlatformBrowser, isPlatformServer} from '@angular/common';
 import {Router} from '@angular/router';
+import {MenuElement} from '../../contracts/menu-element';
 
 @Component({
   selector: 'app-header',
@@ -41,7 +42,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   showLeftControl: boolean = false;
   visibleMenuElements = [];
   hiddenMenuElements = [];
-  menuElements = [];
+  menuElements: MenuElement[] = [];
   searchQuery: string;
   get showBanner(): boolean {
     return this.bannerService.showBanner;

@@ -3,6 +3,8 @@ import {ApiClientService} from './api-client.service';
 import {Observable, of} from 'rxjs';
 import {ApartmentComplex} from '../contracts/apartment-complex';
 import {ResponseService} from './response.service';
+import {Page} from '../contracts/page';
+import {Project} from '../contracts/project';
 
 @Injectable({
   providedIn: 'root'
@@ -485,7 +487,346 @@ export class MockApiService {
     );
   }
 
-  getServerData(route) {
+  getServerData(route): Observable<{type: 'page', data: Page} | {type: 'project', data: Project}> {
+    if (route === '/project') {
+      return of(
+        {
+          type: 'project',
+          data: {
+            title: 'Жилые комплексы',
+            slug: 'project',
+            metaTitle: null,
+            metaDescription: null,
+            metaKeywords: null,
+            menu: [
+              {
+                name: 'Подобрать ЖК',
+                slug: '',
+                highlight: true
+              },
+              {
+                name: 'Технология строительства',
+                slug: '',
+                highlight: false
+              },
+              {
+                name: 'Новости',
+                slug: '',
+                highlight: false
+              },
+              {
+                name: 'Интервью',
+                slug: '',
+                highlight: false
+              },
+              {
+                name: 'Аналитика',
+                slug: '',
+                highlight: false
+              }
+            ],
+            layout: {
+              xl: [
+                {
+                  type: 'front'
+                },
+                {
+                  type: 'slider'
+                },
+                {
+                  type: 'material',
+                  size: 'small',
+                  view: 'half'
+                },
+                {
+                  type: 'material-list',
+                  size: 'small',
+                  view: 'half',
+                  position: {
+                    x: 4,
+                    y: 1
+                  }
+                },
+                {
+                  type: 'latest-news',
+                  position: {
+                    x: 1,
+                    y: 2
+                  }
+                },
+                {
+                  type: 'material',
+                  size: 'medium-horizontal',
+                  view: 'half'
+                },
+                {
+                  type: 'material',
+                  size: 'medium-vertical',
+                  view: 'half'
+                },
+                {
+                  type: 'advertising',
+                  size: 'small'
+                },
+                {
+                  type: 'video',
+                  size: 'medium-horizontal'
+                },
+                {
+                  type: 'material-list',
+                  size: 'medium-vertical',
+                  view: 'readBlock',
+                  position: {
+                    x: 4,
+                    y: 3
+                  }
+                },
+                {
+                  type: 'material',
+                  size: 'large',
+                  view: 'full'
+                },
+                {
+                  type: 'material',
+                  size: 'small',
+                  view: 'full'
+                },
+              ],
+              lg: [
+                {
+                  type: 'front'
+                },
+                {
+                  type: 'slider'
+                },
+                {
+                  type: 'material',
+                  size: 'small',
+                  view: 'half'
+                },
+                {
+                  type: 'material-list',
+                  size: 'small',
+                  view: 'half',
+                  position: {
+                    x: 3,
+                    y: 1
+                  }
+                },
+                {
+                  type: 'latest-news',
+                  position: {
+                    x: 1,
+                    y: 2
+                  }
+                },
+                {
+                  type: 'material',
+                  size: 'small',
+                  view: 'half'
+                },
+                {
+                  type: 'material',
+                  size: 'small',
+                  view: 'half'
+                },
+                {
+                  type: 'advertising',
+                  size: 'small'
+                },
+                {
+                  type: 'video',
+                  size: 'medium-horizontal'
+                },
+                {
+                  type: 'material-list',
+                  size: 'medium-vertical',
+                  view: 'readBlock',
+                  position: {
+                    x: 3,
+                    y: 2
+                  }
+                },
+                {
+                  type: 'material',
+                  size: 'small',
+                  view: 'half'
+                },
+                {
+                  type: 'material',
+                  size: 'small',
+                  view: 'full'
+                },
+              ],
+              md: [
+                {
+                  type: 'front'
+                },
+                {
+                  type: 'slider'
+                },
+                {
+                  type: 'material',
+                  size: 'small',
+                  view: 'half'
+                },
+                {
+                  type: 'material-list',
+                  size: 'small',
+                  view: 'half',
+                  position: {
+                    x: 1,
+                    y: 2
+                  }
+                },
+                {
+                  type: 'latest-news',
+                  position: {
+                    x: 1,
+                    y: 4
+                  }
+                },
+                {
+                  type: 'material',
+                  size: 'small',
+                  view: 'half'
+                },
+                {
+                  type: 'material',
+                  size: 'small',
+                  view: 'half'
+                },
+                {
+                  type: 'advertising',
+                  size: 'small'
+                },
+                {
+                  type: 'video',
+                  size: 'medium-horizontal'
+                },
+                {
+                  type: 'material-list',
+                  size: 'medium-vertical',
+                  view: 'readBlock',
+                  position: {
+                    x: 2,
+                    y: 6
+                  }
+                },
+                {
+                  type: 'material',
+                  size: 'small',
+                  view: 'half'
+                },
+                {
+                  type: 'material',
+                  size: 'small',
+                  view: 'full'
+                },
+              ],
+              sm: [
+                {
+                  type: 'slider'
+                },
+                {
+                  type: 'material-list',
+                  size: 'small',
+                  view: 'half',
+                  position: {
+                    x: 1,
+                    y: 5
+                  }
+                },
+                {
+                  type: 'latest-news',
+                  position: {
+                    x: 1,
+                    y: 2
+                  }
+                },
+                {
+                  type: 'material',
+                  size: 'small',
+                  view: 'half'
+                },
+                {
+                  type: 'video',
+                  size: 'small'
+                },
+                {
+                  type: 'material-list',
+                  size: 'small',
+                  view: 'readBlock',
+                  position: {
+                    x: 1,
+                    y: 6
+                  }
+                },
+                {
+                  type: 'material',
+                  size: 'small',
+                  view: 'half'
+                },
+                {
+                  type: 'material',
+                  size: 'small',
+                  view: 'full'
+                },
+              ],
+            },
+            newsBlocks: [
+              {
+                title: 'Новости долёвки',
+                articles: [
+                  {
+                    id: 1,
+                    slug: '',
+                    publishedAt: 1573746483,
+                    directorySlug: '',
+                    title: '«ФНС подала иск о банкротстве застройщика малоэтажного ЖК «Черничная поляна»'
+                  },
+                  {
+                    id: 1,
+                    slug: '',
+                    publishedAt: 1573746483 - (60 * 5),
+                    directorySlug: '',
+                    title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия'
+                  },
+                  {
+                    id: 1,
+                    slug: '',
+                    publishedAt: 1573746483 - (60 * 15),
+                    directorySlug: '',
+                    title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство'
+                  },
+                  {
+                    id: 1,
+                    slug: '',
+                    publishedAt: 1573746483 - (60 * 35),
+                    directorySlug: '',
+                    title: 'В Думе рассматривают возможность платить за будущую квартиру в новостройке в рассрочку'
+                  },
+                  {
+                    id: 1,
+                    slug: '',
+                    publishedAt: 1573746483 - (60 * 55),
+                    directorySlug: '',
+                    title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство'
+                  },
+                  {
+                    id: 1,
+                    slug: '',
+                    publishedAt: 1573746483 - (60 * 125),
+                    directorySlug: '',
+                    title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия'
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      );
+    }
     this.response.notFound();
     return of();
   }
@@ -940,7 +1281,7 @@ export class MockApiService {
           },
           {
             name: 'Projects detail',
-            slug: 'projects/detail',
+            slug: 'project',
             highlight: false
           },
         ]

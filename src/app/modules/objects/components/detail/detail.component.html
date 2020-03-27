@@ -1,136 +1,148 @@
 <div class="object-container">
-    <header class="object-header">
-        <div class="object-headings">
-            <h5>Жилые комплексы</h5>
-            <h1>{{ apartmentComplex.name }}</h1>
-        </div>
-        <div class="object-header-image">
-          <app-responsive-image [xl]="apartmentComplex.logoXl" [lg]="apartmentComplex.logoLg" [md]="apartmentComplex.logoMd" [xs]="apartmentComplex.logoSm" [sm]="apartmentComplex.logoSm"></app-responsive-image>
-        </div>
-    </header>
-    <nav class="object-navigation">
-        <ul class="object-navigation-list">
-            <li class="object-navigation-item">
-                <button class="object-navigation-btn" (click)="scrollToElement(description)">Описание</button>
-            </li>
-            <li class="object-navigation-item">
-                <button class="object-navigation-btn" (click)="scrollToElement(location)">Расположение</button>
-            </li>
-            <li class="object-navigation-item">
-                <button class="object-navigation-btn" (click)="scrollToElement(layout)">Планировки</button>
-            </li>
-            <li class="object-navigation-item">
-                <button class="object-navigation-btn" (click)="scrollToElement(photos)">Фотографии</button>
-            </li>
-            <li class="object-navigation-item">
-                <button class="object-navigation-btn" (click)="scrollToElement(developer)">Застройщик</button>
-            </li>
-        </ul>
-    </nav>
-    <div class="object-top-info">
-        <div class="object-top-text" [innerHTML]="apartmentComplex.previewText | paragraphs">
-        </div>
-        <div class="object-top-contacts">
-            <div class="object-top-contact">
-                <svg class="geolocation">
-                    <use xlink:href="assets/sprites/icons.svg#map_pin"></use>
-                </svg>
-                <span>{{ apartmentComplex.areaName }}</span>
-            </div>
-            <div class="object-top-contact" *ngIf="apartmentComplex.site">
-                <div class="company-contact-icon">
-                    <svg class="web">
-                        <use xlink:href="assets/sprites/icons.svg#web"></use>
-                    </svg>
-                </div>
-                <a class="link" [href]="apartmentComplex.site" target="_blank">{{ apartmentComplex.site | domain}}</a>
-            </div>
-        </div>
+  <header class="object-header">
+    <div class="object-headings">
+      <h5>Жилые комплексы</h5>
+      <h1>{{ apartmentComplex.name }}</h1>
     </div>
+    <div class="object-header-image">
+      <app-responsive-image [xl]="apartmentComplex.logoXl" [lg]="apartmentComplex.logoLg" [md]="apartmentComplex.logoMd"
+                            [xs]="apartmentComplex.logoSm" [sm]="apartmentComplex.logoSm"></app-responsive-image>
+    </div>
+  </header>
+  <nav class="object-navigation">
+    <ul class="object-navigation-list">
+      <li class="object-navigation-item">
+        <button class="object-navigation-btn" (click)="scrollToElement(description)">Описание</button>
+      </li>
+      <li class="object-navigation-item">
+        <button class="object-navigation-btn" (click)="scrollToElement(location)">Расположение</button>
+      </li>
+      <li class="object-navigation-item">
+        <button class="object-navigation-btn" (click)="scrollToElement(layout)">Планировки</button>
+      </li>
+      <li class="object-navigation-item">
+        <button class="object-navigation-btn" (click)="scrollToElement(photos)">Фотографии</button>
+      </li>
+      <li class="object-navigation-item">
+        <button class="object-navigation-btn" (click)="scrollToElement(developer)">Застройщик</button>
+      </li>
+    </ul>
+  </nav>
+  <div class="object-top-info">
+    <div class="object-top-text" [innerHTML]="apartmentComplex.previewText | paragraphs">
+    </div>
+    <div class="object-top-contacts">
+      <div class="object-top-contact">
+        <svg class="geolocation">
+          <use xlink:href="assets/sprites/icons.svg#map_pin"></use>
+        </svg>
+        <span>{{ apartmentComplex.areaName }}</span>
+      </div>
+      <div class="object-top-contact" *ngIf="apartmentComplex.site">
+        <div class="company-contact-icon">
+          <svg class="web">
+            <use xlink:href="assets/sprites/icons.svg#web"></use>
+          </svg>
+        </div>
+        <a class="link" [href]="apartmentComplex.site" target="_blank">{{ apartmentComplex.site | domain}}</a>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="full-image">
-  <app-responsive-image [xl]="apartmentComplex.detailImageXl" [lg]="apartmentComplex.detailImageLg" [md]="apartmentComplex.detailImageMd" [xs]="apartmentComplex.detailImageSm" [sm]="apartmentComplex.detailImageSm"></app-responsive-image>
+  <app-responsive-image [xl]="apartmentComplex.detailImageXl" [lg]="apartmentComplex.detailImageLg"
+                        [md]="apartmentComplex.detailImageMd" [xs]="apartmentComplex.detailImageSm"
+                        [sm]="apartmentComplex.detailImageSm"></app-responsive-image>
 </div>
 
 <div class="object-container">
-    <h3 #description>Описание объекта</h3>
-    <p>ЖК «LIFE-Лесная» представляет собой шесть жилых домов высотой от 10 до 13 этажей.  В них запроектировано в общей сложности 1791 квартира (195 тыс. кв.м), почти половина из которых – двухкомнатные. Квартирография включает как традиционные квартиры с изолированными комнатами и кухней, так и востребованные варианты европланировок. В квартирах верхних этажей предусмотрена возможность организации камина. Подземный паркинг рассчитан на 1290 машино-мест. Технология строительства – монолитная. Первая очередь, состоящая из двух корпусов на 480 квартир, была сдана в конце прошлого года. Жильё передадут либо с предчистовой отдел-кой, либо «под ключ» – на выбор покупателя. У него также есть возможность заказать дополнительные опции в зависимости от выбранного пакета: замена ламината на паркет, установка тёплого пола, премиальная сантехника и электрическое оборудование. </p>
+  <h3 #description>Описание объекта</h3>
+  <p>ЖК «LIFE-Лесная» представляет собой шесть жилых домов высотой от 10 до 13 этажей. В них запроектировано в общей
+    сложности 1791 квартира (195 тыс. кв.м), почти половина из которых – двухкомнатные. Квартирография включает как
+    традиционные квартиры с изолированными комнатами и кухней, так и востребованные варианты европланировок. В квартирах
+    верхних этажей предусмотрена возможность организации камина. Подземный паркинг рассчитан на 1290 машино-мест.
+    Технология строительства – монолитная. Первая очередь, состоящая из двух корпусов на 480 квартир, была сдана в конце
+    прошлого года. Жильё передадут либо с предчистовой отдел-кой, либо «под ключ» – на выбор покупателя. У него также
+    есть возможность заказать дополнительные опции в зависимости от выбранного пакета: замена ламината на паркет,
+    установка тёплого пола, премиальная сантехника и электрическое оборудование. </p>
 
-    <h4>Условия покупки</h4>
-    <ul>
-        <li>
-            100%-я оплата по договору долевого участия
-        </li>
-        <li>
-            Заключение договора купли-продажи (для готовых корпусов)
-        </li>
-        <li>
-            Ипотека (16 банков-партнёров)
-        </li>
-        <li>
-            Рассрочка (несколько программ)
-        </li>
-    </ul>
+  <h4>Условия покупки</h4>
+  <ul>
+    <li>
+      100%-я оплата по договору долевого участия
+    </li>
+    <li>
+      Заключение договора купли-продажи (для готовых корпусов)
+    </li>
+    <li>
+      Ипотека (16 банков-партнёров)
+    </li>
+    <li>
+      Рассрочка (несколько программ)
+    </li>
+  </ul>
 
-    <h4>Срок сдачи</h4>
-    <div class="deadline-buttons" style="display: none;">
-        <button class="deadline-button">I очередь — сдана</button>
-        <button class="deadline-button">II очередь — IV кв. 2019 г.</button>
-        <button class="deadline-button">III очередь — III кв. 2020 г.</button>
-    </div>
+  <h4>Срок сдачи</h4>
+  <div class="deadline-buttons" style="display: none;">
+    <button class="deadline-button">I очередь — сдана</button>
+    <button class="deadline-button">II очередь — IV кв. 2019 г.</button>
+    <button class="deadline-button">III очередь — III кв. 2020 г.</button>
+  </div>
 
-    <div class="divider"></div>
+  <div class="divider"></div>
 
-    <h3 #location>Расположение</h3>
-    <p>Жилой квартал LIFE-Лесная расположен на северо-востоке Санкт-Петербурга, в Выборгском районе, по адресу: улица Новолитовская.</p>
-    <p><strong>В шаговой доступности от квартала</strong> — станция метро «Лесная» (500 метров) и остановки наземного общественного транспорта.</p>
-    <p><strong>На автомобиле</strong> время в пути до исторического центра города составит 10 минут, до Петроградской стороны – 5 минут.</p>
-    <p>Здесь легко планировать и дальние поездки: в 10-15 минутах выезды на Западный скоростной диаметр и кольцевую автодорогу. Дорога до аэропорта, железнодорожных и морских вокзалов не займет много времени.</p>
+  <h3 #location>Расположение</h3>
+  <p>Жилой квартал LIFE-Лесная расположен на северо-востоке Санкт-Петербурга, в Выборгском районе, по адресу: улица
+    Новолитовская.</p>
+  <p><strong>В шаговой доступности от квартала</strong> — станция метро «Лесная» (500 метров) и остановки наземного
+    общественного транспорта.</p>
+  <p><strong>На автомобиле</strong> время в пути до исторического центра города составит 10 минут, до Петроградской
+    стороны – 5 минут.</p>
+  <p>Здесь легко планировать и дальние поездки: в 10-15 минутах выезды на Западный скоростной диаметр и кольцевую
+    автодорогу. Дорога до аэропорта, железнодорожных и морских вокзалов не займет много времени.</p>
 
-    <div class="map-image">
-        <angular-yandex-map [center]="[59.983134, 30.356085]" [zoom]="16">
-            <angular-yandex-placemark
-                [geometry]="[59.983194, 30.356085]"
-                [properties]="placemarkProperties"
-            ></angular-yandex-placemark>
-        </angular-yandex-map>
-    </div>
+  <div class="map-image">
+    <angular-yandex-map [center]="[59.983134, 30.356085]" [zoom]="16">
+      <angular-yandex-placemark
+        [geometry]="[59.983194, 30.356085]"
+        [properties]="placemarkProperties"
+      ></angular-yandex-placemark>
+    </angular-yandex-map>
+  </div>
 
-    <div class="apartment-info-top">
-        <h3 #layout>Планировки</h3>
-        <p>Предложение актуально на дату публикации (01.04.2019 г.)</p>
-    </div>
+  <div class="apartment-info-top">
+    <h3 #layout>Планировки</h3>
+    <p>Предложение актуально на дату публикации (01.04.2019 г.)</p>
+  </div>
 
-    <app-apartment-info-block *ngFor="let apartment of apartments" [apartment]="apartment"></app-apartment-info-block>
+  <app-apartment-info-block *ngFor="let apartment of apartments" [apartment]="apartment"></app-apartment-info-block>
 
-    <h3 #photos>Фотографии проекта</h3>
+  <h3 #photos>Фотографии проекта</h3>
 
-    <app-full-width-image-carousel-block [images]="images"></app-full-width-image-carousel-block>
+  <app-full-width-image-carousel-block [images]="images"></app-full-width-image-carousel-block>
 
-    <h3 #developer>Информация о застройщике</h3>
+  <h3 #developer>Информация о застройщике</h3>
 
-    <app-extended-company-card [company]="companyCard" style="margin-bottom: 48px;"></app-extended-company-card>
+  <app-extended-company-card [company]="companyCard" style="margin-bottom: 48px;"></app-extended-company-card>
 
 </div>
 
 <div class="divider"></div>
 
 <div class="container">
-  <div class="container">
-    <div class="materials" *ngIf="articles && articles.length > 0">
-      <h3 class="materials-title">Материалы об объекте</h3>
-      <div class="row">
-        <div class="col-lg-3 col-md-6 result-card" *ngFor="let article of articles">
-          <app-material-card [size]="'small'" [view]="article.view" [data]="article"></app-material-card>
-        </div>
+  <div class="materials" *ngIf="articles && articles.length > 0">
+    <h3 class="materials-title">Материалы об объекте</h3>
+    <div class="row">
+      <div class="col-lg-3 col-md-6 result-card" *ngFor="let article of articles">
+        <app-material-card [size]="'small'" [view]="article.view" [data]="article"></app-material-card>
       </div>
     </div>
   </div>
 
 
-  <div class="materials">
-        <h2 class="materials-title">Аналитические материалы о рынке недвижимости</h2>
-        <app-card-layout [cards]="objectCards"></app-card-layout>
-    </div>
+  <!--  <div class="materials">-->
+  <!--        <h2 class="materials-title">Аналитические материалы о рынке недвижимости</h2>-->
+  <!--        <app-card-layout [cards]="objectCards"></app-card-layout>-->
+  <!--    </div>-->
 </div>

@@ -8,7 +8,7 @@
     [class.large]="size === 'large'"
   >
     <div class="card-top" *ngIf="size === 'small'">
-      <div class="date">{{ data.articlePublishedAt * 1000 | niceDate }} в {{ data.articlePublishedAt | date: 'shortTime' }}</div>
+      <div class="date">{{ data.articlePublishedAt * 1000 | niceDate }} в {{ data.articlePublishedAt * 1000 | date: 'shortTime' }}</div>
       <div class="tag" *ngIf="data.markerName">
         {{ data.markerName }}
       </div>
@@ -21,7 +21,7 @@
     </div>
     <div class="card-content">
       <div class="card-top static" *ngIf="size !== 'small'">
-        <div class="date">{{ data.articlePublishedAt * 1000 | niceDate }} в {{ data.articlePublishedAt | date: 'shortTime' }}</div>
+        <div class="date">{{ data.articlePublishedAt * 1000 | niceDate }} в {{ data.articlePublishedAt * 1000 | date: 'shortTime' }}</div>
       </div>
       <h5>{{ data.title }}</h5>
       <div class="card-text">
@@ -44,7 +44,7 @@
 <ng-container *ngIf="view === 'full' && (data.imageXl || data.smallImageXl)">
   <a [routerLink]="['']" class="card-wrapper backgroundImage">
     <div class="card-top">
-      <div class="date">{{ data.articlePublishedAt * 1000 | niceDate }} в {{ data.articlePublishedAt | date: 'shortTime' }}</div>
+      <div class="date">{{ data.articlePublishedAt * 1000 | niceDate }} в {{ data.articlePublishedAt * 1000 | date: 'shortTime' }}</div>
       <div class="tag" *ngIf="data.markerName">
         {{ data.markerName }}
       </div>

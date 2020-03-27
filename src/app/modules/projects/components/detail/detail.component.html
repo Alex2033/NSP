@@ -1,28 +1,25 @@
 <div class="container top-container">
     <div class="page-top">
         <header class="inner-page-header">
-            <h1>Жилые комплексы</h1>
+            <h1>{{ project.title }}</h1>
         </header>
-        <ul class="categories">
-            <li 
-                class="categories-item" 
-                *ngFor="let category of categories; index as i" 
-                [class.active]="i === 0"
+        <ul class="categories" *ngIf="project.menu.length > 0">
+            <li
+                class="categories-item"
+                *ngFor="let menuElement of project.menu"
+                [class.active]="menuElement.highlight"
             >
-                <a [routerLink]="['']" class="categories-link">{{ category }}</a>
+                <a [routerLink]="[menuElement.slug]" class="categories-link">{{ menuElement.name }}</a>
             </li>
         </ul>
     </div>
     <div class="materials">
-        <app-card-layout 
-            [cards]="screen === 'xl' ? cards.resolutions.desktop : 
-                    screen === 'lg' ? cards.resolutions.smallDesktop : 
-                    screen === 'md' ? cards.resolutions.tablet : 
-                    cards.resolutions.mobile"
+        <app-card-layout
+            [cards]="project.layout[screen]"
         ></app-card-layout>
     </div>
 
-    <app-news-slider [size]="news.length"></app-news-slider> <!-- Большой слайдер есть, по остальным додумаю как лучше сделать -->
-    
+    <app-news-slider *ngFor="let feed of project.newsBlocks" [feed]="feed" [size]="1"></app-news-slider> <!-- Большой слайдер есть, по остальным додумаю как лучше сделать -->
+
     <app-tabs-card-carousel [header]="'Технология строительства'" [tabs]="config"></app-tabs-card-carousel>
 </div>
