@@ -5,7 +5,7 @@
     display: block;
 
     @include media-breakpoint-down(sm) {
-        height: 304px !important;
+        height: 306px !important;
     }
 }
 
@@ -38,7 +38,7 @@
     border: none;
     background-color: transparent;
     padding: 0;
-    
+
 
     &:hover {
         svg {

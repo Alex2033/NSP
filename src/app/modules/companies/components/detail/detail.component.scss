@@ -174,7 +174,7 @@
 }
 
 .company-map {
-    height: 304px;
+    height: 306px;
     width: 100%;
 
     ::ng-deep {
@@ -211,6 +211,6 @@ app-card-carousel {
 .materials {
   margin-bottom: 48px;
 }
-.materials:last-child {
-  margin-bottom: 0;
-}
+//.materials:last-child {
+//  margin-bottom: 0;
+//}

@@ -1,6 +1,6 @@
 export interface Quote {
   text: string;
-  published_at: number;
+  publishedAt: number;
   source?: {
     name: string;
     url?: string;

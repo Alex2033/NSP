@@ -4,6 +4,7 @@ import {IndexComponent} from './components/index/index.component';
 import {DetailComponent} from './components/detail/detail.component';
 import {CompaniesResolver} from './resolvers/companies.resolver';
 import {CompanyResolver} from './resolvers/company.resolver';
+import {ArticlesResolver} from './resolvers/articles.resolver';
 
 
 const routes: Routes = [
@@ -11,7 +12,8 @@ const routes: Routes = [
     path: 'activity/:activity_id',
     component: IndexComponent,
     resolve: {
-      companies: CompaniesResolver
+      companies: CompaniesResolver,
+      articles: ArticlesResolver
     },
     runGuardsAndResolvers: 'paramsOrQueryParamsChange',
   },
@@ -19,7 +21,8 @@ const routes: Routes = [
     path: '',
     component: IndexComponent,
     resolve: {
-      companies: CompaniesResolver
+      companies: CompaniesResolver,
+      articles: ArticlesResolver
     },
     runGuardsAndResolvers: 'paramsOrQueryParamsChange',
   },
@@ -27,7 +30,8 @@ const routes: Routes = [
     path: ':company_slug',
     component: DetailComponent,
     resolve: {
-      company: CompanyResolver
+      company: CompanyResolver,
+      articles: ArticlesResolver
     },
   }
 ];

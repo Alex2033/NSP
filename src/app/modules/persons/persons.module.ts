@@ -5,6 +5,7 @@ import {SharedModule} from '../../shared/shared.module';
 import { DetailComponent } from './components/detail/detail.component';
 import {PersonsResolver} from './resolvers/persons.resolver';
 import {PersonResolver} from './resolvers/person.resolver';
+import {ArticlesResolver} from './resolvers/articles.resolver';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import {PersonResolver} from './resolvers/person.resolver';
   ],
   providers: [
     PersonsResolver,
-    PersonResolver
+    PersonResolver,
+    ArticlesResolver
   ]
 })
 export class PersonsModule { }

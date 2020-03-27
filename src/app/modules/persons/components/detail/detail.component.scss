@@ -32,13 +32,17 @@ app-company-card {
     }
 }
 
-[class^="col"] {
-    > * {
-        height: 100%;
-        display: block;
-    }
-}
+//[class^="col"] {
+//    > * {
+//        height: 100%;
+//        display: block;
+//    }
+//}
 
 .title {
     margin-bottom: 24px;
+}
+
+.materials {
+  margin-bottom: 48px;
 }

@@ -1,6 +1,7 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {ResizableCardComponent} from '../resizable-card.component';
 import {ArticleCard} from '../../../contracts/article-card';
+import {environment} from '../../../../../environments/environment';
 
 @Component({
   selector: 'app-material-card',
@@ -12,7 +13,7 @@ export class MaterialCardComponent extends ResizableCardComponent implements OnI
   @Input() data: ArticleCard = { // TODO DELETE
     type: 'article',
     size: 'small',
-    publishedAt: 1584608518,
+    articlePublishedAt: 1584608518,
     markerName: '💥 Свежее',
     title: 'Долги под апартами',
     previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
@@ -26,6 +27,10 @@ export class MaterialCardComponent extends ResizableCardComponent implements OnI
     imageLg: '',
     imageMd: '',
     imageSm: '',
+    smallImageXl: null,
+    smallImageLg: null,
+    smallImageMd: null,
+    smallImageSm: null,
   };
 
   constructor() {
@@ -33,30 +38,32 @@ export class MaterialCardComponent extends ResizableCardComponent implements OnI
   }
 
   ngOnInit() {
-    if (this.view === 'full') {
-      this.data.imageXl = 'https://picsum.photos/618/618';
-      this.data.imageLg = 'https://picsum.photos/618/618';
-      this.data.imageMd = 'https://picsum.photos/618/618';
-      this.data.imageSm = 'https://picsum.photos/618/618';
-    } else {
-      switch (this.size) {
-        case 'small':
-          this.data.imageXl = 'https://picsum.photos/304/152';
-          this.data.imageLg = 'https://picsum.photos/304/152';
-          this.data.imageMd = 'https://picsum.photos/304/152';
-          this.data.imageSm = 'https://picsum.photos/304/152';
-          break;
-        case 'large':
-          this.data.imageXl = 'https://picsum.photos/618/304';
-          this.data.imageLg = 'https://picsum.photos/618/304';
-          this.data.imageMd = 'https://picsum.photos/618/304';
-          this.data.imageSm = 'https://picsum.photos/618/304';
-          break;
-        default:
-          this.data.imageXl = 'https://picsum.photos/304/304';
-          this.data.imageLg = 'https://picsum.photos/304/304';
-          this.data.imageMd = 'https://picsum.photos/304/304';
-          this.data.imageSm = 'https://picsum.photos/304/304';
+    if (environment.production === false) {
+      if (this.view === 'full') {
+        this.data.imageXl = 'https://picsum.photos/618/618';
+        this.data.imageLg = 'https://picsum.photos/618/618';
+        this.data.imageMd = 'https://picsum.photos/618/618';
+        this.data.imageSm = 'https://picsum.photos/618/618';
+      } else {
+        switch (this.size) {
+          case 'small':
+            this.data.imageXl = 'https://picsum.photos/304/152';
+            this.data.imageLg = 'https://picsum.photos/304/152';
+            this.data.imageMd = 'https://picsum.photos/304/152';
+            this.data.imageSm = 'https://picsum.photos/304/152';
+            break;
+          case 'large':
+            this.data.imageXl = 'https://picsum.photos/618/304';
+            this.data.imageLg = 'https://picsum.photos/618/304';
+            this.data.imageMd = 'https://picsum.photos/618/304';
+            this.data.imageSm = 'https://picsum.photos/618/304';
+            break;
+          default:
+            this.data.imageXl = 'https://picsum.photos/304/304';
+            this.data.imageLg = 'https://picsum.photos/304/304';
+            this.data.imageMd = 'https://picsum.photos/304/304';
+            this.data.imageSm = 'https://picsum.photos/304/304';
+        }
       }
     }
   }

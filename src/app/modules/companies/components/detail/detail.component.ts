@@ -3,6 +3,7 @@ import {ResponsiveService} from 'src/app/shared/services/responsive.service';
 import {ActivatedRoute} from '@angular/router';
 import {Company} from '../../../../shared/contracts/company';
 import {Meta, Title} from '@angular/platform-browser';
+import {ArticleCard} from '../../../../shared/contracts/article-card';
 
 @Component({
   selector: 'app-detail',
@@ -14,29 +15,7 @@ export class DetailComponent implements OnInit {
   objects = [];
   persons = [];
   screen: string;
-
-  materialCards = [
-    {
-      type: 'material',
-      size: 'small',
-      view: 'half'
-    },
-    {
-      type: 'material',
-      size: 'small',
-      view: 'half'
-    },
-    {
-      type: 'material',
-      size: 'small',
-      view: 'half'
-    },
-    {
-      type: 'material',
-      size: 'small',
-      view: 'half'
-    }
-  ];
+  articles: ArticleCard[] = [];
 
   public placemarkOptions = {
     iconLayout: 'default#image',
@@ -61,12 +40,20 @@ export class DetailComponent implements OnInit {
       this.company = data.company.data;
       this.objects = data.company.apartmentComplexes;
       this.persons = data.company.people;
-      this.title.setTitle(this.company.name + ' - Информация о компании ' + ' - NSP.ru');
+      this.articles = data.articles.items;
+      this.title.setTitle((this.company.metaTitle ? this.company.metaTitle : this.company.name + ' - Информация о компании ' + ' - NSP.ru'));
       this.meta.updateTag({
           name: 'description',
-          content: this.company.description
+          content: this.company.metaDescription ? this.company.metaDescription : this.company.description
         }
       );
+      if (this.company.metaKeywords) {
+        this.meta.updateTag({
+            name: 'keywords',
+            content: this.company.metaKeywords
+          }
+        );
+      }
     });
   }
 

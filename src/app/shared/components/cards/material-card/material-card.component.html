@@ -8,18 +8,20 @@
     [class.large]="size === 'large'"
   >
     <div class="card-top" *ngIf="size === 'small'">
-      <div class="date">{{ data.publishedAt * 1000 | niceDate }} в {{ data.publishedAt | date: 'shortTime' }}</div>
-      <div class="tag">
+      <div class="date">{{ data.articlePublishedAt * 1000 | niceDate }} в {{ data.articlePublishedAt | date: 'shortTime' }}</div>
+      <div class="tag" *ngIf="data.markerName">
         {{ data.markerName }}
       </div>
     </div>
-    <div class="card-img" *ngIf="data.imageXl">
+    <div class="card-img" *ngIf="data.imageXl || data.smallImageXl">
       <div class="image-overlay"></div>
-      <app-responsive-image [xl]="data.imageXl" [lg]="data.imageLg" [md]="data.imageMd" [xs]="data.imageSm" [sm]="data.imageSm"></app-responsive-image>
+      <ng-container *ngIf="size === 'small' && data.smallImageXl; else image">
+        <app-responsive-image [xl]="data.smallImageXl" [lg]="data.smallImageLg" [md]="data.smallImageMd" [xs]="data.smallImageSm" [sm]="data.smallImageSm"></app-responsive-image>
+      </ng-container>
     </div>
     <div class="card-content">
       <div class="card-top static" *ngIf="size !== 'small'">
-        <div class="date">{{ data.publishedAt * 1000 | niceDate }} в {{ data.publishedAt | date: 'shortTime' }}</div>
+        <div class="date">{{ data.articlePublishedAt * 1000 | niceDate }} в {{ data.articlePublishedAt | date: 'shortTime' }}</div>
       </div>
       <h5>{{ data.title }}</h5>
       <div class="card-text">
@@ -39,11 +41,11 @@
     </div>
   </a>
 </ng-container>
-<ng-container *ngIf="view === 'full' && data.imageXl">
+<ng-container *ngIf="view === 'full' && (data.imageXl || data.smallImageXl)">
   <a [routerLink]="['']" class="card-wrapper backgroundImage">
     <div class="card-top">
-      <div class="date">{{ data.publishedAt * 1000 | niceDate }} в {{ data.publishedAt | date: 'shortTime' }}</div>
-      <div class="tag">
+      <div class="date">{{ data.articlePublishedAt * 1000 | niceDate }} в {{ data.articlePublishedAt | date: 'shortTime' }}</div>
+      <div class="tag" *ngIf="data.markerName">
         {{ data.markerName }}
       </div>
     </div>
@@ -67,7 +69,12 @@
     <div class="card-overlay"></div>
     <div class="image-overlay"></div>
     <div class="background-img">
-      <app-responsive-image [xl]="data.imageXl" [lg]="data.imageLg" [md]="data.imageMd" [xs]="data.imageSm" [sm]="data.imageSm"></app-responsive-image>
+      <ng-container *ngIf="size === 'small' && (data.smallImageXl || data.smallImageXl); else image">
+        <app-responsive-image [xl]="data.smallImageXl" [lg]="data.smallImageLg" [md]="data.smallImageMd" [xs]="data.smallImageSm" [sm]="data.smallImageSm"></app-responsive-image>
+      </ng-container>
     </div>
   </a>
 </ng-container>
+<ng-template #image>
+  <app-responsive-image [xl]="data.imageXl" [lg]="data.imageLg" [md]="data.imageMd" [xs]="data.imageSm" [sm]="data.imageSm"></app-responsive-image>
+</ng-template>

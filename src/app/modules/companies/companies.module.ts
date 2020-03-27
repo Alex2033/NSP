@@ -6,6 +6,7 @@ import {SharedModule} from '../../shared/shared.module';
 import { DetailComponent } from './components/detail/detail.component';
 import {CompaniesResolver} from './resolvers/companies.resolver';
 import {CompanyResolver} from './resolvers/company.resolver';
+import {ArticlesResolver} from './resolvers/articles.resolver';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {CompanyResolver} from './resolvers/company.resolver';
   ],
   providers: [
     CompaniesResolver,
-    CompanyResolver
+    CompanyResolver,
+    ArticlesResolver
   ]
 })
 export class CompaniesModule { }

@@ -20,4 +20,8 @@ export interface Company {
   telegramLink?: string;
   twitterLink?: string;
   email?: string;
+
+  metaTitle?: string;
+  metaDescription?: string;
+  metaKeywords?: string;
 }

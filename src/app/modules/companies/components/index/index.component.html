@@ -23,14 +23,14 @@
 
 </div>
 
-<div class="container top-container">
-  <app-card-carousel [header]="'Технология строительства'"></app-card-carousel>
-<!--  <div class="companies-text">-->
-<!--    <h5>Заголовок SEO</h5>-->
-<!--    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus metus leo, finibus eget commodo ac, suscipit-->
-<!--      gravida risus. Vestibulum feugiat risus et lacus malesuada mattis. Nulla vehicula sit amet odio eu tristique.-->
-<!--      Interdum et malesuada fames ac ante ipsum primis in faucibus. In vestibulum mollis tortor vel tempus. Integer-->
-<!--      elementum lorem non posuere tincidunt. Aenean imperdiet vestibulum magna id molestie.</p>-->
-<!--  </div>-->
+<div class="container">
+  <div class="materials" *ngIf="articles && articles.length > 0">
+    <h3 class="materials-title">Статьи</h3>
+    <div class="row">
+      <div class="col-lg-3 col-md-6 result-card" *ngFor="let article of articles">
+        <app-material-card [size]="'small'" [view]="article.view" [data]="article"></app-material-card>
+      </div>
+    </div>
+  </div>
 </div>
 

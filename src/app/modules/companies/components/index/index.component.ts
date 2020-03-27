@@ -4,6 +4,7 @@ import {ApiService} from '../../../../shared/services/api.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Company} from '../../../../shared/contracts/company';
 import {Title} from '@angular/platform-browser';
+import {ArticleCard} from '../../../../shared/contracts/article-card';
 
 @Component({
   selector: 'app-index',
@@ -16,7 +17,7 @@ export class IndexComponent implements OnInit {
   screen: string;
   companies: Company[];
   companiesCount: number;
-
+  articles: ArticleCard[] = [];
   constructor(
     private api: ApiService,
     private route: ActivatedRoute,
@@ -33,6 +34,7 @@ export class IndexComponent implements OnInit {
     this.route.data.subscribe(data => {
       this.companiesCount = data.companies.count;
       this.companies = data.companies.items;
+      this.articles = data.articles.items;
     });
     if (IndexComponent.activities.length === 0) {
       this.api.getCompanyActivities().subscribe(activities => {

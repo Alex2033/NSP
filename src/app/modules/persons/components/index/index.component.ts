@@ -4,6 +4,7 @@ import {ApiService} from '../../../../shared/services/api.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Title} from '@angular/platform-browser';
 import {Person} from '../../../../shared/contracts/person';
+import {ArticleCard} from '../../../../shared/contracts/article-card';
 
 @Component({
   selector: 'app-index',
@@ -38,7 +39,7 @@ export class IndexComponent implements OnInit {
 
   personsCount: number;
   persons: Person[] = [];
-
+  articles: ArticleCard[] = [];
   constructor(
     private responsive: ResponsiveService,
     private api: ApiService,
@@ -55,6 +56,7 @@ export class IndexComponent implements OnInit {
     this.route.data.subscribe(data => {
       this.personsCount = data.persons.count;
       this.persons = data.persons.items;
+      this.articles = data.articles.items;
     });
   }
 

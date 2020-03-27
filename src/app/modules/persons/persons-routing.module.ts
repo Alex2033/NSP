@@ -4,13 +4,15 @@ import {IndexComponent} from './components/index/index.component';
 import {DetailComponent} from './components/detail/detail.component';
 import {PersonsResolver} from './resolvers/persons.resolver';
 import {PersonResolver} from './resolvers/person.resolver';
+import {ArticlesResolver} from './resolvers/articles.resolver';
 
 const routes: Routes = [
   {
     path: '',
     component: IndexComponent,
     resolve: {
-      persons: PersonsResolver
+      persons: PersonsResolver,
+      articles: ArticlesResolver
     },
     runGuardsAndResolvers: 'paramsOrQueryParamsChange',
   },
@@ -18,7 +20,8 @@ const routes: Routes = [
     path: ':person_slug',
     component: DetailComponent,
     resolve: {
-      person: PersonResolver
+      person: PersonResolver,
+      articles: ArticlesResolver
     },
   }
 ];

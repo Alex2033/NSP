@@ -8,13 +8,13 @@
   @include media-breakpoint-down(sm) {
     max-width: 480px;
     height: 100%;
-  }  
+  }
 }
 
 .modal-content {
   @include media-breakpoint-only(sm) {
     height: 100%;
-  } 
+  }
 }
 
 .main-content {
@@ -34,7 +34,7 @@
 
     @include media-breakpoint-only(sm) {
       width: 100%;
-    }  
+    }
   }
 
   app-textarea {
@@ -46,19 +46,19 @@ app-checkbox {
   @include media-breakpoint-only(sm) {
     margin-bottom: 24px;
     width: 100%;
-  } 
+  }
 }
 
 .modal-close {
   @include media-breakpoint-down(sm) {
     top: 21px;
-  }  
+  }
 }
 
 .confirm-content-close {
   @include media-breakpoint-down(sm) {
     margin-top: 50px;
-  } 
+  }
 }
 
 .confirm-content {
@@ -66,8 +66,8 @@ app-checkbox {
 
   @include media-breakpoint-down(sm) {
     margin-top: 50px;
-    min-height: 304px;
-  } 
+    min-height: 306px;
+  }
 }
 
 .choose-file {
@@ -125,7 +125,7 @@ app-checkbox {
 }
 
 .pick-file {
-  border: 1px dashed $border-color;	
+  border: 1px dashed $border-color;
   border-radius: 4px;
   padding: 11px 15px;
   width: 100%;
@@ -136,7 +136,7 @@ app-checkbox {
 
   @include media-breakpoint-only(sm) {
     margin-bottom: 0;
-  } 
+  }
 
   svg {
     width: 20px;
@@ -166,7 +166,7 @@ app-checkbox {
     width: 100%;
     padding-top: 13px;
     padding-bottom: 13px;
-  } 
+  }
 }
 
 .mobile-result-file {

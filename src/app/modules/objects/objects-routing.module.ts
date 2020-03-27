@@ -4,6 +4,7 @@ import {IndexComponent} from './components/index/index.component';
 import {DetailComponent} from './components/detail/detail.component';
 import {ApartmentComplexResolver} from './resolvers/apartment-complex.resolver';
 import {ApartmentComplexesResolver} from './resolvers/apartment-complexes.resolver';
+import {ArticlesResolver} from './resolvers/articles.resolver';
 
 
 const routes: Routes = [
@@ -11,7 +12,8 @@ const routes: Routes = [
     path: '',
     component: IndexComponent,
     resolve: {
-      objects: ApartmentComplexesResolver
+      objects: ApartmentComplexesResolver,
+      articles: ArticlesResolver
     },
     runGuardsAndResolvers: 'paramsOrQueryParamsChange',
   },
@@ -19,7 +21,8 @@ const routes: Routes = [
     path: ':apartment_complex',
     component: DetailComponent,
     resolve: {
-      content: ApartmentComplexResolver
+      content: ApartmentComplexResolver,
+      articles: ArticlesResolver
     }
   }
 ];

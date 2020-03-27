@@ -15,6 +15,30 @@ export class ApiService {
   constructor(private apiClient: ApiClientService) {
   }
 
+  getApartmentComplexArticles(filter = {}): Observable<any> {
+    return this.apiClient.get(`/api/site/apartment_complexes/articles`, {
+      params: filter
+    }).pipe(map((response) => {
+      return deserialize(response);
+    }));
+  }
+
+  getPersonArticles(filter = {}): Observable<any> {
+    return this.apiClient.get(`/api/site/people/articles`, {
+      params: filter
+    }).pipe(map((response) => {
+      return deserialize(response);
+    }));
+  }
+
+  getCompanyArticles(filter = {}): Observable<any> {
+    return this.apiClient.get(`/api/site/companies/articles`, {
+      params: filter
+    }).pipe(map((response) => {
+      return deserialize(response);
+    }));
+  }
+
   getAreas(): Observable<any> {
     return this.apiClient.get(`/api/site/areas`).pipe(map((response) => {
       return deserialize(response);

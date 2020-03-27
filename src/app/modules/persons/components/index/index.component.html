@@ -21,7 +21,14 @@
   </div>
 </div>
 <div class="container">
-  <h2 class="materials-title">Интервью с представителями бизнеса и власти</h2>
-  <app-card-layout [cards]="cards"></app-card-layout>
+  <div class="materials" *ngIf="articles && articles.length > 0">
+    <h3 class="materials-title">Интервью</h3>
+    <div class="row">
+      <div class="col-lg-3 col-md-6 result-card" *ngFor="let article of articles">
+        <app-material-card [size]="'small'" [view]="article.view" [data]="article"></app-material-card>
+      </div>
+    </div>
+  </div>
 </div>
+
 
