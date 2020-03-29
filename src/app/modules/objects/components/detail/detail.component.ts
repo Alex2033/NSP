@@ -55,22 +55,22 @@ export class DetailComponent implements OnInit {
 
   objectCards = [
     {
-      type: 'material',
+      type: 'article',
       size: 'small',
       view: 'half'
     },
     {
-      type: 'material',
+      type: 'article',
       size: 'small',
       view: 'half'
     },
     {
-      type: 'material',
+      type: 'article',
       size: 'small',
       view: 'half'
     },
     {
-      type: 'material',
+      type: 'article',
       size: 'small',
       view: 'full'
     },

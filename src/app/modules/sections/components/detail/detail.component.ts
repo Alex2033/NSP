@@ -25,12 +25,12 @@ export class DetailComponent implements OnInit, AfterViewInit {
           type: 'front'
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'half'
         },
         {
-          type: 'material-list',
+          type: 'article-list',
           size: 'small',
           position: {
             x: 4,
@@ -45,12 +45,12 @@ export class DetailComponent implements OnInit, AfterViewInit {
           }
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'half'
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'half'
         },
@@ -63,7 +63,7 @@ export class DetailComponent implements OnInit, AfterViewInit {
           size: 'medium-horizontal'
         },
         {
-          type: 'material-list',
+          type: 'article-list',
           size: 'medium-vertical',
           highlight: true,
           position: {
@@ -72,12 +72,12 @@ export class DetailComponent implements OnInit, AfterViewInit {
           }
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'half'
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'full'
         },
@@ -87,12 +87,12 @@ export class DetailComponent implements OnInit, AfterViewInit {
           type: 'front'
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'half'
         },
         {
-          type: 'material-list',
+          type: 'article-list',
           size: 'small',
           position: {
             x: 3,
@@ -107,12 +107,12 @@ export class DetailComponent implements OnInit, AfterViewInit {
           }
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'half'
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'half'
         },
@@ -125,7 +125,7 @@ export class DetailComponent implements OnInit, AfterViewInit {
           size: 'medium-horizontal'
         },
         {
-          type: 'material-list',
+          type: 'article-list',
           size: 'medium-vertical',
           highlight: true,
           position: {
@@ -134,12 +134,12 @@ export class DetailComponent implements OnInit, AfterViewInit {
           }
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'half'
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'full'
         },
@@ -149,12 +149,12 @@ export class DetailComponent implements OnInit, AfterViewInit {
           type: 'front'
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'half'
         },
         {
-          type: 'material-list',
+          type: 'article-list',
           size: 'small',
           position: {
             x: 1,
@@ -169,12 +169,12 @@ export class DetailComponent implements OnInit, AfterViewInit {
           }
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'half'
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'half'
         },
@@ -187,7 +187,7 @@ export class DetailComponent implements OnInit, AfterViewInit {
           size: 'medium-horizontal'
         },
         {
-          type: 'material-list',
+          type: 'article-list',
           size: 'medium-vertical',
           highlight: true,
           position: {
@@ -196,29 +196,29 @@ export class DetailComponent implements OnInit, AfterViewInit {
           }
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'half'
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'full'
         },
       ],
       mobile: [
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'half'
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'half'
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'half'
         },

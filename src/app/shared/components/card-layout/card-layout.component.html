@@ -4,12 +4,12 @@
       <ng-container *ngSwitchCase="'front'">
         <app-front-card></app-front-card>
       </ng-container>
-      <ng-container *ngSwitchCase="'material'">
+      <ng-container *ngSwitchCase="'article'">
         <app-material-card [size]="card.size"
                            [class]="card.size !== 'small' ? card.size : null"
                            [view]="card.view"></app-material-card>
       </ng-container>
-      <ng-container *ngSwitchCase="'material-list'">
+      <ng-container *ngSwitchCase="'article-list'">
         <app-material-list-card [size]="card.size" [highlight]="card.highlight ? card.highlight : false"
                                 [class]="card.size !== 'small' ? card.size : null"
                                 [style.grid-column]="card.position?.x ? card.position.x : null"

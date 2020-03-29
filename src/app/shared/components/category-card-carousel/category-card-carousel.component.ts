@@ -12,15 +12,15 @@ export class CategoryCardCarouselComponent implements OnInit {
       name: 'Подтема 1',
       cards: [
         {
-          type: 'material',
+          type: 'article',
           view: 'half'
         },
         {
-          type: 'material',
+          type: 'article',
           view: 'half'
         },
         {
-          type: 'material',
+          type: 'article',
           view: 'half'
         },
         {
@@ -35,7 +35,7 @@ export class CategoryCardCarouselComponent implements OnInit {
       name: 'Подтема 2',
       cards: [
         {
-          type: 'material',
+          type: 'article',
           view: 'half'
         },
         {

@@ -16,12 +16,12 @@ export class IndexComponent implements OnInit {
           type: 'front'
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'half'
         },
         {
-          type: 'material-list',
+          type: 'article-list',
           size: 'small',
           position: {
             x: 4,
@@ -36,12 +36,12 @@ export class IndexComponent implements OnInit {
           }
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'half'
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'half'
         },
@@ -54,7 +54,7 @@ export class IndexComponent implements OnInit {
           size: 'medium-horizontal'
         },
         {
-          type: 'material-list',
+          type: 'article-list',
           size: 'medium-vertical',
           highlight: true,
           position: {
@@ -63,12 +63,12 @@ export class IndexComponent implements OnInit {
           }
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'half'
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'full'
         },
@@ -78,12 +78,12 @@ export class IndexComponent implements OnInit {
           type: 'front'
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'half'
         },
         {
-          type: 'material-list',
+          type: 'article-list',
           size: 'small',
           position: {
             x: 3,
@@ -98,12 +98,12 @@ export class IndexComponent implements OnInit {
           }
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'half'
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'half'
         },
@@ -116,7 +116,7 @@ export class IndexComponent implements OnInit {
           size: 'medium-horizontal'
         },
         {
-          type: 'material-list',
+          type: 'article-list',
           size: 'medium-vertical',
           highlight: true,
           position: {
@@ -125,12 +125,12 @@ export class IndexComponent implements OnInit {
           }
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'half'
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'full'
         },
@@ -140,12 +140,12 @@ export class IndexComponent implements OnInit {
           type: 'front'
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'half'
         },
         {
-          type: 'material-list',
+          type: 'article-list',
           size: 'small',
           position: {
             x: 1,
@@ -160,12 +160,12 @@ export class IndexComponent implements OnInit {
           }
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'half'
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'half'
         },
@@ -178,7 +178,7 @@ export class IndexComponent implements OnInit {
           size: 'medium-horizontal'
         },
         {
-          type: 'material-list',
+          type: 'article-list',
           size: 'medium-vertical',
           highlight: true,
           position: {
@@ -187,12 +187,12 @@ export class IndexComponent implements OnInit {
           }
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'half'
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'full'
         },
@@ -202,7 +202,7 @@ export class IndexComponent implements OnInit {
           type: 'front'
         },
         {
-          type: 'material-list',
+          type: 'article-list',
           size: 'small',
           position: {
             x: 1,
@@ -217,7 +217,7 @@ export class IndexComponent implements OnInit {
           }
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'half'
         },
@@ -226,7 +226,7 @@ export class IndexComponent implements OnInit {
           size: 'small'
         },
         {
-          type: 'material-list',
+          type: 'article-list',
           size: 'small',
           highlight: true,
           position: {
@@ -235,12 +235,12 @@ export class IndexComponent implements OnInit {
           }
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'half'
         },
         {
-          type: 'material',
+          type: 'article',
           size: 'small',
           view: 'full'
         },

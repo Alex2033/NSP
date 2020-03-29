@@ -534,18 +534,18 @@ export class MockApiService {
                   type: 'slider'
                 },
                 {
-                  type: 'material',
+                  type: 'article',
                   size: 'small',
                   view: 'half'
                 },
                 {
-                  type: 'material-list',
+                  type: 'article-list',
                   size: 'small',
                   highlight: true,
-                  // position: {
-                  //   x: 4,
-                  //   y: 1
-                  // }
+                  position: {
+                    x: 4,
+                    y: 1
+                  }
                 },
                 {
                   type: 'latest-news',
@@ -555,12 +555,12 @@ export class MockApiService {
                   }
                 },
                 {
-                  type: 'material',
+                  type: 'article',
                   size: 'medium-horizontal',
                   view: 'half'
                 },
                 {
-                  type: 'material',
+                  type: 'article',
                   size: 'small',
                   view: 'half'
                 },
@@ -573,7 +573,7 @@ export class MockApiService {
                   size: 'medium-horizontal'
                 },
                 {
-                  type: 'material-list',
+                  type: 'article-list',
                   size: 'medium-vertical',
                   view: 'readBlock',
                   position: {
@@ -582,12 +582,12 @@ export class MockApiService {
                   }
                 },
                 {
-                  type: 'material',
+                  type: 'article',
                   size: 'small',
                   view: 'full'
                 },
                 {
-                  type: 'material',
+                  type: 'article',
                   size: 'small',
                   view: 'full'
                 },
@@ -600,12 +600,12 @@ export class MockApiService {
                   type: 'slider'
                 },
                 {
-                  type: 'material',
+                  type: 'article',
                   size: 'small',
                   view: 'half'
                 },
                 {
-                  type: 'material-list',
+                  type: 'article-list',
                   size: 'small',
                   highlight: true,
                   position: {
@@ -621,12 +621,12 @@ export class MockApiService {
                   }
                 },
                 {
-                  type: 'material',
+                  type: 'article',
                   size: 'small',
                   view: 'half'
                 },
                 {
-                  type: 'material',
+                  type: 'article',
                   size: 'small',
                   view: 'half'
                 },
@@ -639,7 +639,7 @@ export class MockApiService {
                   size: 'medium-horizontal'
                 },
                 {
-                  type: 'material-list',
+                  type: 'article-list',
                   size: 'medium-vertical',
                   highlight: true,
                   position: {
@@ -648,12 +648,12 @@ export class MockApiService {
                   }
                 },
                 {
-                  type: 'material',
+                  type: 'article',
                   size: 'small',
                   view: 'half'
                 },
                 {
-                  type: 'material',
+                  type: 'article',
                   size: 'small',
                   view: 'full'
                 },
@@ -666,12 +666,12 @@ export class MockApiService {
                   type: 'slider'
                 },
                 {
-                  type: 'material',
+                  type: 'article',
                   size: 'small',
                   view: 'half'
                 },
                 {
-                  type: 'material-list',
+                  type: 'article-list',
                   size: 'small',
                   position: {
                     x: 1,
@@ -686,12 +686,12 @@ export class MockApiService {
                   }
                 },
                 {
-                  type: 'material',
+                  type: 'article',
                   size: 'small',
                   view: 'half'
                 },
                 {
-                  type: 'material',
+                  type: 'article',
                   size: 'small',
                   view: 'half'
                 },
@@ -704,7 +704,7 @@ export class MockApiService {
                   size: 'medium-horizontal'
                 },
                 {
-                  type: 'material-list',
+                  type: 'article-list',
                   size: 'medium-vertical',
                   highlight: true,
                   position: {
@@ -713,12 +713,12 @@ export class MockApiService {
                   }
                 },
                 {
-                  type: 'material',
+                  type: 'article',
                   size: 'small',
                   view: 'half'
                 },
                 {
-                  type: 'material',
+                  type: 'article',
                   size: 'small',
                   view: 'full'
                 },
@@ -728,7 +728,7 @@ export class MockApiService {
                   type: 'slider'
                 },
                 {
-                  type: 'material-list',
+                  type: 'article-list',
                   size: 'small',
                   position: {
                     x: 1,
@@ -743,7 +743,7 @@ export class MockApiService {
                   }
                 },
                 {
-                  type: 'material',
+                  type: 'article',
                   size: 'small',
                   view: 'half'
                 },
@@ -752,7 +752,7 @@ export class MockApiService {
                   size: 'small'
                 },
                 {
-                  type: 'material-list',
+                  type: 'article-list',
                   size: 'small',
                   highlight: true,
                   position: {
@@ -761,12 +761,12 @@ export class MockApiService {
                   }
                 },
                 {
-                  type: 'material',
+                  type: 'article',
                   size: 'small',
                   view: 'half'
                 },
                 {
-                  type: 'material',
+                  type: 'article',
                   size: 'small',
                   view: 'full'
                 },
