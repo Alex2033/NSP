@@ -35,9 +35,6 @@ export class ModalComponent implements OnInit {
   ngOnInit() {
   }
   close() {
-    if(this.current.parameters && this.current.parameters['mode'] === 'standalone') {
-      this.router.navigate(['/']);
-    }
     this.modalService.close();
   }
 }

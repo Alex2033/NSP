@@ -66,6 +66,7 @@ import { MobileCardsSliderComponent } from './components/mobile-cards-slider/mob
 import { EditorContentComponent } from './components/editor-content/editor-content.component';
 import {LazyLoadImageModule} from 'ng-lazyload-image';
 import { NiceDatePipe } from './pipes/nice-date.pipe';
+import { YoutubeVideoIdPipe } from './pipes/youtube-video-id.pipe';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -129,7 +130,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MenuComponent,
     MobileCardsSliderComponent,
     EditorContentComponent,
-    NiceDatePipe
+    NiceDatePipe,
+    YoutubeVideoIdPipe
   ],
   imports: [
     CommonModule,
@@ -199,7 +201,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MobileCardsSliderComponent,
     EditorContentComponent,
     LazyLoadImageModule,
-    NiceDatePipe
+    NiceDatePipe,
+    YoutubeVideoIdPipe
   ],
   providers: [
     {

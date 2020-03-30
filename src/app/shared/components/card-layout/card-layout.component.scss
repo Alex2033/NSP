@@ -21,7 +21,7 @@
     }
 
     app-front-card {
-        grid-column: span 2;
+        grid-column-end: span 2;
 
         @include media-breakpoint-down(sm) {
             grid-column: span 1;

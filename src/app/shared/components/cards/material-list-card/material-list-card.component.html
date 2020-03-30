@@ -6,19 +6,19 @@
           <header class="card-header">
             <h5>Знак вопроса</h5>
             <div class="control-buttons">
-              <div class="control-button small" (click)="smallMaterial.swiper.slidePrev()">
+              <div class="control-button small" (click)="carousel.swiper.slidePrev()">
                 <svg class="icon">
                   <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
                 </svg>
               </div>
-              <div class="control-button small" (click)="smallMaterial.swiper.slideNext()">
+              <div class="control-button small" (click)="carousel.swiper.slideNext()">
                 <svg class="icon">
                   <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
                 </svg>
               </div>
             </div>
           </header>
-          <div class="swiper-container" [swiper]="materialListConfig" #smallMaterial>
+          <div class="swiper-container" [swiper]="materialListConfig" #carousel>
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <a [routerLink]="['']" class="card-link">
@@ -51,19 +51,19 @@
           <header class="card-header">
             <h5>Знак вопроса</h5>
             <div class="control-buttons">
-              <div class="control-button small" (click)="horizontalMaterial.swiper.slidePrev()">
+              <div class="control-button small" (click)="carousel.swiper.slidePrev()">
                 <svg class="icon">
                   <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
                 </svg>
               </div>
-              <div class="control-button small" (click)="horizontalMaterial.swiper.slideNext()">
+              <div class="control-button small" (click)="carousel.swiper.slideNext()">
                 <svg class="icon">
                   <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
                 </svg>
               </div>
             </div>
           </header>
-          <div class="swiper-container" [swiper]="materialListConfig" #horizontalMaterial>
+          <div class="swiper-container" [swiper]="materialListConfig" #carousel>
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <div class="columns">
@@ -112,19 +112,19 @@
           <header class="card-header">
             <h5>Знак вопроса</h5>
             <div class="control-buttons">
-              <div class="control-button small" (click)="verticalMaterial.swiper.slidePrev()">
+              <div class="control-button small" (click)="carousel.swiper.slidePrev()">
                 <svg class="icon">
                   <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
                 </svg>
               </div>
-              <div class="control-button small" (click)="verticalMaterial.swiper.slideNext()">
+              <div class="control-button small" (click)="carousel.swiper.slideNext()">
                 <svg class="icon">
                   <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
                 </svg>
               </div>
             </div>
           </header>
-          <div class="swiper-container" [swiper]="materialListConfig" #verticalMaterial>
+          <div class="swiper-container" [swiper]="materialListConfig" #carousel>
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <a [routerLink]="['']" class="card-link">
@@ -152,19 +152,19 @@
           <header class="card-header">
             <h5>А это вы читали?</h5>
             <div class="control-buttons">
-              <div class="control-button small" (click)="largeMaterial.swiper.slidePrev()">
+              <div class="control-button small" (click)="carousel.swiper.slidePrev()">
                 <svg class="icon">
                   <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
                 </svg>
               </div>
-              <div class="control-button small" (click)="largeMaterial.swiper.slideNext()">
+              <div class="control-button small" (click)="carousel.swiper.slideNext()">
                 <svg class="icon">
                   <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
                 </svg>
               </div>
             </div>
           </header>
-          <div class="swiper-container" [swiper]="materialListConfig" #largeMaterial>
+          <div class="swiper-container" [swiper]="materialListConfig" #carousel>
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <div class="columns">
@@ -237,23 +237,23 @@
   <ng-container *ngSwitchCase="true">
     <ng-container [ngSwitch]="size">
       <ng-container *ngSwitchCase="'small'">
-        <div class="card-wrapper readBlock">
+        <div class="card-wrapper highlight">
           <header class="card-header">
             <h5>А это вы читали?</h5>
             <div class="control-buttons">
-              <div class="control-button small" (click)="smallReadBlock.swiper.slidePrev()">
+              <div class="control-button small" (click)="carousel.swiper.slidePrev()">
                 <svg class="icon">
                   <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
                 </svg>
               </div>
-              <div class="control-button small" (click)="smallReadBlock.swiper.slideNext()">
+              <div class="control-button small" (click)="carousel.swiper.slideNext()">
                 <svg class="icon">
                   <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
                 </svg>
               </div>
             </div>
           </header>
-          <div class="swiper-container" [swiper]="materialListConfig" #smallReadBlock>
+          <div class="swiper-container" [swiper]="materialListConfig" #carousel>
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <a [routerLink]="['']" class="card-link">
@@ -272,23 +272,23 @@
         </div>
       </ng-container>
       <ng-container *ngSwitchCase="'medium-horizontal'">
-        <div class="card-wrapper readBlock">
+        <div class="card-wrapper highlight">
           <header class="card-header">
             <h5>А это вы читали?</h5>
             <div class="control-buttons">
-              <div class="control-button small" (click)="horizontalReadBlock.swiper.slidePrev()">
+              <div class="control-button small" (click)="carousel.swiper.slidePrev()">
                 <svg class="icon">
                   <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
                 </svg>
               </div>
-              <div class="control-button small" (click)="horizontalReadBlock.swiper.slideNext()">
+              <div class="control-button small" (click)="carousel.swiper.slideNext()">
                 <svg class="icon">
                   <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
                 </svg>
               </div>
             </div>
           </header>
-          <div class="swiper-container" [swiper]="materialListConfig" #horizontalReadBlock>
+          <div class="swiper-container" [swiper]="materialListConfig" #carousel>
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <div class="columns">
@@ -333,23 +333,23 @@
         </div>
       </ng-container>
       <ng-container *ngSwitchCase="'medium-vertical'">
-        <div class="card-wrapper readBlock">
+        <div class="card-wrapper highlight">
           <header class="card-header">
             <h5>А это вы читали?</h5>
             <div class="control-buttons">
-              <div class="control-button small" (click)="verticalReadBlock.swiper.slidePrev()">
+              <div class="control-button small" (click)="carousel.swiper.slidePrev()">
                 <svg class="icon">
                   <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
                 </svg>
               </div>
-              <div class="control-button small" (click)="verticalReadBlock.swiper.slideNext()">
+              <div class="control-button small" (click)="carousel.swiper.slideNext()">
                 <svg class="icon">
                   <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
                 </svg>
               </div>
             </div>
           </header>
-          <div class="swiper-container" [swiper]="materialListConfig" #verticalReadBlock>
+          <div class="swiper-container" [swiper]="materialListConfig" #carousel>
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <a [routerLink]="['']" class="card-link">
@@ -396,23 +396,23 @@
         </div>
       </ng-container>
       <ng-container *ngSwitchCase="'large'">
-        <div class="card-wrapper readBlock">
+        <div class="card-wrapper highlight">
           <header class="card-header">
             <h5>А это вы читали?</h5>
             <div class="control-buttons">
-              <div class="control-button small" (click)="largeReadBlock.swiper.slidePrev()">
+              <div class="control-button small" (click)="carousel.swiper.slidePrev()">
                 <svg class="icon">
                   <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
                 </svg>
               </div>
-              <div class="control-button small" (click)="largeReadBlock.swiper.slideNext()">
+              <div class="control-button small" (click)="carousel.swiper.slideNext()">
                 <svg class="icon">
                   <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
                 </svg>
               </div>
             </div>
           </header>
-          <div class="swiper-container" [swiper]="materialListConfig" #largeReadBlock>
+          <div class="swiper-container" [swiper]="materialListConfig" #carousel>
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <div class="columns">

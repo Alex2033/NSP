@@ -12,7 +12,10 @@ export class ServerDataResolver implements Resolve<any> {
   }
 
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
-    const path = this.location.path();
+    let path = this.location.path();
+    if (path === '') {
+      path = '/';
+    }
     return this.api.getServerData(path).pipe(catchError((err) => {
       if (err.status === 404) {
         this.response.notFound();

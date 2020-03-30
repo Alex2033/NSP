@@ -1,81 +1,90 @@
-<ng-container *ngIf="view === 'half' || !data.imageXl">
-  <a
-    [routerLink]="['']"
-    class="card-wrapper default"
-    [class.extended]="size !== 'small'"
-    [class.small]="size === 'small'"
-    [class.horizontal]="size === 'medium-horizontal'"
-    [class.vertical]="size === 'medium-vertical'"
-    [class.large]="size === 'large'"
-  >
-    <div class="card-top" *ngIf="size === 'small'">
-      <div class="date">{{ data.articlePublishedAt * 1000 | niceDate }} в {{ data.articlePublishedAt * 1000 | date: 'shortTime' }}</div>
-      <div class="tag" *ngIf="data.markerName">
-        {{ data.markerName }}
-      </div>
-    </div>
-    <div class="card-img" *ngIf="data.imageXl || data.smallImageXl">
-      <div class="image-overlay"></div>
-      <ng-container *ngIf="size === 'small' && data.smallImageXl; else image">
-        <app-responsive-image [xl]="data.smallImageXl" [lg]="data.smallImageLg" [md]="data.smallImageMd" [xs]="data.smallImageSm" [sm]="data.smallImageSm"></app-responsive-image>
-      </ng-container>
-    </div>
-    <div class="card-content">
-      <div class="card-top static" *ngIf="size !== 'small'">
+<ng-container *ngIf="data">
+  <ng-container *ngIf="view === 'half' || !data.imageXl">
+    <a
+      [routerLink]="['']"
+      class="card-wrapper default"
+      [class.extended]="size !== 'small'"
+      [class.small]="size === 'small'"
+      [class.horizontal]="size === 'medium-horizontal'"
+      [class.vertical]="size === 'medium-vertical'"
+      [class.large]="size === 'large'"
+      [class.has-image]="!!data.imageXl"
+    >
+      <div class="card-top" *ngIf="size === 'small'">
         <div class="date">{{ data.articlePublishedAt * 1000 | niceDate }} в {{ data.articlePublishedAt * 1000 | date: 'shortTime' }}</div>
-      </div>
-      <h5>{{ data.title }}</h5>
-      <div class="card-text">
-        <p>{{ data.previewText }}</p>
-      </div>
-      <footer class="card-footer">
-        <div class="views">
-          <svg class="views-icon">
-            <use xlink:href="assets/sprites/icons.svg#eye"></use>
-          </svg>
-          <span class="views-number">{{ data.articleViewsCount | number }}</span>
+        <div class="tag" *ngIf="data.markerName">
+          {{ data.markerName }}
         </div>
-        <div class="category">
-          {{ data.directoryName }}
+      </div>
+      <div class="card-img" *ngIf="data.imageXl || data.smallImageXl">
+        <ng-container>
+          <div class="image-overlay"></div>
+          <ng-container *ngIf="size === 'small' && data.smallImageXl; else image">
+            <app-responsive-image [xl]="data.smallImageXl" [lg]="data.smallImageLg" [md]="data.smallImageMd" [xs]="data.smallImageSm" [sm]="data.smallImageSm"></app-responsive-image>
+          </ng-container>
+        </ng-container>
+      </div>
+      <div class="card-content">
+        <div class="card-top static" *ngIf="size !== 'small'">
+          <div class="date">{{ data.articlePublishedAt * 1000 | niceDate }} в {{ data.articlePublishedAt * 1000 | date: 'shortTime' }}</div>
+          <div class="tag" *ngIf="data.markerName">
+            {{ data.markerName }}
+          </div>
         </div>
-      </footer>
-    </div>
-  </a>
+        <div class="h5">{{ data.title }}</div>
+        <div class="card-text">
+          <p>{{ data.previewText }}</p>
+        </div>
+        <footer class="card-footer">
+          <div class="views">
+            <svg class="views-icon">
+              <use xlink:href="assets/sprites/icons.svg#eye"></use>
+            </svg>
+            <span class="views-number">{{ data.articleViewsCount | number }}</span>
+          </div>
+          <div class="category">
+            {{ data.directoryName }}
+          </div>
+        </footer>
+      </div>
+    </a>
+  </ng-container>
+  <ng-container *ngIf="view === 'full' && (data.imageXl || data.smallImageXl)">
+    <a [routerLink]="['']" class="card-wrapper backgroundImage has-image">
+      <div class="card-top">
+        <div class="date">{{ data.articlePublishedAt * 1000 | niceDate }} в {{ data.articlePublishedAt * 1000 | date: 'shortTime' }}</div>
+        <div class="tag" *ngIf="data.markerName">
+          {{ data.markerName }}
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="h5">{{ data.title }}</div>
+        <div class="card-text">
+          <p>{{ data.previewText }}</p>
+        </div>
+        <footer class="card-footer light">
+          <div class="views">
+            <svg class="views-icon">
+              <use xlink:href="assets/sprites/icons.svg#eye"></use>
+            </svg>
+            <span class="views-number">{{ data.articleViewsCount | number }}</span>
+          </div>
+          <div class="category">
+            {{ data.directoryName }}
+          </div>
+        </footer>
+      </div>
+      <div class="card-overlay"></div>
+      <div class="image-overlay"></div>
+      <div class="background-img">
+        <ng-container *ngIf="size === 'small' && (data.smallImageXl || data.smallImageXl); else image">
+          <app-responsive-image [xl]="data.smallImageXl" [lg]="data.smallImageLg" [md]="data.smallImageMd" [xs]="data.smallImageSm" [sm]="data.smallImageSm"></app-responsive-image>
+        </ng-container>
+      </div>
+    </a>
+  </ng-container>
+  <ng-template #image>
+    <app-responsive-image [xl]="data.imageXl" [lg]="data.imageLg" [md]="data.imageMd" [xs]="data.imageSm" [sm]="data.imageSm"></app-responsive-image>
+  </ng-template>
+
 </ng-container>
-<ng-container *ngIf="view === 'full' && (data.imageXl || data.smallImageXl)">
-  <a [routerLink]="['']" class="card-wrapper backgroundImage">
-    <div class="card-top">
-      <div class="date">{{ data.articlePublishedAt * 1000 | niceDate }} в {{ data.articlePublishedAt * 1000 | date: 'shortTime' }}</div>
-      <div class="tag" *ngIf="data.markerName">
-        {{ data.markerName }}
-      </div>
-    </div>
-    <div class="card-content">
-      <h5>{{ data.title }}</h5>
-      <div class="card-text">
-        <p>{{ data.previewText }}</p>
-      </div>
-      <footer class="card-footer light">
-        <div class="views">
-          <svg class="views-icon">
-            <use xlink:href="assets/sprites/icons.svg#eye"></use>
-          </svg>
-          <span class="views-number">{{ data.articleViewsCount | number }}</span>
-        </div>
-        <div class="category">
-          {{ data.directoryName }}
-        </div>
-      </footer>
-    </div>
-    <div class="card-overlay"></div>
-    <div class="image-overlay"></div>
-    <div class="background-img">
-      <ng-container *ngIf="size === 'small' && (data.smallImageXl || data.smallImageXl); else image">
-        <app-responsive-image [xl]="data.smallImageXl" [lg]="data.smallImageLg" [md]="data.smallImageMd" [xs]="data.smallImageSm" [sm]="data.smallImageSm"></app-responsive-image>
-      </ng-container>
-    </div>
-  </a>
-</ng-container>
-<ng-template #image>
-  <app-responsive-image [xl]="data.imageXl" [lg]="data.imageLg" [md]="data.imageMd" [xs]="data.imageSm" [sm]="data.imageSm"></app-responsive-image>
-</ng-template>

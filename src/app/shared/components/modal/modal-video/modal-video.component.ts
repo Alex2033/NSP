@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {ModalService} from '../../../services/modal.service';
+import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
+import {YoutubeVideoIdPipe} from '../../../pipes/youtube-video-id.pipe';
 
 @Component({
   selector: 'app-modal-video',
@@ -7,8 +9,13 @@ import {ModalService} from '../../../services/modal.service';
   styleUrls: ['./modal-video.component.scss']
 })
 export class ModalVideoComponent implements OnInit {
-  @Input() url: string;
-  constructor(private modalService: ModalService) { }
+  videoUrl: SafeResourceUrl;
+  @Input() set url(value: string) {
+    this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + this.videoIdPipe.transform(value));
+  }
+
+  constructor(private modalService: ModalService, public sanitizer: DomSanitizer, private videoIdPipe: YoutubeVideoIdPipe) {
+  }
 
   ngOnInit() {
   }

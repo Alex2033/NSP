@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { ResponsiveService } from 'src/app/shared/services/responsive.service';
+import {ArticleCard} from '../../../contracts/article-card';
+import {FrontArticleCard} from '../../../contracts/front-article-card';
 
 @Component({
   selector: 'app-front-card',
@@ -8,6 +10,7 @@ import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 })
 export class FrontCardComponent implements OnInit {
   screen: string;
+  @Input() data: FrontArticleCard;
 
   constructor(private responsive: ResponsiveService) { }
 

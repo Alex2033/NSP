@@ -2,38 +2,43 @@
      [class.small]="size === 'small'"
      [class.horizontal]="size === 'medium-horizontal'"
      [class.vertical]="size === 'medium-vertical'"
-     [class.large]="size === 'large'">
+     [class.large]="size === 'large'"
+     (click)="modal.open('video', {url: data.videoUrl})">
     <div class="card-content">
         <div class="card-top static">
-            <div class="date">Сегодня в 16:45</div>
-            <div class="tag">
-                <div class="emoji">🔥</div>
-                <span>Важно</span>
+            <div class="date">{{ data.videoPublishedAt * 1000 | niceDate }} в {{ data.videoPublishedAt * 1000 | date: 'shortTime' }}</div>
+            <div class="tag" *ngIf="data.markerName">
+                {{ data.markerName }}
             </div>
         </div>
         <div class="card-text">
-            <h5 class="light">Аренда вне закона</h5>
+            <div class="h5 light">{{ data.title }}</div>
         </div>
         <footer class="card-footer light">
             <div class="views">
                 <svg class="views-icon">
                     <use xlink:href="assets/sprites/icons.svg#eye"></use>
                 </svg>
-                <span class="views-number">234</span>
+                <span class="views-number">{{ data.videoViewsCount | number }}</span>
             </div>
-            <div class="category">
-                Коммерческая недвижимость
-            </div>
+<!--            <div class="category">-->
+<!--                Коммерческая недвижимость-->
+<!--            </div>-->
         </footer>
     </div>
-    <button class="play" (click)="modal.open('video')">
+    <button class="play">
         <svg>
             <use xlink:href="assets/sprites/icons.svg#play"></use>
         </svg>
     </button>
     <div class="image-overlay"></div>
     <div class="background-img">
-<!--      <img src="https://img.youtube.com/vi/4EoUz39nPMM/hqdefault.jpg" alt="video overlay" class="youtube-image">-->
-        <img src="https://picsum.photos/616/304" alt="video overlay">
+      <img [src]="'https://img.youtube.com/vi/' + (data.videoUrl | youtubeVideoId) + '/hqdefault.jpg'" *ngIf="!data.imageXl && !data.smallImageXl" alt="video overlay" class="youtube-image">
+      <ng-container *ngIf="size === 'small' && data.smallImageXl; else image">
+        <app-responsive-image [xl]="data.smallImageXl" [lg]="data.smallImageLg" [md]="data.smallImageMd" [xs]="data.smallImageSm" [sm]="data.smallImageSm"></app-responsive-image>
+      </ng-container>
     </div>
 </div>
+<ng-template #image>
+  <app-responsive-image [xl]="data.imageXl" [lg]="data.imageLg" [md]="data.imageMd" [xs]="data.imageSm" [sm]="data.imageSm"></app-responsive-image>
+</ng-template>

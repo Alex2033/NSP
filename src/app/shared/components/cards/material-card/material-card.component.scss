@@ -19,7 +19,7 @@
     }
 }
 
-h5 {
+.h5 {
     margin-bottom: 8px;
     color: $text-color;
     transition: color .2s ease;
@@ -43,7 +43,7 @@ h5 {
             background-color: transparent;
         }
 
-        .card-text, h5 {
+        .card-text, .h5 {
             color: $light-color;
         }
 
@@ -64,7 +64,7 @@ h5 {
 
     &.default {
         &:hover {
-            h5, .card-text {
+            .h5, .card-text {
                 color: $primary-color;
             }
 
@@ -73,23 +73,31 @@ h5 {
             }
 
         }
-      .card-content {
+      &.has-image {
+        .card-content {
+          border: 1px solid $border-color;
+        }
+        &.has-image {
+          &.small, &.vertical, &.large {
+            .card-content {
+              border-top: 0;
+            }
+          }
+          &.horizontal {
+            .card-content {
+              border-left: 0;
+            }
+          }
+        }
+      }
+      &:not(.has-image) {
         border: 1px solid $border-color;
       }
-      &.small, &.vertical, &.large {
-        .card-content {
-          border-top: 0;
-        }
-      }
-      &.horizontal {
-        .card-content {
-          border-left: 0;
-        }
-      }
+
     }
 
-    &.extended {
-        .date {
+    &.extended, &:not(.has-image) {
+        .date, .tag {
             color: $dark-gray;
         }
         .card-footer {
@@ -134,12 +142,19 @@ h5 {
         flex-basis: auto;
     }
 }
+.card-wrapper:not(.has-image).small {
+
+  .card-top {
+    height: 153px;
+    position: relative;
+  }
+}
 
 .card-img {
     width: 100%;
-    height: 154px;
+    height: 153px;
     position: relative;
-    background-color: $text-color;
+    //background-color: $text-color;
 
     ::ng-deep img {
         transition: opacity .2s ease;

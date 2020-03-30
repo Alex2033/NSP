@@ -1,9 +1,20 @@
 @import "theme";
 @import "responsive";
-
+:host {
+  overflow: hidden;
+  position: relative;
+  &:after {
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
 .news-wrapper {
     padding: 24px 8px 24px 0;
-
+    max-height: 100%;
     @include media-breakpoint-down(sm) {
         padding: 12px;
     }
@@ -29,14 +40,14 @@
 
         &:hover {
             text-decoration: none;
-    
+
             .news-text {
                 color: $primary-color;
             }
         }
     }
 
-    
+
 
     &.important {
         font-weight: 600;
@@ -45,7 +56,7 @@
             color: $important-color;
         }
     }
-    
+
 }
 
 .news-text {

@@ -11,7 +11,7 @@
     flex-direction: column;
     border: 1px solid $border-color;
 
-    &.readBlock {
+    &.highlight {
         padding: 0 18px 18px;
         border: 6px solid $secondary-color;
 
@@ -71,7 +71,7 @@
         overflow: hidden;
         text-overflow: -o-ellipsis-lastline;
         display: -webkit-box;
-        -webkit-box-orient: vertical;  
+        -webkit-box-orient: vertical;
         -webkit-line-clamp: 5;
     }
 }
