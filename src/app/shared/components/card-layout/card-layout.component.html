@@ -16,8 +16,9 @@
                            [view]="card.view"></app-material-card>
       </ng-container>
       <ng-container *ngSwitchCase="'article-list'">
-        <app-material-list-card [size]="card.size" [highlight]="card.highlight ? card.highlight : false"
+        <app-material-list-card [size]="card.size" [highlight]="card.highlight"
                                 [class]="card.size !== 'small' ? card.size : null"
+                                [data]="card"
                                 [style.grid-column-start]="card.position?.x ? card.position.x : null"
                                 [style.grid-row-start]="card.position?.y ? card.position.y : null"
         ></app-material-list-card>

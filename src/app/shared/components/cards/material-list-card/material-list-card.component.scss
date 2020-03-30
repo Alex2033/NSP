@@ -14,33 +14,42 @@
     &.highlight {
         padding: 0 18px 18px;
         border: 6px solid $secondary-color;
-
-        .card-link {
-            height: initial;
-            &:not(:last-child) {
-                margin-bottom: 32px;
-            }
-        }
-
-        .card-header {
-            padding: 17px 0 20px;
-        }
     }
 
     &.vertical, &.large {
         .card-link {
-            height: initial;
-            &:not(:last-child) {
-                margin-bottom: 32px;
-            }
+            height: calc(50% - 16px);
+            overflow: hidden;
         }
     }
+  &.vertical {
+    .card-link {
+      &:first-child {
+        margin-bottom: 32px;
+      }
+    }
+  }
+  &.horizontal, &.large {
+    .card-link {
+      width: calc(50% - 16px);
+      &:nth-child(odd) {
+        margin-right: 32px;
+      }
+    }
+  }
+  &.large {
+    .card-link {
+      &:nth-child(1), &:nth-child(2) {
+        margin-bottom: 32px;
+      }
+    }
+  }
 
 }
 
 .swiper-slide {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .swiper-container {
@@ -56,7 +65,7 @@
     border-bottom: 1px solid $border-color;
     margin-bottom: 16px;
 
-    h5 {
+    .h5 {
         color: $dark-gray;
     }
 }
@@ -76,7 +85,7 @@
     }
 }
 
-h5 {
+.h5 {
     color: $text-color;
 
     @include media-breakpoint-down(sm) {
@@ -85,7 +94,7 @@ h5 {
     }
 }
 
-h6 {
+.h6 {
     margin-bottom: 16px;
     color: $text-color;
 
@@ -101,14 +110,14 @@ h6 {
     display: flex;
     flex-direction: column;
 
-    h5 {
+    .h5 {
         margin-bottom: 8px;
     }
 
     &:hover {
         text-decoration: none;
 
-        h5, h6, .card-text {
+        .h5, .h6, .card-text {
             color: $primary-color;
         }
     }
@@ -116,12 +125,4 @@ h6 {
 
 .card-footer {
     margin-top: auto;
-}
-
-.columns {
-    column-count: 2;
-
-    .card-link {
-        display: block;
-    }
 }
