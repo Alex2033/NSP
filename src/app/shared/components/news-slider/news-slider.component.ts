@@ -21,16 +21,19 @@ export class NewsSliderComponent implements OnInit {
       if (screen === 'xl') {
         this.newsSliderConfig = {
           slidesPerView: 4,
+          loop: false,
           spaceBetween: 40
         };
       } else if (screen === 'lg') {
         this.newsSliderConfig = {
           slidesPerView: 4,
+          loop: false,
           spaceBetween: 20
         };
       } else if (screen === 'md') {
         this.newsSliderConfig = {
           slidesPerView: 3,
+          loop: false,
           spaceBetween: 25
         };
       }

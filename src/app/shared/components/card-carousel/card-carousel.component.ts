@@ -22,19 +22,23 @@ export class CardCarouselComponent implements OnInit {
       if (screen === 'xl') {
         this.carouselConfig = {
           slidesPerView: 4,
-        }
+          loop: false,
+        };
       } else if (screen === 'lg') {
         this.carouselConfig = {
           slidesPerView: 3,
-        }
+          loop: false,
+        };
       } else if (screen === 'md') {
         this.carouselConfig = {
           slidesPerView: 2,
-        }
+          loop: false,
+        };
       } else if (screen === 'sm') {
         this.carouselConfig = {
           slidesPerView: 'auto',
-        }
+          loop: false,
+        };
       }
     });
   }

@@ -30,17 +30,17 @@ export class TabsCardCarouselComponent implements OnInit {
         this.carouselConfig = {
           slidesPerView: 4,
           loop: false
-        }
+        };
       } else if (screen === 'lg') {
         this.carouselConfig = {
           slidesPerView: 3,
           loop: false
-        }
+        };
       } else if (screen === 'md') {
         this.carouselConfig = {
           slidesPerView: 2,
           loop: false
-        }
+        };
       } else {
         this.carouselConfig.slidesPerView = 'auto';
       }
@@ -49,11 +49,11 @@ export class TabsCardCarouselComponent implements OnInit {
 
   showSlides(index, cardCarousel) {
     this.cardsView = index;
-    
+
     setTimeout(() => {
       cardCarousel.swiper.update();
     });
-    
+
   }
 
 }
