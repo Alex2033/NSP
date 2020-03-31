@@ -37,6 +37,7 @@
       <div class="swiper-slide"  *ngFor="let card of data.cards">
         <ng-container [ngSwitch]="card.type">
           <app-material-card *ngSwitchCase="'article'" [size]="'small'" [view]="card.view" [data]="card"></app-material-card>
+          <app-video-card *ngSwitchCase="'video'" [size]="'small'" [data]="card"></app-video-card>
           <app-advertising-card *ngSwitchCase="'advertising'" [size]="'small'"></app-advertising-card>
         </ng-container>
       </div>
