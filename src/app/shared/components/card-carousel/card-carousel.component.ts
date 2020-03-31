@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { ResponsiveService } from '../../services/responsive.service';
+import {CardCollection} from '../../contracts/card-collection';
 
 @Component({
   selector: 'app-card-carousel',
@@ -8,10 +9,15 @@ import { ResponsiveService } from '../../services/responsive.service';
   styleUrls: ['./card-carousel.component.scss']
 })
 export class CardCarouselComponent implements OnInit {
-  @Input() header: string;
-  @Input() smallHeader: boolean;
-  carouselConfig: SwiperConfigInterface;
   screen: string;
+
+  @Input() data: CardCollection;
+  @Input() smallHeader: boolean;
+  cardsView: number = 0;
+  carouselConfig: SwiperConfigInterface = {
+    slidesPerView: 4,
+    loop: false
+  };
 
   constructor(public responsive: ResponsiveService) { }
 
@@ -22,25 +28,21 @@ export class CardCarouselComponent implements OnInit {
       if (screen === 'xl') {
         this.carouselConfig = {
           slidesPerView: 4,
-          loop: false,
+          loop: false
         };
       } else if (screen === 'lg') {
         this.carouselConfig = {
           slidesPerView: 3,
-          loop: false,
+          loop: false
         };
       } else if (screen === 'md') {
         this.carouselConfig = {
           slidesPerView: 2,
-          loop: false,
+          loop: false
         };
-      } else if (screen === 'sm') {
-        this.carouselConfig = {
-          slidesPerView: 'auto',
-          loop: false,
-        };
+      } else {
+        this.carouselConfig.slidesPerView = 'auto';
       }
     });
   }
-
 }

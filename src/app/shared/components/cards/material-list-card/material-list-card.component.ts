@@ -40,7 +40,6 @@ export class MaterialListCardComponent extends ResizableCardComponent implements
         });
         break;
     }
-    console.log(value.size, this.blocks);
   }
 
   materialListConfig: SwiperConfigInterface = {

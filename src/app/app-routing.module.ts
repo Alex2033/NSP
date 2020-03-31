@@ -7,10 +7,6 @@ import {ServerDataResolver} from './shared/resolvers/server-data.resolver';
 import {NotFoundComponent} from './shared/components/not-found/not-found.component';
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   loadChildren: () => import('./modules/home/home.module').then(mod => mod.HomeModule)
-  // },
   {
     path: 'pages',
     loadChildren: () => import('./modules/pages/pages.module').then(mod => mod.PagesModule)
