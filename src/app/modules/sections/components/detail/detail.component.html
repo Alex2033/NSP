@@ -1,15 +1,15 @@
 <div class="container">
     <div class="page-top">
         <header class="inner-page-header" *ngIf="screen !== 'sm'">
-            <h1>Власть</h1>
-            <button type="button" class="page-topline-element">
+            <h1>{{ section.title }}</h1>
+            <button type="button" class="page-topline-element" *ngIf="false">
                 Сбросить настройки
             </button>
         </header>
-        <div class="filters">
+        <div class="filters" *ngIf="section.tags?.length > 0">
             <ul class="tags" *ngIf="screen !== 'sm'">
-                <li class="tag" *ngFor="let tag of tags">
-                    <a [routerLink]="['']">#{{ tag }}</a>
+                <li class="tag" *ngFor="let tag of section.tags">
+                    <a [routerLink]="['/tags', tag.code]">#{{ tag.name }}</a>
                 </li>
             </ul>
 
@@ -21,8 +21,8 @@
                     #scrollbarRef
                 >
                     <ul class="tags">
-                        <li class="tag" *ngFor="let tag of tags">
-                            <a [routerLink]="['']">#{{ tag }}</a>
+                        <li class="tag" *ngFor="let tag of section.tags">
+                            <a [routerLink]="['/tags', tag.code]">#{{ tag.name }}</a>
                         </li>
                     </ul>
 
@@ -42,13 +42,13 @@
                     </div>
                 </div>
             </div>
-            
 
-            <div class="date-filter">
-                <input 
+
+            <div class="date-filter" *ngIf="false">
+                <input
                     class="data-hidden-input"
-                    (dateInput)="entryDate($event)" 
-                    [matDatepicker]="picker1" 
+                    (dateInput)="entryDate($event)"
+                    [matDatepicker]="picker1"
                     placeholder="Choose a date"
                 >
                 <div class="datepicker" (click)="picker1.open()">
@@ -68,12 +68,8 @@
         </div>
     </div>
     <div class="materials">
-        <app-card-layout 
-            [cards]="screen === 'xl' ? cards.resolutions.desktop : 
-                    screen === 'lg' ? cards.resolutions.smallDesktop : 
-                    screen === 'md' ? cards.resolutions.tablet : 
-                    cards.resolutions.mobile"
+        <app-card-layout
+            [cards]="cards"
         ></app-card-layout>
     </div>
 </div>
-    

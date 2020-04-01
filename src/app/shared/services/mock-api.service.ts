@@ -5,6 +5,7 @@ import {ApartmentComplex} from '../contracts/apartment-complex';
 import {ResponseService} from './response.service';
 import {Page} from '../contracts/page';
 import {Project} from '../contracts/project';
+import {Section} from '../contracts/section';
 
 @Injectable({
   providedIn: 'root'
@@ -487,7 +488,7 @@ export class MockApiService {
     );
   }
 
-  getServerData(route): Observable<{ type: 'page', data: Page } | { type: 'project', data: Project }> {
+  getServerData(route): Observable<{ type: 'page', data: Page } | { type: 'project', data: Project } | { type: 'section', data: Section }> {
     if (route === '/project' || route === '/') {
       return of(
         {
@@ -2078,49 +2079,49 @@ export class MockApiService {
               {
                 title: 'Новости долёвки',
                 articles: [
-                    {
-                      id: 1,
-                      slug: '',
-                      publishedAt: 1573746483,
-                      directorySlug: '',
-                      title: '«ФНС подала иск о банкротстве застройщика малоэтажного ЖК «Черничная поляна»',
-                      },
-                    {
-                      id: 1,
-                      slug: '',
-                      publishedAt: 1573746483 - (60 * 5),
-                      directorySlug: '',
-                      title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия',
-                      },
-                    {
-                      id: 1,
-                      slug: '',
-                      publishedAt: 1573746483 - (60 * 15),
-                      directorySlug: '',
-                      title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство',
-                      },
-                    {
-                      id: 1,
-                      slug: '',
-                      publishedAt: 1573746483 - (60 * 35),
-                      directorySlug: '',
-                      title: 'В Думе рассматривают возможность платить за будущую квартиру в новостройке в рассрочку',
-                      },
-                    {
-                      id: 1,
-                      slug: '',
-                      publishedAt: 1573746483 - (60 * 55),
-                      directorySlug: '',
-                      title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство',
-                      },
-                    {
-                      id: 1,
-                      slug: '',
-                      publishedAt: 1573746483 - (60 * 125),
-                      directorySlug: '',
-                      title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия',
-                      }
-                  ]
+                  {
+                    id: 1,
+                    slug: '',
+                    publishedAt: 1573746483,
+                    directorySlug: '',
+                    title: '«ФНС подала иск о банкротстве застройщика малоэтажного ЖК «Черничная поляна»',
+                  },
+                  {
+                    id: 1,
+                    slug: '',
+                    publishedAt: 1573746483 - (60 * 5),
+                    directorySlug: '',
+                    title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия',
+                  },
+                  {
+                    id: 1,
+                    slug: '',
+                    publishedAt: 1573746483 - (60 * 15),
+                    directorySlug: '',
+                    title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство',
+                  },
+                  {
+                    id: 1,
+                    slug: '',
+                    publishedAt: 1573746483 - (60 * 35),
+                    directorySlug: '',
+                    title: 'В Думе рассматривают возможность платить за будущую квартиру в новостройке в рассрочку',
+                  },
+                  {
+                    id: 1,
+                    slug: '',
+                    publishedAt: 1573746483 - (60 * 55),
+                    directorySlug: '',
+                    title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство',
+                  },
+                  {
+                    id: 1,
+                    slug: '',
+                    publishedAt: 1573746483 - (60 * 125),
+                    directorySlug: '',
+                    title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия',
+                  }
+                ]
               }
             ],
             collections: [
@@ -2294,6 +2295,116 @@ export class MockApiService {
                 ]
               }
             ]
+          }
+        }
+      );
+    }
+    if (route === '/section') {
+      let cards = [
+        {
+          type: 'article',
+          size: 'small',
+          articlePublishedAt: 1584608518,
+          markerName: '💥 Свежее',
+          title: 'Долги под апартами',
+          previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
+          view: 'half',
+          articleViewsCount: 12453,
+          directorySlug: 'commerce',
+          directoryName: 'Коммерческая недвижимость',
+          articleId: 123,
+          articleSlug: 'article-slug',
+          imageXl: 'https://picsum.photos/304/152',
+          imageLg: 'https://picsum.photos/304/152',
+          imageMd: 'https://picsum.photos/304/152',
+          imageSm: 'https://picsum.photos/304/152',
+          smallImageXl: null,
+          smallImageLg: null,
+          smallImageMd: null,
+          smallImageSm: null,
+        },
+        {
+          type: 'article',
+          size: 'small',
+          articlePublishedAt: 1584608518,
+          markerName: '💥 Свежее',
+          title: 'Долги под апартами',
+          previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
+          view: 'full',
+          articleViewsCount: 12453,
+          directorySlug: 'commerce',
+          directoryName: 'Коммерческая недвижимость',
+          articleId: 123,
+          articleSlug: 'article-slug',
+          imageXl: 'https://picsum.photos/304/304',
+          imageLg: 'https://picsum.photos/304/304',
+          imageMd: 'https://picsum.photos/304/304',
+          imageSm: 'https://picsum.photos/304/304',
+          smallImageXl: null,
+          smallImageLg: null,
+          smallImageMd: null,
+          smallImageSm: null,
+        },
+        {
+          type: 'video',
+          size: 'small',
+          videoPublishedAt: 1584608518,
+          markerName: '💥 Свежее',
+          title: 'Долги под апартами',
+          videoViewsCount: 12453,
+          imageXl: 'https://picsum.photos/616/304',
+          imageLg: 'https://picsum.photos/616/304',
+          imageMd: 'https://picsum.photos/616/304',
+          imageSm: 'https://picsum.photos/616/304',
+          smallImageXl: null,
+          smallImageLg: null,
+          smallImageMd: null,
+          smallImageSm: null,
+          videoUrl: 'https://www.youtube.com/watch?v=s8z28NJTexE'
+        }
+      ];
+      let i = 0;
+      while (i < 4) {
+        cards = cards.concat(cards);
+        i++;
+      }
+
+      return of(
+        {
+          type: 'section',
+          data: {
+            id: 1,
+            title: 'Власть',
+            metaTitle: null,
+            metaDescription: null,
+            metaKeywords: null,
+            cardsCount: 100,
+            tags: [
+              {
+                name: 'Тег 1',
+                code: 'tag1'
+              },
+              {
+                name: 'Тег 2',
+                code: 'tag1'
+              },
+              {
+                name: 'Тег 3',
+                code: 'tag1'
+              },
+              {
+                name: 'Тег 4',
+                code: 'tag1'
+              },
+              {
+                name: 'Тег 5',
+                code: 'tag1'
+              }
+            ],
+            cardsFilter: {
+              section_id: 1
+            },
+            cards: cards
           }
         }
       );
@@ -2836,5 +2947,79 @@ export class MockApiService {
         }
       }
     );
+  }
+
+  getCardFeed(filter) {
+    let cards = [
+      {
+        type: 'article',
+        size: 'small',
+        articlePublishedAt: 1584608518,
+        markerName: '💥 Свежее',
+        title: 'Долги под апартами',
+        previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
+        view: 'half',
+        articleViewsCount: 12453,
+        directorySlug: 'commerce',
+        directoryName: 'Коммерческая недвижимость',
+        articleId: 123,
+        articleSlug: 'article-slug',
+        imageXl: 'https://picsum.photos/304/152',
+        imageLg: 'https://picsum.photos/304/152',
+        imageMd: 'https://picsum.photos/304/152',
+        imageSm: 'https://picsum.photos/304/152',
+        smallImageXl: null,
+        smallImageLg: null,
+        smallImageMd: null,
+        smallImageSm: null,
+      },
+      {
+        type: 'article',
+        size: 'small',
+        articlePublishedAt: 1584608518,
+        markerName: '💥 Свежее',
+        title: 'Долги под апартами',
+        previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
+        view: 'full',
+        articleViewsCount: 12453,
+        directorySlug: 'commerce',
+        directoryName: 'Коммерческая недвижимость',
+        articleId: 123,
+        articleSlug: 'article-slug',
+        imageXl: 'https://picsum.photos/304/304',
+        imageLg: 'https://picsum.photos/304/304',
+        imageMd: 'https://picsum.photos/304/304',
+        imageSm: 'https://picsum.photos/304/304',
+        smallImageXl: null,
+        smallImageLg: null,
+        smallImageMd: null,
+        smallImageSm: null,
+      },
+      {
+        type: 'video',
+        size: 'small',
+        videoPublishedAt: 1584608518,
+        markerName: '💥 Свежее',
+        title: 'Долги под апартами',
+        videoViewsCount: 12453,
+        imageXl: 'https://picsum.photos/616/304',
+        imageLg: 'https://picsum.photos/616/304',
+        imageMd: 'https://picsum.photos/616/304',
+        imageSm: 'https://picsum.photos/616/304',
+        smallImageXl: null,
+        smallImageLg: null,
+        smallImageMd: null,
+        smallImageSm: null,
+        videoUrl: 'https://www.youtube.com/watch?v=s8z28NJTexE'
+      }
+    ];
+    let i = 0;
+    while (i < 4) {
+      cards = cards.concat(cards);
+      i++;
+    }
+    return of({
+      cards
+    });
   }
 }
