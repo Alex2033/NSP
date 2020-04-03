@@ -5,6 +5,7 @@ import {EventComponent} from './shared/components/event/event.component';
 import {ServerDataComponent} from './shared/components/server-data/server-data.component';
 import {ServerDataResolver} from './shared/resolvers/server-data.resolver';
 import {NotFoundComponent} from './shared/components/not-found/not-found.component';
+import {RouteDataResolver} from './shared/resolvers/route-data.resolver';
 
 const routes: Routes = [
   {
@@ -40,13 +41,16 @@ const routes: Routes = [
     loadChildren: () => import('./modules/search/search.module').then(mod => mod.SearchModule)
   },
   {
-    path: 'article',
-    component: ArticleComponent
+    path: 'server_article',
+    component: ArticleComponent,
+    resolve: {
+      data: RouteDataResolver
+    }
   },
-  {
-    path: 'event',
-    component: EventComponent
-  },
+  // {
+  //   path: 'event',
+  //   component: EventComponent
+  // },
   {
     path: 'not-found',
     component: NotFoundComponent

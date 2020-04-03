@@ -1,5 +1,4 @@
-import {MenuElement} from './menu-element';
-import {NewsFeed} from './news-feed';
+import {Tag} from './tag';
 
 export interface Section {
   id: number;
@@ -8,10 +7,7 @@ export interface Section {
   metaDescription?: string | null;
   metaKeywords?: string | null;
   cardsFilter: any;
-  tags?: {
-    name: string,
-    code: string
-  }[];
+  tags?: Tag[];
   cardsCount: number;
   cards: any[];
 }

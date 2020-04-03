@@ -76,6 +76,16 @@ h6 {
     line-height: 1.57;
 }
 
+.h1 {
+  font-size: 30px;
+  line-height: 1.3333;
+
+  @include media-breakpoint-down(sm) {
+    font-size: 17px;
+    line-height: 1.59;
+  }
+}
+
 .h2 {
   font-size: 26px;
   line-height: 1.3846;

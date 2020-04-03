@@ -1,100 +1,102 @@
 <div class="container">
-    <div class="page-topline" *ngIf="screen !== 'sm'">
-        <h5>Мероприятия</h5>
-        <div class="page-topline-element">
-            <svg class="topline-icon">
-                <use xlink:href="assets/sprites/icons.svg#eye"></use>
-            </svg>
-            <span>1 234</span>
-        </div>
+  <div class="page-topline" *ngIf="screen !== 'sm'">
+    <h5>Мероприятия</h5>
+    <div class="page-topline-element">
+      <svg class="topline-icon">
+        <use xlink:href="assets/sprites/icons.svg#eye"></use>
+      </svg>
+      <span>1 234</span>
     </div>
-    <div class="info">
-        <img src="https://images.unsplash.com/photo-1560439514-4e9645039924?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1680&q=80"
-            alt="" class="info-background">
-        <div class="info-content">
-            <h1 class="light">Международная научно-практическая конференция «Световой дизайн»</h1>
-            <div class="info-bottom">
-                <div class="info-bottom-left">
-                    <div class="event-type-name">Конференция</div>
-                    <div class="event-date">01 Ноября 2019 — 02 Ноября 2019</div>
-                </div>
-                <div class="info-bottom-right">
-                    <button class="button secondary">Зарегистрироваться</button>
-                </div>
+  </div>
+  <div class="info">
+    <img
+      src="https://images.unsplash.com/photo-1560439514-4e9645039924?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1680&q=80"
+      alt="" class="info-background">
+    <div class="info-content">
+      <h1 class="light">Международная научно-практическая конференция «Световой дизайн»</h1>
+      <div class="info-bottom">
+        <div class="info-bottom-left">
+          <div class="event-type-name">Конференция</div>
+          <div class="event-date">01 Ноября 2019 — 02 Ноября 2019</div>
+        </div>
+        <div class="info-bottom-right">
+          <button class="button secondary">Зарегистрироваться</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xl-8 col-lg-8 col-md-12">
+      <div class="page-content">
+        <app-share></app-share>
+
+        <app-block-layout [blocks]="blocks"></app-block-layout>
+
+        <app-company-carousel-block></app-company-carousel-block>
+
+        <app-event-registration-block></app-event-registration-block>
+
+        <img *ngIf="screen !== 'sm'" class="image"
+             src="http://avangard.rosbalt.ru/wp-content/uploads/2019/10/Afisha-glavnaya.jpeg" alt="poster image">
+      </div>
+    </div>
+    <div class="col-xl-3 col-lg-4 col-md-8 offset-xl-1 offset-lg-0 offset-md-2" *ngIf="screen !== 'sm'">
+      <aside class="content-sidebar">
+        <div class="contact-card">
+          <div class="contact-card-items">
+            <h6>Место проведения</h6>
+            <div class="contact-card-item">
+
+              <svg class="contact-card-icon geolocation">
+                <use xlink:href="assets/sprites/icons.svg#map_pin"></use>
+              </svg>
+              <span>Главный штаб, Государственный Эрмитаж; АРХКЛУБ на территории Севкабель Порта</span>
             </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xl-8 col-lg-8 col-md-12">
-            <div class="page-content">
-                <app-share></app-share>
+          </div>
+          <div class="contact-card-items">
+            <h6>Информация</h6>
+            <div class="contact-card-item">
 
-                <app-block-layout [blocks]="blocks"></app-block-layout>
-
-                <app-company-carousel-block [carousel]="carouselConfig"></app-company-carousel-block>
-
-                <app-event-registration-block></app-event-registration-block>
-
-                <img *ngIf="screen !== 'sm'" class="image" src="http://avangard.rosbalt.ru/wp-content/uploads/2019/10/Afisha-glavnaya.jpeg" alt="poster image">
+              <svg class="contact-card-icon phone">
+                <use xlink:href="assets/sprites/icons.svg#phone"></use>
+              </svg>
+              <a href="tel:+78123800355" class="link contact-card-phone">+7 (812) 380–03–55</a>
             </div>
+          </div>
+          <div class="contact-card-items">
+            <div class="contact-card-item">
+              <svg class="contact-card-icon mail">
+                <use xlink:href="assets/sprites/icons.svg#mail"></use>
+              </svg>
+              <a href="mailto:info@event.ru" class="link">info@event.ru</a>
+            </div>
+          </div>
+          <div class="contact-card-items">
+            <div class="contact-card-item">
+              <svg class="contact-card-icon web">
+                <use xlink:href="assets/sprites/icons.svg#web"></use>
+              </svg>
+              <a href="event.ru" target="_blank" class="link">event.ru</a>
+            </div>
+          </div>
+          <ul class="socials">
+            <li>
+              <a [routerLink]="['']" class="vk" target="_blank">
+                <svg>
+                  <use xlink:href="assets/sprites/icons.svg#vk"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a [routerLink]="['']" class="facebook" target="_blank">
+                <svg>
+                  <use xlink:href="assets/sprites/icons.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
         </div>
-        <div class="col-xl-3 col-lg-4 col-md-8 offset-xl-1 offset-lg-0 offset-md-2" *ngIf="screen !== 'sm'">
-            <aside class="content-sidebar">
-                <div class="contact-card">
-                    <div class="contact-card-items">
-                        <h6>Место проведения</h6>
-                        <div class="contact-card-item">
-                            
-                            <svg class="contact-card-icon geolocation">
-                                <use xlink:href="assets/sprites/icons.svg#map_pin"></use>
-                            </svg>
-                            <span>Главный штаб, Государственный Эрмитаж; АРХКЛУБ на территории Севкабель Порта</span>
-                        </div>
-                    </div>
-                    <div class="contact-card-items">
-                        <h6>Информация</h6>
-                        <div class="contact-card-item">
-                            
-                            <svg class="contact-card-icon phone">
-                                <use xlink:href="assets/sprites/icons.svg#phone"></use>
-                            </svg>
-                            <a href="tel:+78123800355" class="link contact-card-phone">+7 (812) 380–03–55</a>
-                        </div>
-                    </div>
-                    <div class="contact-card-items">
-                        <div class="contact-card-item">
-                            <svg class="contact-card-icon mail">
-                                <use xlink:href="assets/sprites/icons.svg#mail"></use>
-                            </svg>
-                            <a href="mailto:info@event.ru" class="link">info@event.ru</a>
-                        </div>
-                    </div>
-                    <div class="contact-card-items">
-                        <div class="contact-card-item">
-                            <svg class="contact-card-icon web">
-                                <use xlink:href="assets/sprites/icons.svg#web"></use>
-                            </svg>
-                            <a href="event.ru" target="_blank" class="link">event.ru</a>
-                        </div>
-                    </div>
-                    <ul class="socials">
-                        <li>
-                            <a [routerLink]="['']" class="vk" target="_blank">
-                                <svg>
-                                    <use xlink:href="assets/sprites/icons.svg#vk"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a [routerLink]="['']" class="facebook" target="_blank">
-                                <svg>
-                                    <use xlink:href="assets/sprites/icons.svg#facebook"></use>
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </aside>
-        </div>
+      </aside>
     </div>
+  </div>
 </div>

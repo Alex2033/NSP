@@ -16,7 +16,7 @@ export class MaterialListCardComponent extends ResizableCardComponent implements
   @Input() set data(value) {
     this.blocks = [];
     this.title = value.title;
-    switch (value.size) {
+    switch (this.size) {
       case 'small':
         value.articles.map((article, index) => {
           this.blocks[index] = [article];
