@@ -8,10 +8,12 @@
                 [placeholder]="'Поиск по названию'" (apply)="applySearch($event)"></app-search>
   </div>
 </div>
-<div class="page-cards" *ngIf="companies.length > 0">
+<div class="page-cards" [class.no-margin-bottom]="companiesCount > 12" *ngIf="companies.length > 0">
   <div class="container top-container">
-    <div class="cards-content" *ngIf="screen !== 'sm'">
-      <app-company-card *ngFor="let company of companies" [company]="company"></app-company-card>
+    <div class="row cards-row" *ngIf="screen !== 'sm'">
+      <div class="col-xl-3 col-lg-4 col-md-6 col-12" *ngFor="let company of companies">
+        <app-company-card [company]="company"></app-company-card>
+      </div>
     </div>
 
     <!-- mobile cards slider -->
@@ -24,8 +26,10 @@
 <div class="container">
   <div class="materials" *ngIf="articles && articles.length > 0">
     <h3 class="materials-title">Статьи</h3>
-    <div class="cards-content">
-      <app-material-card class="small" *ngFor="let article of articles" [size]="'small'" [view]="article.view" [data]="article"></app-material-card>
+    <div class="row cards-row">
+      <div class="col-xl-3 col-lg-4 col-md-6 col-12" *ngFor="let article of articles">
+        <app-material-card class="small" [size]="'small'" [view]="article.view" [data]="article"></app-material-card>
+      </div>
     </div>
   </div>
 </div>

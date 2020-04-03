@@ -71,3 +71,9 @@ app-pagination {
 //.materials:last-child {
 //  margin-bottom: 0;
 //}
+
+.page-cards {
+    &.no-margin-bottom {
+        margin-bottom: 0;
+    }
+}

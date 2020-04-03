@@ -118,20 +118,26 @@
   </div>
   <div class="materials" *ngIf="persons && persons.length > 0">
     <h3 class="materials-title">Персоны</h3>
-    <div class="cards-content">
-      <app-person-card *ngFor="let person of persons" [person]="person"></app-person-card>
+    <div class="row cards-row">
+      <div class="col-xl-3 col-lg-4 col-md-6 col-12" *ngFor="let person of persons">
+        <app-person-card [person]="person"></app-person-card>
+      </div>
     </div>
   </div>
   <div class="materials" *ngIf="objects && objects.length > 0">
     <h3 class="materials-title">Объекты</h3>
-    <div class="cards-content">
-      <app-object-card *ngFor="let object of objects" [object]="object"></app-object-card>
+    <div class="row cards-row">
+      <div class="col-xl-3 col-lg-4 col-md-6 col-12" *ngFor="let object of objects">
+        <app-object-card [object]="object"></app-object-card>
+      </div>
     </div>
   </div>
   <div class="materials" *ngIf="articles && articles.length > 0">
     <h3 class="materials-title">Статьи о компании</h3>
-    <div class="cards-content">
-      <app-material-card class="small" *ngFor="let article of articles" [size]="'small'" [view]="article.view" [data]="article"></app-material-card>
+    <div class="row cards-row">
+      <div class="col-xl-3 col-lg-4 col-md-6 col-12" *ngFor="let article of articles">
+        <app-material-card class="small" [size]="'small'" [view]="article.view" [data]="article"></app-material-card>
+      </div>
     </div>
   </div>
 </div>

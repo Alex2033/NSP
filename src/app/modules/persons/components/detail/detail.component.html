@@ -12,8 +12,10 @@
   </div>
   <div class="materials" *ngIf="articles && articles.length > 0">
     <h3 class="materials-title">Материалы с персоной</h3>
-    <div class="cards-content">
-      <app-material-card class="small" *ngFor="let article of articles" [size]="'small'" [view]="article.view" [data]="article"></app-material-card>
+    <div class="row cards-row">
+      <div class="col-xl-3 col-lg-4 col-md-6 col-12" *ngFor="let article of articles">
+        <app-material-card class="small" [size]="'small'" [view]="article.view" [data]="article"></app-material-card>
+      </div>
     </div>
   </div>
 </div>

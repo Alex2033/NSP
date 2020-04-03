@@ -26,8 +26,8 @@
           <a [routerLink]="['/search']" [queryParams]="{type: 'articles'}" queryParamsHandling="merge">Все результаты</a>
         </h5>
       </h2>
-      <div class="row">
-        <div class="col-lg-3 col-md-6 result-card" *ngFor="let article of results.articles.items">
+      <div class="row cards-row">
+        <div class="col-xl-3 col-lg-4 col-md-6 col-12" *ngFor="let article of results.articles.items">
           <app-material-card class="small" [size]="'small'" [view]="article.view" [data]="article"></app-material-card>
         </div>
       </div>
@@ -40,8 +40,8 @@
           <a [routerLink]="['/search']" [queryParams]="{type: 'companies'}" queryParamsHandling="merge">Все результаты</a>
         </h5>
       </h2>
-      <div class="row">
-        <div class="col-lg-3 col-md-6 result-card" *ngFor="let company of results.companies.items">
+      <div class="row cards-row">
+        <div class="col-xl-3 col-lg-4 col-md-6 col-12" *ngFor="let company of results.companies.items">
           <app-company-card [company]="company"></app-company-card>
         </div>
       </div>
@@ -54,8 +54,8 @@
           <a [routerLink]="['/search']" [queryParams]="{type: 'objects'}" queryParamsHandling="merge">Все результаты</a>
         </h5>
       </h2>
-      <div class="row">
-        <div class="col-lg-3 col-md-6 result-card" *ngFor="let object of results.objects.items">
+      <div class="row cards-row">
+        <div class="col-xl-3 col-lg-4 col-md-6 col-12" *ngFor="let object of results.objects.items">
           <app-object-card [object]="object"></app-object-card>
         </div>
       </div>
@@ -68,8 +68,8 @@
           <a [routerLink]="['/search']" [queryParams]="{type: 'persons'}" queryParamsHandling="merge">Все результаты</a>
         </h5>
       </h2>
-      <div class="row">
-        <div class="col-lg-3 col-md-6 result-card" *ngFor="let person of results.persons.items">
+      <div class="row cards-row">
+        <div class="col-xl-3 col-lg-4 col-md-6 col-12" *ngFor="let person of results.persons.items">
           <app-person-card [person]="person"></app-person-card>
         </div>
       </div>

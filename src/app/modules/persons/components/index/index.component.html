@@ -9,8 +9,10 @@
 </div>
 <div class="page-cards">
   <div class="container top-container">
-    <div class="cards-content" *ngIf="screen !== 'sm'">
-      <app-person-card *ngFor="let person of persons" [person]="person"></app-person-card>
+    <div class="row cards-row" *ngIf="screen !== 'sm'">
+      <div class="col-xl-3 col-lg-4 col-md-6 col-12" *ngFor="let person of persons">
+        <app-person-card [person]="person"></app-person-card>
+      </div>
     </div>
 
     <!-- mobile cards slider -->
@@ -21,8 +23,10 @@
 <div class="container">
   <div class="materials" *ngIf="articles && articles.length > 0">
     <h3 class="materials-title">Интервью</h3>
-    <div class="cards-content">
-      <app-material-card class="small" *ngFor="let article of articles" [size]="'small'" [view]="article.view" [data]="article"></app-material-card>
+    <div class="row cards-row">
+      <div class="col-xl-3 col-lg-4 col-md-6 col-12" *ngFor="let article of articles">
+        <app-material-card class="small" [size]="'small'" [view]="article.view" [data]="article"></app-material-card>
+      </div>
     </div>
   </div>
 </div>
