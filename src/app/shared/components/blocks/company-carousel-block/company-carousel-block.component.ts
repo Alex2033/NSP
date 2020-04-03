@@ -24,11 +24,13 @@ export class CompanyCarouselBlockComponent implements OnInit {
       if (screen === 'sm') {
         this.config = {
           slidesPerView: 'auto',
+          loop: false,
           spaceBetween: 16
         };
       } else {
         this.config = {
           slidesPerView: 4,
+          loop: false,
           spaceBetween: 8
         };
       }

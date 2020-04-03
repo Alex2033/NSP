@@ -43,6 +43,20 @@ export class CategoryCardCarouselComponent implements OnInit {
         },
         {
           type: 'video',
+          size: 'medium-horizontal',
+          videoPublishedAt: 1584608518,
+          markerName: '💥 Свежее',
+          title: 'Долги под апартами',
+          videoViewsCount: 12453,
+          imageXl: 'https://picsum.photos/616/304',
+          imageLg: 'https://picsum.photos/616/304',
+          imageMd: 'https://picsum.photos/616/304',
+          imageSm: 'https://picsum.photos/616/304',
+          smallImageXl: null,
+          smallImageLg: null,
+          smallImageMd: null,
+          smallImageSm: null,
+          videoUrl: 'https://www.youtube.com/watch?v=s8z28NJTexE'
         }
       ]
     }

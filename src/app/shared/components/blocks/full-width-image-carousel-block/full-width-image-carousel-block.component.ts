@@ -13,7 +13,7 @@ export class FullWidthImageCarouselBlockComponent implements OnInit {
   @Input() images;
 
   carouselConfig: SwiperConfigInterface = {
-    slidesPerView: 1
+    slidesPerView: 1,
   };
 
   constructor() { }

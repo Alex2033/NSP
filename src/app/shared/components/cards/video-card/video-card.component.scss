@@ -10,6 +10,7 @@
 }
 
 .card-wrapper {
+  cursor: pointer;
   padding: 16px;
   overflow: hidden;
   &.small, &.large, &.vertical {

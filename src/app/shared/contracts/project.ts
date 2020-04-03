@@ -14,5 +14,6 @@ export interface Project {
     md: any[],
     sm: any[],
   };
-  newsBlocks: NewsFeed[]
+  newsBlocks: NewsFeed[];
+  collections: any[];
 }

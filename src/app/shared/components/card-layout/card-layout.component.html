@@ -1,42 +1,62 @@
 <div class="card-layout">
   <ng-container *ngFor="let card of cards">
     <ng-container [ngSwitch]="card.type">
-      <ng-container *ngSwitchCase="'front'">
-        <app-front-card></app-front-card>
+      <ng-container *ngSwitchCase="'front-article'">
+        <app-front-card
+          [data]="card"
+          [style.grid-column-start]="card.position?.x ? card.position.x : null"
+          [style.grid-row-start]="card.position?.y ? card.position.y : null"
+        ></app-front-card>
       </ng-container>
       <ng-container *ngSwitchCase="'article'">
-        <app-material-card [size]="card.size"
+        <app-material-card [size]="card.size" [data]="card"
                            [class]="card.size"
+                           [style.grid-column-start]="card.position?.x ? card.position.x : null"
+                           [style.grid-row-start]="card.position?.y ? card.position.y : null"
                            [view]="card.view"></app-material-card>
       </ng-container>
       <ng-container *ngSwitchCase="'article-list'">
-        <app-material-list-card [size]="card.size" [highlight]="card.highlight ? card.highlight : false"
+        <app-material-list-card [size]="card.size" [highlight]="card.highlight"
                                 [class]="card.size"
-                                [style.grid-column]="card.position?.x ? card.position.x : null"
+                                [data]="card"
+                                [style.grid-column-start]="card.position?.x ? card.position.x : null"
                                 [style.grid-row-start]="card.position?.y ? card.position.y : null"
         ></app-material-list-card>
       </ng-container>
       <ng-container *ngSwitchCase="'latest-news'">
         <app-latest-news-card
-          [style.grid-column]="card.position.x ? card.position.x : null"
-          [style.grid-row-start]="card.position.y ? card.position.y : null"
+          [style.grid-column-start]="card.position?.x ? card.position.x : null"
+          [style.grid-row-start]="card.position?.y ? card.position.y : null"
+          [articles]="card.articles"
           style="grid-row-end: span 3"></app-latest-news-card>
       </ng-container>
       <ng-container *ngSwitchCase="'advertising'">
         <app-advertising-card [size]="card.size"
-                              [class]="card.size"></app-advertising-card>
+                              [class]="card.size"
+                              [style.grid-column-start]="card.position?.x ? card.position.x : null"
+                              [style.grid-row-start]="card.position?.y ? card.position.y : null"></app-advertising-card>
       </ng-container>
       <ng-container *ngSwitchCase="'video'">
-        <app-video-card [size]="card.size" [class]="card.size"></app-video-card>
+        <app-video-card [size]="card.size" [data]="card"
+                        [class]="card.size"
+                        [style.grid-column-start]="card.position?.x ? card.position.x : null"
+                        [style.grid-row-start]="card.position?.y ? card.position.y : null"></app-video-card>
       </ng-container>
       <ng-container *ngSwitchCase="'object'">
-        <app-object-card [object]="card.data" [size]="card.size" [class]="card.size"></app-object-card>
+        <app-object-card [object]="card.data" [size]="card.size"
+                         [class]="card.size"
+                         [style.grid-column-start]="card.position?.x ? card.position.x : null"
+                         [style.grid-row-start]="card.position?.y ? card.position.y : null"></app-object-card>
       </ng-container>
       <ng-container *ngSwitchCase="'person'">
-        <app-person-card [person]="card.data" [class]="card.size"></app-person-card>
+        <app-person-card [person]="card.data" [class]="card.size"
+                         [style.grid-column-start]="card.position?.x ? card.position.x : null"
+                         [style.grid-row-start]="card.position?.y ? card.position.y : null"></app-person-card>
       </ng-container>
       <ng-container *ngSwitchCase="'slider'">
-        <app-slider></app-slider>
+        <app-slider
+          [style.grid-column-start]="card.position?.x ? card.position.x : null"
+          [style.grid-row-start]="card.position?.y ? card.position.y : null"></app-slider>
       </ng-container>
     </ng-container>
   </ng-container>

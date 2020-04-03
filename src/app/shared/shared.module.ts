@@ -44,7 +44,6 @@ import { CommentsComponent } from './components/comments/comments.component';
 import { EventComponent } from './components/event/event.component';
 import { BlockLayoutComponent } from './components/block-layout/block-layout.component';
 import { ExtendedCompanyCardComponent } from './components/extended-cards/extended-company-card/extended-company-card.component';
-import { TabsCardCarouselComponent } from './components/tabs-card-carousel/tabs-card-carousel.component';
 import { CompanyCarouselBlockComponent } from './components/blocks/company-carousel-block/company-carousel-block.component';
 import { EventRegistrationBlockComponent } from './components/blocks/event-registration-block/event-registration-block.component';
 import { FullWidthImageCarouselBlockComponent } from './components/blocks/full-width-image-carousel-block/full-width-image-carousel-block.component';
@@ -66,6 +65,7 @@ import { MobileCardsSliderComponent } from './components/mobile-cards-slider/mob
 import { EditorContentComponent } from './components/editor-content/editor-content.component';
 import {LazyLoadImageModule} from 'ng-lazyload-image';
 import { NiceDatePipe } from './pipes/nice-date.pipe';
+import { YoutubeVideoIdPipe } from './pipes/youtube-video-id.pipe';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -114,7 +114,6 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     EventComponent,
     BlockLayoutComponent,
     ExtendedCompanyCardComponent,
-    TabsCardCarouselComponent,
     CompanyCarouselBlockComponent,
     EventRegistrationBlockComponent,
     FullWidthImageCarouselBlockComponent,
@@ -129,7 +128,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MenuComponent,
     MobileCardsSliderComponent,
     EditorContentComponent,
-    NiceDatePipe
+    NiceDatePipe,
+    YoutubeVideoIdPipe
   ],
   imports: [
     CommonModule,
@@ -180,7 +180,6 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ArticleComponent,
     BlockLayoutComponent,
     ExtendedCompanyCardComponent,
-    TabsCardCarouselComponent,
     FullWidthImageCarouselBlockComponent,
     ApartmentInfoBlockComponent,
     CommentsListComponent,
@@ -199,7 +198,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MobileCardsSliderComponent,
     EditorContentComponent,
     LazyLoadImageModule,
-    NiceDatePipe
+    NiceDatePipe,
+    YoutubeVideoIdPipe
   ],
   providers: [
     {

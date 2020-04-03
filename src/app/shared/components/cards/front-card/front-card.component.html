@@ -1,18 +1,17 @@
 <a [routerLink]="['']" class="card-wrapper">
     <div class="card-content">
         <div class="card-top static" *ngIf="screen !== 'sm'">
-            <div class="date">Сегодня в 16:45</div>
-            <div class="tag">
-                <div class="emoji">🔥</div>
-                <span>Первая полоса</span>
-            </div>
+            <div class="date">{{ data.articlePublishedAt * 1000 | niceDate }} в {{ data.articlePublishedAt * 1000 | date: 'shortTime' }}</div>
+          <div class="tag" *ngIf="data.markerName">
+            {{ data.markerName }}
+          </div>
         </div>
         <div class="card-text">
             <div class="card-title"*ngIf="screen !== 'sm'">
-                <h3 class="light">Акулы отменяются</h3>
+                <div class="h3 light">{{ data.title }}</div>
             </div>
             <p>
-                Смольный официально отменил строительство океанариума в парке Интернационалистов
+                {{ data.previewText }}
             </p>
         </div>
         <footer class="card-footer light" *ngIf="screen !== 'sm'">
@@ -20,16 +19,16 @@
                 <svg class="views-icon">
                     <use xlink:href="assets/sprites/icons.svg#eye"></use>
                 </svg>
-                <span class="views-number">1 234</span>
+                <span class="views-number">{{ data.articleViewsCount | number }}</span>
             </div>
             <div class="category">
-                Коммерческая недвижимость
+              {{ data.directoryName }}
             </div>
         </footer>
     </div>
     <div class="card-overlay"></div>
     <div class="background-img">
-        <img src="https://picsum.photos/616/304" alt="front card image">
+      <app-responsive-image [xl]="data.imageXl" [lg]="data.imageXl" [md]="data.imageXl" [xs]="data.smallImageSm ? data.smallImageSm : data.imageSm" [sm]="data.smallImageSm ? data.smallImageSm : data.imageSm"></app-responsive-image>
     </div>
 
 </a>

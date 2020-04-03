@@ -1,46 +1,45 @@
 <div class="carousel-wrapper">
-    <header class="carousel-header">
-        <h2 [class.is-small]="smallHeader">
-            <a href="/" class="carousel-link">
-                <span>{{ header }}</span>
-                <svg class="arrow-icon">
-                    <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
-                </svg>
-            </a>
-        </h2>
-        <div class="control-buttons" *ngIf="screen !== 'sm'">
-            <div class="control-button" (click)="cardCarousel.swiper.slidePrev()">
-                <svg class="icon">
-                    <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
-                </svg>
-            </div>
-            <div class="control-button" (click)="cardCarousel.swiper.slideNext()">
-                <svg class="icon">
-                    <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
-                </svg>
-            </div>
+  <header class="carousel-header">
+    <div class="carousel-header-left">
+      <h2 [class.is-small]="smallHeader">
+        <a [routerLink]="['/collections', data.slug]" class="carousel-link">
+          <span>{{ data.title }}</span>
+          <svg class="arrow-icon">
+            <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
+          </svg>
+        </a>
+      </h2>
+      <ul class="carousel-tabs">
+        <li
+          class="carousel-tab"
+          *ngFor="let link of data.links; let index = index"
+        >
+          <a [routerLink]="link.link">{{ link.title }}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="control-buttons" *ngIf="screen !== 'sm'">
+        <div class="control-button" (click)="cardCarousel.swiper.slidePrev()">
+            <svg class="icon">
+                <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
+            </svg>
         </div>
-    </header>
-    <div class="swiper-container" [swiper]="carouselConfig" #cardCarousel>
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <app-material-card class="small" [size]="'small'" [view]="'half'"></app-material-card>
-            </div>
-            <div class="swiper-slide">
-                <app-material-card class="small" [size]="'small'" [view]="'full'"></app-material-card>
-            </div>
-            <div class="swiper-slide">
-                <app-advertising-card [size]="'small'"></app-advertising-card>
-            </div>
-            <div class="swiper-slide">
-                <app-material-card class="small" [size]="'small'" [view]="'full'"></app-material-card>
-            </div>
-            <div class="swiper-slide">
-                <app-material-card class="small" [size]="'small'" [view]="'half'"></app-material-card>
-            </div>
-            <div class="swiper-slide">
-                <app-material-card class="small" [size]="'small'" [view]="'half'"></app-material-card>
-            </div>
+        <div class="control-button" (click)="cardCarousel.swiper.slideNext()">
+            <svg class="icon">
+                <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
+            </svg>
         </div>
     </div>
+  </header>
+  <div class="swiper-container" [swiper]="carouselConfig" #cardCarousel>
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"  *ngFor="let card of data.cards">
+        <ng-container [ngSwitch]="card.type">
+          <app-material-card class="small" *ngSwitchCase="'article'" [size]="'small'" [view]="card.view" [data]="card"></app-material-card>
+          <app-video-card *ngSwitchCase="'video'" [size]="'small'" [data]="card"></app-video-card>
+          <app-advertising-card *ngSwitchCase="'advertising'" [size]="'small'"></app-advertising-card>
+        </ng-container>
+      </div>
+    </div>
+  </div>
 </div>

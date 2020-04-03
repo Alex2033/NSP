@@ -15,6 +15,14 @@ export class ApiService {
   constructor(private apiClient: ApiClientService) {
   }
 
+  getCardFeed(filter = {}): Observable<any> {
+    return this.apiClient.get(`/api/site/card_feed`, {
+      params: filter
+    }).pipe(map((response) => {
+      return deserialize(response);
+    }));
+  }
+
   getApartmentComplexArticles(filter = {}): Observable<any> {
     return this.apiClient.get(`/api/site/apartment_complexes/articles`, {
       params: filter
