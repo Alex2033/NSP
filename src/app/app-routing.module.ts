@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
 import {ArticleComponent} from './shared/components/article/article.component';
-import {EventComponent} from './shared/components/event/event.component';
 import {ServerDataComponent} from './shared/components/server-data/server-data.component';
 import {ServerDataResolver} from './shared/resolvers/server-data.resolver';
 import {NotFoundComponent} from './shared/components/not-found/not-found.component';
@@ -47,10 +46,6 @@ const routes: Routes = [
       data: RouteDataResolver
     }
   },
-  // {
-  //   path: 'event',
-  //   component: EventComponent
-  // },
   {
     path: 'not-found',
     component: NotFoundComponent
