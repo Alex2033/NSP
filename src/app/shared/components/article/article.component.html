@@ -1,97 +1,160 @@
 <div class="container">
+  <div class="event-info" *ngIf="article.event">
+    <img
+      src="https://images.unsplash.com/photo-1560439514-4e9645039924?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1680&q=80"
+      alt="" class="info-background">
+    <div class="info-content">
+      <div class="h1 light">{{ article.event.name }}</div>
+      <div class="info-bottom">
+        <div class="info-bottom-left">
+          <div class="event-type-name">{{ article.event.type }}</div>
+          <div class="event-date">01 Ноября 2019 — 02 Ноября 2019</div>
+        </div>
+        <div class="info-bottom-right">
+          <button class="button secondary">Зарегистрироваться</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="row">
-
     <div class="col-xl-8 col-lg-8">
       <div class="page-content">
         <div class="page-topline">
-            <h1 class="mobile-title" *ngIf="screen === 'sm'">Апартаменты на паузе</h1>
-            <h5 *ngIf="screen !== 'sm'">Аналитика</h5>
-            <div class="page-topline-info">
-              <div class="topline-info-item topline-author">
-                Дмитрий Синочкин
-              </div>
-              <div class="topline-info-item">
-                <time datetime="2019-05-08 11:25">8 мая, 11:25</time>
-              </div>
-              <div class="topline-info-item info-views">
-                <svg class="topline-icon">
-                  <use xlink:href="assets/sprites/icons.svg#eye"></use>
-                </svg>
-                <span>1 234</span>
-              </div>
+          <h1 class="mobile-title" *ngIf="screen === 'sm'">{{ article.title }}</h1>
+          <a [routerLink]="['/' + article.directorySlug]" class="h5"
+             *ngIf="screen !== 'sm'">{{ article.directoryName }}</a>
+          <div class="page-topline-info">
+            <div class="topline-info-item topline-author">
+              <ng-container *ngFor="let author of article.authors; first as isFirst">
+                <ng-container *ngIf="!isFirst">,&nbsp;</ng-container>
+                <a [routerLink]="['/persons', author.id + '-'+ author.slug]">{{ author.name }}</a>
+              </ng-container>
             </div>
+            <div class="topline-info-item">
+              <time datetime="2019-05-08 11:25">{{ article.publishedAt * 1000 | niceDate }}
+                в {{ article.publishedAt * 1000 | date: 'shortTime' }}</time>
+            </div>
+            <div class="topline-info-item info-views">
+              <svg class="topline-icon">
+                <use xlink:href="assets/sprites/icons.svg#eye"></use>
+              </svg>
+              <span>{{ article.viewsCount | number }}</span>
+            </div>
+          </div>
         </div>
-        <h1 class="page-title" *ngIf="screen !== 'sm'">Апартаменты на паузе</h1>
-        <app-share></app-share>
+        <h1 class="page-title" *ngIf="screen !== 'sm'">{{ article.title }}</h1>
+        <div class="preview-text" [innerHTML]="article.previewText | paragraphs">
+        </div>
+        <div class="share-area">
+          <app-share></app-share>
+          <div class="comments-count" *ngIf="article.commentsAllowed">
+            <svg class="comment-icon">
+              <use xlink:href="assets/sprites/icons.svg#comment"></use>
+            </svg>
+            <span>{{ article.commentsCount }}</span>
+          </div>
+        </div>
 
         <div class="blocks">
-          <app-block-layout [blocks]="blocks"></app-block-layout>
+          <app-block-layout [blocks]="article.content"></app-block-layout>
+          <app-company-carousel-block></app-company-carousel-block>
+          <app-event-registration-block></app-event-registration-block>
         </div>
 
         <div class="bot">
           <div class="hashtags">
-            <strong class="hashtag">Аналитика</strong>
-            <div class="hashtag">#Апартаменты</div>
-            <div class="hashtag">#Инвестиции в недвижимость</div>
+            <a [routerLink]="['/' + article.directorySlug]" class="hashtag"><strong>{{ article.directoryName }}</strong></a>
+            <a [routerLink]="['/tags', tag.code]" class="hashtag" *ngFor="let tag of article.tags">#{{ tag.name }}</a>
           </div>
-          <ul class="share-socials">
-            <li class="share-social">
-                <a href="#">
-                    <svg class="share-social-icon">
-                        <use xlink:href="assets/sprites/icons.svg#copy-link-outline"></use>
-                    </svg>
-                </a>
-            </li>
-            <li class="share-social">
-                <a href="#">
-                    <svg class="share-social-icon">
-                        <use xlink:href="assets/sprites/icons.svg#vk-outline"></use>
-                    </svg>
-                </a>
-            </li>
-            <li class="share-social">
-                <a href="#">
-                    <svg class="share-social-icon">
-                        <use xlink:href="assets/sprites/icons.svg#facebook-outline"></use>
-                    </svg>
-                </a>
-            </li>
-            <li class="share-social">
-                <a href="#">
-                    <svg class="share-social-icon">
-                        <use xlink:href="assets/sprites/icons.svg#telegram-outline"></use>
-                    </svg>
-                </a>
-            </li>
-            <li class="share-social">
-                <a href="#">
-                    <svg class="share-social-icon">
-                        <use xlink:href="assets/sprites/icons.svg#twitter-outline"></use>
-                    </svg>
-                </a>
-            </li>
-            <li class="share-social">
-                <a href="#">
-                    <svg class="share-social-icon">
-                        <use xlink:href="assets/sprites/icons.svg#more-outline"></use>
-                    </svg>
-                </a>
-            </li>
-          </ul>
+          <app-share></app-share>
         </div>
 
-        <app-comments></app-comments>
+        <app-comments *ngIf="article.commentsAllowed"></app-comments>
       </div>
     </div>
 
     <div class="col-xl-3 col-lg-4 col-md-8 offset-xl-1 offset-lg-0 offset-md-2" *ngIf="screen !== 'sm'">
       <aside class="content-sidebar">
-        <app-material-list-card [size]="'small'"
-                                [class]="'small'"></app-material-list-card>
-        <app-advertising-card [size]="'small'" [class]="'small'"></app-advertising-card>
-        <app-material-list-card [size]="'medium-vertical'"
-                                [highlight]="true"
-                                [class]="'medium-vertical'"></app-material-list-card>
+        <div class="event-contact-card" *ngIf="article.event">
+          <div class="contact-card-items">
+            <div class="h6">Место проведения</div>
+            <div class="contact-card-item">
+
+              <svg class="contact-card-icon geolocation">
+                <use xlink:href="assets/sprites/icons.svg#map_pin"></use>
+              </svg>
+              <span>{{ article.event.address }}</span>
+            </div>
+          </div>
+          <div class="contact-card-items">
+            <div class="h6">Информация</div>
+            <div class="contact-card-item" *ngIf="article.event.phone">
+              <svg class="contact-card-icon phone">
+                <use xlink:href="assets/sprites/icons.svg#phone"></use>
+              </svg>
+              <a [href]="'tel:' + ( article.event.phone | phoneFormat )" class="link contact-card-phone">{{ article.event.phone }}</a>
+            </div>
+          </div>
+          <div class="contact-card-items" *ngIf="article.event.email">
+            <div class="contact-card-item">
+              <svg class="contact-card-icon mail">
+                <use xlink:href="assets/sprites/icons.svg#mail"></use>
+              </svg>
+              <a [href]="'mailto:' + article.event.email" class="link">{{ article.event.email }}</a>
+            </div>
+          </div>
+          <div class="contact-card-items" *ngIf="article.event.site">
+            <div class="contact-card-item">
+              <svg class="contact-card-icon web">
+                <use xlink:href="assets/sprites/icons.svg#web"></use>
+              </svg>
+              <a [href]="article.event.site" target="_blank" class="link">{{ article.event.site | domain }}</a>
+            </div>
+          </div>
+          <ul class="socials">
+            <li *ngIf="article.event.vkontakteLink">
+              <a [href]="article.event.vkontakteLink" class="vk" target="_blank">
+                <svg>
+                  <use xlink:href="assets/sprites/icons.svg#vk"></use>
+                </svg>
+              </a>
+            </li>
+            <li *ngIf="article.event.facebookLink">
+              <a [href]="article.event.facebookLink" class="facebook" target="_blank">
+                <svg>
+                  <use xlink:href="assets/sprites/icons.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li *ngIf="article.event.telegramLink">
+              <a [href]="article.event.telegramLink" class="telegram" target="_blank">
+                <svg>
+                  <use xlink:href="assets/sprites/icons.svg#telegram"></use>
+                </svg>
+              </a>
+            </li>
+            <li *ngIf="article.event.twitterLink">
+              <a [href]="article.event.twitterLink" class="twitter" target="_blank">
+                <svg>
+                  <use xlink:href="assets/sprites/icons.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <ng-container *ngFor="let card of article.asideCards">
+          <ng-container [ngSwitch]="card.type">
+            <ng-container *ngSwitchCase="'article-list'">
+              <app-material-list-card [size]="'medium-vertical'" [highlight]="card.highlight"
+                                      [data]="card"
+              ></app-material-list-card>
+            </ng-container>
+<!--            <ng-container *ngSwitchCase="'latest-news'">-->
+<!--              <app-latest-news-card-->
+<!--                [articles]="card.articles"></app-latest-news-card>-->
+<!--            </ng-container>-->
+          </ng-container>
+        </ng-container>
       </aside>
     </div>
   </div>

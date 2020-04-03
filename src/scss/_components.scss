@@ -136,7 +136,7 @@
         @include mouse {
             &:hover {
                 background-color: $light-color;
-    
+
                 .icon {
                     fill: $primary-color;
                 }
@@ -147,7 +147,7 @@
             @include mouse {
                 &:hover {
                     background-color: transparent;
-    
+
                     .icon {
                         fill: $light-color;
                     }
@@ -175,7 +175,7 @@
         @include mouse {
             &:hover {
                 background-color: $light-color;
-    
+
                 .icon {
                     fill: $primary-color;
                 }
@@ -186,7 +186,7 @@
             @include mouse {
                 &:hover {
                     background-color: transparent;
-    
+
                     .icon {
                         fill: $light-color;
                     }
@@ -310,7 +310,7 @@
         &:hover {
             background-color: #4A76A8 !important;
         }
-    }  
+    }
 }
 
 .facebook {
@@ -327,14 +327,14 @@
             background-color: #1F9BDB !important;
         }
     }
-    
+
 }
 
 .twitter {
     @include mouse {
         &:hover {
             background-color: #42ABE1 !important;
-        }   
+        }
     }
 }
 
@@ -342,7 +342,7 @@
     @include mouse {
         &:hover {
             background-color: #B9189E !important;
-        }  
+        }
     }
 }
 
@@ -722,6 +722,11 @@
 }
 
 .share-social {
+  button {
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+  }
     margin-bottom: 12px;
 
     a {
