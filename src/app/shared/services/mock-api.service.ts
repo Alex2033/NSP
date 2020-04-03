@@ -2501,8 +2501,12 @@ export class MockApiService {
         firstName: 'Глебова',
         middleName: 'Елена',
         lastName: 'Александровна',
+        name: 'Глебова Елена Александровна',
         companyName: 'БестЪ. Коммерческая недвижимость»',
-        position: 'Руководитель отдела продаж'
+        position: 'Руководитель отдела продаж',
+        description: 'Чудо, а не сотрудник',
+        phone: '7 (931) 231-42-32',
+        email: 'test@test.ru'
       },
       company: {
         id: 1,
@@ -2533,7 +2537,7 @@ export class MockApiService {
           logoLg: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
           logoMd: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
           logoSm: 'https://images.unsplash.com/photo-1556834948-113a097c00eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-
+          address: '197022, Россия, Санкт-Петербург, Аптекарская наб., д. 20, Бизнес-центр «Авеню»',
           description: 'Основной вид деятельности: брокер сделок коммерческой недвижимости. Предоставляет полный спектр услуг на рынке коммерческой недвижимости от первичного формирования объекта до его последующей продажи, сдачи в аренду. В функции компании входит консалтинг на рынке коммерческой недвижимости, оценка, маркетинговые исследования, выработка концепций строящихся объектов и реконцепция существующих.',
           organizationForm: 'Общество с ограниченной ответственностью',
           latitude: 59.978246,
