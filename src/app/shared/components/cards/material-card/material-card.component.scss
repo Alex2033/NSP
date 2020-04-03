@@ -2,10 +2,28 @@
 @import "variables/bootstrap";
 @import "responsive";
 
-:host {
-    height: 306px;
+:host-context(.small) {
     display: block;
+    position: relative;
 
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        padding-top: 100%;
+    }
+
+    > * {
+        position: absolute !important;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        right: 0px;
+    }
+}
+
+:host {
+    
     @include media-breakpoint-down(sm) {
         display: flex;
         flex-direction: column;
@@ -105,8 +123,8 @@ h5 {
         }
 
         .card-img {
-            flex: 0 0 calc(50% - #{$grid-gutter-width});
-            width: calc(50% - #{$grid-gutter-width});
+            flex: 0 0 calc(50% - (#{$grid-gutter-width} / 2));
+            width: calc(50% - (#{$grid-gutter-width} / 2));
             height: 100%;
         }
     }
@@ -117,13 +135,13 @@ h5 {
         }
 
         .card-img {
-            height: 306px;
+            height: calc(50% - (#{$grid-gutter-width} / 2));
         }
     }
 
     &.large {
         .card-img {
-            height: 306px;
+            height: calc(50% - (#{$grid-gutter-width} / 2));
         }
     }
 
@@ -156,7 +174,10 @@ h5 {
     padding: 12px 16px;
     display: flex;
     flex-direction: column;
-    flex: 1;
+    min-height: 0px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
     background-color: $light-color;
 }
 
@@ -165,17 +186,16 @@ h5 {
     line-height: 1.5714;
     color: $dark-gray;
     overflow: hidden;
-    text-overflow: -o-ellipsis-lastline;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    min-height: 0px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
     margin-bottom: 10px;
     transition: color .2s ease;
 
     @include media-breakpoint-down(sm) {
         font-size: 13px;
         line-height: 1.54;
-        -webkit-line-clamp: 4;
     }
 }
 

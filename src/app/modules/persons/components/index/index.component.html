@@ -8,25 +8,21 @@
   </div>
 </div>
 <div class="page-cards">
-  <div class="container">
-    <div class="row" *ngIf="screen !== 'sm'">
-      <div class="col-lg-3 col-md-6" *ngFor="let person of persons">
-        <app-person-card [person]="person"></app-person-card>
-      </div>
+  <div class="container top-container">
+    <div class="cards-content" *ngIf="screen !== 'sm'">
+      <app-person-card *ngFor="let person of persons" [person]="person"></app-person-card>
     </div>
 
     <!-- mobile cards slider -->
     <app-mobile-cards-slider *ngIf="screen === 'sm'" [cards]="persons" [type]="'person'"></app-mobile-cards-slider>
-    <app-pagination [size]="12" [count]="personsCount"></app-pagination>
+    <app-pagination *ngIf="personsCount > 12" [size]="12" [count]="personsCount"></app-pagination>
   </div>
 </div>
 <div class="container">
   <div class="materials" *ngIf="articles && articles.length > 0">
     <h3 class="materials-title">Интервью</h3>
-    <div class="row">
-      <div class="col-lg-3 col-md-6 result-card" *ngFor="let article of articles">
-        <app-material-card [size]="'small'" [view]="article.view" [data]="article"></app-material-card>
-      </div>
+    <div class="cards-content">
+      <app-material-card class="small" *ngFor="let article of articles" [size]="'small'" [view]="article.view" [data]="article"></app-material-card>
     </div>
   </div>
 </div>

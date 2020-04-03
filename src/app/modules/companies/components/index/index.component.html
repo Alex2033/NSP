@@ -10,15 +10,13 @@
 </div>
 <div class="page-cards" *ngIf="companies.length > 0">
   <div class="container top-container">
-    <div class="row" *ngIf="screen !== 'sm'">
-      <div class="col-xl-3 col-lg-4 col-md-6 col-12" *ngFor="let company of companies">
-        <app-company-card [company]="company"></app-company-card>
-      </div>
+    <div class="cards-content" *ngIf="screen !== 'sm'">
+      <app-company-card *ngFor="let company of companies" [company]="company"></app-company-card>
     </div>
 
     <!-- mobile cards slider -->
     <app-mobile-cards-slider *ngIf="screen === 'sm'" [cards]="companies" [type]="'company'"></app-mobile-cards-slider>
-    <app-pagination [size]="12" [count]="companiesCount"></app-pagination>
+    <app-pagination *ngIf="companiesCount > 12" [size]="12" [count]="companiesCount"></app-pagination>
   </div>
 
 </div>
@@ -26,10 +24,8 @@
 <div class="container">
   <div class="materials" *ngIf="articles && articles.length > 0">
     <h3 class="materials-title">Статьи</h3>
-    <div class="row">
-      <div class="col-lg-3 col-md-6 result-card" *ngFor="let article of articles">
-        <app-material-card [size]="'small'" [view]="article.view" [data]="article"></app-material-card>
-      </div>
+    <div class="cards-content">
+      <app-material-card class="small" *ngFor="let article of articles" [size]="'small'" [view]="article.view" [data]="article"></app-material-card>
     </div>
   </div>
 </div>

@@ -1,4 +1,5 @@
 @import "theme";
+@import "responsive";
 
 .person-card {
   border: 1px solid #D7DDEA;
@@ -10,26 +11,36 @@
   background-color: $light-color;
   height: 100%;
   color: $text-color;
+  
   ::ng-deep img {
     width: 120px;
     height: 120px;
     object-fit: cover;
     border-radius: 50%;
   }
+
+  @include media-breakpoint-down(md) {
+    justify-content: center;
+  }
 }
 
 .person-img {
-  margin-bottom: 23px;
+  margin-bottom: 9px;
 }
 
 .person-text {
   font-size: 14px;
   line-height: 1.571;
   color: $dark-gray;
+  overflow: hidden;
+
+  @include media-breakpoint-down(md) {
+    margin-top: initial;
+  }
 }
 
 .person-name {
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 .person-surname {

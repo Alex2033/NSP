@@ -5,23 +5,15 @@
       Есть неточность?
     </div>
   </div>
-  <div class="persons-row row">
-    <div class="col-12" *ngIf="screen === 'sm'">
-      <h1 class="title">Персоны</h1>
-    </div>
-    <div class="col-xl-9 col-lg-8 col-md-8">
-      <app-extended-person-card *ngIf="person" [person]="person"></app-extended-person-card>
-    </div>
-    <div class="col-xl-3 col-lg-4 col-md-4">
-      <app-company-card *ngIf="company" [company]="company"></app-company-card>
-    </div>
+  <h1 class="title">Персоны</h1>
+  <div class="persons-content">
+    <app-extended-person-card *ngIf="person" [person]="person"></app-extended-person-card>
+    <app-company-card *ngIf="company" [company]="company"></app-company-card>
   </div>
   <div class="materials" *ngIf="articles && articles.length > 0">
     <h3 class="materials-title">Материалы с персоной</h3>
-    <div class="row">
-      <div class="col-lg-3 col-md-6 result-card" *ngFor="let article of articles">
-        <app-material-card [size]="'small'" [view]="article.view" [data]="article"></app-material-card>
-      </div>
+    <div class="cards-content">
+      <app-material-card class="small" *ngFor="let article of articles" [size]="'small'" [view]="article.view" [data]="article"></app-material-card>
     </div>
   </div>
 </div>

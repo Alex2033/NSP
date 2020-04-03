@@ -73,6 +73,10 @@
         .horizontal-scrollbar {
             border-bottom: 0;
         }
+
+        @include media-breakpoint-down(sm) {
+            padding: 0 12px;
+        }
     }
 
     &.under-banner {

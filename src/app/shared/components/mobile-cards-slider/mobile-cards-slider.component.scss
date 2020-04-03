@@ -1,20 +1,37 @@
 @import "theme";
 
 .swiper-slide {
-    width: 280px;
+    width: 91%;
     height: auto;
-}
 
-.background-block {
-    position: absolute;
-    top: 0;
-    z-index: 2;
-    right: 0;
-    width: calc(100% - 288px); // ширина слайда + отступ
-    height: 100%;
-    background-color: $primary-color;
+    &:first-of-type {
+        margin-left: 12px;
+    }
 
-    @media (min-width: 610px) {
-        width: calc(100% - 576px);
+    &:last-of-type {
+        margin-right: 12px;
+    }
+
+    > * {
+        display: block;
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            padding-top: 100%;
+        }
+
+        ::ng-deep {
+            > * {
+                position: absolute !important;
+                top: 0px;
+                left: 0px;
+                bottom: 0px;
+                right: 0px;
+            }
+        }
+        
     }
 }

@@ -79,7 +79,7 @@
       </div>
       <div class="col-xl-6 col-lg-12 order-xl-1 order-lg-0">
         <div class="company-info-text">
-          <h1 class="h2">{{ company.name }}</h1>
+          <h1 class="h2" *ngIf="screen !== 'sm'">{{ company.name }}</h1>
           <div class="company-info-text-content">
             <div class="company-info-text-top">
               <div class="company-infoblock">
@@ -93,7 +93,13 @@
             </div>
             <div class="company-infoblock company-infoblock-text" *ngIf="company.description">
               <div class="caption">Информация о компании</div>
-              <div [innerHTML]="company.description | paragraphs"></div>
+              <div class="company-infoblock-paragraphs" [innerHTML]="company.description | paragraphs"></div>
+              <a [routerLink]="['']" class="link show-more" *ngIf="screen === 'sm'">
+                <span>Еще</span>
+                <svg class="icon">
+                    <use xlink:href="assets/sprites/icons.svg#chevron_down"></use>
+                </svg>
+              </a>
             </div>
           </div>
         </div>
@@ -112,26 +118,20 @@
   </div>
   <div class="materials" *ngIf="persons && persons.length > 0">
     <h3 class="materials-title">Персоны</h3>
-    <div class="row">
-      <div class="col-lg-3 col-md-6" *ngFor="let person of persons">
-        <app-person-card [person]="person"></app-person-card>
-      </div>
+    <div class="cards-content">
+      <app-person-card *ngFor="let person of persons" [person]="person"></app-person-card>
     </div>
   </div>
   <div class="materials" *ngIf="objects && objects.length > 0">
     <h3 class="materials-title">Объекты</h3>
-    <div class="row">
-      <div class="col-lg-3 col-md-6" *ngFor="let object of objects">
-        <app-object-card [object]="object"></app-object-card>
-      </div>
+    <div class="cards-content">
+      <app-object-card *ngFor="let object of objects" [object]="object"></app-object-card>
     </div>
   </div>
   <div class="materials" *ngIf="articles && articles.length > 0">
     <h3 class="materials-title">Статьи о компании</h3>
-    <div class="row">
-      <div class="col-lg-3 col-md-6 result-card" *ngFor="let article of articles">
-        <app-material-card [size]="'small'" [view]="article.view" [data]="article"></app-material-card>
-      </div>
+    <div class="cards-content">
+      <app-material-card class="small" *ngFor="let article of articles" [size]="'small'" [view]="article.view" [data]="article"></app-material-card>
     </div>
   </div>
 </div>

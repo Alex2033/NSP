@@ -81,6 +81,13 @@ h2 {
 }
 
 .swiper-slide {
+    height: auto;
+
+    > * {
+        height: 100%;
+    }
+
+
     @include media-breakpoint-down(sm) {
         width: 280px;
     }

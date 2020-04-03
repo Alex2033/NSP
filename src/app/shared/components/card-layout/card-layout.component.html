@@ -6,12 +6,12 @@
       </ng-container>
       <ng-container *ngSwitchCase="'article'">
         <app-material-card [size]="card.size"
-                           [class]="card.size !== 'small' ? card.size : null"
+                           [class]="card.size"
                            [view]="card.view"></app-material-card>
       </ng-container>
       <ng-container *ngSwitchCase="'article-list'">
         <app-material-list-card [size]="card.size" [highlight]="card.highlight ? card.highlight : false"
-                                [class]="card.size !== 'small' ? card.size : null"
+                                [class]="card.size"
                                 [style.grid-column]="card.position?.x ? card.position.x : null"
                                 [style.grid-row-start]="card.position?.y ? card.position.y : null"
         ></app-material-list-card>
@@ -24,16 +24,16 @@
       </ng-container>
       <ng-container *ngSwitchCase="'advertising'">
         <app-advertising-card [size]="card.size"
-                              [class]="card.size !== 'small' ? card.size : null"></app-advertising-card>
+                              [class]="card.size"></app-advertising-card>
       </ng-container>
       <ng-container *ngSwitchCase="'video'">
-        <app-video-card [size]="card.size" [class]="card.size !== 'small' ? card.size : null"></app-video-card>
+        <app-video-card [size]="card.size" [class]="card.size"></app-video-card>
       </ng-container>
       <ng-container *ngSwitchCase="'object'">
-        <app-object-card [object]="card.data" [size]="card.size" [class]="card.size !== 'small' ? card.size : null"></app-object-card>
+        <app-object-card [object]="card.data" [size]="card.size" [class]="card.size"></app-object-card>
       </ng-container>
       <ng-container *ngSwitchCase="'person'">
-        <app-person-card [person]="card.data" [class]="card.size !== 'small' ? card.size : null"></app-person-card>
+        <app-person-card [person]="card.data" [class]="card.size"></app-person-card>
       </ng-container>
       <ng-container *ngSwitchCase="'slider'">
         <app-slider></app-slider>

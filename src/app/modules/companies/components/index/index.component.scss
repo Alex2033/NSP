@@ -17,7 +17,6 @@
 }
 app-company-card {
   display: block;
-  margin-top: 8px;
 }
 .page-top {
     @include media-breakpoint-down(sm) {
@@ -59,6 +58,10 @@ app-pagination {
 }
 .materials {
   margin-bottom: 48px;
+
+  @include media-breakpoint-down(sm) {
+      margin-bottom: 24px;
+  }
 }
 //.materials:last-child {
 //  margin-bottom: 0;
