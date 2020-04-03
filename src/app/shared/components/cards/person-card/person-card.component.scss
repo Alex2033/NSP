@@ -11,13 +11,6 @@
   background-color: $light-color;
   height: 100%;
   color: $text-color;
-  
-  ::ng-deep img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 50%;
-  }
 
   @include media-breakpoint-down(md) {
     justify-content: center;
@@ -26,6 +19,15 @@
 
 .person-img {
   margin-bottom: 9px;
+  width: 120px;
+  height: 120px;
+
+  ::ng-deep {
+    img {
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
 }
 
 .person-text {
