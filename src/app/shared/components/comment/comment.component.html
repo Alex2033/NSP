@@ -14,7 +14,7 @@
                 </div>
                 <time class="author-time">сегодня в {{ comment.time * 1000 | date: 'hh:mm' }}</time>
             </div>
-            <div class="review" *ngIf="screen !== 'sm'">
+            <div class="review" *ngIf="screen !== 'sm' && false">
                 <button type="button" class="review-button" (click)="decreaseCounter()">
                     <svg>
                         <use xlink:href="assets/sprites/icons.svg#arrow_down"></use>
@@ -31,7 +31,7 @@
         <div class="comment-text">
             <p>{{ comment.text }}</p>
         </div>
-        <div class="comment-actions">
+        <div class="comment-actions" *ngIf="false">
             <button type="button" class="reply-button">Ответить</button>
         </div>
     </div>

@@ -10,7 +10,7 @@
     <div class="quote-bot">
         <div class="quote-info">
             <cite class="quote-source" *ngIf="quote.source?.name">«{{ quote.source.name }}»</cite>
-            <time class="quote-time">{{ quote.publishedAt * 1000 | date }}</time>
+            <time class="quote-time">{{ quote.publishedAt * 1000 | niceDate }}</time>
         </div>
         <div class="quote-author">
             <div class="quote-author-info">

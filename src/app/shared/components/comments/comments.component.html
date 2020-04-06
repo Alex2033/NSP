@@ -1,6 +1,6 @@
-<div class="comments-filters">
-    <button 
-            *ngFor="let filter of filters; let i = index" 
+<div class="comments-filters" *ngIf="false">
+    <button
+            *ngFor="let filter of filters; let i = index"
             (click)="activeFilter = i; viewComments = filter.viewComments"
             [class.active]="activeFilter === i"
     >

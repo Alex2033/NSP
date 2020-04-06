@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
-import {ArticleComponent} from './shared/components/article/article.component';
 import {ServerDataComponent} from './shared/components/server-data/server-data.component';
 import {ServerDataResolver} from './shared/resolvers/server-data.resolver';
 import {NotFoundComponent} from './shared/components/not-found/not-found.component';
 import {RouteDataResolver} from './shared/resolvers/route-data.resolver';
+import {ArticleFeedComponent} from './shared/components/article-feed/article-feed.component';
 
 const routes: Routes = [
   {
@@ -41,7 +41,7 @@ const routes: Routes = [
   },
   {
     path: 'server_article',
-    component: ArticleComponent,
+    component: ArticleFeedComponent,
     resolve: {
       data: RouteDataResolver
     }

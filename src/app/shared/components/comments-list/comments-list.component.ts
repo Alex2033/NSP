@@ -27,15 +27,15 @@ export class CommentsListComponent implements OnInit {
       time: 1573746483,
       text: 'Основная проблема построения научной «теории всего» состоит в том, что квантовая механика и общая теория относительности (ОТО) имеют разные области применения'
     },
-    {
-      image: 'https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=80&q=80',
-      firstName: 'Марат',
-      surname: 'Герасимов',
-      time: 1573746483,
-      text: 'Теория струн сочетает в себе идеи квантовой механики и теории относительности, поэтому на её основе, возможно, будет построена будущая теория квантовой гравитации',
-      replied: true,
-      repliedName: 'Дмитрий'
-    },
+    // {
+    //   image: 'https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=80&q=80',
+    //   firstName: 'Марат',
+    //   surname: 'Герасимов',
+    //   time: 1573746483,
+    //   text: 'Теория струн сочетает в себе идеи квантовой механики и теории относительности, поэтому на её основе, возможно, будет построена будущая теория квантовой гравитации',
+    //   replied: true,
+    //   repliedName: 'Дмитрий'
+    // },
     {
       image: 'https://images.unsplash.com/photo-1493106819501-66d381c466f1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=80&q=80',
       firstName: 'Дмитрий',
@@ -75,11 +75,11 @@ export class CommentsListComponent implements OnInit {
   }
 
   showMoreItems() {
-    this.paginationLimit = Number(this.paginationLimit) + 3;        
+    this.paginationLimit = Number(this.paginationLimit) + 3;
   }
 
   showLessItems() {
-    this.paginationLimit = Number(this.paginationLimit) - 3;        
+    this.paginationLimit = Number(this.paginationLimit) - 3;
   }
 
 }

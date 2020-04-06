@@ -7,6 +7,7 @@ import {Page} from '../contracts/page';
 import {Project} from '../contracts/project';
 import {Section} from '../contracts/section';
 import {Article} from '../contracts/article';
+import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -489,7 +490,13 @@ export class MockApiService {
     );
   }
 
-  getServerData(route): Observable<{ type: 'page', data: Page } | { type: 'project', data: Project } | { type: 'section', data: Section } | {type: 'article', data: Article}> {
+  getNextArticle(articleId) {
+    return this.getServerData('/event').pipe(map((data) => {
+      return data.data;
+    }));
+  }
+
+  getServerData(route): Observable<{ type: 'page', data: Page } | { type: 'project', data: Project } | { type: 'section', data: Section } | { type: 'article', data: Article }> {
     if (route === '/project' || route === '/') {
       return of(
         {
@@ -2410,7 +2417,7 @@ export class MockApiService {
         }
       );
     }
-    if(route === '/article' || route === '/event') {
+    if (route === '/article' || route === '/event') {
       let cards = [
         {
           type: 'article',
@@ -2527,8 +2534,8 @@ export class MockApiService {
         {
           type: 'article',
           data: {
-            id: 1,
-            title: 'Апартаменты на паузе',
+            id: route === '/article' ? 1 : 2,
+            title: route === '/article' ? 'Апартаменты на паузе' : 'Новогодний саммит РГУД',
             slug: 'apartamenti-na-pauze',
             directorySlug: 'project',
             directoryName: 'Жилые комплексы',

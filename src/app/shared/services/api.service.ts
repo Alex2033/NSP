@@ -6,6 +6,7 @@ import {map} from 'rxjs/operators';
 import {deserialize} from '../functions/deseriale';
 import {Company} from '../contracts/company';
 import {Person} from '../contracts/person';
+import {Article} from '../contracts/article';
 
 @Injectable({
   providedIn: 'root'
@@ -58,6 +59,12 @@ export class ApiService {
       params: filter
     }).pipe(map((response) => {
       return deserialize(response);
+    }));
+  }
+
+  getNextArticle(articleId): Observable<Article> {
+    return this.apiClient.get(`/api/site/articles/${articleId}/next`).pipe(map((response) => {
+      return deserialize(response) as Article;
     }));
   }
 

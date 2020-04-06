@@ -1,9 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ResponsiveService } from '../../services/responsive.service';
-import {ActivatedRoute} from '@angular/router';
-import {Meta, Title} from '@angular/platform-browser';
+import {Component, Input, OnInit} from '@angular/core';
+import {ResponsiveService} from '../../services/responsive.service';
 import {Article} from '../../contracts/article';
-import {Project} from '../../contracts/project';
+import {DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-article',
@@ -12,27 +10,37 @@ import {Project} from '../../contracts/project';
 })
 export class ArticleComponent implements OnInit {
   screen: string;
-  article: Article;
-  constructor(private responsive: ResponsiveService,
-              private route: ActivatedRoute,
-              protected title: Title,
-              protected meta: Meta) { }
+  eventDisplayDate: string;
+  @Input() article: Article;
+
+  constructor(private responsive: ResponsiveService) {
+  }
 
   ngOnInit() {
-    this.route.data.subscribe((data) => {
-      this.article = data.data as Article;
-      this.title.setTitle(this.article.metaTitle ? this.article.metaTitle : this.article.title + ' - NSP.ru');
-      this.meta.updateTag({
-          name: 'description',
-          content: this.article.metaDescription
+    if (this.article.event) {
+      const datePipe = new DatePipe('ru-RU');
+      const startDate = new Date(this.article.event.startedAt * 1000);
+      const finishDate = new Date(this.article.event.finishedAt * 1000);
+
+      this.eventDisplayDate = datePipe.transform(this.article.event.startedAt * 1000, 'd MMMM yyyy');
+      if (startDate.getFullYear().toString() + startDate.getMonth().toString() + startDate.getDate().toString() !== finishDate.getFullYear().toString() + finishDate.getMonth().toString() + finishDate.getDate().toString()) {
+        if (startDate.getHours() !== 0 || startDate.getMinutes() !== 0) {
+          this.eventDisplayDate += ' ' + datePipe.transform(this.article.event.startedAt * 1000, 'shortTime');
         }
-      );
-      this.meta.updateTag({
-          name: 'keywords',
-          content: this.article.metaKeywords
+
+        this.eventDisplayDate += ' — ' + datePipe.transform(this.article.event.finishedAt * 1000, 'd MMMM yyyy');
+        if (finishDate.getHours() !== 0 || finishDate.getMinutes() !== 0) {
+          this.eventDisplayDate += ' ' + datePipe.transform(this.article.event.finishedAt * 1000, 'shortTime');
         }
-      );
-    });
+      } else {
+        if (startDate.getHours() !== 0 || startDate.getMinutes() !== 0) {
+          this.eventDisplayDate += ' ' + datePipe.transform(this.article.event.startedAt * 1000, 'shortTime');
+          if (startDate.getHours() + startDate.getMinutes() !== finishDate.getHours() + finishDate.getMinutes()) {
+            this.eventDisplayDate += ' — ' + datePipe.transform(this.article.event.finishedAt * 1000, 'shortTime');
+          }
+        }
+      }
+    }
     this.responsive.screen.subscribe((screen) => {
       this.screen = screen;
     });

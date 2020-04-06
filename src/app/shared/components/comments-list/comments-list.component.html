@@ -7,21 +7,21 @@
     <ng-container *ngSwitchCase="'order'">
         <!-- <app-comment *ngFor="let comment of comments" [comment]="comment"></app-comment> -->
     </ng-container>
-    
+
 </ng-container>
 
 <div class="comments-list-actions">
-    <button 
-        class="show-more" 
-        (click)="showMoreItems()" 
-        *ngIf="paginationLimit < comments.length; else showLess"
-    >
-        Показать еще 3 комментария
-    </button>
-    <ng-template #showLess>
-        <button class="show-more" (click)="showLessItems()">
-            Свернуть комментарии
-        </button>
-    </ng-template>
+<!--    <button -->
+<!--        class="show-more" -->
+<!--        (click)="showMoreItems()" -->
+<!--        *ngIf="paginationLimit < comments.length; else showLess"-->
+<!--    >-->
+<!--        Показать еще 3 комментария-->
+<!--    </button>-->
+<!--    <ng-template #showLess>-->
+<!--        <button class="show-more" (click)="showLessItems()">-->
+<!--            Свернуть комментарии-->
+<!--        </button>-->
+<!--    </ng-template>-->
     <button class="logout">Выйти из аккаунта</button>
 </div>

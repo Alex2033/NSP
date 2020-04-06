@@ -37,16 +37,6 @@ export class AppComponent implements OnInit {
     this.router.events.forEach((event) => {
       if (event instanceof NavigationStart) {
         this.title.setTitle('');
-        this.meta.updateTag({
-            name: 'description',
-            content: ''
-          }
-        );
-        this.meta.updateTag({
-            name: 'keywords',
-            content: ''
-          }
-        );
         this.meta.removeTag('name=\'description\'');
         this.meta.removeTag('name=\'keywords\'');
         this.meta.updateTag({
