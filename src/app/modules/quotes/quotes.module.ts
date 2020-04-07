@@ -4,6 +4,7 @@ import { QuotesRoutingModule } from './quotes-routing.module';
 import { IndexComponent } from './components/index/index.component';
 import {SharedModule} from '../../shared/shared.module';
 import {QuotesResolver} from './resolvers/quotes.resolver';
+import {AsideCardsResolver} from './resolvers/aside-cards.resolver';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import {QuotesResolver} from './resolvers/quotes.resolver';
     QuotesRoutingModule
   ],
   providers: [
-    QuotesResolver
+    QuotesResolver,
+    AsideCardsResolver
   ]
 })
 export class QuotesModule { }

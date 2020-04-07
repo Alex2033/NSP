@@ -1,0 +1,7 @@
+app-article {
+  display: block;
+  margin-top: 64px;
+  &:first-child {
+    margin-top: 0;
+  }
+}

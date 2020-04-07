@@ -11,6 +11,7 @@ import {DatePipe} from '@angular/common';
 export class ArticleComponent implements OnInit {
   screen: string;
   eventDisplayDate: string;
+  allowEventRegistration = false;
   @Input() article: Article;
 
   constructor(private responsive: ResponsiveService) {
@@ -18,10 +19,14 @@ export class ArticleComponent implements OnInit {
 
   ngOnInit() {
     if (this.article.event) {
+      const currentDate = new Date();
+      if (currentDate.getTime() / 1000 < this.article.event.startedAt) {
+        this.allowEventRegistration = true;
+      }
+
       const datePipe = new DatePipe('ru-RU');
       const startDate = new Date(this.article.event.startedAt * 1000);
       const finishDate = new Date(this.article.event.finishedAt * 1000);
-
       this.eventDisplayDate = datePipe.transform(this.article.event.startedAt * 1000, 'd MMMM yyyy');
       if (startDate.getFullYear().toString() + startDate.getMonth().toString() + startDate.getDate().toString() !== finishDate.getFullYear().toString() + finishDate.getMonth().toString() + finishDate.getDate().toString()) {
         if (startDate.getHours() !== 0 || startDate.getMinutes() !== 0) {

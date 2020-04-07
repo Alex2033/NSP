@@ -7,6 +7,7 @@ import {deserialize} from '../functions/deseriale';
 import {Company} from '../contracts/company';
 import {Person} from '../contracts/person';
 import {Article} from '../contracts/article';
+import {Quote} from '../contracts/quote';
 
 @Injectable({
   providedIn: 'root'
@@ -54,6 +55,12 @@ export class ApiService {
     }));
   }
 
+  getQuoteAsideCards(): Observable<any> {
+    return this.apiClient.get(`/api/site/quotes/aside_cards`).pipe(map((response) => {
+      return deserialize(response);
+    }));
+  }
+
   getQuotes(filter = {}): Observable<any> {
     return this.apiClient.get(`/api/site/quotes`, {
       params: filter
@@ -62,8 +69,18 @@ export class ApiService {
     }));
   }
 
-  getNextArticle(articleId): Observable<Article> {
-    return this.apiClient.get(`/api/site/articles/${articleId}/next`).pipe(map((response) => {
+  getHeaderQuote(): Observable<Quote> {
+    return this.apiClient.get(`/api/site/quotes/header`).pipe(map((response) => {
+      return deserialize(response) as Quote;
+    }));
+  }
+
+  getNextArticle(articleId, exclude: number[]): Observable<Article> {
+    return this.apiClient.get(`/api/site/articles/${articleId}/next`, {
+      params: {
+       'exclude[]': exclude
+      }
+    }).pipe(map((response) => {
       return deserialize(response) as Article;
     }));
   }

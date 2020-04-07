@@ -1,7 +1,7 @@
 <div class="card-wrapper" [class.highlight]="highlight" [class.horizontal]="size === 'medium-horizontal'" [class.vertical]="size === 'medium-vertical'" [class.large]="size === 'large'">
   <header class="card-header">
     <div class="h5">{{ title }}</div>
-    <div class="control-buttons">
+    <div class="control-buttons" *ngIf="blockSizes[size] < articleLength">
       <div class="control-button small" (click)="carousel.swiper.slidePrev()">
         <svg class="icon">
           <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
@@ -19,9 +19,7 @@
       <div class="swiper-slide" *ngFor="let block of blocks">
         <a [routerLink]="['']" class="card-link" *ngFor="let article of block">
           <div class="h6">{{ article.title }}</div>
-          <div class="card-text">
-            <p>{{ article.previewText }}</p>
-          </div>
+          <div class="card-text" [innerHTML]="article.previewText"></div>
         </a>
       </div>
     </div>

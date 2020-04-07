@@ -14,6 +14,7 @@ export class IndexComponent implements OnInit {
   screen: string;
   quotesCount: number;
   quotes: Quote[] = [];
+  asideCards = [];
   constructor(
     private responsive: ResponsiveService,
     private api: ApiService,
@@ -31,6 +32,7 @@ export class IndexComponent implements OnInit {
     this.route.data.subscribe(data => {
       this.quotesCount = data.quotes.count;
       this.quotes = data.quotes.items;
+      this.asideCards = data.asideCards.cards;
     });
   }
   applySearch(filter) {

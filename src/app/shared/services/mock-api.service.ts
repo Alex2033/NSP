@@ -490,10 +490,95 @@ export class MockApiService {
     );
   }
 
-  getNextArticle(articleId) {
+  getNextArticle(articleId, exclude) {
     return this.getServerData('/event').pipe(map((data) => {
       return data.data;
     }));
+  }
+
+  getHeaderQuote() {
+    return of(
+      {
+        text: 'По статистике, к псевдожилью в Петербурге можно отнести около шестидесяти процентов строящихся комплексов. Нужно быть внимательным при выборе объекта для вложений',
+        publishedAt: 1573746483, // При подстановке в шаблон нужно будет перевести в МС -> {{ quote.published_at * 1000 | date }}
+        source: {
+          name: 'Название источника статьи',
+          url: 'Ссылка на источник', // Ссылки может не быть, тогда вместо <a> должен быть <span>
+        },
+        author: {
+          photoXl: 'https://images.unsplash.com/photo-1566680473674-0bbbbeab1c31?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80',
+          photoLg: 'https://images.unsplash.com/photo-1566680473674-0bbbbeab1c31?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80',
+          photoMd: 'https://images.unsplash.com/photo-1566680473674-0bbbbeab1c31?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80',
+          photoSm: 'https://images.unsplash.com/photo-1566680473674-0bbbbeab1c31?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80',
+          firstName: 'Марина',
+          lastName: 'Сторожевая',
+          position: 'Директор по развитию, партнер М2Маркет '
+        }
+      }
+    );
+  }
+
+  getQuoteAsideCards() {
+    return of({
+      cards: [
+        {
+          type: 'article-list',
+          size: 'small',
+          highlight: true,
+          title: 'А вы это читали?',
+          articles: [
+            {
+              id: 1,
+              slug: '',
+              publishedAt: 1573746483,
+              directorySlug: '',
+              title: '«ФНС подала иск о банкротстве застройщика малоэтажного ЖК «Черничная поляна»',
+              previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
+            },
+            {
+              id: 1,
+              slug: '',
+              publishedAt: 1573746483 - (60 * 5),
+              directorySlug: '',
+              title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия',
+              previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
+            },
+            {
+              id: 1,
+              slug: '',
+              publishedAt: 1573746483 - (60 * 15),
+              directorySlug: '',
+              title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство',
+              previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
+            },
+            {
+              id: 1,
+              slug: '',
+              publishedAt: 1573746483 - (60 * 35),
+              directorySlug: '',
+              title: 'В Думе рассматривают возможность платить за будущую квартиру в новостройке в рассрочку',
+              previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
+            },
+            {
+              id: 1,
+              slug: '',
+              publishedAt: 1573746483 - (60 * 55),
+              directorySlug: '',
+              title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство',
+              previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
+            },
+            {
+              id: 1,
+              slug: '',
+              publishedAt: 1573746483 - (60 * 125),
+              directorySlug: '',
+              title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия',
+              previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
+            }
+          ],
+        }
+      ]
+    });
   }
 
   getServerData(route): Observable<{ type: 'page', data: Page } | { type: 'project', data: Project } | { type: 'section', data: Section } | { type: 'article', data: Article }> {

@@ -12,15 +12,15 @@
         </a>
 
         <!-- quote -->
-        <div class="quote" *ngIf="screen !== 'sm'">
+        <div class="quote" *ngIf="screen !== 'sm' && quote">
             <blockquote class="quote-text">
                 <p>
-                    «Мы исключили схему, при которой девелоперы могут выкупать сами у себя нужное количество квартир, чтобы достраивать объекты по старым правилам…»
+                    «{{ quote.text }}»
                 </p>
-                <cite class="author">Николай Николаев</cite>
+                <a [routerLink]="['/persons', quote.author.id + '-' + quote.author.slug]" class="author" [innerHTML]="quote.author.firstName + '&nbsp;' + quote.author.lastName"></a>
             </blockquote>
             <div class="avatar">
-                <img src="https://images.unsplash.com/photo-1543080853-556086153871?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=56&q=80" alt="avatar">
+              <app-responsive-image [xl]="quote.author.photoXl" [lg]="quote.author.photoLg" [md]="quote.author.photoMd" [xs]="quote.author.photoSm" [sm]="quote.author.photoSm"></app-responsive-image>
             </div>
         </div>
 

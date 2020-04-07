@@ -16,7 +16,7 @@ export class ArticleFeedComponent implements OnInit {
   articleLoading = false;
   screen: string;
   articles: Article[];
-
+  tryToLoadArticle = true;
   constructor(private responsive: ResponsiveService,
               private route: ActivatedRoute,
               protected title: Title,
@@ -28,6 +28,7 @@ export class ArticleFeedComponent implements OnInit {
   ngOnInit() {
     this.route.data.subscribe((data) => {
       this.articles = [];
+      this.tryToLoadArticle = true;
       this.addArticleToFeed(data.data as Article);
       this.setCurrentArticle(data.data.id);
     });
@@ -60,20 +61,25 @@ export class ArticleFeedComponent implements OnInit {
 
   loadNextArticle() {
     this.articleLoading = true;
-    this.api.getNextArticle(this.articles[this.articles.length - 1].id).subscribe((data) => {
-      if (isPlatformBrowser(this.platformId)) {
-        setTimeout(() => { // Чтобы не грузил по несколько статей, т.к. событий скролла очень много
-          this.articleLoading = false;
-        }, 300);
+    const exclude = this.articles.map(article => article.id);
+    this.api.getNextArticle(this.articles[this.articles.length - 1].id, exclude).subscribe((data) => {
+      if (data.id) { // Есть следующая статья
+        if (isPlatformBrowser(this.platformId)) {
+          setTimeout(() => { // Чтобы не грузил по несколько статей, т.к. событий скролла очень много
+            this.articleLoading = false;
+          }, 300);
+        }
+        this.addArticleToFeed(data);
+      } else {
+        this.tryToLoadArticle = false;
       }
-      this.addArticleToFeed(data);
     });
   }
 
   @HostListener('window:scroll', ['$event'])
   onScroll() {
     // Проверка, что до нижней границы списка стетей осталось менее Х пикселей
-    if (!this.articleLoading && this.isInViewport(document.querySelector('.article-feed'))) {
+    if (this.tryToLoadArticle && !this.articleLoading && this.isInViewport(document.querySelector('.article-feed'))) {
       this.loadNextArticle();
     }
     const articles = document.querySelectorAll('app-article');

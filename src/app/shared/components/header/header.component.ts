@@ -17,6 +17,8 @@ import {count} from 'rxjs/operators';
 import {isPlatformBrowser, isPlatformServer} from '@angular/common';
 import {Router} from '@angular/router';
 import {MenuElement} from '../../contracts/menu-element';
+import {Quote} from '../../contracts/quote';
+import {ApiService} from '../../services/api.service';
 
 @Component({
   selector: 'app-header',
@@ -25,7 +27,7 @@ import {MenuElement} from '../../contracts/menu-element';
 })
 export class HeaderComponent implements OnInit, AfterViewInit {
   public now: Date = new Date();
-
+  quote: Quote;
   @ViewChild('menu', {static: true}) menu: ElementRef;
   @ViewChild('navigationContainer', {static: true}) navigationContainer: ElementRef;
   @ViewChild('navigationList', {static: true}) navigationList: ElementRef;
@@ -54,6 +56,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     private responsive: ResponsiveService,
     private menuService: MenuService,
     private router: Router,
+    private api: ApiService,
     @Inject(PLATFORM_ID) private platformId: any
   ) {
     if (isPlatformBrowser(this.platformId)) {
@@ -64,6 +67,9 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+    this.api.getHeaderQuote().subscribe(quote => {
+      this.quote = quote;
+    })
     this.menuService.get().subscribe((elements) => {
       this.menuElements = elements;
       if (isPlatformBrowser(this.platformId)) {

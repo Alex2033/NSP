@@ -13,33 +13,23 @@ export class MaterialListCardComponent extends ResizableCardComponent implements
   blocks = [];
   title: string;
 
+  blockSizes = {
+    large: 4,
+    'medium-vertical': 2,
+    'medium-horizontal': 2,
+    small: 1
+  };
+  articleLength = 0;
   @Input() set data(value) {
+    this.articleLength = value.articles.length;
     this.blocks = [];
     this.title = value.title;
-    switch (this.size) {
-      case 'small':
-        value.articles.map((article, index) => {
-          this.blocks[index] = [article];
-        });
-        break;
-      case 'medium-horizontal':
-      case 'medium-vertical':
-        value.articles.map((article, index) => {
-          if (!this.blocks[Math.floor(index / 2)]) {
-            this.blocks[Math.floor(index / 2)] = [];
-          }
-          this.blocks[Math.floor(index / 2)].push(article);
-        });
-        break;
-      case 'large':
-        value.articles.map((article, index) => {
-          if (!this.blocks[Math.floor(index / 4)]) {
-            this.blocks[Math.floor(index / 4)] = [];
-          }
-          this.blocks[Math.floor(index / 4)].push(article);
-        });
-        break;
-    }
+    value.articles.map((article, index) => {
+      if (!this.blocks[Math.floor(index / this.blockSizes[this.size])]) {
+        this.blocks[Math.floor(index / this.blockSizes[this.size])] = [];
+      }
+      this.blocks[Math.floor(index / this.blockSizes[this.size])].push(article);
+    });
   }
 
   materialListConfig: SwiperConfigInterface = {

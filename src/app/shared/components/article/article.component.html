@@ -13,7 +13,7 @@
           </div>
         </div>
         <div class="info-bottom-right">
-          <button class="button secondary">Зарегистрироваться</button>
+          <button class="button secondary" *ngIf="allowEventRegistration">Зарегистрироваться</button>
         </div>
       </div>
     </div>
@@ -144,6 +144,8 @@
             </li>
           </ul>
         </div>
+      </aside>
+      <div class="sticky-sidebar">
         <ng-container *ngFor="let card of article.asideCards">
           <ng-container [ngSwitch]="card.type">
             <ng-container *ngSwitchCase="'article-list'">
@@ -157,7 +159,7 @@
             <!--            </ng-container>-->
           </ng-container>
         </ng-container>
-      </aside>
+      </div>
     </div>
   </div>
 </div>

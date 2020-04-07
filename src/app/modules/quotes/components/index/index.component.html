@@ -17,14 +17,20 @@
         </main>
       </div>
       <div class="col-xl-3 col-lg-4 col-md-8 offset-xl-1 offset-lg-0 offset-md-2" *ngIf="screen !== 'sm'">
-        <aside class="content-sidebar">
-          <app-material-list-card [size]="'small'"
-                                  [class]="'small'"
-        ></app-material-list-card>
-          <app-advertising-card [size]="'small'" [class]="'small'"></app-advertising-card>
-          <app-material-list-card [size]="'medium-vertical'" [highlight]="true"
-                                  [class]="'medium-vertical'"
-        ></app-material-list-card>
+        <aside class="content-sidebar sticky-sidebar">
+          <ng-container *ngFor="let card of asideCards">
+            <ng-container [ngSwitch]="card.type">
+              <ng-container *ngSwitchCase="'article-list'">
+                <app-material-list-card [size]="'medium-vertical'" [highlight]="card.highlight"
+                                        [data]="card"
+                ></app-material-list-card>
+              </ng-container>
+              <!--            <ng-container *ngSwitchCase="'latest-news'">-->
+              <!--              <app-latest-news-card-->
+              <!--                [articles]="card.articles"></app-latest-news-card>-->
+              <!--            </ng-container>-->
+            </ng-container>
+          </ng-container>
         </aside>
       </div>
     </div>

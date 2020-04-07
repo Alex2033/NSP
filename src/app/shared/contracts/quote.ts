@@ -6,6 +6,8 @@ export interface Quote {
     url?: string;
   };
   author?: {
+    id?: number;
+    slug?: string;
     photoXl: string;
     photoLg: string;
     photoMd: string;
