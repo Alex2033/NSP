@@ -77,3 +77,8 @@ app-pagination {
         margin-bottom: 0;
     }
 }
+.cards-row {
+  & > * {
+    margin-top: 8px;
+  }
+}

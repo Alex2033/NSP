@@ -24,6 +24,7 @@ a {
     height: 96px;
 
     ::ng-deep img {
+        max-width: 200px;
         max-height: 96px;
         object-fit: cover;
     }
@@ -51,4 +52,9 @@ a {
 .company-tag {
     font-size: 13px;
     line-height: 1.538;
+}
+app-responsive-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

@@ -41,3 +41,8 @@ app-pagination {
 app-person-card {
   display: block;
 }
+.cards-row {
+  & > * {
+    margin-top: 8px;
+  }
+}
