@@ -78,7 +78,7 @@ export class ApiService {
   getNextArticle(articleId, exclude: number[]): Observable<Article> {
     return this.apiClient.get(`/api/site/articles/${articleId}/next`, {
       params: {
-       'exclude[]': exclude
+        'exclude[]': exclude
       }
     }).pipe(map((response) => {
       return deserialize(response) as Article;
@@ -95,6 +95,30 @@ export class ApiService {
     return this.apiClient.get(`/api/site/people`, {
       params: filter
     }).pipe(map((response) => {
+      return deserialize(response);
+    }));
+  }
+
+  addArticleView(articleId) {
+    return this.apiClient.post(`/api/site/articles/${articleId}/add_view`).pipe(map((response) => {
+      return deserialize(response);
+    }));
+  }
+
+  addVideoView(videoId) {
+    return this.apiClient.post(`/api/site/videos/${videoId}/add_view`).pipe(map((response) => {
+      return deserialize(response);
+    }));
+  }
+
+  addEmailSubscription(data) {
+    return this.apiClient.post(`/api/site/subscribe`, data).pipe(map((response) => {
+      return deserialize(response);
+    }));
+  }
+
+  sendNews(data) {
+    return this.apiClient.post(`/api/site/send_news`, data).pipe(map((response) => {
       return deserialize(response);
     }));
   }

@@ -66,6 +66,7 @@ import {LazyLoadImageModule} from 'ng-lazyload-image';
 import { NiceDatePipe } from './pipes/nice-date.pipe';
 import { YoutubeVideoIdPipe } from './pipes/youtube-video-id.pipe';
 import { ArticleFeedComponent } from './components/article-feed/article-feed.component';
+import {ServerSideValidationDirective} from './directives/server-side-validation.directive';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -129,7 +130,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     EditorContentComponent,
     NiceDatePipe,
     YoutubeVideoIdPipe,
-    ArticleFeedComponent
+    ArticleFeedComponent,
+    ServerSideValidationDirective
   ],
   imports: [
     CommonModule,
@@ -200,7 +202,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     LazyLoadImageModule,
     NiceDatePipe,
     YoutubeVideoIdPipe,
-    ArticleFeedComponent
+    ArticleFeedComponent,
+    ServerSideValidationDirective
   ],
   providers: [
     {

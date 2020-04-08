@@ -12,10 +12,10 @@
           В любой момент можно отписаться
         </li>
       </ul>
-      <form [formGroup]="formGroup" class="modal-form">
+      <form [formGroup]="formGroup" [appServerSideValidation]="formErrors" class="modal-form" (submit)="submit()">
         <app-text [placeholder]="'E-mail'" [formControlName]="'email'"></app-text>
-        <app-checkbox [label]="'Согласен на'" [dataProcessingText]="'обработку данных'" [ngModel]="agree"></app-checkbox>
-        <button type="submit" class="button secondary" (click)="submit()">Отправить</button>
+        <app-checkbox [label]="'Согласен на'" [dataProcessingText]="'обработку данных'" [formControlName]="'agree'"></app-checkbox>
+        <button type="submit" class="button secondary">Отправить</button>
       </form>
     </div>
   </ng-scrollbar>
@@ -25,7 +25,7 @@
 
   <div class="confirm-text">
     <h3 class="confirm-title">Вы успешно подписались на рассылку NSP</h3>
-    <p>Первое письмо от нас уже отправлено на ваш e-mail</p>
+<!--    <p>Первое письмо от нас уже отправлено на ваш e-mail</p>-->
   </div>
 
   <button type="submit" class="button secondary" (click)="close()">Понятно</button>

@@ -68,7 +68,6 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.api.getHeaderQuote().subscribe(quote => {
-      console.log(quote);
       this.quote = quote;
     });
     this.menuService.get().subscribe((elements) => {

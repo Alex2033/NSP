@@ -33,7 +33,7 @@
     &:last-of-type {
         margin-bottom: 0;
     }
-  
+
     @include media-breakpoint-down(sm) {
         margin-bottom: 24px;
     }
@@ -75,4 +75,13 @@
         }
     }
 
+}
+app-pagination {
+  display: block;
+  margin-top: 40px;
+
+  @include media-breakpoint-down(sm) {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
 }

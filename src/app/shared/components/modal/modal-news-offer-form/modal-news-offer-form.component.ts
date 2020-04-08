@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, ValidationErrors, Validators} from '@angular/forms';
 import {ModalService} from '../../../services/modal.service';
 import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 import { NgScrollbar } from 'ngx-scrollbar';
+import {finalize} from 'rxjs/operators';
+import {ApiService} from '../../../services/api.service';
 
 @Component({
   selector: 'app-modal-news-offer-form',
@@ -11,16 +13,17 @@ import { NgScrollbar } from 'ngx-scrollbar';
 })
 export class ModalNewsOfferFormComponent implements OnInit, AfterViewInit {
   @ViewChild(NgScrollbar) scrollRef: NgScrollbar;
-
+  formErrors: ValidationErrors | null;
   formGroup: FormGroup;
-  agree: false;
+  loading = false;
   showConfirm: boolean;
   currentFileName: string;
   screen: string;
   constructor(
     private formBuilder: FormBuilder,
     private modalService: ModalService,
-    private responsive: ResponsiveService
+    private responsive: ResponsiveService,
+    private api: ApiService
   ) { }
 
   ngOnInit() {
@@ -30,9 +33,10 @@ export class ModalNewsOfferFormComponent implements OnInit, AfterViewInit {
 
     this.showConfirm = this.modalService.showConfirm;
     this.formGroup = this.formBuilder.group({
-      name: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
-      text: ['', [Validators.required]],
+      name: [''],
+      email: [''],
+      content: [''],
+      agree: [false]
     });
 
   }
@@ -42,10 +46,17 @@ export class ModalNewsOfferFormComponent implements OnInit, AfterViewInit {
   }
 
   submit() {
-    if(!this.formGroup.valid) {
-      return;
-    } else {
-      this.showConfirm = true;
+    if (!this.loading && this.formGroup.valid) {
+      this.loading = true;
+      this.api.sendNews(this.formGroup.value).pipe(finalize(() => {
+        this.loading = false;
+      })).subscribe(() => {
+        this.showConfirm = true;
+      }, (response) => {
+        if (response.status === 422) {
+          this.formErrors = response.error;
+        }
+      });
     }
   }
 

@@ -3,7 +3,7 @@
       <app-responsive-image [xl]="person.photoXl" [lg]="person.photoLg" [md]="person.photoMd" [xs]="person.photoSm" [sm]="person.photoSm"></app-responsive-image>
     </div>
     <div class="card-info">
-        <h2 class="person-name">{{ person.name }}</h2>
+        <div class="h2 person-name">{{ person.lastName }}<br>{{ person.firstName }} {{ person.middleName }}</div>
         <div class="person-position">
             <p>{{ person.position }}</p>
         </div>

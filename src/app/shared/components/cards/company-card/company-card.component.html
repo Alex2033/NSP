@@ -1,14 +1,14 @@
-<div class="company-card">
-  <a [routerLink]="['/companies', company.id + '-' + company.slug]">
+<a [routerLink]="['/companies', company.id + '-' + company.slug]" class="company-card">
     <div class="company-img">
-      <app-responsive-image [xl]="company.logoXl" [lg]="company.logoLg" [md]="company.logoMd" [xs]="company.logoSm" [sm]="company.logoSm"></app-responsive-image>
+      <app-responsive-image [xl]="company.logoXl" [lg]="company.logoLg" [md]="company.logoMd" [xs]="company.logoSm"
+                            [sm]="company.logoSm"></app-responsive-image>
     </div>
     <h5 class="company-title">{{ company.name }}</h5>
-  </a>
     <div class="company-contacts">
-        <a *ngIf="company.phone" [href]="'tel:' + ( company.phone | phoneFormat )" class="company-phone link">{{ company.phone }}</a>
-        <br>
-        <a class="link" *ngIf="company.site" [href]="company.site" target="_blank">{{ company.site | domain }}</a>
+      <span *ngIf="company.phone" class="company-phone link">{{ company.phone }}</span>
+      <br>
+      <span *ngIf="company.site">{{ company.site | domain }}</span>
     </div>
     <div class="company-tag">{{ company.activityName }}</div>
-</div>
+
+</a>

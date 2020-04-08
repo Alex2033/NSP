@@ -11,7 +11,7 @@
   background-color: $light-color;
   height: 100%;
   color: $text-color;
-
+  text-decoration: none;
   @include media-breakpoint-down(md) {
     justify-content: center;
   }

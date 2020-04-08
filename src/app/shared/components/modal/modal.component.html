@@ -3,7 +3,7 @@
 <ng-container *ngIf="current">
   <app-modal-subscription-form *ngIf="current.id === 'subscription-form'"></app-modal-subscription-form>
   <app-modal-news-offer-form *ngIf="current.id === 'news-offer-form'"></app-modal-news-offer-form>
-  <app-modal-video *ngIf="current.id === 'video'" [url]="current.parameters['url']"></app-modal-video>
+  <app-modal-video *ngIf="current.id === 'video'" [url]="current.parameters['url']" [id]="current.parameters['id']"></app-modal-video>
   <app-modal-login *ngIf="current.id === 'login'"></app-modal-login>
 </ng-container>
 

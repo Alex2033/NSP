@@ -17,6 +17,8 @@ export class ArticleFeedComponent implements OnInit {
   screen: string;
   articles: Article[];
   tryToLoadArticle = true;
+  viewedArticles = [];
+
   constructor(private responsive: ResponsiveService,
               private route: ActivatedRoute,
               protected title: Title,
@@ -31,6 +33,7 @@ export class ArticleFeedComponent implements OnInit {
       this.tryToLoadArticle = true;
       this.addArticleToFeed(data.data as Article);
       this.setCurrentArticle(data.data.id);
+      this.addArticleToViewed(data.data.id);
     });
     this.responsive.screen.subscribe((screen) => {
       this.screen = screen;
@@ -41,7 +44,15 @@ export class ArticleFeedComponent implements OnInit {
     this.articles.push(article);
   }
 
+  addArticleToViewed(articleId) {
+    if (this.viewedArticles.findIndex(x => x === articleId) === -1) {
+      this.viewedArticles.push(articleId);
+      this.api.addArticleView(articleId).subscribe();
+    }
+  }
+
   setCurrentArticle(articleId) {
+    this.addArticleToViewed(articleId);
     this.currentArticleId = articleId;
     const article = this.articles.find(x => x.id === articleId);
     this.title.setTitle(article.metaTitle ? article.metaTitle : article.title + ' - NSP.ru');
@@ -83,14 +94,10 @@ export class ArticleFeedComponent implements OnInit {
       this.loadNextArticle();
     }
     const articles = document.querySelectorAll('app-article');
-    let found = false;
     articles.forEach((article) => {
-      if (!found) {
-        const distance = article.getBoundingClientRect();
-        if (distance.top < 0 && distance.bottom > 0) {
-          found = true;
-          this.setCurrentArticle(parseInt(article.getAttribute('data-article-id'), 10));
-        }
+      const distance = article.getBoundingClientRect();
+      if (distance.top < (window.innerHeight / 2) && distance.bottom > 0) {
+        this.setCurrentArticle(parseInt(article.getAttribute('data-article-id'), 10));
       }
     });
   }

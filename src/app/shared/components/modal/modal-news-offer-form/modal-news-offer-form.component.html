@@ -2,11 +2,11 @@
   <ng-scrollbar class="custom-scrollbar" #scrollref>
     <div class="main-content">
       <h3 class="modal-title">Прислать новость</h3>
-      <form [formGroup]="formGroup" class="modal-form">
+      <form [formGroup]="formGroup" [appServerSideValidation]="formErrors" class="modal-form" (submit)="submit()">
         <app-text [placeholder]="'Имя'" [formControlName]="'name'" class="modal-control"></app-text>
         <app-text [placeholder]="'E-mail'" [formControlName]="'email'" class="modal-control"></app-text>
-        <app-textarea [placeholder]="'Текст новости'" [formControlName]="'text'" class="modal-control"></app-textarea>
-        <div class="choose-file">
+        <app-textarea [placeholder]="'Текст новости'" [formControlName]="'content'" class="modal-control"></app-textarea>
+        <div class="choose-file" *ngIf="false">
           <input type="file" hidden #fileInput (change)="onFileSelected($event)">
           <button class="pick-file" type="button" (click)="fileInput.click()">
             <svg>
@@ -29,8 +29,8 @@
             </button>
           </div>
         </div>
-        <app-checkbox [label]="'Согласен на'" [dataProcessingText]="'обработку данных'" [ngModel]="agree"></app-checkbox>
-        <button type="submit" class="button secondary" (click)="submit()">Отправить</button>
+        <app-checkbox [label]="'Согласен на'" [dataProcessingText]="'обработку данных'" [formControlName]="'agree'"></app-checkbox>
+        <button type="submit" class="button secondary">Отправить</button>
       </form>
     </div>
   </ng-scrollbar>

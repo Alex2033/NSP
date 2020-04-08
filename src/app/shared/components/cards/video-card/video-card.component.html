@@ -3,7 +3,7 @@
      [class.horizontal]="size === 'medium-horizontal'"
      [class.vertical]="size === 'medium-vertical'"
      [class.large]="size === 'large'"
-     (click)="modal.open('video', {url: data.videoUrl})">
+     (click)="modal.open('video', {url: data.videoUrl, id: data.videoId})">
     <div class="card-content">
         <div class="card-top static">
             <div class="date">{{ data.videoPublishedAt * 1000 | niceDate }} в {{ data.videoPublishedAt * 1000 | date: 'shortTime' }}</div>

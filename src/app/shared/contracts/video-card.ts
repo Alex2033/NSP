@@ -14,4 +14,5 @@ export interface VideoCard {
   smallImageMd: string | null;
   smallImageSm: string | null;
   videoUrl: string;
+  videoId: number;
 }

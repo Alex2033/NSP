@@ -496,6 +496,22 @@ export class MockApiService {
     }));
   }
 
+  addEmailSubscription(data) {
+    return of();
+  }
+
+  sendNews(data) {
+    return of();
+  }
+
+  addArticleView(articleId) {
+    return of();
+  }
+
+  addVideoView(videoId) {
+    return of();
+  }
+
   getHeaderQuote() {
     return of(
       {

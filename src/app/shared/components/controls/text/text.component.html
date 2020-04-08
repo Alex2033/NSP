@@ -17,4 +17,4 @@
     </ng-container>
   </div>
 </div>
-<app-error-message *ngIf="errorState && shouldLabelFloat" [errors]="this.ngControl.errors" [errorMessages]="errorMessages"></app-error-message>
+<app-error-message *ngIf="errorState" [errors]="this.ngControl.errors" [errorMessages]="errorMessages"></app-error-message>
