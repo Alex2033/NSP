@@ -98,7 +98,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
         if (!this.showRightControl) {
           this.showRightControl = true;
         }
-        
+
         if (this.scrollPosition > 0) {
           this.showLeftControl = true;
         } else {
@@ -140,6 +140,8 @@ export class HeaderComponent implements OnInit, AfterViewInit {
         this.visibleMenuElements = this.menuElements;
         this.hiddenMenuElements = [];
       }
+    } else {
+      this.visibleMenuElements = this.menuElements;
     }
   }
 
