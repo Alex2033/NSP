@@ -330,6 +330,15 @@
 
 }
 
+.youtube {
+  @include mouse {
+    &:hover {
+      background-color: #FF0402 !important;
+    }
+  }
+
+}
+
 .twitter {
     @include mouse {
         &:hover {
@@ -636,14 +645,14 @@
             height: 100%;
             display: block;
             position: relative;
-    
+
             &::before {
                 content: '';
                 display: block;
                 width: 100%;
                 padding-top: 100%;
             }
-    
+
             > * {
                 position: absolute !important;
                 top: 0px;

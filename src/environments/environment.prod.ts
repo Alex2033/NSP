@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  apiHost: 'https://adminnsp.digitech.company',
+  apiHost: 'https://admin.nsp.ru',
   useApi: true,
 };
