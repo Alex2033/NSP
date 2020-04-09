@@ -35,10 +35,10 @@
     <div class="background-img">
       <img [src]="'https://img.youtube.com/vi/' + (data.videoUrl | youtubeVideoId) + '/hqdefault.jpg'" *ngIf="!data.imageXl && !data.smallImageXl" alt="video overlay" class="youtube-image">
       <ng-container *ngIf="size === 'small' && data.smallImageXl; else image">
-        <app-responsive-image [xl]="data.smallImageXl" [lg]="data.smallImageLg" [md]="data.smallImageMd" [xs]="data.smallImageSm" [sm]="data.smallImageSm"></app-responsive-image>
+        <app-responsive-image [xl]="data.smallImageXl" [lg]="data.smallImageLg" [md]="data.smallImageMd" [xs]="data.smallImageSm" [sm]="data.smallImageSm" [alt]="data.smallImageAlt" [title]="data.smallImageTitle"></app-responsive-image>
       </ng-container>
     </div>
 </div>
 <ng-template #image>
-  <app-responsive-image [xl]="data.imageXl" [lg]="data.imageLg" [md]="data.imageMd" [xs]="data.imageSm" [sm]="data.imageSm"></app-responsive-image>
+  <app-responsive-image [xl]="data.imageXl" [lg]="data.imageLg" [md]="data.imageMd" [xs]="data.imageSm" [sm]="data.imageSm" [alt]="data.imageAlt" [title]="data.imageTitle"></app-responsive-image>
 </ng-template>

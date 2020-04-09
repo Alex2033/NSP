@@ -18,6 +18,7 @@ export class ResponsiveImageComponent implements OnInit {
   @Input() scrollObservable: Observable<any>;
   @Input() itemprop: string; //Schema property
   @Input() alt: string;
+  @Input() title: string;
   @Input() lazyLoad: boolean = true;
   constructor(private cdr: ChangeDetectorRef, public responsive: ResponsiveService) {
   }

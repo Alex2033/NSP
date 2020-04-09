@@ -16,12 +16,18 @@ export interface ApartmentComplex {
   imageLg: string;
   imageMd: string;
   imageSm: string;
+  imageTitle?: string | null;
+  imageAlt?: string | null;
   detailImageXl?: string;
   detailImageLg?: string;
   detailImageMd?: string;
   detailImageSm?: string;
+  detailImageTitle?: string | null;
+  detailImageAlt?: string | null;
   logoXl?: string;
   logoLg?: string;
   logoMd?: string;
   logoSm?: string;
+  logoTitle?: string | null;
+  logoAlt?: string | null;
 }

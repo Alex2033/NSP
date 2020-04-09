@@ -2,8 +2,8 @@
   <ng-container *ngIf="(responsive.screen | async) as screen">
     <picture>
       <source type="image/jpeg" [attr.lazyLoad]="url(screen)">
-      <img *ngIf="lazyLoad" [offset]="300" [customObservable]="scrollObservable ? scrollObservable : null" [lazyLoad]="url(screen)" [attr.aria-label]="alt ? alt : ''">
-      <img *ngIf="!lazyLoad" [src]="url(screen)" [attr.aria-label]="alt ? alt : ''">
+      <img *ngIf="lazyLoad" [offset]="300" [customObservable]="scrollObservable ? scrollObservable : null" [lazyLoad]="url(screen)" [attr.alt]="alt ? alt : ''" [attr.title]="title ? title : ''">
+      <img *ngIf="!lazyLoad" [src]="url(screen)" [attr.alt]="alt ? alt : ''" [attr.title]="title ? title : ''">
     </picture>
     <meta *ngIf="itemprop" [attr.itemprop]="itemprop" [content]="url(screen)" />
   </ng-container>

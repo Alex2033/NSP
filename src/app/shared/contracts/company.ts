@@ -9,7 +9,8 @@ export interface Company {
   logoLg: string;
   logoMd: string;
   logoSm: string;
-
+  logoTitle?: string | null;
+  logoAlt?: string | null;
   address?: string;
   description?: string;
   organizationForm?: string;

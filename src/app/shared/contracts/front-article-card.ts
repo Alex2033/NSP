@@ -14,5 +14,9 @@ export interface FrontArticleCard {
   imageLg: string | null;
   imageMd: string | null;
   imageSm: string | null;
+  imageTitle?: string | null;
+  imageAlt?: string | null;
   smallImageSm: string | null;
+  smallImageTitle?: string | null;
+  smallImageAlt?: string | null;
 }

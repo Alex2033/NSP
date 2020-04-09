@@ -20,7 +20,7 @@
                 <a [routerLink]="['/persons', quote.author.id + '-' + quote.author.slug]" class="author" [innerHTML]="quote.author.firstName + '&nbsp;' + quote.author.lastName"></a>
             </blockquote>
             <div class="avatar">
-              <app-responsive-image [xl]="quote.author.photoXl" [lg]="quote.author.photoLg" [md]="quote.author.photoMd" [xs]="quote.author.photoSm" [sm]="quote.author.photoSm"></app-responsive-image>
+              <app-responsive-image [xl]="quote.author.photoXl" [lg]="quote.author.photoLg" [md]="quote.author.photoMd" [xs]="quote.author.photoSm" [sm]="quote.author.photoSm" [alt]="quote.author.photoAlt" [title]="quote.author.photoTitle"></app-responsive-image>
             </div>
         </div>
 

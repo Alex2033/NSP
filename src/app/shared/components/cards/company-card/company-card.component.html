@@ -1,7 +1,7 @@
 <a [routerLink]="['/companies', company.id + '-' + company.slug]" class="company-card">
     <div class="company-img">
       <app-responsive-image [xl]="company.logoXl" [lg]="company.logoLg" [md]="company.logoMd" [xs]="company.logoSm"
-                            [sm]="company.logoSm"></app-responsive-image>
+                            [sm]="company.logoSm"  [alt]="company.logoAlt"  [title]="company.logoTitle"></app-responsive-image>
     </div>
     <h5 class="company-title">{{ company.name }}</h5>
     <div class="company-contacts">

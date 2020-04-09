@@ -20,7 +20,7 @@
         <ng-container>
           <div class="image-overlay"></div>
           <ng-container *ngIf="size === 'small' && data.smallImageXl; else image">
-            <app-responsive-image [xl]="data.smallImageXl" [lg]="data.smallImageLg" [md]="data.smallImageMd" [xs]="data.smallImageSm" [sm]="data.smallImageSm"></app-responsive-image>
+            <app-responsive-image [xl]="data.smallImageXl" [lg]="data.smallImageLg" [md]="data.smallImageMd" [xs]="data.smallImageSm" [sm]="data.smallImageSm" [alt]="data.smallImageAlt" [title]="data.smallImageTitle"></app-responsive-image>
           </ng-container>
         </ng-container>
       </div>
@@ -78,13 +78,13 @@
       <div class="image-overlay"></div>
       <div class="background-img">
         <ng-container *ngIf="size === 'small' && (data.smallImageXl || data.smallImageXl); else image">
-          <app-responsive-image [xl]="data.smallImageXl" [lg]="data.smallImageLg" [md]="data.smallImageMd" [xs]="data.smallImageSm" [sm]="data.smallImageSm"></app-responsive-image>
+          <app-responsive-image [xl]="data.smallImageXl" [lg]="data.smallImageLg" [md]="data.smallImageMd" [xs]="data.smallImageSm" [sm]="data.smallImageSm" [alt]="data.smallImageAlt" [title]="data.smallImageTitle"></app-responsive-image>
         </ng-container>
       </div>
     </a>
   </ng-container>
   <ng-template #image>
-    <app-responsive-image [xl]="data.imageXl" [lg]="data.imageLg" [md]="data.imageMd" [xs]="data.imageSm" [sm]="data.imageSm"></app-responsive-image>
+    <app-responsive-image [xl]="data.imageXl" [lg]="data.imageLg" [md]="data.imageMd" [xs]="data.imageSm" [sm]="data.imageSm" [alt]="data.imageAlt" [title]="data.imageTitle"></app-responsive-image>
   </ng-template>
 
 </ng-container>

@@ -11,7 +11,7 @@
         <h1 class="title" *ngIf="screen === 'sm'">{{ company.name }}</h1>
         <div class="contact-card">
           <div class="contact-card-img">
-            <app-responsive-image [xl]="company.logoXl" [lg]="company.logoLg" [md]="company.logoMd" [xs]="company.logoSm" [sm]="company.logoSm"></app-responsive-image>
+            <app-responsive-image [xl]="company.logoXl" [lg]="company.logoLg" [md]="company.logoMd" [xs]="company.logoSm" [sm]="company.logoSm" [alt]="company.logoAlt"  [title]="company.logoTitle"></app-responsive-image>
           </div>
           <div class="contact-card-items">
             <div class="contact-card-item">

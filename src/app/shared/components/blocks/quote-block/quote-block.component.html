@@ -18,7 +18,7 @@
                 <div class="quote-author-position">{{ quote.author.position }}</div>
             </div>
             <div class="quote-author-avatar" *ngIf="quote.author.photoXl">
-              <app-responsive-image [xl]="quote.author.photoXl" [lg]="quote.author.photoLg" [md]="quote.author.photoMd" [xs]="quote.author.photoSm" [sm]="quote.author.photoSm"></app-responsive-image>
+              <app-responsive-image [xl]="quote.author.photoXl" [lg]="quote.author.photoLg" [md]="quote.author.photoMd" [xs]="quote.author.photoSm" [sm]="quote.author.photoSm" [alt]="quote.author.photoAlt" [title]="quote.author.photoTitle"></app-responsive-image>
             </div>
         </div>
     </div>

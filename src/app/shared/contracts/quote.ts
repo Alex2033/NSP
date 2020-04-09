@@ -12,6 +12,8 @@ export interface Quote {
     photoLg: string;
     photoMd: string;
     photoSm: string;
+    photoTitle?: string | null;
+    photoAlt?: string | null;
     firstName: string;
     lastName: string;
     position: string;

@@ -14,4 +14,6 @@ export interface Person {
   description?: string;
   phone?: string;
   email?: string;
+  photoTitle?: string | null;
+  photoAlt?: string | null;
 }
