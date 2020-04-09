@@ -67,6 +67,8 @@
 }
 
 .tag {
+    white-space: nowrap;
+    
     a {
         color: $dark-gray;
     }
@@ -177,11 +179,5 @@
     .tags {
         width: 100%;
         flex-wrap: nowrap;
-    }
-
-    .tag {
-        &:last-child {
-            margin-right: 60px;
-        }
     }
 }

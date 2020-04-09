@@ -42,6 +42,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   screen: string;
   scrollPosition: number = 0;
   showLeftControl: boolean = false;
+  showRightControl: boolean = true;
   visibleMenuElements = [];
   hiddenMenuElements = [];
   menuElements: MenuElement[] = [];
@@ -94,6 +95,10 @@ export class HeaderComponent implements OnInit, AfterViewInit {
       this.scrollbarRef.scrolled.subscribe(e => {
         this.scrollPosition = e.target.scrollLeft;
 
+        if (!this.showRightControl) {
+          this.showRightControl = true;
+        }
+        
         if (this.scrollPosition > 0) {
           this.showLeftControl = true;
         } else {
@@ -145,5 +150,11 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   search() {
     this.router.navigate(['/search'], {queryParams: {search: this.searchQuery}});
     this.searchQuery = '';
+  }
+
+  hideRightControl() {
+    setTimeout(() => {
+      this.showRightControl = false;
+    }, 0);
   }
 }
