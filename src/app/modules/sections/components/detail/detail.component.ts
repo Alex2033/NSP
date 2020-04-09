@@ -21,6 +21,7 @@ export class DetailComponent implements OnInit, AfterViewInit {
   cardsLoaded = 0;
   scrollPosition: number = 0;
   showLeftControl: boolean = false;
+  showRightControl: boolean = true;
   screen: string;
   entryDateValue: Date = new Date();
 
@@ -68,6 +69,10 @@ export class DetailComponent implements OnInit, AfterViewInit {
       this.scrollbarRef.scrolled.subscribe(e => {
         this.scrollPosition = e.target.scrollLeft;
 
+        if (!this.showRightControl) {
+          this.showRightControl = true;
+        }
+        
         if (this.scrollPosition > 0) {
           this.showLeftControl = true;
         } else {
@@ -113,5 +118,11 @@ export class DetailComponent implements OnInit, AfterViewInit {
     return (
       distance.bottom - 200 <= (window.innerHeight || document.documentElement.clientHeight)
     );
+  }
+
+  hideRightControl() {
+    setTimeout(() => {
+      this.showRightControl = false;
+    }, 0);
   }
 }

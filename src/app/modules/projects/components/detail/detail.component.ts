@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 import {ActivatedRoute} from '@angular/router';
 import {Page} from '../../../../shared/contracts/page';
 import {Project} from '../../../../shared/contracts/project';
 import {Meta, Title} from '@angular/platform-browser';
+import { NgScrollbar } from 'ngx-scrollbar';
 
 @Component({
   selector: 'app-detail',
@@ -11,8 +12,12 @@ import {Meta, Title} from '@angular/platform-browser';
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
-
+  @ViewChild(NgScrollbar, {static: false}) scrollbarRef: NgScrollbar
+  
   screen: string;
+  scrollPosition: number = 0;
+  showLeftControl: boolean = false;
+  showRightControl: boolean = true;
 
   project: Project;
 
@@ -40,6 +45,30 @@ export class DetailComponent implements OnInit {
     this.responsive.screen.subscribe((screen) => {
       this.screen = screen;
     });
+  }
+
+  ngAfterViewInit() {
+    if (this.screen === 'sm') {
+      this.scrollbarRef.scrolled.subscribe(e => {
+        this.scrollPosition = e.target.scrollLeft;
+
+        if (!this.showRightControl) {
+          this.showRightControl = true;
+        }
+
+        if (this.scrollPosition > 0) {
+          this.showLeftControl = true;
+        } else {
+          this.showLeftControl = false;
+        }
+      });
+    }
+  }
+
+  hideRightControl() {
+    setTimeout(() => {
+      this.showRightControl = false;
+    }, 0);
   }
 
 }

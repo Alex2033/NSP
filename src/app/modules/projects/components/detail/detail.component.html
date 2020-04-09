@@ -3,7 +3,7 @@
     <header class="inner-page-header">
       <h1>{{ project.title }}</h1>
     </header>
-    <ul class="categories" *ngIf="project.menu.length > 0">
+    <ul class="categories" *ngIf="project.menu.length > 0 && screen !== 'sm'">
       <li
         class="categories-item"
         *ngFor="let menuElement of project.menu"
@@ -12,6 +12,46 @@
         <a [routerLink]="[menuElement.slug]" class="categories-link">{{ menuElement.name }}</a>
       </li>
     </ul>
+
+    <div class="pick-up-button" *ngIf="screen === 'sm'">
+      <button class="button">Подобрать ЖК</button>
+    </div>
+
+    <!-- mobile categories -->
+    <div class="mobile-categories" *ngIf="screen === 'sm'">
+      <ng-scrollbar
+        class="horizontal-scrollbar"
+        track="horizontal"
+        #scrollbarRef
+        (reachedEnd)="hideRightControl()"
+      >
+        <ul class="categories" *ngIf="project.menu.length > 0">
+          <ng-container *ngFor="let menuElement of project.menu; let i = index">
+            <li
+              class="categories-item"
+              [class.active]="menuElement.highlight"
+              *ngIf="i !== 0"
+            >
+              <a [routerLink]="[menuElement.slug]" class="categories-link">{{ menuElement.name }}</a>
+          </li>
+          </ng-container>
+        </ul>
+      </ng-scrollbar>
+      <div class="gradient-control control-left" *ngIf="showLeftControl">
+        <div class="control-button small light" (click)="scrollbarRef.scrollTo({ left: (scrollPosition - 150) })">
+            <svg class="icon">
+                <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
+            </svg>
+        </div>
+      </div>
+      <div class="gradient-control control-right" *ngIf="showRightControl">
+        <div class="control-button small light" (click)="scrollbarRef.scrollTo({ left: (scrollPosition + 150) })">
+            <svg class="icon">
+                <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
+            </svg>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="materials">
     <app-card-layout

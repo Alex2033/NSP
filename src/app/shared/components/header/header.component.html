@@ -85,6 +85,7 @@
                     class="horizontal-scrollbar"
                     track="horizontal"
                     #scrollbarRef
+                    (reachedEnd)="hideRightControl()"
                 >
                     <nav class="navigation">
                         <ul class="navigation-list" style="flex-grow: 1;" #widgetsContent>
@@ -102,7 +103,7 @@
                         </svg>
                     </div>
                 </div>
-                <div class="gradient-control control-right">
+                <div class="gradient-control control-right" *ngIf="showRightControl">
                     <div class="control-button small light" (click)="scrollbarRef.scrollTo({ left: (scrollPosition + 150) })">
                         <svg class="icon">
                             <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
