@@ -1,0 +1,18 @@
+<div class="news-wrapper" #wrapper>
+  <ul class="news-feed" #feed>
+    <li class="news-item" [class.important]="event.hightlight" *ngFor="let event of visibleEvents">
+      <a [routerLink]="['']">
+        <div class="date dark">{{ event.startedAt * 1000 | niceDate }} в {{ event.startedAt * 1000 | date: 'shortTime' }}</div>
+        <div class="news-text">
+          <p>{{ event.title }}</p>
+        </div>
+      </a>
+    </li>
+  </ul>
+  <a [routerLink]="['']" class="link show-more" *ngIf="screen === 'sm'">
+    <span>Еще события</span>
+    <svg class="icon">
+      <use xlink:href="assets/sprites/icons.svg#chevron_down"></use>
+    </svg>
+  </a>
+</div>

@@ -67,6 +67,7 @@ import { NiceDatePipe } from './pipes/nice-date.pipe';
 import { YoutubeVideoIdPipe } from './pipes/youtube-video-id.pipe';
 import { ArticleFeedComponent } from './components/article-feed/article-feed.component';
 import {ServerSideValidationDirective} from './directives/server-side-validation.directive';
+import { EventCalendarCardComponent } from './components/cards/event-calendar-card/event-calendar-card.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -131,7 +132,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     NiceDatePipe,
     YoutubeVideoIdPipe,
     ArticleFeedComponent,
-    ServerSideValidationDirective
+    ServerSideValidationDirective,
+    EventCalendarCardComponent
   ],
   imports: [
     CommonModule,
@@ -203,7 +205,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     NiceDatePipe,
     YoutubeVideoIdPipe,
     ArticleFeedComponent,
-    ServerSideValidationDirective
+    ServerSideValidationDirective,
+    EventCalendarCardComponent
   ],
   providers: [
     {
