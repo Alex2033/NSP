@@ -24,6 +24,12 @@ export class ResponseService {
     this.router.navigateByUrl('/not-found', {skipLocationChange: true});
   }
 
+  permanentRedirect(location: string) {
+    this.status(301);
+    this.setHeader('Location', location);
+    this.router.navigateByUrl(location);
+  }
+
   forbidden() {
     this.status(403);
     // this.router.navigate(['/login'], {queryParams: {back: typeof window !== 'undefined' ? window.location.pathname + window.location.search : null}})
@@ -32,6 +38,12 @@ export class ResponseService {
   status(code: number) {
     if (isPlatformServer(this.platformId)) {
       this.response.status(code);
+    }
+  }
+
+  setHeader(name, value) {
+    if (isPlatformServer(this.platformId)) {
+      this.response.setHeader(name, value);
     }
   }
 }
