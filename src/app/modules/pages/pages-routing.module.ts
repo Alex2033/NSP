@@ -9,7 +9,7 @@ const routes: Routes = [
     path: 'detail',
     component: IndexComponent,
     resolve: {
-      data: RouteDataResolver
+      config: RouteDataResolver
     }
   }
 ];

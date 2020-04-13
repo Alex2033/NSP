@@ -71,7 +71,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     this.api.getHeaderQuote().subscribe(quote => {
       this.quote = quote;
     });
-    this.menuService.get().subscribe((elements) => {
+    this.menuService.getGlobalMenu().subscribe((elements) => {
       this.menuElements = elements;
       if (isPlatformBrowser(this.platformId)) {
         this.rebuildMenu(); // Меню появляется раньше, но уходит за экран, т.к. браузер еще возвращает некорректные значения ширины

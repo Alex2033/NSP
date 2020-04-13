@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {MenuService} from './shared/services/menu.service';
 import {trigger, transition, style, animate} from '@angular/animations';
 import {ResponsiveService} from './shared/services/responsive.service';
-import {NavigationStart, Router} from '@angular/router';
+import {GuardsCheckEnd, NavigationStart, ResolveStart, Router} from '@angular/router';
 import {Meta, Title} from '@angular/platform-browser';
 
 @Component({
@@ -44,6 +44,7 @@ export class AppComponent implements OnInit {
             content: 'https://nsp.ru/assets/share.jpg'
           }
         );
+        this.menu.setProjectMenuElements([]);
       }
     });
 

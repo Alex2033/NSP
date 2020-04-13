@@ -605,10 +605,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 24px;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 24px;
+    }
 
     @include media-breakpoint-down(sm) {
-        display: none;
+        //display: none;
+        margin: 12px 16px;
     }
 }
 

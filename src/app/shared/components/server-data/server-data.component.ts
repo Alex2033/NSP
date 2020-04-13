@@ -14,11 +14,11 @@ export class ServerDataComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe((data) => {
-        switch (data.data.type) {
+        switch (data.config.type) {
           case 'page':
             this.router.navigate(['/pages/detail'], {
               state: {
-                data: data.data
+                config: data.config
               },
               skipLocationChange: true
             });
@@ -26,7 +26,7 @@ export class ServerDataComponent implements OnInit {
           case 'project':
             this.router.navigate(['/projects/detail'], {
               state: {
-                data: data.data
+                config: data.config
               },
               skipLocationChange: true
             });
@@ -34,7 +34,7 @@ export class ServerDataComponent implements OnInit {
           case 'section':
             this.router.navigate(['/sections/detail'], {
               state: {
-                data: data.data
+                config: data.config
               },
               skipLocationChange: true
             });
@@ -42,7 +42,7 @@ export class ServerDataComponent implements OnInit {
           case 'article':
             this.router.navigate(['/server_article'], {
               state: {
-                data: data.data
+                config: data.config
               },
               skipLocationChange: true
             });

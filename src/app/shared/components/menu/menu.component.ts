@@ -13,7 +13,7 @@ export class MenuComponent implements OnInit {
   constructor(public modal: ModalService, public menu: MenuService) { }
 
   ngOnInit(): void {
-    this.menu.get().subscribe((elements) => {
+    this.menu.getGlobalMenu().subscribe((elements) => {
       this.menuElements = elements;
     });
   }

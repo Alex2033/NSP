@@ -7,7 +7,6 @@ export interface Project {
   metaTitle: string | null;
   metaDescription: string | null;
   metaKeywords: string | null;
-  menu: MenuElement[];
   layout: {
     xl: any[],
     lg: any[],

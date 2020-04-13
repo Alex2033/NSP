@@ -31,9 +31,9 @@ export class ArticleFeedComponent implements OnInit {
     this.route.data.subscribe((data) => {
       this.articles = [];
       this.tryToLoadArticle = true;
-      this.addArticleToFeed(data.data as Article);
-      this.setCurrentArticle(data.data.id);
-      this.addArticleToViewed(data.data.id);
+      this.addArticleToFeed(data.config.data as Article);
+      this.setCurrentArticle(data.config.data.id);
+      this.addArticleToViewed(data.config.data.id);
     });
     this.responsive.screen.subscribe((screen) => {
       this.screen = screen;

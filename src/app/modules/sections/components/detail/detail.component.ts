@@ -37,7 +37,7 @@ export class DetailComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.route.data.subscribe((data) => {
-      this.section = data.data as Section;
+      this.section = data.config.data as Section;
       this.cards = this.section.cards.map(card => {
         return card;
       });
@@ -72,7 +72,7 @@ export class DetailComponent implements OnInit, AfterViewInit {
         if (!this.showRightControl) {
           this.showRightControl = true;
         }
-        
+
         if (this.scrollPosition > 0) {
           this.showLeftControl = true;
         } else {

@@ -8,8 +8,8 @@ import {map} from 'rxjs/operators';
 })
 export class MenuService {
   showMenu = false;
-  menuElements;
-
+  globalMenuElements;
+  private projectMenuElements = [];
   constructor(private api: ApiService) {
   }
 
@@ -21,14 +21,22 @@ export class MenuService {
     this.showMenu = false;
   }
 
-  get() {
-    if (this.menuElements) {
-      return of(this.menuElements);
+  getGlobalMenu() {
+    if (this.globalMenuElements) {
+      return of(this.globalMenuElements);
     } else {
       return this.api.getMenuElements().pipe(map((data) => {
-        this.menuElements = data.elements;
+        this.globalMenuElements = data.elements;
         return data.elements;
       }));
     }
+  }
+
+  getProjectMenu() {
+    return this.projectMenuElements;
+  }
+
+  setProjectMenuElements(elements) {
+    this.projectMenuElements = elements;
   }
 }

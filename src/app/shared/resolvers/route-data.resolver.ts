@@ -8,6 +8,6 @@ export class RouteDataResolver implements Resolve<any> {
   }
 
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
-    return this.router.getCurrentNavigation().extras.state.data.data;
+    return this.router.getCurrentNavigation().extras.state.config;
   }
 }
