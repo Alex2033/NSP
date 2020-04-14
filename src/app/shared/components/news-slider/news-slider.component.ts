@@ -36,6 +36,12 @@ export class NewsSliderComponent implements OnInit {
           loop: false,
           spaceBetween: 25
         };
+      } else if (screen === 'sm') {
+        this.newsSliderConfig = {
+          slidesPerView: 1,
+          loop: false,
+          spaceBetween: 0
+        };
       }
     });
   }

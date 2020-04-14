@@ -1,6 +1,14 @@
 @import "theme";
 @import "responsive";
 
+:host {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
 // Верхняя панель
 .header-top {
     padding: 7px 32px;

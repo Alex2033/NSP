@@ -33,6 +33,14 @@
                 </div>
                 <a class="link" href="mailto:{{ company.email }}">{{ company.email }}</a>
             </div>
+            <div class="company-contact">
+                <div class="company-contact-icon">
+                    <svg class="person">
+                        <use xlink:href="assets/sprites/icons.svg#web"></use>
+                    </svg>
+                </div>
+                <a class="link" [href]="company.activityName">{{ company.activityName }}</a>
+            </div>
         </div>
     </div>
 </div>

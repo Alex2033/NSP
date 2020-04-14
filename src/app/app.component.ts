@@ -4,6 +4,7 @@ import {trigger, transition, style, animate} from '@angular/animations';
 import {ResponsiveService} from './shared/services/responsive.service';
 import {GuardsCheckEnd, NavigationStart, ResolveStart, Router} from '@angular/router';
 import {Meta, Title} from '@angular/platform-browser';
+import { HeaderHeightService } from './shared/services/header-height.service';
 
 @Component({
   selector: 'app-root',
@@ -25,15 +26,21 @@ import {Meta, Title} from '@angular/platform-browser';
 })
 export class AppComponent implements OnInit {
   screen: string;
+  margin: number = 0;
 
   constructor(public menu: MenuService,
               private responsive: ResponsiveService,
               private router: Router,
               protected title: Title,
-              protected meta: Meta) {
+              protected meta: Meta,
+              private headerHeight: HeaderHeightService) {
   }
 
   ngOnInit() {
+    this.headerHeight.getValue().subscribe(value => {
+      this.margin = value;
+    });
+
     this.router.events.forEach((event) => {
       if (event instanceof NavigationStart) {
         this.title.setTitle('');

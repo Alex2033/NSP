@@ -13,8 +13,8 @@ import {MenuElement} from '../../../../shared/contracts/menu-element';
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
-  @ViewChild(NgScrollbar, {static: false}) scrollbarRef: NgScrollbar
-
+  @ViewChild(NgScrollbar, {static: false}) scrollbarRef: NgScrollbar;
+  
   screen: string;
   scrollPosition: number = 0;
   showLeftControl: boolean = false;
