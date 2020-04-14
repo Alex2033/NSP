@@ -24,9 +24,9 @@
         <div class="page-topline">
           <h1 class="mobile-title" *ngIf="screen === 'sm'">{{ article.title }}</h1>
           <a [routerLink]="['/' + article.directorySlug]" class="h5"
-             *ngIf="screen !== 'sm'">{{ article.directoryName }}</a>
+             *ngIf="screen !== 'sm' && article.directorySlug !== ''">{{ article.directoryName }}</a>
           <div class="page-topline-info">
-            <div class="topline-info-item topline-author">
+            <div class="topline-info-item topline-author" *ngIf="article.authors.length > 0">
               <ng-container *ngFor="let author of article.authors; first as isFirst">
                 <ng-container *ngIf="!isFirst">,&nbsp;</ng-container>
                 <a [routerLink]="['/persons', author.id + '-'+ author.slug]">{{ author.name }}</a>
@@ -58,13 +58,11 @@
 
         <div class="blocks">
           <app-block-layout [blocks]="article.content"></app-block-layout>
-          <app-company-carousel-block></app-company-carousel-block>
-          <app-event-registration-block></app-event-registration-block>
         </div>
 
         <div class="bot">
           <div class="hashtags">
-            <a [routerLink]="['/' + article.directorySlug]" class="hashtag"><strong>{{ article.directoryName }}</strong></a>
+            <a [routerLink]="['/' + article.directorySlug]" *ngIf="article.directorySlug !== ''" class="hashtag"><strong>{{ article.directoryName }}</strong></a>
             <a [routerLink]="['/tags', tag.code]" class="hashtag" *ngFor="let tag of article.tags">#{{ tag.name }}</a>
           </div>
           <app-share></app-share>

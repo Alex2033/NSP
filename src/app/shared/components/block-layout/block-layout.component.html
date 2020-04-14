@@ -1,39 +1,107 @@
 <ng-container *ngFor="let block of blocks">
-    <ng-container [ngSwitch]="block.type">
-
-        <ng-container *ngSwitchCase="'text'">
-            <app-text-block [paragraphs]="block.paragraphs"></app-text-block>
-        </ng-container>
-
-        <ng-container *ngSwitchCase="'image'">
-            <app-image-block [class.full-width]="block.size === 'big'" [image]="block.config"></app-image-block>
-        </ng-container>
-
-        <ng-container *ngIf="screen !== 'sm'"> <!-- Временно -->
-            <ng-container *ngSwitchCase="'company'">
-                <app-extended-company-card [company]="block.companyConfig"></app-extended-company-card>
-            </ng-container>
-        </ng-container>
-
-         <ng-container *ngSwitchCase="'video'">
-            <app-video-block [class.full-width]="block.configVideo.size === 'big'" [video]="block.configVideo"></app-video-block>
-        </ng-container>
-
-        <ng-container *ngSwitchCase="'quote'">
-            <app-quote-block [quote]="block.quoteConfig"></app-quote-block>
-        </ng-container>
-
-        <ng-container *ngSwitchCase="'carousel'">
-            <app-image-carousel-block [title]="block.title" [slides]="block.carouselContent"></app-image-carousel-block>
-        </ng-container>
-
-        <ng-container *ngSwitchCase="'map'">
-            <app-location-block [source]="block.source"></app-location-block>
-        </ng-container>
-
-        <ng-container *ngSwitchCase="'card'">
-            <app-material-card [class.short]="block.cardSize === 'short'" class="block-card small" [size]="'small'" [view]="'half'"></app-material-card>
-        </ng-container>
-
+  <ng-container [ngSwitch]="block.type">
+    <ng-container *ngSwitchCase="'text'">
+      <app-text-block [content]="block.data"></app-text-block>
     </ng-container>
+
+    <ng-container *ngSwitchCase="'company_card'">
+      <ng-container [ngSwitch]="block.size">
+        <ng-container *ngSwitchCase="'full-width'">
+          <app-extended-company-card *ngIf="screen !== 'sm'" class="full-width"
+                                     [company]="block.data"></app-extended-company-card>
+          <app-company-card *ngIf="screen === 'sm'" class="full-width" [company]="block.data"></app-company-card>
+        </ng-container>
+        <app-company-card *ngSwitchCase="'float-left'" class="float-left" [company]="block.data"></app-company-card>
+        <app-company-card *ngSwitchCase="'float-right'" class="float-right" [company]="block.data"></app-company-card>
+      </ng-container>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'person_card'">
+      <ng-container [ngSwitch]="block.size">
+        <ng-container *ngSwitchCase="'full-width'">
+          <app-extended-person-card *ngIf="screen !== 'sm'" class="full-width"
+                                    [person]="block.data"></app-extended-person-card>
+          <app-person-card *ngIf="screen === 'sm'" class="full-width" [person]="block.data"></app-person-card>
+        </ng-container>
+        <app-person-card *ngSwitchCase="'float-left'" class="float-left" [person]="block.data"></app-person-card>
+        <app-person-card *ngSwitchCase="'float-right'" class="float-right" [person]="block.data"></app-person-card>
+      </ng-container>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'apartment_complex_card'">
+      <ng-container [ngSwitch]="block.size">
+        <app-object-card *ngSwitchCase="'float-left'" class="float-left" [object]="block.data"></app-object-card>
+        <app-object-card *ngSwitchCase="'float-right'" class="float-right" [object]="block.data"></app-object-card>
+      </ng-container>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'video_card'">
+      <ng-container [ngSwitch]="block.size">
+        <app-video-card *ngSwitchCase="'full-width'" class="full-width" [size]="'small'"
+                        [data]="block.data"></app-video-card>
+        <app-video-card *ngSwitchCase="'float-left'" class="float-left"
+                        [class.vertical]="block.data.size === 'medium-vertical'"
+                        [size]="block.data.size !== 'medium-vertical' && screen !== 'sm' ? 'small' : block.data.size"
+                        [data]="block.data"></app-video-card>
+        <app-video-card *ngSwitchCase="'float-right'" class="float-right"
+                        [class.vertical]="block.data.size === 'medium-vertical'"
+                        [size]="block.data.size !== 'medium-vertical' && screen !== 'sm' ? 'small' : block.data.size"
+                        [data]="block.data"></app-video-card>
+      </ng-container>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'article_card'">
+      <ng-container [ngSwitch]="block.size">
+        <app-material-card *ngSwitchCase="'float-left'" class="float-left"
+                           [class.vertical]="block.data.size === 'medium-vertical' && block.data.imageXl"
+                           [class.short]="!block.data.imageXl && !block.data.smallImageXl"
+                           [size]="block.data.size !== 'medium-vertical' && screen !== 'sm' ? 'small' : block.data.size"
+                           [view]="block.data.view"
+                           [data]="block.data"></app-material-card>
+        <app-material-card *ngSwitchCase="'float-right'" class="float-right"
+                           [class.vertical]="block.data.size === 'medium-vertical' && block.data.imageXl"
+                           [class.short]="!block.data.imageXl && !block.data.smallImageXl"
+                           [size]="block.data.size !== 'medium-vertical' && screen !== 'sm' ? 'small' : block.data.size"
+                           [view]="block.data.view"
+                           [data]="block.data"></app-material-card>
+      </ng-container>
+    </ng-container>
+  <ng-container *ngSwitchCase="'quote'">
+    <app-quote-block [quote]="block.data"></app-quote-block>
+  </ng-container>
+    <!--    <ng-container *ngSwitchCase="'image'">-->
+    <!--      <app-image-block [class.full-width]="block.size === 'big'" [image]="block.config"></app-image-block>-->
+    <!--    </ng-container>-->
+
+    <!--    <ng-container *ngIf="screen !== 'sm'"> &lt;!&ndash; Временно &ndash;&gt;-->
+    <!--      <ng-container *ngSwitchCase="'company'">-->
+    <!--        <app-extended-company-card [company]="block.companyConfig"></app-extended-company-card>-->
+    <!--      </ng-container>-->
+    <!--    </ng-container>-->
+
+    <!--    <ng-container *ngSwitchCase="'video'">-->
+    <!--      <app-video-block [class.full-width]="block.configVideo.size === 'big'"-->
+    <!--                       [video]="block.configVideo"></app-video-block>-->
+    <!--    </ng-container>-->
+
+    <!--    <ng-container *ngSwitchCase="'quote'">-->
+    <!--      <app-quote-block [quote]="block.quoteConfig"></app-quote-block>-->
+    <!--    </ng-container>-->
+
+    <!--    <ng-container *ngSwitchCase="'carousel'">-->
+    <!--      <app-image-carousel-block [title]="block.title" [slides]="block.carouselContent"></app-image-carousel-block>-->
+    <!--    </ng-container>-->
+
+    <!--    <ng-container *ngSwitchCase="'map'">-->
+    <!--      <app-location-block [source]="block.source"></app-location-block>-->
+    <!--    </ng-container>-->
+
+    <!--    <ng-container *ngSwitchCase="'card'">-->
+    <!--      <app-material-card [class.short]="block.cardSize === 'short'" class="block-card small" [size]="'small'"-->
+    <!--                         [view]="'half'"></app-material-card>-->
+    <!--    </ng-container>-->
+
+  </ng-container>
 </ng-container>
+<!--<app-company-carousel-block></app-company-carousel-block>-->
+<!--<app-event-registration-block></app-event-registration-block>-->

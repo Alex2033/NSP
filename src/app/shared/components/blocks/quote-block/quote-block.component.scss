@@ -116,6 +116,9 @@
 .quote-author-name {
     font-weight: 700;
     color: $primary-color;
+    a {
+      color: $primary-color;
+    }
     margin-bottom: 4px;
 }
 
