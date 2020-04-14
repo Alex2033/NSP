@@ -43,7 +43,7 @@ const routes: Routes = [
     path: 'server_article',
     component: ArticleFeedComponent,
     resolve: {
-      data: RouteDataResolver
+      config: RouteDataResolver
     }
   },
   {
@@ -54,7 +54,7 @@ const routes: Routes = [
     path: '**',
     component: ServerDataComponent,
     resolve: {
-      data: ServerDataResolver
+      config: ServerDataResolver
     }
   }
 ];

@@ -608,33 +608,6 @@ export class MockApiService {
             metaTitle: null,
             metaDescription: null,
             metaKeywords: null,
-            menu: [
-              {
-                name: 'Подобрать ЖК',
-                slug: '',
-                highlight: true
-              },
-              {
-                name: 'Технология строительства',
-                slug: '',
-                highlight: false
-              },
-              {
-                name: 'Новости',
-                slug: '',
-                highlight: false
-              },
-              {
-                name: 'Интервью',
-                slug: '',
-                highlight: false
-              },
-              {
-                name: 'Аналитика',
-                slug: '',
-                highlight: false
-              }
-            ],
             layout: {
               xl: [
                 {
@@ -2404,7 +2377,34 @@ export class MockApiService {
                 ]
               }
             ]
-          }
+          },
+          menu: [
+            {
+              name: 'Подобрать ЖК',
+              slug: '',
+              highlight: true
+            },
+            {
+              name: 'Технология строительства',
+              slug: '',
+              highlight: false
+            },
+            {
+              name: 'Новости',
+              slug: '',
+              highlight: false
+            },
+            {
+              name: 'Интервью',
+              slug: '',
+              highlight: false
+            },
+            {
+              name: 'Аналитика',
+              slug: '',
+              highlight: false
+            }
+          ]
         }
       );
     }
@@ -2899,7 +2899,29 @@ export class MockApiService {
               telegramLink: 'http://vk.com',
               twitterLink: 'http://vk.com'
             } : null
-          }
+          },
+          menu: route === 'article' ? [
+            {
+              name: 'Новостройки',
+              slug: '',
+              highlight: true
+            },
+            {
+              name: 'Дороги',
+              slug: '',
+              highlight: false
+            },
+            {
+              name: 'Среда',
+              slug: '',
+              highlight: false
+            },
+            {
+              name: 'Жилые комплексы',
+              slug: '',
+              highlight: false
+            }
+          ] : []
         }
       );
     }

@@ -3,20 +3,15 @@
     <header class="inner-page-header">
       <h1>{{ project.title }}</h1>
     </header>
-    <ul class="categories" *ngIf="project.menu.length > 0 && screen !== 'sm'">
+    <ul class="categories" *ngIf="menu.length > 0 && screen !== 'sm'">
       <li
         class="categories-item"
-        *ngFor="let menuElement of project.menu"
+        *ngFor="let menuElement of menu"
         [class.active]="menuElement.highlight"
       >
         <a [routerLink]="[menuElement.slug]" class="categories-link">{{ menuElement.name }}</a>
       </li>
     </ul>
-
-    <div class="pick-up-button" *ngIf="screen === 'sm'">
-      <button class="button">Подобрать ЖК</button>
-    </div>
-
     <!-- mobile categories -->
     <div class="mobile-categories" *ngIf="screen === 'sm'">
       <ng-scrollbar
@@ -25,8 +20,8 @@
         #scrollbarRef
         (reachedEnd)="hideRightControl()"
       >
-        <ul class="categories" *ngIf="project.menu.length > 0">
-          <ng-container *ngFor="let menuElement of project.menu; let i = index">
+        <ul class="categories" *ngIf="menu.length > 0">
+          <ng-container *ngFor="let menuElement of menu; let i = index">
             <li
               class="categories-item"
               [class.active]="menuElement.highlight"

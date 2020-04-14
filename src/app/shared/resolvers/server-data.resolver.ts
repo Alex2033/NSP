@@ -5,10 +5,11 @@ import {ApiService} from '../services/api.service';
 import {catchError, map} from 'rxjs/operators';
 import {ResponseService} from '../services/response.service';
 import {Location} from '@angular/common';
+import {MenuService} from '../services/menu.service';
 
 @Injectable()
 export class ServerDataResolver implements Resolve<any> {
-  constructor(private route: ActivatedRoute, private api: ApiService, private response: ResponseService, private location: Location, private router: Router) {
+  constructor(private route: ActivatedRoute, private api: ApiService, private response: ResponseService, private location: Location, private router: Router, private menu: MenuService) {
   }
 
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
