@@ -1,6 +1,6 @@
 <app-topline-advertising></app-topline-advertising>
 <app-header></app-header>
-<div class="content">
+<div class="content" [ngStyle]="{'marginTop': margin + 'px'}">
     <router-outlet></router-outlet>
 </div>
 <app-footer></app-footer>

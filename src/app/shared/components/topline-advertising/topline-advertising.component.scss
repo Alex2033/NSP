@@ -22,6 +22,13 @@
 
     .close {
       z-index: 101;
+      width: 28px;
+      height: 28px;
+
+      svg {
+        width: 12px;
+        height: 12px;
+      }
     }
 }
 

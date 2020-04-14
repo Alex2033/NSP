@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 
 @Component({
   selector: 'app-apartment-info-block',
@@ -6,12 +7,15 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./apartment-info-block.component.scss']
 })
 export class ApartmentInfoBlockComponent implements OnInit {
-
+  screen: string;
   @Input() apartment;
 
-  constructor() { }
+  constructor(private responsive: ResponsiveService) { }
 
   ngOnInit() {
+    this.responsive.screen.subscribe((screen) => {
+      this.screen = screen;
+    });
   }
 
 }

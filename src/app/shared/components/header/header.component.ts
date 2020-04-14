@@ -19,6 +19,7 @@ import {Router} from '@angular/router';
 import {MenuElement} from '../../contracts/menu-element';
 import {Quote} from '../../contracts/quote';
 import {ApiService} from '../../services/api.service';
+import { HeaderHeightService } from '../../services/header-height.service';
 
 @Component({
   selector: 'app-header',
@@ -28,6 +29,7 @@ import {ApiService} from '../../services/api.service';
 export class HeaderComponent implements OnInit, AfterViewInit {
   public now: Date = new Date();
   quote: Quote;
+  @ViewChild('header', {static: true}) header: ElementRef;
   @ViewChild('menu', {static: true}) menu: ElementRef;
   @ViewChild('navigationContainer', {static: true}) navigationContainer: ElementRef;
   @ViewChild('navigationList', {static: true}) navigationList: ElementRef;
@@ -58,6 +60,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     private menuService: MenuService,
     private router: Router,
     private api: ApiService,
+    private headerHeight: HeaderHeightService,
     @Inject(PLATFORM_ID) private platformId: any
   ) {
     if (isPlatformBrowser(this.platformId)) {
@@ -85,6 +88,10 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
+    setTimeout(() => {
+      this.headerHeight.setValue(this.header.nativeElement.offsetHeight);
+    });
+
     this.responsive.screen.subscribe((screen) => {
       this.screen = screen;
     });
@@ -120,6 +127,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   @HostListener('window:resize', ['$event']) changeNav() {
     this.rebuildMenu();
+    this.headerHeight.setValue(this.header.nativeElement.offsetHeight);
   }
 
   rebuildMenu() {

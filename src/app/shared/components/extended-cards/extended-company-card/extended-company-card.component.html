@@ -1,9 +1,9 @@
 <div class="company-card">
     <div class="company-img">
-        <img [src]="company.image" alt="company image">
+        <img [src]="company.logoXl" alt="company image">
     </div>
     <div class="company-content">
-        <h4 class="company-title">{{ company.title }}</h4>
+        <h4 class="company-title">{{ company.name }}</h4>
         <div class="company-text">
             <p>{{ company.text }}</p>
         </div>
@@ -38,7 +38,7 @@
                         <use xlink:href="assets/sprites/icons.svg#web"></use>
                     </svg>
                 </div>
-                <a class="link" [href]="company.category">{{ company.category }}</a>
+                <a class="link" [href]="company.activityName">{{ company.activityName }}</a>
             </div>
         </div>
     </div>

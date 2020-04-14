@@ -1,16 +1,16 @@
 <div class="object-container">
   <header class="object-header">
     <div class="object-headings">
-      <h5>Жилые комплексы</h5>
+      <h5 *ngIf="screen !== 'sm'">Жилые комплексы</h5>
       <h1>{{ apartmentComplex.name }}</h1>
     </div>
-    <div class="object-header-image">
+    <div class="object-header-image" *ngIf="screen !== 'sm'">
       <app-responsive-image [xl]="apartmentComplex.logoXl" [lg]="apartmentComplex.logoLg" [md]="apartmentComplex.logoMd"
                             [xs]="apartmentComplex.logoSm" [sm]="apartmentComplex.logoSm"
                             [alt]="apartmentComplex.logoAlt"  [title]="apartmentComplex.logoTitle"></app-responsive-image>
     </div>
   </header>
-  <nav class="object-navigation">
+  <nav class="object-navigation" *ngIf="screen !== 'sm'">
     <ul class="object-navigation-list">
       <li class="object-navigation-item">
         <button class="object-navigation-btn" (click)="scrollToElement(description)">Описание</button>
@@ -29,6 +29,49 @@
       </li>
     </ul>
   </nav>
+
+  <!-- mobile categories -->
+  <div class="mobile-object-navigation" *ngIf="screen === 'sm'">
+    <ng-scrollbar
+      class="horizontal-scrollbar"
+      track="horizontal"
+      #scrollbarRef
+      (reachedEnd)="hideRightControl()"
+    >
+      <ul class="object-navigation-list">
+        <li class="object-navigation-item">
+          <button class="object-navigation-btn" (click)="scrollToElement(description)">Описание</button>
+        </li>
+        <li class="object-navigation-item">
+          <button class="object-navigation-btn" (click)="scrollToElement(location)">Расположение</button>
+        </li>
+        <li class="object-navigation-item">
+          <button class="object-navigation-btn" (click)="scrollToElement(layout)">Планировки</button>
+        </li>
+        <li class="object-navigation-item">
+          <button class="object-navigation-btn" (click)="scrollToElement(photos)">Фотографии</button>
+        </li>
+        <li class="object-navigation-item">
+          <button class="object-navigation-btn" (click)="scrollToElement(developer)">Застройщик</button>
+        </li>
+      </ul>
+    </ng-scrollbar>
+    <div class="gradient-control control-left" *ngIf="showLeftControl">
+      <div class="control-button small light" (click)="scrollbarRef.scrollTo({ left: (scrollPosition - 150) })">
+          <svg class="icon">
+              <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
+          </svg>
+      </div>
+    </div>
+    <div class="gradient-control control-right" *ngIf="showRightControl">
+      <div class="control-button small light" (click)="scrollbarRef.scrollTo({ left: (scrollPosition + 150) })">
+          <svg class="icon">
+              <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
+          </svg>
+      </div>
+    </div>
+  </div>
+
   <div class="object-top-info">
     <div class="object-top-text" [innerHTML]="apartmentComplex.previewText | paragraphs">
     </div>
@@ -126,7 +169,9 @@
 
   <h3 #developer>Информация о застройщике</h3>
 
-  <app-extended-company-card [company]="companyCard" style="margin-bottom: 48px;"></app-extended-company-card>
+  <app-extended-company-card [company]="companyCard" *ngIf="screen !== 'sm'"></app-extended-company-card>
+
+  <app-company-card [company]="companyCard" *ngIf="screen === 'sm'"></app-company-card>
 
 </div>
 

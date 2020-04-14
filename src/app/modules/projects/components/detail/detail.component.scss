@@ -64,6 +64,10 @@
 app-news-slider {
     display: block;
     margin-bottom: 48px;
+
+    @include media-breakpoint-down(sm) {
+        margin: 0 12px 24px;
+    }
 }
 
 .materials {
