@@ -2,5 +2,5 @@ import { Injectable } from "@angular/core";
 
 @Injectable({providedIn: 'root'})
 export class BannerService {
-   showBanner: boolean = false;
+   showBanner: boolean = true;
 }

@@ -1,5 +1,5 @@
-<app-topline-advertising></app-topline-advertising>
-<app-header [class.under-banner]="screen === 'sm' && showBanner"></app-header>
+<app-topline-advertising (displayAdvertisingDetection)="displayAdvertising = true"></app-topline-advertising>
+<app-header [class.under-banner]="screen === 'sm' && showBanner && displayAdvertising"></app-header>
 <div class="content" [ngStyle]="{'marginTop': margin + 'px'}">
     <router-outlet></router-outlet>
 </div>

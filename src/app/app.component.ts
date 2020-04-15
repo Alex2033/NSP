@@ -28,6 +28,7 @@ import { BannerService } from './shared/components/banner-data.service';
 export class AppComponent implements OnInit {
   screen: string;
   margin: number = 0;
+  displayAdvertising: boolean;
 
 
   get showBanner(): boolean {

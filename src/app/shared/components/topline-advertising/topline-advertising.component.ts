@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, HostListener, Output, EventEmitter } from '@angular/core';
 import { BannerService } from '../banner-data.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { BannerService } from '../banner-data.service';
 })
 export class ToplineAdvertisingComponent implements OnInit {
   @ViewChild('advertising', {static: true}) advertising: ElementRef;
+  @Output() displayAdvertisingDetection = new EventEmitter();
   advertisingHeight;
   name: any;
   displayAdvertising: boolean = false;
@@ -32,6 +33,7 @@ export class ToplineAdvertisingComponent implements OnInit {
     let windowScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     if (windowScroll >= this.advertisingHeight) {
       this.displayAdvertising = true;
+      this.displayAdvertisingDetection.emit(true);
     }
   }
 
