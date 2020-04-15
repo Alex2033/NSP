@@ -35,6 +35,8 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   @ViewChild('navigationList', {static: true}) navigationList: ElementRef;
   @ViewChild('tmpNavigationList', {static: true}) tmpNavigationList: ElementRef;
   @ViewChild('dropdownList', {static: true}) dropdownList: ElementRef;
+  @ViewChild('searchInput', {static: true}) searchInput: ElementRef;
+  @ViewChild('fixedSearchInput', {static: true}) fixedSearchInput: ElementRef;
   @ViewChild(NgScrollbar, {static: false}) scrollbarRef: NgScrollbar;
   dropdownVisible: boolean = false;
   fixedMenu: boolean = false;
@@ -42,13 +44,12 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   sum: number = 0;
   showDropdown: boolean = false;
   screen: string;
-  scrollPosition: number = 0;
-  showLeftControl: boolean = false;
-  showRightControl: boolean = true;
   visibleMenuElements = [];
   hiddenMenuElements = [];
   menuElements: MenuElement[] = [];
   searchQuery: string;
+  showHiddenSearch: boolean = false;
+
   get showBanner(): boolean {
     return this.bannerService.showBanner;
   }
@@ -98,22 +99,6 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
     this.menuPosition = this.menu.nativeElement.offsetTop;
 
-    if (this.screen === 'sm') {
-      this.scrollbarRef.scrolled.subscribe(e => {
-        this.scrollPosition = e.target.scrollLeft;
-
-        if (!this.showRightControl) {
-          this.showRightControl = true;
-        }
-
-        if (this.scrollPosition > 0) {
-          this.showLeftControl = true;
-        } else {
-          this.showLeftControl = false;
-        }
-      });
-    }
-
   }
 
   @HostListener('window:scroll', ['$event']) checkScroll() {
@@ -122,6 +107,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
       this.fixedMenu = true;
     } else if (windowScroll < this.menuPosition) {
       this.fixedMenu = false;
+      this.showHiddenSearch = false;
     }
   }
 
@@ -162,9 +148,16 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     this.searchQuery = '';
   }
 
-  hideRightControl() {
+  showSearch() {
+    this.showHiddenSearch = true;
     setTimeout(() => {
-      this.showRightControl = false;
-    }, 0);
+      this.fixedSearchInput.nativeElement.focus();
+    });
+  }
+
+  hideSearch() {
+    this.showHiddenSearch = false;
+    this.searchInput.nativeElement.value = '';
+    this.fixedSearchInput.nativeElement.value = '';
   }
 }

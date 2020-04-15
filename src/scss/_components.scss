@@ -556,6 +556,10 @@
         color: $dark-gray;
     }
 
+    &.topline-info-date {
+        flex-shrink: 0;
+    }
+
     > * {
         &:not(:last-child) {
             margin-right: 8px;
@@ -577,6 +581,11 @@
 .topline-author {
     font-size: 15px;
     color: $text-color;
+
+    @include media-breakpoint-down(lg) {
+        display: flex;
+        flex-wrap: wrap;
+    }
 
     @include media-breakpoint-down(sm) {
         font-size: 12px;

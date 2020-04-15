@@ -10,13 +10,7 @@
 
     @include media-breakpoint-down(lg) {
         padding: 15px;
-    }
-
-    @include media-breakpoint-down(md) {
-        align-items: center;
-        flex-wrap: wrap;
         text-align: center;
-        justify-content: center;
         flex-direction: column;
     }
 }
@@ -40,7 +34,7 @@
         height: 160px;
     }
   
-      @include media-breakpoint-down(md) {
+      @include media-breakpoint-down(lg) {
         margin-right: 0;
         margin-bottom: 15px;
         width: 182px;
@@ -57,7 +51,7 @@
 .person-name {
     margin-bottom: 8px;
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(lg) {
         font-size: 22px;
     }
 
@@ -71,7 +65,7 @@
     line-height: 1.625;
     margin-bottom: 25px;
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(lg) {
         margin-bottom: 15px;
     }
 
@@ -108,6 +102,7 @@
     }
 
     @include media-breakpoint-down(lg) {
+        font-size: 15px;
         > * {
             &:not(:last-child) {
                 margin-right: 20px;
@@ -115,14 +110,22 @@
         }
     }
 
-    @include media-breakpoint-down(md) {
-        font-size: 15px;
-    }
 
     @include media-breakpoint-down(sm) {
         justify-content: space-between;
+        flex-direction: column;
         font-size: 14px;
         line-height: 1.571;
+
+        > * {
+            &:not(:last-child) {
+                margin-right: 0;
+            }
+
+            &:not(:first-child) {
+                margin-top: 10px;
+            }
+        }
     }
 }
 

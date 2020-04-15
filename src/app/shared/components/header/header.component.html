@@ -1,4 +1,21 @@
 <header class="header" #header>
+
+    <div class="hidden-search mobile-hidden-search" [style.display]="screen === 'sm' && showHiddenSearch ? 'flex' : 'none'">
+        <form class="search" (submit)="search()">
+            <input #fixedSearchInput [ngModelOptions]="{standalone: true}" type="text" placeholder="Поиск по сайту" [(ngModel)]="searchQuery" required>
+            <button type="submit" class="search-button short-button no-bg">
+                <svg class="icon">
+                    <use xlink:href="assets/sprites/icons.svg#icon_search"></use>
+                </svg>
+            </button>
+        </form>
+        <button class="close-search" (click)="hideSearch()">
+            <svg class="icon">
+                <use xlink:href="assets/sprites/icons.svg#close"></use>
+            </svg>
+        </button>
+    </div>
+
     <div class="header-top">
 
         <!-- logo -->
@@ -25,7 +42,7 @@
         </div>
 
         <!-- mobile actions -->
-        <button class="mobile-search-trigger" *ngIf="screen === 'sm'">
+        <button class="mobile-search-trigger" *ngIf="screen === 'sm'" (click)="showSearch()">
             <svg>
                 <use xlink:href="assets/sprites/icons.svg#icon_search"></use>
             </svg>
@@ -39,7 +56,12 @@
     </div>
 
     <!-- header menu -->
-    <div class="header-menu" [ngClass]="{'fixed': fixedMenu, 'under-banner': showBanner}" #menu>
+    <div 
+        class="header-menu" 
+        [style.display]="screen === 'sm' ? 'none' : 'block'" 
+        [ngClass]="{'fixed': fixedMenu, 'under-banner': showBanner}" 
+        #menu
+    >
         <div class="menu">
             <a href="#" aria-label="mini-logotype link">
                 <svg class="logo-mini" *ngIf="fixedMenu">
@@ -79,49 +101,23 @@
                 </ul>
             </nav>
 
-            <!-- mobile navigation -->
-            <div class="mobile-navigation" *ngIf="screen === 'sm'">
-                <ng-scrollbar
-                    class="horizontal-scrollbar"
-                    track="horizontal"
-                    #scrollbarRef
-                    (reachedEnd)="hideRightControl()"
-                >
-                    <nav class="navigation">
-                        <ul class="navigation-list" style="flex-grow: 1;" #widgetsContent>
-                          <li [class.highlight]="menuElement.highlight" *ngFor="let menuElement of menuElements">
-                            <a [routerLink]="[menuElement.slug]">{{ menuElement.name }}</a>
-                          </li>
-                        </ul>
-                    </nav>
-
-                </ng-scrollbar>
-                <div class="gradient-control control-left" *ngIf="showLeftControl">
-                    <div class="control-button small light" (click)="scrollbarRef.scrollTo({ left: (scrollPosition - 150) })">
+            <div class="hidden-search" [style.display]="fixedMenu && showHiddenSearch ? 'flex' : 'none'">
+                <form class="search" (submit)="search()">
+                    <input #fixedSearchInput [ngModelOptions]="{standalone: true}" type="text" placeholder="Поиск по сайту" [(ngModel)]="searchQuery" required>
+                    <button type="submit" class="search-button short-button no-bg">
                         <svg class="icon">
-                            <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
+                            <use xlink:href="assets/sprites/icons.svg#icon_search"></use>
                         </svg>
-                    </div>
-                </div>
-                <div class="gradient-control control-right" *ngIf="showRightControl">
-                    <div class="control-button small light" (click)="scrollbarRef.scrollTo({ left: (scrollPosition + 150) })">
-                        <svg class="icon">
-                            <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-
-            <!-- <form class="search " (submit)="search()">
-                <input [ngModelOptions]="{standalone: true}" type="text" placeholder="Поиск по сайту" [(ngModel)]="searchQuery" required>
-                <button type="submit" class="search-button short-button no-bg">
+                    </button>
+                </form>
+                <button class="close-search" (click)="hideSearch()">
                     <svg class="icon">
-                        <use xlink:href="assets/sprites/icons.svg#icon_search"></use>
+                        <use xlink:href="assets/sprites/icons.svg#close"></use>
                     </svg>
                 </button>
-            </form> -->
-
-            <button type="button" class="search-button button scrolled-search-btn" *ngIf="fixedMenu">
+            </div>
+            
+            <button type="button" (click)="showSearch()" class="search-button button scrolled-search-btn" *ngIf="fixedMenu">
                 <svg class="icon">
                     <use xlink:href="assets/sprites/icons.svg#icon_search"></use>
                 </svg>
@@ -130,7 +126,7 @@
     </div>
 
     <!-- header bottom -->
-    <div class="header-bottom" *ngIf="screen !== 'sm'">
+    <div class="header-bottom" [style.display]="screen !== 'sm' ? 'flex' : 'none'">
         <div class="header-actions">
             <div class="header-action">
                 <svg>
@@ -154,7 +150,7 @@
             </div>
         </div>
         <form class="search" (submit)="search()">
-            <input [ngModelOptions]="{standalone: true}" type="text" placeholder="Поиск по сайту" [(ngModel)]="searchQuery" required>
+            <input #searchInput [ngModelOptions]="{standalone: true}" type="text" placeholder="Поиск по сайту" [(ngModel)]="searchQuery" required>
             <button type="submit" class="search-button short-button no-bg">
                 <svg class="icon">
                     <use xlink:href="assets/sprites/icons.svg#icon_search"></use>

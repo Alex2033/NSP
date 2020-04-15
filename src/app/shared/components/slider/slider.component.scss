@@ -86,10 +86,3 @@
         line-height: 1.54;
     }
 }
-
-.slider-number {
-    @include media-breakpoint-down(sm) {
-        font-size: 13px;
-        line-height: 1.54;
-    }
-}

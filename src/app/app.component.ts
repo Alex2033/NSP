@@ -5,6 +5,7 @@ import {ResponsiveService} from './shared/services/responsive.service';
 import {GuardsCheckEnd, NavigationStart, ResolveStart, Router} from '@angular/router';
 import {Meta, Title} from '@angular/platform-browser';
 import { HeaderHeightService } from './shared/services/header-height.service';
+import { BannerService } from './shared/components/banner-data.service';
 
 @Component({
   selector: 'app-root',
@@ -28,12 +29,18 @@ export class AppComponent implements OnInit {
   screen: string;
   margin: number = 0;
 
+
+  get showBanner(): boolean {
+    return this.bannerService.showBanner;
+  }
+
   constructor(public menu: MenuService,
               private responsive: ResponsiveService,
               private router: Router,
               protected title: Title,
               protected meta: Meta,
-              private headerHeight: HeaderHeightService) {
+              private headerHeight: HeaderHeightService,
+              private bannerService: BannerService) {
   }
 
   ngOnInit() {

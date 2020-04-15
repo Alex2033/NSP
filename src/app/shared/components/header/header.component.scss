@@ -1,12 +1,22 @@
 @import "theme";
 @import "responsive";
 
+:host-context(.under-banner) {
+    top: 74px;
+}
+
 :host {
     display: block;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+
+    @include media-breakpoint-down(sm) {
+        position: fixed;
+        z-index: 50;
+        background-color: $light-color;
+    }
 }
 
 // Верхняя панель
@@ -264,6 +274,40 @@
     }
 }
 
+.hidden-search {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: $light-color;
+
+    .search {
+        max-width: 100%;
+        flex: 1;
+    }
+
+    input {
+        background-color: $light-gray;
+    }
+}
+
+.mobile-hidden-search {
+    padding: 0 12px;
+
+    .close-search {
+        margin-left: 9px;
+        width: 28px;
+        height: 28px;
+    }
+
+    .search-button {
+        right: 7px;
+    }
+}
+
 .search {
     width: 100%;
     max-width: 684px;
@@ -278,7 +322,7 @@
 
     input {
         flex: 1;
-        padding: 5px 16px;
+        padding: 5px 40px 5px 16px;
         border: 0;
 
         &:focus {
@@ -470,26 +514,20 @@
     }
 }
 
-.mobile-navigation {
-    width: 100%;
-    position: relative;
+.close-search {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    margin-left: 30px;
+    border: 1px solid $border-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
 
-    .navigation {
-        width: 100%;
-        margin-right: 0;
+    svg {
+        width: 10px;
+        height: 10px;
+        fill: $dark-gray;
     }
-
-    .navigation-list {
-        li {
-            &:last-child {
-                margin-right: 50px;
-            }
-        }
-    }
-}
-
-.horizontal-scrollbar {
-    border-bottom: 1px solid $border-color;
-    position: relative;
-
 }
