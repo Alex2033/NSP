@@ -8,19 +8,20 @@
 .apartment {
     padding: 24px;
     border: 1px solid $border-color;
-    display: flex;
-    align-items: center;
-
-    > * {
+    @include media-breakpoint-up(md) {
+      display: flex;
+      align-items: center;
+      > * {
         &:not(:last-child) {
-            margin-right: 40px;
+          margin-right: 40px;
         }
+      }
     }
 
     @include media-breakpoint-down(sm) {
         padding: 16px;
     }
-    
+
 }
 
 .apartment-image {
@@ -30,6 +31,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  @include media-breakpoint-down(sm) {
+    margin: 0 auto;
+  }
 }
 
 .aparment-info {
@@ -38,7 +42,12 @@
 
     > * {
         &:not(:last-child) {
-            margin-right: 48px;
+            @include media-breakpoint-up(md) {
+              margin-right: 48px;
+            }
+            @include media-breakpoint-only(md) {
+              margin-right: 32px;
+            }
 
             @include media-breakpoint-down(sm) {
                 margin-right: 16px;

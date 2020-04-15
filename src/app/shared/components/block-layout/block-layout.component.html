@@ -69,37 +69,30 @@
   <ng-container *ngSwitchCase="'quote'">
     <app-quote-block [quote]="block.data"></app-quote-block>
   </ng-container>
-    <!--    <ng-container *ngSwitchCase="'image'">-->
-    <!--      <app-image-block [class.full-width]="block.size === 'big'" [image]="block.config"></app-image-block>-->
-    <!--    </ng-container>-->
-
-    <!--    <ng-container *ngIf="screen !== 'sm'"> &lt;!&ndash; Временно &ndash;&gt;-->
-    <!--      <ng-container *ngSwitchCase="'company'">-->
-    <!--        <app-extended-company-card [company]="block.companyConfig"></app-extended-company-card>-->
-    <!--      </ng-container>-->
-    <!--    </ng-container>-->
-
-    <!--    <ng-container *ngSwitchCase="'video'">-->
-    <!--      <app-video-block [class.full-width]="block.configVideo.size === 'big'"-->
-    <!--                       [video]="block.configVideo"></app-video-block>-->
-    <!--    </ng-container>-->
-
-    <!--    <ng-container *ngSwitchCase="'quote'">-->
-    <!--      <app-quote-block [quote]="block.quoteConfig"></app-quote-block>-->
-    <!--    </ng-container>-->
-
-    <!--    <ng-container *ngSwitchCase="'carousel'">-->
-    <!--      <app-image-carousel-block [title]="block.title" [slides]="block.carouselContent"></app-image-carousel-block>-->
-    <!--    </ng-container>-->
-
-    <!--    <ng-container *ngSwitchCase="'map'">-->
-    <!--      <app-location-block [source]="block.source"></app-location-block>-->
-    <!--    </ng-container>-->
-
-    <!--    <ng-container *ngSwitchCase="'card'">-->
-    <!--      <app-material-card [class.short]="block.cardSize === 'short'" class="block-card small" [size]="'small'"-->
-    <!--                         [view]="'half'"></app-material-card>-->
-    <!--    </ng-container>-->
+    <ng-container *ngSwitchCase="'html'">
+      <div [innerHTML]="block.data | safeHtml"></div>
+    </ng-container>
+    <ng-container *ngSwitchCase="'image'">
+      <app-image-block
+        [class.full-width]="block.size === 'full-width'"
+        [class.float-left]="block.size === 'float-left'"
+        [class.float-right]="block.size === 'float-right'"
+        [data]="block.data"></app-image-block>
+    </ng-container>
+    <ng-container *ngSwitchCase="'location'">
+      <app-location-block
+        [class.full-width]="block.size === 'full-width'"
+        [class.float-left]="block.size === 'float-left'"
+        [class.float-right]="block.size === 'float-right'"
+        [data]="block.data"></app-location-block>
+    </ng-container>
+    <ng-container *ngSwitchCase="'apartment_layout'">
+      <app-apartment-info-block [data]="block.data"></app-apartment-info-block>
+    </ng-container>
+    <ng-container *ngSwitchCase="'gallery'">
+      <app-full-width-image-carousel-block *ngIf="block.size === 'big'" [images]="block.data.images"></app-full-width-image-carousel-block>
+      <app-image-carousel-block *ngIf="block.size === 'small'" [images]="block.data.images"></app-image-carousel-block>
+    </ng-container>
 
   </ng-container>
 </ng-container>

@@ -1,27 +1,24 @@
 <div class="apartment">
-    <div class="apartment-image" *ngIf="screen !== 'sm'">
-        <img [src]="apartment.image" alt="apartment image">
+    <div class="apartment-image">
+      <app-responsive-image [xl]="data.imageXl" [lg]="data.imageLg" [md]="data.imageMd" [xs]="data.imageSm" [sm]="data.imageSm" [alt]="data.imageAlt" [title]="data.imageTitle"></app-responsive-image>
     </div>
     <div class="apartment-content">
         <div class="aparment-info">
             <div class="apartment-info-item rooms-number">
-                <div class="apartment-number">{{ apartment.rooms }}</div>
+                <div class="apartment-number">{{ data.roomsCount }}</div>
                 <div class="apartment-info-text">Комнаты</div>
             </div>
             <div class="apartment-info-item area">
-                <div class="apartment-number">{{ apartment.square | number:'.2-2' }}</div>
+                <div class="apartment-number">{{ data.area | number:'.2-2' }}</div>
                 <div class="apartment-info-text">Площадь, м<sup>2</sup></div>
             </div>
             <div class="apartment-info-item apartment-price">
-                <div class="apartment-number">{{ apartment.price }} &#8381;</div>
+                <div class="apartment-number">{{ data.price | number }} &#8381;</div>
                 <div class="apartment-info-text">Стоимость</div>
-            </div>
-            <div class="apartment-info-item apartment-info-button" *ngIf="screen === 'sm'">
-                <button class="button">Смотреть схему</button>
             </div>
         </div>
         <div class="apartment-text">
-            <p>{{ apartment.text }}</p>
+            <p>{{ data.description }}</p>
         </div>
     </div>
 </div>

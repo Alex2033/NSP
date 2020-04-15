@@ -7,15 +7,16 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class LocationBlockComponent implements OnInit {
 
-  @Input() source;
+  @Input() data;
 
   public placemarkProperties = {
     iconCaption: 'Апарт-комплекс Valo'
-  }
+  };
 
   constructor() { }
 
   ngOnInit() {
+    this.placemarkProperties.iconCaption = this.data.name;
   }
 
 }

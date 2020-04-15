@@ -51,6 +51,20 @@ app-video-card.float-left, app-video-card.float-right, app-material-card.float-l
     }
   }
 }
+app-image-block {
+  &.float-left, &.float-right {
+    @include media-breakpoint-up(md) {
+      max-width: calc(50%);
+    }
+  }
+}
+app-location-block {
+  &.float-left, &.float-right {
+    @include media-breakpoint-up(md) {
+      width: calc(50%);
+    }
+  }
+}
 app-video-card.full-width {
   //height: 0;
   position: relative;

@@ -19,7 +19,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xl-8 col-lg-8">
+    <div class="col-xl-8 col-lg-10 offset-lg-1 offset-xl-0">
       <div class="page-content">
         <div class="page-topline">
           <h1 class="mobile-title" *ngIf="screen === 'sm'">{{ article.title }}</h1>
@@ -72,78 +72,13 @@
       </div>
     </div>
 
-    <div class="col-xl-3 col-lg-4 col-md-8 offset-xl-1 offset-lg-0 offset-md-2" *ngIf="screen !== 'sm'">
+    <div class="col-xl-3 col-lg-4 col-md-8 offset-xl-1 offset-lg-0 offset-md-2" *ngIf="screen === 'xl'">
       <aside class="content-sidebar">
-        <div class="event-contact-card" *ngIf="article.event">
-          <div class="contact-card-items" *ngIf="article.event.address">
-            <div class="h6">Место проведения</div>
-            <div class="contact-card-item">
-
-              <svg class="contact-card-icon geolocation">
-                <use xlink:href="assets/sprites/icons.svg#map_pin"></use>
-              </svg>
-              <span>{{ article.event.address }}</span>
-            </div>
-          </div>
-          <div class="contact-card-items">
-            <div class="h6">Информация</div>
-            <div class="contact-card-item" *ngIf="article.event.phone">
-              <svg class="contact-card-icon phone">
-                <use xlink:href="assets/sprites/icons.svg#phone"></use>
-              </svg>
-              <a [href]="'tel:' + ( article.event.phone | phoneFormat )"
-                 class="link contact-card-phone">{{ article.event.phone }}</a>
-            </div>
-          </div>
-          <div class="contact-card-items" *ngIf="article.event.email">
-            <div class="contact-card-item">
-              <svg class="contact-card-icon mail">
-                <use xlink:href="assets/sprites/icons.svg#mail"></use>
-              </svg>
-              <a [href]="'mailto:' + article.event.email" class="link">{{ article.event.email }}</a>
-            </div>
-          </div>
-          <div class="contact-card-items" *ngIf="article.event.site">
-            <div class="contact-card-item">
-              <svg class="contact-card-icon web">
-                <use xlink:href="assets/sprites/icons.svg#web"></use>
-              </svg>
-              <a [href]="article.event.site" target="_blank" class="link">{{ article.event.site | domain }}</a>
-            </div>
-          </div>
-          <ul class="socials">
-            <li *ngIf="article.event.vkontakteLink">
-              <a [href]="article.event.vkontakteLink" class="vk" target="_blank">
-                <svg>
-                  <use xlink:href="assets/sprites/icons.svg#vk"></use>
-                </svg>
-              </a>
-            </li>
-            <li *ngIf="article.event.facebookLink">
-              <a [href]="article.event.facebookLink" class="facebook" target="_blank">
-                <svg>
-                  <use xlink:href="assets/sprites/icons.svg#facebook"></use>
-                </svg>
-              </a>
-            </li>
-            <li *ngIf="article.event.telegramLink">
-              <a [href]="article.event.telegramLink" class="telegram" target="_blank">
-                <svg>
-                  <use xlink:href="assets/sprites/icons.svg#telegram"></use>
-                </svg>
-              </a>
-            </li>
-            <li *ngIf="article.event.twitterLink">
-              <a [href]="article.event.twitterLink" class="twitter" target="_blank">
-                <svg>
-                  <use xlink:href="assets/sprites/icons.svg#twitter"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </div>
+        <ng-container>
+          <ng-container *ngTemplateOutlet="eventContactCard"></ng-container>
+        </ng-container>
       </aside>
-      <div class="sticky-sidebar">
+      <div class="sticky-sidebar" *ngIf="screen === 'xl' || screen === 'lg'">
         <ng-container *ngFor="let card of article.asideCards">
           <ng-container [ngSwitch]="card.type">
             <ng-container *ngSwitchCase="'article-list'">
@@ -160,4 +95,76 @@
       </div>
     </div>
   </div>
+  <ng-container *ngIf="screen !== 'xl'">
+    <ng-container *ngTemplateOutlet="eventContactCard"></ng-container>
+  </ng-container>
 </div>
+<ng-template #eventContactCard>
+  <div class="event-contact-card" *ngIf="article.event">
+    <div class="contact-card-items" *ngIf="article.event.address">
+      <div class="h6">Место проведения</div>
+      <div class="contact-card-item">
+
+        <svg class="contact-card-icon geolocation">
+          <use xlink:href="assets/sprites/icons.svg#map_pin"></use>
+        </svg>
+        <span>{{ article.event.address }}</span>
+      </div>
+    </div>
+    <div class="contact-card-items">
+      <div class="h6">Информация</div>
+      <div class="list">
+        <div class="contact-card-item" *ngIf="article.event.phone">
+          <svg class="contact-card-icon phone">
+            <use xlink:href="assets/sprites/icons.svg#phone"></use>
+          </svg>
+          <a [href]="'tel:' + ( article.event.phone | phoneFormat )"
+             class="link contact-card-phone">{{ article.event.phone }}</a>
+        </div>
+        <div class="contact-card-item" *ngIf="article.event.email">
+          <svg class="contact-card-icon mail">
+            <use xlink:href="assets/sprites/icons.svg#mail"></use>
+          </svg>
+          <a [href]="'mailto:' + article.event.email" class="link">{{ article.event.email }}</a>
+        </div>
+        <div class="contact-card-item" *ngIf="article.event.site">
+          <svg class="contact-card-icon web">
+            <use xlink:href="assets/sprites/icons.svg#web"></use>
+          </svg>
+          <a [href]="article.event.site" target="_blank" class="link">{{ article.event.site | domain }}</a>
+        </div>
+        <ul class="socials">
+          <li *ngIf="article.event.vkontakteLink">
+            <a [href]="article.event.vkontakteLink" class="vk" target="_blank">
+              <svg>
+                <use xlink:href="assets/sprites/icons.svg#vk"></use>
+              </svg>
+            </a>
+          </li>
+          <li *ngIf="article.event.facebookLink">
+            <a [href]="article.event.facebookLink" class="facebook" target="_blank">
+              <svg>
+                <use xlink:href="assets/sprites/icons.svg#facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li *ngIf="article.event.telegramLink">
+            <a [href]="article.event.telegramLink" class="telegram" target="_blank">
+              <svg>
+                <use xlink:href="assets/sprites/icons.svg#telegram"></use>
+              </svg>
+            </a>
+          </li>
+          <li *ngIf="article.event.twitterLink">
+            <a [href]="article.event.twitterLink" class="twitter" target="_blank">
+              <svg>
+                <use xlink:href="assets/sprites/icons.svg#twitter"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</ng-template>

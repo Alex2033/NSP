@@ -9,14 +9,14 @@ import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 })
 export class ImageCarouselBlockComponent implements OnInit {
 
-  @Input() slides;
-  @Input() title;
-
+  @Input() images;
+  index = 0;
   screen: string;
 
   carouselConfig: SwiperConfigInterface = {
     slidesPerView: 'auto',
-    spaceBetween: 8
+    spaceBetween: 8,
+    loop: false
   };
 
   constructor(private responsive: ResponsiveService) { }

@@ -68,6 +68,7 @@ import { YoutubeVideoIdPipe } from './pipes/youtube-video-id.pipe';
 import { ArticleFeedComponent } from './components/article-feed/article-feed.component';
 import {ServerSideValidationDirective} from './directives/server-side-validation.directive';
 import { EventCalendarCardComponent } from './components/cards/event-calendar-card/event-calendar-card.component';
+import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -133,7 +134,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     YoutubeVideoIdPipe,
     ArticleFeedComponent,
     ServerSideValidationDirective,
-    EventCalendarCardComponent
+    EventCalendarCardComponent,
+    SafeHtmlPipe
   ],
   imports: [
     CommonModule,
@@ -206,7 +208,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     YoutubeVideoIdPipe,
     ArticleFeedComponent,
     ServerSideValidationDirective,
-    EventCalendarCardComponent
+    EventCalendarCardComponent,
+    SafeHtmlPipe
   ],
   providers: [
     {
