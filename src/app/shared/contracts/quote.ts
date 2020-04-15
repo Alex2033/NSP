@@ -1,10 +1,8 @@
 export interface Quote {
   text: string;
   publishedAt: number;
-  source?: {
-    name: string;
-    url?: string;
-  };
+  sourceName?: string;
+  sourceUrl?: string;
   author?: {
     id?: number;
     slug?: string;

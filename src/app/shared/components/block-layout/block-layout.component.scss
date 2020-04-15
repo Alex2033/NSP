@@ -3,81 +3,145 @@
 :host {
     > * {
         display: block;
+      &:nth-child(n+2) {
+        margin-top: 26px; // Высота пустой строки
+      }
     }
 }
-
-app-image-block, app-video-block, .block-card {
+.float-left {
+  @include media-breakpoint-up(md) {
     float: left;
     position: relative;
-    top: 7px;
-    width: 400px;
-    margin: 0 32px 18px 0;
-
-    &.full-width {
-        top: 0;
-        margin: 0 0 32px;
-        width: 100%;
-        float: none;
-    }
-
-    @include media-breakpoint-down(lg) {
-        width: 300px;
-        margin: 0 20px 20px 0;
-    }
-
-    @include media-breakpoint-down(sm) {
-        width: 100%;
-        top: 0;
-        margin: 0 0 24px;
-        float: none;
-    }
+    margin-right: 32px;
+    margin-bottom: 26px;
+  }
+  @include media-breakpoint-down(sm){
+    width: 100%;
+  }
 }
-
-app-extended-company-card {
-    margin-bottom: 40px;
-
-    @include media-breakpoint-only(lg) {
-        ::ng-deep {
-            .company-contacts {
-                column-gap: 10px;
-
-                .company-contact {
-                    > * {
-                        &:not(:last-child) {
-                            margin-right: 10px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
+.float-right {
+  @include media-breakpoint-up(md) {
+    float: right;
+    position: relative;
+    margin-left: 32px;
+    margin-bottom: 26px;
+  }
+  @include media-breakpoint-down(sm){
+    width: 100%;
+  }
 }
-
-app-video-block {
-    height: 225px;
-
-    &.full-width {
-        height: 464px;
-    }
-
-    @include media-breakpoint-down(sm) {
-        height: 180px;
-    }
+.full-width {
+  width: 100%;
 }
-
-app-quote-block, app-image-carousel-block {
-    margin-bottom: 32px;
-
-    @include media-breakpoint-down(sm) {
-        margin-bottom: 24px;
-    }
+app-company-card, app-person-card, app-object-card, app-video-card, app-material-card {
+  @include media-breakpoint-up(md) {
+    width: 306px;
+    //min-height: 306px;
+  }
 }
-
+app-video-card.float-left, app-video-card.float-right, app-material-card.float-left:not(.short), app-material-card.float-right:not(.short) {
+  &:not(.vertical) {
+    @include media-breakpoint-up(md) {
+      height: 306px;
+    }
+  }
+  &.vertical {
+    @include media-breakpoint-up(md) {
+      height: 620px;
+    }
+  }
+}
+app-image-block {
+  &.float-left, &.float-right {
+    @include media-breakpoint-up(md) {
+      max-width: calc(50%);
+    }
+  }
+}
 app-location-block {
-    margin-bottom: 40px;
+  &.float-left, &.float-right {
+    @include media-breakpoint-up(md) {
+      width: calc(50%);
+    }
+  }
+}
+app-video-card.full-width {
+  //height: 0;
+  position: relative;
+  display: flex;
+  padding-bottom: 56.25%;
+  flex-direction: column;
+  ::ng-deep .card-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  //&:before {
+  //
+  //  content: '';
+  //  display: block;
+  //  padding-bottom: 50%;
+  //}
+  //@include media-breakpoint-only(xl) {
+  //  height: 464px;
+  //}
+  //@include media-breakpoint-only(lg) {
+  //  height: 345px;
+  //}
+  //@include media-breakpoint-only(md) {
+  //  height: 400px;
+  //}
+  //@include media-breakpoint-only(md) {
+  //  height: 300px;
+  //}
 }
 
-.block-card {
-    width: 304px;
-}
+// Старые стили
+
+//app-image-block, app-video-block, .block-card {
+//    float: left;
+//    position: relative;
+//    top: 7px;
+//    width: 400px;
+//    margin: 0 32px 18px 0;
+//
+//    &.full-width {
+//        top: 0;
+//        margin: 0 0 32px;
+//        width: 100%;
+//        float: none;
+//    }
+//
+//    @include media-breakpoint-down(lg) {
+//        width: 300px;
+//        margin: 0 20px 20px 0;
+//    }
+//
+//    @include media-breakpoint-down(sm) {
+//        width: 100%;
+//        top: 0;
+//        margin: 0 0 24px;
+//        float: none;
+//    }
+//}
+//
+//app-extended-company-card {
+//    @include media-breakpoint-only(lg) {
+//        ::ng-deep {
+//            .company-contacts {
+//                column-gap: 10px;
+//
+//                .company-contact {
+//                    > * {
+//                        &:not(:last-child) {
+//                            margin-right: 10px;
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
+//
+//}

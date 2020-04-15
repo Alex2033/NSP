@@ -127,6 +127,15 @@ ul {
     list-style-type: none;
 }
 
+hr {
+  border: 0;
+  height: 1px;
+  color: $border-color;
+  background-color: $border-color;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .link {
     color: $primary-color;
     transition: opacity .2s ease;

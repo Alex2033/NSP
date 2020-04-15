@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TextBlockComponent implements OnInit {
 
-  @Input() paragraphs;
+  @Input() content;
 
   constructor() { }
 

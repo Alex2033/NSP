@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ImageBlockComponent implements OnInit {
 
-  @Input() image;
+  @Input() data;
 
   constructor() { }
 

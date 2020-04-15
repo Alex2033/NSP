@@ -1,25 +1,38 @@
 <div class="quote">
-    <div class="quote-content">
-        <svg class="quote-icon">
-            <use xlink:href="assets/sprites/icons.svg#quotes"></use>
-        </svg>
-        <blockquote class="quote-text">
-            <p>«{{ quote.text }}»</p>
-        </blockquote>
+  <div class="quote-content">
+    <svg class="quote-icon">
+      <use xlink:href="assets/sprites/icons.svg#quotes"></use>
+    </svg>
+    <blockquote class="quote-text">
+      <p>«{{ quote.text }}»</p>
+    </blockquote>
+  </div>
+  <div class="quote-bot">
+    <div class="quote-info">
+      <ng-container *ngIf="quote.sourceName">
+        <cite class="quote-source" *ngIf="!quote.sourceUrl">Источник: {{ quote.sourceName }}</cite>
+        <a [routerLink]="[quote.sourceUrl]" class="quote-source"
+           *ngIf="quote.sourceUrl">Источник: {{ quote.sourceName }}</a>
+      </ng-container>
+      <time class="quote-time" *ngIf="quote.publishedAt">{{ quote.publishedAt * 1000 | niceDate }}</time>
     </div>
-    <div class="quote-bot">
-        <div class="quote-info">
-            <cite class="quote-source" *ngIf="quote.source?.name">«{{ quote.source.name }}»</cite>
-            <time class="quote-time">{{ quote.publishedAt * 1000 | niceDate }}</time>
+    <div class="quote-author">
+      <div class="quote-author-info">
+        <div class="quote-author-name">
+          <ng-container *ngIf="!quote.author.id">
+            {{ quote.author.firstName }} {{ quote.author.lastName }}
+          </ng-container>
+          <a *ngIf="quote.author.id" [routerLink]="['persons', quote.author.id + '-' + quote.author.slug]">
+            {{ quote.author.firstName }} {{ quote.author.lastName }}
+          </a>
         </div>
-        <div class="quote-author">
-            <div class="quote-author-info">
-                <div class="quote-author-name">{{ quote.author.firstName }} {{ quote.author.lastName }}</div>
-                <div class="quote-author-position">{{ quote.author.position }}</div>
-            </div>
-            <div class="quote-author-avatar" *ngIf="quote.author.photoXl">
-              <app-responsive-image [xl]="quote.author.photoXl" [lg]="quote.author.photoLg" [md]="quote.author.photoMd" [xs]="quote.author.photoSm" [sm]="quote.author.photoSm" [alt]="quote.author.photoAlt" [title]="quote.author.photoTitle"></app-responsive-image>
-            </div>
-        </div>
+        <div class="quote-author-position">{{ quote.author.position }}</div>
+      </div>
+      <div class="quote-author-avatar" *ngIf="quote.author.photoXl">
+        <app-responsive-image [xl]="quote.author.photoXl" [lg]="quote.author.photoLg" [md]="quote.author.photoMd"
+                              [xs]="quote.author.photoSm" [sm]="quote.author.photoSm" [alt]="quote.author.photoAlt"
+                              [title]="quote.author.photoTitle"></app-responsive-image>
+      </div>
     </div>
+  </div>
 </div>

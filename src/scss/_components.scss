@@ -652,29 +652,6 @@
 .cards-row {
     align-items: stretch;
 
-    div[class*="col-"] {
-        > * {
-            height: 100%;
-            display: block;
-            position: relative;
-
-            &::before {
-                content: '';
-                display: block;
-                width: 100%;
-                padding-top: 100%;
-            }
-
-            > * {
-                position: absolute !important;
-                top: 0px;
-                left: 0px;
-                bottom: 0px;
-                right: 0px;
-            }
-        }
-    }
-
     @include media-breakpoint-down(lg) {
         .row {
             margin-bottom: -$grid-gutter-width;
@@ -684,6 +661,29 @@
             margin-bottom: $grid-gutter-width;
         }
     }
+}
+
+.cards-row div[class*="col-"], app-block-layout {
+  app-company-card, app-person-card, app-object-card {
+    height: 100%;
+    display: block;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      padding-top: 100%;
+    }
+
+    > * {
+      position: absolute !important;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+  }
 }
 
 .materials-title {

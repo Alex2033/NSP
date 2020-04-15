@@ -1,4 +1,1 @@
-<ng-container *ngFor="let paragraph of paragraphs">
-    <h3 *ngIf="paragraph.title">{{ paragraph.title }}</h3>
-    <p *ngIf="paragraph.text">{{ paragraph.text }}</p>
-</ng-container>
+<div class="text-block-content" [innerHTML]="content"></div>

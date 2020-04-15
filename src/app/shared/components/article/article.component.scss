@@ -36,6 +36,7 @@
 }
 
 .bot {
+  margin-top: 40px;
     margin-bottom: 48px;
 }
 
@@ -62,7 +63,9 @@
 .share-area {
   display: flex;
   align-items: center;
-  margin-bottom: 40px;
+  @include media-breakpoint-up(md) {
+    margin-bottom: 40px;
+  }
   .comments-count {
     margin-left: auto;
   }
@@ -145,7 +148,7 @@
       padding-right: 33px;
     }
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
@@ -182,7 +185,7 @@
       }
     }
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
       width: 100%;
       margin-bottom: 24px;
     }
@@ -191,7 +194,7 @@
     max-width: 760px;
     margin-bottom: 88px;
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
       margin-bottom: 77px;
     }
   }
@@ -205,15 +208,34 @@
   padding: 24px 24px 27px;
   border: 1px solid $border-color;
   width: 100%;
-
+  @include media-breakpoint-down(lg) {
+    margin-bottom: 24px;
+  }
   .h6 {
     margin-bottom: 16px;
   }
-
+  .list {
+    @include media-breakpoint-between(md, lg) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .contact-card-item {
+      @include media-breakpoint-only(lg) {
+        margin-bottom: 0;
+        width: 25%;
+      }
+      @include media-breakpoint-only(md) {
+        margin-bottom: 0;
+        width: 33%;
+      }
+    }
+  }
   .contact-card-item {
     display: flex;
     align-items: center;
     margin-bottom: 24px;
+
     padding-left: 4px;
   }
 
@@ -250,7 +272,12 @@
   }
 
   .socials {
-
+    @include media-breakpoint-only(lg) {
+      margin-left: auto;
+    }
+    @include media-breakpoint-only(md) {
+      margin-top: 32px;
+    }
     a {
       flex: 0 0 40px;
       height: 40px;
@@ -275,5 +302,5 @@
 .sticky-sidebar {
   margin-top: 8px;
   position: sticky;
-  top: 200px;
+  top: 110px;
 }

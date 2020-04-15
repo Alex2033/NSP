@@ -1,14 +1,15 @@
 <div class="company-card">
     <div class="company-img">
-        <img [src]="company.logoXl" alt="company image">
+      <app-responsive-image [xl]="company.logoXl" [lg]="company.logoLg" [md]="company.logoMd" [xs]="company.logoSm"
+                            [sm]="company.logoSm"  [alt]="company.logoAlt"  [title]="company.logoTitle"></app-responsive-image>
     </div>
     <div class="company-content">
         <h4 class="company-title">{{ company.name }}</h4>
         <div class="company-text">
-            <p>{{ company.text }}</p>
+            <p>{{ company.description }}</p>
         </div>
         <div class="company-contacts">
-            <div class="company-contact">
+            <div class="company-contact" *ngIf="company.phone">
                 <div class="company-contact-icon">
                     <svg class="phone">
                         <use xlink:href="assets/sprites/icons.svg#phone"></use>
@@ -16,7 +17,7 @@
                 </div>
                 <a [href]="'tel:' + ( company.phone | phoneFormat )" class="company-phone link">{{ company.phone }}</a>
             </div>
-            <div class="company-contact">
+            <div class="company-contact" *ngIf="company.site">
                     <div class="company-contact-icon">
                         <svg class="web">
                             <use xlink:href="assets/sprites/icons.svg#web"></use>
@@ -24,7 +25,7 @@
                     </div>
                     <a class="link" [href]="company.site">{{ company.site }}</a>
                 </div>
-            <div class="company-contact">
+            <div class="company-contact" *ngIf="company.email">
                 <div class="company-contact-icon">
                     <svg class="mail">
                         <use xlink:href="assets/sprites/icons.svg#mail"></use>

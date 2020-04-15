@@ -8,7 +8,7 @@ import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 })
 export class ApartmentInfoBlockComponent implements OnInit {
   screen: string;
-  @Input() apartment;
+  @Input() data;
 
   constructor(private responsive: ResponsiveService) { }
 

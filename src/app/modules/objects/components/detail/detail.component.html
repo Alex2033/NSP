@@ -135,7 +135,7 @@
     <button class="deadline-button">III очередь — III кв. 2020 г.</button>
   </div>
 
-  <div class="divider"></div>
+  <hr>
 
   <h3 #location>Расположение</h3>
   <p>Жилой квартал LIFE-Лесная расположен на северо-востоке Санкт-Петербурга, в Выборгском районе, по адресу: улица
@@ -161,11 +161,11 @@
     <p>Предложение актуально на дату публикации (01.04.2019 г.)</p>
   </div>
 
-  <app-apartment-info-block *ngFor="let apartment of apartments" [apartment]="apartment"></app-apartment-info-block>
+<!--  <app-apartment-info-block *ngFor="let apartment of apartments" [apartment]="apartment"></app-apartment-info-block>-->
 
   <h3 #photos>Фотографии проекта</h3>
 
-  <app-full-width-image-carousel-block [images]="images"></app-full-width-image-carousel-block>
+<!--  <app-full-width-image-carousel-block [images]="images"></app-full-width-image-carousel-block>-->
 
   <h3 #developer>Информация о застройщике</h3>
 
@@ -175,7 +175,7 @@
 
 </div>
 
-<div class="divider"></div>
+<hr>
 
 <div class="container">
   <div class="materials" *ngIf="articles && articles.length > 0">
