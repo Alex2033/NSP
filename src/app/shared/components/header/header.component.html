@@ -1,160 +1,170 @@
 <header class="header" #header [ngClass]="{'fixed': fixedMenu}">
-    <app-topline-advertising #topLineBanner (visible)="topLineBannerVisible = $event" [height]="topHeaderHeight" [style.margin-top]="topLineBannerVisible ? (scroll < topHeaderHeight ? '-' + (topHeaderHeight - scroll) + 'px' : '0px') : '-' + topHeaderHeight + 'px'"></app-topline-advertising>
-    <div class="hidden-search mobile-hidden-search" [style.display]="screen === 'sm' && showHiddenSearch ? 'flex' : 'none'">
-        <form class="search" (submit)="search()">
-            <input #fixedSearchInput [ngModelOptions]="{standalone: true}" type="text" placeholder="Поиск по сайту" [(ngModel)]="searchQuery" required>
-            <button type="submit" class="search-button short-button no-bg">
-                <svg class="icon">
-                    <use xlink:href="assets/sprites/icons.svg#icon_search"></use>
-                </svg>
+  <app-topline-advertising #topLineBanner (visible)="topLineBannerVisible = $event" [height]="topHeaderHeight"
+                           [style.margin-top]="topLineBannerVisible ? (scroll < topHeaderHeight ? '-' + (topHeaderHeight - scroll) + 'px' : '0px') : '-' + topHeaderHeight + 'px'"></app-topline-advertising>
+  <div class="hidden-search mobile-hidden-search"
+       [style.display]="screen === 'sm' && showHiddenSearch ? 'flex' : 'none'">
+    <form class="search" (submit)="search()">
+      <input #fixedSearchInput [ngModelOptions]="{standalone: true}" type="text" placeholder="Поиск по сайту"
+             [(ngModel)]="searchQuery" required>
+      <button type="submit" class="search-button short-button no-bg">
+        <svg class="icon">
+          <use xlink:href="assets/sprites/icons.svg#icon_search"></use>
+        </svg>
+      </button>
+    </form>
+    <button class="close-search" (click)="hideSearch()">
+      <svg class="icon">
+        <use xlink:href="assets/sprites/icons.svg#close"></use>
+      </svg>
+    </button>
+  </div>
+
+  <div class="header-top" #top
+       [style.margin-top]="scroll < topHeaderHeight ? '-' + scroll + 'px' : '-' + topHeaderHeight + 'px'">
+
+    <!-- logo -->
+    <a [routerLink]="['']" class="logo-link" aria-label="logotype link">
+      <svg class="logo" *ngIf="screen !== 'sm'">
+        <use xlink:href="assets/sprites/icons.svg#logo"></use>
+      </svg>
+      <svg class="logo-mini" *ngIf="screen === 'sm'">
+        <use xlink:href="assets/sprites/icons.svg#logo_mini"></use>
+      </svg>
+    </a>
+
+    <!-- quote -->
+    <div class="quote" *ngIf="screen !== 'sm' && quote">
+      <blockquote class="quote-text">
+        <p>
+          «{{ quote.text }}»
+        </p>
+        <a [routerLink]="['/persons', quote.author.id + '-' + quote.author.slug]" class="author"
+           [innerHTML]="quote.author.firstName + '&nbsp;' + quote.author.lastName"></a>
+      </blockquote>
+      <div class="avatar">
+        <app-responsive-image [xl]="quote.author.photoXl" [lg]="quote.author.photoLg" [md]="quote.author.photoMd"
+                              [xs]="quote.author.photoSm" [sm]="quote.author.photoSm" [alt]="quote.author.photoAlt"
+                              [title]="quote.author.photoTitle"></app-responsive-image>
+      </div>
+    </div>
+
+    <!-- mobile actions -->
+    <button class="mobile-search-trigger" *ngIf="screen === 'sm'" (click)="showSearch()">
+      <svg>
+        <use xlink:href="assets/sprites/icons.svg#icon_search"></use>
+      </svg>
+    </button>
+    <button class="menu-trigger" *ngIf="screen === 'sm'" (click)="showMenu()">
+      <svg>
+        <use xlink:href="assets/sprites/icons.svg#icon-menu"></use>
+      </svg>
+    </button>
+
+  </div>
+
+  <!-- header menu -->
+  <div
+    class="header-menu"
+    [style.display]="screen === 'sm' ? 'none' : 'block'"
+    #menu
+  >
+    <div class="menu">
+      <a href="#" aria-label="mini-logotype link">
+        <svg class="logo-mini" [class.visible]="fixedMenu">
+          <use xlink:href="assets/sprites/icons.svg#logo_mini"></use>
+        </svg>
+      </a>
+
+      <!-- desktop navigation -->
+      <nav class="navigation" [class.fixed]="fixedMenu" [style.display]="screen === 'sm' ? 'none' : null"
+           #navigationContainer>
+        <ul class="navigation-list for-calculate" #tmpNavigationList style="flex-grow: 1;">
+          <li [class.highlight]="menuElement.highlight" *ngFor="let menuElement of menuElements">
+            <a [routerLink]="[menuElement.slug]">{{ menuElement.name }}</a>
+          </li>
+        </ul>
+        <ul class="navigation-list"  #navigationList style="flex-grow: 1;">
+          <li [class.highlight]="menuElement.highlight" *ngFor="let menuElement of visibleMenuElements">
+            <a [routerLink]="[menuElement.slug]">{{ menuElement.name }}</a>
+          </li>
+          <li class="more" (clickOutside)="dropdownVisible = false" [class.hidden]="hiddenMenuElements.length === 0 && visibleMenuElements.length > 0"
+              [class.active]="dropdownVisible">
+            <button class="dropdown-btn" (click)="dropdownVisible = !dropdownVisible">
+              <span>Еще</span>
+              <svg [class.rotated]="dropdownVisible">
+                <use xlink:href="assets/sprites/icons.svg#chevron_down"></use>
+              </svg>
             </button>
+            <div class="dropdown" [class.visible]="dropdownVisible">
+              <ul class="dropdown-list" #dropdownList (click)="dropdownVisible = !dropdownVisible">
+                <li [class.highlight]="menuElement.highlight" *ngFor="let menuElement of hiddenMenuElements">
+                  <a [routerLink]="[menuElement.slug]">{{ menuElement.name }}</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="hidden-search" [style.display]="fixedMenu && showHiddenSearch ? 'flex' : 'none'">
+        <form class="search" (submit)="search()">
+          <input #fixedSearchInput [ngModelOptions]="{standalone: true}" type="text" placeholder="Поиск по сайту"
+                 [(ngModel)]="searchQuery" required>
+          <button type="submit" class="search-button short-button no-bg">
+            <svg class="icon">
+              <use xlink:href="assets/sprites/icons.svg#icon_search"></use>
+            </svg>
+          </button>
         </form>
         <button class="close-search" (click)="hideSearch()">
-            <svg class="icon">
-                <use xlink:href="assets/sprites/icons.svg#close"></use>
-            </svg>
+          <svg class="icon">
+            <use xlink:href="assets/sprites/icons.svg#close"></use>
+          </svg>
         </button>
+      </div>
+
+      <button type="button" (click)="showSearch()" class="search-button button scrolled-search-btn"
+              [class.visible]="fixedMenu">
+        <svg class="icon">
+          <use xlink:href="assets/sprites/icons.svg#icon_search"></use>
+        </svg>
+      </button>
     </div>
+  </div>
 
-    <div class="header-top" #top [style.margin-top]="scroll < topHeaderHeight ? '-' + scroll + 'px' : '-' + topHeaderHeight + 'px'">
-
-        <!-- logo -->
-        <a [routerLink]="['']" class="logo-link" aria-label="logotype link">
-            <svg class="logo" *ngIf="screen !== 'sm'">
-                <use xlink:href="assets/sprites/icons.svg#logo"></use>
-            </svg>
-            <svg class="logo-mini"*ngIf="screen === 'sm'">
-                <use xlink:href="assets/sprites/icons.svg#logo_mini"></use>
-            </svg>
-        </a>
-
-        <!-- quote -->
-        <div class="quote" *ngIf="screen !== 'sm' && quote">
-            <blockquote class="quote-text">
-                <p>
-                    «{{ quote.text }}»
-                </p>
-                <a [routerLink]="['/persons', quote.author.id + '-' + quote.author.slug]" class="author" [innerHTML]="quote.author.firstName + '&nbsp;' + quote.author.lastName"></a>
-            </blockquote>
-            <div class="avatar">
-              <app-responsive-image [xl]="quote.author.photoXl" [lg]="quote.author.photoLg" [md]="quote.author.photoMd" [xs]="quote.author.photoSm" [sm]="quote.author.photoSm" [alt]="quote.author.photoAlt" [title]="quote.author.photoTitle"></app-responsive-image>
-            </div>
-        </div>
-
-        <!-- mobile actions -->
-        <button class="mobile-search-trigger" *ngIf="screen === 'sm'" (click)="showSearch()">
-            <svg>
-                <use xlink:href="assets/sprites/icons.svg#icon_search"></use>
-            </svg>
-        </button>
-        <button class="menu-trigger" *ngIf="screen === 'sm'" (click)="showMenu()">
-            <svg>
-                <use xlink:href="assets/sprites/icons.svg#icon-menu"></use>
-            </svg>
-        </button>
-
-    </div>
-
-    <!-- header menu -->
-    <div
-        class="header-menu"
-        [style.display]="screen === 'sm' ? 'none' : 'block'"
-        #menu
-    >
-        <div class="menu">
-            <a href="#" aria-label="mini-logotype link">
-                <svg class="logo-mini" [class.visible]="fixedMenu">
-                    <use xlink:href="assets/sprites/icons.svg#logo_mini"></use>
-                </svg>
-            </a>
-
-            <!-- desktop navigation -->
-            <nav class="navigation" [class.fixed]="fixedMenu" [style.display]="screen === 'sm' ? 'none' : null" #navigationContainer>
-                <ul class="navigation-list for-calculate" #tmpNavigationList style="flex-grow: 1;">
-                    <li [class.highlight]="menuElement.highlight" *ngFor="let menuElement of menuElements">
-                        <a [routerLink]="[menuElement.slug]">{{ menuElement.name }}</a>
-                    </li>
-                </ul>
-                <ul class="navigation-list" #navigationList style="flex-grow: 1;">
-                    <li [class.highlight]="menuElement.highlight" *ngFor="let menuElement of visibleMenuElements">
-                        <a [routerLink]="[menuElement.slug]">{{ menuElement.name }}</a>
-                    </li>
-                </ul>
-                <ul class="navigation-list more" #moreButton [class.hidden]="hiddenMenuElements.length === 0 && visibleMenuElements.length > 0">
-                    <li (clickOutside)="dropdownVisible = false"
-                        [class.active]="dropdownVisible">
-                        <button class="dropdown-btn" (click)="dropdownVisible = !dropdownVisible">
-                            <span>Еще</span>
-                            <svg [class.rotated]="dropdownVisible">
-                                <use xlink:href="assets/sprites/icons.svg#chevron_down"></use>
-                            </svg>
-                        </button>
-                        <div class="dropdown" [class.visible]="dropdownVisible">
-                            <ul class="dropdown-list" #dropdownList (click)="dropdownVisible = !dropdownVisible">
-                              <li [class.highlight]="menuElement.highlight" *ngFor="let menuElement of hiddenMenuElements">
-                                <a [routerLink]="[menuElement.slug]">{{ menuElement.name }}</a>
-                              </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-
-            <div class="hidden-search" [style.display]="fixedMenu && showHiddenSearch ? 'flex' : 'none'">
-                <form class="search" (submit)="search()">
-                    <input #fixedSearchInput [ngModelOptions]="{standalone: true}" type="text" placeholder="Поиск по сайту" [(ngModel)]="searchQuery" required>
-                    <button type="submit" class="search-button short-button no-bg">
-                        <svg class="icon">
-                            <use xlink:href="assets/sprites/icons.svg#icon_search"></use>
-                        </svg>
-                    </button>
-                </form>
-                <button class="close-search" (click)="hideSearch()">
-                    <svg class="icon">
-                        <use xlink:href="assets/sprites/icons.svg#close"></use>
-                    </svg>
-                </button>
-            </div>
-
-            <button type="button" (click)="showSearch()" class="search-button button scrolled-search-btn" [class.visible]="fixedMenu">
-                <svg class="icon">
-                    <use xlink:href="assets/sprites/icons.svg#icon_search"></use>
-                </svg>
-            </button>
-        </div>
-    </div>
-
-    <!-- header bottom -->
-    <div #bottom class="header-bottom" [style.display]="screen !== 'sm' ? 'flex' : 'none'" *ngIf="!fixedMenu" [@headerBottomAnimation]>
-        <div class="header-actions">
-            <div class="header-action">
-                <svg>
-                    <use xlink:href="assets/sprites/icons.svg#calendar"></use>
-                </svg>
-                <span class="header-action-text">
+  <!-- header bottom -->
+  <div #bottom class="header-bottom" [style.display]="screen !== 'sm' ? 'flex' : 'none'" *ngIf="!fixedMenu"
+       [@headerBottomAnimation]>
+    <div class="header-actions">
+      <div class="header-action">
+        <svg>
+          <use xlink:href="assets/sprites/icons.svg#calendar"></use>
+        </svg>
+        <span class="header-action-text">
                   {{ now | date: 'd MMMM' }}, {{ now | date: 'shortTime' }}
                 </span>
-            </div>
-            <div class="header-action">
-                <svg>
-                    <use xlink:href="assets/sprites/icons.svg#notification"></use>
-                </svg>
-                <button (click)="modal.open('subscription-form')" class="header-action-text">Подписаться</button>
-            </div>
-            <div class="header-action">
-                <svg>
-                    <use xlink:href="assets/sprites/icons.svg#mail"></use>
-                </svg>
-                <button (click)="modal.open('news-offer-form')" class="header-action-text">Прислать новость</button>
-            </div>
-        </div>
-        <form class="search" (submit)="search()">
-            <input #searchInput [ngModelOptions]="{standalone: true}" type="text" placeholder="Поиск по сайту" [(ngModel)]="searchQuery" required>
-            <button type="submit" class="search-button short-button no-bg">
-                <svg class="icon">
-                    <use xlink:href="assets/sprites/icons.svg#icon_search"></use>
-                </svg>
-            </button>
-        </form>
+      </div>
+      <div class="header-action">
+        <svg>
+          <use xlink:href="assets/sprites/icons.svg#notification"></use>
+        </svg>
+        <button (click)="modal.open('subscription-form')" class="header-action-text">Подписаться</button>
+      </div>
+      <div class="header-action">
+        <svg>
+          <use xlink:href="assets/sprites/icons.svg#mail"></use>
+        </svg>
+        <button (click)="modal.open('news-offer-form')" class="header-action-text">Прислать новость</button>
+      </div>
     </div>
+    <form class="search" (submit)="search()">
+      <input #searchInput [ngModelOptions]="{standalone: true}" type="text" placeholder="Поиск по сайту"
+             [(ngModel)]="searchQuery" required>
+      <button type="submit" class="search-button short-button no-bg">
+        <svg class="icon">
+          <use xlink:href="assets/sprites/icons.svg#icon_search"></use>
+        </svg>
+      </button>
+    </form>
+  </div>
 </header>
