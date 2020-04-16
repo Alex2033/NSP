@@ -14,7 +14,7 @@ import {MenuElement} from '../../../../shared/contracts/menu-element';
 })
 export class DetailComponent implements OnInit {
   @ViewChild(NgScrollbar, {static: false}) scrollbarRef: NgScrollbar;
-  
+
   screen: string;
   scrollPosition: number = 0;
   showLeftControl: boolean = false;
@@ -52,7 +52,7 @@ export class DetailComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    if (this.screen === 'sm') {
+    if (this.screen === 'sm' && this.scrollbarRef) {
       this.scrollbarRef.scrolled.subscribe(e => {
         this.scrollPosition = e.target.scrollLeft;
 

@@ -1,65 +1,67 @@
 <header class="header" #header [ngClass]="{'fixed': fixedMenu}">
   <app-topline-advertising #topLineBanner (visible)="topLineBannerVisible = $event" [height]="topHeaderHeight"
                            [style.margin-top]="topLineBannerVisible ? (scroll < topHeaderHeight ? '-' + (topHeaderHeight - scroll) + 'px' : '0px') : '-' + topHeaderHeight + 'px'"></app-topline-advertising>
-  <div class="hidden-search mobile-hidden-search"
-       [style.display]="screen === 'sm' && showHiddenSearch ? 'flex' : 'none'">
-    <form class="search" (submit)="search()">
-      <input #fixedSearchInput [ngModelOptions]="{standalone: true}" type="text" placeholder="Поиск по сайту"
-             [(ngModel)]="searchQuery" required>
-      <button type="submit" class="search-button short-button no-bg">
+  <div class="top-wrapper">
+    <div class="hidden-search mobile-hidden-search"
+         [style.display]="screen === 'sm' && showHiddenSearch ? 'flex' : 'none'">
+      <form class="search" (submit)="search()">
+        <input #fixedSearchInput [ngModelOptions]="{standalone: true}" type="text" placeholder="Поиск по сайту"
+               [(ngModel)]="searchQuery" required>
+        <button type="submit" class="search-button short-button no-bg">
+          <svg class="icon">
+            <use xlink:href="assets/sprites/icons.svg#icon_search"></use>
+          </svg>
+        </button>
+      </form>
+      <button class="close-search" (click)="hideSearch()">
         <svg class="icon">
+          <use xlink:href="assets/sprites/icons.svg#close"></use>
+        </svg>
+      </button>
+    </div>
+
+    <div class="header-top" #top
+         [style.margin-top]="screen !== 'sm' && scroll > 0 ? scroll < topHeaderHeight ? '-' + scroll + 'px' : '-' + topHeaderHeight + 'px' : '0px'">
+
+      <!-- logo -->
+      <a [routerLink]="['']" class="logo-link" aria-label="logotype link">
+        <svg class="logo" *ngIf="screen !== 'sm'">
+          <use xlink:href="assets/sprites/icons.svg#logo"></use>
+        </svg>
+        <svg class="logo-mini" *ngIf="screen === 'sm'">
+          <use xlink:href="assets/sprites/icons.svg#logo_mini"></use>
+        </svg>
+      </a>
+
+      <!-- quote -->
+      <div class="quote" *ngIf="screen !== 'sm' && quote">
+        <blockquote class="quote-text">
+          <p>
+            «{{ quote.text }}»
+          </p>
+          <a [routerLink]="['/persons', quote.author.id + '-' + quote.author.slug]" class="author"
+             [innerHTML]="quote.author.firstName + '&nbsp;' + quote.author.lastName"></a>
+        </blockquote>
+        <div class="avatar">
+          <app-responsive-image [xl]="quote.author.photoXl" [lg]="quote.author.photoLg" [md]="quote.author.photoMd"
+                                [xs]="quote.author.photoSm" [sm]="quote.author.photoSm" [alt]="quote.author.photoAlt"
+                                [title]="quote.author.photoTitle"></app-responsive-image>
+        </div>
+      </div>
+
+      <!-- mobile actions -->
+      <button class="mobile-search-trigger" *ngIf="screen === 'sm'" (click)="showSearch()">
+        <svg>
           <use xlink:href="assets/sprites/icons.svg#icon_search"></use>
         </svg>
       </button>
-    </form>
-    <button class="close-search" (click)="hideSearch()">
-      <svg class="icon">
-        <use xlink:href="assets/sprites/icons.svg#close"></use>
-      </svg>
-    </button>
-  </div>
+      <button class="menu-trigger" *ngIf="screen === 'sm'" (click)="showMenu()">
+        <svg>
+          <use xlink:href="assets/sprites/icons.svg#icon-menu"></use>
+        </svg>
+      </button>
 
-  <div class="header-top" #top
-       [style.margin-top]="screen !== 'sm' ? scroll < topHeaderHeight ? '-' + scroll + 'px' : '-' + topHeaderHeight + 'px' : '0px'">
-
-    <!-- logo -->
-    <a [routerLink]="['']" class="logo-link" aria-label="logotype link">
-      <svg class="logo" *ngIf="screen !== 'sm'">
-        <use xlink:href="assets/sprites/icons.svg#logo"></use>
-      </svg>
-      <svg class="logo-mini" *ngIf="screen === 'sm'">
-        <use xlink:href="assets/sprites/icons.svg#logo_mini"></use>
-      </svg>
-    </a>
-
-    <!-- quote -->
-    <div class="quote" *ngIf="screen !== 'sm' && quote">
-      <blockquote class="quote-text">
-        <p>
-          «{{ quote.text }}»
-        </p>
-        <a [routerLink]="['/persons', quote.author.id + '-' + quote.author.slug]" class="author"
-           [innerHTML]="quote.author.firstName + '&nbsp;' + quote.author.lastName"></a>
-      </blockquote>
-      <div class="avatar">
-        <app-responsive-image [xl]="quote.author.photoXl" [lg]="quote.author.photoLg" [md]="quote.author.photoMd"
-                              [xs]="quote.author.photoSm" [sm]="quote.author.photoSm" [alt]="quote.author.photoAlt"
-                              [title]="quote.author.photoTitle"></app-responsive-image>
-      </div>
     </div>
-
-    <!-- mobile actions -->
-    <button class="mobile-search-trigger" *ngIf="screen === 'sm'" (click)="showSearch()">
-      <svg>
-        <use xlink:href="assets/sprites/icons.svg#icon_search"></use>
-      </svg>
-    </button>
-    <button class="menu-trigger" *ngIf="screen === 'sm'" (click)="showMenu()">
-      <svg>
-        <use xlink:href="assets/sprites/icons.svg#icon-menu"></use>
-      </svg>
-    </button>
-
   </div>
 
   <!-- header menu -->
