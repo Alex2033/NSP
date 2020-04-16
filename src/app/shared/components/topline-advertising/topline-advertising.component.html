@@ -1,15 +1,18 @@
-<div class="top-line-advertising" #advertising [hidden]="!displayAdvertising || !showBanner">
-  <a [routerLink]="['']" *ngIf="showActions === false">
-      <img src="https://picsum.photos/id/1047/1600/74" alt="advertising image">
-  </a>
-  <button class="close" (click)="showActions = true" *ngIf="showActions === false">
+<div class="top-line-advertising" [style.height]="height + 'px'">
+  <ng-container *ngIf="show">
+    <a [routerLink]="['']" *ngIf="showActions === false">
+      <div class="banner" [style.height]="height + 'px'">ЗДЕСЬ БУДЕТ РЕКЛАМА</div>
+    </a>
+    <button class="close" (click)="showActions = true" *ngIf="showActions === false">
       <svg>
-          <use xlink:href="assets/sprites/icons.svg#close"></use>
+        <use xlink:href="assets/sprites/icons.svg#close"></use>
       </svg>
-  </button>
-  <div class="top-line-advertising-actions" [hidden]="showActions === false">
-    <button class="button light" (click)="changeBanner()">Уже купил</button>
-    <button class="button light" (click)="changeBanner()">Не интересна реклама по этой теме</button>
-    <button class="button light" (click)="changeBanner()">Реклама раздражает</button>
-  </div>
+    </button>
+    <div class="top-line-advertising-actions" [hidden]="showActions === false">
+      <button class="button light" (click)="close()">Уже купил</button>
+      <button class="button light" (click)="close()">Не интересна реклама по этой теме</button>
+      <button class="button light" (click)="close()">Реклама раздражает</button>
+    </div>
+  </ng-container>
 </div>
+

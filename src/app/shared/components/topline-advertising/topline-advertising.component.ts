@@ -1,40 +1,39 @@
-import { Component, OnInit, ViewChild, ElementRef, HostListener, Output, EventEmitter } from '@angular/core';
-import { BannerService } from '../banner-data.service';
+import {Component, OnInit, ViewChild, ElementRef, HostListener, Output, EventEmitter, Input} from '@angular/core';
+import {translateAnimation} from '../../animations/translate-animation';
 
 @Component({
   selector: 'app-topline-advertising',
   templateUrl: './topline-advertising.component.html',
   styleUrls: ['./topline-advertising.component.scss'],
+  animations: [
+    translateAnimation(1000)
+  ]
 })
 export class ToplineAdvertisingComponent implements OnInit {
-  @ViewChild('advertising', {static: true}) advertising: ElementRef;
-  @Output() displayAdvertisingDetection = new EventEmitter();
-  advertisingHeight;
+  topHeaderHeight;
   name: any;
-  displayAdvertising: boolean = false;
   showActions: boolean = false;
-
-  get showBanner(): boolean {
-    return this.bannerService.showBanner;
-  }
-
-  constructor(private bannerService: BannerService) { }
-
+  show: boolean;
+  @Output() visible: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Input() height: number;
+  constructor() { }
   ngOnInit() {
-    this.advertisingHeight = this.advertising.nativeElement.offsetHeight;
+    this.show = true;
+    this.visible.next(true);
+    // this.topHeaderHeight = 74;
   }
 
-  changeBanner() {
-    this.bannerService.showBanner = false;
+  close() {
+    this.show = false;
+    this.visible.next(false);
   }
-
-  @HostListener('window:scroll', ['$event'])
-  checkScroll() {
-    let windowScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    if (windowScroll >= this.advertisingHeight) {
-      this.displayAdvertising = true;
-      this.displayAdvertisingDetection.emit(true);
-    }
-  }
+  //
+  // @HostListener('window:scroll', ['$event'])
+  // checkScroll() {
+  //   const windowScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+  //   if (windowScroll >= this.topHeaderHeight) {
+  //     // this.show = true;
+  //   }
+  // }
 
 }
