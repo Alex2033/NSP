@@ -20,7 +20,7 @@
   </div>
 
   <div class="header-top" #top
-       [style.margin-top]="scroll < topHeaderHeight ? '-' + scroll + 'px' : '-' + topHeaderHeight + 'px'">
+       [style.margin-top]="screen !== 'sm' ? scroll < topHeaderHeight ? '-' + scroll + 'px' : '-' + topHeaderHeight + 'px' : '0px'">
 
     <!-- logo -->
     <a [routerLink]="['']" class="logo-link" aria-label="logotype link">
