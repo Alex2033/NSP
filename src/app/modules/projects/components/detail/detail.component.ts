@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 import {ActivatedRoute} from '@angular/router';
 import {Project} from '../../../../shared/contracts/project';
@@ -12,7 +12,7 @@ import {MenuElement} from '../../../../shared/contracts/menu-element';
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.scss']
 })
-export class DetailComponent implements OnInit {
+export class DetailComponent implements OnInit, AfterViewInit {
   @ViewChild(NgScrollbar, {static: false}) scrollbarRef: NgScrollbar;
 
   screen: string;

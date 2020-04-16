@@ -190,7 +190,6 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   hideSearch() {
     this.showHiddenSearch = false;
-    this.searchInput.nativeElement.value = '';
-    this.fixedSearchInput.nativeElement.value = '';
+    this.searchQuery = '';
   }
 }
