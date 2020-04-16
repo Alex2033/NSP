@@ -7,7 +7,7 @@
   </div>
   <div class="company-info">
     <div class="row">
-      <div class="col-xl-3 col-lg-5 col-md-8 offset-md-2 offset-lg-0 order-xl-0 order-lg-1">
+      <div class="col-xl-3 col-lg-5 col-md-12 offset-md-0 offset-lg-0 order-xl-0 order-lg-1">
         <h1 class="title" *ngIf="screen === 'sm'">{{ company.name }}</h1>
         <div class="contact-card">
           <div class="contact-card-img">
@@ -94,7 +94,7 @@
             <div class="company-infoblock company-infoblock-text" *ngIf="company.description">
               <div class="caption">Информация о компании</div>
               <div class="company-infoblock-paragraphs" [innerHTML]="company.description | paragraphs"></div>
-              <a [routerLink]="['']" class="link show-more" *ngIf="screen === 'sm'">
+              <a [routerLink]="['']" class="link show-more" *ngIf="screen === 'sm' && false">
                 <span>Еще</span>
                 <svg class="icon">
                     <use xlink:href="assets/sprites/icons.svg#chevron_down"></use>

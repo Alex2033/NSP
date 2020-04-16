@@ -70,14 +70,14 @@
             margin-bottom: 16px;
             display: inline-block;
         }
-    } 
-    
+    }
+
     a {
         display: inline-block;
         color: $text-color;
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
-        
+
         transition: color .2s ease;
 
         &:hover {
@@ -132,7 +132,7 @@
 
     @include media-breakpoint-only(sm) {
         width: 100%;
-        justify-content: space-between;
+        //justify-content: space-between;
     }
 }
 
@@ -190,7 +190,7 @@
     p {
        font-family: 'Montserrat', sans-serif;
         line-height: 1.385;
-        font-size: 26px; 
+        font-size: 26px;
     }
 
     @include media-breakpoint-only(sm) {

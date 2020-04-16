@@ -35,14 +35,14 @@
             &:not(app-extended-person-card) {
                 display: block;
                 position: relative;
-        
+
                 &::before {
                     content: '';
                     display: block;
                     width: 100%;
                     padding-top: 100%;
                 }
-        
+
                 ::ng-deep {
                     > * {
                         position: absolute !important;
@@ -51,9 +51,9 @@
                         bottom: 0px;
                         right: 0px;
                     }
-                }   
+                }
             }
-            
+
         }
     }
 
@@ -71,7 +71,6 @@ app-extended-person-card {
 }
 
 app-company-card {
-    border: 1px solid $border-color;
     display: block;
 }
 

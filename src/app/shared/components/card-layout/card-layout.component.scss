@@ -79,14 +79,14 @@ app-material-list-card, app-material-card {
     }
 }
 
-app-material-list-card {
-    @include media-breakpoint-down(sm) {
-        height: 296px !important;
-    }
-}
-
-app-material-card {
-    @include media-breakpoint-down(sm) {
-        min-height: 296px;
-    }
-}
+//app-material-list-card {
+//    @include media-breakpoint-down(sm) {
+//        height: 296px !important;
+//    }
+//}
+//
+//app-material-card {
+//    @include media-breakpoint-down(sm) {
+//        min-height: 296px;
+//    }
+//}

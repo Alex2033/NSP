@@ -66,6 +66,9 @@
   @include media-breakpoint-up(md) {
     margin-bottom: 40px;
   }
+  app-share {
+    margin-bottom: 0;
+  }
   .comments-count {
     margin-left: auto;
   }

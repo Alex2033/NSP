@@ -99,13 +99,12 @@
 }
 
 .company-info-text {
-    padding: 0 24px;
-
+  padding: 0 24px;
     h1 {
         margin-bottom: 40px;
     }
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(lg) {
         padding: 0;
         margin-bottom: 16px;
     }
@@ -220,5 +219,5 @@ app-card-carousel {
 //}
 
 .company-infoblock-paragraphs {
-    margin-bottom: 24px;  
+    margin-bottom: 24px;
 }

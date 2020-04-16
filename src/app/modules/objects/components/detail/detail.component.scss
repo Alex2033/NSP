@@ -174,7 +174,7 @@ p {
         @include media-breakpoint-down(sm) {
             font-size: 14px;
             line-height: 1.571;
-            
+
             &:last-child {
                 margin-bottom: 0;
             }
@@ -353,5 +353,4 @@ app-extended-company-card {
 
 app-company-card {
     display: block;
-    border: 1px solid $border-color;
 }

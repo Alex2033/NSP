@@ -122,12 +122,14 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
 
   @HostListener('window:resize', ['$event']) onResize() {
-    this.rebuildMenu();
     this.headerHeight.setValue(this.header.nativeElement.offsetHeight);
+    setTimeout(() => {
+      this.rebuildMenu();
+    }, 100);
   }
 
   rebuildMenu() {
-    const navigationListWidth = this.navigationContainer.nativeElement.clientWidth;
+    const navigationListWidth = this.navigationList.nativeElement.clientWidth;
     let indexFrom = -1;
     let sum = 0;
     if (isPlatformBrowser(this.platformId)) {
@@ -138,8 +140,8 @@ export class HeaderComponent implements OnInit, AfterViewInit {
         }
       }
       if (indexFrom !== -1) {
-        this.visibleMenuElements = this.menuElements.slice(0, indexFrom - 1);
-        this.hiddenMenuElements = this.menuElements.slice(indexFrom - 1);
+        this.visibleMenuElements = this.menuElements.slice(0, indexFrom);
+        this.hiddenMenuElements = this.menuElements.slice(indexFrom);
       } else {
         this.visibleMenuElements = this.menuElements;
         this.hiddenMenuElements = [];

@@ -3353,7 +3353,7 @@ export class MockApiService {
           },
           {
             name: 'Sections detail',
-            slug: 'sections/detail',
+            slug: 'section',
             highlight: false
           },
           {
