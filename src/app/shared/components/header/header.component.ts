@@ -19,7 +19,7 @@ import {Router} from '@angular/router';
 import {MenuElement} from '../../contracts/menu-element';
 import {Quote} from '../../contracts/quote';
 import {ApiService} from '../../services/api.service';
-import { HeaderHeightService } from '../../services/header-height.service';
+import {HeaderHeightService} from '../../services/header-height.service';
 
 @Component({
   selector: 'app-header',
@@ -104,14 +104,24 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   @HostListener('window:scroll', ['$event']) checkScroll() {
     const windowScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     if (windowScroll >= this.menuPosition) {
+      if (!this.fixedMenu) {
+        setTimeout(() => {
+          this.rebuildMenu();
+        }, 1);
+      }
       this.fixedMenu = true;
     } else if (windowScroll < this.menuPosition) {
+      if (this.fixedMenu) {
+        setTimeout(() => {
+          this.rebuildMenu();
+        }, 1);
+      }
       this.fixedMenu = false;
       this.showHiddenSearch = false;
     }
   }
 
-  @HostListener('window:resize', ['$event']) changeNav() {
+  @HostListener('window:resize', ['$event']) onResize() {
     this.rebuildMenu();
     this.headerHeight.setValue(this.header.nativeElement.offsetHeight);
   }
