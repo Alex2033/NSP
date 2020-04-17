@@ -93,8 +93,9 @@
       <app-full-width-image-carousel-block *ngIf="block.size === 'big'" [images]="block.data.images"></app-full-width-image-carousel-block>
       <app-image-carousel-block *ngIf="block.size === 'small'" [images]="block.data.images"></app-image-carousel-block>
     </ng-container>
-
+    <ng-container *ngSwitchCase="'logo_gallery'">
+      <app-company-carousel-block [data]="block.data"></app-company-carousel-block>
+    </ng-container>
   </ng-container>
 </ng-container>
-<!--<app-company-carousel-block></app-company-carousel-block>-->
 <!--<app-event-registration-block></app-event-registration-block>-->

@@ -85,6 +85,12 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.api.getHeaderQuote().subscribe(quote => {
       this.quote = quote;
+      if (isPlatformBrowser(this.platformId)) {
+        setTimeout(() => {
+          this.topHeaderHeight = this.top.nativeElement.offsetHeight;
+          this.updateHeaderHeightValue();
+        });
+      }
     });
     this.menuService.getGlobalMenu().subscribe((elements) => {
       this.menuElements = elements;

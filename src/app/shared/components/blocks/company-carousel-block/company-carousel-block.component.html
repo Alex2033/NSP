@@ -1,7 +1,7 @@
 <div class="carousel-wrapper">
     <header class="carousel-header">
         <h3>
-            {{ carousel.header }}
+            {{ data.title }}
         </h3>
         <div class="control-buttons" *ngIf="screen !== 'sm'">
             <div class="control-button"(click)="companyCarousel.swiper.slidePrev()">
@@ -19,8 +19,8 @@
     <div class="carousel-container">
         <div class="swiper-container" [swiper]="config" #companyCarousel>
             <div class="swiper-wrapper">
-                <div class="swiper-slide" *ngFor="let slide of carousel.slides">
-                    <img [src]="slide" alt="slide image">
+                <div class="swiper-slide" *ngFor="let image of data.images">
+                  <app-responsive-image [xl]="image.thumbXl" [lg]="image.thumbLg" [md]="image.thumbMd" [xs]="image.thumbSm" [sm]="image.thumbSm" [alt]="image.alt" [title]="image.title"></app-responsive-image>
                 </div>
             </div>
         </div>

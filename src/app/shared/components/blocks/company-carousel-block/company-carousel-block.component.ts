@@ -9,17 +9,7 @@ import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 })
 export class CompanyCarouselBlockComponent implements OnInit {
 
-  @Input() carousel = {
-    header: 'Партнеры',
-    slides: [
-      'https://valo-spb-official.ru/image/catalog/main/favicon.png',
-      'https://valo-spb-official.ru/image/catalog/main/favicon.png',
-      'https://valo-spb-official.ru/image/catalog/main/favicon.png',
-      'https://valo-spb-official.ru/image/catalog/main/favicon.png',
-      'https://valo-spb-official.ru/image/catalog/main/favicon.png',
-      'https://valo-spb-official.ru/image/catalog/main/favicon.png',
-    ]
-  };
+  @Input() data;
 
   screen: string;
 
