@@ -13,6 +13,10 @@
         text-align: center;
         flex-direction: column;
     }
+
+    @include media-breakpoint-down(sm) {
+        justify-content: center;
+    }
 }
 
 .card-img {

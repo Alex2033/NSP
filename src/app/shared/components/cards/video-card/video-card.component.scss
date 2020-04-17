@@ -4,8 +4,23 @@
 :host {
     display: block;
 
-    @include media-breakpoint-down(sm) {
-        height: 306px !important;
+    position: relative;
+
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        padding-top: 100%;
+    }
+
+    ::ng-deep {
+        > * {
+            position: absolute !important;
+            top: 0px;
+            left: 0px;
+            bottom: 0px;
+            right: 0px;
+        }
     }
 }
 
