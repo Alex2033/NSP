@@ -12,7 +12,7 @@ import {isPlatformBrowser} from '@angular/common';
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit, AfterViewInit {
-  @ViewChild(NgScrollbar, {static: false}) scrollbarRef: NgScrollbar
+  @ViewChild(NgScrollbar, {static: false}) scrollbarRef: NgScrollbar;
   isBrowser = false;
   articles: ArticleCard[] = [];
   screen: string;

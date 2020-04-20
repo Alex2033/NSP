@@ -1,6 +1,11 @@
 @import "responsive";
 
 .text-block-content {
+  & > * {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
   ::ng-deep {
     h1, h2, h3, h4, h5, h6 {
       margin-bottom: 24px;
@@ -18,12 +23,9 @@
     }
 
     p {
-      &:first-child {
-        margin-top: 0;
-      }
       font-size: 16px;
       line-height: 1.625;
-      margin-top: 28px;
+      margin-bottom: 28px;
       //margin-bottom: 32px; // Отступ достигается за счёт <br>, который приходит с сервера
 
       @include media-breakpoint-down(sm) {

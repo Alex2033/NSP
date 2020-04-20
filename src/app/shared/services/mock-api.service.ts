@@ -3337,7 +3337,136 @@ export class MockApiService {
           detailImageXl: 'https://images.unsplash.com/photo-1462774603919-1d8087e62cad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=80',
           detailImageLg: 'https://images.unsplash.com/photo-1462774603919-1d8087e62cad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=80',
           detailImageMd: 'https://images.unsplash.com/photo-1462774603919-1d8087e62cad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=80',
-          detailImageSm: 'https://images.unsplash.com/photo-1462774603919-1d8087e62cad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=80'
+          detailImageSm: 'https://images.unsplash.com/photo-1462774603919-1d8087e62cad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=80',
+          content: [
+            {
+              type: 'text',
+              data:
+                '<h3 #description>Описание объекта</h3>\n' +
+                '  <p>ЖК «LIFE-Лесная» представляет собой шесть жилых домов высотой от 10 до 13 этажей. В них запроектировано в общей\n' +
+                '    сложности 1791 квартира (195 тыс. кв.м), почти половина из которых – двухкомнатные. Квартирография включает как\n' +
+                '    традиционные квартиры с изолированными комнатами и кухней, так и востребованные варианты европланировок. В квартирах\n' +
+                '    верхних этажей предусмотрена возможность организации камина. Подземный паркинг рассчитан на 1290 машино-мест.\n' +
+                '    Технология строительства – монолитная. Первая очередь, состоящая из двух корпусов на 480 квартир, была сдана в конце\n' +
+                '    прошлого года. Жильё передадут либо с предчистовой отдел-кой, либо «под ключ» – на выбор покупателя. У него также\n' +
+                '    есть возможность заказать дополнительные опции в зависимости от выбранного пакета: замена ламината на паркет,\n' +
+                '    установка тёплого пола, премиальная сантехника и электрическое оборудование. </p>\n' +
+                '\n' +
+                '  <h3>Условия покупки</h3>\n' +
+                '  <ul>\n' +
+                '    <li>\n' +
+                '      100%-я оплата по договору долевого участия\n' +
+                '    </li>\n' +
+                '    <li>\n' +
+                '      Заключение договора купли-продажи (для готовых корпусов)\n' +
+                '    </li>\n' +
+                '    <li>\n' +
+                '      Ипотека (16 банков-партнёров)\n' +
+                '    </li>\n' +
+                '    <li>\n' +
+                '      Рассрочка (несколько программ)\n' +
+                '    </li>\n' +
+                '  </ul>\n' +
+                '  \n' +
+                '  <hr>\n' +
+                '\n' +
+                '  <h3>Расположение</h3>\n' +
+                '  <p>Жилой квартал LIFE-Лесная расположен на северо-востоке Санкт-Петербурга, в Выборгском районе, по адресу: улица\n' +
+                '    Новолитовская.</p>\n' +
+                '  <p><strong>В шаговой доступности от квартала</strong> — станция метро «Лесная» (500 метров) и остановки наземного\n' +
+                '    общественного транспорта.</p>\n' +
+                '  <p><strong>На автомобиле</strong> время в пути до исторического центра города составит 10 минут, до Петроградской\n' +
+                '    стороны – 5 минут.</p>\n' +
+                '  <p>Здесь легко планировать и дальние поездки: в 10-15 минутах выезды на Западный скоростной диаметр и кольцевую\n' +
+                '    автодорогу. Дорога до аэропорта, железнодорожных и морских вокзалов не займет много времени.</p>'
+            },
+            {
+              type: 'location',
+              data: {
+                showSocialFacilities: false,
+                latitude: 59.983134,
+                longitude: 30.356085,
+                name: 'Название ЖК'
+              },
+              size: 'full-width'
+            },
+            {
+              type: 'text',
+              data: '<h3>Планировки</h3>\n' +
+                '    <p>Предложение актуально на дату публикации (01.04.2019 г.)</p>'
+            },
+            {
+              type: 'apartment_layout',
+              data: {
+                roomsCount: '1',
+                area: '32.98',
+                price: '2209660',
+                description: '',
+                imageXl: 'https://nsp.ru/files/zhk/2/9_flat_orig.png',
+                imageLg: 'https://nsp.ru/files/zhk/2/9_flat_orig.png',
+                imageMd: 'https://nsp.ru/files/zhk/2/9_flat_orig.png',
+                imageSm: 'https://nsp.ru/files/zhk/2/9_flat_orig.png',
+                image_title: null,
+                image_alt: null
+              }
+            },
+            {
+              type: 'apartment_layout',
+              data: {
+                roomsCount: '2',
+                area: '51.33',
+                price: '3285120',
+                description: '',
+                imageXl: 'https://nsp.ru/files/zhk/2/11_flat_orig.png',
+                imageLg: 'https://nsp.ru/files/zhk/2/11_flat_orig.png',
+                imageMd: 'https://nsp.ru/files/zhk/2/11_flat_orig.png',
+                imageSm: 'https://nsp.ru/files/zhk/2/11_flat_orig.png',
+                image_title: null,
+                image_alt: null
+              }
+            },
+            {
+              type: 'apartment_layout',
+              data: {
+                roomsCount: '3',
+                area: '76.18',
+                price: '4646980',
+                description: '',
+                imageXl: 'https://nsp.ru/files/zhk/2/13_flat_orig.png',
+                imageLg: 'https://nsp.ru/files/zhk/2/13_flat_orig.png',
+                imageMd: 'https://nsp.ru/files/zhk/2/13_flat_orig.png',
+                imageSm: 'https://nsp.ru/files/zhk/2/13_flat_orig.png',
+                image_title: null,
+                image_alt: null
+              }
+            },
+            {
+              type: 'gallery',
+              size: 'big',
+              data: {
+                images: [
+                  {
+                    thumbXl: 'https://nsp.ru/files/zhk/2/10_980.jpg',
+                    thumbLg: 'https://nsp.ru/files/zhk/2/10_980.jpg',
+                    thumbMd: 'https://nsp.ru/files/zhk/2/10_980.jpg',
+                    thumbSm: 'https://nsp.ru/files/zhk/2/10_980.jpg',
+                  },
+                  {
+                    thumbXl: 'https://nsp.ru/files/zhk/2/312_980.jpg',
+                    thumbLg: 'https://nsp.ru/files/zhk/2/312_980.jpg',
+                    thumbMd: 'https://nsp.ru/files/zhk/2/312_980.jpg',
+                    thumbSm: 'https://nsp.ru/files/zhk/2/312_980.jpg',
+                  },
+                  {
+                    thumbXl: 'https://nsp.ru/files/zhk/2/325_980.jpg',
+                    thumbLg: 'https://nsp.ru/files/zhk/2/325_980.jpg',
+                    thumbMd: 'https://nsp.ru/files/zhk/2/325_980.jpg',
+                    thumbSm: 'https://nsp.ru/files/zhk/2/325_980.jpg',
+                  }
+                ]
+              }
+            }
+          ]
         }
       }
     );

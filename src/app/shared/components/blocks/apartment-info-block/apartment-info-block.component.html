@@ -17,8 +17,7 @@
                 <div class="apartment-info-text">Стоимость</div>
             </div>
         </div>
-        <div class="apartment-text">
-            <p>{{ data.description }}</p>
+        <div class="apartment-text" *ngIf="data.description" [innerHTML]="data.description | paragraphs">
         </div>
     </div>
 </div>

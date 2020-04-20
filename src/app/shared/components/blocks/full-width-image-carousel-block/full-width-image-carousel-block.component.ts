@@ -16,7 +16,8 @@ export class FullWidthImageCarouselBlockComponent implements OnInit {
 
   carouselConfig: SwiperConfigInterface = {
     slidesPerView: 1,
-    loop: false
+    loop: false,
+    autoHeight: true
   };
 
   constructor(private responsive: ResponsiveService) { }

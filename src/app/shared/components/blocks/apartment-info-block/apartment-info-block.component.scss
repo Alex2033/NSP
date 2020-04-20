@@ -38,8 +38,6 @@
 
 .aparment-info {
     display: flex;
-    margin-bottom: 53px;
-
     > * {
         &:not(:last-child) {
             @include media-breakpoint-up(md) {
@@ -103,7 +101,7 @@
 .apartment-text {
     font-size: 15px;
     line-height: 1.533333;
-
+    margin-top: 53px;
     @include media-breakpoint-down(sm) {
         font-size: 13px;
         line-height: 1.54;

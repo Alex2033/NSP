@@ -61,7 +61,6 @@ import {ParagraphsPipe} from './pipes/paragraphs.pipe';
 import { DomainPipe } from './pipes/domain.pipe';
 import { MenuComponent } from './components/menu/menu.component';
 import { MobileCardsSliderComponent } from './components/mobile-cards-slider/mobile-cards-slider.component';
-import { EditorContentComponent } from './components/editor-content/editor-content.component';
 import {LazyLoadImageModule} from 'ng-lazyload-image';
 import { NiceDatePipe } from './pipes/nice-date.pipe';
 import { YoutubeVideoIdPipe } from './pipes/youtube-video-id.pipe';
@@ -129,7 +128,6 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     DomainPipe,
     MenuComponent,
     MobileCardsSliderComponent,
-    EditorContentComponent,
     NiceDatePipe,
     YoutubeVideoIdPipe,
     ArticleFeedComponent,
@@ -202,7 +200,6 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     DomainPipe,
     MenuComponent,
     MobileCardsSliderComponent,
-    EditorContentComponent,
     LazyLoadImageModule,
     NiceDatePipe,
     YoutubeVideoIdPipe,

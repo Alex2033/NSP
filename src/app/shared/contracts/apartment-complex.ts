@@ -30,4 +30,5 @@ export interface ApartmentComplex {
   logoSm?: string;
   logoTitle?: string | null;
   logoAlt?: string | null;
+  content?: any;
 }
