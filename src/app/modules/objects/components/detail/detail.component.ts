@@ -1,9 +1,10 @@
-import {Component, OnInit, ViewChild, AfterViewInit} from '@angular/core';
+import {Component, OnInit, ViewChild, AfterViewInit, Inject, PLATFORM_ID} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ApartmentComplex} from '../../../../shared/contracts/apartment-complex';
 import {ArticleCard} from '../../../../shared/contracts/article-card';
 import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 import { NgScrollbar } from 'ngx-scrollbar';
+import {isPlatformBrowser} from '@angular/common';
 
 @Component({
   selector: 'app-detail',
@@ -12,7 +13,7 @@ import { NgScrollbar } from 'ngx-scrollbar';
 })
 export class DetailComponent implements OnInit, AfterViewInit {
   @ViewChild(NgScrollbar, {static: false}) scrollbarRef: NgScrollbar
-
+  isBrowser = false;
   articles: ArticleCard[] = [];
   screen: string;
   scrollPosition: number = 0;
@@ -93,7 +94,7 @@ export class DetailComponent implements OnInit, AfterViewInit {
 
   apartmentComplex: ApartmentComplex;
 
-  constructor(private route: ActivatedRoute, private responsive: ResponsiveService) {
+  constructor(private route: ActivatedRoute, private responsive: ResponsiveService, @Inject(PLATFORM_ID) private platformId: any) {
   }
 
   ngOnInit() {
@@ -101,7 +102,9 @@ export class DetailComponent implements OnInit, AfterViewInit {
       this.apartmentComplex = this.route.snapshot.data.content.apartmentComplex;
       this.articles = this.route.snapshot.data.articles.items;
     });
-
+    if (isPlatformBrowser(this.platformId)) {
+      this.isBrowser = true;
+    }
     this.responsive.screen.subscribe((screen) => {
       this.screen = screen;
     });
@@ -124,7 +127,7 @@ export class DetailComponent implements OnInit, AfterViewInit {
       });
     }
   }
-    
+
   scrollToElement($element): void {
     $element.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'});
   }

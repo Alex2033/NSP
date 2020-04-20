@@ -1,6 +1,11 @@
 @import "theme";
 @import "responsive";
-
+:host {
+  @include media-breakpoint-down(sm) {
+    padding-top: 16px;
+    display: block;
+  }
+}
 .company-info {
     margin-bottom: 48px;
 

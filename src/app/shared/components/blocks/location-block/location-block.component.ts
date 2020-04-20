@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, Inject, PLATFORM_ID} from '@angular/core';
+import {isPlatformBrowser} from '@angular/common';
 
 @Component({
   selector: 'app-location-block',
@@ -8,15 +9,19 @@ import { Component, OnInit, Input } from '@angular/core';
 export class LocationBlockComponent implements OnInit {
 
   @Input() data;
-
+  isBrowser = false;
   public placemarkProperties = {
     iconCaption: 'Апарт-комплекс Valo'
   };
 
-  constructor() { }
+  constructor(@Inject(PLATFORM_ID) private platformId: any) {
+  }
 
   ngOnInit() {
     this.placemarkProperties.iconCaption = this.data.name;
+    if (isPlatformBrowser(this.platformId)) {
+      this.isBrowser = true;
+    }
   }
 
 }

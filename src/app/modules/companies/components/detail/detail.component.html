@@ -1,6 +1,7 @@
 <div class="container">
-  <div class="page-topline" *ngIf="screen !== 'sm'">
-    <a [routerLink]="['/companies']" class="h5">Компании</a>
+  <div class="page-topline">
+    <a [routerLink]="['/companies']" class="h5" *ngIf="screen !== 'sm'">Компании</a>
+    <a [routerLink]="['/companies']" class="h1" *ngIf="screen === 'sm'">Компании</a>
     <div class="page-topline-element">
 <!--      Есть неточность?-->
     </div>
@@ -104,7 +105,7 @@
           </div>
         </div>
       </div>
-      <div class="col-xl-3 col-lg-7 order-xl-2 order-lg-2" *ngIf="company.latitude && company.longitude">
+      <div class="col-xl-3 col-lg-7 order-xl-2 order-lg-2" *ngIf="company.latitude && company.longitude && isBrowser">
         <div class="company-map">
           <angular-yandex-map [center]="[company.latitude, company.longitude]" [zoom]="17">
             <angular-yandex-placemark
