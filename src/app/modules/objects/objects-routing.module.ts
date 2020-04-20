@@ -21,7 +21,7 @@ const routes: Routes = [
     path: ':apartment_complex',
     component: DetailComponent,
     resolve: {
-      content: ApartmentComplexResolver,
+      apartmentComplex: ApartmentComplexResolver,
       articles: ArticlesResolver
     }
   }

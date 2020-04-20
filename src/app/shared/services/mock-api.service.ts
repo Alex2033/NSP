@@ -3308,24 +3308,16 @@ export class MockApiService {
     );
   }
 
-  getApartmentComplexDetails(apartmentComplexId): Observable<{ apartmentComplex: ApartmentComplex }> {
+  getApartmentComplexDetails(apartmentComplexId): Observable<{ data: ApartmentComplex }> {
     return of(
       {
-        apartmentComplex: {
+        data: {
           id: 1,
           name: 'ЖК «LIFE-Лесная»',
           previewText: 'Зелёный квартал в тихом районе. Место, рядом с парками и садами, где для спокойной семейной жизни продумана каждая деталь. Квартал располагается в непосредственной близости от исторического центра и Петроградской стороны, в пяти минутах ходьбы от станции метро «Лесная».',
           typeId: 2,
           site: 'https://lesnaya.life',
-          descriptionText: 'Текст описания',
-          locationText: 'Текст расположения',
-          latitude: 59.94138,
-          longitude: 30.335681,
           areaName: 'Приморский район',
-          imageCollectionXl: [],
-          imageCollectionLg: [],
-          imageCollectionMd: [],
-          imageCollectionSm: [],
           logoXl: 'https://i.ibb.co/QnFV5Ww/image.png',
           logoLg: 'https://i.ibb.co/QnFV5Ww/image.png',
           logoMd: 'https://i.ibb.co/QnFV5Ww/image.png',

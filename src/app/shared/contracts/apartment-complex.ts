@@ -3,15 +3,7 @@ export interface ApartmentComplex {
   name: string;
   previewText?: string;
   site?: string;
-  descriptionText?: string;
-  locationText?: string;
-  latitude?: number;
-  longitude?: number;
   areaName: string;
-  imageCollectionXl?: string[];
-  imageCollectionLg?: string[];
-  imageCollectionMd?: string[];
-  imageCollectionSm?: string[];
   imageXl: string;
   imageLg: string;
   imageMd: string;
@@ -31,4 +23,8 @@ export interface ApartmentComplex {
   logoTitle?: string | null;
   logoAlt?: string | null;
   content?: any;
+
+  metaTitle?: string;
+  metaDescription?: string;
+  metaKeywords?: string;
 }
