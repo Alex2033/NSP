@@ -96,6 +96,9 @@
     <ng-container *ngSwitchCase="'logo_gallery'">
       <app-company-carousel-block [data]="block.data"></app-company-carousel-block>
     </ng-container>
+    <ng-container *ngSwitchCase="'event_registration'">
+      <app-event-registration-block [data]="block.data"></app-event-registration-block>
+    </ng-container>
   </ng-container>
 </ng-container>
 <!--<app-event-registration-block></app-event-registration-block>-->

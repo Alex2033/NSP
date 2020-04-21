@@ -1,25 +1,26 @@
-<div class="registration-block">
+<div class="registration-block" *ngIf="allowEventRegistration" [id]="'event-' + data.id + '-registration-block'">
     <div class="registrations-headings">
         <h3 class="top-heading">Регистрация на мероприятие:</h3>
-        <h3 class="primary">Международная научно-практическая конференция «Световой дизайн»</h3>
+        <h3 class="primary">{{ data.name }}</h3>
     </div>
     <div class="registration-info">
         <div class="registration-info-item">
             <div class="caption">Адрес проведения</div>
-            <p>Главный штаб, Государственный Эрмитаж; АРХКЛУБ на территории Севкабель Порта</p>
+            <p>{{ data.address }}</p>
         </div>
         <div class="registration-info-item right">
             <div class="caption">Дата проведения</div>
-            <p>20 сентября 2019, 10:00 – 12:00</p>
+            <p>{{ eventDisplayDate }}</p>
         </div>
     </div>
-    <form [formGroup]="formGroup" class="modal-form">
-        <app-text [placeholder]="'Имя*'" [formControlName]="'name'" class="modal-control"></app-text>
-        <app-text [placeholder]="'Должность*'" [formControlName]="'position'" class="modal-control"></app-text>
-        <app-text [placeholder]="'Компания*'" [formControlName]="'company'" class="modal-control full-width"></app-text>
-        <app-text [placeholder]="'Номера телефона*'" [formControlName]="'phone'" class="modal-control"></app-text>
-        <app-text [placeholder]="'E-mail*'" [formControlName]="'email'" class="modal-control"></app-text>
-        <app-checkbox [label]="'Согласен на'" [dataProcessingText]="'обработку данных'" [ngModel]="agree"></app-checkbox>
-        <button type="submit" class="button secondary submit-button" (click)="submit()">Зарегистрироваться</button>
+    <form [formGroup]="formGroup" [appServerSideValidation]="formErrors" (submit)="submit()"  class="modal-form">
+        <app-text [placeholder]="'Имя'" [formControlName]="'name'" class="modal-control"></app-text>
+        <app-text [placeholder]="'Должность'" [formControlName]="'position'" class="modal-control"></app-text>
+        <app-text [placeholder]="'Компания'" [formControlName]="'company_name'" class="modal-control full-width"></app-text>
+        <app-text [placeholder]="'Номера телефона'" [formControlName]="'phone'" class="modal-control"></app-text>
+        <app-text [placeholder]="'E-mail'" [formControlName]="'email'" class="modal-control"></app-text>
+        <app-checkbox [label]="'Согласен на'" [dataProcessingText]="'обработку данных'" [formControlName]="'agree'"></app-checkbox>
+        <button type="submit" class="button secondary submit-button" *ngIf="!showConfirm">Зарегистрироваться</button>
+        <div *ngIf="showConfirm">Ваша заявка успешно отправлена</div>
     </form>
 </div>

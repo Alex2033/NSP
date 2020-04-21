@@ -504,6 +504,10 @@ export class MockApiService {
     return of();
   }
 
+  sendEventRegistration(data) {
+    return of();
+  }
+
   addArticleView(articleId) {
     return of();
   }
@@ -2769,6 +2773,7 @@ export class MockApiService {
             ],
             relatedArticleCards: cards,
             event: route === '/event' ? {
+              id: 1,
               name: 'Международная научно-практическая конференция «Световой дизайн»',
               type: 'Конференция',
               startedAt: 1573746483,

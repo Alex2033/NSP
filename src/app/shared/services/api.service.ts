@@ -123,6 +123,12 @@ export class ApiService {
     }));
   }
 
+  sendEventRegistration(data) {
+    return this.apiClient.post(`/api/site/send_event_registration`, data).pipe(map((response) => {
+      return deserialize(response);
+    }));
+  }
+
   getCompany(companyId): Observable<Company> {
     return this.apiClient.get(`/api/site/companies/${companyId}`).pipe(map((response) => {
       return deserialize(response) as Company;
