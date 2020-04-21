@@ -30,6 +30,7 @@
     height: 256px;
     display: flex;
     align-items: center;
+    cursor: pointer;
     justify-content: center;
   @include media-breakpoint-down(sm) {
     margin: 0 auto;

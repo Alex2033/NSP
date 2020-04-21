@@ -25,9 +25,9 @@
     //transform: translate(-50%, -50%);
   }
 
-  @include media-breakpoint-down(sm) {
-    padding-bottom: 100%;
-  }
+  //@include media-breakpoint-down(sm) {
+  //  padding-bottom: 100%;
+  //}
 }
 
 .control-panel {
@@ -50,7 +50,8 @@
 }
 
 .swiper-slide {
-  @include media-breakpoint-down(sm) {
-    width: 248px;
-  }
+  cursor: pointer;
+  //@include media-breakpoint-down(sm) {
+  //  width: 248px;
+  //}
 }

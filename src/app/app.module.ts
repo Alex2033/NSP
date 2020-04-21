@@ -19,6 +19,7 @@ import {ServerDataComponent} from './shared/components/server-data/server-data.c
 import {ServerDataResolver} from './shared/resolvers/server-data.resolver';
 import {RouteDataResolver} from './shared/resolvers/route-data.resolver';
 import {NotFoundComponent} from './shared/components/not-found/not-found.component';
+import {ModalGalleryComponent} from './shared/components/modal/modal-gallery/modal-gallery.component';
 registerLocaleData(localeRu);
 
 @NgModule({
@@ -29,6 +30,7 @@ registerLocaleData(localeRu);
     ModalNewsOfferFormComponent,
     ModalVideoComponent,
     ModalLoginComponent,
+    ModalGalleryComponent,
     ServerDataComponent,
     NotFoundComponent
   ],

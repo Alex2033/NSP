@@ -3403,8 +3403,12 @@ export class MockApiService {
                 imageLg: 'https://nsp.ru/files/zhk/2/9_flat_orig.png',
                 imageMd: 'https://nsp.ru/files/zhk/2/9_flat_orig.png',
                 imageSm: 'https://nsp.ru/files/zhk/2/9_flat_orig.png',
-                image_title: null,
-                image_alt: null
+                thumbXl: 'https://nsp.ru/files/zhk/2/9_flat_orig.png',
+                thumbLg: 'https://nsp.ru/files/zhk/2/9_flat_orig.png',
+                thumbMd: 'https://nsp.ru/files/zhk/2/9_flat_orig.png',
+                thumbSm: 'https://nsp.ru/files/zhk/2/9_flat_orig.png',
+                title: null,
+                alt: null
               }
             },
             {

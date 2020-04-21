@@ -206,7 +206,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ArticleFeedComponent,
     ServerSideValidationDirective,
     EventCalendarCardComponent,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    SwiperModule
   ],
   providers: [
     {

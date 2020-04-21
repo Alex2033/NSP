@@ -1,0 +1,44 @@
+@import "responsive";
+:host  {
+  @include media-breakpoint-only(xl) {
+    width: 1240px;
+  }
+  @include media-breakpoint-only(lg) {
+    width: 940px;
+  }
+  @include media-breakpoint-down(md) {
+    width: 100%;
+  }
+  ::ng-deep img {
+    max-height: calc(100vh - 100px) !important;
+    margin: 0 auto;
+  }
+}
+.container {
+  position: relative;
+  padding: 0 !important;
+}
+
+.control-panel {
+  color: #fff;
+  display: flex;
+  width: 100%;
+  margin-top: 32px;
+  align-items: center;
+  .control-buttons {
+    margin-left: auto;
+  }
+}
+.modal-close {
+  top: -32px;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  @include media-breakpoint-down(sm) {
+    right: 16px;
+  }
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
