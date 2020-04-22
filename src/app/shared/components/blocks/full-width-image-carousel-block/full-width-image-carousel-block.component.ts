@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { ResponsiveService } from 'src/app/shared/services/responsive.service';
+import {ModalService} from '../../../services/modal.service';
 
 @Component({
   selector: 'app-full-width-image-carousel-block',
@@ -16,10 +17,11 @@ export class FullWidthImageCarouselBlockComponent implements OnInit {
 
   carouselConfig: SwiperConfigInterface = {
     slidesPerView: 1,
-    loop: false
+    loop: false,
+    autoHeight: true
   };
 
-  constructor(private responsive: ResponsiveService) { }
+  constructor(private responsive: ResponsiveService, public modal: ModalService) { }
 
   ngOnInit() {
     this.responsive.screen.subscribe((screen) => {
@@ -34,5 +36,7 @@ export class FullWidthImageCarouselBlockComponent implements OnInit {
       }
     });
   }
-
+  openModal(index) {
+    this.modal.open('gallery', {images: this.images, index});
+  }
 }

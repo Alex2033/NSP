@@ -22,12 +22,12 @@ export class IndexComponent implements OnInit {
       this.title.setTitle(this.data.metaTitle ? this.data.metaTitle : this.data.title + ' - NSP.ru');
       this.meta.updateTag({
           name: 'description',
-          content: this.data.metaDescription
-        }
+          content: this.data.metaDescription ? this.data.metaDescription : ''
+      }
       );
       this.meta.updateTag({
           name: 'keywords',
-          content: this.data.metaKeywords
+          content: this.data.metaKeywords ? this.data.metaKeywords : ''
         }
       );
     });

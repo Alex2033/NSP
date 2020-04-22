@@ -13,7 +13,7 @@
     </div>
     <div class="swiper-container" [swiper]="carouselConfig" [(index)]="index" #cardCarousel>
         <div class="swiper-wrapper">
-            <div class="swiper-slide" *ngFor="let image of images">
+            <div class="swiper-slide" *ngFor="let image of images" (click)="openModal(index)">
               <app-responsive-image [lazyLoad]="false"  [xl]="image.thumbXl" [lg]="image.thumbLg" [md]="image.thumbMd" [xs]="image.thumbSm" [sm]="image.thumbSm" [alt]="image.alt" [title]="image.title"></app-responsive-image>
             </div>
             <div class="swiper-slide">

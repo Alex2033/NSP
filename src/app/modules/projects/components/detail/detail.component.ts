@@ -1,11 +1,12 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import { ResponsiveService } from 'src/app/shared/services/responsive.service';
+import {AfterViewInit, Component, Inject, OnInit, PLATFORM_ID, ViewChild} from '@angular/core';
+import {ResponsiveService} from 'src/app/shared/services/responsive.service';
 import {ActivatedRoute} from '@angular/router';
 import {Project} from '../../../../shared/contracts/project';
 import {Meta, Title} from '@angular/platform-browser';
-import { NgScrollbar } from 'ngx-scrollbar';
+import {NgScrollbar} from 'ngx-scrollbar';
 import {MenuService} from '../../../../shared/services/menu.service';
 import {MenuElement} from '../../../../shared/contracts/menu-element';
+import {isPlatformBrowser} from '@angular/common';
 
 @Component({
   selector: 'app-detail',
@@ -27,7 +28,9 @@ export class DetailComponent implements OnInit, AfterViewInit {
     public responsive: ResponsiveService,
     private route: ActivatedRoute,
     protected title: Title,
-    protected meta: Meta) { }
+    @Inject(PLATFORM_ID) private platformId: any,
+    protected meta: Meta) {
+  }
 
   ngOnInit() {
     this.route.data.subscribe((data) => {
@@ -37,12 +40,12 @@ export class DetailComponent implements OnInit, AfterViewInit {
       this.title.setTitle(this.project.metaTitle ? this.project.metaTitle : this.project.title + ' - NSP.ru');
       this.meta.updateTag({
           name: 'description',
-          content: this.project.metaDescription
+          content: this.project.metaDescription ? this.project.metaDescription : ''
         }
       );
       this.meta.updateTag({
           name: 'keywords',
-          content: this.project.metaKeywords
+          content: this.project.metaKeywords ? this.project.metaKeywords : ''
         }
       );
     });
@@ -70,9 +73,11 @@ export class DetailComponent implements OnInit, AfterViewInit {
   }
 
   hideRightControl() {
-    setTimeout(() => {
-      this.showRightControl = false;
-    }, 0);
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
+        this.showRightControl = false;
+      }, 0);
+    }
   }
 
 }

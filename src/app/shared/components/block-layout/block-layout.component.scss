@@ -33,6 +33,12 @@
 .full-width {
   width: 100%;
 }
+.button-block {
+  text-align: center;
+  a  {
+    display: inline-block;
+  }
+}
 app-company-card, app-person-card, app-object-card, app-video-card, app-material-card {
   @include media-breakpoint-up(md) {
     width: 306px;

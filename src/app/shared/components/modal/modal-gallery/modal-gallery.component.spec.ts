@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditorContentComponent } from './editor-content.component';
+import { ModalGalleryComponent } from './modal-gallery.component';
 
-describe('EditorContentComponent', () => {
-  let component: EditorContentComponent;
-  let fixture: ComponentFixture<EditorContentComponent>;
+describe('ModalGalleryComponent', () => {
+  let component: ModalGalleryComponent;
+  let fixture: ComponentFixture<ModalGalleryComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EditorContentComponent ]
+      declarations: [ ModalGalleryComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EditorContentComponent);
+    fixture = TestBed.createComponent(ModalGalleryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

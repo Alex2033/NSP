@@ -2,52 +2,56 @@
 @import "responsive";
 
 :host {
-    display: block;
-
-    @include media-breakpoint-down(sm) {
-        margin-left: -12px;
-        width: 100vw;
-    }
+  display: block;
+  background-color: $light-gray;
+  @include media-breakpoint-down(sm) {
+    margin-left: -12px;
+    width: 100vw;
+  }
 }
 
 .carousel-image {
-    height: 0;
-    width: 100%;
-    padding-bottom: 55.82%;
+  //height: 0;
+  width: 100%;
+  //padding-bottom: 55.82%;
+  ::ng-deep img {
+    margin: 0 auto;
+    //position: absolute;
+    ////height: 100%;
+    ////width: 100%;
+    ////object-fit: cover;
+    //top: 50%;
+    //left: 50%;
+    //transform: translate(-50%, -50%);
+  }
 
-    ::ng-deep img {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-    }
-
-    @include media-breakpoint-down(sm) {
-        padding-bottom: 100%;
-    }
+  //@include media-breakpoint-down(sm) {
+  //  padding-bottom: 100%;
+  //}
 }
 
 .control-panel {
-    background-color: $text-color;
-    padding: 16px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: $text-color;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .slides-number {
-    color: $light-color;
-    font-size: 15px;
-    line-height: 1.5333;
-    user-select: none;
+  color: $light-color;
+  font-size: 15px;
+  line-height: 1.5333;
+  user-select: none;
 }
 
 .control-button {
-    user-select: none;
+  user-select: none;
 }
 
 .swiper-slide {
-    @include media-breakpoint-down(sm) {
-        width: 248px;
-    }
+  cursor: pointer;
+  //@include media-breakpoint-down(sm) {
+  //  width: 248px;
+  //}
 }

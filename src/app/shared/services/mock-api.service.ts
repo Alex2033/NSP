@@ -504,6 +504,10 @@ export class MockApiService {
     return of();
   }
 
+  sendEventRegistration(data) {
+    return of();
+  }
+
   addArticleView(articleId) {
     return of();
   }
@@ -2633,7 +2637,7 @@ export class MockApiService {
           type: 'article',
           data: {
             id: route === '/article' ? 1 : 2,
-            title: route === '/article' ? 'Апартаменты на паузе' : 'Новогодний саммит РГУД',
+            title: route === '/article' ? 'ВТБ играет на опережение' : 'Новогодний саммит РГУД',
             slug: 'apartamenti-na-pauze',
             directorySlug: 'project',
             directoryName: 'Жилые комплексы',
@@ -2654,142 +2658,38 @@ export class MockApiService {
             ],
             publishedAt: 1584608518,
             viewsCount: 5429,
-            previewText: 'На начало апреля 2019-го первичный рынок апарт-отелей в петербургской агломерации достиг 573 000 кв.м. Из них 359 000 кв.м относятся к сервисным объектам, остальные – в псевдожилью. На продажу выставлено 221 200 «квадратов», в том числе 134 700 метров в сервисных комплексах, подсчитали в КЦ «Петербургская Недвижимость».',
+            previewText: 'Банк ВТБ начинает приём заявок по новой ипотечной госпрограмме субсидирования со ставкой 6,5% годовых.',
             commentsCount: 5,
             commentsAllowed: true,
             content: [
               {
                 type: 'image',
-                config: {
-                  imageUrl: 'https://images.unsplash.com/photo-1461409971633-aa0e46732112?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=80',
-                  caption: '3D визуализация апарт–комплекса «Valo»'
+                data: {
+                  text: null,
+                  imageXl: 'https://nsp.ru/files/newsImages/e6/a0/35733_big.jpg',
+                  imageLg: 'https://nsp.ru/files/newsImages/e6/a0/35733_big.jpg',
+                  imageMd: 'https://nsp.ru/files/newsImages/e6/a0/35733_big.jpg',
+                  imageSm: 'https://nsp.ru/files/newsImages/e6/a0/35733_big.jpg',
+                  imageTitle: null,
+                  imageAlt: null
                 },
-                // size: 'big'
+                size: 'float-left'
               },
-
               {
                 type: 'text',
-                data: '<p>На начало апреля 2019-го первичный рынок апарт-отелей в петербургской агломерации достиг 573 000 кв.м. Из них 359 000 кв.м относятся к сервисным объектам, остальные – в псевдожилью. На продажу выставлено 221 200 «квадратов», в том числе 134 700 метров в сервисных комплексах, подсчитали в КЦ «Петербургская Недвижимость».</p><p>По итогам прошлого года объём этого рынка составлял 508 600 кв.м (11 900 юнитов), что сопоставимо с показателем на конец 2017-го. По данным КЦ «Петербургская Недвижимость», в продаже находилось 210 500 кв.м (4680 номеров), что на 30% меньше (по объёму и числу), чем в 2017-м. При этом продано за 2018-й 178 600 кв.м, или 4330 апартов – по числу номеров вдвое больше, чем годом ранее. По подсчётам ГК «БестЪ» номерной фонд действующих сервисных апарт-отелей составляет 3625 номеров. К 2021 году показатель достигнет 13 345 юнитов. Примерно в четверти номеров владельцы живут сами, остальные сдают в аренду. После законодательных ограничений это соотношение может серьёзно измениться, «псевджилья» станет значительно меньше. Это видно и по объектам, выведенным на рынок в 2018-м.</p>'
-              },
-
-              {
-                type: 'company',
-                companyConfig: {
-                  image: 'https://images.unsplash.com/photo-1574702256908-ab5f9ff429dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80',
-                  title: 'БестЪ. Коммерческая недвижимость',
-                  text: 'Группа компаний «БестЪ» основана в 1997 году и является одной из ведущих инвестиционно-девелоперских компаний на Северо-Западе России.',
-                  phone: '+7 (812) 380–03–55',
-                  email: 'best@bestgroup.ru',
-                  site: 'bestgroup.ru',
-                  category: 'Персоны',
-                }
-              },
-
-              {
-                type: 'text',
-                paragraphs: [
-                  {
-                    title: 'Псевдожилье'
-                  }
-                ]
-              },
-
-              {
-                type: 'video',
-                configVideo: {
-                  videoUrl: 'https://www.youtube.com/embed/nXzTaf4gHeQ',
-                },
-                // size: 'big'
-              },
-
-              {
-                type: 'text',
-                paragraphs: [
-                  {
-                    text: 'Чиновники и законодатели неоднократно пытались запретить или ограничить строительство апарт-отелей. Были предложения приравнять их к жилью.Ещё в 2017-м Минстрой внёс в Госдуму законопроект о статусе апартаментов, по которому те становятся одним из вариантов жилья. Но через год ведомство отозвало документ. Летом 2018-го один из депутатов Госдумы предложил законопроект, во многом повторяющий минстроевский. Во многом повторяющий минстроевский. В феврале 2019-го премьер-министр утвердил положение о классификации гостиниц. Документ касается и апартаментов.'
-                  },
-                ]
-              },
-
-              {
-                type: 'quote',
-                quoteConfig: {
-                  quote: 'По статистике, к псевдожилью в Петербурге можно отнести около шестидесяти процентов строящихся комплексов. Нужно быть внимательным при выборе объекта для вложений',
-                  publishedAt: 1573746483,
-                  sourceName: 'Название источника статьи',
-                  author: {
-                    avatar: 'https://images.unsplash.com/photo-1566680473674-0bbbbeab1c31?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80',
-                    firstName: 'Марина',
-                    lastName: 'Сторожевая',
-                    position: 'Директор по развитию, партнер М2Маркет '
-                  }
-                }
-              },
-
-              {
-                type: 'text',
-                paragraphs: [
-                  {
-                    text: 'Он снимает часть вопросов, но создаёт новые проблемы. Положение вводит понятие «апартотели» (так написано) – вид гостиниц, номерной фонд которых состоит исключительно из номеров категорий «студия» и «апартамент». А есть ещё «комплекс апартаментов» – гостиницы с фондом «номеров различных категорий с кухонным оборудованием и полным санузлом».'
-                  }
-                ]
-              },
-
-              {
-                type: 'carousel',
-                carouselContent: [
-                  {
-                    image: 'https://images.unsplash.com/photo-1556912173-3bb406ef7e77?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80'
-                  },
-                  {
-                    image: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80'
-                  },
-                  {
-                    image: 'https://images.unsplash.com/photo-1565183928294-7063f23ce0f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80'
-                  },
-                  {
-                    image: 'https://images.unsplash.com/photo-1564540586988-aa4e53c3d799?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80'
-                  },
-                ]
-              },
-
-              {
-                type: 'map',
-                source: 'assets/images/map.jpg'
-              },
-
-              {
-                type: 'card'
-              },
-
-              {
-                type: 'text',
-                paragraphs: [
-                  {
-                    text: 'Редакция газеты «Недвижимость и строительство Петербурга» и сайта NSP.RU приглашает участников рынка недвижимости принять участие в «круглом столе», который состоится в рамках серии тематических встреч в «Дискуссионном клубе НП».'
-                  },
-                  {
-                    text: 'В первом полугодии темпы прироста ипотечного кредитования стали падать: минус 19% по России, минус 9,7% - по СЗФО, минус 3,8% - в Петербурге. При этом жилищное кредитование остается главным драйвером в новостройках: почти половина сделок по ДДУ проходит с участием банков. В ответ на сокращение спроса на кредиты банки снизили ставки.'
-                  }
-                ]
-              },
-
-              {
-                type: 'card',
-                cardSize: 'short'
-              },
-
-              {
-                type: 'text',
-                paragraphs: [
-                  {
-                    text: 'Редакция газеты «Недвижимость и строительство Петербурга» и сайта NSP.RU приглашает участников рынка недвижимости принять участие в «круглом столе», который состоится в рамках серии тематических встреч в «Дискуссионном клубе НП».'
-                  },
-                  {
-                    text: 'В первом полугодии темпы прироста ипотечного кредитования стали падать: минус 19% по России, минус 9,7% - по СЗФО, минус 3,8% - в Петербурге. При этом жилищное кредитование остается главным драйвером в новостройках: почти половина сделок по ДДУ проходит с участием банков. В ответ на сокращение спроса на кредиты банки снизили ставки.'
-                  }
-                ]
-              },
+                data:
+                  '<p>Размер первоначального взноса – не менее 20% от стоимости новостройки. <a href="/news/25245-ipoteka-pod-6" target="_blank">Речь идёт о льготной ипотеке</a>, которую вчера предложил президент Владимир Путин. Лимит для регионов – до 3,5 млн рублей, для Москвы и Петербурга – до 8 млн рублей.</p>\n' +
+                  '\n' +
+                  '<p>«Сразу после заявления президента ВТБ начал работу над запуском новой программы, – сообщил Анатолий Печатников, заместитель председателя правления банка. – Цель – обеспечить доступность льготной ипотеки&nbsp;в&nbsp;максимально сжатые сроки. Мы первыми начинаем принимать заявки и рассчитываем выдать первый кредит под 6,5% уже в&nbsp;понедельник, 20&nbsp;апреля, не&nbsp;дожидаясь утверждения постановления правительства».</p>\n' +
+                  '\n' +
+                  '<p>ВТБ, безусловно, делает рискованный шаг. Президент заявил о том, что льготная ипотека будет выдаваться не вообще всем подряд, а на жильё комфорт-класса. А в законодательстве&nbsp;такого определения нет. Зато банк соберёт заявки тех, кто подаёт их «на эмоциях», впечатлившись выступлением президента.&nbsp;</p>\n' +
+                  '\n' +
+                  '<p>Ещё интересный вопрос: будет ли в кредитном договоре с ВТБ оговорка о неподаче заявления о кредитных каникулах? А то искушение велико: взять недорого и не платить полгода...&nbsp;&nbsp;</p>\n' +
+                  '\n' +
+                  '<p>По&nbsp;итогам первого квартала портфель ВТБ в&nbsp;сегменте жилищных кредитов вырос на&nbsp;3,5% – до&nbsp;1,74 трлн рублей. Банк выдаёт каждую четвёртую ипотеку в&nbsp;стране.</p>\n' +
+                  '\n' +
+                  '<p>По оптимистичным оценкам «ДОМ.РФ», в рамках специальной ипотеки по ставке 6,5% в течение 2020 года будет выдано не менее 250 000 ипотечных кредитов, что создаст дополнительный спрос на жильё общей площадью около 15 млн кв.м. Субсидированную ставку обещают сделать фиксированной на весь срок займа. С заявкой можно будет обратиться до 1 ноября 2020-го.</p>\n'
+              }
             ],
             asideCards: [
               {
@@ -2873,6 +2773,7 @@ export class MockApiService {
             ],
             relatedArticleCards: cards,
             event: route === '/event' ? {
+              id: 1,
               name: 'Международная научно-практическая конференция «Световой дизайн»',
               type: 'Конференция',
               startedAt: 1573746483,
@@ -3412,24 +3313,16 @@ export class MockApiService {
     );
   }
 
-  getApartmentComplexDetails(apartmentComplexId): Observable<{ apartmentComplex: ApartmentComplex }> {
+  getApartmentComplexDetails(apartmentComplexId): Observable<{ data: ApartmentComplex }> {
     return of(
       {
-        apartmentComplex: {
+        data: {
           id: 1,
           name: 'ЖК «LIFE-Лесная»',
           previewText: 'Зелёный квартал в тихом районе. Место, рядом с парками и садами, где для спокойной семейной жизни продумана каждая деталь. Квартал располагается в непосредственной близости от исторического центра и Петроградской стороны, в пяти минутах ходьбы от станции метро «Лесная».',
           typeId: 2,
           site: 'https://lesnaya.life',
-          descriptionText: 'Текст описания',
-          locationText: 'Текст расположения',
-          latitude: 59.94138,
-          longitude: 30.335681,
           areaName: 'Приморский район',
-          imageCollectionXl: [],
-          imageCollectionLg: [],
-          imageCollectionMd: [],
-          imageCollectionSm: [],
           logoXl: 'https://i.ibb.co/QnFV5Ww/image.png',
           logoLg: 'https://i.ibb.co/QnFV5Ww/image.png',
           logoMd: 'https://i.ibb.co/QnFV5Ww/image.png',
@@ -3441,7 +3334,140 @@ export class MockApiService {
           detailImageXl: 'https://images.unsplash.com/photo-1462774603919-1d8087e62cad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=80',
           detailImageLg: 'https://images.unsplash.com/photo-1462774603919-1d8087e62cad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=80',
           detailImageMd: 'https://images.unsplash.com/photo-1462774603919-1d8087e62cad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=80',
-          detailImageSm: 'https://images.unsplash.com/photo-1462774603919-1d8087e62cad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=80'
+          detailImageSm: 'https://images.unsplash.com/photo-1462774603919-1d8087e62cad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=80',
+          content: [
+            {
+              type: 'text',
+              data:
+                '<h3 #description>Описание объекта</h3>\n' +
+                '  <p>ЖК «LIFE-Лесная» представляет собой шесть жилых домов высотой от 10 до 13 этажей. В них запроектировано в общей\n' +
+                '    сложности 1791 квартира (195 тыс. кв.м), почти половина из которых – двухкомнатные. Квартирография включает как\n' +
+                '    традиционные квартиры с изолированными комнатами и кухней, так и востребованные варианты европланировок. В квартирах\n' +
+                '    верхних этажей предусмотрена возможность организации камина. Подземный паркинг рассчитан на 1290 машино-мест.\n' +
+                '    Технология строительства – монолитная. Первая очередь, состоящая из двух корпусов на 480 квартир, была сдана в конце\n' +
+                '    прошлого года. Жильё передадут либо с предчистовой отдел-кой, либо «под ключ» – на выбор покупателя. У него также\n' +
+                '    есть возможность заказать дополнительные опции в зависимости от выбранного пакета: замена ламината на паркет,\n' +
+                '    установка тёплого пола, премиальная сантехника и электрическое оборудование. </p>\n' +
+                '\n' +
+                '  <h3>Условия покупки</h3>\n' +
+                '  <ul>\n' +
+                '    <li>\n' +
+                '      100%-я оплата по договору долевого участия\n' +
+                '    </li>\n' +
+                '    <li>\n' +
+                '      Заключение договора купли-продажи (для готовых корпусов)\n' +
+                '    </li>\n' +
+                '    <li>\n' +
+                '      Ипотека (16 банков-партнёров)\n' +
+                '    </li>\n' +
+                '    <li>\n' +
+                '      Рассрочка (несколько программ)\n' +
+                '    </li>\n' +
+                '  </ul>\n' +
+                '  \n' +
+                '  <hr>\n' +
+                '\n' +
+                '  <h3>Расположение</h3>\n' +
+                '  <p>Жилой квартал LIFE-Лесная расположен на северо-востоке Санкт-Петербурга, в Выборгском районе, по адресу: улица\n' +
+                '    Новолитовская.</p>\n' +
+                '  <p><strong>В шаговой доступности от квартала</strong> — станция метро «Лесная» (500 метров) и остановки наземного\n' +
+                '    общественного транспорта.</p>\n' +
+                '  <p><strong>На автомобиле</strong> время в пути до исторического центра города составит 10 минут, до Петроградской\n' +
+                '    стороны – 5 минут.</p>\n' +
+                '  <p>Здесь легко планировать и дальние поездки: в 10-15 минутах выезды на Западный скоростной диаметр и кольцевую\n' +
+                '    автодорогу. Дорога до аэропорта, железнодорожных и морских вокзалов не займет много времени.</p>'
+            },
+            {
+              type: 'location',
+              data: {
+                showSocialFacilities: false,
+                latitude: 59.983134,
+                longitude: 30.356085,
+                name: 'Название ЖК'
+              },
+              size: 'full-width'
+            },
+            {
+              type: 'text',
+              data: '<h3>Планировки</h3>\n' +
+                '    <p>Предложение актуально на дату публикации (01.04.2019 г.)</p>'
+            },
+            {
+              type: 'apartment_layout',
+              data: {
+                roomsCount: '1',
+                area: '32.98',
+                price: '2209660',
+                description: '',
+                imageXl: 'https://nsp.ru/files/zhk/2/9_flat_orig.png',
+                imageLg: 'https://nsp.ru/files/zhk/2/9_flat_orig.png',
+                imageMd: 'https://nsp.ru/files/zhk/2/9_flat_orig.png',
+                imageSm: 'https://nsp.ru/files/zhk/2/9_flat_orig.png',
+                thumbXl: 'https://nsp.ru/files/zhk/2/9_flat_orig.png',
+                thumbLg: 'https://nsp.ru/files/zhk/2/9_flat_orig.png',
+                thumbMd: 'https://nsp.ru/files/zhk/2/9_flat_orig.png',
+                thumbSm: 'https://nsp.ru/files/zhk/2/9_flat_orig.png',
+                title: null,
+                alt: null
+              }
+            },
+            {
+              type: 'apartment_layout',
+              data: {
+                roomsCount: '2',
+                area: '51.33',
+                price: '3285120',
+                description: '',
+                imageXl: 'https://nsp.ru/files/zhk/2/11_flat_orig.png',
+                imageLg: 'https://nsp.ru/files/zhk/2/11_flat_orig.png',
+                imageMd: 'https://nsp.ru/files/zhk/2/11_flat_orig.png',
+                imageSm: 'https://nsp.ru/files/zhk/2/11_flat_orig.png',
+                image_title: null,
+                image_alt: null
+              }
+            },
+            {
+              type: 'apartment_layout',
+              data: {
+                roomsCount: '3',
+                area: '76.18',
+                price: '4646980',
+                description: '',
+                imageXl: 'https://nsp.ru/files/zhk/2/13_flat_orig.png',
+                imageLg: 'https://nsp.ru/files/zhk/2/13_flat_orig.png',
+                imageMd: 'https://nsp.ru/files/zhk/2/13_flat_orig.png',
+                imageSm: 'https://nsp.ru/files/zhk/2/13_flat_orig.png',
+                image_title: null,
+                image_alt: null
+              }
+            },
+            {
+              type: 'gallery',
+              size: 'big',
+              data: {
+                images: [
+                  {
+                    thumbXl: 'https://nsp.ru/files/zhk/2/10_980.jpg',
+                    thumbLg: 'https://nsp.ru/files/zhk/2/10_980.jpg',
+                    thumbMd: 'https://nsp.ru/files/zhk/2/10_980.jpg',
+                    thumbSm: 'https://nsp.ru/files/zhk/2/10_980.jpg',
+                  },
+                  {
+                    thumbXl: 'https://nsp.ru/files/zhk/2/312_980.jpg',
+                    thumbLg: 'https://nsp.ru/files/zhk/2/312_980.jpg',
+                    thumbMd: 'https://nsp.ru/files/zhk/2/312_980.jpg',
+                    thumbSm: 'https://nsp.ru/files/zhk/2/312_980.jpg',
+                  },
+                  {
+                    thumbXl: 'https://nsp.ru/files/zhk/2/325_980.jpg',
+                    thumbLg: 'https://nsp.ru/files/zhk/2/325_980.jpg',
+                    thumbMd: 'https://nsp.ru/files/zhk/2/325_980.jpg',
+                    thumbSm: 'https://nsp.ru/files/zhk/2/325_980.jpg',
+                  }
+                ]
+              }
+            }
+          ]
         }
       }
     );

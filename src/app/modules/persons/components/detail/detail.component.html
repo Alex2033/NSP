@@ -1,11 +1,11 @@
 <div class="container">
-  <div class="page-topline" *ngIf="screen !== 'sm'">
-    <a class="h5" [routerLink]="['/persons']">Персоны</a>
+  <div class="page-topline">
+    <a class="h1 title" [routerLink]="['/persons']" *ngIf="screen === 'sm'">Персоны</a>
+    <a class="h5" [routerLink]="['/persons']" *ngIf="screen !== 'sm'">Персоны</a>
     <div class="page-topline-element">
 <!--      Есть неточность?-->
     </div>
   </div>
-  <h1 class="title">Персоны</h1>
   <div class="persons-content">
     <app-extended-person-card *ngIf="person" [person]="person"></app-extended-person-card>
     <app-company-card *ngIf="company" [company]="company"></app-company-card>

@@ -45,12 +45,12 @@ export class DetailComponent implements OnInit, AfterViewInit {
       this.title.setTitle(this.section.metaTitle ? this.section.metaTitle : this.section.title + ' - NSP.ru');
       this.meta.updateTag({
           name: 'description',
-          content: this.section.metaDescription
+          content: this.section.metaDescription ? this.section.metaDescription : ''
         }
       );
       this.meta.updateTag({
           name: 'keywords',
-          content: this.section.metaKeywords
+          content: this.section.metaKeywords ? this.section.metaKeywords : ''
         }
       );
     });
@@ -121,8 +121,10 @@ export class DetailComponent implements OnInit, AfterViewInit {
   }
 
   hideRightControl() {
-    setTimeout(() => {
-      this.showRightControl = false;
-    }, 0);
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
+        this.showRightControl = false;
+      }, 0);
+    }
   }
 }

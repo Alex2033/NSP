@@ -1,6 +1,6 @@
 <div class="apartment">
-    <div class="apartment-image">
-      <app-responsive-image [xl]="data.imageXl" [lg]="data.imageLg" [md]="data.imageMd" [xs]="data.imageSm" [sm]="data.imageSm" [alt]="data.imageAlt" [title]="data.imageTitle"></app-responsive-image>
+    <div class="apartment-image" (click)="openModal()">
+      <app-responsive-image [xl]="data.thumbXl" [lg]="data.thumbLg" [md]="data.thumbMd" [xs]="data.thumbSm" [sm]="data.thumbSm" [alt]="data.alt" [title]="data.title"></app-responsive-image>
     </div>
     <div class="apartment-content">
         <div class="aparment-info">
@@ -17,8 +17,7 @@
                 <div class="apartment-info-text">Стоимость</div>
             </div>
         </div>
-        <div class="apartment-text">
-            <p>{{ data.description }}</p>
+        <div class="apartment-text" *ngIf="data.description" [innerHTML]="data.description | paragraphs">
         </div>
     </div>
 </div>

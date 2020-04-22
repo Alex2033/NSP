@@ -10,7 +10,7 @@ export class ModalService {
   showConfirm: boolean = false;
   confirmSubject: Subject<boolean>;
   constructor() { }
-  open(id: string, parameters?: Object) {
+  open(id: string, parameters?: any) {
     const configuration = new ModalConfiguration();
     configuration.id = id;
     configuration.parameters = parameters;

@@ -5,5 +5,5 @@
   <app-modal-news-offer-form *ngIf="current.id === 'news-offer-form'"></app-modal-news-offer-form>
   <app-modal-video *ngIf="current.id === 'video'" [url]="current.parameters['url']" [id]="current.parameters['id']"></app-modal-video>
   <app-modal-login *ngIf="current.id === 'login'"></app-modal-login>
+  <app-modal-gallery *ngIf="current.id === 'gallery'" [images]="current.parameters['images']" [index]="current.parameters['index']"></app-modal-gallery>
 </ng-container>
-
