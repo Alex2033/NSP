@@ -64,7 +64,7 @@ export class TextComponent implements ControlValueAccessor {
   }
   focus() {
     // this.focused = true;
-    setTimeout(()=>{ // this will make the execution after the above boolean has changed
+    setTimeout(() => { // this will make the execution after the above boolean has changed
       this.input.nativeElement.focus();
     });
   }

@@ -1,6 +1,7 @@
-import {Component, OnInit, Input, ViewChild, Self, Optional} from '@angular/core';
+import {Component, OnInit, Input, ViewChild, Self, Optional, Inject, PLATFORM_ID} from '@angular/core';
 import {NgScrollbar} from 'ngx-scrollbar';
 import {ControlValueAccessor, NgControl} from '@angular/forms';
+import {isPlatformBrowser} from '@angular/common';
 
 @Component({
   selector: 'app-select',
@@ -16,7 +17,7 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
   showDropdown = false;
   @Input() placeholder: string;
 
-  constructor(@Optional() @Self() public ngControl: NgControl) {
+  constructor(@Optional() @Self() public ngControl: NgControl, @Inject(PLATFORM_ID) private platformId: any) {
     if (this.ngControl != null) {
       // Setting the value accessor directly (instead of using
       // the providers) to avoid running into a circular import.
@@ -58,9 +59,11 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
       this.showDropdown = false;
     } else {
       this.showDropdown = true;
-      setTimeout(() => {
-        this.scrollRef.update();
-      }, 0);
+      if(isPlatformBrowser(this.platformId)) {
+        setTimeout(() => {
+          this.scrollRef.update();
+        }, 0);
+      }
     }
   }
 }

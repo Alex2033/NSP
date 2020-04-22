@@ -37,7 +37,7 @@ export class DetailComponent implements OnInit {
       this.title.setTitle(this.person.name + ' - Информация о персоне ' + ' - NSP.ru');
       this.meta.updateTag({
           name: 'description',
-          content: this.person.description
+          content: this.person.description ? this.person.description : ''
         }
       );
     });

@@ -55,7 +55,7 @@ export class DetailComponent implements OnInit {
       if (this.company.metaKeywords) {
         this.meta.updateTag({
             name: 'keywords',
-            content: this.company.metaKeywords
+            content: this.company.metaKeywords ? this.company.metaKeywords : ''
           }
         );
       }

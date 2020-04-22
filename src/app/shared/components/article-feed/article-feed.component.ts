@@ -58,12 +58,12 @@ export class ArticleFeedComponent implements OnInit {
     this.title.setTitle(article.metaTitle ? article.metaTitle : article.title + ' - NSP.ru');
     this.meta.updateTag({
         name: 'description',
-        content: article.metaDescription
+        content: article.metaDescription ? article.metaDescription : ''
       }
     );
     this.meta.updateTag({
         name: 'keywords',
-        content: article.metaKeywords
+        content: article.metaKeywords ? article.metaKeywords : ''
       }
     );
 

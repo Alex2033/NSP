@@ -34,7 +34,7 @@ export class DetailComponent implements OnInit {
       if (this.apartmentComplex.metaKeywords) {
         this.meta.updateTag({
             name: 'keywords',
-            content: this.apartmentComplex.metaKeywords
+            content: this.apartmentComplex.metaKeywords ? this.apartmentComplex.metaKeywords : ''
           }
         );
       }
