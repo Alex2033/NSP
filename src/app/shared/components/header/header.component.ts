@@ -133,6 +133,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   @HostListener('window:scroll', ['$event']) checkScroll() {
     const windowScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     this.scroll = windowScroll;
+    this.updateHeaderHeightValue();
     if (windowScroll >= this.topHeaderHeight) {
       if (!this.fixedMenu) {
         // setTimeout(() => {
