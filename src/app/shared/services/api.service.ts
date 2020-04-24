@@ -76,6 +76,12 @@ export class ApiService {
     }));
   }
 
+  getAdvertisementClosingReasons(): Observable<any> {
+    return this.apiClient.get(`/api/site/banner_closing_reasons`).pipe(map((response) => {
+      return deserialize(response);
+    }));
+  }
+
   getNextArticle(articleId, exclude: number[]): Observable<Article> {
     return this.apiClient.get(`/api/site/articles/${articleId}/next`, {
       params: {
@@ -86,9 +92,9 @@ export class ApiService {
     }));
   }
 
-  getArticleBanner(articleId): Observable<{data: ArticleBanner}> {
+  getArticleBanner(articleId): Observable<{ data: ArticleBanner }> {
     return this.apiClient.get(`/api/site/articles/${articleId}/banner`).pipe(map((response) => {
-      return deserialize(response) as {data: ArticleBanner};
+      return deserialize(response) as { data: ArticleBanner };
     }));
   }
 

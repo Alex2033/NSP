@@ -3,15 +3,13 @@
     <a [routerLink]="['']" *ngIf="showActions === false">
       <div class="banner" [style.height]="height + 'px'">ЗДЕСЬ БУДЕТ РЕКЛАМА</div>
     </a>
-    <button class="close" (click)="showActions = true" *ngIf="showActions === false">
+    <button class="close" (click)="closingReasons.length > 0 ? showActions = true : close()" *ngIf="showActions === false">
       <svg>
         <use xlink:href="assets/sprites/icons.svg#close"></use>
       </svg>
     </button>
-    <div class="top-line-advertising-actions" [hidden]="showActions === false">
-      <button class="button light" (click)="close()">Уже купил</button>
-      <button class="button light" (click)="close()">Не интересна реклама по этой теме</button>
-      <button class="button light" (click)="close()">Реклама раздражает</button>
+    <div class="top-line-advertising-actions" [hidden]="showActions === false" *ngIf="closingReasons.length > 0">
+      <button class="button light" (click)="close()" *ngFor="let reason of closingReasons">{{ reason.name }}</button>
     </div>
   </ng-container>
 </div>

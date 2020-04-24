@@ -524,6 +524,23 @@ export class MockApiService {
     return of();
   }
 
+  getAdvertisementClosingReasons(data) {
+    return of(
+      {
+        reasons: [
+          {
+            id: 1,
+            name: 'Раздражает реклама'
+          },
+          {
+            id: 2,
+            name: 'Уже купил'
+          }
+        ]
+      }
+    );
+  }
+
   addArticleView(articleId) {
     return of();
   }

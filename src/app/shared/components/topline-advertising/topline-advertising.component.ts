@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewChild, ElementRef, HostListener, Output, EventEmitter, Input} from '@angular/core';
 import {translateAnimation} from '../../animations/translate-animation';
+import {ApiService} from '../../services/api.service';
 
 @Component({
   selector: 'app-topline-advertising',
@@ -14,12 +15,16 @@ export class ToplineAdvertisingComponent implements OnInit {
   name: any;
   showActions: boolean = false;
   show: boolean;
+  closingReasons = [];
   @Output() visible: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Input() height: number;
-  constructor() { }
+  constructor(private api: ApiService) { }
   ngOnInit() {
     this.show = true;
     this.visible.next(true);
+    this.api.getAdvertisementClosingReasons().subscribe(data => {
+      this.closingReasons = data.reasons;
+    });
     // this.topHeaderHeight = 74;
   }
 
