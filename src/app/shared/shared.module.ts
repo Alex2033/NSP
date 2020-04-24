@@ -68,6 +68,7 @@ import { ArticleFeedComponent } from './components/article-feed/article-feed.com
 import {ServerSideValidationDirective} from './directives/server-side-validation.directive';
 import { EventCalendarCardComponent } from './components/cards/event-calendar-card/event-calendar-card.component';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
+import { ArticleBannerComponent } from './components/article-banner/article-banner.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -133,7 +134,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ArticleFeedComponent,
     ServerSideValidationDirective,
     EventCalendarCardComponent,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    ArticleBannerComponent
   ],
   imports: [
     CommonModule,

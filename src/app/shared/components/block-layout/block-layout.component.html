@@ -3,7 +3,9 @@
     <ng-container *ngSwitchCase="'text'">
       <app-text-block [content]="block.data"></app-text-block>
     </ng-container>
-
+    <ng-container *ngSwitchCase="'banner_placeholder'">
+      <app-article-banner [articleId]="entityId"></app-article-banner>
+    </ng-container>
     <ng-container *ngSwitchCase="'company_card'">
       <ng-container [ngSwitch]="block.size">
         <ng-container *ngSwitchCase="'full-width'">

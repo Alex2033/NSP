@@ -57,7 +57,7 @@
         </div>
 
         <div class="blocks">
-          <app-block-layout [blocks]="article.content"></app-block-layout>
+          <app-block-layout [blocks]="article.content" [entityId]="article.id"></app-block-layout>
         </div>
 
         <div class="bot">
@@ -69,6 +69,7 @@
         </div>
 
         <app-comments *ngIf="article.commentsAllowed"></app-comments>
+        <app-article-banner [articleId]="article.id"></app-article-banner>
       </div>
     </div>
 

@@ -9,7 +9,7 @@ import { ResponsiveService } from '../../services/responsive.service';
 export class BlockLayoutComponent implements OnInit {
 
   @Input() blocks;
-
+  @Input() entityId: number;
   screen: string;
 
   constructor(private responsive: ResponsiveService) { }

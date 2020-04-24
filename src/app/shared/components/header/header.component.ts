@@ -91,7 +91,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
           this.updateHeaderHeightValue();
         });
       }
-    });
+    }, (err) => {});
     this.menuService.getGlobalMenu().subscribe((elements) => {
       this.menuElements = elements;
       if (isPlatformBrowser(this.platformId)) {

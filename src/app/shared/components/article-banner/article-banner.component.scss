@@ -1,0 +1,9 @@
+.banner {
+  & > a {
+    display: block;
+    width: 100%;
+  }
+  ::ng-deep img {
+    width: 100%;
+  }
+}

@@ -504,11 +504,35 @@ export class MockApiService {
     return of();
   }
 
+  getArticleBanner(articleId) {
+    return of(
+      {
+        id: 1,
+        type: 'image',
+        url: 'http://google.ru',
+        images: {
+          xl: 'https://wallpapercart.com/wp-content/uploads/2019/08/Full-HD-Nature-Images.jpg',
+          lg: 'https://wallpapercart.com/wp-content/uploads/2019/08/Full-HD-Nature-Images.jpg',
+          md: 'https://wallpapercart.com/wp-content/uploads/2019/08/Full-HD-Nature-Images.jpg',
+          sm: 'https://wallpapercart.com/wp-content/uploads/2019/08/Full-HD-Nature-Images.jpg',
+        }
+      }
+    );
+  }
+
   sendEventRegistration(data) {
     return of();
   }
 
   addArticleView(articleId) {
+    return of();
+  }
+
+  addArticleBannerView(bannerId) {
+    return of();
+  }
+
+  addArticleBannerClick(bannerId) {
     return of();
   }
 

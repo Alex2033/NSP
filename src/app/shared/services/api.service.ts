@@ -8,6 +8,7 @@ import {Company} from '../contracts/company';
 import {Person} from '../contracts/person';
 import {Article} from '../contracts/article';
 import {Quote} from '../contracts/quote';
+import {ArticleBanner} from '../contracts/article-banner';
 
 @Injectable({
   providedIn: 'root'
@@ -85,6 +86,12 @@ export class ApiService {
     }));
   }
 
+  getArticleBanner(articleId): Observable<{data: ArticleBanner}> {
+    return this.apiClient.get(`/api/site/articles/${articleId}/banner`).pipe(map((response) => {
+      return deserialize(response) as {data: ArticleBanner};
+    }));
+  }
+
   getPerson(personId): Observable<Person> {
     return this.apiClient.get(`/api/site/people/${personId}`).pipe(map((response) => {
       return deserialize(response) as Person;
@@ -101,6 +108,18 @@ export class ApiService {
 
   addArticleView(articleId) {
     return this.apiClient.post(`/api/site/articles/${articleId}/add_view`).pipe(map((response) => {
+      return deserialize(response);
+    }));
+  }
+
+  addArticleBannerView(bannerId) {
+    return this.apiClient.post(`/api/site/article_banners/${bannerId}/add_view`).pipe(map((response) => {
+      return deserialize(response);
+    }));
+  }
+
+  addArticleBannerClick(bannerId) {
+    return this.apiClient.post(`/api/site/article_banners/${bannerId}/add_click`).pipe(map((response) => {
       return deserialize(response);
     }));
   }
