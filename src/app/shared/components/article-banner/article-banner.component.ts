@@ -13,6 +13,7 @@ export class ArticleBannerComponent implements OnInit {
   constructor(private api: ApiService, @Inject(PLATFORM_ID) private platformId: any) {
   }
 
+  clicked = false;
   static notFound = false; // Если при очередном запросе не будет найден баннер, то больше не стоит пытаться его искать
   active = false;
   viewed = false;
@@ -65,7 +66,10 @@ export class ArticleBannerComponent implements OnInit {
   }
 
   incClick() {
-    this.api.addArticleBannerClick(this.data.id).subscribe();
+    if (!this.clicked) {
+      this.clicked = true;
+      this.api.addArticleBannerClick(this.data.id).subscribe();
+    }
   }
 
   needLoading() {

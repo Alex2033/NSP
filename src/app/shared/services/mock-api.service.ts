@@ -569,6 +569,18 @@ export class MockApiService {
     return of();
   }
 
+  addTopLineBannerView(bannerId) {
+    return of();
+  }
+
+  addTopLineBannerClick(bannerId) {
+    return of();
+  }
+
+  sendTopLineBannerClosingReason(bannerId, reasonId) {
+    return of();
+  }
+
   addVideoView(videoId) {
     return of();
   }

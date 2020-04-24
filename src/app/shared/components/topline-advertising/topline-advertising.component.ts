@@ -28,6 +28,8 @@ export class ToplineAdvertisingComponent implements OnInit {
   @ViewChild('htmlSmWrapper') htmlSmWrapper;
   @ViewChild('banner') banner;
   data: TopLineBanner;
+  clicked = false;
+  viewed = false;
   name: any;
   showActions: boolean = false;
   show: boolean;
@@ -69,9 +71,31 @@ export class ToplineAdvertisingComponent implements OnInit {
     // this.topHeaderHeight = 74;
   }
 
-  close() {
+
+  close(reasonId?) {
     this.show = false;
     this.visible.next(false);
+    this.bannerHeight.next(0);
+    if (reasonId) {
+      this.api.sendTopLineBannerClosingReason(this.data.id, reasonId).subscribe();
+    }
+  }
+
+  incClick() {
+    if (!this.clicked) {
+      this.clicked = true;
+      this.api.addTopLineBannerClick(this.data.id).subscribe();
+    }
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  checkView() {
+    if (!this.viewed && this.inited) {
+      if (this.banner.nativeElement.getBoundingClientRect().top === 0) {
+        this.viewed = true;
+        this.api.addTopLineBannerView(this.data.id).subscribe();
+      }
+    }
   }
 
   @HostListener('window:resize', ['$event'])
@@ -80,6 +104,7 @@ export class ToplineAdvertisingComponent implements OnInit {
       this.bannerHeight.emit(this.banner.nativeElement.getBoundingClientRect().height);
     });
   }
+
   // checkScroll() {
   //   const windowScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
   //   if (windowScroll >= this.topHeaderHeight) {

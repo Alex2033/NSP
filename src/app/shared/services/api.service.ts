@@ -137,6 +137,24 @@ export class ApiService {
     }));
   }
 
+  addTopLineBannerView(bannerId) {
+    return this.apiClient.post(`/api/site/topline_banners/${bannerId}/add_view`).pipe(map((response) => {
+      return deserialize(response);
+    }));
+  }
+
+  addTopLineBannerClick(bannerId) {
+    return this.apiClient.post(`/api/site/topline_banners/${bannerId}/add_click`).pipe(map((response) => {
+      return deserialize(response);
+    }));
+  }
+
+  sendTopLineBannerClosingReason(bannerId, reasonId) {
+    return this.apiClient.post(`/api/site/topline_banners/${bannerId}/close`, {reason_id: reasonId}).pipe(map((response) => {
+      return deserialize(response);
+    }));
+  }
+
   addVideoView(videoId) {
     return this.apiClient.post(`/api/site/videos/${videoId}/add_view`).pipe(map((response) => {
       return deserialize(response);

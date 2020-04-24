@@ -1,6 +1,6 @@
 <div class="top-line-advertising" #banner [class.not-inited]="!inited">
   <ng-container *ngIf="show">
-    <a *ngIf="showActions === false && data" [href]="data.url" target="_blank">
+    <a *ngIf="showActions === false && data" [href]="data.url" target="_blank" (click)="incClick()">
         <ng-container *ngIf="data.type === 'image'">
           <app-responsive-image [xl]="data.images.xl" [lg]="data.images.lg" [md]="data.images.md"
                                 [xs]="data.images.sm" [sm]="data.images.sm"></app-responsive-image>
@@ -18,7 +18,7 @@
       </svg>
     </button>
     <div class="top-line-advertising-actions" [hidden]="showActions === false" *ngIf="closingReasons.length > 0">
-      <button class="button light" (click)="close()" *ngFor="let reason of closingReasons">{{ reason.name }}</button>
+      <button class="button light" (click)="close(reason.id)" *ngFor="let reason of closingReasons">{{ reason.name }}</button>
     </div>
   </ng-container>
 </div>
