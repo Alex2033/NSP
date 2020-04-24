@@ -1,52 +1,43 @@
 @import "theme";
 @import "responsive";
+
 :host {
   display: block;
   //height: 74px;
 }
-.banner {
-  background-color: $primary-color;
-  color: #fff;
-  @include media-breakpoint-up(md) {
-    font-size: 32px;
-  }
-  @include media-breakpoint-down(sm)
-  {
-    font-size: 16px;
-  }
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 .top-line-advertising {
-    //position: fixed;
-    //top: 0;
-    //left: 0;
-    //width: 100%;
-    //z-index: 100;
-    //height: 74px;
+  //position: fixed;
+  //top: 0;
+  //left: 0;
+  //width: 100%;
+  //z-index: 100;
+  //height: 74px;
 
-    a {
-        display: block;
-        height: 100%;
+  a {
+    background-color: #fff;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .close {
+    z-index: 101;
+    width: 28px;
+    height: 28px;
+
+    svg {
+      width: 12px;
+      height: 12px;
     }
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .close {
-      z-index: 101;
-      width: 28px;
-      height: 28px;
-
-      svg {
-        width: 12px;
-        height: 12px;
-      }
-    }
+  }
 }
 
 .top-line-advertising-actions {
@@ -72,4 +63,11 @@
   @include media-breakpoint-only(sm) {
     padding: 16px;
   }
+}
+
+.not-inited {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
 }

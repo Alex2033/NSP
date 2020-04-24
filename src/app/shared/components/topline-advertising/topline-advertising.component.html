@@ -1,9 +1,18 @@
-<div class="top-line-advertising" [style.height]="height + 'px'">
+<div class="top-line-advertising" #banner [class.not-inited]="!inited">
   <ng-container *ngIf="show">
-    <a [routerLink]="['']" *ngIf="showActions === false">
-      <div class="banner" [style.height]="height + 'px'">ЗДЕСЬ БУДЕТ РЕКЛАМА</div>
+    <a *ngIf="showActions === false && data" [href]="data.url" target="_blank">
+        <ng-container *ngIf="data.type === 'image'">
+          <app-responsive-image [xl]="data.images.xl" [lg]="data.images.lg" [md]="data.images.md"
+                                [xs]="data.images.sm" [sm]="data.images.sm"></app-responsive-image>
+        </ng-container>
+        <ng-container *ngIf="data.type === 'html'">
+          <div #htmlXlWrapper class="d-none d-xl-block"></div>
+          <div #htmlLgWrapper class="d-none d-lg-block d-xl-none"></div>
+          <div #htmlMdWrapper class="d-none d-md-block d-lg-none"></div>
+          <div #htmlSmWrapper class="d-block d-md-none"></div>
+        </ng-container>
     </a>
-    <button class="close" (click)="closingReasons.length > 0 ? showActions = true : close()" *ngIf="showActions === false">
+    <button class="close" (click)="closingReasons.length > 0 ? showActions = true : close()" *ngIf="showActions === false && data">
       <svg>
         <use xlink:href="assets/sprites/icons.svg#close"></use>
       </svg>

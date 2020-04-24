@@ -9,6 +9,7 @@ import {Person} from '../contracts/person';
 import {Article} from '../contracts/article';
 import {Quote} from '../contracts/quote';
 import {ArticleBanner} from '../contracts/article-banner';
+import {TopLineBanner} from '../contracts/topline-banner';
 
 @Injectable({
   providedIn: 'root'
@@ -89,6 +90,12 @@ export class ApiService {
       }
     }).pipe(map((response) => {
       return deserialize(response) as Article;
+    }));
+  }
+
+  getTopLineBanner(): Observable<{ data: TopLineBanner }> {
+    return this.apiClient.get(`/api/site/topline_banners/banner`).pipe(map((response) => {
+      return deserialize(response) as { data: TopLineBanner };
     }));
   }
 

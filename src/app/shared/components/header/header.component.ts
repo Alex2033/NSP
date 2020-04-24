@@ -64,8 +64,8 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   showHiddenSearch: boolean = false;
   scroll = 0;
   topHeaderHeight = 1;
+  topLineHeight = 1;
   topLineBannerVisible: boolean;
-
   constructor(
     public modal: ModalService,
     private responsive: ResponsiveService,
@@ -80,6 +80,10 @@ export class HeaderComponent implements OnInit, AfterViewInit {
         this.now = new Date();
       }, 1000);
     }
+  }
+
+  updateTopLineHeight(value) {
+    this.topLineHeight = value;
   }
 
   ngOnInit() {
