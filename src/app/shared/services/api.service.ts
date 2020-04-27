@@ -93,8 +93,17 @@ export class ApiService {
     }));
   }
 
-  getTopLineBanner(): Observable<{ data: TopLineBanner }> {
-    return this.apiClient.get(`/api/site/topline_banners/banner`).pipe(map((response) => {
+  getTopLineBanner(pageType, pageId): Observable<{ data: TopLineBanner }> {
+    let params;
+    if (pageType && pageId) {
+      params = {
+        page_type: pageType,
+        page_id: pageId
+      };
+    } else {
+      params = {};
+    }
+    return this.apiClient.get(`/api/site/topline_banners/banner`, {params}).pipe(map((response) => {
       return deserialize(response) as { data: TopLineBanner };
     }));
   }

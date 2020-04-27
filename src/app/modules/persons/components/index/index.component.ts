@@ -5,6 +5,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {Title} from '@angular/platform-browser';
 import {Person} from '../../../../shared/contracts/person';
 import {ArticleCard} from '../../../../shared/contracts/article-card';
+import {CurrentPageService} from '../../../../shared/services/current-page.service';
 
 @Component({
   selector: 'app-index',
@@ -22,7 +23,8 @@ export class IndexComponent implements OnInit {
     private api: ApiService,
     private route: ActivatedRoute,
     private router: Router,
-    protected title: Title) {
+    protected title: Title,
+    private currentPage: CurrentPageService) {
   }
 
   ngOnInit() {
@@ -31,6 +33,7 @@ export class IndexComponent implements OnInit {
     });
     this.title.setTitle('Персоны' + ' - NSP.ru');
     this.route.data.subscribe(data => {
+      this.currentPage.next();
       this.personsCount = data.persons.count;
       this.persons = data.persons.items;
       this.articles = data.articles.items;

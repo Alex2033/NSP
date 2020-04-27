@@ -520,7 +520,7 @@ export class MockApiService {
     );
   }
 
-  getTopLineBanner() {
+  getTopLineBanner(pageType, pageId) {
     return of(
       {
         id: 1,

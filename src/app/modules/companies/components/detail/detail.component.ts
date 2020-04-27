@@ -5,6 +5,7 @@ import {Company} from '../../../../shared/contracts/company';
 import {Meta, Title} from '@angular/platform-browser';
 import {ArticleCard} from '../../../../shared/contracts/article-card';
 import {isPlatformBrowser} from '@angular/common';
+import {CurrentPageService} from '../../../../shared/services/current-page.service';
 
 @Component({
   selector: 'app-detail',
@@ -31,6 +32,7 @@ export class DetailComponent implements OnInit {
     private route: ActivatedRoute,
     protected title: Title,
     protected meta: Meta,
+    private currentPage: CurrentPageService,
     @Inject(PLATFORM_ID) private platformId: any) {
   }
 
@@ -42,6 +44,7 @@ export class DetailComponent implements OnInit {
       this.isBrowser = true;
     }
     this.route.data.subscribe(data => {
+      this.currentPage.next();
       this.company = data.company.data;
       this.objects = data.company.apartmentComplexes;
       this.persons = data.company.people;

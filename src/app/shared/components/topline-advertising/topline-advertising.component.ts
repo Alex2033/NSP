@@ -12,6 +12,9 @@ import {
 import {translateAnimation} from '../../animations/translate-animation';
 import {ApiService} from '../../services/api.service';
 import {TopLineBanner} from '../../contracts/topline-banner';
+import {NavigationEnd, NavigationStart, Router} from '@angular/router';
+import {AppComponent} from '../../../app.component';
+import {CurrentPageService} from '../../services/current-page.service';
 
 @Component({
   selector: 'app-topline-advertising',
@@ -39,35 +42,38 @@ export class ToplineAdvertisingComponent implements OnInit {
   @Output() bannerHeight: EventEmitter<number> = new EventEmitter<number>();
   @Input() height: number;
 
-  constructor(private api: ApiService, @Inject(PLATFORM_ID) private platformId: any) {
+  constructor(private api: ApiService, @Inject(PLATFORM_ID) private platformId: any, private currentPage: CurrentPageService) {
   }
 
   ngOnInit() {
-    this.api.getTopLineBanner().subscribe((response) => {
-      this.visible.next(false);
-      this.show = true;
-      this.data = response.data;
-      this.api.getAdvertisementClosingReasons().subscribe(data => {
-        this.closingReasons = data.reasons;
-      });
-      if (this.data.type === 'html') {
-        setTimeout(() => { // Чтобы обновился шаблон
-          this.htmlXlWrapper.nativeElement.innerHTML = this.data.html.xl;
-          this.htmlLgWrapper.nativeElement.innerHTML = this.data.html.lg;
-          this.htmlMdWrapper.nativeElement.innerHTML = this.data.html.md;
-          this.htmlSmWrapper.nativeElement.innerHTML = this.data.html.sm;
+    this.currentPage.value().subscribe(page => {
+      this.api.getTopLineBanner(page ? page.type : null, page ? page.id : null).subscribe((response) => {
+        this.visible.next(false);
+        this.show = true;
+        this.data = response.data;
+        this.api.getAdvertisementClosingReasons().subscribe(data => {
+          this.closingReasons = data.reasons;
         });
-      }
-      const interval = setInterval(() => { // Не знаем когда загрузился код, поэтому интервал
-        const height = this.banner.nativeElement.getBoundingClientRect().height;
-        if (height > 0) {
-          this.inited = true;
-          this.bannerHeight.emit(height);
-          this.visible.next(true);
-          clearInterval(interval);
+        if (this.data.type === 'html') {
+          setTimeout(() => { // Чтобы обновился шаблон
+            this.htmlXlWrapper.nativeElement.innerHTML = this.data.html.xl;
+            this.htmlLgWrapper.nativeElement.innerHTML = this.data.html.lg;
+            this.htmlMdWrapper.nativeElement.innerHTML = this.data.html.md;
+            this.htmlSmWrapper.nativeElement.innerHTML = this.data.html.sm;
+          });
         }
-      }, 300);
+        const interval = setInterval(() => { // Не знаем когда загрузился код, поэтому интервал
+          const height = this.banner.nativeElement.getBoundingClientRect().height;
+          if (height > 0) {
+            this.inited = true;
+            this.bannerHeight.emit(height);
+            this.visible.next(true);
+            clearInterval(interval);
+          }
+        }, 300);
+      });
     });
+
     // this.topHeaderHeight = 74;
   }
 

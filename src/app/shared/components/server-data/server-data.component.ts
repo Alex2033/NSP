@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ApiService} from '../../services/api.service';
+import {CurrentPageService} from '../../services/current-page.service';
 
 @Component({
   selector: 'app-server-data',
@@ -9,11 +10,14 @@ import {ApiService} from '../../services/api.service';
 })
 export class ServerDataComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private router: Router) {
+  constructor(private route: ActivatedRoute, private router: Router, private currentPage: CurrentPageService) {
   }
 
   ngOnInit(): void {
     this.route.data.subscribe((data) => {
+        setTimeout(() => {
+          this.currentPage.next(data.config);
+        });
         switch (data.config.type) {
           case 'page':
             this.router.navigate(['/pages/detail'], {
@@ -31,6 +35,8 @@ export class ServerDataComponent implements OnInit {
               skipLocationChange: true
             });
             break;
+          case 'tag':
+          case 'collection':
           case 'section':
             this.router.navigate(['/sections/detail'], {
               state: {

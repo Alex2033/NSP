@@ -5,6 +5,7 @@ import {ResponsiveService} from './shared/services/responsive.service';
 import {NavigationStart, Router} from '@angular/router';
 import {Meta, Title} from '@angular/platform-browser';
 import { HeaderHeightService } from './shared/services/header-height.service';
+import {CurrentPageService} from './shared/services/current-page.service';
 
 @Component({
   selector: 'app-root',
@@ -25,9 +26,9 @@ import { HeaderHeightService } from './shared/services/header-height.service';
   ]
 })
 export class AppComponent implements OnInit {
+
   screen: string;
   margin: number = 0;
-
   constructor(public menu: MenuService,
               private responsive: ResponsiveService,
               private router: Router,

@@ -5,6 +5,7 @@ import {Meta, Title} from '@angular/platform-browser';
 import {ActivatedRoute} from '@angular/router';
 import {Person} from '../../../../shared/contracts/person';
 import {ArticleCard} from '../../../../shared/contracts/article-card';
+import {CurrentPageService} from '../../../../shared/services/current-page.service';
 
 @Component({
   selector: 'app-detail',
@@ -23,7 +24,8 @@ export class DetailComponent implements OnInit {
     private responsive: ResponsiveService,
     private route: ActivatedRoute,
     protected title: Title,
-    protected meta: Meta) {
+    protected meta: Meta,
+    private currentPage: CurrentPageService) {
   }
 
   ngOnInit() {
@@ -31,6 +33,7 @@ export class DetailComponent implements OnInit {
       this.screen = screen;
     });
     this.route.data.subscribe(data => {
+      this.currentPage.next();
       this.person = data.person.data;
       this.company = data.person.company;
       this.articles = data.articles.items;

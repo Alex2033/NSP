@@ -5,6 +5,7 @@ import {Person} from '../../../../shared/contracts/person';
 import {ApartmentComplex} from '../../../../shared/contracts/apartment-complex';
 import {Company} from '../../../../shared/contracts/company';
 import {Title} from '@angular/platform-browser';
+import {CurrentPageService} from '../../../../shared/services/current-page.service';
 
 @Component({
   selector: 'app-index',
@@ -41,7 +42,8 @@ export class IndexComponent implements OnInit {
     public responsive: ResponsiveService,
     private router: Router,
     protected title: Title,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute,
+    private currentPage: CurrentPageService) {
   }
 
   results: {
@@ -74,6 +76,7 @@ export class IndexComponent implements OnInit {
     });
     this.route.data.subscribe(data => {
       this.results = data.results;
+      this.currentPage.next();
     });
 
     this.responsive.screen.subscribe((screen) => {

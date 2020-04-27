@@ -4,6 +4,7 @@ import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 import {ApiService} from '../../../../shared/services/api.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Title} from '@angular/platform-browser';
+import {CurrentPageService} from '../../../../shared/services/current-page.service';
 
 @Component({
   selector: 'app-index',
@@ -20,7 +21,8 @@ export class IndexComponent implements OnInit {
     private api: ApiService,
     private route: ActivatedRoute,
     private router: Router,
-    protected title: Title) {
+    protected title: Title,
+    private currentPage: CurrentPageService) {
   }
 
   ngOnInit() {
@@ -30,6 +32,7 @@ export class IndexComponent implements OnInit {
 
     this.title.setTitle('Цитаты' + ' - NSP.ru');
     this.route.data.subscribe(data => {
+      this.currentPage.next();
       this.quotesCount = data.quotes.count;
       this.quotes = data.quotes.items;
       this.asideCards = data.asideCards.cards;

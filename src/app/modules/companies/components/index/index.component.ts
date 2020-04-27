@@ -5,6 +5,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {Company} from '../../../../shared/contracts/company';
 import {Title} from '@angular/platform-browser';
 import {ArticleCard} from '../../../../shared/contracts/article-card';
+import {CurrentPageService} from '../../../../shared/services/current-page.service';
 
 @Component({
   selector: 'app-index',
@@ -23,7 +24,8 @@ export class IndexComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     protected title: Title,
-    private responsive: ResponsiveService
+    private responsive: ResponsiveService,
+    private currentPage: CurrentPageService
   ) {}
 
   ngOnInit() {
@@ -32,6 +34,7 @@ export class IndexComponent implements OnInit {
     });
     this.title.setTitle('Компании' + ' - NSP.ru');
     this.route.data.subscribe(data => {
+      this.currentPage.next();
       this.companiesCount = data.companies.count;
       this.companies = data.companies.items;
       this.articles = data.articles.items;
