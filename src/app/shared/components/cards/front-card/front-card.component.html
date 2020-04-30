@@ -1,4 +1,4 @@
-<a [routerLink]="['']" class="card-wrapper">
+<a [routerLink]="['/' + data.articleId + '-' + data.articleSlug]" class="card-wrapper">
     <div class="card-content">
         <div class="card-top static" *ngIf="screen !== 'sm'">
             <div class="date">{{ data.articlePublishedAt * 1000 | niceDate }} в {{ data.articlePublishedAt * 1000 | date: 'shortTime' }}</div>
@@ -22,7 +22,7 @@
                 <span class="views-number">{{ data.articleViewsCount | number }}</span>
             </div>
             <div class="category">
-              {{ data.directoryName }}
+<!--              {{ data.directoryName }}-->
             </div>
         </footer>
     </div>

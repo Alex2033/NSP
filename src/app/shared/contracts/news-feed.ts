@@ -4,7 +4,6 @@ export interface NewsFeed {
     id: number,
     slug: string,
     publishedAt: number,
-    title: string,
-    directorySlug: string
+    title: string
   }[];
 }

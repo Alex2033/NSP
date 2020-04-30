@@ -31,8 +31,6 @@ export class MockApiService {
             previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
             view: 'half',
             articleViewsCount: 12453,
-            directorySlug: 'commerce',
-            directoryName: 'Коммерческая недвижимость',
             articleId: 123,
             articleSlug: 'article-slug',
             imageXl: 'https://picsum.photos/304/152',
@@ -49,8 +47,6 @@ export class MockApiService {
             previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
             view: 'half',
             articleViewsCount: 12453,
-            directorySlug: 'commerce',
-            directoryName: 'Коммерческая недвижимость',
             articleId: 123,
             articleSlug: 'article-slug',
             imageXl: 'https://picsum.photos/304/152',
@@ -67,8 +63,6 @@ export class MockApiService {
             previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
             view: 'half',
             articleViewsCount: 12453,
-            directorySlug: 'commerce',
-            directoryName: 'Коммерческая недвижимость',
             articleId: 123,
             articleSlug: 'article-slug',
             imageXl: 'https://picsum.photos/304/152',
@@ -85,8 +79,6 @@ export class MockApiService {
             previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
             view: 'half',
             articleViewsCount: 12453,
-            directorySlug: 'commerce',
-            directoryName: 'Коммерческая недвижимость',
             articleId: 123,
             articleSlug: 'article-slug',
             imageXl: 'https://picsum.photos/304/152',
@@ -113,8 +105,6 @@ export class MockApiService {
             previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
             view: 'half',
             articleViewsCount: 12453,
-            directorySlug: 'commerce',
-            directoryName: 'Коммерческая недвижимость',
             articleId: 123,
             articleSlug: 'article-slug',
             imageXl: 'https://picsum.photos/304/152',
@@ -131,8 +121,6 @@ export class MockApiService {
             previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
             view: 'half',
             articleViewsCount: 12453,
-            directorySlug: 'commerce',
-            directoryName: 'Коммерческая недвижимость',
             articleId: 123,
             articleSlug: 'article-slug',
             imageXl: 'https://picsum.photos/304/152',
@@ -149,8 +137,6 @@ export class MockApiService {
             previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
             view: 'half',
             articleViewsCount: 12453,
-            directorySlug: 'commerce',
-            directoryName: 'Коммерческая недвижимость',
             articleId: 123,
             articleSlug: 'article-slug',
             imageXl: 'https://picsum.photos/304/152',
@@ -167,8 +153,6 @@ export class MockApiService {
             previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
             view: 'half',
             articleViewsCount: 12453,
-            directorySlug: 'commerce',
-            directoryName: 'Коммерческая недвижимость',
             articleId: 123,
             articleSlug: 'article-slug',
             imageXl: 'https://picsum.photos/304/152',
@@ -195,8 +179,6 @@ export class MockApiService {
             previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
             view: 'half',
             articleViewsCount: 12453,
-            directorySlug: 'commerce',
-            directoryName: 'Коммерческая недвижимость',
             articleId: 123,
             articleSlug: 'article-slug',
             imageXl: 'https://picsum.photos/304/152',
@@ -213,8 +195,6 @@ export class MockApiService {
             previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
             view: 'half',
             articleViewsCount: 12453,
-            directorySlug: 'commerce',
-            directoryName: 'Коммерческая недвижимость',
             articleId: 123,
             articleSlug: 'article-slug',
             imageXl: 'https://picsum.photos/304/152',
@@ -231,8 +211,6 @@ export class MockApiService {
             previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
             view: 'half',
             articleViewsCount: 12453,
-            directorySlug: 'commerce',
-            directoryName: 'Коммерческая недвижимость',
             articleId: 123,
             articleSlug: 'article-slug',
             imageXl: 'https://picsum.photos/304/152',
@@ -249,8 +227,6 @@ export class MockApiService {
             previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
             view: 'half',
             articleViewsCount: 12453,
-            directorySlug: 'commerce',
-            directoryName: 'Коммерческая недвижимость',
             articleId: 123,
             articleSlug: 'article-slug',
             imageXl: 'https://picsum.photos/304/152',
@@ -278,8 +254,6 @@ export class MockApiService {
               previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
               view: 'half',
               articleViewsCount: 12453,
-              directorySlug: 'commerce',
-              directoryName: 'Коммерческая недвижимость',
               articleId: 123,
               articleSlug: 'article-slug',
               imageXl: 'https://picsum.photos/304/152',
@@ -296,8 +270,6 @@ export class MockApiService {
               previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
               view: 'half',
               articleViewsCount: 12453,
-              directorySlug: 'commerce',
-              directoryName: 'Коммерческая недвижимость',
               articleId: 123,
               articleSlug: 'article-slug',
               imageXl: 'https://picsum.photos/304/152',
@@ -314,8 +286,6 @@ export class MockApiService {
               previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
               view: 'half',
               articleViewsCount: 12453,
-              directorySlug: 'commerce',
-              directoryName: 'Коммерческая недвижимость',
               articleId: 123,
               articleSlug: 'article-slug',
               imageXl: 'https://picsum.photos/304/152',
@@ -332,8 +302,6 @@ export class MockApiService {
               previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
               view: 'half',
               articleViewsCount: 12453,
-              directorySlug: 'commerce',
-              directoryName: 'Коммерческая недвижимость',
               articleId: 123,
               articleSlug: 'article-slug',
               imageXl: 'https://picsum.photos/304/152',
@@ -617,7 +585,6 @@ export class MockApiService {
               id: 1,
               slug: '',
               publishedAt: 1573746483,
-              directorySlug: '',
               title: '«ФНС подала иск о банкротстве застройщика малоэтажного ЖК «Черничная поляна»',
               previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
             },
@@ -625,7 +592,6 @@ export class MockApiService {
               id: 1,
               slug: '',
               publishedAt: 1573746483 - (60 * 5),
-              directorySlug: '',
               title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия',
               previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
             },
@@ -633,7 +599,6 @@ export class MockApiService {
               id: 1,
               slug: '',
               publishedAt: 1573746483 - (60 * 15),
-              directorySlug: '',
               title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство',
               previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
             },
@@ -641,7 +606,6 @@ export class MockApiService {
               id: 1,
               slug: '',
               publishedAt: 1573746483 - (60 * 35),
-              directorySlug: '',
               title: 'В Думе рассматривают возможность платить за будущую квартиру в новостройке в рассрочку',
               previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
             },
@@ -649,7 +613,6 @@ export class MockApiService {
               id: 1,
               slug: '',
               publishedAt: 1573746483 - (60 * 55),
-              directorySlug: '',
               title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство',
               previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
             },
@@ -657,7 +620,6 @@ export class MockApiService {
               id: 1,
               slug: '',
               publishedAt: 1573746483 - (60 * 125),
-              directorySlug: '',
               title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия',
               previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
             }
@@ -688,8 +650,6 @@ export class MockApiService {
                   previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
                   view: 'full',
                   articleViewsCount: 12453,
-                  directorySlug: 'commerce',
-                  directoryName: 'Коммерческая недвижимость',
                   articleId: 123,
                   articleSlug: 'article-slug',
                   imageXl: 'https://picsum.photos/616/304',
@@ -710,8 +670,6 @@ export class MockApiService {
                   previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
                   view: 'half',
                   articleViewsCount: 12453,
-                  directorySlug: 'commerce',
-                  directoryName: 'Коммерческая недвижимость',
                   articleId: 123,
                   articleSlug: 'article-slug',
                   imageXl: 'https://picsum.photos/304/152',
@@ -733,7 +691,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483,
-                      directorySlug: '',
                       title: '«ФНС подала иск о банкротстве застройщика малоэтажного ЖК «Черничная поляна»',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -741,7 +698,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 5),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -749,7 +705,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 15),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -757,7 +712,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 35),
-                      directorySlug: '',
                       title: 'В Думе рассматривают возможность платить за будущую квартиру в новостройке в рассрочку',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -765,7 +719,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 55),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -773,7 +726,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 125),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     }
@@ -786,28 +738,24 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483,
-                      directorySlug: '',
                       title: '«ФНС подала иск о банкротстве застройщика малоэтажного ЖК'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 5),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 15),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 35),
-                      directorySlug: '',
                       highlight: true,
                       title: 'В Думе рассматривают возможность платить за будущую квартиру в новостройке в рассрочку'
                     },
@@ -815,98 +763,84 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 55),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 125),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483,
-                      directorySlug: '',
                       title: '«ФНС подала иск о банкротстве застройщика малоэтажного ЖК «Черничная поляна»'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 5),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 15),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 35),
-                      directorySlug: '',
                       title: 'В Думе рассматривают возможность платить за будущую квартиру в новостройке в рассрочку'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 55),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 125),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483,
-                      directorySlug: '',
                       title: '«ФНС подала иск о банкротстве застройщика малоэтажного ЖК «Черничная поляна»'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 5),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 15),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 35),
-                      directorySlug: '',
                       title: 'В Думе рассматривают возможность платить за будущую квартиру в новостройке в рассрочку'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 55),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 125),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия'
                     }
                   ],
@@ -924,8 +858,6 @@ export class MockApiService {
                   previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
                   view: 'half',
                   articleViewsCount: 12453,
-                  directorySlug: 'commerce',
-                  directoryName: 'Коммерческая недвижимость',
                   articleId: 123,
                   articleSlug: 'article-slug',
                   imageXl: 'https://picsum.photos/304/304',
@@ -946,8 +878,6 @@ export class MockApiService {
                   previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
                   view: 'half',
                   articleViewsCount: 12453,
-                  directorySlug: 'commerce',
-                  directoryName: 'Коммерческая недвижимость',
                   articleId: 123,
                   articleSlug: 'article-slug',
                   imageXl: 'https://picsum.photos/304/152',
@@ -990,7 +920,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483,
-                      directorySlug: '',
                       title: '«ФНС подала иск о банкротстве застройщика малоэтажного ЖК «Черничная поляна»',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -998,7 +927,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 5),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -1006,7 +934,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 15),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -1014,7 +941,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 35),
-                      directorySlug: '',
                       title: 'В Думе рассматривают возможность платить за будущую квартиру в новостройке в рассрочку',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -1022,7 +948,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 55),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -1030,7 +955,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 125),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     }
@@ -1049,8 +973,6 @@ export class MockApiService {
                   previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
                   view: 'full',
                   articleViewsCount: 12453,
-                  directorySlug: 'commerce',
-                  directoryName: 'Коммерческая недвижимость',
                   articleId: 123,
                   articleSlug: 'article-slug',
                   imageXl: 'https://picsum.photos/618/618',
@@ -1072,8 +994,6 @@ export class MockApiService {
                   previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
                   view: 'full',
                   articleViewsCount: 12453,
-                  directorySlug: 'commerce',
-                  directoryName: 'Коммерческая недвижимость',
                   articleId: 123,
                   articleSlug: 'article-slug',
                   imageXl: 'https://picsum.photos/616/304',
@@ -1094,8 +1014,6 @@ export class MockApiService {
                   previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
                   view: 'full',
                   articleViewsCount: 12453,
-                  directorySlug: 'commerce',
-                  directoryName: 'Коммерческая недвижимость',
                   articleId: 123,
                   articleSlug: 'article-slug',
                   imageXl: 'https://picsum.photos/618/618',
@@ -1117,7 +1035,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483,
-                      directorySlug: '',
                       title: '«ФНС подала иск о банкротстве застройщика малоэтажного ЖК «Черничная поляна»',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -1125,7 +1042,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 5),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -1133,7 +1049,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 15),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -1141,7 +1056,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 35),
-                      directorySlug: '',
                       title: 'В Думе рассматривают возможность платить за будущую квартиру в новостройке в рассрочку',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -1149,7 +1063,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 55),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -1157,7 +1070,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 125),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     }
@@ -1174,28 +1086,24 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483,
-                      directorySlug: '',
                       title: '«ФНС подала иск о банкротстве застройщика малоэтажного ЖК'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 5),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 15),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 35),
-                      directorySlug: '',
                       highlight: true,
                       title: 'В Думе рассматривают возможность платить за будущую квартиру в новостройке в рассрочку'
                     },
@@ -1203,98 +1111,84 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 55),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 125),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483,
-                      directorySlug: '',
                       title: '«ФНС подала иск о банкротстве застройщика малоэтажного ЖК «Черничная поляна»'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 5),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 15),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 35),
-                      directorySlug: '',
                       title: 'В Думе рассматривают возможность платить за будущую квартиру в новостройке в рассрочку'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 55),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 125),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483,
-                      directorySlug: '',
                       title: '«ФНС подала иск о банкротстве застройщика малоэтажного ЖК «Черничная поляна»'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 5),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 15),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 35),
-                      directorySlug: '',
                       title: 'В Думе рассматривают возможность платить за будущую квартиру в новостройке в рассрочку'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 55),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 125),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия'
                     }
                   ],
@@ -1312,8 +1206,6 @@ export class MockApiService {
                   previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
                   view: 'full',
                   articleViewsCount: 12453,
-                  directorySlug: 'commerce',
-                  directoryName: 'Коммерческая недвижимость',
                   articleId: 123,
                   articleSlug: 'article-slug',
                   imageXl: 'https://picsum.photos/618/618',
@@ -1334,8 +1226,6 @@ export class MockApiService {
                   previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
                   view: 'full',
                   articleViewsCount: 12453,
-                  directorySlug: 'commerce',
-                  directoryName: 'Коммерческая недвижимость',
                   articleId: 123,
                   articleSlug: 'article-slug',
                   imageXl: 'https://picsum.photos/618/618',
@@ -1378,7 +1268,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483,
-                      directorySlug: '',
                       title: '«ФНС подала иск о банкротстве застройщика малоэтажного ЖК «Черничная поляна»',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -1386,7 +1275,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 5),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -1394,7 +1282,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 15),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -1402,7 +1289,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 35),
-                      directorySlug: '',
                       title: 'В Думе рассматривают возможность платить за будущую квартиру в новостройке в рассрочку',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -1410,7 +1296,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 55),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -1418,7 +1303,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 125),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     }
@@ -1437,8 +1321,6 @@ export class MockApiService {
                   previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
                   view: 'full',
                   articleViewsCount: 12453,
-                  directorySlug: 'commerce',
-                  directoryName: 'Коммерческая недвижимость',
                   articleId: 123,
                   articleSlug: 'article-slug',
                   imageXl: 'https://picsum.photos/618/618',
@@ -1459,8 +1341,6 @@ export class MockApiService {
                   previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
                   view: 'half',
                   articleViewsCount: 12453,
-                  directorySlug: 'commerce',
-                  directoryName: 'Коммерческая недвижимость',
                   articleId: 123,
                   articleSlug: 'article-slug',
                   imageXl: 'https://picsum.photos/618/618',
@@ -1482,8 +1362,6 @@ export class MockApiService {
                   previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
                   view: 'full',
                   articleViewsCount: 12453,
-                  directorySlug: 'commerce',
-                  directoryName: 'Коммерческая недвижимость',
                   articleId: 123,
                   articleSlug: 'article-slug',
                   imageXl: 'https://picsum.photos/616/304',
@@ -1504,8 +1382,6 @@ export class MockApiService {
                   previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
                   view: 'full',
                   articleViewsCount: 12453,
-                  directorySlug: 'commerce',
-                  directoryName: 'Коммерческая недвижимость',
                   articleId: 123,
                   articleSlug: 'article-slug',
                   imageXl: 'https://picsum.photos/618/618',
@@ -1527,7 +1403,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483,
-                      directorySlug: '',
                       title: '«ФНС подала иск о банкротстве застройщика малоэтажного ЖК «Черничная поляна»',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -1535,7 +1410,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 5),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -1543,7 +1417,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 15),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -1551,7 +1424,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 35),
-                      directorySlug: '',
                       title: 'В Думе рассматривают возможность платить за будущую квартиру в новостройке в рассрочку',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -1559,7 +1431,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 55),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -1567,7 +1438,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 125),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     }
@@ -1584,28 +1454,24 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483,
-                      directorySlug: '',
                       title: '«ФНС подала иск о банкротстве застройщика малоэтажного ЖК'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 5),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 15),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 35),
-                      directorySlug: '',
                       highlight: true,
                       title: 'В Думе рассматривают возможность платить за будущую квартиру в новостройке в рассрочку'
                     },
@@ -1613,98 +1479,84 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 55),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 125),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483,
-                      directorySlug: '',
                       title: '«ФНС подала иск о банкротстве застройщика малоэтажного ЖК «Черничная поляна»'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 5),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 15),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 35),
-                      directorySlug: '',
                       title: 'В Думе рассматривают возможность платить за будущую квартиру в новостройке в рассрочку'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 55),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 125),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483,
-                      directorySlug: '',
                       title: '«ФНС подала иск о банкротстве застройщика малоэтажного ЖК «Черничная поляна»'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 5),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 15),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 35),
-                      directorySlug: '',
                       title: 'В Думе рассматривают возможность платить за будущую квартиру в новостройке в рассрочку'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 55),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 125),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия'
                     }
                   ],
@@ -1722,8 +1574,6 @@ export class MockApiService {
                   previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
                   view: 'full',
                   articleViewsCount: 12453,
-                  directorySlug: 'commerce',
-                  directoryName: 'Коммерческая недвижимость',
                   articleId: 123,
                   articleSlug: 'article-slug',
                   imageXl: 'https://picsum.photos/618/618',
@@ -1744,8 +1594,6 @@ export class MockApiService {
                   previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
                   view: 'full',
                   articleViewsCount: 12453,
-                  directorySlug: 'commerce',
-                  directoryName: 'Коммерческая недвижимость',
                   articleId: 123,
                   articleSlug: 'article-slug',
                   imageXl: 'https://picsum.photos/618/618',
@@ -1788,7 +1636,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483,
-                      directorySlug: '',
                       title: '«ФНС подала иск о банкротстве застройщика малоэтажного ЖК «Черничная поляна»',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -1796,7 +1643,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 5),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -1804,7 +1650,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 15),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -1812,7 +1657,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 35),
-                      directorySlug: '',
                       title: 'В Думе рассматривают возможность платить за будущую квартиру в новостройке в рассрочку',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -1820,7 +1664,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 55),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -1828,7 +1671,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 125),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     }
@@ -1847,8 +1689,6 @@ export class MockApiService {
                   previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
                   view: 'full',
                   articleViewsCount: 12453,
-                  directorySlug: 'commerce',
-                  directoryName: 'Коммерческая недвижимость',
                   articleId: 123,
                   articleSlug: 'article-slug',
                   imageXl: 'https://picsum.photos/618/618',
@@ -1869,8 +1709,6 @@ export class MockApiService {
                   previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
                   view: 'full',
                   articleViewsCount: 12453,
-                  directorySlug: 'commerce',
-                  directoryName: 'Коммерческая недвижимость',
                   articleId: 123,
                   articleSlug: 'article-slug',
                   imageXl: 'https://picsum.photos/618/618',
@@ -1897,7 +1735,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483,
-                      directorySlug: '',
                       title: '«ФНС подала иск о банкротстве застройщика малоэтажного ЖК «Черничная поляна»',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -1905,7 +1742,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 5),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -1913,7 +1749,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 15),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -1921,7 +1756,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 35),
-                      directorySlug: '',
                       title: 'В Думе рассматривают возможность платить за будущую квартиру в новостройке в рассрочку',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -1929,7 +1763,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 55),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -1937,7 +1770,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 125),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     }
@@ -1954,28 +1786,24 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483,
-                      directorySlug: '',
                       title: '«ФНС подала иск о банкротстве застройщика малоэтажного ЖК'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 5),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 15),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 35),
-                      directorySlug: '',
                       highlight: true,
                       title: 'В Думе рассматривают возможность платить за будущую квартиру в новостройке в рассрочку'
                     },
@@ -1983,98 +1811,84 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 55),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 125),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483,
-                      directorySlug: '',
                       title: '«ФНС подала иск о банкротстве застройщика малоэтажного ЖК «Черничная поляна»'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 5),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 15),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 35),
-                      directorySlug: '',
                       title: 'В Думе рассматривают возможность платить за будущую квартиру в новостройке в рассрочку'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 55),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 125),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483,
-                      directorySlug: '',
                       title: '«ФНС подала иск о банкротстве застройщика малоэтажного ЖК «Черничная поляна»'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 5),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 15),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 35),
-                      directorySlug: '',
                       title: 'В Думе рассматривают возможность платить за будущую квартиру в новостройке в рассрочку'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 55),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство'
                     },
                     {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 125),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия'
                     }
                   ],
@@ -2092,8 +1906,6 @@ export class MockApiService {
                   previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
                   view: 'full',
                   articleViewsCount: 12453,
-                  directorySlug: 'commerce',
-                  directoryName: 'Коммерческая недвижимость',
                   articleId: 123,
                   articleSlug: 'article-slug',
                   imageXl: 'https://picsum.photos/618/618',
@@ -2132,7 +1944,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483,
-                      directorySlug: '',
                       title: '«ФНС подала иск о банкротстве застройщика малоэтажного ЖК «Черничная поляна»',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -2140,7 +1951,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 5),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -2148,7 +1958,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 15),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -2156,7 +1965,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 35),
-                      directorySlug: '',
                       title: 'В Думе рассматривают возможность платить за будущую квартиру в новостройке в рассрочку',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -2164,7 +1972,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 55),
-                      directorySlug: '',
                       title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     },
@@ -2172,7 +1979,6 @@ export class MockApiService {
                       id: 1,
                       slug: '',
                       publishedAt: 1573746483 - (60 * 125),
-                      directorySlug: '',
                       title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия',
                       previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                     }
@@ -2191,8 +1997,6 @@ export class MockApiService {
                   previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
                   view: 'full',
                   articleViewsCount: 12453,
-                  directorySlug: 'commerce',
-                  directoryName: 'Коммерческая недвижимость',
                   articleId: 123,
                   articleSlug: 'article-slug',
                   imageXl: 'https://picsum.photos/618/618',
@@ -2212,8 +2016,6 @@ export class MockApiService {
                   previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
                   view: 'full',
                   articleViewsCount: 12453,
-                  directorySlug: 'commerce',
-                  directoryName: 'Коммерческая недвижимость',
                   articleId: 123,
                   articleSlug: 'article-slug',
                   imageXl: 'https://picsum.photos/618/618',
@@ -2235,42 +2037,36 @@ export class MockApiService {
                     id: 1,
                     slug: '',
                     publishedAt: 1573746483,
-                    directorySlug: '',
                     title: '«ФНС подала иск о банкротстве застройщика малоэтажного ЖК «Черничная поляна»',
                   },
                   {
                     id: 1,
                     slug: '',
                     publishedAt: 1573746483 - (60 * 5),
-                    directorySlug: '',
                     title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия',
                   },
                   {
                     id: 1,
                     slug: '',
                     publishedAt: 1573746483 - (60 * 15),
-                    directorySlug: '',
                     title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство',
                   },
                   {
                     id: 1,
                     slug: '',
                     publishedAt: 1573746483 - (60 * 35),
-                    directorySlug: '',
                     title: 'В Думе рассматривают возможность платить за будущую квартиру в новостройке в рассрочку',
                   },
                   {
                     id: 1,
                     slug: '',
                     publishedAt: 1573746483 - (60 * 55),
-                    directorySlug: '',
                     title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство',
                   },
                   {
                     id: 1,
                     slug: '',
                     publishedAt: 1573746483 - (60 * 125),
-                    directorySlug: '',
                     title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия',
                   }
                 ]
@@ -2309,8 +2105,6 @@ export class MockApiService {
                     previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
                     view: 'half',
                     articleViewsCount: 12453,
-                    directorySlug: 'commerce',
-                    directoryName: 'Коммерческая недвижимость',
                     articleId: 123,
                     articleSlug: 'article-slug',
                     imageXl: 'https://picsum.photos/304/152',
@@ -2327,8 +2121,6 @@ export class MockApiService {
                     previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
                     view: 'half',
                     articleViewsCount: 12453,
-                    directorySlug: 'commerce',
-                    directoryName: 'Коммерческая недвижимость',
                     articleId: 123,
                     articleSlug: 'article-slug',
                     imageXl: 'https://picsum.photos/304/152',
@@ -2345,8 +2137,6 @@ export class MockApiService {
                     previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
                     view: 'half',
                     articleViewsCount: 12453,
-                    directorySlug: 'commerce',
-                    directoryName: 'Коммерческая недвижимость',
                     articleId: 123,
                     articleSlug: 'article-slug',
                     imageXl: 'https://picsum.photos/304/152',
@@ -2363,8 +2153,6 @@ export class MockApiService {
                     previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
                     view: 'half',
                     articleViewsCount: 12453,
-                    directorySlug: 'commerce',
-                    directoryName: 'Коммерческая недвижимость',
                     articleId: 123,
                     articleSlug: 'article-slug',
                     imageXl: 'https://picsum.photos/304/152',
@@ -2381,8 +2169,6 @@ export class MockApiService {
                     previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
                     view: 'half',
                     articleViewsCount: 12453,
-                    directorySlug: 'commerce',
-                    directoryName: 'Коммерческая недвижимость',
                     articleId: 123,
                     articleSlug: 'article-slug',
                     imageXl: 'https://picsum.photos/304/152',
@@ -2399,8 +2185,6 @@ export class MockApiService {
                     previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
                     view: 'half',
                     articleViewsCount: 12453,
-                    directorySlug: 'commerce',
-                    directoryName: 'Коммерческая недвижимость',
                     articleId: 123,
                     articleSlug: 'article-slug',
                     imageXl: 'https://picsum.photos/304/152',
@@ -2417,8 +2201,6 @@ export class MockApiService {
                     previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
                     view: 'half',
                     articleViewsCount: 12453,
-                    directorySlug: 'commerce',
-                    directoryName: 'Коммерческая недвижимость',
                     articleId: 123,
                     articleSlug: 'article-slug',
                     imageXl: 'https://picsum.photos/304/152',
@@ -2435,8 +2217,6 @@ export class MockApiService {
                     previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
                     view: 'half',
                     articleViewsCount: 12453,
-                    directorySlug: 'commerce',
-                    directoryName: 'Коммерческая недвижимость',
                     articleId: 123,
                     articleSlug: 'article-slug',
                     imageXl: 'https://picsum.photos/304/152',
@@ -2489,8 +2269,6 @@ export class MockApiService {
           previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
           view: 'half',
           articleViewsCount: 12453,
-          directorySlug: 'commerce',
-          directoryName: 'Коммерческая недвижимость',
           articleId: 123,
           articleSlug: 'article-slug',
           imageXl: 'https://picsum.photos/304/152',
@@ -2511,8 +2289,6 @@ export class MockApiService {
           previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
           view: 'full',
           articleViewsCount: 12453,
-          directorySlug: 'commerce',
-          directoryName: 'Коммерческая недвижимость',
           articleId: 123,
           articleSlug: 'article-slug',
           imageXl: 'https://picsum.photos/304/304',
@@ -2599,8 +2375,6 @@ export class MockApiService {
           previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
           view: 'half',
           articleViewsCount: 12453,
-          directorySlug: 'commerce',
-          directoryName: 'Коммерческая недвижимость',
           articleId: 123,
           articleSlug: 'article-slug',
           imageXl: 'https://picsum.photos/304/152',
@@ -2621,8 +2395,6 @@ export class MockApiService {
           previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
           view: 'full',
           articleViewsCount: 12453,
-          directorySlug: 'commerce',
-          directoryName: 'Коммерческая недвижимость',
           articleId: 123,
           articleSlug: 'article-slug',
           imageXl: 'https://picsum.photos/304/304',
@@ -2643,8 +2415,6 @@ export class MockApiService {
           previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
           view: 'half',
           articleViewsCount: 12453,
-          directorySlug: 'commerce',
-          directoryName: 'Коммерческая недвижимость',
           articleId: 123,
           articleSlug: 'article-slug',
           imageXl: 'https://picsum.photos/304/152',
@@ -2665,8 +2435,6 @@ export class MockApiService {
           previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
           view: 'full',
           articleViewsCount: 12453,
-          directorySlug: 'commerce',
-          directoryName: 'Коммерческая недвижимость',
           articleId: 123,
           articleSlug: 'article-slug',
           imageXl: 'https://picsum.photos/304/304',
@@ -2687,8 +2455,6 @@ export class MockApiService {
           previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
           view: 'full',
           articleViewsCount: 12453,
-          directorySlug: 'commerce',
-          directoryName: 'Коммерческая недвижимость',
           articleId: 123,
           articleSlug: 'article-slug',
           imageXl: 'https://picsum.photos/304/304',
@@ -2708,8 +2474,6 @@ export class MockApiService {
             id: route === '/article' ? 1 : 2,
             title: route === '/article' ? 'ВТБ играет на опережение' : 'Новогодний саммит РГУД',
             slug: 'apartamenti-na-pauze',
-            directorySlug: 'project',
-            directoryName: 'Жилые комплексы',
             metaTitle: null,
             metaDescription: null,
             metaKeywords: null,
@@ -2771,7 +2535,6 @@ export class MockApiService {
                     id: 1,
                     slug: '',
                     publishedAt: 1573746483,
-                    directorySlug: '',
                     title: '«ФНС подала иск о банкротстве застройщика малоэтажного ЖК «Черничная поляна»',
                     previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                   },
@@ -2779,7 +2542,6 @@ export class MockApiService {
                     id: 1,
                     slug: '',
                     publishedAt: 1573746483 - (60 * 5),
-                    directorySlug: '',
                     title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия',
                     previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                   },
@@ -2787,7 +2549,6 @@ export class MockApiService {
                     id: 1,
                     slug: '',
                     publishedAt: 1573746483 - (60 * 15),
-                    directorySlug: '',
                     title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство',
                     previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                   },
@@ -2795,7 +2556,6 @@ export class MockApiService {
                     id: 1,
                     slug: '',
                     publishedAt: 1573746483 - (60 * 35),
-                    directorySlug: '',
                     title: 'В Думе рассматривают возможность платить за будущую квартиру в новостройке в рассрочку',
                     previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                   },
@@ -2803,7 +2563,6 @@ export class MockApiService {
                     id: 1,
                     slug: '',
                     publishedAt: 1573746483 - (60 * 55),
-                    directorySlug: '',
                     title: 'Сбербанк поможет частным инвесторам вкладывать средства в строительство',
                     previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                   },
@@ -2811,7 +2570,6 @@ export class MockApiService {
                     id: 1,
                     slug: '',
                     publishedAt: 1573746483 - (60 * 125),
-                    directorySlug: '',
                     title: 'Объём просроченной ипотечной задолженности вырос по итогам полугодия',
                     previewText: 'ЮИТ сворачивает работу в Москве, Московской области и Ростове-на-Дону, уходит с рынка подряда и дорожного строительства'
                   }
@@ -3553,8 +3311,6 @@ export class MockApiService {
         previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
         view: 'half',
         articleViewsCount: 12453,
-        directorySlug: 'commerce',
-        directoryName: 'Коммерческая недвижимость',
         articleId: 123,
         articleSlug: 'article-slug',
         imageXl: 'https://picsum.photos/304/152',
@@ -3575,8 +3331,6 @@ export class MockApiService {
         previewText: '«Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия «Город с нуля. Возможности и ограничения» – панельную дискуссия',
         view: 'full',
         articleViewsCount: 12453,
-        directorySlug: 'commerce',
-        directoryName: 'Коммерческая недвижимость',
         articleId: 123,
         articleSlug: 'article-slug',
         imageXl: 'https://picsum.photos/304/304',

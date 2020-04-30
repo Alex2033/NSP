@@ -24,7 +24,7 @@
          [style.margin-top]="screen !== 'sm' && scroll > 0 ? scroll < topHeaderHeight ? '-' + scroll + 'px' : '-' + topHeaderHeight + 'px' : '0px'">
 
       <!-- logo -->
-      <a [routerLink]="['']" class="logo-link" aria-label="logotype link">
+      <a [routerLink]="['/']" class="logo-link" aria-label="logotype link">
         <svg class="logo" *ngIf="screen !== 'sm'">
           <use xlink:href="assets/sprites/icons.svg#logo"></use>
         </svg>
@@ -71,7 +71,7 @@
     #menu
   >
     <div class="menu">
-      <a href="#" aria-label="mini-logotype link">
+      <a [routerLink]="['/']" aria-label="mini-logotype link">
         <svg class="logo-mini" [class.visible]="fixedMenu">
           <use xlink:href="assets/sprites/icons.svg#logo_mini"></use>
         </svg>

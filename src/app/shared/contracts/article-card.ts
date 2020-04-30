@@ -9,8 +9,6 @@ export interface ArticleCard {
   articleViewsCount: number;
   articleId: number;
   articleSlug: string;
-  directorySlug: string;
-  directoryName: string;
   imageXl: string | null;
   imageLg: string | null;
   imageMd: string | null;

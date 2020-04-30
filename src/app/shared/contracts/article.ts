@@ -9,8 +9,6 @@ export interface Article {
   metaTitle: string | null;
   metaDescription: string | null;
   metaKeywords: string | null;
-  directorySlug: string;
-  directoryName: string;
   authors: {
     id: number;
     name: string;

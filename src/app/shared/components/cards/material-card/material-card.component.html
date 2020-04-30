@@ -1,7 +1,7 @@
 <ng-container *ngIf="data">
   <ng-container *ngIf="view === 'half' || !data.imageXl">
     <a
-      [routerLink]="['']"
+      [routerLink]="['/' + data.articleId + '-' + data.articleSlug]"
       class="card-wrapper default"
       [class.extended]="size !== 'small'"
       [class.small]="size === 'small'"
@@ -43,14 +43,14 @@
             <span class="views-number">{{ data.articleViewsCount | number }}</span>
           </div>
           <div class="category">
-            {{ data.directoryName }}
+<!--            {{ data.directoryName }}-->
           </div>
         </footer>
       </div>
     </a>
   </ng-container>
   <ng-container *ngIf="view === 'full' && (data.imageXl || data.smallImageXl)">
-    <a [routerLink]="['']" class="card-wrapper backgroundImage has-image">
+    <a [routerLink]="['/' + data.articleId + '-' + data.articleSlug]" class="card-wrapper backgroundImage has-image">
       <div class="card-top">
         <div class="date">{{ data.articlePublishedAt * 1000 | niceDate }} в {{ data.articlePublishedAt * 1000 | date: 'shortTime' }}</div>
         <div class="tag" *ngIf="data.markerName">
@@ -70,7 +70,7 @@
             <span class="views-number">{{ data.articleViewsCount | number }}</span>
           </div>
           <div class="category">
-            {{ data.directoryName }}
+<!--            {{ data.directoryName }}-->
           </div>
         </footer>
       </div>

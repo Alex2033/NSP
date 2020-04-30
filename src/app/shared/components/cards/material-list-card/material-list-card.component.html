@@ -17,7 +17,7 @@
   <div class="swiper-container" [swiper]="materialListConfig" #carousel>
     <div class="swiper-wrapper">
       <div class="swiper-slide" *ngFor="let block of blocks">
-        <a [routerLink]="['']" class="card-link" *ngFor="let article of block">
+        <a [routerLink]="['/' + article.id + '-' + article.slug]" class="card-link" *ngFor="let article of block">
           <div class="h6">{{ article.title }}</div>
           <div class="card-text" [innerHTML]="article.previewText"></div>
         </a>

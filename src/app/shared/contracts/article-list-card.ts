@@ -5,7 +5,6 @@ export interface ArticleListCard {
     id: number,
     slug: string,
     publishedAt: number,
-    title: string,
-    directorySlug: string
+    title: string
   }[];
 }

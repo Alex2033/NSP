@@ -1,10 +1,10 @@
 <div class="login-content">
 
   <!-- mobile image background -->
-  <img 
+  <img
     class="mobile-image"
     *ngIf="screen === 'sm'"
-    src="https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=550&q=80" 
+    src="https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=550&q=80"
     alt="mobile image">
 
   <div class="login-img" *ngIf="screen !== 'sm'">
@@ -36,10 +36,10 @@
     </div>
     <div class="footnote">
       <p>
-          Авторизуясь, вы соглашаетесь с 
-          <a href="#" class="link"> правилами пользования сайтом </a>
-          <br> и даете 
-          <a href="#" class="link"> согласие на обработку персональных данных. </a>
+          Авторизуясь, вы соглашаетесь с
+          <a [routerLink]="['/agreement']" class="link"> правилами пользования сайтом </a>
+          <br> и даете
+          согласие на обработку персональных данных.
       </p>
     </div>
   </div>
