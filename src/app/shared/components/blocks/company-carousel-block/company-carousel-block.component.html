@@ -20,7 +20,9 @@
         <div class="swiper-container" [swiper]="config" #companyCarousel>
             <div class="swiper-wrapper">
                 <div class="swiper-slide" *ngFor="let image of data.images">
-                  <app-responsive-image [xl]="image.thumbXl" [lg]="image.thumbLg" [md]="image.thumbMd" [xs]="image.thumbSm" [sm]="image.thumbSm" [alt]="image.alt" [title]="image.title"></app-responsive-image>
+                  <a [href]="image.url" target="_blank">
+                    <app-responsive-image [xl]="image.thumbXl" [lg]="image.thumbLg" [md]="image.thumbMd" [xs]="image.thumbSm" [sm]="image.thumbSm" [alt]="image.alt" [title]="image.title"></app-responsive-image>
+                  </a>
                 </div>
             </div>
         </div>

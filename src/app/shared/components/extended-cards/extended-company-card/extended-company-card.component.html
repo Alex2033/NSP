@@ -39,7 +39,7 @@
                         <use xlink:href="assets/sprites/icons.svg#web"></use>
                     </svg>
                 </div>
-                <a class="link" [href]="company.activityName">{{ company.activityName }}</a>
+                <a class="link" [routerLink]="['/companies', 'activity', company.activityId]">{{ company.activityName }}</a>
             </div>
         </div>
     </div>

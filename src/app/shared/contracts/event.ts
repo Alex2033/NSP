@@ -1,7 +1,7 @@
 export interface Event {
   id: number;
-  mainArticleId: number;
-  mainArticleSlug: string;
+  mainArticleId?: number;
+  mainArticleSlug?: string;
   name: string;
   type: string;
   startedAt: number;
