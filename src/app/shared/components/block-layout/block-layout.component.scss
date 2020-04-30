@@ -1,12 +1,18 @@
 @import "responsive";
 
 :host {
+  display: block;
     > * {
         display: block;
       &:nth-child(n+2) {
         margin-top: 26px; // Высота пустой строки
       }
     }
+  &:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
 }
 .float-left {
   @include media-breakpoint-up(md) {
