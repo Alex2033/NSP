@@ -1,5 +1,5 @@
 <div class="map-container" *ngIf="isBrowser">
-    <angular-yandex-map [center]="[data.latitude, data.longitude]" [zoom]="17">
+    <angular-yandex-map [center]="[data.latitude, data.longitude]" [zoom]="17" [state]="{controls: []}">
         <angular-yandex-placemark
             [geometry]="[data.latitude, data.longitude]"
             [properties]="placemarkProperties"
