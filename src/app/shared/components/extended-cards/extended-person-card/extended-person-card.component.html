@@ -7,7 +7,7 @@
         <div class="person-position">
             <p>{{ person.position }}</p>
         </div>
-        <div class="card-text" [innerHTML]="person.description | paragraphs"></div>
+        <div class="card-text" [innerHTML]="person.description | paragraphs | quotes"></div>
         <div class="card-contacts">
             <div class="card-phone" *ngIf="person.phone">
                 <svg class="card-icon">

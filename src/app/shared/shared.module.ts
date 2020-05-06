@@ -69,6 +69,7 @@ import {ServerSideValidationDirective} from './directives/server-side-validation
 import { EventCalendarCardComponent } from './components/cards/event-calendar-card/event-calendar-card.component';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 import { ArticleBannerComponent } from './components/article-banner/article-banner.component';
+import { QuotesPipe } from './pipes/quotes.pipe';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -135,7 +136,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ServerSideValidationDirective,
     EventCalendarCardComponent,
     SafeHtmlPipe,
-    ArticleBannerComponent
+    ArticleBannerComponent,
+    QuotesPipe
   ],
   imports: [
     CommonModule,
@@ -209,7 +211,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ServerSideValidationDirective,
     EventCalendarCardComponent,
     SafeHtmlPipe,
-    SwiperModule
+    SwiperModule,
+    QuotesPipe
   ],
   providers: [
     {

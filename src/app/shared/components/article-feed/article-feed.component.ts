@@ -1,10 +1,11 @@
 import {Component, HostListener, Inject, OnInit, PLATFORM_ID} from '@angular/core';
 import {Article} from '../../contracts/article';
 import {ResponsiveService} from '../../services/responsive.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Meta, Title} from '@angular/platform-browser';
 import {ApiService} from '../../services/api.service';
-import {isPlatformBrowser} from '@angular/common';
+import {isPlatformBrowser, isPlatformServer, Location} from '@angular/common';
+import {ResponseService} from '../../services/response.service';
 
 @Component({
   selector: 'app-article-feed',
@@ -23,12 +24,17 @@ export class ArticleFeedComponent implements OnInit {
               private route: ActivatedRoute,
               protected title: Title,
               protected meta: Meta,
+              private location: Location,
               private api: ApiService,
+              private response: ResponseService,
               @Inject(PLATFORM_ID) private platformId: any) {
   }
 
   ngOnInit() {
     this.route.data.subscribe((data) => {
+      if (this.location.path() !== '/' + data.config.data.id + '-' + data.config.data.slug) {
+        this.response.permanentRedirect('/' + data.config.data.id + '-' + data.config.data.slug);
+      }
       this.articles = [];
       this.tryToLoadArticle = true;
       this.addArticleToFeed(data.config.data as Article);

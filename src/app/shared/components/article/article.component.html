@@ -44,7 +44,7 @@
           </div>
         </div>
         <h1 class="page-title" *ngIf="screen !== 'sm'">{{ article.title }}</h1>
-        <div class="preview-text" [innerHTML]="article.previewText | paragraphs">
+        <div class="preview-text" [innerHTML]="article.previewText | paragraphs | quotes">
         </div>
         <div class="share-area">
           <app-share></app-share>
