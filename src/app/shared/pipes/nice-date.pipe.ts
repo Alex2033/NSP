@@ -21,7 +21,11 @@ export class NiceDatePipe implements PipeTransform {
       return 'Вчера';
     }
     const datePipe = new DatePipe('ru-RU');
-    return datePipe.transform(value, 'd MMMM');
+    let result = datePipe.transform(value, 'd MMMM');
+    if (date.getFullYear() !== currentDate.getFullYear()) {
+      result += ' ' + date.getFullYear();
+    }
+    return result;
   }
 
 }
