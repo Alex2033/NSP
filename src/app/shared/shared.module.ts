@@ -70,6 +70,8 @@ import { EventCalendarCardComponent } from './components/cards/event-calendar-ca
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 import { ArticleBannerComponent } from './components/article-banner/article-banner.component';
 import { QuotesPipe } from './pipes/quotes.pipe';
+import { ExternalLinksPipe } from './pipes/external-links.pipe';
+import { DynamicRoutesDirective } from './directives/dynamic-routes.directive';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -137,7 +139,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     EventCalendarCardComponent,
     SafeHtmlPipe,
     ArticleBannerComponent,
-    QuotesPipe
+    QuotesPipe,
+    ExternalLinksPipe,
+    DynamicRoutesDirective
   ],
   imports: [
     CommonModule,
@@ -212,7 +216,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     EventCalendarCardComponent,
     SafeHtmlPipe,
     SwiperModule,
-    QuotesPipe
+    QuotesPipe,
+    ExternalLinksPipe,
+    DynamicRoutesDirective
   ],
   providers: [
     {
