@@ -89,7 +89,8 @@
 }
 
 .socials {
-
+    margin-left: -12px;
+    margin-top: -13px;
     a {
         flex: 0 0 40px;
         height: 40px;
@@ -97,9 +98,8 @@
     }
 
     > * {
-        &:not(:last-child) {
-            margin-right: 16px;
-        }
+      margin-left: 13px;
+      margin-top: 13px;
     }
 }
 

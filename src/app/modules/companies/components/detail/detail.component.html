@@ -75,6 +75,20 @@
                 </svg>
               </a>
             </li>
+            <li *ngIf="company.instagramLink">
+              <a [href]="company.instagramLink" class="instagram" target="_blank">
+                <svg>
+                  <use xlink:href="assets/sprites/icons.svg#instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li *ngIf="company.youtubeLink">
+              <a [href]="company.youtubeLink" class="youtube" target="_blank">
+                <svg>
+                  <use xlink:href="assets/sprites/icons.svg#youtube"></use>
+                </svg>
+              </a>
+            </li>
           </ul>
         </div>
       </div>

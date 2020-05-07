@@ -20,6 +20,8 @@ export interface Company {
   facebookLink?: string;
   telegramLink?: string;
   twitterLink?: string;
+  instagramLink?: string;
+  youtubeLink: string;
   email?: string;
 
   metaTitle?: string;
