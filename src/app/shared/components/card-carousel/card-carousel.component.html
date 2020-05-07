@@ -2,14 +2,14 @@
   <header class="carousel-header">
     <div class="carousel-header-left">
       <h2 [class.is-small]="smallHeader">
-        <a [routerLink]="['/collections', data.slug]" class="carousel-link">
+        <a [routerLink]="[data.slug]" class="carousel-link">
           <span>{{ data.title }}</span>
           <svg class="arrow-icon">
             <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
           </svg>
         </a>
       </h2>
-      <ul class="carousel-tabs">
+      <ul class="carousel-tabs" *ngIf="data.links">
         <li
           class="carousel-tab"
           *ngFor="let link of data.links; let index = index"
@@ -38,6 +38,7 @@
           <app-material-card class="small" *ngSwitchCase="'article'" [size]="'small'" [view]="card.view" [data]="card"></app-material-card>
           <app-video-card *ngSwitchCase="'video'" [size]="'small'" [data]="card"></app-video-card>
           <app-advertising-card *ngSwitchCase="'advertising'" [size]="'small'"></app-advertising-card>
+          <app-person-card [person]="card" *ngSwitchCase="'person'"></app-person-card>
         </ng-container>
       </div>
     </div>

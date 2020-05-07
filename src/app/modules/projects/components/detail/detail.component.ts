@@ -35,6 +35,9 @@ export class DetailComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.route.data.subscribe((data) => {
       this.project = data.config.data as Project;
+      this.project.collections.map(collection => {
+        collection.slug = '/collections/' + collection.slug;
+      });
       this.menuService.setProjectMenuElements(data.config.menu);
       this.menu = this.menuService.getProjectMenu();
       this.title.setTitle(this.project.metaTitle ? this.project.metaTitle : this.project.title + ' - NSP.ru');

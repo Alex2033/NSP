@@ -14,7 +14,7 @@
           <div class="contact-card-img">
             <app-responsive-image [xl]="company.logoXl" [lg]="company.logoLg" [md]="company.logoMd" [xs]="company.logoSm" [sm]="company.logoSm" [alt]="company.logoAlt"  [title]="company.logoTitle"></app-responsive-image>
           </div>
-          <div class="contact-card-items">
+          <div class="contact-card-items" *ngIf="company.address">
             <div class="contact-card-item">
               <svg class="contact-card-icon geolocation">
                 <use xlink:href="assets/sprites/icons.svg#map_pin"></use>
@@ -87,7 +87,7 @@
                 <div class="caption">Вид деятельности</div>
                 <h5 class="company-infoblock-title">{{ company.activityName }}</h5>
               </div>
-              <div class="company-infoblock">
+              <div class="company-infoblock" *ngIf="company.organizationForm">
                 <div class="caption">Организационная форма</div>
                 <h5 class="company-infoblock-title">{{ company.organizationForm }}</h5>
               </div>
@@ -105,10 +105,10 @@
           </div>
         </div>
       </div>
-      <div class="col-xl-3 col-lg-7 order-xl-2 order-lg-2" *ngIf="company.latitude && company.longitude && isBrowser">
+      <div class="col-xl-3 col-lg-7 order-xl-2 order-lg-2" *ngIf="company.address && isBrowser">
         <div class="company-map">
           <angular-yandex-map [center]="[company.latitude, company.longitude]" [zoom]="17" [state]="{controls: []}">
-            <angular-yandex-placemark
+            <angular-yandex-placemark *ngIf="company.latitude && company.longitude"
               [geometry]="[company.latitude, company.longitude]"
               [options]="placemarkOptions"
             ></angular-yandex-placemark>
@@ -118,12 +118,7 @@
     </div>
   </div>
   <div class="materials" *ngIf="persons && persons.length > 0">
-    <h3 class="materials-title">Персоны</h3>
-    <div class="row cards-row">
-      <div class="col-xl-3 col-lg-4 col-md-6 col-12" *ngFor="let person of persons">
-        <app-person-card [person]="person"></app-person-card>
-      </div>
-    </div>
+    <app-card-carousel [data]="{title: 'Персоны', links: [], cards: persons, slug: '/persons'}"></app-card-carousel>
   </div>
   <div class="materials" *ngIf="objects && objects.length > 0">
     <h3 class="materials-title">Объекты</h3>

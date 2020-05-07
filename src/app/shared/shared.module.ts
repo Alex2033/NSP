@@ -149,7 +149,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    AngularYandexMapsModule,
+    AngularYandexMapsModule.forRoot('658f67a2-fd77-42e9-b99e-2bd48c4ccad4'),
     MatNativeDateModule,
     MatDatepickerModule,
     NgScrollbarModule,

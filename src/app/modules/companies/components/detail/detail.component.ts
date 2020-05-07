@@ -6,6 +6,7 @@ import {Meta, Title} from '@angular/platform-browser';
 import {ArticleCard} from '../../../../shared/contracts/article-card';
 import {isPlatformBrowser} from '@angular/common';
 import {CurrentPageService} from '../../../../shared/services/current-page.service';
+import {ILoadEvent} from 'angular8-yandex-maps/lib/types/types';
 
 @Component({
   selector: 'app-detail',
@@ -46,8 +47,10 @@ export class DetailComponent implements OnInit {
     this.route.data.subscribe(data => {
       this.currentPage.next();
       this.company = data.company.data;
-      this.objects = data.company.apartmentComplexes;
       this.persons = data.company.people;
+      this.persons.map(person => {
+        person.type = 'person';
+      });
       this.articles = data.articles.items;
       this.title.setTitle((this.company.metaTitle ? this.company.metaTitle : this.company.name + ' - Информация о компании ' + ' - NSP.ru'));
       this.meta.updateTag({
@@ -64,5 +67,4 @@ export class DetailComponent implements OnInit {
       }
     });
   }
-
 }
