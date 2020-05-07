@@ -11,6 +11,8 @@
     <div class="person-text">
       {{ person.position }}
       <br>
-      {{ person.companyName }}
+      <ng-container *ngIf="person.companyName">
+        {{ person.companyNamePrefix }} «{{ person.companyName }}»
+      </ng-container>
     </div>
 </a>
