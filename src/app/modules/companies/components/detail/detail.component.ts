@@ -55,7 +55,7 @@ export class DetailComponent implements OnInit {
       this.title.setTitle((this.company.metaTitle ? this.company.metaTitle : this.company.name + ' - Информация о компании ' + ' - NSP.ru'));
       this.meta.updateTag({
           name: 'description',
-          content: this.company.metaDescription ? this.company.metaDescription : this.company.description
+          content: this.company.metaDescription ? this.company.metaDescription : this.company.description ? this.company.description : ''
         }
       );
       if (this.company.metaKeywords) {

@@ -34,7 +34,7 @@ export class DetailComponent implements OnInit {
       this.title.setTitle((this.apartmentComplex.metaTitle ? this.apartmentComplex.metaTitle : this.apartmentComplex.name + ' - Информация о объекте ' + ' - NSP.ru'));
       this.meta.updateTag({
           name: 'description',
-          content: this.apartmentComplex.metaDescription ? this.apartmentComplex.metaDescription : this.apartmentComplex.previewText
+          content: this.apartmentComplex.metaDescription ? this.apartmentComplex.metaDescription : this.apartmentComplex.previewText ? this.apartmentComplex.previewText : ''
         }
       );
       if (this.apartmentComplex.metaKeywords) {
