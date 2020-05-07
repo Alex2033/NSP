@@ -23,7 +23,7 @@
                             <use xlink:href="assets/sprites/icons.svg#web"></use>
                         </svg>
                     </div>
-                    <a class="link" [href]="company.site">{{ company.site }}</a>
+                    <a class="link" [href]="company.site" target="_blank" rel="nofollow noopener">{{ company.site | domain }}</a>
                 </div>
             <div class="company-contact" *ngIf="company.email">
                 <div class="company-contact-icon">

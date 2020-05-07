@@ -43,47 +43,47 @@
               <svg class="contact-card-icon web">
                 <use xlink:href="assets/sprites/icons.svg#web"></use>
               </svg>
-              <a [href]="company.site" target="_blank" class="link">{{ company.site | domain}}</a>
+              <a [href]="company.site" target="_blank" rel="nofollow noopener" class="link">{{ company.site | domain}}</a>
             </div>
           </div>
           <ul class="socials">
             <li *ngIf="company.vkontakteLink">
-              <a [href]="company.vkontakteLink" class="vk" target="_blank">
+              <a [href]="company.vkontakteLink" class="vk" rel="nofollow noopener" target="_blank">
                 <svg>
                   <use xlink:href="assets/sprites/icons.svg#vk"></use>
                 </svg>
               </a>
             </li>
             <li *ngIf="company.facebookLink">
-              <a [href]="company.facebookLink" class="facebook" target="_blank">
+              <a [href]="company.facebookLink" class="facebook" rel="nofollow noopener" target="_blank">
                 <svg>
                   <use xlink:href="assets/sprites/icons.svg#facebook"></use>
                 </svg>
               </a>
             </li>
             <li *ngIf="company.telegramLink">
-              <a [href]="company.telegramLink" class="telegram" target="_blank">
+              <a [href]="company.telegramLink" class="telegram" rel="nofollow noopener" target="_blank">
                 <svg>
                   <use xlink:href="assets/sprites/icons.svg#telegram"></use>
                 </svg>
               </a>
             </li>
             <li *ngIf="company.twitterLink">
-              <a [href]="company.twitterLink" class="twitter" target="_blank">
+              <a [href]="company.twitterLink" class="twitter" rel="nofollow noopener" target="_blank">
                 <svg>
                   <use xlink:href="assets/sprites/icons.svg#twitter"></use>
                 </svg>
               </a>
             </li>
             <li *ngIf="company.instagramLink">
-              <a [href]="company.instagramLink" class="instagram" target="_blank">
+              <a [href]="company.instagramLink" class="instagram" rel="nofollow noopener" target="_blank">
                 <svg>
                   <use xlink:href="assets/sprites/icons.svg#instagram"></use>
                 </svg>
               </a>
             </li>
             <li *ngIf="company.youtubeLink">
-              <a [href]="company.youtubeLink" class="youtube" target="_blank">
+              <a [href]="company.youtubeLink" class="youtube" rel="nofollow noopener" target="_blank">
                 <svg>
                   <use xlink:href="assets/sprites/icons.svg#youtube"></use>
                 </svg>

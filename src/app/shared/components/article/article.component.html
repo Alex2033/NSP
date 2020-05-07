@@ -132,32 +132,32 @@
           <svg class="contact-card-icon web">
             <use xlink:href="assets/sprites/icons.svg#web"></use>
           </svg>
-          <a [href]="article.event.site" target="_blank" class="link">{{ article.event.site | domain }}</a>
+          <a [href]="article.event.site" target="_blank" rel="nofollow noopener" class="link">{{ article.event.site | domain }}</a>
         </div>
         <ul class="socials">
           <li *ngIf="article.event.vkontakteLink">
-            <a [href]="article.event.vkontakteLink" class="vk" target="_blank">
+            <a [href]="article.event.vkontakteLink" rel="nofollow noopener" class="vk" target="_blank">
               <svg>
                 <use xlink:href="assets/sprites/icons.svg#vk"></use>
               </svg>
             </a>
           </li>
           <li *ngIf="article.event.facebookLink">
-            <a [href]="article.event.facebookLink" class="facebook" target="_blank">
+            <a [href]="article.event.facebookLink" rel="nofollow noopener" class="facebook" target="_blank">
               <svg>
                 <use xlink:href="assets/sprites/icons.svg#facebook"></use>
               </svg>
             </a>
           </li>
           <li *ngIf="article.event.telegramLink">
-            <a [href]="article.event.telegramLink" class="telegram" target="_blank">
+            <a [href]="article.event.telegramLink" rel="nofollow noopener" class="telegram" target="_blank">
               <svg>
                 <use xlink:href="assets/sprites/icons.svg#telegram"></use>
               </svg>
             </a>
           </li>
           <li *ngIf="article.event.twitterLink">
-            <a [href]="article.event.twitterLink" class="twitter" target="_blank">
+            <a [href]="article.event.twitterLink" rel="nofollow noopener" class="twitter" target="_blank">
               <svg>
                 <use xlink:href="assets/sprites/icons.svg#twitter"></use>
               </svg>
