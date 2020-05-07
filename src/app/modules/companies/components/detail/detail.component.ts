@@ -52,7 +52,7 @@ export class DetailComponent implements OnInit {
         person.type = 'person';
       });
       this.articles = data.articles.items;
-      this.title.setTitle((this.company.metaTitle ? this.company.metaTitle : this.company.name + ' - Информация о компании ' + ' - NSP.ru'));
+      this.title.setTitle((this.company.metaTitle ? this.company.metaTitle : this.company.namePrefix + ' «' + this.company.name + '» - Информация о компании ' + ' - NSP.ru'));
       this.meta.updateTag({
           name: 'description',
           content: this.company.metaDescription ? this.company.metaDescription : this.company.description ? this.company.description : ''
