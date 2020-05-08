@@ -107,7 +107,7 @@
               </div>
             </div>
             <div class="company-infoblock company-infoblock-text" *ngIf="company.description">
-              <div class="caption">Информация о компании</div>
+<!--              <div class="caption">Информация о компании</div>-->
               <div appDynamicRoutes class="company-infoblock-paragraphs" [innerHTML]="company.description | paragraphs | quotes | externalLinks"></div>
 <!--              <a [routerLink]="['']" class="link show-more" *ngIf="screen === 'sm' && false">-->
 <!--                <span>Еще</span>-->
