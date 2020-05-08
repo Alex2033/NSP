@@ -1,7 +1,6 @@
 export interface Company {
   id: number;
   name: string;
-  namePrefix?: string;
   slug: string;
   activityName: string;
   phone: string;

@@ -3,7 +3,7 @@
       <app-responsive-image [xl]="company.logoXl" [lg]="company.logoLg" [md]="company.logoMd" [xs]="company.logoSm"
                             [sm]="company.logoSm"  [alt]="company.logoAlt"  [title]="company.logoTitle"></app-responsive-image>
     </div>
-    <div class="h5" class="company-title">{{ company.namePrefix }} «{{ company.name }}»</div>
+    <div class="h5 company-title">]{{ company.name | quotes }}</div>
     <div class="company-contacts">
       <span *ngIf="company.phone" class="company-phone link">{{ company.phone }}</span>
       <br>

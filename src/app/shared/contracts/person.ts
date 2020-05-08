@@ -10,7 +10,6 @@ export interface Person {
   photoSm: string;
   position: string;
   companyName: string;
-  companyNamePrefix?: string;
   name?: string;
   description?: string;
   phone?: string;
