@@ -32,7 +32,7 @@ export class ArticleFeedComponent implements OnInit {
 
   ngOnInit() {
     this.route.data.subscribe((data) => {
-      if (this.location.path() !== '/' + data.config.data.id + '-' + data.config.data.slug) {
+      if (this.location.path().split('?')[0] !== '/' + data.config.data.id + '-' + data.config.data.slug) {
         this.response.permanentRedirect('/' + data.config.data.id + '-' + data.config.data.slug);
       }
       this.articles = [];
