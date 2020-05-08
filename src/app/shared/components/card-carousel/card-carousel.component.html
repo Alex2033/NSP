@@ -2,12 +2,15 @@
   <header class="carousel-header">
     <div class="carousel-header-left">
       <h2 [class.is-small]="smallHeader">
-        <a [routerLink]="[data.slug]" class="carousel-link">
+        <a [routerLink]="[data.slug]" *ngIf="data.slug" class="carousel-link">
           <span>{{ data.title }}</span>
           <svg class="arrow-icon">
             <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
           </svg>
         </a>
+        <span *ngIf="!data.slug" class="carousel-title">
+          <span>{{ data.title }}</span>
+        </span>
       </h2>
       <ul class="carousel-tabs" *ngIf="data.links">
         <li
