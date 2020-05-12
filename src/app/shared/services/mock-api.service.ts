@@ -164,7 +164,11 @@ export class MockApiService {
       }
     );
   }
-
+  getCompanyApartmentComplexes(companyId) {
+    return of(
+      {count: 0, items: []}
+    );
+  }
   getCompanyArticles(filter = {}) {
     return of(
       {

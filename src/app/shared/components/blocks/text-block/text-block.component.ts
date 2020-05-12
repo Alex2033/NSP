@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class TextBlockComponent implements OnInit {
 
   @Input() content;
-
+  @Input() highlight;
   constructor() { }
 
   ngOnInit() {

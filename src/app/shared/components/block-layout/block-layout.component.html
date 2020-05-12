@@ -1,7 +1,7 @@
 <ng-container *ngFor="let block of blocks">
   <ng-container [ngSwitch]="block.type">
     <ng-container *ngSwitchCase="'text'">
-      <app-text-block [content]="block.data"></app-text-block>
+      <app-text-block [content]="block.data.content" [highlight]="block.data.highlight"></app-text-block>
     </ng-container>
     <ng-container *ngSwitchCase="'banner_placeholder'">
       <app-article-banner [articleId]="entityId"></app-article-banner>

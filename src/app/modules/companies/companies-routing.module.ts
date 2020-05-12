@@ -5,6 +5,7 @@ import {DetailComponent} from './components/detail/detail.component';
 import {CompaniesResolver} from './resolvers/companies.resolver';
 import {CompanyResolver} from './resolvers/company.resolver';
 import {ArticlesResolver} from './resolvers/articles.resolver';
+import {ApartmentComplexesResolver} from './resolvers/apartment-complexes.resolver';
 
 
 const routes: Routes = [
@@ -31,7 +32,8 @@ const routes: Routes = [
     component: DetailComponent,
     resolve: {
       company: CompanyResolver,
-      articles: ArticlesResolver
+      articles: ArticlesResolver,
+      apartmentComplexes: ApartmentComplexesResolver
     },
   }
 ];

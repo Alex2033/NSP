@@ -53,6 +53,7 @@ export class DetailComponent implements OnInit {
         person.type = 'person';
       });
       this.articles = data.articles.items;
+      this.objects = data.apartmentComplexes.items;
       const pipe = new QuotesPipe();
       this.title.setTitle((this.company.metaTitle ? this.company.metaTitle : pipe.transform(this.company.name) + ' - Информация о компании ' + ' - NSP.ru'));
       this.meta.updateTag({

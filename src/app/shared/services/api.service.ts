@@ -51,6 +51,13 @@ export class ApiService {
     }));
   }
 
+  getCompanyApartmentComplexes(companyId): Observable<any> {
+    return this.apiClient.get(`/api/site/companies/${companyId}/apartment_complexes`, {
+    }).pipe(map((response) => {
+      return deserialize(response);
+    }));
+  }
+
   getAreas(): Observable<any> {
     return this.apiClient.get(`/api/site/areas`).pipe(map((response) => {
       return deserialize(response);

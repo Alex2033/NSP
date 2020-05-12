@@ -7,6 +7,7 @@ import { DetailComponent } from './components/detail/detail.component';
 import {CompaniesResolver} from './resolvers/companies.resolver';
 import {CompanyResolver} from './resolvers/company.resolver';
 import {ArticlesResolver} from './resolvers/articles.resolver';
+import {ApartmentComplexesResolver} from './resolvers/apartment-complexes.resolver';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {ArticlesResolver} from './resolvers/articles.resolver';
   providers: [
     CompaniesResolver,
     CompanyResolver,
-    ArticlesResolver
+    ArticlesResolver,
+    ApartmentComplexesResolver
   ]
 })
 export class CompaniesModule { }
