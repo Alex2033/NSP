@@ -12,7 +12,7 @@
                 <div class="apartment-number">{{ data.area | number:'.2-2' }}</div>
                 <div class="apartment-info-text">Площадь, м<sup>2</sup></div>
             </div>
-            <div class="apartment-info-item apartment-price">
+            <div class="apartment-info-item apartment-price" *ngIf="data.price">
                 <div class="apartment-number">{{ data.price | number }} &#8381;</div>
                 <div class="apartment-info-text">Стоимость</div>
             </div>
