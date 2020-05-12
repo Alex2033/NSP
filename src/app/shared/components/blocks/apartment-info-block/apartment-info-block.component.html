@@ -6,7 +6,28 @@
         <div class="aparment-info">
             <div class="apartment-info-item rooms-number">
                 <div class="apartment-number">{{ data.roomsCount }}</div>
-                <div class="apartment-info-text">Комнаты</div>
+                <div class="apartment-info-text">
+                  <ng-container [ngSwitch]="data.roomsCount">
+                    <ng-container *ngSwitchCase="'С'">
+                      Студия
+                    </ng-container>
+                    <ng-container *ngSwitchCase="1">
+                      Комната
+                    </ng-container>
+                    <ng-container *ngSwitchCase="2">
+                      Комнаты
+                    </ng-container>
+                    <ng-container *ngSwitchCase="3">
+                      Комнаты
+                    </ng-container>
+                    <ng-container *ngSwitchCase="4">
+                      Комнаты
+                    </ng-container>
+                    <ng-container *ngSwitchCase="5">
+                      Комнат
+                    </ng-container>
+                  </ng-container>
+                </div>
             </div>
             <div class="apartment-info-item area">
                 <div class="apartment-number">{{ data.area | number:'.2-2' }}</div>
