@@ -4,7 +4,7 @@
                             [sm]="company.logoSm"  [alt]="company.logoAlt"  [title]="company.logoTitle"></app-responsive-image>
     </div>
     <div class="company-content">
-        <div lass="h4 company-title">{{ company.name | quotes }}</div>
+        <a [routerLink]="['/companies/', company.id + '-' + company.slug]" class="h4 company-title">{{ company.name | quotes }}</a>
         <div class="company-text">
             <p>{{ company.description }}</p>
         </div>
@@ -36,7 +36,7 @@
             <div class="company-contact">
                 <div class="company-contact-icon">
                     <svg class="person">
-                        <use xlink:href="assets/sprites/icons.svg#web"></use>
+                        <use xlink:href="assets/sprites/icons.svg#clear"></use>
                     </svg>
                 </div>
                 <a class="link" [routerLink]="['/companies', 'activity', company.activityId]">{{ company.activityName }}</a>

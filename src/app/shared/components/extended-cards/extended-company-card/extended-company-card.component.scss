@@ -24,7 +24,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     img {
         object-fit: cover;
     }
@@ -32,6 +32,7 @@
 
 .company-title {
     margin-bottom: 16px;
+  color: inherit;
 }
 
 .company-text {
@@ -41,10 +42,12 @@
 
 .company-contacts {
     width: 100%;
-    max-width: 435px;
+    //max-width: 435px;
     margin-bottom: -16px;
-    column-count: 2;
-    column-gap: 90px;
+    //column-count: 2;
+    //column-gap: 90px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .company-contact {
@@ -53,7 +56,7 @@
     align-items: center;
     font-size: 14px;
     line-height: 1.571;
-
+    width: 50%;
     > * {
         &:not(:last-child) {
             margin-right: 20px;
