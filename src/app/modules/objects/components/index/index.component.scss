@@ -10,3 +10,8 @@ app-object-card {
   display: block;
   margin-top: 8px;
 }
+.cards-row {
+  & > * {
+    margin-top: 8px;
+  }
+}
