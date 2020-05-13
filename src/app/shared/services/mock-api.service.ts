@@ -533,6 +533,14 @@ export class MockApiService {
     return of();
   }
 
+  addAdvertisingCardView(bannerId) {
+    return of();
+  }
+
+  addAdvertisingCardClick(bannerId) {
+    return of();
+  }
+
   addArticleBannerView(bannerId) {
     return of();
   }

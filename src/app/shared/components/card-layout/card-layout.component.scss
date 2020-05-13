@@ -61,16 +61,22 @@
 }
 
 .medium-horizontal {
-    grid-column-end: span 2;
+    @include media-breakpoint-up(md) {
+      grid-column-end: span 2;
+    }
 }
 
 .medium-vertical {
-    grid-row-end: span 2;
+    @include media-breakpoint-up(md) {
+      grid-row-end: span 2;
+    }
 }
 
 .large {
-    grid-column-end: span 2;
-    grid-row-end: span 2;
+    @include media-breakpoint-up(md) {
+      grid-column-end: span 2;
+      grid-row-end: span 2;
+    }
 }
 
 app-material-list-card, app-material-card {

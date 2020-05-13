@@ -44,11 +44,9 @@
           [events]="card.events"
           style="grid-row-end: span 3"></app-event-calendar-card>
       </ng-container>
-      <ng-container *ngSwitchCase="'advertising'">
+      <ng-container *ngSwitchCase="'advertisement'">
         <app-advertising-card [size]="card.size"
-                              [class]="card.size"
-                              [style.grid-column-start]="card.position?.x ? card.position.x : null"
-                              [style.grid-row-start]="card.position?.y ? card.position.y : null"></app-advertising-card>
+                              [class]="card.size" [data]="card"></app-advertising-card>
       </ng-container>
       <ng-container *ngSwitchCase="'video'">
         <app-video-card [size]="card.size" [data]="card"

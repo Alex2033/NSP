@@ -1,10 +1,20 @@
-<ng-container [ngSwitch]="size">
-  <button class="close" hidden>
-    <svg>
-      <use xlink:href="assets/sprites/icons.svg#close"></use>
-    </svg>
-  </button>
-  <a [routerLink]="['']" class="banner">
-    <img src="https://picsum.photos/800" alt="banner img" class="banner-image">
+<!--  <button class="close" hidden>-->
+<!--    <svg>-->
+<!--      <use xlink:href="assets/sprites/icons.svg#close"></use>-->
+<!--    </svg>-->
+<!--  </button>-->
+<div class="banner" #banner>
+  <a [href]="data.url" *ngIf="data" target="_blank" (click)="incClick()">
+    <ng-container *ngIf="data.bannerType === 'image'">
+      <app-responsive-image [xl]="data.images.xl" [lg]="data.images.lg" [md]="data.images.md"
+                            [xs]="data.images.sm" [sm]="data.images.sm"></app-responsive-image>
+    </ng-container>
+    <ng-container *ngIf="data.bannerType === 'html'">
+      <div #htmlXlWrapper class="d-none d-xl-block"></div>
+      <div #htmlLgWrapper class="d-none d-lg-block d-xl-none"></div>
+      <div #htmlMdWrapper class="d-none d-md-block d-lg-none"></div>
+      <div #htmlSmWrapper class="d-block d-md-none"></div>
+    </ng-container>
   </a>
-</ng-container>
+</div>
+

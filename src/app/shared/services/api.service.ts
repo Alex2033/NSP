@@ -141,6 +141,18 @@ export class ApiService {
     }));
   }
 
+  addAdvertisingCardView(bannerId) {
+    return this.apiClient.post(`/api/site/banner_cards/${bannerId}/add_view`).pipe(map((response) => {
+      return deserialize(response);
+    }));
+  }
+
+  addAdvertisingCardClick(bannerId) {
+    return this.apiClient.post(`/api/site/banner_cards/${bannerId}/add_click`).pipe(map((response) => {
+      return deserialize(response);
+    }));
+  }
+
   addArticleBannerView(bannerId) {
     return this.apiClient.post(`/api/site/article_banners/${bannerId}/add_view`).pipe(map((response) => {
       return deserialize(response);
