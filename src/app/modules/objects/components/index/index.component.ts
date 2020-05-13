@@ -58,9 +58,9 @@ export class IndexComponent implements OnInit {
       this.screen = screen;
     });
 
-    this.title.setTitle('Объекты недвижимости' + ' - NSP.ru');
     this.route.data.subscribe(data => {
       this.currentPage.next();
+      this.title.setTitle('Объекты недвижимости' + ' - NSP.ru');
       this.objectsCount = data.objects.count;
       this.objects = data.objects.items;
       this.articles = data.articles.items;
