@@ -1,7 +1,4 @@
-app-pagination {
-  display: block;
-  margin-top: 40px;
-}
+@import "responsive";
 .materials {
   margin-bottom: 48px;
 }
@@ -13,5 +10,14 @@ app-object-card {
 .cards-row {
   & > * {
     margin-top: 8px;
+  }
+}
+app-pagination {
+  display: block;
+  margin-top: 40px;
+
+  @include media-breakpoint-down(sm) {
+    margin-left: 12px;
+    margin-right: 12px;
   }
 }

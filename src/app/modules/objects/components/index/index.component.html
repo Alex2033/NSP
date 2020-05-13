@@ -15,6 +15,7 @@
         <app-object-card [object]="object"></app-object-card>
       </div>
     </div>
+    <app-pagination *ngIf="objectsCount > 12" [size]="12" [count]="objectsCount"></app-pagination>
   </div>
 </div>
 
