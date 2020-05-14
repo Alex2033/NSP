@@ -39,8 +39,15 @@
 }
 
 .news-text {
-    font-size: 14px;
-    line-height: 1.571;
+  font-size: 14px;
+  line-height: 1.571;
+  display: block;
+  color: $text-color;
+  transition: color .2s ease;
+  &:hover {
+    color: $primary-color;
+    text-decoration: none;
+  }
 }
 
 .control-buttons {
