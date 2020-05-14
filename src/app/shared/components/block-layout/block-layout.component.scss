@@ -5,8 +5,19 @@
     > * {
         display: block;
       &:nth-child(n+2) {
-        margin-top: 26px; // Высота пустой строки
+        &:not(.float-left):not(.float-right) {
+          margin-top: 26px; // Высота пустой строки
+        }
       }
+
+      &:not(app-text-block) {
+        &:not(.float-left):not(.float-right):before {
+          content: "";
+          clear: both;
+          display: table;
+        }
+      }
+
     }
   &:after {
     content: "";
