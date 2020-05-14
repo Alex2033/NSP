@@ -6,7 +6,7 @@
     <div class="company-content">
         <a [routerLink]="['/companies/', company.id + '-' + company.slug]" class="h4 company-title">{{ company.name | quotes }}</a>
         <div class="company-text">
-            <p>{{ company.description }}</p>
+            <p>{{ company.description | quotes }}</p>
         </div>
         <div class="company-contacts">
             <div class="company-contact" *ngIf="company.phone">

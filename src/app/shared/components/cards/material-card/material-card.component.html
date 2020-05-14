@@ -13,7 +13,7 @@
       <div class="card-top" *ngIf="size === 'small'">
         <div class="date">{{ data.articlePublishedAt * 1000 | niceDate }} в {{ data.articlePublishedAt * 1000 | date: 'shortTime' }}</div>
         <div class="tag" *ngIf="data.markerName">
-          {{ data.markerName }}
+          {{ data.markerName | quotes }}
         </div>
       </div>
       <div class="card-img" *ngIf="data.imageXl || data.smallImageXl">
@@ -28,12 +28,12 @@
         <div class="card-top static" *ngIf="size !== 'small'">
           <div class="date">{{ data.articlePublishedAt * 1000 | niceDate }} в {{ data.articlePublishedAt * 1000 | date: 'shortTime' }}</div>
           <div class="tag" *ngIf="data.markerName">
-            {{ data.markerName }}
+            {{ data.markerName | quotes }}
           </div>
         </div>
-        <div class="h5">{{ data.title }}</div>
+        <div class="h5">{{ data.title | quotes }}</div>
         <div class="card-text">
-          <p>{{ data.previewText }}</p>
+          <p>{{ data.previewText | quotes }}</p>
         </div>
         <footer class="card-footer">
           <div class="views">
@@ -54,13 +54,13 @@
       <div class="card-top">
         <div class="date">{{ data.articlePublishedAt * 1000 | niceDate }} в {{ data.articlePublishedAt * 1000 | date: 'shortTime' }}</div>
         <div class="tag" *ngIf="data.markerName">
-          {{ data.markerName }}
+          {{ data.markerName | quotes }}
         </div>
       </div>
       <div class="card-content">
-        <div class="h5">{{ data.title }}</div>
+        <div class="h5">{{ data.title | quotes }}</div>
         <div class="card-text">
-          <p>{{ data.previewText }}</p>
+          <p>{{ data.previewText | quotes }}</p>
         </div>
         <footer class="card-footer light">
           <div class="views">

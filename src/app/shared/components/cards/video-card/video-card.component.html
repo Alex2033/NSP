@@ -8,11 +8,11 @@
         <div class="card-top static">
             <div class="date">{{ data.videoPublishedAt * 1000 | niceDate }} в {{ data.videoPublishedAt * 1000 | date: 'shortTime' }}</div>
             <div class="tag" *ngIf="data.markerName">
-                {{ data.markerName }}
+                {{ data.markerName | quotes }}
             </div>
         </div>
         <div class="card-text">
-            <div class="h5 light">{{ data.title }}</div>
+            <div class="h5 light">{{ data.title | quotes }}</div>
         </div>
         <footer class="card-footer light">
             <div class="views">

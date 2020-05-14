@@ -5,7 +5,7 @@
     <div class="card-info">
         <div class="h2 person-name">{{ person.lastName }}<br>{{ person.firstName }} {{ person.middleName }}</div>
         <div class="person-position">
-            <p>{{ person.position }}</p>
+            <p>{{ person.position | quotes }}</p>
         </div>
         <div class="card-text" [innerHTML]="person.description | paragraphs | quotes"></div>
         <div class="card-contacts">

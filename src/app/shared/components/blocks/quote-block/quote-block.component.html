@@ -10,9 +10,9 @@
   <div class="quote-bot">
     <div class="quote-info">
       <ng-container *ngIf="quote.sourceName">
-        <cite class="quote-source" *ngIf="!quote.sourceUrl">Источник: {{ quote.sourceName }}</cite>
+        <cite class="quote-source" *ngIf="!quote.sourceUrl">Источник: {{ quote.sourceName | quotes }}</cite>
         <a [href]="quote.sourceUrl" target="_blank" class="quote-source"
-           *ngIf="quote.sourceUrl">Источник: {{ quote.sourceName }}</a>
+           *ngIf="quote.sourceUrl">Источник: {{ quote.sourceName | quotes }}</a>
       </ng-container>
       <time class="quote-time" *ngIf="quote.publishedAt">{{ quote.publishedAt * 1000 | niceDate }}</time>
     </div>
@@ -26,7 +26,7 @@
             {{ quote.author.firstName }} {{ quote.author.lastName }}
           </a>
         </div>
-        <div class="quote-author-position">{{ quote.author.position }}</div>
+        <div class="quote-author-position">{{ quote.author.position | quotes }}</div>
       </div>
       <div class="quote-author-avatar" *ngIf="quote.author.photoXl">
         <app-responsive-image [xl]="quote.author.photoXl" [lg]="quote.author.photoLg" [md]="quote.author.photoMd"

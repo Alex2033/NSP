@@ -4,7 +4,7 @@
       src="https://images.unsplash.com/photo-1560439514-4e9645039924?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1680&q=80"
       alt="" class="info-background">
     <div class="info-content">
-      <div class="h1 light">{{ article.event.name }}</div>
+      <div class="h1 light">{{ article.event.name | quotes }}</div>
       <div class="info-bottom">
         <div class="info-bottom-left">
           <div class="event-type-name">{{ article.event.type }}</div>
@@ -22,7 +22,7 @@
     <div class="col-xl-8 col-lg-10 offset-lg-1 offset-xl-0">
       <div class="page-content">
         <div class="page-topline">
-          <h1 class="mobile-title" *ngIf="screen === 'sm'">{{ article.title }}</h1>
+          <h1 class="mobile-title" *ngIf="screen === 'sm'">{{ article.title | quotes }}</h1>
 <!--          <a [routerLink]="['/' + article.directorySlug]" class="h5"-->
 <!--             *ngIf="screen !== 'sm' && article.directorySlug !== ''">{{ article.directoryName }}</a>-->
           <div class="page-topline-info">
@@ -43,7 +43,7 @@
             </div>
           </div>
         </div>
-        <h1 class="page-title" *ngIf="screen !== 'sm'">{{ article.title }}</h1>
+        <h1 class="page-title" *ngIf="screen !== 'sm'">{{ article.title | quotes }}</h1>
         <div class="preview-text" [innerHTML]="article.previewText | paragraphs | quotes">
         </div>
         <div class="share-area">
@@ -63,7 +63,7 @@
         <div class="bot">
           <div class="hashtags">
 <!--            <a [routerLink]="['/' + article.directorySlug]" *ngIf="article.directorySlug !== ''" class="hashtag"><strong>{{ article.directoryName }}</strong></a>-->
-            <a [routerLink]="['/tags', tag.code]" class="hashtag" *ngFor="let tag of article.tags">#{{ tag.name }}</a>
+            <a [routerLink]="['/tags', tag.code]" class="hashtag" *ngFor="let tag of article.tags">#{{ tag.name | quotes }}</a>
           </div>
           <app-share></app-share>
         </div>
@@ -109,7 +109,7 @@
         <svg class="contact-card-icon geolocation">
           <use xlink:href="assets/sprites/icons.svg#map_pin"></use>
         </svg>
-        <span>{{ article.event.address }}</span>
+        <span>{{ article.event.address | quotes }}</span>
       </div>
     </div>
     <div class="contact-card-items">

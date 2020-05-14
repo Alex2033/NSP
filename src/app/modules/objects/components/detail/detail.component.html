@@ -2,7 +2,7 @@
   <header class="object-header">
     <div class="object-headings">
       <a class="h5" [routerLink]="['/objects']" *ngIf="screen !== 'sm'">Объекты недвижимости</a>
-      <h1>{{ apartmentComplex.name }}</h1>
+      <h1>{{ apartmentComplex.name | quotes }}</h1>
     </div>
     <div class="object-header-image" *ngIf="screen !== 'sm'">
       <app-responsive-image [xl]="apartmentComplex.logoXl" [lg]="apartmentComplex.logoLg" [md]="apartmentComplex.logoMd"
@@ -18,7 +18,7 @@
         <svg class="geolocation">
           <use xlink:href="assets/sprites/icons.svg#map_pin"></use>
         </svg>
-        <span>{{ apartmentComplex.areaName }}</span>
+        <span>{{ apartmentComplex.areaName | quotes }}</span>
       </div>
       <div class="object-top-contact" *ngIf="apartmentComplex.site">
         <div class="company-contact-icon">

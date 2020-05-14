@@ -2,12 +2,12 @@
     <app-responsive-image [xl]="object.imageXl" [lg]="object.imageLg" [md]="object.imageMd" [xs]="object.imageSm" [sm]="object.imageSm" [alt]="object.imageAlt" [title]="object.imageTitle"></app-responsive-image>
     <div class="object-card-bg"></div>
     <div class="object-card-content">
-        <h4 class="light">{{ object.name }}</h4>
+        <h4 class="light">{{ object.name | quotes }}</h4>
         <div class="object-card-location">
             <svg>
                 <use xlink:href="assets/sprites/icons.svg#map_pin"></use>
             </svg>
-            <span>{{ object.areaName }}</span>
+            <span>{{ object.areaName | quotes }}</span>
         </div>
     </div>
 </a>
