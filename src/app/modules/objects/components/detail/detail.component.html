@@ -2,7 +2,7 @@
   <header class="object-header">
     <div class="object-headings">
       <a class="h5" [routerLink]="['/objects']" *ngIf="screen !== 'sm'">Объекты недвижимости</a>
-      <h1>{{ apartmentComplex.name | quotes }}</h1>
+      <h1 [innerHTML]="apartmentComplex.name | quotes"></h1>
     </div>
     <div class="object-header-image" *ngIf="screen !== 'sm'">
       <app-responsive-image [xl]="apartmentComplex.logoXl" [lg]="apartmentComplex.logoLg" [md]="apartmentComplex.logoMd"
