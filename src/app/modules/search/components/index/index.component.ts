@@ -75,6 +75,7 @@ export class IndexComponent implements OnInit {
       this.type = params.type;
     });
     this.route.data.subscribe(data => {
+      this.title.setTitle('Результаты поиска' + ' - NSP.ru');
       this.results = data.results;
       this.currentPage.next();
     });
@@ -82,7 +83,6 @@ export class IndexComponent implements OnInit {
     this.responsive.screen.subscribe((screen) => {
       this.screen = screen;
     });
-    this.title.setTitle('Результаты поиска' + ' - NSP.ru');
   }
   applySearch(filter) {
     if (filter.type) {

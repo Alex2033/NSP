@@ -8,6 +8,7 @@ import {Meta, Title} from '@angular/platform-browser';
 import {Project} from '../../../../shared/contracts/project';
 import {ApiService} from '../../../../shared/services/api.service';
 import {isPlatformBrowser} from '@angular/common';
+import {last} from 'rxjs/operators';
 
 @Component({
   selector: 'app-detail',
@@ -84,7 +85,13 @@ export class DetailComponent implements OnInit, AfterViewInit {
 
   loadBlock() {
     this.blockLoading = true;
-    const lastCard = this.cards[this.cards.length - 1];
+    let offset = 0;
+    let lastCard;
+    do {
+      // Нужно найти последнюю плитку, которая не является рекламой
+      offset++;
+      lastCard = this.cards[this.cards.length - offset];
+    } while (!lastCard.articlePublishedAt && !lastCard.videoPublishedAt);
     this.api.getCardFeed(
       {
         ...this.section.cardsFilter,

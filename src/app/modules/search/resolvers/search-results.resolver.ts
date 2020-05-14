@@ -12,8 +12,8 @@ export class SearchResultsResolver implements Resolve<any> {
 
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
     const filter: any = {};
-    if (route.params.type) {
-      filter.type = route.params.type;
+    if (route.queryParams.type) {
+      filter.type = route.queryParams.type;
       filter.limit = 12;
     } else {
       filter.limit = 4;

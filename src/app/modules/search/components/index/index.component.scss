@@ -5,7 +5,11 @@
     display: block;
     border-bottom: 1px solid $light-color;
 }
-
+.cards-row {
+  & > * {
+    margin-top: 8px;
+  }
+}
 .page-cards {
     margin-bottom: 0;
     padding-bottom: 64px;
