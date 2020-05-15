@@ -101,9 +101,9 @@
     <ng-container *ngSwitchCase="'event_registration'">
       <app-event-registration-block [data]="block.data"></app-event-registration-block>
     </ng-container>
-    <ng-container *ngSwitchCase="'button'">
+    <ng-container *ngSwitchCase="'button-group'">
       <div class="button-block">
-        <a [href]="block.data.url" target="_blank" class="button" [class.primary]="block.data.color === 'primary'" [class.secondary]="block.data.color === 'secondary'">{{ block.data.text }}</a>
+        <a *ngFor="let block of block.buttons" [href]="block.data.url" target="_blank" class="button" [class.primary]="block.data.color === 'primary'" [class.secondary]="block.data.color === 'secondary'">{{ block.data.text }}</a>
       </div>
     </ng-container>
   </ng-container>

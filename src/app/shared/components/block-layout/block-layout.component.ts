@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ResponsiveService } from '../../services/responsive.service';
+import {Component, OnInit, Input} from '@angular/core';
+import {ResponsiveService} from '../../services/responsive.service';
 
 @Component({
   selector: 'app-block-layout',
@@ -12,12 +12,32 @@ export class BlockLayoutComponent implements OnInit {
   @Input() entityId: number;
   screen: string;
 
-  constructor(private responsive: ResponsiveService) { }
+  constructor(private responsive: ResponsiveService) {
+  }
 
   ngOnInit() {
     this.responsive.screen.subscribe((screen) => {
       this.screen = screen;
     });
+    const result = [];
+    let buttonsGroup = [];
+    this.blocks.map(block => {
+      if (block.type !== 'button') {
+        if (buttonsGroup.length > 0) {
+          // Формирование группы кнопок и добавление в сетку
+          result.push({
+            type: 'button-group',
+            buttons: buttonsGroup
+          });
+          buttonsGroup = [];
+        }
+        result.push(block);
+      } else {
+        buttonsGroup.push(block);
+      }
+    });
+
+    this.blocks = result;
   }
 
 }

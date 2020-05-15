@@ -51,9 +51,26 @@
   width: 100%;
 }
 .button-block {
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   a  {
-    display: inline-block;
+    font-size: 16px;
+    padding: 12px 24px;
+    @include media-breakpoint-down(sm) {
+      display: block;
+      width: 100%;
+      &:nth-child(n+2) {
+        margin-top: 24px;
+      }
+    }
+    @include media-breakpoint-up(md) {
+      display: inline-block;
+      &:nth-child(n+2) {
+        margin-left: 24px;
+      }
+    }
   }
 }
 app-company-card, app-person-card, app-object-card, app-video-card, app-material-card {

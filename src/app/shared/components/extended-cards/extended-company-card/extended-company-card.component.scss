@@ -1,5 +1,5 @@
 @import "theme";
-
+@import "responsive";
 :host {
     display: block;
 }
@@ -8,8 +8,11 @@
     padding: 24px;
     background-color: $light-gray;
     display: flex;
-    align-items: center;
-
+    align-items: flex-start;
+    @include media-breakpoint-down(sm) {
+      flex-direction: column;
+      align-items: center;
+    }
     > * {
         &:not(:last-child) {
             margin-right: 24px;
