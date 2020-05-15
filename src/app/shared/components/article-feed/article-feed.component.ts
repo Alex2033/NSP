@@ -72,6 +72,13 @@ export class ArticleFeedComponent implements OnInit {
         content: article.metaKeywords ? article.metaKeywords : ''
       }
     );
+    if (article.image) {
+      this.meta.updateTag({
+          property: 'og:image',
+          content: article.image
+        }
+      );
+    }
 
     // TODO Добавить смену ссылки браузере
   }

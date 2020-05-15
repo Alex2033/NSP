@@ -5,6 +5,7 @@ import {Event} from './event';
 export interface Article {
   id: number;
   slug: string;
+  image?: string | null;
   title: string;
   metaTitle: string | null;
   metaDescription: string | null;
