@@ -21,7 +21,7 @@ a {
 .company-img {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    //margin-bottom: 20px;
     height: 96px;
 
     ::ng-deep img {
@@ -32,11 +32,13 @@ a {
 }
 
 .company-title {
-    margin-bottom: 16px;
+  margin-top: 8px;
+    //margin-bottom: 16px;
 }
 
 .company-contacts {
-    margin-bottom: 18px;
+  margin-top: auto;
+    //margin-bottom: 18px;
     font-size: 14px;
     line-height: 1.571;
     margin-top: auto;

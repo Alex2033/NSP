@@ -46,6 +46,8 @@
       </ng-container>
       <ng-container *ngSwitchCase="'advertisement'">
         <app-advertising-card [size]="card.size"
+                              [style.grid-column-start]="card.position?.x ? card.position.x : null"
+                              [style.grid-row-start]="card.position?.y ? card.position.y : null"
                               [class]="card.size" [data]="card"></app-advertising-card>
       </ng-container>
       <ng-container *ngSwitchCase="'video'">
