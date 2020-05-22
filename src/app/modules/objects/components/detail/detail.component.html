@@ -7,9 +7,29 @@
     <div class="object-header-image" *ngIf="screen !== 'sm'">
       <app-responsive-image [xl]="apartmentComplex.logoXl" [lg]="apartmentComplex.logoLg" [md]="apartmentComplex.logoMd"
                             [xs]="apartmentComplex.logoSm" [sm]="apartmentComplex.logoSm"
-                            [alt]="apartmentComplex.logoAlt"  [title]="apartmentComplex.logoTitle"></app-responsive-image>
+                            [alt]="apartmentComplex.logoAlt"
+                            [title]="apartmentComplex.logoTitle"></app-responsive-image>
     </div>
   </header>
+  <nav class="object-navigation ng-star-inserted">
+    <ul class="object-navigation-list">
+      <li class="object-navigation-item">
+        <button class="object-navigation-btn" (click)="scrollToDescriptionBlock()">Описание</button>
+      </li>
+      <li class="object-navigation-item">
+        <button class="object-navigation-btn" (click)="scrollToLocationBlock()">Местоположение</button>
+      </li>
+      <li class="object-navigation-item">
+        <button class="object-navigation-btn" (click)="scrollToLayoutsBlock()">Планировки</button>
+      </li>
+      <li class="object-navigation-item">
+        <button class="object-navigation-btn" (click)="scrollToGalleryBlock()">Фотографии</button>
+      </li>
+      <li class="object-navigation-item">
+        <button class="object-navigation-btn" (click)="scrollToCompanyBlock()">Застройщик</button>
+      </li>
+    </ul>
+  </nav>
   <div class="object-top-info">
     <div class="object-top-text" [innerHTML]="apartmentComplex.previewText | paragraphs | quotes">
     </div>
@@ -26,7 +46,8 @@
             <use xlink:href="assets/sprites/icons.svg#web"></use>
           </svg>
         </div>
-        <a class="link" [href]="apartmentComplex.site" rel="nofollow noopener" target="_blank">{{ apartmentComplex.site | domain}}</a>
+        <a class="link" [href]="apartmentComplex.site" rel="nofollow noopener"
+           target="_blank">{{ apartmentComplex.site | domain}}</a>
       </div>
     </div>
   </div>
@@ -36,7 +57,8 @@
   <app-responsive-image [xl]="apartmentComplex.detailImageXl" [lg]="apartmentComplex.detailImageLg"
                         [md]="apartmentComplex.detailImageMd" [xs]="apartmentComplex.detailImageSm"
                         [sm]="apartmentComplex.detailImageSm"
-                        [alt]="apartmentComplex.detailImageAlt"  [title]="apartmentComplex.detailImageTitle"></app-responsive-image>
+                        [alt]="apartmentComplex.detailImageAlt"
+                        [title]="apartmentComplex.detailImageTitle"></app-responsive-image>
 </div>
 
 <div class="object-container">
@@ -44,15 +66,17 @@
 
 </div>
 
-<hr>
+<ng-container *ngIf="articles && articles.length > 0">
+  <hr>
 
-<div class="container">
-  <div class="materials" *ngIf="articles && articles.length > 0">
-    <h3 class="materials-title">Материалы об объекте</h3>
-    <div class="row cards-row">
-      <div class="col-xl-3 col-lg-4 col-md-6 col-12" *ngFor="let article of articles">
-        <app-material-card class="small" [size]="'small'" [view]="article.view" [data]="article"></app-material-card>
+  <div class="container">
+    <div class="materials">
+      <h3 class="materials-title">Материалы об объекте</h3>
+      <div class="row cards-row">
+        <div class="col-xl-3 col-lg-4 col-md-6 col-12" *ngFor="let article of articles">
+          <app-material-card class="small" [size]="'small'" [view]="article.view" [data]="article"></app-material-card>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</ng-container>

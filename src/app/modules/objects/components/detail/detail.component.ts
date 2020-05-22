@@ -54,4 +54,35 @@ export class DetailComponent implements OnInit {
     });
   }
 
+  scrollToDescriptionBlock() {
+    // const el: any = document.getElementsByTagName('app-block-layout');
+    // if (el.length > 0) {
+    //   window.scroll({top: el[0].offsetTop - window.innerHeight / 2, left: 0, behavior: 'smooth' });
+    //   // el[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // }
+  }
+  scrollToLocationBlock() {
+
+  }
+  scrollToGalleryBlock() {
+    // const el: any = document.getElementsByTagName('app-full-width-image-carousel-block');
+    // if (el.length > 0) {
+    //   el[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    //   // el[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // }
+  }
+  scrollToLayoutsBlock() {
+    // const el: any = document.getElementsByTagName('app-apartment-info-block');
+    // if (el.length > 0) {
+    //   window.scroll({top: el[0].offsetTop - window.innerHeight / 2, left: 0, behavior: 'smooth' });
+    //   // el[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // }
+  }
+  scrollToCompanyBlock() {
+    // const el: any = document.getElementsByTagName('app-extended-company-card');
+    // if (el.length > 0) {
+    //   window.scroll({top: el[0].offsetTop - window.innerHeight / 2, left: 0, behavior: 'smooth' });
+    //   // el[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // }
+  }
 }

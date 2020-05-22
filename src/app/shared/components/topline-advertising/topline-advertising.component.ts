@@ -62,7 +62,7 @@ export class ToplineAdvertisingComponent implements OnInit {
             this.htmlSmWrapper.nativeElement.innerHTML = this.data.html.sm;
           });
         }
-        const interval = setInterval(() => { // Не знаем когда загрузился код, поэтому интервал
+        const interval = setInterval(() => { // Не знаю когда загрузился код, поэтому интервал
           const height = this.banner.nativeElement.getBoundingClientRect().height;
           if (height > 0) {
             this.inited = true;

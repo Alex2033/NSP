@@ -1,7 +1,9 @@
 <div class="company-card">
     <div class="company-img">
-      <app-responsive-image [xl]="company.logoXl" [lg]="company.logoLg" [md]="company.logoMd" [xs]="company.logoSm"
-                            [sm]="company.logoSm"  [alt]="company.logoAlt"  [title]="company.logoTitle"></app-responsive-image>
+      <a [routerLink]="['/companies/', company.id + '-' + company.slug]">
+        <app-responsive-image [xl]="company.logoXl" [lg]="company.logoLg" [md]="company.logoMd" [xs]="company.logoSm"
+                              [sm]="company.logoSm"  [alt]="company.logoAlt"  [title]="company.logoTitle"></app-responsive-image>
+      </a>
     </div>
     <div class="company-content">
         <a [routerLink]="['/companies/', company.id + '-' + company.slug]" class="h4 company-title">{{ company.name | quotes }}</a>

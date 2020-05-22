@@ -7,7 +7,7 @@ import {Person} from '../../../contracts/person';
   styleUrls: ['./extended-person-card.component.scss']
 })
 export class ExtendedPersonCardComponent implements OnInit {
-
+  @Input() useLink = true;
   @Input() person: Person;
 
   constructor() { }

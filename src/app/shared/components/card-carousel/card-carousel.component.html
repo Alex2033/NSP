@@ -17,7 +17,7 @@
           class="carousel-tab"
           *ngFor="let link of data.links; let index = index"
         >
-          <a [routerLink]="link.link">{{ link.title }}</a>
+          <a [routerLink]="link.link" target="_blank" rel="nofollow noopener">{{ link.title }}</a>
         </li>
       </ul>
     </div>

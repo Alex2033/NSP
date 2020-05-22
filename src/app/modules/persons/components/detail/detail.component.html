@@ -7,7 +7,7 @@
     </div>
   </div>
   <div class="persons-content">
-    <app-extended-person-card *ngIf="person" [person]="person"></app-extended-person-card>
+    <app-extended-person-card *ngIf="person" [person]="person" [useLink]="false"></app-extended-person-card>
     <app-company-card *ngIf="company" [company]="company"></app-company-card>
   </div>
   <div class="materials" *ngIf="articles && articles.length > 0">

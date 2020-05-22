@@ -1,6 +1,8 @@
 @import "theme";
 @import "responsive";
-
+a.extended-person-card {
+  color: inherit;
+}
 .extended-person-card {
     display: flex;
     padding: 32px 40px 40px;
@@ -32,19 +34,19 @@
             object-fit: cover;
         }
     }
-    
+
     @include media-breakpoint-down(lg) {
         width: 160px;
         height: 160px;
     }
-  
+
       @include media-breakpoint-down(lg) {
         margin-right: 0;
         margin-bottom: 15px;
         width: 182px;
         height: 182px;
     }
-  
+
       @include media-breakpoint-down(sm) {
         margin-right: 0;
         width: 120px;

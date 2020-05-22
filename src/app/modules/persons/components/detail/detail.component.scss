@@ -90,4 +90,9 @@ app-company-card {
   @include media-breakpoint-down(sm) {
     margin-bottom: 24px;
   }
+  .cards-row {
+    & > * {
+      margin-top: 8px;
+    }
+  }
 }

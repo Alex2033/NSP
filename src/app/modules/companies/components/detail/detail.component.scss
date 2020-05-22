@@ -218,6 +218,11 @@ app-card-carousel {
   @include media-breakpoint-down(sm) {
       margin-bottom: 24px;
   }
+  .cards-row {
+    & > * {
+      margin-top: 8px;
+    }
+  }
 }
 //.materials:last-child {
 //  margin-bottom: 0;
