@@ -1,6 +1,6 @@
 <div class="top-line-advertising" #banner [class.not-inited]="!inited">
   <ng-container *ngIf="show">
-    <a *ngIf="showActions === false && data" [href]="data.url" target="_blank" (click)="incClick()">
+    <a *ngIf="showActions === false && data" [href]="data.url" target="_blank" rel="nofollow noopener" (click)="incClick()">
         <ng-container *ngIf="data.type === 'image'">
           <app-responsive-image [xl]="data.images.xl" [lg]="data.images.lg" [md]="data.images.md"
                                 [xs]="data.images.sm" [sm]="data.images.sm"></app-responsive-image>

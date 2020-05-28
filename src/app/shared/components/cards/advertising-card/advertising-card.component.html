@@ -4,7 +4,7 @@
 <!--    </svg>-->
 <!--  </button>-->
 <div class="banner" #banner>
-  <a [href]="data.url" *ngIf="data" target="_blank" (click)="incClick()">
+  <a [href]="data.url" rel="nofollow noopener" *ngIf="data" target="_blank" (click)="incClick()">
     <ng-container *ngIf="data.bannerType === 'image'">
       <app-responsive-image [xl]="data.images.xl" [lg]="data.images.lg" [md]="data.images.md"
                             [xs]="data.images.sm" [sm]="data.images.sm"></app-responsive-image>
