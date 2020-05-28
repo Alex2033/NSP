@@ -14,4 +14,10 @@ export interface Event {
   facebookLink: string;
   telegramLink: string;
   twitterLink: string;
+  backgroundImageXl?: string;
+  backgroundImageLg?: string;
+  backgroundImageMd?: string;
+  backgroundImageSm?: string;
+  backgroundImageAlt?: string;
+  backgroundImageTitle?: string;
 }

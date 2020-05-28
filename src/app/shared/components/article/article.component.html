@@ -1,8 +1,18 @@
 <div class="container">
   <div class="event-info" *ngIf="article.event">
-    <img
-      src="https://images.unsplash.com/photo-1560439514-4e9645039924?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1680&q=80"
-      alt="" class="info-background">
+    <div class="info-background">
+      <app-responsive-image *ngIf="!article.event.backgroundImageXl" [xl]="'https://images.unsplash.com/photo-1560439514-4e9645039924?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1240&q=80'"
+                            [lg]="'https://images.unsplash.com/photo-1560439514-4e9645039924?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=932&q=80'"
+                            [md]="'https://images.unsplash.com/photo-1560439514-4e9645039924?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=712&q=80'"
+                            [xs]="'https://images.unsplash.com/photo-1560439514-4e9645039924?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=768&q=80'"
+                            [sm]="'https://images.unsplash.com/photo-1560439514-4e9645039924?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=768&q=80'"></app-responsive-image>
+
+      <app-responsive-image *ngIf="article.event.backgroundImageXl" [xl]="article.event.backgroundImageXl"
+                            [lg]="article.event.backgroundImageLg" [md]="article.event.backgroundImageMd"
+                            [xs]="article.event.backgroundImageSm"
+                            [sm]="article.event.backgroundImageSm" [alt]="article.event.backgroundImageAlt"
+                            [title]="article.event.backgroundImageTitle"></app-responsive-image>
+    </div>
     <div class="info-content">
       <div class="h1 light">{{ article.event.name | quotes }}</div>
       <div class="info-bottom">
@@ -13,7 +23,9 @@
           </div>
         </div>
         <div class="info-bottom-right">
-          <button class="button secondary" *ngIf="allowEventRegistration" (click)="scrollToEventRegistrationBlock()">Зарегистрироваться</button>
+          <button class="button secondary" *ngIf="allowEventRegistration" (click)="scrollToEventRegistrationBlock()">
+            Зарегистрироваться
+          </button>
         </div>
       </div>
     </div>
@@ -23,8 +35,8 @@
       <div class="page-content">
         <div class="page-topline">
           <h1 class="mobile-title" *ngIf="screen === 'sm'">{{ article.title | quotes }}</h1>
-<!--          <a [routerLink]="['/' + article.directorySlug]" class="h5"-->
-<!--             *ngIf="screen !== 'sm' && article.directorySlug !== ''">{{ article.directoryName }}</a>-->
+          <!--          <a [routerLink]="['/' + article.directorySlug]" class="h5"-->
+          <!--             *ngIf="screen !== 'sm' && article.directorySlug !== ''">{{ article.directoryName }}</a>-->
           <div class="page-topline-info">
             <div class="topline-info-item topline-author" *ngIf="article.authors.length > 0">
               <ng-container *ngFor="let author of article.authors; first as isFirst">
@@ -62,8 +74,9 @@
 
         <div class="bot">
           <div class="hashtags">
-<!--            <a [routerLink]="['/' + article.directorySlug]" *ngIf="article.directorySlug !== ''" class="hashtag"><strong>{{ article.directoryName }}</strong></a>-->
-            <a [routerLink]="['/tags', tag.code]" class="hashtag" *ngFor="let tag of article.tags">#{{ tag.name | quotes }}</a>
+            <!--            <a [routerLink]="['/' + article.directorySlug]" *ngIf="article.directorySlug !== ''" class="hashtag"><strong>{{ article.directoryName }}</strong></a>-->
+            <a [routerLink]="['/tags', tag.code]" class="hashtag"
+               *ngFor="let tag of article.tags">#{{ tag.name | quotes }}</a>
           </div>
           <app-share></app-share>
         </div>
@@ -132,7 +145,8 @@
           <svg class="contact-card-icon web">
             <use xlink:href="assets/sprites/icons.svg#web"></use>
           </svg>
-          <a [href]="article.event.site" target="_blank" rel="nofollow noopener" class="link">{{ article.event.site | domain }}</a>
+          <a [href]="article.event.site" target="_blank" rel="nofollow noopener"
+             class="link">{{ article.event.site | domain }}</a>
         </div>
         <ul class="socials">
           <li *ngIf="article.event.vkontakteLink">
