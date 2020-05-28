@@ -83,7 +83,7 @@ p {
 .object-header {
     display: flex;
     justify-content: space-between;
-
+    align-items: center;
     .h5 {
         color: $primary-color;
         margin-bottom: 24px;

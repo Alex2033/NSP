@@ -32,7 +32,12 @@ a {
 }
 
 .company-title {
-  margin-top: auto;
+  @include media-breakpoint-up(lg) {
+    margin-top: auto;
+  }
+  @include media-breakpoint-down(md) {
+    margin-top: 32px;
+  }
     //margin-bottom: 16px;
 }
 

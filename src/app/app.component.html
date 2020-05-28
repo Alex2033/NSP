@@ -1,5 +1,5 @@
 <app-header></app-header>
-<div class="content" [ngStyle]="{'marginTop': margin + 'px'}">
+<div class="content" [ngStyle]="{'marginTop': margin + 'px'}" [class.loading]="loading">
     <router-outlet></router-outlet>
 </div>
 <app-footer></app-footer>

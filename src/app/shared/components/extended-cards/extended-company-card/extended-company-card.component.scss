@@ -6,7 +6,7 @@
 
 .company-card {
     padding: 24px;
-    background-color: $light-gray;
+    border: 1px solid $border-color;
     display: flex;
     align-items: flex-start;
     @include media-breakpoint-down(sm) {
@@ -78,9 +78,9 @@
     }
 }
 
-.company-phone {
-    color: $text-color;
-}
+//.company-phone {
+//    color: $text-color;
+//}
 
 .phone {
     width: 14px;
