@@ -1,7 +1,7 @@
 <a [routerLink]="['/' + data.articleId + '-' + data.articleSlug]" class="card-wrapper">
     <div class="card-content">
         <div class="card-top static" *ngIf="screen !== 'sm'">
-            <div class="date">{{ data.articlePublishedAt * 1000 | niceDate }} в {{ data.articlePublishedAt * 1000 | date: 'shortTime' }}</div>
+            <div class="date">{{ data.articlePublishedAt * 1000 | niceDate }}</div>
           <div class="tag" *ngIf="data.markerName">
             {{ data.markerName | quotes }}
           </div>

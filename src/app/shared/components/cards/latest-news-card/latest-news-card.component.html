@@ -2,7 +2,7 @@
     <ul class="news-feed" #feed>
         <li class="news-item" [class.important]="article.hightlight" *ngFor="let article of visibleArticles">
             <a [routerLink]="['/' + article.id + '-' + article.slug]">
-                <div class="date dark">{{ article.publishedAt * 1000 | niceDate }} в {{ article.publishedAt * 1000 | date: 'shortTime' }}</div>
+                <div class="date dark">{{ article.publishedAt * 1000 | niceDate }}, {{ article.publishedAt * 1000 | date: 'shortTime' }}</div>
                 <div class="news-text">
                     <p>{{ article.title }}</p>
                 </div>

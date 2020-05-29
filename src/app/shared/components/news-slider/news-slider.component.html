@@ -26,7 +26,7 @@
 				<div class="swiper-wrapper">
 					<div class="swiper-slide" *ngFor="let article of feed.articles">
 						<div class="news-item">
-							<time class="date">{{ article.publishedAt * 1000 | niceDate }} в {{ article.publishedAt * 1000 | date: 'shortTime' }}</time>
+							<time class="date">{{ article.publishedAt * 1000 | niceDate }}</time>
 							<a [routerLink]="['/' + article.id + '-' + article.slug]" class="news-text">
 								<p>{{ article.title }}</p>
 							</a>

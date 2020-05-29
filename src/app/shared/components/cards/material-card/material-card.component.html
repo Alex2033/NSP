@@ -11,7 +11,7 @@
       [class.has-image]="!!data.imageXl"
     >
       <div class="card-top" *ngIf="size === 'small'">
-        <div class="date">{{ data.articlePublishedAt * 1000 | niceDate }} в {{ data.articlePublishedAt * 1000 | date: 'shortTime' }}</div>
+        <div class="date">{{ data.articlePublishedAt * 1000 | niceDate }}</div>
         <div class="tag" *ngIf="data.markerName">
           {{ data.markerName | quotes }}
         </div>
@@ -26,7 +26,7 @@
       </div>
       <div class="card-content">
         <div class="card-top static" *ngIf="size !== 'small'">
-          <div class="date">{{ data.articlePublishedAt * 1000 | niceDate }} в {{ data.articlePublishedAt * 1000 | date: 'shortTime' }}</div>
+          <div class="date">{{ data.articlePublishedAt * 1000 | niceDate }}</div>
           <div class="tag" *ngIf="data.markerName">
             {{ data.markerName | quotes }}
           </div>
@@ -52,7 +52,7 @@
   <ng-container *ngIf="view === 'full' && (data.imageXl || data.smallImageXl)">
     <a [routerLink]="['/' + data.articleId + '-' + data.articleSlug]" class="card-wrapper backgroundImage has-image">
       <div class="card-top">
-        <div class="date">{{ data.articlePublishedAt * 1000 | niceDate }} в {{ data.articlePublishedAt * 1000 | date: 'shortTime' }}</div>
+        <div class="date">{{ data.articlePublishedAt * 1000 | niceDate }}</div>
         <div class="tag" *ngIf="data.markerName">
           {{ data.markerName | quotes }}
         </div>
