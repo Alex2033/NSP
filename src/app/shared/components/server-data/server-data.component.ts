@@ -32,6 +32,7 @@ export class ServerDataComponent implements OnInit {
               state: {
                 config: data.config
               },
+              queryParams: this.route.snapshot.queryParams,
               skipLocationChange: true
             });
             break;

@@ -22,7 +22,7 @@ export class DetailComponent implements OnInit, AfterViewInit {
   showRightControl: boolean = true;
   menu: MenuElement[] = [];
   project: Project;
-
+  onlyFixed = false;
   constructor(
     private menuService: MenuService,
     public responsive: ResponsiveService,
@@ -34,6 +34,7 @@ export class DetailComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.route.data.subscribe((data) => {
+      this.onlyFixed = this.route.snapshot.queryParams.fixed !== undefined;
       this.project = data.config.data as Project;
       this.project.collections.map(collection => {
         collection.slug = collection.slug;

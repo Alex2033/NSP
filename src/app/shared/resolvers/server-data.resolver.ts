@@ -13,7 +13,7 @@ export class ServerDataResolver implements Resolve<any> {
   }
 
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
-    let path = this.location.path();
+    let path = this.location.path().split('?')[0];
     if (path === '') {
       path = '/';
     }

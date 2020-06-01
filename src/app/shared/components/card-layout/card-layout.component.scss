@@ -14,7 +14,11 @@
     max-width: 1248px;
     margin-left: auto;
     margin-right: auto;
-
+    &.only-fixed {
+      > * {
+        border: 5px solid $secondary-color;
+      }
+    }
     > * {
         min-width: 0;
         height: initial;
