@@ -10,9 +10,7 @@
             <div class="card-title"*ngIf="screen !== 'sm'">
                 <div class="h3 light">{{ data.title | quotes }}</div>
             </div>
-            <p>
-                {{ data.previewText | quotes }}
-            </p>
+            <p [innerHTML]="data.previewText | quotes"></p>
         </div>
         <footer class="card-footer light" *ngIf="screen !== 'sm'">
             <div class="views">

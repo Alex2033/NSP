@@ -33,7 +33,7 @@
         </div>
         <div class="h5">{{ data.title | quotes }}</div>
         <div class="card-text">
-          <p>{{ data.previewText | quotes }}</p>
+          <p [innerHTML]="data.previewText | quotes"></p>
         </div>
         <footer class="card-footer">
           <div class="views">
@@ -60,7 +60,7 @@
       <div class="card-content">
         <div class="h5">{{ data.title | quotes }}</div>
         <div class="card-text">
-          <p>{{ data.previewText | quotes }}</p>
+          <p [innerHTML]="data.previewText | quotes"></p>
         </div>
         <footer class="card-footer light">
           <div class="views">
