@@ -13,9 +13,12 @@ export class ServerDataResolver implements Resolve<any> {
   }
 
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
-    let path = this.location.path().split('?')[0];
+    let path = this.location.path();
     if (path === '') {
       path = '/';
+    }
+    if (path[0] === '?') {
+      path = '/' + path;
     }
     return this.api.getServerData(path).pipe(
       map(
