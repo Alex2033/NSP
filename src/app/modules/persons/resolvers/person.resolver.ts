@@ -1,17 +1,19 @@
 import {Injectable} from '@angular/core';
-import {ActivatedRouteSnapshot, Resolve} from '@angular/router';
-import {Observable, of} from 'rxjs';
-import {ListResponse} from '../../../shared/contracts/list-response';
-import {Company} from '../../../shared/contracts/company';
+import {ActivatedRouteSnapshot, Resolve, Router} from '@angular/router';
+import {Observable, of, throwError} from 'rxjs';
 import {ApiService} from '../../../shared/services/api.service';
 import {Person} from '../../../shared/contracts/person';
+import {catchError} from 'rxjs/operators';
 
 @Injectable()
 export class PersonResolver implements Resolve<Person> {
-  constructor(private api: ApiService) {
+  constructor(private api: ApiService, private router: Router) {
   }
 
   resolve(route: ActivatedRouteSnapshot): Observable<Person> {
-    return this.api.getPerson(parseInt(route.params.person_slug, 10));
+    return this.api.getPerson(parseInt(route.params.person_slug, 10)).pipe(catchError((err) => {
+      this.router.navigateByUrl('/not-found', {skipLocationChange: true});
+      return throwError(err);
+    }));
   }
 }
