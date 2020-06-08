@@ -23,7 +23,7 @@
 }
 
 :host {
-
+    background-color: #fff;
     @include media-breakpoint-down(sm) {
         display: flex;
         flex-direction: column;

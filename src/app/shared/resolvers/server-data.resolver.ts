@@ -1,11 +1,10 @@
 import {Injectable} from '@angular/core';
 import {ActivatedRoute, ActivatedRouteSnapshot, Resolve} from '@angular/router';
-import {Observable, of, throwError} from 'rxjs';
+import {Observable, throwError} from 'rxjs';
 import {ApiService} from '../services/api.service';
 import {catchError, map} from 'rxjs/operators';
 import {ResponseService} from '../services/response.service';
 import {Location} from '@angular/common';
-import {CurrentPageService} from '../services/current-page.service';
 
 @Injectable()
 export class ServerDataResolver implements Resolve<any> {

@@ -14,7 +14,7 @@
         </div>
     </div>
     <form [formGroup]="formGroup" [appServerSideValidation]="formErrors" (submit)="submit()"  class="modal-form">
-        <app-text [placeholder]="'Имя'" [formControlName]="'name'" class="modal-control"></app-text>
+        <app-text [placeholder]="'Имя, фамилия'" [formControlName]="'name'" class="modal-control"></app-text>
         <app-text [placeholder]="'Должность'" [formControlName]="'position'" class="modal-control"></app-text>
         <app-text [placeholder]="'Компания'" [formControlName]="'company_name'" class="modal-control full-width"></app-text>
         <app-text [placeholder]="'Номера телефона'" [formControlName]="'phone'" class="modal-control"></app-text>

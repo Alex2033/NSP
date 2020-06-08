@@ -5,10 +5,8 @@ import {NgScrollbar} from 'ngx-scrollbar';
 import {Section} from '../../../../shared/contracts/section';
 import {ActivatedRoute} from '@angular/router';
 import {Meta, Title} from '@angular/platform-browser';
-import {Project} from '../../../../shared/contracts/project';
 import {ApiService} from '../../../../shared/services/api.service';
 import {isPlatformBrowser} from '@angular/common';
-import {last} from 'rxjs/operators';
 
 @Component({
   selector: 'app-detail',
