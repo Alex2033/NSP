@@ -48,7 +48,7 @@
       </div>
     </div>
   </div>
-  <div class="materials">
+  <div class="materials" *ngIf="project.layout[screen]">
     <app-card-layout
       [cards]="project.layout[screen]"
       [onlyFixed]="onlyFixed"

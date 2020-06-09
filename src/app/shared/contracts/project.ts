@@ -2,6 +2,7 @@ import {MenuElement} from './menu-element';
 import {NewsFeed} from './news-feed';
 
 export interface Project {
+  id?: number;
   title: string;
   slug: string;
   metaTitle: string | null;

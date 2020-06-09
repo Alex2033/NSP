@@ -7,6 +7,7 @@ import {NgScrollbar} from 'ngx-scrollbar';
 import {MenuService} from '../../../../shared/services/menu.service';
 import {MenuElement} from '../../../../shared/contracts/menu-element';
 import {isPlatformBrowser} from '@angular/common';
+import {ApiService} from '../../../../shared/services/api.service';
 
 @Component({
   selector: 'app-detail',
@@ -23,17 +24,20 @@ export class DetailComponent implements OnInit, AfterViewInit {
   menu: MenuElement[] = [];
   project: Project;
   onlyFixed = false;
+  loadingLayouts = [];
   constructor(
     private menuService: MenuService,
     public responsive: ResponsiveService,
     private route: ActivatedRoute,
     protected title: Title,
+    private api: ApiService,
     @Inject(PLATFORM_ID) private platformId: any,
     protected meta: Meta) {
   }
 
   ngOnInit() {
     this.route.data.subscribe((data) => {
+      this.loadingLayouts = [];
       this.onlyFixed = this.route.snapshot.queryParams.fixed !== undefined;
       this.project = data.config.data as Project;
       this.project.collections.map(collection => {
@@ -55,6 +59,14 @@ export class DetailComponent implements OnInit, AfterViewInit {
     });
     this.responsive.screen.subscribe((screen) => {
       this.screen = screen;
+      if (!this.project.layout[screen] && this.loadingLayouts.indexOf(screen) === -1) {
+        this.loadingLayouts.push(screen);
+        this.api.getProjectLayout(this.project.id, screen).subscribe(data => {
+          this.project.layout[screen] = data.layout;
+          this.loadingLayouts = this.loadingLayouts.filter(x => x !== screen);
+        });
+        // Загрузка сетки под другое разрешение
+      }
     });
   }
 

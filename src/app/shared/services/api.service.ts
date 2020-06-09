@@ -64,6 +64,12 @@ export class ApiService {
     }));
   }
 
+  getProjectLayout(projectId, screen): Observable<any> {
+    return this.apiClient.get(`/api/site/projects/${projectId}/layout?screen=${screen}`).pipe(map((response) => {
+      return deserialize(response);
+    }));
+  }
+
   getQuoteAsideCards(): Observable<any> {
     return this.apiClient.get(`/api/site/quotes/aside_cards`).pipe(map((response) => {
       return deserialize(response);
