@@ -34,6 +34,13 @@ export class BlockLayoutComponent implements OnInit {
         result.push(block);
       } else {
         buttonsGroup.push(block);
+        if (buttonsGroup.length === 2) {
+          result.push({
+            type: 'button-group',
+            buttons: buttonsGroup
+          });
+          buttonsGroup = [];
+        }
       }
     });
 

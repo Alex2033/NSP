@@ -7,7 +7,7 @@ import {environment} from '../../../../environments/environment';
   selector: 'app-responsive-image',
   templateUrl: './responsive-image.component.html',
   styleUrls: ['./responsive-image.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ResponsiveImageComponent implements OnInit {
   @Input() xl: string;
@@ -20,7 +20,11 @@ export class ResponsiveImageComponent implements OnInit {
   @Input() alt: string;
   @Input() title: string;
   @Input() lazyLoad: boolean = true;
+  screens = ['xl', 'lg', 'md', 'sm', 'xs'];
   constructor(private cdr: ChangeDetectorRef, public responsive: ResponsiveService) {
+    // this.responsive.screen.subscribe(() => {
+    //   this.cdr.detectChanges();
+    // });
   }
 
   ngOnInit() {
