@@ -1,5 +1,7 @@
 @import "responsive";
 @import "theme";
+:host {
+}
 .highlight {
   background-color: rgba($secondary-color, 0.12);
   padding: 24px 40px;
@@ -8,12 +10,10 @@
   }
 }
 .text-block-content {
-  & > * {
-    &:last-child {
+  ::ng-deep {
+    & > *:last-child {
       margin-bottom: 0;
     }
-  }
-  ::ng-deep {
     h1, h2, h3, h4, h5, h6 {
       margin-bottom: 24px;
 

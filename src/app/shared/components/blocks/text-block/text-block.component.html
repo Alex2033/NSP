@@ -1,1 +1,1 @@
-<div class="text-block-content" [class.highlight]="highlight" appDynamicRoutes [innerHTML]="content | quotes | externalLinks"></div>
+<div class="text-block-content" [class.highlight]="highlight" appDynamicRoutes [innerHTML]="content | quotes | externalLinks | safeHtml"></div>

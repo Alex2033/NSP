@@ -32,15 +32,19 @@
 }
 
 .control-panel {
-  background-color: $text-color;
-  padding: 16px 24px;
+  //background-color: $text-color;
+  padding: 8px 12px;
+  @include media-breakpoint-up(md) {
+    padding: 8px 0;
+  }
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #fff;
 }
 
 .slides-number {
-  color: $light-color;
+  color: $text-color;
   font-size: 15px;
   line-height: 1.5333;
   user-select: none;

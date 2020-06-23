@@ -1,4 +1,5 @@
 <div class="banner" #banner>
+  <hr>
   <a [href]="data.url" *ngIf="data" target="_blank" rel="nofollow noopener" (click)="incClick()">
     <ng-container *ngIf="data.type === 'image'">
       <app-responsive-image [xl]="data.images.xl" [lg]="data.images.lg" [md]="data.images.md"
@@ -11,4 +12,5 @@
       <div #htmlSmWrapper class="d-block d-md-none"></div>
     </ng-container>
   </a>
+  <hr>
 </div>
