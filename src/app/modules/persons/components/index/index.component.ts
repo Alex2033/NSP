@@ -31,8 +31,8 @@ export class IndexComponent implements OnInit {
     this.responsive.screen.subscribe((screen) => {
       this.screen = screen;
     });
-    this.title.setTitle('Персоны' + ' - NSP.ru');
     this.route.data.subscribe(data => {
+      this.title.setTitle('Персоны' + ' - NSP.ru');
       this.currentPage.next();
       this.personsCount = data.persons.count;
       this.persons = data.persons.items;

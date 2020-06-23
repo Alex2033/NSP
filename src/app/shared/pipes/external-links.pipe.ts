@@ -13,9 +13,9 @@ export class ExternalLinksPipe implements PipeTransform {
     for (let i = 0, l = el.childNodes.length; i < l; i++) {
       if (el.childNodes[i].hasChildNodes() && el.childNodes.length > 1) {
         if (el.childNodes[i].nodeName === 'A') {
+          el.childNodes[i].target = '_blank';
           if (!el.childNodes[i].href.includes(environment.siteHost)) {
             // Внешняя ссылка
-            el.childNodes[i].target = '_blank';
             el.childNodes[i].rel = 'nofollow noopener';
           }
         }

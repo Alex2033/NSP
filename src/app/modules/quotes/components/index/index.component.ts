@@ -30,8 +30,8 @@ export class IndexComponent implements OnInit {
       this.screen = screen;
     });
 
-    this.title.setTitle('Цитаты' + ' - NSP.ru');
     this.route.data.subscribe(data => {
+      this.title.setTitle('Цитаты' + ' - NSP.ru');
       this.currentPage.next();
       this.quotesCount = data.quotes.count;
       this.quotes = data.quotes.items;
