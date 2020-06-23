@@ -20,8 +20,10 @@
 .registrations-headings {
     margin-bottom: 32px;
     max-width: 619px;
-
-    h3 {
+    a {
+      text-decoration: underline;
+    }
+    h3, .h3 {
         &.primary {
             color: lighten($primary-color, 20%);
             font-weight: 400;
@@ -31,7 +33,7 @@
     @include media-breakpoint-down(sm) {
         margin-bottom: 24px;
 
-        h3 {
+        h3, .h3 {
             font-size: 15px;
             line-height: 1.6;
         }
@@ -71,7 +73,7 @@
 .registration-info-item {
     max-width: 389px;
     width: 50%;
-    
+
     &.right {
         text-align: right;
 
@@ -93,7 +95,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-  
+
     app-text {
         width: calc(50% - 12px);
 
@@ -101,7 +103,7 @@
             width: 100%;
         }
     }
-  
+
     app-textarea {
         width: 100%;
     }
@@ -109,7 +111,7 @@
     @include media-breakpoint-down(sm) {
         flex-direction: column;
         justify-content: flex-start;
-        
+
         ::ng-deep app-error-message {
             top: calc(100% - 2px);
             font-size: 12px;
@@ -180,7 +182,7 @@
 }
 
 .pick-file {
-    border: 1px dashed $border-color;	
+    border: 1px dashed $border-color;
     border-radius: 4px;
     padding: 11px 15px;
     width: 100%;
