@@ -75,7 +75,7 @@ export class ArticleBannerComponent implements OnInit {
   needLoading() {
     const distance = this.banner.nativeElement.getBoundingClientRect();
     return (
-      distance.bottom - 200 <= (window.innerHeight || document.documentElement.clientHeight)
+      distance.bottom - 500 <= (window.innerHeight || document.documentElement.clientHeight)
     );
   }
 }
