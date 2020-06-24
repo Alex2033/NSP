@@ -44,7 +44,7 @@
                 <a [routerLink]="['/persons', author.id + '-'+ author.slug]">{{ author.name }}</a>
               </ng-container>
             </div>
-            <div class="topline-info-item topline-info-date" *ngIf="article.publishedAt">
+            <div class="topline-info-item topline-info-date" *ngIf="article.publishedAt && !article.event">
               {{ article.publishedAt * 1000 | niceDate }} в {{ article.publishedAt * 1000 | date: 'shortTime' }}
             </div>
             <div class="topline-info-item info-views">
