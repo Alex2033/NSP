@@ -311,3 +311,10 @@
   top: 200px;
   margin-bottom: 40px;
 }
+.read-also {
+  background-color: $light-gray;
+  ::ng-deep .carousel-wrapper {
+    padding: 40px 0 48px 0;
+    margin-bottom: 0;
+  }
+}

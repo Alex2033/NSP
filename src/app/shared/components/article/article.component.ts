@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ResponsiveService} from '../../services/responsive.service';
 import {Article} from '../../contracts/article';
 import {DatePipe} from '@angular/common';
+import {CardCollection} from '../../contracts/card-collection';
 
 @Component({
   selector: 'app-article',
@@ -12,6 +13,7 @@ export class ArticleComponent implements OnInit {
   screen: string;
   eventDisplayDate: string;
   allowEventRegistration = false;
+  readAlso: null | CardCollection;
   @Input() article: Article;
 
   constructor(private responsive: ResponsiveService) {
@@ -50,6 +52,15 @@ export class ArticleComponent implements OnInit {
         }
       }
     }
+    if (this.article.relatedArticleCards.length > 0) {
+      this.readAlso = {
+        title: 'Читайте также',
+        links: [],
+        cards: this.article.relatedArticleCards
+      };
+    } else {
+      this.readAlso = null;
+    }
     this.responsive.screen.subscribe((screen) => {
       this.screen = screen;
     });
@@ -58,7 +69,7 @@ export class ArticleComponent implements OnInit {
   scrollToEventRegistrationBlock() {
     const el = document.getElementById('event-' + this.article.event.id + '-registration-block');
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      el.scrollIntoView({behavior: 'smooth', block: 'center'});
     }
   }
 
