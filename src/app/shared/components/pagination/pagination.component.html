@@ -2,7 +2,7 @@
   <div class="pages">
     <a [attr.aria-label]="'Перейти на страницу ' + page" [routerLink]="['./']" [queryParams]="prepareParams(page > 1 ? page : null)" *ngFor="let page of pages" [ngClass]="{'active': current === page}">{{ page }}</a>
   </div>
-  <nav class="nav">
+  <nav class="nav d-none d-md-block">
     <a aria-label="Перейти на предыдушую страницу" *ngIf="current > 1" [routerLink]="['./']" [queryParams]="prepareParams(current - 1)">назад</a>
     <a aria-label="Перейти на следующую страницу" *ngIf="current < pagesCount" [routerLink]="['./']" [queryParams]="prepareParams(current + 1)">дальше</a>
   </nav>

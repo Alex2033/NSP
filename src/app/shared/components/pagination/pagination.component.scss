@@ -1,9 +1,11 @@
 @import "theme";
-
+@import "responsive";
 .pagination {
     display: flex;
     align-items: center;
-
+    @include media-breakpoint-only(sm) {
+      justify-content: center;
+    }
     .pages {
         display: flex;
 

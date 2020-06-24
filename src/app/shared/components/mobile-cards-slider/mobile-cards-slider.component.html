@@ -1,4 +1,4 @@
-<div class="swiper-container" [swiper]="carouselConfig">
+<div class="swiper-container" [swiper]="carouselConfig" [(index)]="index">
     <div class="swiper-wrapper">
         <ng-container [ngSwitch]="type">
             <ng-container *ngSwitchCase="'company'">
@@ -12,6 +12,6 @@
                 </div>
             </ng-container>
         </ng-container>
-        
+
     </div>
 </div>
