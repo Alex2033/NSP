@@ -3,7 +3,7 @@
 .swiper-slide {
     width: 91%;
     height: auto;
-
+    margin-right: 8px;
     &:first-of-type {
         margin-left: 12px;
     }
@@ -32,6 +32,6 @@
                 right: 0px;
             }
         }
-        
+
     }
 }
