@@ -4,7 +4,11 @@
 .page-top {
     padding-bottom: 0;
 }
-
+.materials {
+  @include media-breakpoint-only(sm) {
+    margin-top: 12px;
+  }
+}
 .categories {
     margin-bottom: 48px;
     display: flex;

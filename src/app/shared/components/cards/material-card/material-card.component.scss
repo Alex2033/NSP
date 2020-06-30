@@ -27,13 +27,17 @@
   }
 }
 :host-context(.medium-vertical) {
-  &::before {
-    padding-top: 200%;
+  @include media-breakpoint-up(md) {
+    &::before {
+      padding-top: 200%;
+    }
   }
 }
 :host-context(.medium-horizontal) {
-  &::before {
-    padding-top: 50%;
+  @include media-breakpoint-up(md) {
+    &::before {
+      padding-top: 50%;
+    }
   }
 }
 
