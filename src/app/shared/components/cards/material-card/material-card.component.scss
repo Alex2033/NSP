@@ -3,24 +3,37 @@
 @import "responsive";
 
 :host {
-  @include media-breakpoint-only(sm) {
-    display: block;
-    position: relative;
+  display: block;
+  position: relative;
 
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: 100%;
+  }
+
+  > * {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  @include media-breakpoint-only(sm) {
     &::before {
-      content: '';
-      display: block;
-      width: 100%;
       padding-top: 100%;
     }
-
-    > * {
-      position: absolute !important;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-    }
+  }
+}
+:host-context(.medium-vertical) {
+  &::before {
+    padding-top: 200%;
+  }
+}
+:host-context(.medium-horizontal) {
+  &::before {
+    padding-top: 50%;
   }
 }
 
@@ -54,6 +67,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: #fff;
     &.backgroundImage {
       .image-overlay {
         background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
