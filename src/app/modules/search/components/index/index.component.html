@@ -48,7 +48,7 @@
     </div>
     <div class="materials" *ngIf="results.articles && results.articles.count > 0 && (!type || type === 'articles')">
       <h2 class="materials-title">
-        <span>Материалы</span>
+        <span>Статьи</span>
         <div class="items-number">{{ results.articles.count }}</div>
         <h5 class="all-results" *ngIf="!type && results.articles.count > 4">
           <a [routerLink]="['/search']" [queryParams]="{type: 'articles'}" queryParamsHandling="merge">Все результаты</a>

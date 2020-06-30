@@ -18,7 +18,7 @@ export class IndexComponent implements OnInit {
   options = [
     {
       id: null,
-      value: 'Все'
+      value: 'Все категории'
     },
     {
       id: 'companies',
@@ -29,12 +29,12 @@ export class IndexComponent implements OnInit {
       value: 'Персоны'
     },
     {
-      id: 'objects',
-      value: 'Объекты'
+      id: 'articles',
+      value: 'Статьи'
     },
     {
-      id: 'articles',
-      value: 'Материалы'
+      id: 'objects',
+      value: 'Объекты'
     },
   ];
 
