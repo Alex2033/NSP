@@ -3,7 +3,7 @@
 :host {
 }
 .highlight {
-  background-color: rgba($secondary-color, 0.12);
+  background-color: $light-gray;
   padding: 24px 40px;
   @include media-breakpoint-down(sm) {
     padding: 12px 16px;

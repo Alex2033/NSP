@@ -2345,7 +2345,6 @@ export class MockApiService {
             metaTitle: null,
             metaDescription: null,
             metaKeywords: null,
-            cardsCount: 100,
             tags: [
               {
                 name: 'Тег 1',

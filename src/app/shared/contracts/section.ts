@@ -8,6 +8,5 @@ export interface Section {
   metaKeywords?: string | null;
   cardsFilter: any;
   tags?: Tag[];
-  cardsCount: number;
   cards: any[];
 }

@@ -17,13 +17,12 @@ export class DetailComponent implements OnInit, AfterViewInit {
   @ViewChild(NgScrollbar, {static: false}) scrollbarRef: NgScrollbar;
   blockLoading = false;
   section: Section;
-  cardsLoaded = 0;
   scrollPosition: number = 0;
   showLeftControl: boolean = false;
   showRightControl: boolean = true;
   screen: string;
   entryDateValue: Date = new Date();
-
+  hasMoreBlocks: boolean;
   cards = [];
 
   constructor(public responsive: ResponsiveService,
@@ -37,10 +36,10 @@ export class DetailComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.route.data.subscribe((data) => {
       this.section = data.config.data as Section;
+      this.hasMoreBlocks = true;
       this.cards = this.section.cards.map(card => {
         return card;
       });
-      this.cardsLoaded = this.cards.length;
       this.title.setTitle(this.section.metaTitle ? this.section.metaTitle : this.section.title + ' - NSP.ru');
       this.meta.updateTag({
           name: 'description',
@@ -89,12 +88,13 @@ export class DetailComponent implements OnInit, AfterViewInit {
       // Нужно найти последнюю плитку, которая не является рекламой
       offset++;
       lastCard = this.cards[this.cards.length - offset];
-    } while (!lastCard.articlePublishedAt && !lastCard.videoPublishedAt);
+    } while (!lastCard.techPublishedAt && !lastCard.videoPublishedAt);
+    console.log(lastCard);
     this.api.getCardFeed(
       {
         ...this.section.cardsFilter,
         ...{
-          published_till: lastCard.articlePublishedAt ? lastCard.articlePublishedAt : lastCard.videoPublishedAt
+          published_till: lastCard.techPublishedAt ? lastCard.techPublishedAt : lastCard.videoPublishedAt
         }
       }
     ).subscribe((response) => {
@@ -104,7 +104,9 @@ export class DetailComponent implements OnInit, AfterViewInit {
         }, 300);
       }
       this.cards = [...this.cards, ...response.cards];
-      this.cardsLoaded = this.cards.length;
+      if (response.cards.length === 0) {
+        this.hasMoreBlocks = false;
+      }
     });
   }
 
@@ -112,7 +114,7 @@ export class DetailComponent implements OnInit, AfterViewInit {
   onScroll() {
     // Проверка, что до нижней границы списка плиток осталось менее Х пикселей
     if (!this.blockLoading && this.isInViewport(document.querySelector('app-card-layout'))) {
-      if (this.cardsLoaded < this.section.cardsCount) {
+      if (this.hasMoreBlocks) {
         this.loadBlock();
       }
     }

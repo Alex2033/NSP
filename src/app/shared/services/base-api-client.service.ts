@@ -1,10 +1,8 @@
-import { Inject, Injectable, Injector, PLATFORM_ID } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { makeStateKey, TransferState } from '@angular/platform-browser';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { of, ReplaySubject, throwError } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
-import { environment } from '../../../environments/environment';
+import { catchError, map } from 'rxjs/operators'
 
 export abstract class BaseApiClientService {
   constructor(
