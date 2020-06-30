@@ -5,8 +5,11 @@
     display: block;
 
     @include media-breakpoint-down(sm) {
-        position: relative;    
-    } 
+        position: relative;
+    }
+    @include media-breakpoint-up(md) {
+      margin-top: 24px;
+    }
 }
 
 .search-form {
@@ -81,7 +84,7 @@
         font-size: 13px;
         line-height: 1.54;
     }
-    
+
 }
 
 .button {

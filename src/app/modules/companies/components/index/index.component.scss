@@ -18,11 +18,6 @@
 app-company-card {
   display: block;
 }
-.page-top {
-    @include media-breakpoint-down(sm) {
-        padding-bottom: 0;
-    }
-}
 
 .companies-text {
     margin-bottom: 40px;

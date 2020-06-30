@@ -73,6 +73,14 @@
         </div>
 
         <div class="bot">
+          <div class="page-topline-info">
+            <div class="topline-info-item topline-author" *ngIf="article.authors.length > 0">
+              <ng-container *ngFor="let author of article.authors; first as isFirst">
+                <ng-container *ngIf="!isFirst">,&nbsp;</ng-container>
+                <a [routerLink]="['/persons', author.id + '-'+ author.slug]">{{ author.name }}</a>
+              </ng-container>
+            </div>
+          </div>
           <div class="hashtags">
             <!--            <a [routerLink]="['/' + article.directorySlug]" *ngIf="article.directorySlug !== ''" class="hashtag"><strong>{{ article.directoryName }}</strong></a>-->
             <a [routerLink]="['/tags', tag.code]" class="hashtag"
@@ -91,22 +99,22 @@
         <ng-container>
           <ng-container *ngTemplateOutlet="eventContactCard"></ng-container>
         </ng-container>
-      </aside>
-      <div class="sticky-sidebar" *ngIf="screen === 'xl' || screen === 'lg'">
-        <ng-container *ngFor="let card of article.asideCards">
-          <ng-container [ngSwitch]="card.type">
-            <ng-container *ngSwitchCase="'article-list'">
-              <app-material-list-card [size]="'medium-vertical'" [highlight]="card.highlight"
-                                      [data]="card"
-              ></app-material-list-card>
+        <div *ngIf="screen === 'xl' || screen === 'lg'">
+          <ng-container *ngFor="let card of article.asideCards">
+            <ng-container [ngSwitch]="card.type">
+              <ng-container *ngSwitchCase="'article-list'">
+                <app-material-list-card [size]="'medium-vertical'" [highlight]="card.highlight"
+                                        [data]="card"
+                ></app-material-list-card>
+              </ng-container>
+              <!--            <ng-container *ngSwitchCase="'latest-news'">-->
+              <!--              <app-latest-news-card-->
+              <!--                [articles]="card.articles"></app-latest-news-card>-->
+              <!--            </ng-container>-->
             </ng-container>
-            <!--            <ng-container *ngSwitchCase="'latest-news'">-->
-            <!--              <app-latest-news-card-->
-            <!--                [articles]="card.articles"></app-latest-news-card>-->
-            <!--            </ng-container>-->
           </ng-container>
-        </ng-container>
-      </div>
+        </div>
+      </aside>
     </div>
   </div>
   <ng-container *ngIf="screen !== 'xl'">

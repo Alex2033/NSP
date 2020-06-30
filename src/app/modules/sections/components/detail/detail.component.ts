@@ -89,7 +89,6 @@ export class DetailComponent implements OnInit, AfterViewInit {
       offset++;
       lastCard = this.cards[this.cards.length - offset];
     } while (!lastCard.techPublishedAt && !lastCard.videoPublishedAt);
-    console.log(lastCard);
     this.api.getCardFeed(
       {
         ...this.section.cardsFilter,
@@ -123,7 +122,7 @@ export class DetailComponent implements OnInit, AfterViewInit {
   isInViewport(elem) {
     const distance = elem.getBoundingClientRect();
     return (
-      distance.bottom - 200 <= (window.innerHeight || document.documentElement.clientHeight)
+      distance.bottom - 500 <= (window.innerHeight || document.documentElement.clientHeight)
     );
   }
 

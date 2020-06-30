@@ -17,9 +17,10 @@
                              [view]="card.view"></app-material-card>
         </ng-container>
         <ng-container *ngSwitchCase="'article-list'">
-          <app-material-list-card [size]="card.size" [highlight]="card.highlight"
-                                  [class]="card.size"
+          <app-material-list-card [size]="screen !== 'sm' ? card.size : 'small'" [highlight]="card.highlight"
+                                  [class]="screen !== 'sm' ? card.size : 'small'"
                                   [data]="card"
+                                  [withGradient]="screen !== 'sm'"
                                   [style.grid-column-start]="card.position?.x ? card.position.x : null"
                                   [style.grid-row-start]="card.position?.y ? card.position.y : null"
           ></app-material-list-card>
@@ -47,6 +48,7 @@
         </ng-container>
         <ng-container *ngSwitchCase="'advertisement'">
           <app-advertising-card [size]="card.size"
+                                [class.square]="screen === 'sm'"
                                 [style.grid-column-start]="card.position?.x ? card.position.x : null"
                                 [style.grid-row-start]="card.position?.y ? card.position.y : null"
                                 [class]="card.size" [data]="card"></app-advertising-card>

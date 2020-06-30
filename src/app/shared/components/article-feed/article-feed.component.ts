@@ -118,7 +118,7 @@ export class ArticleFeedComponent implements OnInit {
   isInViewport(elem) {
     const distance = elem.getBoundingClientRect();
     return (
-      distance.bottom - 200 <= (window.innerHeight || document.documentElement.clientHeight)
+      distance.bottom - 500 <= (window.innerHeight || document.documentElement.clientHeight)
     );
   }
 }

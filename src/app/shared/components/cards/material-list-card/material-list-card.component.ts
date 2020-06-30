@@ -10,6 +10,7 @@ import {ArticleListCard} from '../../../contracts/article-list-card';
 })
 export class MaterialListCardComponent extends ResizableCardComponent implements OnInit {
   @Input() highlight = false;
+  @Input() withGradient: boolean;
   blocks = [];
   title: string;
 

@@ -5,9 +5,7 @@
     > * {
         display: block;
       &:nth-child(n+2) {
-        &:not(.float-left):not(.float-right) {
-          margin-top: 26px; // Высота пустой строки
-        }
+        margin-top: 26px;
       }
 
       &:not(app-text-block) {

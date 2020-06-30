@@ -1,18 +1,18 @@
 <a [routerLink]="['/' + data.articleId + '-' + data.articleSlug]" class="card-wrapper">
     <div class="card-content">
-        <div class="card-top static" *ngIf="screen !== 'sm'">
+        <div class="card-top static">
             <div class="date">{{ data.articlePublishedAt * 1000 | niceDate }}</div>
           <div class="tag" *ngIf="data.markerName">
             {{ data.markerName | quotes }}
           </div>
         </div>
         <div class="card-text">
-            <div class="card-title"*ngIf="screen !== 'sm'">
+            <div class="card-title">
                 <div class="h3 light">{{ data.title | quotes }}</div>
             </div>
             <p [innerHTML]="data.previewText | quotes"></p>
         </div>
-        <footer class="card-footer light" *ngIf="screen !== 'sm'">
+        <footer class="card-footer light">
             <div class="views">
                 <svg class="views-icon">
                     <use xlink:href="assets/sprites/icons.svg#eye"></use>

@@ -138,7 +138,7 @@
   }
 
   @include media-breakpoint-down(sm) {
-    width: 280px;
+    width: calc(100% - 24px);
   }
 }
 

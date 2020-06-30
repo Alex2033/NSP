@@ -38,6 +38,15 @@ export class ShareComponent implements OnInit {
     );
   }
 
+  shareToTelegram() {
+    this.popupCenter(
+      'https://t.me/share/url?url=' + encodeURIComponent(window.location.href),
+      'Поделиться',
+      800,
+      600
+    );
+  }
+
   private popupCenter(url, title, w, h) {
     // Fixes dual-screen position                         Most browsers      Firefox
     let dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : window.screenX;

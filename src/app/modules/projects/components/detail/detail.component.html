@@ -13,7 +13,7 @@
       </li>
     </ul>
     <!-- mobile categories -->
-    <div class="mobile-categories" *ngIf="screen === 'sm'">
+    <div class="mobile-categories" *ngIf="menu.length > 0 && screen === 'sm'">
       <ng-scrollbar
         class="horizontal-scrollbar"
         track="horizontal"

@@ -11,6 +11,7 @@
 }
 
 .quotes {
+    margin-top: 16px;
     margin-bottom: 48px;
 
     > * {
@@ -31,12 +32,6 @@
 .quotes-main {
     @include media-breakpoint-only(md) {
         margin-bottom: 40px;
-    }
-}
-
-.page-top {
-    @include media-breakpoint-down(sm) {
-        padding-bottom: 0;
     }
 }
 

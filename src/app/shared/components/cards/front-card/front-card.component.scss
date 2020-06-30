@@ -2,13 +2,31 @@
 @import "responsive";
 
 :host {
+  display: block;
+  @include media-breakpoint-only(sm) {
     display: block;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      padding-top: 100%;
+    }
+
+    > * {
+      position: absolute !important;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+  }
 }
 
 .card-wrapper {
     padding: 16px;
     overflow: hidden;
-
     &:hover {
         .card-overlay {
             background-color: rgba($text-color, 0.8);
@@ -20,7 +38,7 @@
     }
 
     @include media-breakpoint-down(sm) {
-        padding: 41px 12px;
+        padding: 12px;
     }
 }
 
@@ -57,18 +75,18 @@
         position: relative;
     }
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 48px;
-        height: 48px;
-        background-color: $important-color;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 0;
-    }
+    //&::before {
+    //    content: '';
+    //    position: absolute;
+    //    top: 0;
+    //    left: 0;
+    //    width: 48px;
+    //    height: 48px;
+    //    background-color: $important-color;
+    //    top: 50%;
+    //    transform: translateY(-50%);
+    //    z-index: 0;
+    //}
 }
 
 .views-icon {

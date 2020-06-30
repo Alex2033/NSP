@@ -2,24 +2,26 @@
 @import "variables/bootstrap";
 @import "responsive";
 
-:host-context(.small) {
+:host {
+  @include media-breakpoint-only(sm) {
     display: block;
     position: relative;
 
     &::before {
-        content: '';
-        display: block;
-        width: 100%;
-        padding-top: 100%;
+      content: '';
+      display: block;
+      width: 100%;
+      padding-top: 100%;
     }
 
     > * {
-        position: absolute !important;
-        top: 0px;
-        left: 0px;
-        bottom: 0px;
-        right: 0px;
+      position: absolute !important;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
     }
+  }
 }
 
 :host {
@@ -51,8 +53,11 @@
 .card-wrapper {
     display: flex;
     flex-direction: column;
-
+    justify-content: space-between;
     &.backgroundImage {
+      .image-overlay {
+        background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+      }
         .card-content {
             position: relative;
             margin-top: auto;
@@ -163,7 +168,6 @@
 .card-wrapper:not(.has-image).small {
 
   .card-top {
-    height: 153px;
     position: relative;
   }
 }
@@ -184,13 +188,19 @@
         height: 50%;
     }
 }
-
+.has-image .card-content {
+  flex-grow: 1;
+}
 .card-content {
-    padding: 12px 16px;
+    @include media-breakpoint-up(md) {
+      padding: 12px 16px;
+    }
+  @include media-breakpoint-only(sm) {
+    padding: 12px;
+  }
     display: flex;
     flex-direction: column;
     min-height: 0px;
-    flex-grow: 1;
     flex-shrink: 1;
     flex-basis: auto;
     background-color: $light-color;
@@ -198,7 +208,7 @@
 
 .card-text {
     font-size: 14px;
-    line-height: 1.5714;
+    line-height: 22px;
     color: $dark-gray;
     overflow: hidden;
     min-height: 0px;

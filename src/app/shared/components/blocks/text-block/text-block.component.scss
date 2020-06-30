@@ -1,6 +1,8 @@
 @import "responsive";
 @import "theme";
 :host {
+  font-size: 16px;
+  line-height: 1.625;
 }
 .highlight {
   background-color: $light-gray;
@@ -45,7 +47,7 @@
       margin-top: 0;
       font-size: 16px;
       line-height: 1.625;
-      padding-left: 0;
+      padding-left: 20px;
       margin-bottom: 28px;
       list-style: initial;
       li {

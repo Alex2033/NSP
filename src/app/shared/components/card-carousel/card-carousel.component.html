@@ -40,7 +40,7 @@
         <ng-container [ngSwitch]="card.type">
           <app-material-card class="small" *ngSwitchCase="'article'" [size]="'small'" [view]="card.view" [data]="card"></app-material-card>
           <app-video-card *ngSwitchCase="'video'" [size]="'small'" [data]="card"></app-video-card>
-          <app-advertising-card *ngSwitchCase="'advertisement'"[size]="'small'" [data]="card"></app-advertising-card>
+          <app-advertising-card *ngSwitchCase="'advertisement'"[size]="'small'" [class.square]="true" [data]="card"></app-advertising-card>
           <app-person-card [person]="card" *ngSwitchCase="'person'"></app-person-card>
         </ng-container>
       </div>
