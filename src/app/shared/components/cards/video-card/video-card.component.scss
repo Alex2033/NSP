@@ -26,7 +26,7 @@
 
 .card-wrapper {
   cursor: pointer;
-  padding: 16px;
+  padding: 16px 16px 48px 16px;
   overflow: hidden;
   &.small, &.large, &.vertical {
     ::ng-deep img.youtube-image {
@@ -38,7 +38,7 @@
   background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
 }
 .card-content {
-    position: relative;
+    //position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -47,9 +47,12 @@
 }
 
 .card-text {
+    z-index: 2;
     margin-top: auto;
-    margin-bottom: 16px;
     //padding-left: 56px;
+}
+.card-footer {
+  z-index: 2;
 }
 
 .play {
@@ -58,7 +61,7 @@
     position: absolute;
     //top: 75%;
     //left: 50%;
-    bottom: 16px;
+    bottom: 12px;
     left: 16px;
     //transform: translate(-50%, -50%);
     z-index: 2;
