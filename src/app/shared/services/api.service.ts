@@ -34,6 +34,27 @@ export class ApiService {
       return deserialize(response);
     }));
   }
+  getEvents(cardType: string, cardId: number, startedTill: number): Observable<any> {
+    return this.apiClient.get(`/api/site/events`, {
+      params: {
+        card_type: cardType,
+        card_id: cardId,
+        started_till: startedTill
+      }
+    }).pipe(map((response) => {
+      return deserialize(response);
+    }));
+  }
+  getLatestArticles(cardId: number, publishedTill: number): Observable<any> {
+    return this.apiClient.get(`/api/site/latest_articles`, {
+      params: {
+        card_id: cardId,
+        published_till: publishedTill
+      }
+    }).pipe(map((response) => {
+      return deserialize(response);
+    }));
+  }
 
   getPersonArticles(filter = {}): Observable<any> {
     return this.apiClient.get(`/api/site/people/articles`, {

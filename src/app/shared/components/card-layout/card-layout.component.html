@@ -29,22 +29,22 @@
           <app-latest-news-card
             [style.grid-column-start]="card.position?.x ? card.position.x : null"
             [style.grid-row-start]="card.position?.y ? card.position.y : null"
-            [articles]="card.articles"
-            style="grid-row-end: span 3"></app-latest-news-card>
+            [card]="card"
+            [class]="'calendar-' + card.size"></app-latest-news-card>
         </ng-container>
         <ng-container *ngSwitchCase="'event-calendar'">
           <app-event-calendar-card
             [style.grid-column-start]="card.position?.x ? card.position.x : null"
             [style.grid-row-start]="card.position?.y ? card.position.y : null"
-            [events]="card.events"
-            style="grid-row-end: span 3"></app-event-calendar-card>
+            [card]="card"
+            [class]="'calendar-' + card.size"></app-event-calendar-card>
         </ng-container>
         <ng-container *ngSwitchCase="'event-history'">
           <app-event-calendar-card
             [style.grid-column-start]="card.position?.x ? card.position.x : null"
             [style.grid-row-start]="card.position?.y ? card.position.y : null"
-            [events]="card.events"
-            style="grid-row-end: span 3"></app-event-calendar-card>
+            [card]="card"
+            [class]="'calendar-' + card.size"></app-event-calendar-card>
         </ng-container>
         <ng-container *ngSwitchCase="'advertisement'">
           <app-advertising-card [size]="card.size"

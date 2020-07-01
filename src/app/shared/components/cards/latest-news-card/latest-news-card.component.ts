@@ -1,58 +1,51 @@
-import {Component, ElementRef, HostListener, Inject, Input, OnInit, PLATFORM_ID, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, HostListener, Inject, Input, OnInit, PLATFORM_ID, ViewChild} from '@angular/core';
 import {ResponsiveService} from 'src/app/shared/services/responsive.service';
 import {isPlatformBrowser} from '@angular/common';
+import {NgScrollbar} from 'ngx-scrollbar';
+import {ApiService} from '../../../services/api.service';
+import {finalize} from 'rxjs/operators';
 
 @Component({
   selector: 'app-latest-news-card',
   templateUrl: './latest-news-card.component.html',
   styleUrls: ['./latest-news-card.component.scss']
 })
-export class LatestNewsCardComponent implements OnInit {
+export class LatestNewsCardComponent implements OnInit, AfterViewInit {
   @ViewChild('feed', {static: true}) feed: ElementRef;
   @ViewChild('wrapper', {static: true}) wrapper: ElementRef;
+  @ViewChild(NgScrollbar, {static: true}) scrollbarRef: NgScrollbar;
   screen: string;
-  visibleArticles = [];
+  loading = false;
+  hasMoreBlocks = true;
+  @Input() card;
 
-  @Input() articles = [];
-
-  constructor(private responsive: ResponsiveService, @Inject(PLATFORM_ID) private platformId: any) {
+  constructor(private responsive: ResponsiveService, @Inject(PLATFORM_ID) private platformId: any, private api: ApiService) {
   }
 
   ngOnInit() {
     this.responsive.screen.subscribe((screen) => {
       this.screen = screen;
     });
-    this.rebuildVisible();
   }
 
-  @HostListener('window:resize', ['$event']) changeNav() {
-    this.rebuildVisible();
-  }
-
-  rebuildVisible() {
-    this.visibleArticles = this.articles;
-    if (isPlatformBrowser(this.platformId)) {
-      setTimeout(() => {
-        if (this.feed.nativeElement.clientHeight > this.wrapper.nativeElement.clientHeight) {
-          let popCount = 1;
-          let heightSum = 0;
-          for (let i = this.feed.nativeElement.children.length - 1; i >= 0; i--) {
-            const style = getComputedStyle(this.feed.nativeElement.children[i]);
-
-            heightSum += this.feed.nativeElement.children[i].offsetHeight + parseInt(style.marginBottom, 10);
-            if (this.feed.nativeElement.clientHeight - heightSum > this.wrapper.nativeElement.clientHeight) {
-              popCount++;
+  ngAfterViewInit() {
+    this.scrollbarRef.scrolled.subscribe((event) => {
+      if (this.hasMoreBlocks && !this.loading) {
+        const offset = 500;
+        if (event.target.scrollTop > event.target.scrollHeight - event.target.offsetHeight - offset) {
+          this.loading = true;
+          this.api.getLatestArticles(this.card.id, this.card.articles[this.card.articles.length - 1].publishedAt).pipe(finalize(() => {
+            this.loading = false;
+          })).subscribe((response) => {
+            if (response.items.length === 0) {
+              this.hasMoreBlocks = false;
             } else {
-              break;
+              this.card.articles = [...this.card.articles, ...response.items];
             }
-          }
-          let i = 0;
-          while (i < popCount) {
-            this.visibleArticles.pop();
-            i++;
-          }
+          });
         }
-      });
-    }
+      }
+
+    });
   }
 }

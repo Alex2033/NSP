@@ -1,22 +1,22 @@
 @import "theme";
 @import "responsive";
 :host {
-  overflow: hidden;
-  position: relative;
-  &:after {
-    display: block;
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
+  //overflow: hidden;
+  //position: relative;
+  //&:after {
+  //  display: block;
+  //  content: '';
+  //  position: absolute;
+  //  bottom: 0;
+  //  left: 0;
+  //  right: 0;
+  //}
 }
 .news-wrapper {
-    padding: 24px 8px 24px 0;
     max-height: 100%;
     @include media-breakpoint-down(sm) {
         padding: 12px;
+      max-height: 250px;
     }
 }
 
@@ -34,7 +34,7 @@
 }
 
 .news-item {
-
+    padding-right: 16px;
     a {
         display: block;
 
@@ -67,4 +67,29 @@
         font-size: 14px;
         line-height: 1.571;
     }
+}
+.news-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.custom-scrollbar {
+
+  ::ng-deep {
+    .ng-scroll-content, .ng-scroll-viewport {
+      max-width: 100%;
+    }
+  }
+
+}
+.card-header {
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $border-color;
+  margin-bottom: 16px;
+
+  .h5 {
+    color: $dark-gray;
+  }
 }

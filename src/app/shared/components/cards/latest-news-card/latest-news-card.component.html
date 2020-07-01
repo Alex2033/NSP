@@ -1,6 +1,13 @@
 <div class="news-wrapper" #wrapper>
+  <div class="card-header">
+    <div class="h5">{{ card.title }}</div>
+  </div>
+  <ng-scrollbar
+    class="custom-scrollbar"
+    #scrollbarRef
+  >
     <ul class="news-feed" #feed>
-        <li class="news-item" [class.important]="article.hightlight" *ngFor="let article of visibleArticles">
+        <li class="news-item" [class.important]="article.hightlight" *ngFor="let article of card.articles">
             <a [routerLink]="['/' + article.id + '-' + article.slug]">
                 <div class="date dark">{{ article.publishedAt * 1000 | niceDate }}, {{ article.publishedAt * 1000 | date: 'shortTime' }}</div>
                 <div class="news-text">
@@ -9,6 +16,7 @@
             </a>
         </li>
     </ul>
+  </ng-scrollbar>
 <!--    <a [routerLink]="['']" class="link show-more" *ngIf="screen === 'sm' && false">-->
 <!--        <span>Еще новости</span>-->
 <!--        <svg class="icon">-->

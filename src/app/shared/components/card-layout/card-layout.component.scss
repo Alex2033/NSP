@@ -82,7 +82,16 @@
       grid-row-end: span 2;
     }
 }
-
+.calendar-medium {
+  @include media-breakpoint-up(md) {
+    grid-row-end: span 2;
+  }
+}
+.calendar-large {
+  @include media-breakpoint-up(md) {
+    grid-row-end: span 3;
+  }
+}
 app-material-list-card, app-material-card, app-advertising-card {
     @include media-breakpoint-down(sm) {
         margin: 0 12px;
