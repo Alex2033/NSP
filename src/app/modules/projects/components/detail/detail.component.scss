@@ -4,9 +4,12 @@
 .page-top {
     padding-bottom: 0;
 }
-.materials {
+.materials.with-margin {
   @include media-breakpoint-only(sm) {
     margin-top: 12px;
+  }
+  @include media-breakpoint-up(md) {
+    margin-top: 24px;
   }
 }
 .categories {

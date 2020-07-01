@@ -23,7 +23,7 @@ export interface ApartmentComplex {
   logoTitle?: string | null;
   logoAlt?: string | null;
   content?: any;
-
+  layoutsPublishedAt?: string | null;
   metaTitle?: string;
   metaDescription?: string;
   metaKeywords?: string;

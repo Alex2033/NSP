@@ -142,3 +142,8 @@
         width: initial;
     }
 }
+.apartment-content {
+  @include media-breakpoint-only(sm) {
+    margin-top: 16px;
+  }
+}

@@ -60,7 +60,9 @@
     padding-left: 8px;
     max-width: 460px;
     font-weight: 300;
-
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
     @include media-breakpoint-down(sm) {
         font-size: 14px;
         line-height: 1.571;

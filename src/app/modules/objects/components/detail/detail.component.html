@@ -11,25 +11,71 @@
                             [title]="apartmentComplex.logoTitle"></app-responsive-image>
     </div>
   </header>
-  <nav class="object-navigation ng-star-inserted">
+  <nav class="object-navigation" *ngIf="screen !== 'sm'">
     <ul class="object-navigation-list">
       <li class="object-navigation-item">
         <button class="object-navigation-btn" (click)="scrollToDescriptionBlock()">Описание</button>
       </li>
-      <li class="object-navigation-item">
+      <li class="object-navigation-item" *ngIf="locationBlock()">
         <button class="object-navigation-btn" (click)="scrollToLocationBlock()">Местоположение</button>
       </li>
-      <li class="object-navigation-item">
+      <li class="object-navigation-item" *ngIf="layoutsBlock()">
         <button class="object-navigation-btn" (click)="scrollToLayoutsBlock()">Планировки</button>
       </li>
-      <li class="object-navigation-item">
+      <li class="object-navigation-item" *ngIf="galleryBlock()">
         <button class="object-navigation-btn" (click)="scrollToGalleryBlock()">Фотографии</button>
       </li>
-      <li class="object-navigation-item">
+      <li class="object-navigation-item" *ngIf="companyBlock()">
         <button class="object-navigation-btn" (click)="scrollToCompanyBlock()">Застройщик</button>
+      </li>
+      <li class="object-navigation-item" *ngIf="materialsBlock()">
+        <button class="object-navigation-btn" (click)="scrollToMaterialsBlock()">Материалы</button>
       </li>
     </ul>
   </nav>
+  <div class="mobile-object-navigation" *ngIf="screen === 'sm'">
+    <ng-scrollbar
+      class="horizontal-scrollbar"
+      track="horizontal"
+      #scrollbarRef
+      (reachedEnd)="hideRightControl()"
+    >
+      <ul class="object-navigation-list">
+        <li class="object-navigation-item">
+          <button class="object-navigation-btn" (click)="scrollToDescriptionBlock()">Описание</button>
+        </li>
+        <li class="object-navigation-item" *ngIf="locationBlock()">
+          <button class="object-navigation-btn" (click)="scrollToLocationBlock()">Расположение</button>
+        </li>
+        <li class="object-navigation-item" *ngIf="layoutsBlock()">
+          <button class="object-navigation-btn" (click)="scrollToLayoutsBlock()">Планировки</button>
+        </li>
+        <li class="object-navigation-item" *ngIf="galleryBlock()">
+          <button class="object-navigation-btn" (click)="scrollToGalleryBlock()">Фотографии</button>
+        </li>
+        <li class="object-navigation-item" *ngIf="companyBlock()">
+          <button class="object-navigation-btn" (click)="scrollToCompanyBlock()">Застройщик</button>
+        </li>
+        <li class="object-navigation-item" *ngIf="materialsBlock()">
+          <button class="object-navigation-btn" (click)="scrollToMaterialsBlock()">Материалы</button>
+        </li>
+      </ul>
+    </ng-scrollbar>
+    <div class="gradient-control control-left" [@fadeInOut] *ngIf="showLeftControl">
+      <div class="control-button small light" (click)="scrollbarRef.scrollTo({ left: (scrollPosition - 150) })">
+        <svg class="icon">
+          <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
+        </svg>
+      </div>
+    </div>
+    <div class="gradient-control control-right" [@fadeInOut] *ngIf="showRightControl">
+      <div class="control-button small light" (click)="scrollbarRef.scrollTo({ left: (scrollPosition + 150) })">
+        <svg class="icon">
+          <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
+        </svg>
+      </div>
+    </div>
+  </div>
   <div class="object-top-info">
     <div class="object-top-text" [innerHTML]="apartmentComplex.previewText | paragraphs | quotes">
     </div>
