@@ -8,8 +8,12 @@ import {environment} from '../../../environments/environment';
 export class ExternalLinksPipe implements PipeTransform {
 
   transform(value: string, ...args: unknown[]): unknown {
-    const el: any = document.createElement('div');
+    let el: any = document.createElement('div');
     el.innerHTML = value;
+    el = this.transformNode(el);
+    return el.innerHTML;
+  }
+  private transformNode(el) {
     for (let i = 0, l = el.childNodes.length; i < l; i++) {
       if (el.childNodes[i].hasChildNodes() && el.childNodes.length > 1) {
         if (el.childNodes[i].nodeName === 'A') {
@@ -19,10 +23,9 @@ export class ExternalLinksPipe implements PipeTransform {
             el.childNodes[i].rel = 'nofollow noopener';
           }
         }
-        el.childNodes[i].innerHTML = this.transform(el.childNodes[i].innerHTML);
+        el.childNodes[i].innerHTML = this.transformNode(el.childNodes[i]).innerHTML;
       }
     }
-    return el.innerHTML;
+    return el;
   }
-
 }
