@@ -1,5 +1,5 @@
 <div class="news-wrapper" #wrapper>
-  <div class="card-header">
+  <div class="card-header" *ngIf="card.title">
     <div class="h5">{{ card.title }}</div>
   </div>
   <ng-scrollbar
