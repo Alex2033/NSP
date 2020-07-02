@@ -73,7 +73,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "nsp:build"
+            "browserTarget": "nsp:build",
+            "host": "nsp.localhost"
           },
           "configurations": {
             "production": {

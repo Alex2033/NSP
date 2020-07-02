@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ResponsiveService } from '../../services/responsive.service';
+import {Comment} from '../../contracts/comment';
 
 @Component({
   selector: 'app-comment',
@@ -8,10 +9,10 @@ import { ResponsiveService } from '../../services/responsive.service';
 })
 export class CommentComponent implements OnInit {
 
-  @Input() comment;
+  @Input() comment: Comment;
 
   screen: string;
-  counter: number = 22;
+  // counter: number = 22;
 
   constructor(private responsive: ResponsiveService) { }
 
@@ -21,12 +22,12 @@ export class CommentComponent implements OnInit {
     });
   }
 
-  increaseCounter() {
-    this.counter++;
-  }
-
-  decreaseCounter() {
-    this.counter--;
-  }
+  // increaseCounter() {
+  //   this.counter++;
+  // }
+  //
+  // decreaseCounter() {
+  //   this.counter--;
+  // }
 
 }

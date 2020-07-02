@@ -1,18 +1,31 @@
-<div class="comment" [class.replied]="comment.replied">
+<div class="comment" [class.replied]="false">
     <div class="comment-image">
-        <img [src]="comment.image" alt="comment image">
+      <app-responsive-image *ngIf="comment.author?.avatar; else defaultAvatar"
+                            [xl]="comment.author.avatar"
+                            [lg]="comment.author.avatar"
+                            [md]="comment.author.avatar"
+                            [xs]="comment.author.avatar"
+                            [sm]="comment.author.avatar"></app-responsive-image>
+      <ng-template #defaultAvatar>
+        <app-responsive-image
+          [xl]="'assets/images/avatar-placeholder.jpg'"
+          [lg]="'assets/images/avatar-placeholder.jpg'"
+          [md]="'assets/images/avatar-placeholder.jpg'"
+          [xs]="'assets/images/avatar-placeholder.jpg'"
+          [sm]="'assets/images/avatar-placeholder.jpg'"></app-responsive-image>
+      </ng-template>
     </div>
     <div class="comment-content">
         <div class="comment-top">
             <div class="author-info">
-                <div class="author-name">{{ comment.firstName }} {{ comment.surname }}</div>
-                <div class="reply" *ngIf="comment.replied">
+                <div class="author-name">{{ comment.author.name }}</div>
+                <div class="reply" *ngIf="false">
                     <svg>
                         <use xlink:href="assets/sprites/icons.svg#reply"></use>
                     </svg>
-                    <span>{{ comment.repliedName }}</span>
+                    <span>Иван</span>
                 </div>
-                <time class="author-time">сегодня в {{ comment.time * 1000 | date: 'hh:mm' }}</time>
+                <time class="author-time">{{ comment.createdAt * 1000 | niceDate }}, {{ comment.createdAt * 1000 | date: 'shortTime' }}</time>
             </div>
             <div class="review" *ngIf="screen !== 'sm' && false">
                 <button type="button" class="review-button" (click)="decreaseCounter()">
@@ -28,8 +41,7 @@
                 </button>
             </div>
         </div>
-        <div class="comment-text">
-            <p>{{ comment.text }}</p>
+        <div class="comment-text" [innerHTML]="comment.text | paragraphs">
         </div>
         <div class="comment-actions" *ngIf="false">
             <button type="button" class="reply-button">Ответить</button>

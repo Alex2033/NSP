@@ -34,6 +34,7 @@ export class ApiService {
       return deserialize(response);
     }));
   }
+
   getEvents(cardType: string, cardId: number, startedTill: number): Observable<any> {
     return this.apiClient.get(`/api/site/events`, {
       params: {
@@ -45,6 +46,40 @@ export class ApiService {
       return deserialize(response);
     }));
   }
+
+  getCurrentUserInfo(): Observable<any> {
+    return this.apiClient.get(`/api/site/info`);
+  }
+
+  loginViaOAuth(provider, params: any) {
+    return this.apiClient.get(`/api/site/login/${provider}/token`, {
+      params
+    });
+  }
+
+  logout(): Observable<void> {
+    return this.apiClient.post(`/api/site/logout`);
+  }
+
+  addComment(resourceType: string, resourceId: number, text: string): Observable<void> {
+    return this.apiClient.post(`/api/site/comments`, {
+      resource_type: resourceType,
+      resource_id: resourceId,
+      text
+    });
+  }
+
+  getComments(resourceType: string, resourceId: number) {
+    return this.apiClient.get(`/api/site/comments`, {
+      params: {
+        resource_type: resourceType,
+        resource_id: resourceId
+      }
+    }).pipe(map((response) => {
+      return deserialize(response);
+    }));
+  }
+
   getLatestArticles(cardId: number, publishedTill: number): Observable<any> {
     return this.apiClient.get(`/api/site/latest_articles`, {
       params: {
@@ -73,8 +108,7 @@ export class ApiService {
   }
 
   getCompanyApartmentComplexes(companyId): Observable<any> {
-    return this.apiClient.get(`/api/site/companies/${companyId}/apartment_complexes`, {
-    }).pipe(map((response) => {
+    return this.apiClient.get(`/api/site/companies/${companyId}/apartment_complexes`, {}).pipe(map((response) => {
       return deserialize(response);
     }));
   }

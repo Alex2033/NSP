@@ -1,15 +1,29 @@
-<form class="comment-form">
+<form class="comment-form" (submit)="addComment()">
     <div class="comment-image" *ngIf="screen !== 'sm'">
-        <img src="https://memepedia.ru/wp-content/uploads/2018/06/unnamed-768x768.jpg" alt="comment image">
+      <app-responsive-image *ngIf="auth.user?.avatar; else defaultAvatar"
+                            [xl]="auth.user.avatar"
+                            [lg]="auth.user.avatar"
+                            [md]="auth.user.avatar"
+                            [xs]="auth.user.avatar"
+                            [sm]="auth.user.avatar"></app-responsive-image>
+      <ng-template #defaultAvatar>
+        <app-responsive-image
+                              [xl]="'assets/images/avatar-placeholder.jpg'"
+                              [lg]="'assets/images/avatar-placeholder.jpg'"
+                              [md]="'assets/images/avatar-placeholder.jpg'"
+                              [xs]="'assets/images/avatar-placeholder.jpg'"
+                              [sm]="'assets/images/avatar-placeholder.jpg'"></app-responsive-image>
+      </ng-template>
+
     </div>
-    <input 
-        type="text" 
-        placeholder="Введите свой комментарий" 
+    <input
+        type="text"
+        placeholder="Введите свой комментарий"
         class="comment-form-control"
         [(ngModel)]="text"
         name="text"
     >
-    <button type="submit" class="comment-form-button" (click)="addComment()">
+    <button type="submit" class="comment-form-button" [disabled]="!textValue">
         <svg>
             <use xlink:href="assets/sprites/icons.svg#arrow_up"></use>
         </svg>

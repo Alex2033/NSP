@@ -1,12 +1,12 @@
-<div class="comments-filters" *ngIf="false">
-    <button
-            *ngFor="let filter of filters; let i = index"
-            (click)="activeFilter = i; viewComments = filter.viewComments"
-            [class.active]="activeFilter === i"
-    >
-        {{ filter.text }}
-    </button>
-</div>
+<!--<div class="comments-filters" *ngIf="false">-->
+<!--    <button-->
+<!--            *ngFor="let filter of filters; let i = index"-->
+<!--            (click)="activeFilter = i; viewComments = filter.viewComments"-->
+<!--            [class.active]="activeFilter === i"-->
+<!--    >-->
+<!--        {{ filter.text }}-->
+<!--    </button>-->
+<!--</div>-->
 
-<app-comments-list [viewComments]="viewComments"></app-comments-list>
-<app-comment-form (onAdd)="updateComments($event)"></app-comment-form>
+<app-comments-list [resourceType]="resourceType" [resourceId]="resourceId"></app-comments-list>
+<app-comment-form [resourceType]="resourceType" [resourceId]="resourceId" (add)="updateComments()"></app-comment-form>

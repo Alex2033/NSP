@@ -1,0 +1,9 @@
+<div class="header-margin footer-margin content-padding" *ngIf="success">
+  <div class="container">
+    <h1 class="page-title" *ngIf="!error">Вы успешно вошли на сайт и можете закрыть это окно</h1>
+    <h1 class="page-title" *ngIf="error">Произошла ошибка входа, попробуйте позже</h1>
+    <ng-container *ngIf="error">
+      {{ error | json }}
+    </ng-container>
+  </div>
+</div>

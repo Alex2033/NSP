@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import { CommentsListComponent } from '../comments-list/comments-list.component';
 
 @Component({
@@ -9,29 +9,16 @@ import { CommentsListComponent } from '../comments-list/comments-list.component'
 export class CommentsComponent implements OnInit {
 
   @ViewChild(CommentsListComponent) commentsList: CommentsListComponent;
-
-  filters = [
-    {
-      text: 'Популярные',
-      viewComments: 'popular'
-    },
-    {
-      text: 'По порядку',
-      viewComments: 'order'
-    }
-  ];
-
-  activeFilter: number = 0;
-  viewComments: string = 'popular';
-
+  @Input() resourceType: string;
+  @Input() resourceId: number;
   constructor() { }
 
   ngOnInit() {
   }
 
-  updateComments(text) {
-    this.commentsList.addComment(text);
+  updateComments() {
+    this.commentsList.update();
   }
-  
+
 
 }

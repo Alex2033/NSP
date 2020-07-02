@@ -26,11 +26,10 @@ export class ModalSubscriptionFormComponent implements OnInit, AfterViewInit {
   ) { }
 
   ngOnInit() {
+    this.showConfirm = false;
     this.responsive.screen.subscribe((screen) => {
       this.screen = screen;
     });
-
-    this.showConfirm = this.modalService.showConfirm;
     this.formGroup = this.formBuilder.group({
       email: [''],
       agree: [false]

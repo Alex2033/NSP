@@ -1,24 +1,38 @@
-import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
-import { ModalConfiguration } from '../models/modal-configuration';
+import {Injectable} from '@angular/core';
+import {Observable, Subject} from 'rxjs';
+import {ModalConfiguration} from '../models/modal-configuration';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ModalService {
   current: Subject<ModalConfiguration | null> = new Subject();
-  showConfirm: boolean = false;
-  confirmSubject: Subject<boolean>;
-  constructor() { }
+  modalSubject: Subject<boolean>;
+
+  constructor() {
+  }
+
   open(id: string, parameters?: any) {
-    const configuration = new ModalConfiguration();
-    configuration.id = id;
-    configuration.parameters = parameters;
+    const configuration = {
+      id,
+      parameters
+    };
     this.current.next(configuration);
+    if (!this.modalSubject) {
+      this.modalSubject = new Subject();
+    }
+    return this.modalSubject;
   }
-  close() {
+
+  close(result = false) {
     this.current.next(null);
+    if (this.modalSubject) {
+      this.modalSubject.next(result);
+      this.modalSubject.complete();
+      delete this.modalSubject;
+    }
   }
+
   // confirm(text: string): Observable<boolean> {
   //   this.open(
   //     'confirm',

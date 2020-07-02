@@ -40,6 +40,10 @@ const routes: Routes = [
     loadChildren: () => import('./modules/search/search.module').then(mod => mod.SearchModule)
   },
   {
+    path: 'login',
+    loadChildren: () => import('./modules/login/login.module').then(mod => mod.LoginModule)
+  },
+  {
     path: 'server_article',
     component: ArticleFeedComponent,
     resolve: {

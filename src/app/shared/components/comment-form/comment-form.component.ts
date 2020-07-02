@@ -1,5 +1,7 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { ResponsiveService } from '../../services/responsive.service';
+import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
+import {ResponsiveService} from '../../services/responsive.service';
+import {AuthService} from '../../services/auth.service';
+import {ApiService} from '../../services/api.service';
 
 @Component({
   selector: 'app-comment-form',
@@ -8,12 +10,15 @@ import { ResponsiveService } from '../../services/responsive.service';
 })
 export class CommentFormComponent implements OnInit {
 
-  text: string = '';
+  text = '';
   screen: string;
 
-  @Output() onAdd: EventEmitter<any> = new EventEmitter();
+  @Output() add: EventEmitter<any> = new EventEmitter();
+  @Input() resourceType: string;
+  @Input() resourceId: number;
 
-  constructor(private responsive: ResponsiveService) { }
+  constructor(private responsive: ResponsiveService, public auth: AuthService, private api: ApiService) {
+  }
 
   ngOnInit() {
     this.responsive.screen.subscribe((screen) => {
@@ -21,12 +26,19 @@ export class CommentFormComponent implements OnInit {
     });
   }
 
+  get textValue() {
+    return this.text.trim();
+  }
   addComment() {
-    if (this.text.trim()) {
-
-      this.onAdd.emit(this.text);
-
-      this.text = '';
+    if (this.textValue) {
+      this.auth.signIn().subscribe(result => {
+        if (result) {
+          this.api.addComment(this.resourceType, this.resourceId, this.text).subscribe(() => {
+            this.add.emit(this.text);
+          });
+          this.text = '';
+        }
+      });
     }
   }
 }

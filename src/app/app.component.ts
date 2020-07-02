@@ -7,6 +7,8 @@ import {Meta, Title} from '@angular/platform-browser';
 import {HeaderHeightService} from './shared/services/header-height.service';
 import {CurrentPageService} from './shared/services/current-page.service';
 import {isPlatformBrowser} from '@angular/common';
+import {AuthService} from './shared/services/auth.service';
+import {LoaderService} from './shared/services/loader.service';
 
 @Component({
   selector: 'app-root',
@@ -30,17 +32,40 @@ export class AppComponent implements OnInit {
   loading = false;
   screen: string;
   margin: number = 0;
-
+  showPanels = true;
   constructor(public menu: MenuService,
               private responsive: ResponsiveService,
               private router: Router,
               protected title: Title,
               protected meta: Meta,
+              private auth: AuthService,
               private headerHeight: HeaderHeightService,
+              private loader: LoaderService,
               @Inject(PLATFORM_ID) private platformId) {
   }
 
   ngOnInit() {
+    this.loader.state.subscribe((show) => {
+      if (isPlatformBrowser(this.platformId)) {
+        setTimeout(() => {
+          this.loading = show;
+        });
+      }
+    });
+    this.loader.panelsState.subscribe((value) => {
+      if (isPlatformBrowser(this.platformId)) {
+        setTimeout(() => {
+          this.showPanels = value;
+        });
+      }
+    });
+    if (this.auth.check()) {
+      this.auth.loadInfo().subscribe();
+    }
+    this.auth.afterLogin.subscribe(() => {
+      this.auth.loadInfo().subscribe();
+    });
+
     this.headerHeight.getValue().subscribe(value => {
       this.margin = value;
     });
@@ -49,7 +74,7 @@ export class AppComponent implements OnInit {
       if (event instanceof NavigationStart) {
         if (isPlatformBrowser(this.platformId)) {
           setTimeout(() => {
-            this.loading = true;
+            this.loader.show();
           });
         }
         this.title.setTitle('');
@@ -65,7 +90,7 @@ export class AppComponent implements OnInit {
       if (event instanceof NavigationEnd) {
         if (isPlatformBrowser(this.platformId)) {
           setTimeout(() => {
-            this.loading = false;
+            this.loader.hide();
           });
         }
       }
