@@ -10,7 +10,7 @@
           ></app-front-card>
         </ng-container>
         <ng-container *ngSwitchCase="'article'">
-          <app-material-card [size]="card.size" [data]="card"
+          <app-material-card [size]="screen !== 'sm' ? card.size : 'small'" [data]="card"
                              [class]="card.size"
                              [style.grid-column-start]="card.position?.x ? card.position.x : null"
                              [style.grid-row-start]="card.position?.y ? card.position.y : null"
@@ -47,20 +47,20 @@
             [class]="'calendar-' + card.size"></app-event-calendar-card>
         </ng-container>
         <ng-container *ngSwitchCase="'advertisement'">
-          <app-advertising-card [size]="card.size"
+          <app-advertising-card [size]="screen !== 'sm' ? card.size : 'small'"
                                 [class.square]="screen === 'sm'"
                                 [style.grid-column-start]="card.position?.x ? card.position.x : null"
                                 [style.grid-row-start]="card.position?.y ? card.position.y : null"
                                 [class]="card.size" [data]="card"></app-advertising-card>
         </ng-container>
         <ng-container *ngSwitchCase="'video'">
-          <app-video-card [size]="card.size" [data]="card"
+          <app-video-card [size]="screen !== 'sm' ? card.size : 'small'" [data]="card"
                           [class]="card.size"
                           [style.grid-column-start]="card.position?.x ? card.position.x : null"
                           [style.grid-row-start]="card.position?.y ? card.position.y : null"></app-video-card>
         </ng-container>
         <ng-container *ngSwitchCase="'object'">
-          <app-object-card [object]="card.data" [size]="card.size"
+          <app-object-card [object]="card.data" [size]="screen !== 'sm' ? card.size : 'small'"
                            [class]="card.size"
                            [style.grid-column-start]="card.position?.x ? card.position.x : null"
                            [style.grid-row-start]="card.position?.y ? card.position.y : null"></app-object-card>
