@@ -1,17 +1,19 @@
 <app-comment *ngFor="let comment of comments | slice : startPage:paginationLimit" [comment]="comment"></app-comment>
 
-<div class="comments-list-actions" *ngIf="comments.length > paginationLimit">
+<div class="comments-list-actions">
+  <ng-container *ngIf="comments.length > paginationLimit">
     <button
-        class="show-more"
-        (click)="showMoreItems()"
-        *ngIf="paginationLimit < comments.length; else showLess"
+      class="show-more"
+      (click)="showMoreItems()"
+      *ngIf="paginationLimit < comments.length; else showLess"
     >
-        Показать все комментарии
+      Показать все комментарии
     </button>
     <ng-template #showLess>
-        <button class="show-more" (click)="showLessItems()">
-            Свернуть комментарии
-        </button>
+      <button class="show-more" (click)="showLessItems()">
+        Свернуть комментарии
+      </button>
     </ng-template>
-    <button class="logout" *ngIf="auth.check()" (click)="auth.logout()">Выйти из аккаунта</button>
+  </ng-container>
+  <button class="logout" *ngIf="auth.check()" (click)="auth.logout()">Выйти из аккаунта</button>
 </div>

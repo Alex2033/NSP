@@ -20,9 +20,9 @@ export class AuthService {
   afterLogin: Subject<void> = new Subject(); // Т.к. пользователь может быть авторизован до запуска обработчиков
   afterLogout: Subject<void> = new Subject();
 
-  userHasInfo() {
-    return this.user && !!this.user.provider;
-  }
+  // userHasInfo() {
+  //   return this.user && !!this.user.name;
+  // }
 
   check() {
     return !!this.currentUserId;

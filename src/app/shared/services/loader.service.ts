@@ -14,11 +14,9 @@ export class LoaderService {
     this.panelsState.next(false);
   }
   show() {
-    console.log('show');
     this.state.next(true);
   }
   hide() {
-    console.log('hide');
     this.state.next(false);
   }
 }
