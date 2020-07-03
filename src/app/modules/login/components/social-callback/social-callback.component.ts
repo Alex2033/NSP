@@ -22,7 +22,7 @@ export class SocialCallbackComponent implements OnInit {
       // this.loader.hide();
     })).subscribe((response) => {
       this.success = true;
-      window.close();
+      //window.close();
     }, (response) => {
       this.error = response;
     });
