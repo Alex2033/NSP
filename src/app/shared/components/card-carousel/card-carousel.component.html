@@ -1,7 +1,15 @@
 <div class="carousel-wrapper">
   <header class="carousel-header">
     <div class="carousel-header-left">
-      <h2 [class.is-small]="smallHeader">
+      <h2 [class.is-small]="smallHeader" *ngIf="data.headerUrl">
+        <a [href]="data.headerUrl" target="_blank" rel="nofollow noopener" class="carousel-link">
+          <span>{{ data.title }}</span>
+          <svg class="arrow-icon">
+            <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
+          </svg>
+        </a>
+      </h2>
+      <h2 [class.is-small]="smallHeader" *ngIf="!data.headerUrl">
         <a [routerLink]="['/' + data.slug]" *ngIf="data.slug" class="carousel-link">
           <span>{{ data.title }}</span>
           <svg class="arrow-icon">
