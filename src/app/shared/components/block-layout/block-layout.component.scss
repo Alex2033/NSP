@@ -107,7 +107,12 @@ app-video-card.full-width {
   //height: 0;
   position: relative;
   display: flex;
-  padding-bottom: 56.25%;
+  @include media-breakpoint-up(md) {
+    padding-bottom: 56.25%;
+  }
+  @include media-breakpoint-only(sm) {
+    padding-bottom: 100%;
+  }
   flex-direction: column;
   ::ng-deep .card-wrapper {
     position: absolute;

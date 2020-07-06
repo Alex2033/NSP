@@ -1,17 +1,18 @@
 @import "../card-common.scss";
 @import "responsive";
 
+:host-context(.small) {
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: 100%;
+  }
+}
 :host {
     display: block;
 
     position: relative;
-
-    &::before {
-        content: '';
-        display: block;
-        width: 100%;
-        padding-top: 100%;
-    }
 
     ::ng-deep {
         > * {

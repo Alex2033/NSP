@@ -18,7 +18,7 @@ export class SocialCallbackComponent implements OnInit {
   }
 
   ngOnInit() {
-    if(isPlatformBrowser(this.platformId)) {
+    if (isPlatformBrowser(this.platformId)) {
       this.loader.hidePanels();
       this.auth.loginViaOAuth(this.route.snapshot.params.provider, this.route.snapshot.queryParams).pipe(finalize(() => {
         // this.loader.hide();
