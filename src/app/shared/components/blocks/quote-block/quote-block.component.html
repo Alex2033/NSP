@@ -26,7 +26,7 @@
             {{ quote.author.firstName }} {{ quote.author.lastName }}
           </a>
         </div>
-        <div class="quote-author-position">{{ quote.author.position | quotes }}</div>
+        <div class="quote-author-position">{{ quote.author.position | quotes }} {{ quote.author.companyName | quotes }}</div>
       </div>
       <div class="quote-author-avatar" *ngIf="quote.author.photoXl">
         <a *ngIf="quote.author.id" [routerLink]="['/persons', quote.author.id + '-' + quote.author.slug]">

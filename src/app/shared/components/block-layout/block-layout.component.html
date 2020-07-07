@@ -41,11 +41,11 @@
       <ng-container [ngSwitch]="block.size">
         <app-video-card *ngSwitchCase="'full-width'" class="full-width" [size]="'medium-horizontal'"
                         [data]="block.data"></app-video-card>
-        <app-video-card *ngSwitchCase="'float-left'" class="float-left"
+        <app-video-card *ngSwitchCase="'float-left'" class="float-left small"
                         [class.vertical]="block.data.size === 'medium-vertical'"
                         [size]="block.data.size !== 'medium-vertical' && screen !== 'sm' ? 'small' : block.data.size"
                         [data]="block.data"></app-video-card>
-        <app-video-card *ngSwitchCase="'float-right'" class="float-right"
+        <app-video-card *ngSwitchCase="'float-right'" class="float-right small"
                         [class.vertical]="block.data.size === 'medium-vertical'"
                         [size]="block.data.size !== 'medium-vertical' && screen !== 'sm' ? 'small' : block.data.size"
                         [data]="block.data"></app-video-card>

@@ -15,5 +15,6 @@ export interface Quote {
     firstName: string;
     lastName: string;
     position: string;
+    companyName: string;
   };
 }
