@@ -73,14 +73,6 @@
         </div>
 
         <div class="bot">
-          <div class="page-topline-info">
-            <div class="topline-info-item topline-author" *ngIf="article.authors.length > 0">
-              <ng-container *ngFor="let author of article.authors; first as isFirst">
-                <ng-container *ngIf="!isFirst">,&nbsp;</ng-container>
-                <a [routerLink]="['/persons', author.id + '-'+ author.slug]">{{ author.name }}</a>
-              </ng-container>
-            </div>
-          </div>
           <div class="hashtags">
             <!--            <a [routerLink]="['/' + article.directorySlug]" *ngIf="article.directorySlug !== ''" class="hashtag"><strong>{{ article.directoryName }}</strong></a>-->
             <a [routerLink]="['/tags', tag.code]" class="hashtag"
