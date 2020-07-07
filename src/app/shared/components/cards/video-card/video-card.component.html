@@ -6,7 +6,9 @@
      (click)="modal.open('video', {url: data.videoUrl, id: data.videoId})">
     <div class="card-content">
         <div class="card-top static">
-            <div class="date">{{ data.videoPublishedAt * 1000 | niceDate }}</div>
+            <div class="date">
+              <ng-container *ngIf="displayDate">{{ data.videoPublishedAt * 1000 | niceDate }}</ng-container>
+            </div>
             <div class="tag" *ngIf="data.markerName">
                 {{ data.markerName | quotes }}
             </div>

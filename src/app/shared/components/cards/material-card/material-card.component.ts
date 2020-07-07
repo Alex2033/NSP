@@ -11,7 +11,7 @@ import {environment} from '../../../../../environments/environment';
 export class MaterialCardComponent extends ResizableCardComponent implements OnInit {
   @Input() view: 'half' | 'full';
   @Input() data: ArticleCard;
-
+  @Input() displayDate = true;
   constructor() {
     super();
   }

@@ -10,6 +10,7 @@ import {VideoCard} from '../../../contracts/video-card';
 })
 export class VideoCardComponent extends ResizableCardComponent implements OnInit {
   @Input() data: VideoCard;
+  @Input() displayDate = true;
   constructor(public modal: ModalService) {
     super();
   }
