@@ -10,6 +10,12 @@
           "style": "scss"
         }
       },
+      "i18n": {
+        "sourceLocale": {
+          "code": "ru",
+          "baseHref": "/"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -17,6 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize": ["ru"],
             "outputPath": "dist/nsp/browser",
             "index": "src/index.html",
             "main": "src/main.browser.ts",

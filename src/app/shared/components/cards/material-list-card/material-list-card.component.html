@@ -18,7 +18,7 @@
     <div class="swiper-wrapper">
       <div class="swiper-slide" *ngFor="let block of blocks">
         <a [routerLink]="['/' + article.id + '-' + article.slug]" class="card-link" *ngFor="let article of block">
-          <div class="h6">{{ article.title }}</div>
+          <div class="h6">{{ article.title | quotes }}</div>
           <div class="card-text" [innerHTML]="article.previewText | quotes"></div>
         </a>
       </div>

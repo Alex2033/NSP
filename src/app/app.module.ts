@@ -1,10 +1,8 @@
-import { LOCALE_ID, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-import { registerLocaleData } from '@angular/common';
-import localeRu from '@angular/common/locales/ru';
 import { ModalComponent } from './shared/components/modal/modal.component';
 import { ModalSubscriptionFormComponent } from './shared/components/modal/modal-subscription-form/modal-subscription-form.component';
 import { ModalNewsOfferFormComponent } from './shared/components/modal/modal-news-offer-form/modal-news-offer-form.component';
@@ -20,7 +18,6 @@ import {ServerDataResolver} from './shared/resolvers/server-data.resolver';
 import {RouteDataResolver} from './shared/resolvers/route-data.resolver';
 import {NotFoundComponent} from './shared/components/not-found/not-found.component';
 import {ModalGalleryComponent} from './shared/components/modal/modal-gallery/modal-gallery.component';
-registerLocaleData(localeRu);
 
 @NgModule({
   declarations: [
@@ -43,7 +40,6 @@ registerLocaleData(localeRu);
   providers: [
     ServerDataResolver,
     RouteDataResolver,
-    { provide: LOCALE_ID, useValue: 'ru' },
     { provide: ApiService, useClass: environment.useApi ? ApiService : MockApiService }
   ],
   bootstrap: [AppComponent]
