@@ -19,7 +19,7 @@ export class SearchResultsResolver implements Resolve<any> {
       filter.limit = 4;
     }
     if (route.queryParams.search) {
-      filter.search = route.queryParams.search.replace(/[^а-яА-ЯA-Za-z0-9\s]/g, '');
+      filter.search = route.queryParams.search.replace(/[^а-яА-ЯёЁA-Za-z0-9\-\.\s]/g, '');
     }
 
     if (route.queryParams.page) {
