@@ -37,6 +37,7 @@
       <div class="quote" *ngIf="screen !== 'sm' && quote">
         <blockquote class="quote-text">
           <p>
+            <a [routerLink]="['/quotes']">НАШ ЦИТАТНИК</a>:
             «{{ quote.text }}»
           </p>
           <a [routerLink]="['/persons', quote.author.id + '-' + quote.author.slug]" class="author"
