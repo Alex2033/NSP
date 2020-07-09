@@ -38,7 +38,7 @@
         <blockquote class="quote-text">
           <p>
             <a [routerLink]="['/quotes']">НАШ ЦИТАТНИК</a>:
-            «{{ quote.text }}»
+            «<span [innerHTML]="quote.text"></span>»
           </p>
           <a [routerLink]="['/persons', quote.author.id + '-' + quote.author.slug]" class="author"
              [innerHTML]="quote.author.firstName + '&nbsp;' + quote.author.lastName"></a>

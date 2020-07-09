@@ -34,7 +34,7 @@
     <div class="col-xl-8 col-lg-10 offset-lg-1 offset-xl-0">
       <div class="page-content">
         <div class="page-topline">
-          <h1 class="mobile-title" *ngIf="screen === 'sm'">{{ article.title | quotes }}</h1>
+          <h1 class="mobile-title" *ngIf="screen === 'sm'" [innerHTML]="article.title | quotes"></h1>
           <!--          <a [routerLink]="['/' + article.directorySlug]" class="h5"-->
           <!--             *ngIf="screen !== 'sm' && article.directorySlug !== ''">{{ article.directoryName }}</a>-->
           <div class="page-topline-info">
