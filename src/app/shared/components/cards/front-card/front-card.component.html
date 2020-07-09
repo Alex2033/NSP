@@ -8,7 +8,7 @@
         </div>
         <div class="card-text">
             <div class="card-title">
-                <div class="h3 light">{{ data.title | quotes }}</div>
+                <div class="h3 light" [innerHTML]="data.title | quotes"></div>
             </div>
             <p [innerHTML]="data.previewText | quotes"></p>
         </div>

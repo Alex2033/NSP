@@ -11,7 +11,7 @@
             <a [routerLink]="['/' + article.id + '-' + article.slug]">
                 <div class="date dark">{{ article.publishedAt * 1000 | niceDate }}, {{ article.publishedAt * 1000 | date: 'shortTime' }}</div>
                 <div class="news-text">
-                    <p>{{ article.title }}</p>
+                    <p [innerHTML]="article.title"></p>
                 </div>
             </a>
         </li>

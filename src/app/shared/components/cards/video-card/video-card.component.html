@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="card-text">
-            <div class="h5 light">{{ data.title | quotes }}</div>
+            <div class="h5 light" [innerHTML]="data.title | quotes"></div>
         </div>
         <footer class="card-footer light">
             <div class="views">
