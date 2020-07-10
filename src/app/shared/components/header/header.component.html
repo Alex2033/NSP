@@ -36,8 +36,8 @@
       <!-- quote -->
       <div class="quote" *ngIf="screen !== 'sm' && quote">
         <blockquote class="quote-text">
-          <a [routerLink]="['/quotes']">НАШ&nbsp;ЦИТАТНИК</a>:
           <p>
+            <span class="section-link"><a [routerLink]="['/quotes']">НАШ&nbsp;ЦИТАТНИК</a>:</span>
             <span class="text">
               «<span [innerHTML]="quote.text"></span>»
             </span>
