@@ -36,12 +36,14 @@
       <!-- quote -->
       <div class="quote" *ngIf="screen !== 'sm' && quote">
         <blockquote class="quote-text">
+          <a [routerLink]="['/quotes']">НАШ&nbsp;ЦИТАТНИК</a>:
           <p>
-            <a [routerLink]="['/quotes']">НАШ ЦИТАТНИК</a>:
-            «<span [innerHTML]="quote.text"></span>»
+            <span class="text">
+              «<span [innerHTML]="quote.text"></span>»
+            </span>
+            <a [routerLink]="['/persons', quote.author.id + '-' + quote.author.slug]" class="author"
+               [innerHTML]="quote.author.firstName + '&nbsp;' + quote.author.lastName"></a>
           </p>
-          <a [routerLink]="['/persons', quote.author.id + '-' + quote.author.slug]" class="author"
-             [innerHTML]="quote.author.firstName + '&nbsp;' + quote.author.lastName"></a>
         </blockquote>
         <div class="avatar" *ngIf="quote.author.photoXl">
           <app-responsive-image [xl]="quote.author.photoXl" [lg]="quote.author.photoLg" [md]="quote.author.photoMd"
