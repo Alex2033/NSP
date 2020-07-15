@@ -53,6 +53,9 @@ header {
 }
 
 .quote {
+  @include media-breakpoint-only(sm) {
+    display: none;
+  }
   display: flex;
   align-items: center;
 

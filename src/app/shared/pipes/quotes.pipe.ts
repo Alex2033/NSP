@@ -7,6 +7,9 @@ import {Pipe, PipeTransform} from '@angular/core';
 export class QuotesPipe implements PipeTransform {
 
   transform(value: string): string {
+    if(!value) {
+      return '';
+    }
     let el: any = document.createElement('div');
     el.innerHTML = value;
     el = this.transformNode(el);
