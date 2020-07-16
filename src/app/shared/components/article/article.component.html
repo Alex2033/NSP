@@ -82,7 +82,7 @@
         </div>
 
         <app-comments *ngIf="article.commentsAllowed" [resourceType]="'article'" [resourceId]="article.id"></app-comments>
-        <app-article-banner [articleId]="article.id"></app-article-banner>
+        <app-article-banner *ngIf="!readAlso" [articleId]="article.id"></app-article-banner>
       </div>
     </div>
 
