@@ -12,6 +12,7 @@ export class MaterialCardComponent extends ResizableCardComponent implements OnI
   @Input() view: 'half' | 'full';
   @Input() data: ArticleCard;
   @Input() displayDate = true;
+  @Input() routeState = {};
   constructor() {
     super();
   }

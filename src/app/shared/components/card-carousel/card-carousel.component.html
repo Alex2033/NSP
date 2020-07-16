@@ -46,7 +46,7 @@
     <div class="swiper-wrapper">
       <div class="swiper-slide"  *ngFor="let card of data.cards">
         <ng-container [ngSwitch]="card.type">
-          <app-material-card [displayDate]="false" class="small" *ngSwitchCase="'article'" [size]="'small'" [view]="card.view" [data]="card"></app-material-card>
+          <app-material-card [displayDate]="false" [routeState]="articleRouteState" class="small" *ngSwitchCase="'article'" [size]="'small'" [view]="card.view" [data]="card"></app-material-card>
           <app-video-card [displayDate]="false" *ngSwitchCase="'video'" [size]="'small'" [class]="'small'" [data]="card"></app-video-card>
           <app-advertising-card *ngSwitchCase="'advertisement'" [size]="'small'" [class.square]="true" [data]="card"></app-advertising-card>
           <app-person-card [person]="card" *ngSwitchCase="'person'"></app-person-card>

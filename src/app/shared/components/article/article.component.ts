@@ -15,7 +15,7 @@ export class ArticleComponent implements OnInit {
   allowEventRegistration = false;
   readAlso: null | CardCollection;
   @Input() article: Article;
-
+  @Input() exclude = [];
   constructor(private responsive: ResponsiveService) {
   }
 

@@ -19,9 +19,11 @@ export class ArticleFeedComponent implements OnInit {
   articles: Article[];
   tryToLoadArticle = true;
   viewedArticles = [];
+  exclude = [];
 
   constructor(private responsive: ResponsiveService,
               private route: ActivatedRoute,
+              private router: Router,
               protected title: Title,
               protected meta: Meta,
               private location: Location,
@@ -31,6 +33,10 @@ export class ArticleFeedComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (isPlatformBrowser(this.platformId) && window.history.state.exclude) {
+      this.exclude = window.history.state.exclude;
+    }
+    console.log(this.exclude);
     this.route.data.subscribe((data) => {
       if (this.location.path().split('?')[0] !== '/' + data.config.data.id + '-' + data.config.data.slug) {
         this.response.permanentRedirect('/' + data.config.data.id + '-' + data.config.data.slug);
@@ -48,6 +54,9 @@ export class ArticleFeedComponent implements OnInit {
 
   addArticleToFeed(article) {
     this.articles.push(article);
+    if (this.exclude.findIndex(x => x === article.id) === -1) {
+      this.exclude.push(article.id);
+    }
   }
 
   addArticleToViewed(articleId) {
@@ -85,8 +94,7 @@ export class ArticleFeedComponent implements OnInit {
 
   loadNextArticle() {
     this.articleLoading = true;
-    const exclude = this.articles.map(article => article.id);
-    this.api.getNextArticle(this.articles[this.articles.length - 1].id, exclude).subscribe((data) => {
+    this.api.getNextArticle(this.articles[this.articles.length - 1].id, this.exclude).subscribe((data) => {
       if (data.id) { // Есть следующая статья
         if (isPlatformBrowser(this.platformId)) {
           setTimeout(() => { // Чтобы не грузил по несколько статей, т.к. событий скролла очень много

@@ -10,7 +10,7 @@ import {CardCollection} from '../../contracts/card-collection';
 })
 export class CardCarouselComponent implements OnInit {
   screen: string;
-
+  @Input() articleRouteState = {};
   @Input() data: CardCollection;
   @Input() smallHeader: boolean;
   cardsView: number = 0;

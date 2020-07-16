@@ -2,6 +2,7 @@
   <ng-container *ngIf="view === 'half' || !data.imageXl">
     <a
       [routerLink]="['/' + data.articleId + '-' + data.articleSlug]"
+      [state]="routeState"
       class="card-wrapper default"
       [class.extended]="size !== 'small'"
       [class.small]="size === 'small'"
@@ -56,7 +57,7 @@
     </a>
   </ng-container>
   <ng-container *ngIf="view === 'full' && (data.imageXl || data.smallImageXl)">
-    <a [routerLink]="['/' + data.articleId + '-' + data.articleSlug]" class="card-wrapper backgroundImage has-image">
+    <a [routerLink]="['/' + data.articleId + '-' + data.articleSlug]" [state]="routeState" class="card-wrapper backgroundImage has-image">
       <div class="card-top">
         <div class="date">
           <ng-container *ngIf="displayDate">{{ data.articlePublishedAt * 1000 | niceDate }}</ng-container>

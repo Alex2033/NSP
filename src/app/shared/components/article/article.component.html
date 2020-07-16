@@ -185,6 +185,6 @@
 </ng-template>
 <div class="read-also">
   <div class="container">
-    <app-card-carousel *ngIf="readAlso" [data]="readAlso"></app-card-carousel>
+    <app-card-carousel *ngIf="readAlso" [data]="readAlso" [articleRouteState]="{exclude: exclude}"></app-card-carousel>
   </div>
 </div>
