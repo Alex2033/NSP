@@ -111,6 +111,10 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     });
   }
 
+  isBrowser() {
+    return isPlatformBrowser(this.platformId);
+  }
+
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
       setTimeout(() => {

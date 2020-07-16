@@ -1,5 +1,5 @@
 <header class="header" #header [ngClass]="{'fixed': fixedMenu}">
-  <app-topline-advertising #topLineBanner (visible)="topLineBannerVisible = $event" [height]="topHeaderHeight" (bannerHeight)="updateTopLineHeight($event)"
+  <app-topline-advertising *ngIf="isBrowser()" #topLineBanner (visible)="topLineBannerVisible = $event" [height]="topHeaderHeight" (bannerHeight)="updateTopLineHeight($event)"
                            [style.margin-top]="topLineBannerVisible ? (scroll < topLineHeight ? '-' + (topLineHeight - scroll) + 'px' : '0px') : '-' + topLineHeight + 'px'"></app-topline-advertising>
   <div class="top-wrapper">
     <div class="hidden-search mobile-hidden-search"
