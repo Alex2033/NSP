@@ -8,6 +8,8 @@ import {Quote} from '../../../contracts/quote';
 })
 export class QuoteBlockComponent implements OnInit {
   @Input() quote: Quote;
+  @Input() openInNewWindow = false;
+
   constructor() { }
 
   ngOnInit() {

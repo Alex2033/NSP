@@ -13,6 +13,7 @@ export class MaterialCardComponent extends ResizableCardComponent implements OnI
   @Input() data: ArticleCard;
   @Input() displayDate = true;
   @Input() routeState = {};
+  @Input() openInNewWindow = false;
   constructor() {
     super();
   }

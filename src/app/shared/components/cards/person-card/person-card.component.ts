@@ -9,6 +9,7 @@ import {Person} from '../../../contracts/person';
 export class PersonCardComponent implements OnInit {
 
   @Input() person: Person;
+  @Input() openInNewWindow = false;
 
   constructor() { }
 

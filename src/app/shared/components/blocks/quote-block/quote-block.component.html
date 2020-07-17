@@ -22,14 +22,14 @@
           <ng-container *ngIf="!quote.author.id">
             {{ quote.author.firstName }} {{ quote.author.lastName }}
           </ng-container>
-          <a *ngIf="quote.author.id" [routerLink]="['/persons', quote.author.id + '-' + quote.author.slug]">
+          <a *ngIf="quote.author.id" [routerLink]="['/persons', quote.author.id + '-' + quote.author.slug]" [target]="openInNewWindow ? '_blank' : '_self'">
             {{ quote.author.firstName }} {{ quote.author.lastName }}
           </a>
         </div>
         <div class="quote-author-position">{{ quote.author.position | quotes }} {{ quote.author.companyName | quotes }}</div>
       </div>
       <div class="quote-author-avatar" *ngIf="quote.author.photoXl">
-        <a *ngIf="quote.author.id" [routerLink]="['/persons', quote.author.id + '-' + quote.author.slug]">
+        <a *ngIf="quote.author.id" [routerLink]="['/persons', quote.author.id + '-' + quote.author.slug]" [target]="openInNewWindow ? '_blank' : '_self'">
           <app-responsive-image [xl]="quote.author.photoXl" [lg]="quote.author.photoLg" [md]="quote.author.photoMd"
                                 [xs]="quote.author.photoSm" [sm]="quote.author.photoSm" [alt]="quote.author.photoAlt"
                                 [title]="quote.author.photoTitle"></app-responsive-image>

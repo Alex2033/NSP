@@ -9,7 +9,7 @@ import {Person} from '../../../contracts/person';
 export class ExtendedPersonCardComponent implements OnInit {
   @Input() useLink = true;
   @Input() person: Person;
-
+  @Input() openInNewWindow = false;
   constructor() { }
 
   ngOnInit() {

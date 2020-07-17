@@ -1,4 +1,4 @@
-<a [routerLink]="['/objects/', object.id]" class="object-card">
+<a [routerLink]="['/objects/', object.id]" [target]="openInNewWindow ? '_blank' : '_self'" class="object-card">
     <app-responsive-image [xl]="object.imageXl" [lg]="object.imageLg" [md]="object.imageMd" [xs]="object.imageSm" [sm]="object.imageSm" [alt]="object.imageAlt" [title]="object.imageTitle"></app-responsive-image>
     <div class="object-card-bg"></div>
     <div class="object-card-content">

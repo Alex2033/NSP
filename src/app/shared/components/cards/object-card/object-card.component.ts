@@ -10,6 +10,7 @@ import {ApartmentComplex} from '../../../contracts/apartment-complex';
 export class ObjectCardComponent extends ResizableCardComponent implements OnInit {
 
   @Input() object: ApartmentComplex;
+  @Input() openInNewWindow = false;
 
   constructor() {
     super();

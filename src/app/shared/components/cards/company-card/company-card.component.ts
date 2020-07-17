@@ -9,7 +9,7 @@ import {Company} from '../../../contracts/company';
 export class CompanyCardComponent implements OnInit {
 
   @Input() company: Company;
-
+  @Input() openInNewWindow = false;
   constructor() { }
 
   ngOnInit() {

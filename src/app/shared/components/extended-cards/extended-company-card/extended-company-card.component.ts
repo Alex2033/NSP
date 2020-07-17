@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class ExtendedCompanyCardComponent implements OnInit {
   @Input() company;
-
+  @Input() openInNewWindow = false;
   constructor() { }
 
   ngOnInit() {
