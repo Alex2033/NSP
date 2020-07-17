@@ -1,6 +1,6 @@
 <div class="card-layout" [class.only-fixed]="onlyFixed">
   <ng-container *ngFor="let card of cards">
-    <ng-container *ngIf="!onlyFixed || card.position?.x">
+    <ng-container *ngIf="!onlyFixed || card.step === 'fixed'">
       <ng-container [ngSwitch]="card.type">
         <ng-container *ngSwitchCase="'front-article'">
           <app-front-card
