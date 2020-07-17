@@ -17,7 +17,7 @@
         </main>
       </div>
       <div class="col-xl-3 col-lg-4 col-md-8 offset-xl-1 offset-lg-0 offset-md-2" *ngIf="screen !== 'sm'">
-        <aside class="content-sidebar sticky-sidebar">
+        <aside class="content-sidebar">
           <ng-container *ngFor="let card of asideCards">
             <ng-container [ngSwitch]="card.type">
               <ng-container *ngSwitchCase="'article-list'">
