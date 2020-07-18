@@ -36,7 +36,6 @@ export class ArticleFeedComponent implements OnInit {
     if (isPlatformBrowser(this.platformId) && window.history.state.exclude) {
       this.exclude = window.history.state.exclude;
     }
-    console.log(this.exclude);
     this.route.data.subscribe((data) => {
       if (this.location.path().split('?')[0] !== '/' + data.config.data.id + '-' + data.config.data.slug) {
         this.response.permanentRedirect('/' + data.config.data.id + '-' + data.config.data.slug);

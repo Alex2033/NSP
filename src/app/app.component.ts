@@ -5,7 +5,6 @@ import {ResponsiveService} from './shared/services/responsive.service';
 import {NavigationEnd, NavigationStart, Router} from '@angular/router';
 import {Meta, Title} from '@angular/platform-browser';
 import {HeaderHeightService} from './shared/services/header-height.service';
-import {CurrentPageService} from './shared/services/current-page.service';
 import {isPlatformBrowser} from '@angular/common';
 import {AuthService} from './shared/services/auth.service';
 import {LoaderService} from './shared/services/loader.service';
@@ -30,9 +29,11 @@ import {LoaderService} from './shared/services/loader.service';
 })
 export class AppComponent implements OnInit {
   loading = false;
+  firstLoading = true;
   screen: string;
   margin: number = 0;
   showPanels = true;
+
   constructor(public menu: MenuService,
               private responsive: ResponsiveService,
               private router: Router,
@@ -48,7 +49,9 @@ export class AppComponent implements OnInit {
     this.loader.state.subscribe((show) => {
       if (isPlatformBrowser(this.platformId)) {
         setTimeout(() => {
-          this.loading = show;
+          if (!this.firstLoading) {
+            this.loading = show;
+          }
         });
       }
     });
@@ -88,6 +91,7 @@ export class AppComponent implements OnInit {
         this.menu.setProjectMenuElements([]);
       }
       if (event instanceof NavigationEnd) {
+        this.firstLoading = false;
         if (isPlatformBrowser(this.platformId)) {
           setTimeout(() => {
             this.loader.hide();
