@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  apiHost: 'http://admin.nsp.ru',
-  siteHost: 'http://new.nsp.ru',
+  apiHost: 'https://admin.nsp.ru',
+  siteHost: 'https://nsp.ru',
   useApi: true,
 };
