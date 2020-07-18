@@ -146,6 +146,7 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
+            "localize": ["ru"],
             "outputPath": "dist/nsp/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json",

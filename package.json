@@ -10,7 +10,7 @@
     "e2e": "ng e2e",
     "svg-sprite": "svg-sprite --config src/icons/sprite-config.json src/assets/images/icons/*.svg",
     "dev:ssr": "ng run nsp:serve-ssr",
-    "serve:ssr": "node dist/nsp/server/main.js",
+    "serve:ssr": "node dist/nsp/server/ru/main.js",
     "build:ssr": "ng build --prod && ng run nsp:server:production",
     "prerender": "ng run nsp:prerender"
   },

@@ -1,13 +1,19 @@
-import {Pipe, PipeTransform} from '@angular/core';
+import {Inject, Pipe, PipeTransform, PLATFORM_ID} from '@angular/core';
+import {isPlatformBrowser} from '@angular/common';
 
 @Pipe({
   name: 'quotes',
   pure: true
 })
 export class QuotesPipe implements PipeTransform {
+  constructor(@Inject(PLATFORM_ID) private platformId: any) {
+  }
 
   transform(value: string): string {
-    if(!value) {
+    if (!isPlatformBrowser(this.platformId)) {
+      return value;
+    }
+    if (!value) {
       return '';
     }
     let el: any = document.createElement('div');
@@ -15,6 +21,7 @@ export class QuotesPipe implements PipeTransform {
     el = this.transformNode(el);
     return el.innerHTML;
   }
+
   private transformNode(el) {
     for (let i = 0, l = el.childNodes.length; i < l; i++) {
       if (el.childNodes[i].hasChildNodes()) {
