@@ -68,9 +68,9 @@ export class DetailComponent implements OnInit, AfterViewInit {
       if (this.apartmentComplex.layoutsPublishedAt) {
         let added = false;
         this.apartmentComplex.content.forEach((block, index) => {
-          if (!added && block.type === 'location') {
+          if (!added && block.type === 'apartment_layout') {
             added = true;
-            this.apartmentComplex.content.splice(index + 1, 0, {
+            this.apartmentComplex.content.splice(index, 0, {
               type: 'text',
               data: {
                 content: 'Информация актуальна на дату публикации (' + this.apartmentComplex.layoutsPublishedAt + ')',
