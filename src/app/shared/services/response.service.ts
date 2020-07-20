@@ -25,7 +25,7 @@ export class ResponseService {
   }
 
   permanentRedirect(location: string) {
-    this.status(302); // На время проблем с редиректами ставлю 302 редирект
+    this.status(302); // FIXME На время проблем с редиректами ставлю 302 редирект
     this.setHeader('Location', location);
     this.router.navigateByUrl(location);
   }

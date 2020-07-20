@@ -9,7 +9,8 @@
         *ngFor="let menuElement of menu"
         [class.active]="menuElement.highlight"
       >
-        <a [routerLink]="[menuElement.slug]" class="categories-link">{{ menuElement.name }}</a>
+        <a [routerLink]="[menuElement.slug]" *ngIf="menuElement.slug" class="categories-link">{{ menuElement.name | quotes }}</a>
+        <a [href]="[menuElement.href]" target="_blank" rel="nofollow noopener" class="categories-link" *ngIf="menuElement.href">{{ menuElement.name | quotes }}</a>
       </li>
     </ul>
     <!-- mobile categories -->
@@ -27,7 +28,8 @@
               [class.active]="menuElement.highlight"
               *ngIf="i !== 0"
             >
-              <a [routerLink]="[menuElement.slug]" class="categories-link">{{ menuElement.name }}</a>
+              <a [routerLink]="[menuElement.slug]" *ngIf="menuElement.slug" class="categories-link">{{ menuElement.name | quotes }}</a>
+              <a [href]="[menuElement.href]" target="_blank" rel="nofollow noopener" class="categories-link" *ngIf="menuElement.href">{{ menuElement.name | quotes }}</a>
           </li>
           </ng-container>
         </ul>
