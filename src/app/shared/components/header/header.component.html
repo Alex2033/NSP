@@ -86,13 +86,13 @@
         <ul class="navigation-list for-calculate" #tmpNavigationList style="flex-grow: 1;">
           <li [class.highlight]="menuElement.highlight" *ngFor="let menuElement of menuElements">
             <a [routerLink]="[menuElement.slug]" *ngIf="menuElement.slug">{{ menuElement.name | quotes }}</a>
-            <a [href]="[menuElement.href]" target="_blank" rel="nofollow noopener" *ngIf="menuElement.href">{{ menuElement.name | quotes }}</a>
+            <a [href]="menuElement.href" target="_blank" rel="nofollow noopener" *ngIf="menuElement.href">{{ menuElement.name | quotes }}</a>
           </li>
         </ul>
         <ul class="navigation-list"  #navigationList style="flex-grow: 1;">
           <li [class.highlight]="menuElement.highlight" *ngFor="let menuElement of visibleMenuElements">
             <a [routerLink]="[menuElement.slug]" *ngIf="menuElement.slug">{{ menuElement.name | quotes }}</a>
-            <a [href]="[menuElement.href]" target="_blank" rel="nofollow noopener" *ngIf="menuElement.href">{{ menuElement.name | quotes }}</a>
+            <a [href]="menuElement.href" target="_blank" rel="nofollow noopener" *ngIf="menuElement.href">{{ menuElement.name | quotes }}</a>
           </li>
           <li class="more" (clickOutside)="dropdownVisible = false" [class.hidden]="hiddenMenuElements.length === 0 && visibleMenuElements.length > 0"
               [class.active]="dropdownVisible">
@@ -103,10 +103,10 @@
               </svg>
             </button>
             <div class="dropdown" [class.visible]="dropdownVisible">
-              <ul class="dropdown-list" #dropdownList (click)="dropdownVisible = !dropdownVisible">
+              <ul class="dropdown-list" #dropdownList (click)="closeDropdown()">
                 <li [class.highlight]="menuElement.highlight" *ngFor="let menuElement of hiddenMenuElements">
                   <a [routerLink]="[menuElement.slug]" *ngIf="menuElement.slug">{{ menuElement.name | quotes }}</a>
-                  <a [href]="[menuElement.href]" target="_blank" rel="nofollow noopener" *ngIf="menuElement.href">{{ menuElement.name | quotes }}</a>
+                  <a [href]="menuElement.href" target="_blank" rel="nofollow noopener" *ngIf="menuElement.href">{{ menuElement.name | quotes }}</a>
                 </li>
               </ul>
             </div>

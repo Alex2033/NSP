@@ -8,7 +8,7 @@
         <ul class="menu-list">
             <li class="menu-list-item" *ngFor="let menuElement of menuElements" (click)="menu.closeMenu()">
               <a [routerLink]="[menuElement.slug]" *ngIf="menuElement.slug">{{ menuElement.name | quotes }}</a>
-              <a [href]="[menuElement.href]" target="_blank" rel="nofollow noopener" *ngIf="menuElement.href">{{ menuElement.name | quotes }}</a>
+              <a [href]="menuElement.href" target="_blank" rel="nofollow noopener" *ngIf="menuElement.href">{{ menuElement.name | quotes }}</a>
             </li>
         </ul>
     </ng-scrollbar>

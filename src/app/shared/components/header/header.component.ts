@@ -66,6 +66,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   topHeaderHeight = 1;
   topLineHeight = 1;
   topLineBannerVisible: boolean;
+
   constructor(
     public modal: ModalService,
     private responsive: ResponsiveService,
@@ -95,7 +96,8 @@ export class HeaderComponent implements OnInit, AfterViewInit {
           this.updateHeaderHeightValue();
         });
       }
-    }, (err) => {});
+    }, (err) => {
+    });
     this.menuService.getGlobalMenu().subscribe((elements) => {
       this.menuElements = elements;
       if (isPlatformBrowser(this.platformId)) {
@@ -208,5 +210,13 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   hideSearch() {
     this.showHiddenSearch = false;
     this.searchQuery = '';
+  }
+
+  closeDropdown() {
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
+        this.dropdownVisible = false; // Без таймаута не работает переход по внешней ссылке
+      }, 1);
+    }
   }
 }
