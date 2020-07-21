@@ -12,7 +12,7 @@ export class CompanyResolver implements Resolve<Company> {
   }
 
   resolve(route: ActivatedRouteSnapshot): Observable<Company> {
-    return this.api.getCompany(parseInt(route.params.company_slug, 10)).pipe(catchError((err) => {
+    return this.api.getCompany(route.params.company_slug).pipe(catchError((err) => {
       this.router.navigateByUrl('/server_data/companies/' + route.params.company_slug);
       return throwError(err);
     }));

@@ -12,6 +12,6 @@ export class ApartmentComplexesResolver implements Resolve<ListResponse<ArticleC
   }
 
   resolve(route: ActivatedRouteSnapshot): Observable<ListResponse<ArticleCard>> {
-    return this.api.getCompanyApartmentComplexes(parseInt(route.params.company_slug, 10));
+    return this.api.getCompanyApartmentComplexes(route.params.company_slug);
   }
 }
