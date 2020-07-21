@@ -19,6 +19,7 @@ export class ServerDataResolver implements Resolve<any> {
     if (path[0] === '?') {
       path = '/' + path;
     }
+    path = path.replace('/server_data', '');
     return this.api.getServerData(path).pipe(
       map(
         (response: any) => {

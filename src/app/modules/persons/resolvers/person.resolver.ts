@@ -12,7 +12,7 @@ export class PersonResolver implements Resolve<Person> {
 
   resolve(route: ActivatedRouteSnapshot): Observable<Person> {
     return this.api.getPerson(parseInt(route.params.person_slug, 10)).pipe(catchError((err) => {
-      this.router.navigateByUrl('/not-found', {skipLocationChange: true});
+      this.router.navigateByUrl('/server_data/persons/' + route.params.person_slug);
       return throwError(err);
     }));
   }
