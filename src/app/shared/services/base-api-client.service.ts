@@ -36,8 +36,12 @@ export abstract class BaseApiClientService {
   }
 
   private makeStateKey(url, options) {
-    const params = options.cacheParams ? options.cacheParams : options.params;
-    return makeStateKey(`get-${url}-${params ? JSON.stringify(params) : null}`);
+    if (options) {
+      const params = options.cacheParams ? options.cacheParams : options.params;
+      return makeStateKey(`get-${url}-${params ? JSON.stringify(params) : null}`);
+    } else {
+      return makeStateKey(`get-${url}`);
+    }
   }
 
   get(url, options?) {
