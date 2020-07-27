@@ -321,8 +321,7 @@ export class ApiService {
       params: {
         route,
         screen
-      },
-      excludeParamsFromCache: ['screen']
+      }
     }).pipe(map((response) => {
       return deserialize(response);
     }));
