@@ -16,7 +16,7 @@
           <app-pagination [size]="12" [count]="quotesCount"></app-pagination>
         </main>
       </div>
-      <div class="col-xl-3 col-lg-4 col-md-8 offset-xl-1 offset-lg-0 offset-md-2" *ngIf="screen !== 'sm'">
+      <div class="col-xl-3 col-lg-4 col-md-8 offset-xl-1 offset-lg-0 offset-md-2 d-none d-md-block">
         <aside class="content-sidebar">
           <ng-container *ngFor="let card of asideCards">
             <ng-container [ngSwitch]="card.type">

@@ -1,9 +1,9 @@
 <div class="container top-container">
-  <div class="page-top" *ngIf="project.slug !== ''">
+  <div class="page-top" [style.display]="project.slug !== '' ? 'block' : 'none'">
     <header class="inner-page-header">
       <h1>{{ project.title }}</h1>
     </header>
-    <ul class="categories" *ngIf="menu.length > 0 && screen !== 'sm'">
+    <ul class="categories d-none" [class.d-md-flex]="menu.length > 0">
       <li
         class="categories-item"
         *ngFor="let menuElement of menu"
@@ -14,14 +14,14 @@
       </li>
     </ul>
     <!-- mobile categories -->
-    <div class="mobile-categories" *ngIf="menu.length > 0 && screen === 'sm'">
+    <div class="mobile-categories d-md-none" [class.d-flex]="menu.length > 0">
       <ng-scrollbar
         class="horizontal-scrollbar"
         track="horizontal"
         #scrollbarRef
         (reachedEnd)="hideRightControl()"
       >
-        <ul class="categories" *ngIf="menu.length > 0">
+        <ul class="categories">
           <ng-container *ngFor="let menuElement of menu; let i = index">
             <li
               class="categories-item"

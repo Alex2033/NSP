@@ -1,11 +1,11 @@
 <div class="carousel-wrapper">
-    <div class="control-buttons">
-        <div class="control-button" (click)="cardCarousel.swiper.slidePrev()" *ngIf="screen !== 'sm'">
+    <div class="control-buttons d-none d-md-flex">
+        <div class="control-button" (click)="cardCarousel.swiper.slidePrev()">
             <svg class="icon">
                 <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
             </svg>
         </div>
-        <div class="control-button" (click)="index < images.length - 2 ? cardCarousel.swiper.slideNext() : null;" *ngIf="screen !== 'sm'">
+        <div class="control-button" (click)="index < images.length - 2 ? cardCarousel.swiper.slideNext() : null;">
             <svg class="icon">
                 <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
             </svg>

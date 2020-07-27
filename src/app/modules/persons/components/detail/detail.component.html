@@ -1,7 +1,7 @@
 <div class="container">
   <div class="page-topline">
-    <a class="h1 title" [routerLink]="['/persons']" *ngIf="screen === 'sm'">Персоны</a>
-    <a class="h5" [routerLink]="['/persons']" *ngIf="screen !== 'sm'">Персоны</a>
+    <a class="h1 title d-md-none" [routerLink]="['/persons']">Персоны</a>
+    <a class="h5 d-none d-md-block" [routerLink]="['/persons']">Персоны</a>
     <div class="page-topline-element">
 <!--      Есть неточность?-->
     </div>

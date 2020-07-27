@@ -316,11 +316,13 @@ export class ApiService {
     }));
   }
 
-  getServerData(route) {
+  getServerData(route, screen) {
     return this.apiClient.get(`/api/site/server_data`, {
       params: {
-        route
-      }
+        route,
+        screen
+      },
+      excludeParamsFromCache: ['screen']
     }).pipe(map((response) => {
       return deserialize(response);
     }));

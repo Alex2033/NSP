@@ -1,5 +1,5 @@
 <form class="comment-form" (submit)="addComment()">
-    <div class="comment-image" *ngIf="screen !== 'sm'">
+    <div class="comment-image d-none d-md-block">
       <app-responsive-image *ngIf="auth.user?.avatar; else defaultAvatar"
                             [xl]="auth.user.avatar"
                             [lg]="auth.user.avatar"

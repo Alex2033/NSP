@@ -5,10 +5,15 @@ import {ApiService} from '../services/api.service';
 import {catchError, map} from 'rxjs/operators';
 import {ResponseService} from '../services/response.service';
 import {Location} from '@angular/common';
+import {ResponsiveService} from '../services/responsive.service';
 
 @Injectable()
 export class ServerDataResolver implements Resolve<any> {
-  constructor(private route: ActivatedRoute, private api: ApiService, private response: ResponseService, private location: Location) {
+  screen: string;
+  constructor(private route: ActivatedRoute, private api: ApiService, private response: ResponseService, private location: Location, private responsive: ResponsiveService) {
+    this.responsive.screen.subscribe((screen) => {
+      this.screen = screen;
+    });
   }
 
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
@@ -20,7 +25,7 @@ export class ServerDataResolver implements Resolve<any> {
       path = '/' + path;
     }
     path = path.replace('/server_data', '');
-    return this.api.getServerData(path).pipe(
+    return this.api.getServerData(path, this.screen).pipe(
       map(
         (response: any) => {
           if (response.type === 'redirect') {

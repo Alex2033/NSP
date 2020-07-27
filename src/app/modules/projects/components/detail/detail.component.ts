@@ -71,21 +71,19 @@ export class DetailComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    if (this.screen === 'sm' && this.scrollbarRef) {
-      this.scrollbarRef.scrolled.subscribe(e => {
-        this.scrollPosition = e.target.scrollLeft;
+    this.scrollbarRef.scrolled.subscribe(e => {
+      this.scrollPosition = e.target.scrollLeft;
 
-        if (!this.showRightControl) {
-          this.showRightControl = true;
-        }
+      if (!this.showRightControl) {
+        this.showRightControl = true;
+      }
 
-        if (this.scrollPosition > 0) {
-          this.showLeftControl = true;
-        } else {
-          this.showLeftControl = false;
-        }
-      });
-    }
+      if (this.scrollPosition > 0) {
+        this.showLeftControl = true;
+      } else {
+        this.showLeftControl = false;
+      }
+    });
   }
 
   hideRightControl() {

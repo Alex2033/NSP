@@ -34,7 +34,7 @@
     <div class="col-xl-8 col-lg-10 offset-lg-1 offset-xl-0">
       <div class="page-content">
         <div class="page-topline">
-          <h1 class="mobile-title" *ngIf="screen === 'sm'" [innerHTML]="article.title | quotes"></h1>
+          <h1 class="mobile-title d-md-none" [innerHTML]="article.title | quotes"></h1>
           <!--          <a [routerLink]="['/' + article.directorySlug]" class="h5"-->
           <!--             *ngIf="screen !== 'sm' && article.directorySlug !== ''">{{ article.directoryName }}</a>-->
           <div class="page-topline-info">
@@ -55,7 +55,7 @@
             </div>
           </div>
         </div>
-        <h1 class="page-title" *ngIf="screen !== 'sm'">{{ article.title | quotes }}</h1>
+        <h1 class="page-title d-none d-md-block">{{ article.title | quotes }}</h1>
         <div class="preview-text" [innerHTML]="article.previewText | paragraphs | quotes">
         </div>
         <div class="share-area">
@@ -86,12 +86,12 @@
       </div>
     </div>
 
-    <div class="col-xl-3 col-lg-4 col-md-8 offset-xl-1 offset-lg-0 offset-md-2" *ngIf="screen === 'xl'">
+    <div class="col-xl-3 col-lg-4 col-md-8 offset-xl-1 offset-lg-0 offset-md-2 d-none d-xl-block">
       <aside class="content-sidebar">
         <ng-container>
           <ng-container *ngTemplateOutlet="eventContactCard"></ng-container>
         </ng-container>
-        <div *ngIf="screen === 'xl' || screen === 'lg'">
+        <div>
           <ng-container *ngFor="let card of article.asideCards">
             <ng-container [ngSwitch]="card.type">
               <ng-container *ngSwitchCase="'article-list'">

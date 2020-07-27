@@ -29,7 +29,7 @@
         </li>
       </ul>
     </div>
-    <div class="control-buttons" *ngIf="screen !== 'sm' && data.cards.length > carouselConfig.slidesPerView">
+    <div class="control-buttons d-none d-md-flex" *ngIf="data.cards.length > carouselConfig.slidesPerView">
         <div class="control-button" (click)="cardCarousel.swiper.slidePrev()">
             <svg class="icon">
                 <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>

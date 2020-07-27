@@ -6,15 +6,15 @@
                 Сбросить настройки
             </button>
         </header>
-        <div class="filters" *ngIf="section.tags?.length > 0">
-            <ul class="tags" *ngIf="screen !== 'sm'">
+        <div class="filters" [style.display]="section.tags?.length > 0 ? 'flex' : 'none'">
+            <ul class="tags d-none d-md-flex">
                 <li class="tag" *ngFor="let tag of section.tags">
                     <a [routerLink]="['/tags', tag.code]">#{{ tag.name }}</a>
                 </li>
             </ul>
 
             <!-- mobile horizontal -->
-            <div class="mobile-tags" *ngIf="screen === 'sm'">
+            <div class="mobile-tags d-md-none">
                 <ng-scrollbar
                     class="horizontal-scrollbar"
                     track="horizontal"
@@ -45,27 +45,27 @@
             </div>
 
 
-            <div class="date-filter" *ngIf="false">
-                <input
-                    class="data-hidden-input"
-                    (dateInput)="entryDate($event)"
-                    [matDatepicker]="picker1"
-                    placeholder="Choose a date"
-                >
-                <div class="datepicker" (click)="picker1.open()">
-                    <mat-datepicker #picker1 style="display: none"></mat-datepicker>
-                    <svg class="datepicker-icon">
-                        <use xlink:href="assets/sprites/icons.svg#calendar"></use>
-                    </svg>
-                    <span class="datepicker-range">{{ entryDateValue | date: 'M/d/yy' }}</span>
-                </div>
-                <button class="clear-date">
-                    <svg *ngIf="screen !== 'sm'">
-                        <use xlink:href="assets/sprites/icons.svg#close"></use>
-                    </svg>
-                    <span class="reset-text" *ngIf="screen === 'sm'">Сбросить</span>
-                </button>
-            </div>
+<!--            <div class="date-filter" *ngIf="false">-->
+<!--                <input-->
+<!--                    class="data-hidden-input"-->
+<!--                    (dateInput)="entryDate($event)"-->
+<!--                    [matDatepicker]="picker1"-->
+<!--                    placeholder="Choose a date"-->
+<!--                >-->
+<!--                <div class="datepicker" (click)="picker1.open()">-->
+<!--                    <mat-datepicker #picker1 style="display: none"></mat-datepicker>-->
+<!--                    <svg class="datepicker-icon">-->
+<!--                        <use xlink:href="assets/sprites/icons.svg#calendar"></use>-->
+<!--                    </svg>-->
+<!--                    <span class="datepicker-range">{{ entryDateValue | date: 'M/d/yy' }}</span>-->
+<!--                </div>-->
+<!--                <button class="clear-date">-->
+<!--                    <svg *ngIf="screen !== 'sm'">-->
+<!--                        <use xlink:href="assets/sprites/icons.svg#close"></use>-->
+<!--                    </svg>-->
+<!--                    <span class="reset-text d-md-none">Сбросить</span>-->
+<!--                </button>-->
+<!--            </div>-->
         </div>
     </div>
     <div class="materials">

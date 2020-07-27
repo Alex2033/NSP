@@ -14,8 +14,8 @@
             </svg>
             <span>Прикрепить файл</span>
           </button>
-          <div class="mobile-result-file" *ngIf="currentFileName && screen === 'sm'">{{ currentFileName }}</div>
-          <div class="file-result" *ngIf="screen !== 'sm'">
+          <div class="mobile-result-file d-md-none" *ngIf="currentFileName">{{ currentFileName }}</div>
+          <div class="file-result d-none d-md-block">
             <div class="file-name" *ngIf="currentFileName">
               {{ currentFileName }}
             </div>

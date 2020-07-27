@@ -1,17 +1,17 @@
 <div class="object-container">
   <header class="object-header">
     <div class="object-headings">
-      <a class="h5" [routerLink]="['/objects']" *ngIf="screen !== 'sm'">Объекты недвижимости</a>
+      <a class="h5 d-none d-md-inline" [routerLink]="['/objects']">Объекты недвижимости</a>
       <h1 [innerHTML]="apartmentComplex.name | quotes"></h1>
     </div>
-    <div class="object-header-image" *ngIf="screen !== 'sm'">
+    <div class="object-header-image d-none d-md-flex">
       <app-responsive-image [xl]="apartmentComplex.logoXl" [lg]="apartmentComplex.logoLg" [md]="apartmentComplex.logoMd"
                             [xs]="apartmentComplex.logoSm" [sm]="apartmentComplex.logoSm"
                             [alt]="apartmentComplex.logoAlt"
                             [title]="apartmentComplex.logoTitle"></app-responsive-image>
     </div>
   </header>
-  <nav class="object-navigation" *ngIf="screen !== 'sm'">
+  <nav class="object-navigation d-none d-md-block">
     <ul class="object-navigation-list">
       <li class="object-navigation-item">
         <button class="object-navigation-btn" (click)="scrollToDescriptionBlock()">Описание</button>
@@ -33,7 +33,7 @@
       </li>
     </ul>
   </nav>
-  <div class="mobile-object-navigation" *ngIf="screen === 'sm'">
+  <div class="mobile-object-navigation d-md-none">
     <ng-scrollbar
       class="horizontal-scrollbar"
       track="horizontal"

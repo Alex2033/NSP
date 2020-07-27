@@ -6,6 +6,7 @@ import {catchError, map, mergeMap} from 'rxjs/operators';
 
 export abstract class BaseApiClientService {
   protected defaultOptions = {};
+
   constructor(
     protected http: HttpClient,
     protected state: TransferState,
@@ -34,8 +35,17 @@ export abstract class BaseApiClientService {
     }));
   }
 
+  private makeStateKey(url, options) {
+    if (options.excludeParamsFromCache) {
+      options.excludeParamsFromCache.forEach(name => {
+        delete options.params[name];
+      });
+    }
+    return makeStateKey(`get-${url}-${options && options.params ? JSON.stringify(options.params) : null}`);
+  }
+
   get(url, options?) {
-    const STATE_KEY = makeStateKey(`get-${url}-${options && options.params ? JSON.stringify(options.params) : null}`);
+    const STATE_KEY = this.makeStateKey(url, options);
     if (isPlatformBrowser(this.platformId) && this.state.hasKey(STATE_KEY)) {
       const response = this.state.get(STATE_KEY, null as any);
       this.state.remove(STATE_KEY);

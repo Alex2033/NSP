@@ -27,19 +27,19 @@
                 </div>
                 <time class="author-time">{{ comment.createdAt * 1000 | niceDate }}, {{ comment.createdAt * 1000 | date: 'shortTime' }}</time>
             </div>
-            <div class="review" *ngIf="screen !== 'sm' && false">
-                <button type="button" class="review-button" (click)="decreaseCounter()">
-                    <svg>
-                        <use xlink:href="assets/sprites/icons.svg#arrow_down"></use>
-                    </svg>
-                </button>
-                <div class="review-reputation" [ngClass]="{zero: counter === 0, negative: counter < 0}">{{ counter }}</div>
-                <button type="button" class="review-button" (click)="increaseCounter()">
-                    <svg>
-                        <use xlink:href="assets/sprites/icons.svg#arrow_up"></use>
-                    </svg>
-                </button>
-            </div>
+<!--            <div class="review" *ngIf="screen !== 'sm' && false">-->
+<!--                <button type="button" class="review-button" (click)="decreaseCounter()">-->
+<!--                    <svg>-->
+<!--                        <use xlink:href="assets/sprites/icons.svg#arrow_down"></use>-->
+<!--                    </svg>-->
+<!--                </button>-->
+<!--                <div class="review-reputation" [ngClass]="{zero: counter === 0, negative: counter < 0}">{{ counter }}</div>-->
+<!--                <button type="button" class="review-button" (click)="increaseCounter()">-->
+<!--                    <svg>-->
+<!--                        <use xlink:href="assets/sprites/icons.svg#arrow_up"></use>-->
+<!--                    </svg>-->
+<!--                </button>-->
+<!--            </div>-->
         </div>
         <div class="comment-text" [innerHTML]="comment.text | paragraphs">
         </div>

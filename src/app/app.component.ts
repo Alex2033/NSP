@@ -91,8 +91,10 @@ export class AppComponent implements OnInit {
         this.menu.setProjectMenuElements([]);
       }
       if (event instanceof NavigationEnd) {
-        this.firstLoading = false;
         if (isPlatformBrowser(this.platformId)) {
+          setTimeout(() => {
+            this.firstLoading = false;
+          }, 1000);
           setTimeout(() => {
             this.loader.hide();
           });

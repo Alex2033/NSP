@@ -4,4 +4,4 @@
 </div>
 <app-footer *ngIf="showPanels"></app-footer>
 <app-modal></app-modal>
-<app-menu *ngIf="menu.showMenu && screen === 'sm'" [@fadeInOut]></app-menu>
+<app-menu *ngIf="menu.showMenu" class="d-sm-block d-md-none" [@fadeInOut]></app-menu>
