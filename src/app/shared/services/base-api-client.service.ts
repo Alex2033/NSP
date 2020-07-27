@@ -36,13 +36,16 @@ export abstract class BaseApiClientService {
   }
 
   private makeStateKey(url, options) {
-    const optionsClone = {...options};
-    if (optionsClone && optionsClone.excludeParamsFromCache) {
-      optionsClone.excludeParamsFromCache.forEach(name => {
-        delete optionsClone.params[name];
-      });
+    let params;
+    if (options && options.params) {
+      params = {...options.params};
+      if (options.excludeParamsFromCache) {
+        options.excludeParamsFromCache.forEach(name => {
+          delete params[name];
+        });
+      }
     }
-    return makeStateKey(`get-${url}-${optionsClone && optionsClone.params ? JSON.stringify(optionsClone.params) : null}`);
+    return makeStateKey(`get-${url}-${params ? JSON.stringify(params) : null}`);
   }
 
   get(url, options?) {
