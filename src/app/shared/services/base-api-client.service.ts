@@ -36,15 +36,7 @@ export abstract class BaseApiClientService {
   }
 
   private makeStateKey(url, options) {
-    let params;
-    if (options && options.params) {
-      params = {...options.params};
-      if (options.excludeParamsFromCache) {
-        options.excludeParamsFromCache.forEach(name => {
-          delete params[name];
-        });
-      }
-    }
+    const params = options.cacheParams ? options.cacheParams : options.params;
     return makeStateKey(`get-${url}-${params ? JSON.stringify(params) : null}`);
   }
 
