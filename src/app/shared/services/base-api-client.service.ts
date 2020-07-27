@@ -36,7 +36,7 @@ export abstract class BaseApiClientService {
   }
 
   private makeStateKey(url, options) {
-    if (options.excludeParamsFromCache) {
+    if (options && options.excludeParamsFromCache) {
       options.excludeParamsFromCache.forEach(name => {
         delete options.params[name];
       });
