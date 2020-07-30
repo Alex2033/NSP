@@ -8,7 +8,7 @@
     <div class="company-content">
         <a [target]="openInNewWindow ? '_blank' : '_self'" [routerLink]="['/companies/', company.id + '-' + company.slug]" class="h4 company-title">{{ company.name | quotes }}</a>
         <div class="company-text">
-            <p>{{ company.description | quotes }}</p>
+            <p [innerHTML]="company.description | quotes"></p>
         </div>
         <div class="company-contacts">
             <div class="company-contact" *ngIf="company.phone">

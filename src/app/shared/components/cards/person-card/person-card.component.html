@@ -9,8 +9,8 @@
         {{ person.firstName }} {{ person.middleName }}
     </h5>
     <div class="person-text">
-      {{ person.position | quotes }}
+      <span [innerHTML]="person.position | quotes"></span>
       <br>
-      {{ person.companyName | quotes }}
+      <span [innerHTML]="person.companyName | quotes"></span>
     </div>
 </a>
