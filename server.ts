@@ -30,7 +30,7 @@ export function app() {
   server.set('view engine', 'html');
   server.set('views', distFolder);
 
-  server.get('/robots', (req, res) => {  // Отдельный метод чтобы не было maxAge
+  server.get('/robots.txt', (req, res) => {  // Отдельный метод чтобы не было maxAge
     res.sendFile(distFolder + '/robots.txt');
   });
 

@@ -50,9 +50,29 @@
       </div>
     </div>
   </div>
-  <div class="materials" *ngIf="project.layout[screen]" [class.with-margin]="project.slug !== ''">
+  <div class="materials" [class.with-margin]="project.slug !== ''">
     <app-card-layout
-      [cards]="project.layout[screen]"
+      class="d-inline d-md-none"
+      *ngIf="screen === 'sm' && project.layout['sm']"
+      [cards]="project.layout['sm']"
+      [onlyFixed]="onlyFixed"
+    ></app-card-layout>
+    <app-card-layout
+      class="d-none d-md-inline d-lg-none"
+      *ngIf="screen === 'md' && project.layout['md']"
+      [cards]="project.layout['md']"
+      [onlyFixed]="onlyFixed"
+    ></app-card-layout>
+    <app-card-layout
+      class="d-none d-lg-inline d-xl-none"
+      *ngIf="screen === 'lg' && project.layout['lg']"
+      [cards]="project.layout['lg']"
+      [onlyFixed]="onlyFixed"
+    ></app-card-layout>
+    <app-card-layout
+      class="d-none d-xl-inline"
+      *ngIf="screen === 'xl' && project.layout['xl']"
+      [cards]="project.layout['xl']"
       [onlyFixed]="onlyFixed"
     ></app-card-layout>
   </div>
