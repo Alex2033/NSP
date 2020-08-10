@@ -14,7 +14,7 @@
                             [title]="article.event.backgroundImageTitle"></app-responsive-image>
     </div>
     <div class="info-content">
-      <div class="h1 light">{{ article.event.name | quotes }}</div>
+      <div class="h1 light" [innerHTML]="article.event.name | quotes"></div>
       <div class="info-bottom">
         <div class="info-bottom-left">
           <div class="event-type-name">{{ article.event.type }}</div>
@@ -55,7 +55,7 @@
             </div>
           </div>
         </div>
-        <h1 class="page-title d-none d-md-block">{{ article.title | quotes }}</h1>
+        <h1 class="page-title d-none d-md-block" [innerHTML]="article.title | quotes"></h1>
         <div class="preview-text" [innerHTML]="article.previewText | paragraphs | quotes">
         </div>
         <div class="share-area">
