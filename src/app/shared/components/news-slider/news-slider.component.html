@@ -2,7 +2,7 @@
 	<ng-container *ngSwitchCase="1">
 		<div class="card-wrapper large">
 			<header class="card-header">
-				<h4>{{ feed.title }}</h4>
+				<h4>{{ feed.title | quotes }}</h4>
 
 				<div class="card-header-right">
 <!--					<div class="slides-amount">-->
@@ -28,7 +28,7 @@
 						<div class="news-item">
 <!--							<time class="date">{{ article.publishedAt * 1000 | niceDate }}</time>-->
 							<a [routerLink]="['/' + article.id + '-' + article.slug]" class="news-text">
-								<p>{{ article.title }}</p>
+								<p>{{ article.title | quotes }}</p>
 							</a>
 						</div>
 					</div>

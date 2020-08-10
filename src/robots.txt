@@ -1,2 +1,3 @@
 User-agent: YandexNews
 Allow: /rss
+Host: https://nsp.ru/
