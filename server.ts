@@ -7,7 +7,7 @@ import 'zone.js/dist/zone-node';
 import {ngExpressEngine} from '@nguniversal/express-engine';
 import * as express from 'express';
 import {join} from 'path';
-
+import {robots} from 'express-robots-txt';
 import {AppServerModule} from './src/main.server';
 import {APP_BASE_HREF} from '@angular/common';
 import {existsSync} from 'fs';
@@ -31,12 +31,15 @@ export function app() {
   server.set('view engine', 'html');
   server.set('views', distFolder);
 
+  server.get('/robots.txt', (req, res) => {  // Отдельный метод чтобы не было maxAge
+    res.sendFile(distFolder + '/robots.txt');
+  });
+
   // Example Express Rest API endpoints
   // app.get('/api/**', (req, res) => { });
   // Serve static files from /browser
   server.get('*.*', express.static(distFolder, {
-    maxAge: '5',
-    etag: false
+    maxAge: '1y'
   }));
 
   // All regular routes use the Universal engine
