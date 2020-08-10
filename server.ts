@@ -34,6 +34,10 @@ export function app() {
     res.sendFile(distFolder + '/robots.txt');
   });
 
+  server.get('/rss', (req, res) => {  // Отдельный метод чтобы не было maxAge
+    res.redirect(301, 'https://admin.nsp.ru/rss');
+  });
+
   // Example Express Rest API endpoints
   // app.get('/api/**', (req, res) => { });
   // Serve static files from /browser
