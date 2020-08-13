@@ -1,15 +1,12 @@
-<div class="top-line-advertising" #banner [class.not-inited]="!inited">
+<div class="top-line-advertising" [style.height]="(screen === 'sm' && data?.type === 'html') ? getBannerHeight() + 'px' : null" #banner [class.not-inited]="!inited">
   <ng-container *ngIf="show">
-    <a *ngIf="showActions === false && data" [href]="data.url" target="_blank" rel="nofollow noopener" (click)="incClick()">
+    <a #link *ngIf="showActions === false && data" [href]="data.url" target="_blank" rel="nofollow noopener" (click)="incClick()">
         <ng-container *ngIf="data.type === 'image'">
           <app-responsive-image [xl]="data.images.xl" [lg]="data.images.lg" [md]="data.images.md"
                                 [xs]="data.images.sm" [sm]="data.images.sm"></app-responsive-image>
         </ng-container>
         <ng-container *ngIf="data.type === 'html'">
-          <div #htmlXlWrapper class="d-none d-xl-block"></div>
-          <div #htmlLgWrapper class="d-none d-lg-block d-xl-none"></div>
-          <div #htmlMdWrapper class="d-none d-md-block d-lg-none"></div>
-          <div #htmlSmWrapper class="d-block d-md-none"></div>
+            <iframe [src]="data.html[screen]  | safeUrl" frameborder="0" [style.transform]="getScale()"></iframe>
         </ng-container>
     </a>
     <button class="close" (click)="closingReasons.length > 0 ? showActions = true : close()" *ngIf="showActions === false && data">

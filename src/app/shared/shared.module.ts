@@ -72,6 +72,7 @@ import { ArticleBannerComponent } from './components/article-banner/article-bann
 import { QuotesPipe } from './pipes/quotes.pipe';
 import { ExternalLinksPipe } from './pipes/external-links.pipe';
 import { DynamicRoutesDirective } from './directives/dynamic-routes.directive';
+import {SafeUrlPipe} from './pipes/safe-url.pipe';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -141,7 +142,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ArticleBannerComponent,
     QuotesPipe,
     ExternalLinksPipe,
-    DynamicRoutesDirective
+    DynamicRoutesDirective,
+    SafeUrlPipe,
   ],
   imports: [
     CommonModule,
@@ -218,7 +220,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     SwiperModule,
     QuotesPipe,
     ExternalLinksPipe,
-    DynamicRoutesDirective
+    DynamicRoutesDirective,
+    SafeUrlPipe,
   ],
   providers: [
     {

@@ -2,7 +2,6 @@ import {
   Component,
   OnInit,
   ViewChild,
-  ElementRef,
   HostListener,
   Output,
   EventEmitter,
@@ -12,9 +11,9 @@ import {
 import {translateAnimation} from '../../animations/translate-animation';
 import {ApiService} from '../../services/api.service';
 import {TopLineBanner} from '../../contracts/topline-banner';
-import {NavigationEnd, NavigationStart, Router} from '@angular/router';
-import {AppComponent} from '../../../app.component';
 import {CurrentPageService} from '../../services/current-page.service';
+import {ResponsiveService} from '../../services/responsive.service';
+import {environment} from '../../../../environments/environment';
 
 @Component({
   selector: 'app-topline-advertising',
@@ -25,11 +24,8 @@ import {CurrentPageService} from '../../services/current-page.service';
   ]
 })
 export class ToplineAdvertisingComponent implements OnInit {
-  @ViewChild('htmlXlWrapper') htmlXlWrapper;
-  @ViewChild('htmlLgWrapper') htmlLgWrapper;
-  @ViewChild('htmlMdWrapper') htmlMdWrapper;
-  @ViewChild('htmlSmWrapper') htmlSmWrapper;
   @ViewChild('banner') banner;
+  @ViewChild('link') link;
   data: TopLineBanner;
   clicked = false;
   viewed = false;
@@ -38,14 +34,44 @@ export class ToplineAdvertisingComponent implements OnInit {
   show: boolean;
   closingReasons = [];
   inited = false;
+  screen;
   @Output() visible: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output() bannerHeight: EventEmitter<number> = new EventEmitter<number>();
   @Input() height: number;
 
-  constructor(private api: ApiService, @Inject(PLATFORM_ID) private platformId: any, private currentPage: CurrentPageService) {
+  constructor(
+    private api: ApiService,
+    @Inject(PLATFORM_ID) private platformId: any,
+    private currentPage: CurrentPageService,
+    private responsive: ResponsiveService) {
+    const eventMethod = window.addEventListener
+      ? 'addEventListener'
+      : 'attachEvent';
+    const eventer = window[eventMethod];
+    const messageEvent = eventMethod === 'attachEvent'
+      ? 'onmessage'
+      : 'message';
+
+    eventer(messageEvent, (e) => {
+
+      if (e.origin !== environment.apiHost) {
+        return;
+      }
+      if (e.data.type === 'banner_click' && this.data.type === 'html') {
+        // console.log(Object.values(this.data.html));
+        if (Object.values(this.data.html).indexOf(e.data.id) !== -1) {
+          this.link.nativeElement.click();
+        }
+      }
+
+      // console.log(e);
+    });
   }
 
   ngOnInit() {
+    this.responsive.screen.subscribe((screen) => {
+      this.screen = screen;
+    });
     this.currentPage.value().subscribe(page => {
       this.api.getTopLineBanner(page ? page.type : null, page ? page.id : null).subscribe((response) => {
         this.visible.next(false);
@@ -54,23 +80,9 @@ export class ToplineAdvertisingComponent implements OnInit {
         this.api.getAdvertisementClosingReasons().subscribe(data => {
           this.closingReasons = data.reasons;
         });
-        if (this.data.type === 'html') {
-          setTimeout(() => { // Чтобы обновился шаблон
-            this.htmlXlWrapper.nativeElement.innerHTML = this.data.html.xl;
-            this.htmlLgWrapper.nativeElement.innerHTML = this.data.html.lg;
-            this.htmlMdWrapper.nativeElement.innerHTML = this.data.html.md;
-            this.htmlSmWrapper.nativeElement.innerHTML = this.data.html.sm;
-          });
-        }
-        const interval = setInterval(() => { // Не знаю когда загрузился код, поэтому интервал
-          const height = this.banner.nativeElement.getBoundingClientRect().height;
-          if (height > 0) {
-            this.inited = true;
-            this.bannerHeight.emit(height);
-            this.visible.next(true);
-            clearInterval(interval);
-          }
-        }, 300);
+        this.bannerHeight.emit(this.getBannerHeight());
+        this.inited = true;
+        this.visible.next(true);
       });
     });
 
@@ -107,7 +119,9 @@ export class ToplineAdvertisingComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   syncHeight() {
     setTimeout(() => {
-      this.bannerHeight.emit(this.banner.nativeElement.getBoundingClientRect().height);
+      if (this.show) {
+        this.bannerHeight.emit(this.getBannerHeight());
+      }
     });
   }
 
@@ -118,4 +132,19 @@ export class ToplineAdvertisingComponent implements OnInit {
   //   }
   // }
 
+  getBannerHeight() {
+    if (this.screen !== 'sm') {
+      return 100;
+    } else {
+      return 170 * (window.outerWidth / 768);
+    }
+  }
+
+  getScale() {
+    if (this.screen !== 'sm') {
+      return null;
+    } else {
+      return 'scale(' + (window.outerWidth / 768) + ')';
+    }
+  }
 }
