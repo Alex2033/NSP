@@ -1,4 +1,4 @@
-<div class="top-line-advertising" [style.height]="(screen === 'sm' && data?.type === 'html') ? getBannerHeight() + 'px' : null" #banner [class.not-inited]="!inited">
+<div class="top-line-advertising" [style.height]="(screen === 'sm' && data?.type === 'html' && show) ? getBannerHeight() + 'px' : null" #banner [class.not-inited]="!inited">
   <ng-container *ngIf="show">
     <a #link *ngIf="showActions === false && data" [href]="data.url" target="_blank" rel="nofollow noopener" (click)="incClick()">
         <ng-container *ngIf="data.type === 'image'">
