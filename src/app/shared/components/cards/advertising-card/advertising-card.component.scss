@@ -1,3 +1,6 @@
+@import "responsive";
+:host {
+}
 :host-context(.square) {
   display: block;
   position: relative;
@@ -27,4 +30,74 @@
         height: 100%;
         object-fit: cover;
     }
+}
+:host-context(.small), :host-context(.square) {
+  iframe {
+    @include media-breakpoint-up(lg) {
+      width: 304px;
+      height: 304px;
+    }
+    @include media-breakpoint-only(md) {
+      width: 352px;
+      height: 352px;
+    }
+  }
+}
+:host-context(.medium-horizontal) {
+  iframe {
+    @include media-breakpoint-up(lg) {
+      width: 616px;
+      height: 304px;
+    }
+    @include media-breakpoint-only(md) {
+      width: 712px;
+      height: 352px;
+    }
+  }
+}
+:host-context(.medium-vertical) {
+  iframe {
+    @include media-breakpoint-up(lg) {
+      width: 304px;
+      height: 616px;
+    }
+    @include media-breakpoint-only(md) {
+      width: 352px;
+      height: 712px;
+    }
+  }
+}
+:host-context(.large) {
+  iframe {
+    @include media-breakpoint-up(lg) {
+      width: 616px;
+      height: 616px;
+    }
+    @include media-breakpoint-only(md) {
+      width: 712px;
+      height: 712px;
+    }
+  }
+}
+@include media-breakpoint-only(sm) {
+  iframe {
+    // Эти настройки общие для маленьких экранов независимо от размеров плитки
+    width: 743px;
+    min-width: 743px;
+    height: 743px;
+  }
+}
+a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.touch-panel {
+  background: #1A233A;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
 }

@@ -4,16 +4,14 @@
 <!--    </svg>-->
 <!--  </button>-->
 <div class="banner" #banner>
-  <a [href]="data.url" rel="nofollow noopener" *ngIf="data" target="_blank" (click)="incClick()">
+  <a #link [href]="data.url" rel="nofollow noopener" *ngIf="data" target="_blank" (click)="incClick()" [style.height]="(screen === 'sm' && data?.bannerType === 'html') ? getBannerHeight() + 'px' : null">
     <ng-container *ngIf="data.bannerType === 'image'">
       <app-responsive-image [xl]="data.images.xl" [lg]="data.images.lg" [md]="data.images.md"
                             [xs]="data.images.sm" [sm]="data.images.sm"></app-responsive-image>
     </ng-container>
     <ng-container *ngIf="data.bannerType === 'html'">
-      <div #htmlXlWrapper class="d-none d-xl-block"></div>
-      <div #htmlLgWrapper class="d-none d-lg-block d-xl-none"></div>
-      <div #htmlMdWrapper class="d-none d-md-block d-lg-none"></div>
-      <div #htmlSmWrapper class="d-block d-md-none"></div>
+      <iframe [src]="data.html[screen] + '?instance_id=' + id  | safeUrl" frameborder="0" [style.transform]="getScale()"></iframe>
+      <div class="touch-panel"></div>
     </ng-container>
   </a>
 </div>
