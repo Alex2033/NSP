@@ -221,6 +221,9 @@
   @include media-breakpoint-down(lg) {
     margin-bottom: 24px;
   }
+  .link {
+    word-break: break-all;
+  }
   .h6 {
     margin-bottom: 16px;
   }
