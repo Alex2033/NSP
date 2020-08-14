@@ -11,6 +11,7 @@ import {AppServerModule} from './src/main.server';
 import {APP_BASE_HREF} from '@angular/common';
 import {existsSync} from 'fs';
 import {REQUEST, RESPONSE} from '@nguniversal/express-engine/tokens';
+import {environment} from './src/environments/environment';
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app() {
@@ -34,8 +35,19 @@ export function app() {
     res.sendFile(distFolder + '/robots.txt');
   });
 
-  server.get('/rss', (req, res) => {  // Отдельный метод чтобы не было maxAge
-    res.redirect(301, 'https://admin.nsp.ru/rss');
+  server.get('/rss', (req, res) => {
+    // Скачивает RSS и отдает её, редирект не нравится яндекс новостям
+    const https = require('https');
+    const request = https.get(environment.apiHost + '/rss', (response) => {
+      res.set(response.headers);
+      const body = [];
+      response.on('data', (chunk) => {
+        body.push(chunk);
+      });
+      response.on('end', () => {
+        res.send(Buffer.concat(body).toString());
+      });
+    });
   });
 
   // Example Express Rest API endpoints
@@ -55,8 +67,8 @@ export function app() {
             provide: APP_BASE_HREF,
             useValue: req.baseUrl
           },
-          { provide: REQUEST, useValue: req },
-          { provide: RESPONSE, useValue: res }
+          {provide: REQUEST, useValue: req},
+          {provide: RESPONSE, useValue: res}
         ]
       }
     );
