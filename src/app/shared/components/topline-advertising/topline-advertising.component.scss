@@ -103,7 +103,7 @@ iframe {
     width: 1240px;
   }
   @include media-breakpoint-only(lg) {
-    width: 932px;
+    width: 932px; // Нужно заменить на 928
   }
   @include media-breakpoint-only(md) {
     width: 712px;
