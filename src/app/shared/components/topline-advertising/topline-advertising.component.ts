@@ -35,6 +35,7 @@ export class ToplineAdvertisingComponent implements OnInit {
   closingReasons = [];
   inited = false;
   screen;
+  id: string;
   @Output() visible: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output() bannerHeight: EventEmitter<number> = new EventEmitter<number>();
   @Input() height: number;
@@ -57,15 +58,13 @@ export class ToplineAdvertisingComponent implements OnInit {
       if (e.origin !== environment.apiHost) {
         return;
       }
-      if (e.data.type === 'banner_click' && this.data.type === 'html') {
-        // console.log(Object.values(this.data.html));
-        if (Object.values(this.data.html).indexOf(e.data.id) !== -1) {
-          this.link.nativeElement.click();
-        }
+      if (e.data.type === 'banner_click' && e.data.id === this.id) {
+        this.link.nativeElement.click();
       }
 
       // console.log(e);
     });
+    this.id = Math.random().toString(36).substr(2, 9);
   }
 
   ngOnInit() {

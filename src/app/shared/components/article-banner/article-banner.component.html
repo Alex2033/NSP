@@ -1,15 +1,12 @@
 <div class="banner" #banner>
   <hr *ngIf="data">
-  <a [href]="data.url" *ngIf="data" target="_blank" rel="nofollow noopener" (click)="incClick()">
+  <a #link [href]="data.url" *ngIf="data" target="_blank" rel="nofollow noopener" (click)="incClick()" [style.height]="(screen === 'sm' && data?.type === 'html') ? getBannerHeight() + 'px' : null">
     <ng-container *ngIf="data.type === 'image'">
       <app-responsive-image [xl]="data.images.xl" [lg]="data.images.lg" [md]="data.images.md"
                             [xs]="data.images.sm" [sm]="data.images.sm"></app-responsive-image>
     </ng-container>
     <ng-container *ngIf="data.type === 'html'">
-      <div #htmlXlWrapper class="d-none d-xl-block"></div>
-      <div #htmlLgWrapper class="d-none d-lg-block d-xl-none"></div>
-      <div #htmlMdWrapper class="d-none d-md-block d-lg-none"></div>
-      <div #htmlSmWrapper class="d-block d-md-none"></div>
+      <iframe [src]="data.html[screen] + '?instance_id=' + id  | safeUrl" frameborder="0" [style.transform]="getScale()"></iframe>
     </ng-container>
   </a>
   <hr *ngIf="data">

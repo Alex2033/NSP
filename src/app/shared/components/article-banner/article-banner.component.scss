@@ -1,9 +1,31 @@
+@import "responsive";
 .banner {
   & > a {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
   }
   ::ng-deep img {
     width: 100%;
+  }
+}
+iframe {
+  @include media-breakpoint-only(xl) {
+    width: 825px;
+    height: 158px;
+  }
+  @include media-breakpoint-only(lg) {
+    width: 768px;
+    height: 147px;
+  }
+  @include media-breakpoint-only(md) {
+    width: 712px;
+    height: 136px;
+  }
+  @include media-breakpoint-only(sm) {
+    width: 743px;
+    min-width: 743px;
+    height: 142px;
   }
 }

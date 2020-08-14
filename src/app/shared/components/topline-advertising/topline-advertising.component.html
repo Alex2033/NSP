@@ -6,7 +6,7 @@
                                 [xs]="data.images.sm" [sm]="data.images.sm"></app-responsive-image>
         </ng-container>
         <ng-container *ngIf="data.type === 'html'">
-            <iframe [src]="data.html[screen]  | safeUrl" frameborder="0" [style.transform]="getScale()"></iframe>
+            <iframe [src]="data.html[screen] + '?instance_id=' + id  | safeUrl" frameborder="0" [style.transform]="getScale()"></iframe>
         </ng-container>
     </a>
     <button class="close" (click)="closingReasons.length > 0 ? showActions = true : close()" *ngIf="showActions === false && data">

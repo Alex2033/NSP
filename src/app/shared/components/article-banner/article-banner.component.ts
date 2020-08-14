@@ -2,6 +2,8 @@ import {Component, HostListener, Inject, Input, OnInit, PLATFORM_ID, ViewChild} 
 import {ArticleBanner} from '../../contracts/article-banner';
 import {ApiService} from '../../services/api.service';
 import {isPlatformBrowser} from '@angular/common';
+import {environment} from '../../../../environments/environment';
+import {ResponsiveService} from '../../services/responsive.service';
 
 @Component({
   selector: 'app-article-banner',
@@ -9,8 +11,30 @@ import {isPlatformBrowser} from '@angular/common';
   styleUrls: ['./article-banner.component.scss']
 })
 export class ArticleBannerComponent implements OnInit {
+  @ViewChild('link') link;
+  screen: any;
+  id: string;
+  constructor(private api: ApiService, @Inject(PLATFORM_ID) private platformId: any, private responsive: ResponsiveService) {
+    const eventMethod = window.addEventListener
+      ? 'addEventListener'
+      : 'attachEvent';
+    const eventer = window[eventMethod];
+    const messageEvent = eventMethod === 'attachEvent'
+      ? 'onmessage'
+      : 'message';
 
-  constructor(private api: ApiService, @Inject(PLATFORM_ID) private platformId: any) {
+    eventer(messageEvent, (e) => {
+
+      if (e.origin !== environment.apiHost) {
+        return;
+      }
+      if (e.data.type === 'banner_click' && e.data.id === this.id) {
+        this.link.nativeElement.click();
+      }
+
+      // console.log(e);
+    });
+    this.id = Math.random().toString(36).substr(2, 9);
   }
 
   clicked = false;
@@ -19,13 +43,12 @@ export class ArticleBannerComponent implements OnInit {
   viewed = false;
   data: ArticleBanner;
   @ViewChild('banner') banner;
-  @ViewChild('htmlXlWrapper') htmlXlWrapper;
-  @ViewChild('htmlLgWrapper') htmlLgWrapper;
-  @ViewChild('htmlMdWrapper') htmlMdWrapper;
-  @ViewChild('htmlSmWrapper') htmlSmWrapper;
   @Input() articleId: number;
 
   ngOnInit(): void {
+    this.responsive.screen.subscribe((screen) => {
+      this.screen = screen;
+    });
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -36,14 +59,6 @@ export class ArticleBannerComponent implements OnInit {
         this.active = true;
         this.api.getArticleBanner(this.articleId).subscribe(response => {
           this.data = response.data;
-          if (this.data.type === 'html') {
-            setTimeout(() => { // Чтобы обновился шаблон
-              this.htmlXlWrapper.nativeElement.innerHTML = this.data.html.xl;
-              this.htmlLgWrapper.nativeElement.innerHTML = this.data.html.lg;
-              this.htmlMdWrapper.nativeElement.innerHTML = this.data.html.md;
-              this.htmlSmWrapper.nativeElement.innerHTML = this.data.html.sm;
-            }, 1);
-          }
           this.checkView();
         }, (err) => {
           if (err.status === 404) {
@@ -77,5 +92,19 @@ export class ArticleBannerComponent implements OnInit {
     return (
       distance.bottom - 500 <= (window.innerHeight || document.documentElement.clientHeight)
     );
+  }
+
+  getScale() {
+    if (this.screen !== 'sm') {
+      return null;
+    } else {
+      return 'scale(' + ((window.outerWidth / 743) - (24 / 768)) + ')';
+    }
+  }
+
+  getBannerHeight() {
+    if (this.screen === 'sm') {
+      return 142 * ((window.outerWidth / 743) - (24 / 768));
+    }
   }
 }
