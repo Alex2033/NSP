@@ -74,7 +74,7 @@
     background-color: #fff;
     &.backgroundImage {
       .image-overlay {
-        background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+        background: linear-gradient(180deg, rgba($text-color, 0.6) 0%, rgba($text-color, 0.3) 100%);
       }
         .card-content {
             position: relative;

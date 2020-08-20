@@ -6,7 +6,7 @@
       </a>
     </div>
     <div class="company-content">
-        <a [target]="openInNewWindow ? '_blank' : '_self'" [routerLink]="['/companies/', company.id + '-' + company.slug]" class="h4 company-title">{{ company.name | quotes }}</a>
+        <a [target]="openInNewWindow ? '_blank' : '_self'" [routerLink]="['/companies/', company.id + '-' + company.slug]" class="h4 company-title" [innerHTML]="company.name | quotes"></a>
         <div class="company-text">
             <p [innerHTML]="company.description | quotes"></p>
         </div>
