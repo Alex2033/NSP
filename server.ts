@@ -36,9 +36,24 @@ export function app() {
   });
 
   server.get('/rss', (req, res) => {
-    // Скачивает RSS и отдает её, редирект не нравится яндекс новостям
+    // Скачивает RSS и отдает его, редирект не нравится яндекс новостям
     const https = require('https');
     const request = https.get(environment.apiHost + '/rss', (response) => {
+      res.set(response.headers);
+      const body = [];
+      response.on('data', (chunk) => {
+        body.push(chunk);
+      });
+      response.on('end', () => {
+        res.send(Buffer.concat(body).toString());
+      });
+    });
+  });
+
+  server.get('/sitemap', (req, res) => {
+    // Скачивает Sitemap и отдает его
+    const https = require('https');
+    const request = https.get(environment.apiHost + '/sitemap', (response) => {
       res.set(response.headers);
       const body = [];
       response.on('data', (chunk) => {
