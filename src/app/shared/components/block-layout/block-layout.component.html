@@ -74,7 +74,7 @@
     <app-quote-block [quote]="block.data" [openInNewWindow]="true"></app-quote-block>
   </ng-container>
     <ng-container *ngSwitchCase="'html'">
-      <div [innerHTML]="block.data | safeHtml | externalLinks"></div>
+      <div [innerHTML]="block.data | externalLinks | safeHtml"></div>
     </ng-container>
     <ng-container *ngSwitchCase="'image'">
       <app-image-block
