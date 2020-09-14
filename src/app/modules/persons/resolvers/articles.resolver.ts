@@ -15,7 +15,7 @@ export class ArticlesResolver implements Resolve<ListResponse<ArticleCard>> {
     const filter: any = {};
     if (route.params.person_slug) {
       filter.person_id = parseInt(route.params.person_slug, 10);
-      filter.limit = 999;
+      filter.limit = 24;
     } else {
       filter.limit = 12;
     }
