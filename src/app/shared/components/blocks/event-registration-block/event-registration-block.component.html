@@ -5,11 +5,11 @@
         <a *ngIf="showLink" [href]="data.site" target="_blank" rel="nofollow noopener" class="h3 primary">{{ data.name }}</a>
     </div>
     <div class="registration-info">
-        <div class="registration-info-item">
+        <div class="registration-info-item" *ngIf="data.address">
             <div class="caption">Адрес проведения</div>
             <p>{{ data.address }}</p>
         </div>
-        <div class="registration-info-item right">
+        <div class="registration-info-item" [class.right]="data.address" *ngIf="eventDisplayDate">
             <div class="caption">Дата проведения</div>
             <p>{{ eventDisplayDate }}</p>
         </div>
