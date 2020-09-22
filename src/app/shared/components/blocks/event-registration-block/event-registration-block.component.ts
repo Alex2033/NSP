@@ -1,8 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Validators, FormBuilder, FormGroup, ValidationErrors} from '@angular/forms';
-import {DatePipe} from '@angular/common';
+import {DatePipe, Location} from '@angular/common';
 import {finalize} from 'rxjs/operators';
 import {ApiService} from '../../../services/api.service';
+import {environment} from '../../../../../environments/environment';
 
 @Component({
   selector: 'app-event-registration-block',
@@ -17,10 +18,22 @@ export class EventRegistrationBlockComponent implements OnInit {
   eventDisplayDate: string;
   allowEventRegistration = false;
   showConfirm: boolean;
-  constructor(private formBuilder: FormBuilder, private api: ApiService) {
+  showLink = false;
+
+  constructor(private formBuilder: FormBuilder, private api: ApiService, private location: Location) {
   }
 
   ngOnInit() {
+    if (this.data.site) {
+      const url = new URL(this.data.site);
+      if (url.origin === environment.siteHost) {
+        if (this.location.path().split('?')[0] !== url.pathname.split('?')[0]) {
+          this.showLink = true;
+        }
+      } else {
+        this.showLink = true;
+      }
+    }
     this.formGroup = this.formBuilder.group({
       event_id: [this.data.id],
       name: ['', []],
