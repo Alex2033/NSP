@@ -52,6 +52,9 @@
       list-style: initial;
       li {
         margin-bottom: 4px;
+        p {
+          margin: 0;
+        }
       }
     }
   }
