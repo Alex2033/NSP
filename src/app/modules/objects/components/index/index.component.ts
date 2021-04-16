@@ -67,12 +67,10 @@ export class IndexComponent implements OnInit {
     });
     if (IndexComponent.areas.length === 0) {
       this.api.getAreas().subscribe(activities => {
-        IndexComponent.areas = activities.items.map(x => {
-          return {
+        IndexComponent.areas = activities.items.map(x => ({
             id: x.id,
             value: x.name
-          };
-        });
+          }));
 
         IndexComponent.areas.unshift({
           id: null,

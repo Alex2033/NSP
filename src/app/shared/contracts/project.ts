@@ -9,10 +9,10 @@ export interface Project {
   metaDescription: string | null;
   metaKeywords: string | null;
   layout: {
-    xl: any[],
-    lg: any[],
-    md: any[],
-    sm: any[],
+    xl: any[];
+    lg: any[];
+    md: any[];
+    sm: any[];
   };
   newsBlocks: NewsFeed[];
   collections: any[];

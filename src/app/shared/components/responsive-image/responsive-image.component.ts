@@ -19,7 +19,7 @@ export class ResponsiveImageComponent implements OnInit {
   @Input() itemprop: string; //Schema property
   @Input() alt: string;
   @Input() title: string;
-  @Input() lazyLoad: boolean = true;
+  @Input() lazyLoad = true;
   screens = ['xl', 'lg', 'md', 'sm', 'xs'];
   constructor(private cdr: ChangeDetectorRef, public responsive: ResponsiveService) {
     // this.responsive.screen.subscribe(() => {

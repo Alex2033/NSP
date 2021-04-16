@@ -14,7 +14,7 @@ export class HeaderHeightService {
   getValue(): Observable<number> {
     return this.headerHeight.asObservable();
   }
-  
+
   setValue(newValue): void {
     this.headerHeight.next(newValue);
   }

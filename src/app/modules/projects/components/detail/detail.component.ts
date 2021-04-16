@@ -18,9 +18,9 @@ export class DetailComponent implements OnInit, AfterViewInit {
   @ViewChild(NgScrollbar, {static: false}) scrollbarRef: NgScrollbar;
 
   screen: string;
-  scrollPosition: number = 0;
-  showLeftControl: boolean = false;
-  showRightControl: boolean = true;
+  scrollPosition = 0;
+  showLeftControl = false;
+  showRightControl = true;
   menu: MenuElement[] = [];
   project: Project;
   onlyFixed = false;

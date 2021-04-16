@@ -6,7 +6,7 @@ import {NavigationStart, Router, Scroll} from '@angular/router';
   providedIn: 'root'
 })
 export class CurrentPageService {
-  state: Subject<{ type: string, id: number }> = new Subject();
+  state: Subject<{ type: string; id: number }> = new Subject();
 
   next(config?) {
     if (config && config.type && config.data.id) {

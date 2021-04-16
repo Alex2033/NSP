@@ -15,7 +15,7 @@ export class TextComponent implements ControlValueAccessor {
   @Input() hint: string;
   @Input() strip: string;
   @Input() placeholder: string;
-  @Input() hidePlaceholder: boolean = false;
+  @Input() hidePlaceholder = false;
   @ViewChild('input') input: ElementRef;
   get shouldLabelFloat() {
     return this.focused || this.value;

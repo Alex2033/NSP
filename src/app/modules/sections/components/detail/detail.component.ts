@@ -17,9 +17,9 @@ export class DetailComponent implements OnInit, AfterViewInit {
   @ViewChild(NgScrollbar, {static: false}) scrollbarRef: NgScrollbar;
   blockLoading = false;
   section: Section;
-  scrollPosition: number = 0;
-  showLeftControl: boolean = false;
-  showRightControl: boolean = true;
+  scrollPosition = 0;
+  showLeftControl = false;
+  showRightControl = true;
   screen: string;
   entryDateValue: Date = new Date();
   hasMoreBlocks: boolean;
@@ -37,9 +37,7 @@ export class DetailComponent implements OnInit, AfterViewInit {
     this.route.data.subscribe((data) => {
       this.section = data.config.data as Section;
       this.hasMoreBlocks = true;
-      this.cards = this.section.cards.map(card => {
-        return card;
-      });
+      this.cards = this.section.cards.map(card => card);
       this.title.setTitle(this.section.metaTitle ? this.section.metaTitle : this.section.title + ' - NSP.ru');
       this.meta.updateTag({
           name: 'description',

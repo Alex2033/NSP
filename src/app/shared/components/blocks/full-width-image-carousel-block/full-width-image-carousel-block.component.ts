@@ -11,7 +11,7 @@ import {ModalService} from '../../../services/modal.service';
 export class FullWidthImageCarouselBlockComponent implements OnInit {
 
   screen: string;
-  index: number = 0;
+  index = 0;
 
   @Input() images;
 

@@ -1,8 +1,8 @@
 export function deserialize(input: any) {
   const data = {};
-  for (let key in input) {
+  for (const key in input) {
     if (input.hasOwnProperty(key)) {
-      data[key.replace(/(\_\w)/g, function (m) {
+      data[key.replace(/(\_\w)/g, function(m) {
         return m[1].toUpperCase();
       })] = deserializeProperty(input[key]);
     }
@@ -16,15 +16,15 @@ function deserializeProperty(value: any) {
       return null;
     }
     if (Array.isArray(value)) {
-      for (let k in value) {
+      for (const k in value) {
         value[k] = deserializeProperty(value[k]);
       }
       return value;
     } else {
       const data = {};
-      for (let k in value) {
+      for (const k in value) {
         if (value.hasOwnProperty(k)) {
-          data[k.replace(/(\_\w)/g, function (m) {
+          data[k.replace(/(\_\w)/g, function(m) {
             return m[1].toUpperCase();
           })] = deserializeProperty(value[k]);
         }

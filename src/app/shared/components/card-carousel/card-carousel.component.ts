@@ -13,7 +13,7 @@ export class CardCarouselComponent implements OnInit {
   @Input() articleRouteState = {};
   @Input() data: CardCollection;
   @Input() smallHeader: boolean;
-  cardsView: number = 0;
+  cardsView = 0;
   carouselConfig: SwiperConfigInterface = {
     slidesPerView: 4,
     loop: false

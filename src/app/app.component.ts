@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
   loading = false;
   firstLoading = true;
   screen: string;
-  margin: number = 0;
+  margin = 0;
   showPanels = true;
 
   constructor(public menu: MenuService,

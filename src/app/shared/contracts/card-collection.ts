@@ -3,5 +3,5 @@ export interface CardCollection {
   title: string;
   cards: any[];
   headerUrl?: string;
-  links: {title: string, link: string}[];
+  links: {title: string; link: string}[];
 }

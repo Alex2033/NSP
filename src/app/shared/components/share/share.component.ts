@@ -49,19 +49,19 @@ export class ShareComponent implements OnInit {
 
   private popupCenter(url, title, w, h) {
     // Fixes dual-screen position                         Most browsers      Firefox
-    let dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : window.screenX;
-    let dualScreenTop = window.screenTop != undefined ? window.screenTop : window.screenY;
+    const dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : window.screenX;
+    const dualScreenTop = window.screenTop != undefined ? window.screenTop : window.screenY;
 
-    let width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
-    let height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+    const width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+    const height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
 
-    let systemZoom = width / window.screen.availWidth;
-    let left = (width - w) / 2 / systemZoom + dualScreenLeft;
-    let top = (height - h) / 2 / systemZoom + dualScreenTop;
-    let newWindow = window.open(url, title, 'scrollbars=yes, width=' + w / systemZoom + ', height=' + h / systemZoom + ', top=' + top + ', left=' + left);
+    const systemZoom = width / window.screen.availWidth;
+    const left = (width - w) / 2 / systemZoom + dualScreenLeft;
+    const top = (height - h) / 2 / systemZoom + dualScreenTop;
+    const newWindow = window.open(url, title, 'scrollbars=yes, width=' + w / systemZoom + ', height=' + h / systemZoom + ', top=' + top + ', left=' + left);
 
     // Puts focus on the newWindow
-    if (window.focus) newWindow.focus();
+    if (window.focus) {newWindow.focus();}
     return newWindow;
   }
 

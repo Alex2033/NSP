@@ -50,22 +50,22 @@ export class IndexComponent implements OnInit {
     companies: {
       count: number;
       items: Company[];
-    },
+    };
 
     articles: {
       count: number;
       items: any[];
-    }
+    };
 
     persons: {
       count: number;
       items: Person[];
-    }
+    };
 
     objects: {
       count: number;
       items: ApartmentComplex[];
-    }
+    };
   };
 
   type: string;

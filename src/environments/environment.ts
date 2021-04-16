@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   // apiHost: 'https://adminnsp.digitech.company',
-  apiHost: 'http://admin.nsp.localhost',
+  apiHost: 'https://admin.nsp.ru',
   siteHost: 'http://localhost:4200',
   useApi: true
 };

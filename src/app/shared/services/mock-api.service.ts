@@ -463,9 +463,7 @@ export class MockApiService {
   }
 
   getNextArticle(articleId, exclude) {
-    return this.getServerData('/event').pipe(map((data) => {
-      return data.data;
-    }));
+    return this.getServerData('/event').pipe(map((data) => data.data));
   }
 
   addEmailSubscription(data) {
@@ -641,7 +639,7 @@ export class MockApiService {
     });
   }
 
-  getServerData(route): Observable<{ type: 'page', data: Page } | { type: 'project', data: Project } | { type: 'section', data: Section } | { type: 'article', data: Article }> {
+  getServerData(route): Observable<{ type: 'page'; data: Page } | { type: 'project'; data: Project } | { type: 'section'; data: Section } | { type: 'article'; data: Article }> {
     if (route === '/project' || route === '/') {
       return of(
         {
@@ -2370,13 +2368,13 @@ export class MockApiService {
             cardsFilter: {
               section_id: 1
             },
-            cards: cards
+            cards
           }
         }
       );
     }
     if (route === '/article' || route === '/event') {
-      let cards = [
+      const cards = [
         {
           type: 'article',
           size: 'small',

@@ -30,7 +30,7 @@ export class ToplineAdvertisingComponent implements OnInit {
   clicked = false;
   viewed = false;
   name: any;
-  showActions: boolean = false;
+  showActions = false;
   show: boolean;
   closingReasons = [];
   inited = false;

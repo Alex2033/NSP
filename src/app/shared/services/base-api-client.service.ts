@@ -51,8 +51,7 @@ export abstract class BaseApiClientService {
       this.state.remove(STATE_KEY);
       return of(response);
     }
-    return this.modifyRequest('GET', url, options).pipe(mergeMap((modifiedOptions) => {
-      return this.http.get(this.apiUrl + url, modifiedOptions).pipe(map((response: any) => {
+    return this.modifyRequest('GET', url, options).pipe(mergeMap((modifiedOptions) => this.http.get(this.apiUrl + url, modifiedOptions).pipe(map((response: any) => {
         this.checkHeaders(response);
         if (isPlatformServer(this.platformId) && options && options.transfer !== false) {
           this.state.set(STATE_KEY, JSON.parse(JSON.stringify(response.body)));
@@ -61,59 +60,50 @@ export abstract class BaseApiClientService {
       }), catchError((err) => {
         this.checkHeaders(err);
         return throwError(err);
-      }));
-    }));
+      }))));
   }
 
   post(url, data = {}, options?) {
     data = this.dataToSnakeCase(data);
-    return this.modifyRequest('POST', url, options).pipe(mergeMap((modifiedOptions) => {
-      return this.http.post(this.apiUrl + url, data, modifiedOptions).pipe(map((response: any) => {
+    return this.modifyRequest('POST', url, options).pipe(mergeMap((modifiedOptions) => this.http.post(this.apiUrl + url, data, modifiedOptions).pipe(map((response: any) => {
         this.checkHeaders(response);
         return response.body;
       }), catchError((err) => {
         this.checkHeaders(err);
         return throwError(err);
-      }));
-    }));
+      }))));
   }
 
   request(type, url, options?) {
     // data = this.dataToSnakeCase(data);
-    return this.modifyRequest(type, url, options).pipe(mergeMap((modifiedOptions) => {
-      return this.http.request(type, this.apiUrl + url, modifiedOptions).pipe(map((response: any) => {
+    return this.modifyRequest(type, url, options).pipe(mergeMap((modifiedOptions) => this.http.request(type, this.apiUrl + url, modifiedOptions).pipe(map((response: any) => {
         this.checkHeaders(response);
         return response.body;
       }), catchError((err) => {
         this.checkHeaders(err);
         return throwError(err);
-      }));
-    }));
+      }))));
   }
 
   put(url, data = {}, options?) {
     data = this.dataToSnakeCase(data);
-    return this.modifyRequest('PUT', url, options).pipe(mergeMap((modifiedOptions) => {
-      return this.http.put(this.apiUrl + url, data, modifiedOptions).pipe(map((response: any) => {
+    return this.modifyRequest('PUT', url, options).pipe(mergeMap((modifiedOptions) => this.http.put(this.apiUrl + url, data, modifiedOptions).pipe(map((response: any) => {
         this.checkHeaders(response);
         return response.body;
       }), catchError((err) => {
         this.checkHeaders(err);
         return throwError(err);
-      }));
-    }));
+      }))));
   }
 
   delete(url, options?) {
-    return this.modifyRequest('DELETE', url, options).pipe(mergeMap((modifiedOptions) => {
-      return this.http.delete(this.apiUrl + url, modifiedOptions).pipe(map((response: any) => {
+    return this.modifyRequest('DELETE', url, options).pipe(mergeMap((modifiedOptions) => this.http.delete(this.apiUrl + url, modifiedOptions).pipe(map((response: any) => {
         this.checkHeaders(response);
         return response.body;
       }), catchError((err) => {
         this.checkHeaders(err);
         return throwError(err);
-      }));
-    }));
+      }))));
   }
 
   checkHeaders(response) {

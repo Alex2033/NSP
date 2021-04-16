@@ -12,8 +12,8 @@ export class CommentsListComponent implements OnInit {
   @Input() resourceType: string;
   @Input() resourceId: number;
 
-  startPage: number = 0;
-  paginationLimit: number = 3;
+  startPage = 0;
+  paginationLimit = 3;
 
   comments: Comment[] = [];
 

@@ -9,7 +9,7 @@ import {ResponsiveService} from '../../services/responsive.service';
 export class CardLayoutComponent implements OnInit {
   @Input() cards;
   @Input() type: string; // Можно указать тип если карточки одного типа, пока что работает с объектами
-  @Input() onlyFixed: boolean = false;
+  @Input() onlyFixed = false;
   private screen;
   constructor(private responsive: ResponsiveService) { }
 

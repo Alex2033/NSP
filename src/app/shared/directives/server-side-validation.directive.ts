@@ -16,7 +16,7 @@ export class ServerSideValidationDirective {
     }
   }
   private setFormControlErrors(formGroup, errors) {
-    for(let key in formGroup.controls) {
+    for(const key in formGroup.controls) {
       if (formGroup.controls[key].controls) {
         this.setFormControlErrors(formGroup.controls[key], errors);
       } else {
@@ -28,7 +28,7 @@ export class ServerSideValidationDirective {
     }
   }
   private modifyErrors(errors) {
-    for(let k in errors) {
+    for(const k in errors) {
       errors[k] = this.modifyErrorParams(k, errors[k]);
     }
     return errors;
@@ -40,11 +40,11 @@ export class ServerSideValidationDirective {
     switch (rule) {
       case 'min':
         return {
-          'min': parseInt(params[0])
+          min: parseInt(params[0])
         };
       case 'max':
         return {
-          'max': parseInt(params[0])
+          max: parseInt(params[0])
         };
       default:
         console.log(`Неизвестный тип правила валидации: ${rule}`);

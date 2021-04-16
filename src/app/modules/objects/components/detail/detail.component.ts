@@ -29,9 +29,9 @@ import {animate, style, transition, trigger} from '@angular/animations';
 })
 export class DetailComponent implements OnInit, AfterViewInit {
   @ViewChild(NgScrollbar, {static: false}) scrollbarRef: NgScrollbar;
-  scrollPosition: number = 0;
-  showLeftControl: boolean = false;
-  showRightControl: boolean = true;
+  scrollPosition = 0;
+  showLeftControl = false;
+  showRightControl = true;
   isBrowser = false;
   articles: ArticleCard[] = [];
   screen: string;

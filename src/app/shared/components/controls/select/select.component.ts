@@ -10,8 +10,8 @@ import {isPlatformBrowser} from '@angular/common';
 })
 export class SelectComponent implements OnInit, ControlValueAccessor {
   public value: number | string;
-  activeOption: { id: number | string, value: string } | null;
-  @Input() options: { id: number | string, value: string }[] = [];
+  activeOption: { id: number | string; value: string } | null;
+  @Input() options: { id: number | string; value: string }[] = [];
   @Input() errorMessages: any;
   @ViewChild(NgScrollbar) scrollRef: NgScrollbar;
   showDropdown = false;
@@ -30,10 +30,10 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
 
   onChange: any = () => {
 
-  }
+  };
   onTouched: any = () => {
 
-  }
+  };
 
   get errorState() {
     return this.ngControl && this.ngControl.invalid;

@@ -41,12 +41,10 @@ export class IndexComponent implements OnInit {
     });
     if (IndexComponent.activities.length === 0) {
       this.api.getCompanyActivities().subscribe(activities => {
-        IndexComponent.activities = activities.items.map(x => {
-          return {
+        IndexComponent.activities = activities.items.map(x => ({
             id: x.id,
             value: x.name
-          };
-        });
+          }));
 
         IndexComponent.activities.unshift({
           id: null,

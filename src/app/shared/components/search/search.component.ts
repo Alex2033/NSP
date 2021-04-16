@@ -13,8 +13,8 @@ export class SearchComponent implements OnInit {
   entryDateValue: Date = new Date();
   screen: string;
   formGroup: FormGroup;
-  @Input() selectFirst: { placeholder: string, attribute: string, options: any[] };
-  @Input() selectSecond: { placeholder: string, attribute: string, options: any[] };
+  @Input() selectFirst: { placeholder: string; attribute: string; options: any[] };
+  @Input() selectSecond: { placeholder: string; attribute: string; options: any[] };
   @Input() placeholder;
   @Input() datepicker;
   @Input() shortVersion;
