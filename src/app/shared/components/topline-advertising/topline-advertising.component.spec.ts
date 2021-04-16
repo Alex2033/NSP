@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ToplineAdvertisingComponent } from './topline-advertising.component';
 
@@ -6,7 +6,7 @@ describe('ToplineAdvertisingComponent', () => {
   let component: ToplineAdvertisingComponent;
   let fixture: ComponentFixture<ToplineAdvertisingComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ToplineAdvertisingComponent ]
     })

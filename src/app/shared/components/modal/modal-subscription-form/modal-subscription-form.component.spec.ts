@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ModalSubscriptionFormComponent } from './modal-subscription-form.component';
 
@@ -6,7 +6,7 @@ describe('ModalSubscriptionFormComponent', () => {
   let component: ModalSubscriptionFormComponent;
   let fixture: ComponentFixture<ModalSubscriptionFormComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ModalSubscriptionFormComponent ]
     })

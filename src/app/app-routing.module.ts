@@ -69,7 +69,8 @@ const routes: Routes = [
     anchorScrolling: 'enabled',
     urlUpdateStrategy: 'eager',
     scrollPositionRestoration: 'enabled',
-    initialNavigation: 'enabled'
+    initialNavigation: 'enabled',
+    relativeLinkResolution: 'legacy'
 })],
   exports: [RouterModule]
 })
