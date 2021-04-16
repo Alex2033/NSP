@@ -3,7 +3,7 @@
     <div class="swiper-wrapper" #carouselWrapper>
       <div class="swiper-slide" *ngFor="let image of images">
         <div class="carousel-image">
-          <app-responsive-image [lazyLoad]="false" [xl]="image.imageXl" [lg]="image.imageLg" [md]="image.imageMd" [xs]="image.imageSm" [sm]="image.imageSm" [alt]="image.alt" [title]="image.title"></app-responsive-image>
+          <app-responsive-image [xl]="image.imageXl" [lg]="image.imageLg" [md]="image.imageMd" [xs]="image.imageSm" [sm]="image.imageSm" [alt]="image.alt" [title]="image.title"></app-responsive-image>
         </div>
       </div>
     </div>

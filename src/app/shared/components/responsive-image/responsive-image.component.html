@@ -1,12 +1,6 @@
-<ng-container>
-  <ng-container *ngFor="let opt of screens">
-    <ng-container *ngIf="(responsive.screen | async) === opt">
-      <picture>
-        <source type="image/jpeg" [attr.lazyLoad]="url(opt)">
-        <img *ngIf="lazyLoad" [offset]="500" [customObservable]="scrollObservable ? scrollObservable : null" [lazyLoad]="url(opt)" [attr.alt]="alt ? alt : ''" [attr.title]="title ? title : ''">
-        <img *ngIf="!lazyLoad" [src]="url(opt)" [attr.alt]="alt ? alt : ''" [attr.title]="title ? title : ''">
-      </picture>
-      <meta *ngIf="itemprop" [attr.itemprop]="itemprop" [content]="url(opt)" />
-    </ng-container>
-  </ng-container>
-</ng-container>
+<picture>
+  <source type="image/jpeg" [attr.lazyLoad]="url()">
+  <img [offset]="500" [customObservable]="scrollObservable"
+       [lazyLoad]="url()" [attr.alt]="alt" [attr.title]="title" [class.loading]="loading" (load)="loadingComplete()">
+</picture>
+<meta *ngIf="itemprop" [attr.itemprop]="itemprop" [content]="url()"/>

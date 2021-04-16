@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'paragraphs'
+  name: 'paragraphs',
+  pure: true
 })
 export class ParagraphsPipe implements PipeTransform {
   transform(text: string) {

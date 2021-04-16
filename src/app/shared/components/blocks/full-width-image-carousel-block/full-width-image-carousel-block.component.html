@@ -2,7 +2,7 @@
     <div class="swiper-wrapper" #carouselWrapper>
         <div class="swiper-slide" *ngFor="let image of images" (click)="openModal(index)">
             <div class="carousel-image">
-              <app-responsive-image [lazyLoad]="false" [xl]="image.thumbXl" [lg]="image.thumbLg" [md]="image.thumbMd" [xs]="image.thumbSm" [sm]="image.thumbSm" [alt]="image.alt" [title]="image.title"></app-responsive-image>
+              <app-responsive-image [xl]="image.thumbXl" [lg]="image.thumbLg" [md]="image.thumbMd" [xs]="image.thumbSm" [sm]="image.thumbSm" [alt]="image.alt" [title]="image.title"></app-responsive-image>
             </div>
         </div>
     </div>

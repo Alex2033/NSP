@@ -1,14 +1,18 @@
 import {AfterViewInit, Component, ElementRef, HostListener, Inject, Input, OnInit, PLATFORM_ID, ViewChild} from '@angular/core';
 import {ResponsiveService} from 'src/app/shared/services/responsive.service';
-import {isPlatformBrowser} from '@angular/common';
+import {isPlatformBrowser, isPlatformServer} from '@angular/common';
 import {NgScrollbar} from 'ngx-scrollbar';
 import {ApiService} from '../../../services/api.service';
 import {finalize} from 'rxjs/operators';
+import {fadeInOutAnimation} from '../../../animations/fade-in-out.animation';
 
 @Component({
   selector: 'app-latest-news-card',
   templateUrl: './latest-news-card.component.html',
-  styleUrls: ['./latest-news-card.component.scss']
+  styleUrls: ['./latest-news-card.component.scss'],
+  animations: [
+    fadeInOutAnimation()
+  ]
 })
 export class LatestNewsCardComponent implements OnInit, AfterViewInit {
   @ViewChild('feed', {static: true}) feed: ElementRef;

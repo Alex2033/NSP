@@ -14,7 +14,7 @@
       </div>
     </div>
   </header>
-  <div class="swiper-container" [swiper]="materialListConfig" #carousel>
+  <div class="swiper-container" [swiper]="materialListConfig" #carousel *ngIf="inited" [@fadeInOut]>
     <div class="swiper-wrapper">
       <div class="swiper-slide" *ngFor="let block of blocks">
         <a [routerLink]="['/' + article.id + '-' + article.slug]" class="card-link" *ngFor="let article of block">

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { ResponsiveService } from '../../services/responsive.service';
 import {CardCollection} from '../../contracts/card-collection';
@@ -8,7 +8,7 @@ import {CardCollection} from '../../contracts/card-collection';
   templateUrl: './card-carousel.component.html',
   styleUrls: ['./card-carousel.component.scss']
 })
-export class CardCarouselComponent implements OnInit {
+export class CardCarouselComponent implements OnInit, AfterViewInit {
   screen: string;
   @Input() articleRouteState = {};
   @Input() data: CardCollection;
@@ -19,9 +19,12 @@ export class CardCarouselComponent implements OnInit {
     loop: false
   };
 
+  start = null;
+
   constructor(public responsive: ResponsiveService) { }
 
   ngOnInit() {
+    this.start = new Date().getTime();
     this.responsive.screen.subscribe((screen) => {
       this.screen = screen;
 
@@ -44,5 +47,9 @@ export class CardCarouselComponent implements OnInit {
         this.carouselConfig.slidesPerView = 'auto';
       }
     });
+  }
+
+  ngAfterViewInit() {
+    console.log('card collection ' + this.data.title + ' ' + this.start, new Date().getTime() - this.start);
   }
 }

@@ -76,7 +76,6 @@
       [onlyFixed]="onlyFixed"
     ></app-card-layout>
   </div>
-
   <app-news-slider *ngFor="let feed of project.newsBlocks" [feed]="feed" [size]="1"></app-news-slider>
   <!-- Большой слайдер есть, по остальным додумаю как лучше сделать -->
   <app-card-carousel [data]="collection" *ngFor="let collection of project.collections"></app-card-carousel>

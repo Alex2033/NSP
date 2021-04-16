@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
 import {ResponsiveService} from '../../services/responsive.service';
 
 @Component({
@@ -6,17 +6,23 @@ import {ResponsiveService} from '../../services/responsive.service';
   templateUrl: './card-layout.component.html',
   styleUrls: ['./card-layout.component.scss']
 })
-export class CardLayoutComponent implements OnInit {
+export class CardLayoutComponent implements OnInit, AfterViewInit {
   @Input() cards;
   @Input() type: string; // Можно указать тип если карточки одного типа, пока что работает с объектами
   @Input() onlyFixed = false;
-  private screen;
+  public screen;
+  start = null;
   constructor(private responsive: ResponsiveService) { }
 
   ngOnInit() {
+    this.start = new Date().getTime();
     this.responsive.screen.subscribe((screen) => {
       this.screen = screen;
     });
+  }
+
+  ngAfterViewInit() {
+    console.log('card layout ' + this.screen + ' ' + this.start, new Date().getTime() - this.start);
   }
 
 }

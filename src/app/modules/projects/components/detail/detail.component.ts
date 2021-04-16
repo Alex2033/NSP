@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Inject, OnInit, PLATFORM_ID, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, HostListener, Inject, OnInit, PLATFORM_ID, ViewChild} from '@angular/core';
 import {ResponsiveService} from 'src/app/shared/services/responsive.service';
 import {ActivatedRoute} from '@angular/router';
 import {Project} from '../../../../shared/contracts/project';
@@ -6,7 +6,7 @@ import {Meta, Title} from '@angular/platform-browser';
 import {NgScrollbar} from 'ngx-scrollbar';
 import {MenuService} from '../../../../shared/services/menu.service';
 import {MenuElement} from '../../../../shared/contracts/menu-element';
-import {isPlatformBrowser} from '@angular/common';
+import {isPlatformBrowser, isPlatformServer} from '@angular/common';
 import {ApiService} from '../../../../shared/services/api.service';
 
 @Component({
@@ -25,6 +25,7 @@ export class DetailComponent implements OnInit, AfterViewInit {
   project: Project;
   onlyFixed = false;
   loadingLayouts = [];
+  start = null;
   constructor(
     private menuService: MenuService,
     public responsive: ResponsiveService,
@@ -36,6 +37,7 @@ export class DetailComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+    this.start = new Date().getTime();
     this.route.data.subscribe((data) => {
       this.loadingLayouts = [];
       this.onlyFixed = this.route.snapshot.queryParams.fixed !== undefined;
@@ -71,6 +73,7 @@ export class DetailComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
+    console.log('full load ' + this.start, new Date().getTime() - this.start);
     this.scrollbarRef.scrolled.subscribe(e => {
       this.scrollPosition = e.target.scrollLeft;
 
@@ -93,5 +96,4 @@ export class DetailComponent implements OnInit, AfterViewInit {
       }, 0);
     }
   }
-
 }
