@@ -30,24 +30,26 @@ export class ArticleComponent implements OnInit {
         });
       }
 
-      const datePipe = new DatePipe('ru-RU');
-      const startDate = new Date(this.article.event.startedAt * 1000);
-      const finishDate = new Date(this.article.event.finishedAt * 1000);
-      this.eventDisplayDate = datePipe.transform(this.article.event.startedAt * 1000, 'd MMMM yyyy');
-      if (startDate.getFullYear().toString() + startDate.getMonth().toString() + startDate.getDate().toString() !== finishDate.getFullYear().toString() + finishDate.getMonth().toString() + finishDate.getDate().toString()) {
-        if (startDate.getHours() !== 0 || startDate.getMinutes() !== 0) {
-          this.eventDisplayDate += ', ' + datePipe.transform(this.article.event.startedAt * 1000, 'shortTime');
-        }
+      if(this.article.event.startedAt) {
+        const datePipe = new DatePipe('ru-RU');
+        const startDate = new Date(this.article.event.startedAt * 1000);
+        const finishDate = new Date(this.article.event.finishedAt * 1000);
+        this.eventDisplayDate = datePipe.transform(this.article.event.startedAt * 1000, 'd MMMM yyyy');
+        if (startDate.getFullYear().toString() + startDate.getMonth().toString() + startDate.getDate().toString() !== finishDate.getFullYear().toString() + finishDate.getMonth().toString() + finishDate.getDate().toString()) {
+          if (startDate.getHours() !== 0 || startDate.getMinutes() !== 0) {
+            this.eventDisplayDate += ', ' + datePipe.transform(this.article.event.startedAt * 1000, 'shortTime');
+          }
 
-        this.eventDisplayDate += ' — ' + datePipe.transform(this.article.event.finishedAt * 1000, 'd MMMM yyyy');
-        if (finishDate.getHours() !== 0 || finishDate.getMinutes() !== 0) {
-          this.eventDisplayDate += ', ' + datePipe.transform(this.article.event.finishedAt * 1000, 'shortTime');
-        }
-      } else {
-        if (startDate.getHours() !== 0 || startDate.getMinutes() !== 0) {
-          this.eventDisplayDate += ', ' + datePipe.transform(this.article.event.startedAt * 1000, 'shortTime');
-          if (startDate.getHours() + startDate.getMinutes() !== finishDate.getHours() + finishDate.getMinutes()) {
-            this.eventDisplayDate += ' — ' + datePipe.transform(this.article.event.finishedAt * 1000, 'shortTime');
+          this.eventDisplayDate += ' — ' + datePipe.transform(this.article.event.finishedAt * 1000, 'd MMMM yyyy');
+          if (finishDate.getHours() !== 0 || finishDate.getMinutes() !== 0) {
+            this.eventDisplayDate += ', ' + datePipe.transform(this.article.event.finishedAt * 1000, 'shortTime');
+          }
+        } else {
+          if (startDate.getHours() !== 0 || startDate.getMinutes() !== 0) {
+            this.eventDisplayDate += ', ' + datePipe.transform(this.article.event.startedAt * 1000, 'shortTime');
+            if (startDate.getHours() + startDate.getMinutes() !== finishDate.getHours() + finishDate.getMinutes()) {
+              this.eventDisplayDate += ' — ' + datePipe.transform(this.article.event.finishedAt * 1000, 'shortTime');
+            }
           }
         }
       }

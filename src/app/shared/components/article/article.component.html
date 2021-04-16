@@ -18,7 +18,7 @@
       <div class="info-bottom">
         <div class="info-bottom-left">
           <div class="event-type-name">{{ article.event.type }}</div>
-          <div class="event-date">
+          <div class="event-date" *ngIf="article.event.startedAt">
             {{ eventDisplayDate }}
           </div>
         </div>
@@ -95,7 +95,7 @@
           <ng-container *ngFor="let card of article.asideCards">
             <ng-container [ngSwitch]="card.type">
               <ng-container *ngSwitchCase="'article-list'">
-                <app-material-list-card [size]="'medium-vertical'" [highlight]="card.highlight"
+                <app-material-list-card *ngIf="!article.event" [size]="'medium-vertical'" [highlight]="card.highlight"
                                         [data]="card"
                 ></app-material-list-card>
               </ng-container>
@@ -114,18 +114,17 @@
   </ng-container>
 </div>
 <ng-template #eventContactCard>
-  <div class="event-contact-card" *ngIf="article.event">
+  <div class="event-contact-card" *ngIf="article.event && (article.event.address || article.event.phone || article.event.email || article.event.site || article.event.vkontakteLink || article.event.facebookLink || article.event.telegramLink || article.event.twitterLink)">
     <div class="contact-card-items" *ngIf="article.event.address">
       <div class="h6">Место проведения</div>
       <div class="contact-card-item">
-
         <svg class="contact-card-icon geolocation">
           <use xlink:href="assets/sprites/icons.svg#map_pin"></use>
         </svg>
         <span>{{ article.event.address | quotes }}</span>
       </div>
     </div>
-    <div class="contact-card-items">
+    <div class="contact-card-items" *ngIf="article.event.phone || article.event.email || article.event.site || article.event.vkontakteLink || article.event.facebookLink || article.event.telegramLink || article.event.twitterLink">
       <div class="h6">Информация</div>
       <div class="list">
         <div class="contact-card-item" *ngIf="article.event.phone">

@@ -52,6 +52,26 @@
           <app-person-card [person]="card" *ngSwitchCase="'person'"></app-person-card>
         </ng-container>
       </div>
+      <div class="swiper-slide page-link" *ngIf="data.headerUrl || data.slug">
+        <a class="content" *ngIf="data.headerUrl" [href]="data.headerUrl" target="_blank">
+          <span>
+            Смотреть все материалы рубрики
+          </span>
+          <br>
+          <svg class="arrow-icon">
+            <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
+          </svg>
+        </a>
+        <a class="content" *ngIf="!data.headerUrl && data.slug" [routerLink]="['/' + data.slug]">
+          <span>
+            Смотреть все материалы рубрики
+          </span>
+          <br>
+          <svg class="arrow-icon">
+            <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
+          </svg>
+        </a>
+      </div>
     </div>
   </div>
 </div>
