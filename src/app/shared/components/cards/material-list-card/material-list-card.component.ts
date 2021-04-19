@@ -18,6 +18,7 @@ export class MaterialListCardComponent extends ResizableCardComponent implements
   @Input() withGradient: boolean;
   blocks = [];
   title: string;
+  url: string;
   start;
   blockSizes = {
     large: 4,
@@ -31,6 +32,7 @@ export class MaterialListCardComponent extends ResizableCardComponent implements
     this.articleLength = value.articles.length;
     this.blocks = [];
     this.title = value.title;
+    this.url = value.url;
     value.articles.map((article, index) => {
       if (!this.blocks[Math.floor(index / this.blockSizes[this.size])]) {
         this.blocks[Math.floor(index / this.blockSizes[this.size])] = [];

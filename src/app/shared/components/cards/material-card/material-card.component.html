@@ -14,24 +14,24 @@
     >
       <div class="card-top" *ngIf="size === 'small'">
         <div class="date">
-          <ng-container *ngIf="displayDate">{{ data.articlePublishedAt * 1000 | niceDate }}</ng-container>
+          <ng-container *ngIf="displayDate && data.articlePublishedAt">{{ data.articlePublishedAt * 1000 | niceDate }}</ng-container>
         </div>
         <div class="tag" *ngIf="data.markerName">
           {{ data.markerName | quotes }}
         </div>
       </div>
       <div class="card-img" *ngIf="data.imageXl || data.smallImageXl">
-        <ng-container>
-          <div class="image-overlay"></div>
-          <ng-container *ngIf="size === 'small' && data.smallImageXl; else image">
-            <app-responsive-image [xl]="data.smallImageXl" [lg]="data.smallImageLg" [md]="data.smallImageMd" [xs]="data.smallImageSm" [sm]="data.smallImageSm" [alt]="data.smallImageAlt" [title]="data.smallImageTitle"></app-responsive-image>
-          </ng-container>
+        <div class="image-overlay" *ngIf="data.backgroundOverlay"></div>
+        <ng-container *ngIf="size === 'small' && data.smallImageXl; else image">
+          <app-responsive-image [xl]="data.smallImageXl" [lg]="data.smallImageLg" [md]="data.smallImageMd"
+                                [xs]="data.smallImageSm" [sm]="data.smallImageSm" [alt]="data.smallImageAlt"
+                                [title]="data.smallImageTitle"></app-responsive-image>
         </ng-container>
       </div>
       <div class="card-content">
         <div class="card-top static" *ngIf="size !== 'small'">
           <div class="date">
-            <ng-container *ngIf="displayDate">
+            <ng-container *ngIf="displayDate && data.articlePublishedAt">
               {{ data.articlePublishedAt * 1000 | niceDate }}
             </ng-container>
           </div>
@@ -51,17 +51,18 @@
             <span class="views-number">{{ data.articleViewsCount | number }}</span>
           </div>
           <div class="category">
-<!--            {{ data.directoryName }}-->
+            <!--            {{ data.directoryName }}-->
           </div>
         </footer>
       </div>
     </a>
   </ng-container>
   <ng-container *ngIf="view === 'full' && (data.imageXl || data.smallImageXl)">
-    <a [routerLink]="['/' + data.articleId + '-' + data.articleSlug]" [target]="openInNewWindow ? '_blank' : '_self'" [state]="routeState" class="card-wrapper backgroundImage has-image">
+    <a [routerLink]="['/' + data.articleId + '-' + data.articleSlug]" [target]="openInNewWindow ? '_blank' : '_self'"
+       [state]="routeState" class="card-wrapper backgroundImage has-image">
       <div class="card-top">
         <div class="date">
-          <ng-container *ngIf="displayDate">{{ data.articlePublishedAt * 1000 | niceDate }}</ng-container>
+          <ng-container *ngIf="displayDate && data.articlePublishedAt">{{ data.articlePublishedAt * 1000 | niceDate }}</ng-container>
         </div>
         <div class="tag" *ngIf="data.markerName">
           {{ data.markerName | quotes }}
@@ -80,21 +81,26 @@
             <span class="views-number">{{ data.articleViewsCount | number }}</span>
           </div>
           <div class="category">
-<!--            {{ data.directoryName }}-->
+            <!--            {{ data.directoryName }}-->
           </div>
         </footer>
       </div>
-      <div class="card-overlay"></div>
-      <div class="image-overlay"></div>
+      <ng-container *ngIf="data.backgroundOverlay">
+        <div class="card-overlay"></div>
+        <div class="image-overlay"></div>
+      </ng-container>
       <div class="background-img">
         <ng-container *ngIf="size === 'small' && (data.smallImageXl || data.smallImageXl); else image">
-          <app-responsive-image [xl]="data.smallImageXl" [lg]="data.smallImageLg" [md]="data.smallImageMd" [xs]="data.smallImageSm" [sm]="data.smallImageSm" [alt]="data.smallImageAlt" [title]="data.smallImageTitle"></app-responsive-image>
+          <app-responsive-image [xl]="data.smallImageXl" [lg]="data.smallImageLg" [md]="data.smallImageMd"
+                                [xs]="data.smallImageSm" [sm]="data.smallImageSm" [alt]="data.smallImageAlt"
+                                [title]="data.smallImageTitle"></app-responsive-image>
         </ng-container>
       </div>
     </a>
   </ng-container>
   <ng-template #image>
-    <app-responsive-image [xl]="data.imageXl" [lg]="data.imageLg" [md]="data.imageMd" [xs]="data.imageSm" [sm]="data.imageSm" [alt]="data.imageAlt" [title]="data.imageTitle"></app-responsive-image>
+    <app-responsive-image [xl]="data.imageXl" [lg]="data.imageLg" [md]="data.imageMd" [xs]="data.imageSm"
+                          [sm]="data.imageSm" [alt]="data.imageAlt" [title]="data.imageTitle"></app-responsive-image>
   </ng-template>
 
 </ng-container>

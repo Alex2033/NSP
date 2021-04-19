@@ -19,4 +19,5 @@ export interface VideoCard {
   smallImageAlt?: string | null;
   videoUrl: string;
   videoId: number;
+  backgroundOverlay: boolean;
 }

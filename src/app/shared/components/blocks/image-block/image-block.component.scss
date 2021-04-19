@@ -20,7 +20,12 @@
 //}
 
 .image-caption {
+  &.top {
+    margin-bottom: 8px;
+  }
+  &:not(.top) {
     margin-top: 8px;
+  }
     color: $raven-color;
     font-size: 14px;
     line-height: 1.571;

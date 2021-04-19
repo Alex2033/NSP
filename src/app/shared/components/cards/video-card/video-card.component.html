@@ -33,7 +33,7 @@
             <use xlink:href="assets/sprites/icons.svg#play"></use>
         </svg>
     </button>
-    <div class="image-overlay"></div>
+    <div class="image-overlay" *ngIf="data.backgroundOverlay"></div>
     <div class="background-img">
       <img [src]="'https://img.youtube.com/vi/' + (data.videoUrl | youtubeVideoId) + '/hqdefault.jpg'" *ngIf="!data.imageXl && !data.smallImageXl" alt="video overlay" class="youtube-image">
       <ng-container *ngIf="size === 'small' && data.smallImageXl; else image">

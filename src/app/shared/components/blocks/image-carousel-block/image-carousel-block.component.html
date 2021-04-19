@@ -15,6 +15,7 @@
         <div class="swiper-wrapper">
             <div class="swiper-slide" *ngFor="let image of images" (click)="openModal(index)">
               <app-responsive-image [xl]="image.thumbXl" [lg]="image.thumbLg" [md]="image.thumbMd" [xs]="image.thumbSm" [sm]="image.thumbSm" [alt]="image.alt" [title]="image.title"></app-responsive-image>
+              <div class="image-caption" *ngIf="image.text" [innerHTML]="image.text | quotes"></div>
             </div>
             <div class="swiper-slide">
 <!--              Пустой слайд чтобы последний можно было разглядеть без белого градиента-->

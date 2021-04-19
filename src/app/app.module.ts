@@ -11,7 +11,6 @@ import { ModalLoginComponent } from './shared/components/modal/modal-login/modal
 import {BrowserModule} from '@angular/platform-browser';
 import {environment} from '../environments/environment';
 import {ApiService} from './shared/services/api.service';
-import {MockApiService} from './shared/services/mock-api.service';
 import {HttpClientModule} from '@angular/common/http';
 import {ServerDataComponent} from './shared/components/server-data/server-data.component';
 import {ServerDataResolver} from './shared/resolvers/server-data.resolver';
@@ -39,8 +38,7 @@ import {ModalGalleryComponent} from './shared/components/modal/modal-gallery/mod
   ],
   providers: [
     ServerDataResolver,
-    RouteDataResolver,
-    { provide: ApiService, useClass: environment.useApi ? ApiService : MockApiService }
+    RouteDataResolver
   ],
   bootstrap: [AppComponent]
 })

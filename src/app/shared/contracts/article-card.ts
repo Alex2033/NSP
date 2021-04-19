@@ -21,4 +21,5 @@ export interface ArticleCard {
   smallImageSm: string | null;
   smallImageTitle?: string | null;
   smallImageAlt?: string | null;
+  backgroundOverlay: boolean;
 }

@@ -17,4 +17,5 @@ export interface FrontArticleCard {
   smallImageSm: string | null;
   smallImageTitle?: string | null;
   smallImageAlt?: string | null;
+  backgroundOverlay: boolean;
 }

@@ -2,28 +2,31 @@
 @import "responsive";
 
 :host {
-    display: block;
+  display: block;
 }
+
 .control-buttons {
   margin-left: 8px;
 }
+
 .card-wrapper {
-    padding: 0 16px 12px 16px;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid $border-color;
+  padding: 0 16px 12px 16px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $border-color;
 
-    &.highlight {
-        padding: 0 18px 18px;
-        border: 6px solid $secondary-color;
-    }
+  &.highlight {
+    padding: 0 18px 18px;
+    border: 6px solid $secondary-color;
+  }
 
-    &.vertical, &.large {
-        .card-link {
-            height: calc(50% - 16px);
-            overflow: hidden;
-        }
+  &.vertical, &.large {
+    .card-link {
+      height: calc(50% - 16px);
+      overflow: hidden;
     }
+  }
+
   &.vertical {
     .card-link {
       &:first-child {
@@ -31,14 +34,17 @@
       }
     }
   }
+
   &.horizontal, &.large {
     .card-link {
       width: calc(50% - 16px);
+
       &:nth-child(odd) {
         margin-right: 32px;
       }
     }
   }
+
   &.large {
     .card-link {
       &:nth-child(1), &:nth-child(2) {
@@ -49,90 +55,98 @@
 }
 
 .swiper-slide {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .swiper-container {
-    max-width: 100%;
-    flex: 1;
+  max-width: 100%;
+  flex: 1;
 }
 
 .card-header {
-    padding: 16px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid $border-color;
-    margin-bottom: 16px;
+  padding: 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $border-color;
+  margin-bottom: 16px;
 
-    .h5 {
-        color: $dark-gray;
+  .h5 {
+    color: $dark-gray;
+
+    &:hover {
+      text-decoration: none;
+      color: $primary-color;
     }
+  }
 }
 
 .card-text {
-    color: $dark-gray;
+  color: $dark-gray;
 
-    @include media-breakpoint-down(sm) {
-        font-size: 13px;
-        line-height: 1.54;
-        margin-bottom: 10px;
-        overflow: hidden;
-        text-overflow: -o-ellipsis-lastline;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 5;
-    }
+  @include media-breakpoint-down(sm) {
+    font-size: 13px;
+    line-height: 1.54;
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-overflow: -o-ellipsis-lastline;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+  }
 }
 
 .h5 {
-    color: $text-color;
+  color: $text-color;
 
-    @include media-breakpoint-down(sm) {
-        font-size: 14px;
-        line-height: 1.571;
-    }
+  @include media-breakpoint-down(sm) {
+    font-size: 14px;
+    line-height: 1.571;
+  }
 }
 
 .h6 {
-    margin-bottom: 16px;
-    color: $text-color;
+  margin-bottom: 16px;
+  color: $text-color;
 
-    @include media-breakpoint-down(sm) {
-        font-size: 14px;
-        line-height: 1.571;
-    }
+  @include media-breakpoint-down(sm) {
+    font-size: 14px;
+    line-height: 1.571;
+  }
 
 }
+
 .with-gradient .card-link:after {
   content: '';
   display: block;
   height: 44px; // две строки
-  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
 }
+
 .card-link {
-    height: 100%;
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    .h5 {
-        margin-bottom: 8px;
-    }
+  height: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
 
-    &:hover {
-        text-decoration: none;
+  .h5 {
+    margin-bottom: 8px;
+  }
 
-        .h5, .h6, .card-text {
-            color: $primary-color;
-        }
+  &:hover {
+    text-decoration: none;
+
+    .h5, .h6, .card-text {
+      color: $primary-color;
     }
+  }
 }
 
 .card-footer {
-    margin-top: auto;
+  margin-top: auto;
 }

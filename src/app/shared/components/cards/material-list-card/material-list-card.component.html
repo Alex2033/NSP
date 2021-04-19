@@ -1,6 +1,7 @@
 <div class="card-wrapper" [class.with-gradient]="withGradient" [class.highlight]="highlight" [class.horizontal]="size === 'medium-horizontal'" [class.vertical]="size === 'medium-vertical'" [class.large]="size === 'large'">
   <header class="card-header">
-    <div class="h5">{{ title }}</div>
+    <div class="h5" *ngIf="!url">{{ title }}</div>
+    <a class="h5" target="_blank" [href]="url" *ngIf="url">{{ title }}</a>
     <div class="control-buttons" *ngIf="blockSizes[size] < articleLength">
       <div class="control-button small" (click)="carousel.swiper.slidePrev()">
         <svg class="icon">

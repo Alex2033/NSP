@@ -2,5 +2,9 @@
 <!--    <img [src]="image.imageUrl" [alt]="image.caption">-->
 <!--    <figcaption class="image-caption" *ngIf="image.caption">{{ image.caption }}</figcaption>-->
 <!--</figure>-->
-<app-responsive-image [xl]="data.imageXl" [lg]="data.imageLg" [md]="data.imageMd" [xs]="data.imageSm" [sm]="data.imageSm" [alt]="data.imageAlt" [title]="data.imageTitle"></app-responsive-image>
-<div class="image-caption" *ngIf="data.text" [innerHTML]="data.text | quotes"></div>
+<div class="image-caption top" *ngIf="data.text && data.textPosition === 'top'" [innerHTML]="data.text | quotes"></div>
+<a [href]="data.url" target="_blank" *ngIf="data.url">
+  <app-responsive-image [xl]="data.imageXl" [lg]="data.imageLg" [md]="data.imageMd" [xs]="data.imageSm" [sm]="data.imageSm" [alt]="data.imageAlt" [title]="data.imageTitle"></app-responsive-image>
+</a>
+<app-responsive-image *ngIf="!data.url" [xl]="data.imageXl" [lg]="data.imageLg" [md]="data.imageMd" [xs]="data.imageSm" [sm]="data.imageSm" [alt]="data.imageAlt" [title]="data.imageTitle"></app-responsive-image>
+<div class="image-caption" *ngIf="data.text && (!data.textPosition || data.textPosition === 'bottom')" [innerHTML]="data.text | quotes"></div>
