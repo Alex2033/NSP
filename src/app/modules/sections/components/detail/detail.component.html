@@ -1,76 +1,77 @@
 <div class="container">
-    <div class="page-top">
-        <header class="inner-page-header">
-            <h1>{{ section.title }}</h1>
-            <button type="button" class="page-topline-element" *ngIf="false">
-                Сбросить настройки
-            </button>
-        </header>
-        <div class="filters" [style.display]="section.tags?.length > 0 ? 'flex' : 'none'">
-            <ul class="tags d-none d-md-flex">
-                <li class="tag" *ngFor="let tag of section.tags">
-                    <a [routerLink]="['/tags', tag.code]">#{{ tag.name }}</a>
-                </li>
-            </ul>
+  <div class="page-top">
+    <header class="inner-page-header">
+      <h1>{{ section.title }}</h1>
+      <button type="button" class="page-topline-element" *ngIf="false">
+        Сбросить настройки
+      </button>
+    </header>
+    <div class="filters" [style.display]="section.tags?.length > 0 ? 'flex' : 'none'">
+      <ul class="tags d-none d-md-flex">
+        <li class="tag" *ngFor="let tag of section.tags">
+          <a [routerLink]="['/tags', tag.code]">#{{ tag.name }}</a>
+        </li>
+      </ul>
 
-            <!-- mobile horizontal -->
-            <div class="mobile-tags d-md-none">
-                <ng-scrollbar
-                    class="horizontal-scrollbar"
-                    track="horizontal"
-                    #scrollbarRef
-                    (reachedEnd)="hideRightControl()"
-                >
-                    <ul class="tags">
-                        <li class="tag" *ngFor="let tag of section.tags">
-                            <a [routerLink]="['/tags', tag.code]">#{{ tag.name }}</a>
-                        </li>
-                    </ul>
+      <!-- mobile horizontal -->
+      <div class="mobile-tags d-md-none">
+        <ng-scrollbar
+          class="horizontal-scrollbar"
+          track="horizontal"
+          #scrollbarRef
+          (reachedEnd)="hideRightControl()"
+        >
+          <ul class="tags">
+            <li class="tag" *ngFor="let tag of section.tags">
+              <a [routerLink]="['/tags', tag.code]">#{{ tag.name }}</a>
+            </li>
+          </ul>
 
-                </ng-scrollbar>
-                <div class="gradient-control control-left" *ngIf="showLeftControl">
-                    <div class="control-button small light" (click)="scrollbarRef.scrollTo({ left: (scrollPosition - 150) })">
-                        <svg class="icon">
-                            <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
-                        </svg>
-                    </div>
-                </div>
-                <div class="gradient-control control-right" *ngIf="showRightControl">
-                    <div class="control-button small light" (click)="scrollbarRef.scrollTo({ left: (scrollPosition + 150) })">
-                        <svg class="icon">
-                            <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-
-
-<!--            <div class="date-filter" *ngIf="false">-->
-<!--                <input-->
-<!--                    class="data-hidden-input"-->
-<!--                    (dateInput)="entryDate($event)"-->
-<!--                    [matDatepicker]="picker1"-->
-<!--                    placeholder="Choose a date"-->
-<!--                >-->
-<!--                <div class="datepicker" (click)="picker1.open()">-->
-<!--                    <mat-datepicker #picker1 style="display: none"></mat-datepicker>-->
-<!--                    <svg class="datepicker-icon">-->
-<!--                        <use xlink:href="assets/sprites/icons.svg#calendar"></use>-->
-<!--                    </svg>-->
-<!--                    <span class="datepicker-range">{{ entryDateValue | date: 'M/d/yy' }}</span>-->
-<!--                </div>-->
-<!--                <button class="clear-date">-->
-<!--                    <svg *ngIf="screen !== 'sm'">-->
-<!--                        <use xlink:href="assets/sprites/icons.svg#close"></use>-->
-<!--                    </svg>-->
-<!--                    <span class="reset-text d-md-none">Сбросить</span>-->
-<!--                </button>-->
-<!--            </div>-->
+        </ng-scrollbar>
+        <div class="gradient-control control-left" *ngIf="showLeftControl">
+          <div class="control-button small light" (click)="scrollbarRef.scrollTo({ left: (scrollPosition - 150) })">
+            <svg class="icon">
+              <use xlink:href="assets/sprites/icons.svg#chevron_left"></use>
+            </svg>
+          </div>
         </div>
+        <div class="gradient-control control-right" *ngIf="showRightControl">
+          <div class="control-button small light" (click)="scrollbarRef.scrollTo({ left: (scrollPosition + 150) })">
+            <svg class="icon">
+              <use xlink:href="assets/sprites/icons.svg#chevron_right"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+
+      <!--            <div class="date-filter" *ngIf="false">-->
+      <!--                <input-->
+      <!--                    class="data-hidden-input"-->
+      <!--                    (dateInput)="entryDate($event)"-->
+      <!--                    [matDatepicker]="picker1"-->
+      <!--                    placeholder="Choose a date"-->
+      <!--                >-->
+      <!--                <div class="datepicker" (click)="picker1.open()">-->
+      <!--                    <mat-datepicker #picker1 style="display: none"></mat-datepicker>-->
+      <!--                    <svg class="datepicker-icon">-->
+      <!--                        <use xlink:href="assets/sprites/icons.svg#calendar"></use>-->
+      <!--                    </svg>-->
+      <!--                    <span class="datepicker-range">{{ entryDateValue | date: 'M/d/yy' }}</span>-->
+      <!--                </div>-->
+      <!--                <button class="clear-date">-->
+      <!--                    <svg *ngIf="screen !== 'sm'">-->
+      <!--                        <use xlink:href="assets/sprites/icons.svg#close"></use>-->
+      <!--                    </svg>-->
+      <!--                    <span class="reset-text d-md-none">Сбросить</span>-->
+      <!--                </button>-->
+      <!--            </div>-->
     </div>
-    <div class="materials">
-        <app-card-layout
-            [cards]="cards"
-        ></app-card-layout>
-    </div>
+  </div>
+  <app-block-layout [blocks]="section.description"></app-block-layout>
+  <div class="materials">
+    <app-card-layout
+      [cards]="cards"
+    ></app-card-layout>
+  </div>
 </div>

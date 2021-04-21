@@ -9,4 +9,5 @@ export interface Section {
   cardsFilter: any;
   tags?: Tag[];
   cards: any[];
+  description?: any;
 }
