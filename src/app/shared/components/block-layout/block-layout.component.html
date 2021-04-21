@@ -11,10 +11,13 @@
         <ng-container *ngSwitchCase="'full-width'">
           <app-extended-company-card *ngIf="screen !== 'sm'" class="full-width" [openInNewWindow]="true"
                                      [company]="block.data"></app-extended-company-card>
-          <app-company-card *ngIf="screen === 'sm'" [openInNewWindow]="true" class="full-width" [company]="block.data"></app-company-card>
+          <app-company-card *ngIf="screen === 'sm'" [openInNewWindow]="true" class="full-width"
+                            [company]="block.data"></app-company-card>
         </ng-container>
-        <app-company-card *ngSwitchCase="'float-left'" [openInNewWindow]="true" class="float-left" [company]="block.data"></app-company-card>
-        <app-company-card *ngSwitchCase="'float-right'" [openInNewWindow]="true" class="float-right" [company]="block.data"></app-company-card>
+        <app-company-card *ngSwitchCase="'float-left'" [openInNewWindow]="true" class="float-left"
+                          [company]="block.data"></app-company-card>
+        <app-company-card *ngSwitchCase="'float-right'" [openInNewWindow]="true" class="float-right"
+                          [company]="block.data"></app-company-card>
       </ng-container>
     </ng-container>
 
@@ -23,56 +26,80 @@
         <ng-container *ngSwitchCase="'full-width'">
           <app-extended-person-card *ngIf="screen !== 'sm'" class="full-width" [openInNewWindow]="true"
                                     [person]="block.data"></app-extended-person-card>
-          <app-person-card *ngIf="screen === 'sm'" class="full-width" [openInNewWindow]="true" [person]="block.data"></app-person-card>
+          <app-person-card *ngIf="screen === 'sm'" class="full-width" [openInNewWindow]="true"
+                           [person]="block.data"></app-person-card>
         </ng-container>
-        <app-person-card *ngSwitchCase="'float-left'" class="float-left" [openInNewWindow]="true" [person]="block.data"></app-person-card>
-        <app-person-card *ngSwitchCase="'float-right'" class="float-right" [openInNewWindow]="true" [person]="block.data"></app-person-card>
+        <app-person-card *ngSwitchCase="'float-left'" class="float-left" [openInNewWindow]="true"
+                         [person]="block.data"></app-person-card>
+        <app-person-card *ngSwitchCase="'float-right'" class="float-right" [openInNewWindow]="true"
+                         [person]="block.data"></app-person-card>
       </ng-container>
     </ng-container>
 
     <ng-container *ngSwitchCase="'apartment_complex_card'">
       <ng-container [ngSwitch]="block.size">
-        <app-object-card *ngSwitchCase="'float-left'" [openInNewWindow]="true" class="float-left" [object]="block.data"></app-object-card>
-        <app-object-card *ngSwitchCase="'float-right'" [openInNewWindow]="true" class="float-right" [object]="block.data"></app-object-card>
+        <div *ngSwitchCase="'float-left'" class="float-left">
+          <div class="caption" *ngIf="block.text" [innerHTML]="block.text | quotes"></div>
+          <app-object-card [openInNewWindow]="true" [object]="block.data"></app-object-card>
+        </div>
+        <div *ngSwitchCase="'float-right'" class="float-right">
+          <div class="caption" *ngIf="block.text" [innerHTML]="block.text | quotes"></div>
+          <app-object-card [openInNewWindow]="true" [object]="block.data"></app-object-card>
+        </div>
       </ng-container>
     </ng-container>
 
     <ng-container *ngSwitchCase="'video_card'">
       <ng-container [ngSwitch]="block.size">
-        <app-video-card *ngSwitchCase="'full-width'" class="full-width" [size]="'medium-horizontal'"
-                        [data]="block.data"></app-video-card>
-        <app-video-card *ngSwitchCase="'float-left'" class="float-left small"
-                        [class.vertical]="block.data.size === 'medium-vertical'"
-                        [size]="block.data.size !== 'medium-vertical' && screen !== 'sm' ? 'small' : block.data.size"
-                        [data]="block.data"></app-video-card>
-        <app-video-card *ngSwitchCase="'float-right'" class="float-right small"
-                        [class.vertical]="block.data.size === 'medium-vertical'"
-                        [size]="block.data.size !== 'medium-vertical' && screen !== 'sm' ? 'small' : block.data.size"
-                        [data]="block.data"></app-video-card>
+        <div *ngSwitchCase="'full-width'">
+          <div class="caption" *ngIf="block.text" [innerHTML]="block.text | quotes"></div>
+          <app-video-card class="full-width" [size]="'medium-horizontal'"
+                          [data]="block.data"></app-video-card>
+        </div>
+        <div *ngSwitchCase="'float-left'" class="float-left">
+          <div class="caption" *ngIf="block.text" [innerHTML]="block.text | quotes"></div>
+          <app-video-card class="small"
+                          [class.vertical]="block.data.size === 'medium-vertical'"
+                          [size]="block.data.size !== 'medium-vertical' && screen !== 'sm' ? 'small' : block.data.size"
+                          [data]="block.data"></app-video-card>
+        </div>
+        <div *ngSwitchCase="'float-right'" class="float-right">
+          <div class="caption" *ngIf="block.text" [innerHTML]="block.text | quotes"></div>
+          <app-video-card class="small"
+                          [class.vertical]="block.data.size === 'medium-vertical'"
+                          [size]="block.data.size !== 'medium-vertical' && screen !== 'sm' ? 'small' : block.data.size"
+                          [data]="block.data"></app-video-card>
+        </div>
       </ng-container>
     </ng-container>
 
     <ng-container *ngSwitchCase="'article_card'">
       <ng-container [ngSwitch]="block.size">
-        <app-material-card *ngSwitchCase="'float-left'" class="float-left"
-                           [openInNewWindow]="true"
-                           [class.vertical]="block.data.size === 'medium-vertical' && block.data.imageXl"
-                           [class.short]="!block.data.imageXl && !block.data.smallImageXl"
-                           [size]="block.data.size !== 'medium-vertical' && screen !== 'sm' ? 'small' : block.data.size"
-                           [view]="block.data.view"
-                           [data]="block.data"></app-material-card>
-        <app-material-card *ngSwitchCase="'float-right'" class="float-right"
-                           [openInNewWindow]="true"
-                           [class.vertical]="block.data.size === 'medium-vertical' && block.data.imageXl"
-                           [class.short]="!block.data.imageXl && !block.data.smallImageXl"
-                           [size]="block.data.size !== 'medium-vertical' && screen !== 'sm' ? 'small' : block.data.size"
-                           [view]="block.data.view"
-                           [data]="block.data"></app-material-card>
+        <div *ngSwitchCase="'float-left'" class="float-left">
+          <div class="caption" *ngIf="block.text" [innerHTML]="block.text | quotes"></div>
+          <app-material-card
+            [openInNewWindow]="true"
+            [class.vertical]="block.data.size === 'medium-vertical' && block.data.imageXl"
+            [class.short]="!block.data.imageXl && !block.data.smallImageXl"
+            [size]="block.data.size !== 'medium-vertical' && screen !== 'sm' ? 'small' : block.data.size"
+            [view]="block.data.view"
+            [data]="block.data"></app-material-card>
+        </div>
+        <div *ngSwitchCase="'float-right'" class="float-right">
+          <div class="caption" *ngIf="block.text" [innerHTML]="block.text | quotes"></div>
+          <app-material-card
+                             [openInNewWindow]="true"
+                             [class.vertical]="block.data.size === 'medium-vertical' && block.data.imageXl"
+                             [class.short]="!block.data.imageXl && !block.data.smallImageXl"
+                             [size]="block.data.size !== 'medium-vertical' && screen !== 'sm' ? 'small' : block.data.size"
+                             [view]="block.data.view"
+                             [data]="block.data"></app-material-card>
+        </div>
       </ng-container>
     </ng-container>
-  <ng-container *ngSwitchCase="'quote'">
-    <app-quote-block [quote]="block.data" [openInNewWindow]="true"></app-quote-block>
-  </ng-container>
+    <ng-container *ngSwitchCase="'quote'">
+      <app-quote-block [quote]="block.data" [openInNewWindow]="true"></app-quote-block>
+    </ng-container>
     <ng-container *ngSwitchCase="'html'">
       <div [innerHTML]="block.data | externalLinks | safeHtml"></div>
     </ng-container>
@@ -94,7 +121,8 @@
       <app-apartment-info-block [data]="block.data"></app-apartment-info-block>
     </ng-container>
     <ng-container *ngSwitchCase="'gallery'">
-      <app-full-width-image-carousel-block *ngIf="block.size === 'big'" [images]="block.data.images"></app-full-width-image-carousel-block>
+      <app-full-width-image-carousel-block *ngIf="block.size === 'big'"
+                                           [images]="block.data.images"></app-full-width-image-carousel-block>
       <app-image-carousel-block *ngIf="block.size === 'small'" [images]="block.data.images"></app-image-carousel-block>
     </ng-container>
     <ng-container *ngSwitchCase="'logo_gallery'">
@@ -105,7 +133,9 @@
     </ng-container>
     <ng-container *ngSwitchCase="'button-group'">
       <div class="button-block">
-        <a *ngFor="let block of block.buttons" [href]="block.data.url" target="_blank" class="button" [class.primary]="block.data.color === 'primary'" [class.secondary]="block.data.color === 'secondary'">{{ block.data.text }}</a>
+        <a *ngFor="let block of block.buttons" [href]="block.data.url" target="_blank" class="button"
+           [class.primary]="block.data.color === 'primary'"
+           [class.secondary]="block.data.color === 'secondary'">{{ block.data.text }}</a>
       </div>
     </ng-container>
   </ng-container>

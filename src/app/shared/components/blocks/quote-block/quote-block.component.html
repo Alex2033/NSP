@@ -4,7 +4,7 @@
       <use xlink:href="assets/sprites/icons.svg#quotes"></use>
     </svg>
     <blockquote class="quote-text">
-      <p>«<span [innerHTML]="quote.text"></span>»</p>
+      <span [innerHTML]="'«' + quote.text + '»' | paragraphs"></span>
     </blockquote>
   </div>
   <div class="quote-bot">

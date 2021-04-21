@@ -11,7 +11,6 @@ export class ObjectCardComponent extends ResizableCardComponent implements OnIni
 
   @Input() object: ApartmentComplex;
   @Input() openInNewWindow = false;
-
   constructor() {
     super();
   }
