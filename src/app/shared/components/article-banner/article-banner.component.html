@@ -1,4 +1,4 @@
-<div class="banner" #banner *ngIf="(data && (data.type === 'image' && data.images[screen]) || (data.type === 'html' && data.html[screen]))">
+<div class="banner" #banner *ngIf="(data?.type === 'image' && data.images[screen]) || (data?.type === 'html' && data.html[screen])">
   <hr>
   <a #link [href]="data.url" target="_blank" rel="nofollow noopener" (click)="incClick()" [style.height]="(screen === 'sm' && data?.type === 'html') ? getBannerHeight() + 'px' : null">
     <ng-container *ngIf="data.type === 'image' && data.images[screen]">
