@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Inject, OnInit, PLATFORM_ID, ViewChild} from '@angular/core';
 import {ResponsiveService} from 'src/app/shared/services/responsive.service';
 import {ActivatedRoute} from '@angular/router';
 import {Company} from '../../../../shared/contracts/company';
@@ -14,8 +14,10 @@ import {QuotesPipe} from '../../../../shared/pipes/quotes.pipe';
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.scss']
 })
-export class DetailComponent implements OnInit {
-
+export class DetailComponent implements OnInit, AfterViewInit {
+  @ViewChild('description') description: ElementRef;
+  useShowMore = false;
+  showMore = true;
   objects = [];
   persons = [];
   screen: string;
@@ -47,6 +49,8 @@ export class DetailComponent implements OnInit {
     }
     this.route.data.subscribe(data => {
       this.currentPage.next();
+      this.showMore = true;
+      this.useShowMore = false;
       this.company = data.company.data;
       this.persons = data.company.people;
       this.persons.map(person => {
@@ -69,5 +73,16 @@ export class DetailComponent implements OnInit {
         );
       }
     });
+  }
+
+  ngAfterViewInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      if(this.description.nativeElement.offsetHeight > 300) {
+        setTimeout(() => {
+          this.useShowMore = true;
+          this.showMore = false;
+        }, 1);
+      }
+    }
   }
 }

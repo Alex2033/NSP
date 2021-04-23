@@ -108,7 +108,8 @@
             </div>
             <div class="company-infoblock company-infoblock-text" *ngIf="company.description">
 <!--              <div class="caption">Информация о компании</div>-->
-              <div appDynamicRoutes class="company-infoblock-paragraphs" [innerHTML]="company.description | paragraphs | quotes | externalLinks"></div>
+              <div #description [class.short]="useShowMore && !showMore" appDynamicRoutes class="company-infoblock-paragraphs" [innerHTML]="company.description | paragraphs | quotes | externalLinks"></div>
+              <span class="link" *ngIf="useShowMore && !showMore" (click)="showMore = true">Читать больше</span>
 <!--              <a [routerLink]="['']" class="link show-more" *ngIf="screen === 'sm' && false">-->
 <!--                <span>Еще</span>-->
 <!--                <svg class="icon">-->

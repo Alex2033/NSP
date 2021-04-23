@@ -25,6 +25,15 @@ export class ApiService {
     }).pipe(map((response) => deserialize(response)));
   }
 
+  getCard(type, id): Observable<any> {
+    return this.apiClient.get(`/api/site/card`, {
+      params: {
+        type,
+        id
+      }
+    }).pipe(map((response) => deserialize(response)));
+  }
+
   getApartmentComplexArticles(filter = {}): Observable<any> {
     return this.apiClient.get(`/api/site/apartment_complexes/articles`, {
       params: filter

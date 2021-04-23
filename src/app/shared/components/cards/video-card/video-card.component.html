@@ -36,7 +36,7 @@
     <div class="image-overlay" *ngIf="data.backgroundOverlay"></div>
     <div class="background-img">
       <img [src]="'https://img.youtube.com/vi/' + (data.videoUrl | youtubeVideoId) + '/hqdefault.jpg'" *ngIf="!data.imageXl && !data.smallImageXl" alt="video overlay" class="youtube-image">
-      <ng-container *ngIf="size === 'small' && data.smallImageXl; else image">
+      <ng-container *ngIf="(size === 'small' || screen === 'sm') && data.smallImageXl; else image">
         <app-responsive-image [xl]="data.smallImageXl" [lg]="data.smallImageLg" [md]="data.smallImageMd" [xs]="data.smallImageSm" [sm]="data.smallImageSm" [alt]="data.smallImageAlt" [title]="data.smallImageTitle"></app-responsive-image>
       </ng-container>
     </div>

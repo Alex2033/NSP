@@ -1,13 +1,13 @@
-<div class="banner" #banner>
-  <hr *ngIf="data">
-  <a #link [href]="data.url" *ngIf="data" target="_blank" rel="nofollow noopener" (click)="incClick()" [style.height]="(screen === 'sm' && data?.type === 'html') ? getBannerHeight() + 'px' : null">
-    <ng-container *ngIf="data.type === 'image'">
+<div class="banner" #banner *ngIf="(data && (data.type === 'image' && data.images[screen]) || (data.type === 'html' && data.html[screen]))">
+  <hr>
+  <a #link [href]="data.url" target="_blank" rel="nofollow noopener" (click)="incClick()" [style.height]="(screen === 'sm' && data?.type === 'html') ? getBannerHeight() + 'px' : null">
+    <ng-container *ngIf="data.type === 'image' && data.images[screen]">
       <app-responsive-image [xl]="data.images.xl" [lg]="data.images.lg" [md]="data.images.md"
                             [xs]="data.images.sm" [sm]="data.images.sm"></app-responsive-image>
     </ng-container>
-    <ng-container *ngIf="data.type === 'html'">
+    <ng-container *ngIf="data.type === 'html' && data.html[screen]">
       <iframe [src]="data.html[screen] + '?instance_id=' + id  | safeUrl" frameborder="0" [style.transform]="getScale()"></iframe>
     </ng-container>
   </a>
-  <hr *ngIf="data">
+  <hr>
 </div>

@@ -1,11 +1,11 @@
 <div class="top-line-advertising" [style.height]="(screen === 'sm' && data?.type === 'html' && show) ? getBannerHeight() + 'px' : null" #banner [class.not-inited]="!inited">
   <ng-container *ngIf="show">
     <a #link *ngIf="showActions === false && data" [href]="data.url" target="_blank" rel="nofollow noopener" (click)="incClick()">
-        <ng-container *ngIf="data.type === 'image'">
+        <ng-container *ngIf="data.type === 'image' && data.images[screen]">
           <app-responsive-image [xl]="data.images.xl" [lg]="data.images.lg" [md]="data.images.md"
                                 [xs]="data.images.sm" [sm]="data.images.sm"></app-responsive-image>
         </ng-container>
-        <ng-container *ngIf="data.type === 'html'">
+        <ng-container *ngIf="data.type === 'html' && data.html[screen]">
             <iframe [src]="data.html[screen] + '?instance_id=' + id  | safeUrl" frameborder="0" [style.transform]="getScale()"></iframe>
         </ng-container>
     </a>

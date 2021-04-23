@@ -47,11 +47,13 @@
             [class]="'calendar-' + card.size"></app-event-calendar-card>
         </ng-container>
         <ng-container *ngSwitchCase="'advertisement'">
-          <app-advertising-card [size]="screen !== 'sm' ? card.size : 'small'"
-                                [class.square]="screen === 'sm'"
-                                [style.grid-column-start]="card.position?.x ? card.position.x : null"
-                                [style.grid-row-start]="card.position?.y ? card.position.y : null"
-                                [class]="card.size" [data]="card"></app-advertising-card>
+          <app-advertising-card
+            *ngIf="(card.bannerType === 'image' && card.images[screen]) || (card.bannerType === 'html' && card.html[screen])"
+            [size]="screen !== 'sm' ? card.size : 'small'"
+            [class.square]="screen === 'sm'"
+            [style.grid-column-start]="card.position?.x ? card.position.x : null"
+            [style.grid-row-start]="card.position?.y ? card.position.y : null"
+            [class]="card.size" [data]="card"></app-advertising-card>
         </ng-container>
         <ng-container *ngSwitchCase="'video'">
           <app-video-card [size]="screen !== 'sm' ? card.size : 'small'" [data]="card"

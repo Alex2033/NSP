@@ -73,6 +73,7 @@ import { QuotesPipe } from './pipes/quotes.pipe';
 import { ExternalLinksPipe } from './pipes/external-links.pipe';
 import { DynamicRoutesDirective } from './directives/dynamic-routes.directive';
 import {SafeUrlPipe} from './pipes/safe-url.pipe';
+import { PreviewCardComponent } from './components/preview-card/preview-card.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -144,6 +145,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ExternalLinksPipe,
     DynamicRoutesDirective,
     SafeUrlPipe,
+    PreviewCardComponent,
   ],
   imports: [
     CommonModule,
@@ -222,6 +224,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ExternalLinksPipe,
     DynamicRoutesDirective,
     SafeUrlPipe,
+    PreviewCardComponent
   ],
   providers: [
     {

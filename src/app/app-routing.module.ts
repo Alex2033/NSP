@@ -1,10 +1,11 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
 import {ServerDataComponent} from './shared/components/server-data/server-data.component';
 import {ServerDataResolver} from './shared/resolvers/server-data.resolver';
 import {NotFoundComponent} from './shared/components/not-found/not-found.component';
 import {RouteDataResolver} from './shared/resolvers/route-data.resolver';
 import {ArticleFeedComponent} from './shared/components/article-feed/article-feed.component';
+import {PreviewCardComponent} from './shared/components/preview-card/preview-card.component';
 
 const routes: Routes = [
   {
@@ -44,6 +45,10 @@ const routes: Routes = [
     loadChildren: () => import('./modules/login/login.module').then(mod => mod.LoginModule)
   },
   {
+    path: 'preview/card',
+    component: PreviewCardComponent
+  },
+  {
     path: 'server_article',
     component: ArticleFeedComponent,
     resolve: {
@@ -71,7 +76,8 @@ const routes: Routes = [
     scrollPositionRestoration: 'enabled',
     initialNavigation: 'enabled',
     relativeLinkResolution: 'legacy'
-})],
+  })],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
