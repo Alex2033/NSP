@@ -73,7 +73,6 @@ export class DetailComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    console.log('full load ' + this.start, new Date().getTime() - this.start);
     this.scrollbarRef.scrolled.subscribe(e => {
       this.scrollPosition = e.target.scrollLeft;
 

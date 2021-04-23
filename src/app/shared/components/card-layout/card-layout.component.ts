@@ -22,7 +22,6 @@ export class CardLayoutComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    console.log('card layout ' + this.screen + ' ' + this.start, new Date().getTime() - this.start);
   }
 
 }

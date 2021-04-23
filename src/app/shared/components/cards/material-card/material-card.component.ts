@@ -23,7 +23,6 @@ export class MaterialCardComponent extends ResizableCardComponent implements OnI
   }
 
   ngAfterViewInit() {
-    console.log('card ' + this.data.title + ' ' + this.start, new Date().getTime() - this.start);
   }
 
 }

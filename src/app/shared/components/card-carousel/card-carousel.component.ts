@@ -50,6 +50,5 @@ export class CardCarouselComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    console.log('card collection ' + this.data.title + ' ' + this.start, new Date().getTime() - this.start);
   }
 }

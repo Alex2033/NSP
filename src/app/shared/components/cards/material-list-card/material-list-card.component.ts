@@ -60,7 +60,6 @@ export class MaterialListCardComponent extends ResizableCardComponent implements
         this.inited = true;
       }, 1);
     }
-    console.log('list card ' + this.title + ' ' + this.start, new Date().getTime() - this.start);
   }
 
 }
